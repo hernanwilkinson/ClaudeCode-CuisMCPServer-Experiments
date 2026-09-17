@@ -1,0 +1,10 @@
+1	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1
+2	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1
+3	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1
+4	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1
+5	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1
+6	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1
+7	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1
+8	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1
+9	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1
+10	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1

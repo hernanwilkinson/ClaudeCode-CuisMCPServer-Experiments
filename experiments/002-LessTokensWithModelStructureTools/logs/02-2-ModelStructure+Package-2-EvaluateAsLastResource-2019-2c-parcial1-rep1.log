@@ -1,0 +1,26 @@
+==> job 2: rep 1, 2-ModelStructure+Package / 2-EvaluateAsLastResource / exercises/2019-2c-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2019-2c-parcial1/20260910-192329-84724
+    image serving 32 tools on port 61811
+    installing starting/IngSof1-2019-2C-1Parcial.st
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 1800s
+    claude exited with status 0 after 320s, 106 tool calls logged by the server
+    saving the image
+    filing out package IngSof1-2019-2C-1Parcial
+    status completed, turns 107, cost $1.7016689999999999
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2019-2c-parcial1/20260910-192329-84724
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2019-2c-parcial1/20260910-192329-84724
+    installing the run's package IngSof1-2019-2C-1Parcial
+    acceptance test classes: CoffeeShopTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260910-192329-84724: 2-ModelStructure+Package / 2-EvaluateAsLastResource / free / 2019-2c-parcial1
+  acceptance         14/14 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 88.9%, by the agent's tests None
+  test smells        2
+  model              13 classes, 47 methods, 1.55 sends/method, 0 over 10, ifs 0, nil checks 0, type checks 0
+  diff               +27 methods, ~22 changed, -7 removed; classes +7 -0
+  tool calls         106 by the agent, 0 errors, evaluate kinds {'other': 3, 'reflection': 2}
+  mentor             13 findings {'No empty method categories': 8, 'No class-name prefix in names': 2, 'Class is referenced': 2, 'No extra parenthesis': 1}
+  agent              claude-opus-5 effort high, 320s, cost $1.7016689999999999, tokens in 54 cache-read 925,698 out 27,704
+  refactorings       5 done by hand {'manualExtractMethod': 3, 'manualExtractFromSimilarCode': 2}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 6 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2019-2c-parcial1/20260910-192329-84724/analysis.json

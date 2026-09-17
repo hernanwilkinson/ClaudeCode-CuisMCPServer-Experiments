@@ -1,0 +1,1 @@
+{"scenario": "1-Evaluate+TestRunning", "toolGroups": ["MCPImageTools","MCPTestRunningTools"], "decorators": [], "tools": ["smalltalk_evaluate","smalltalk_run_test_class","smalltalk_run_test_method","smalltalk_run_tests_for_classes","smalltalk_run_tests_in_category","smalltalk_save_image","smalltalk_screenshot"]}

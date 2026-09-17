@@ -1,0 +1,25 @@
+{
+  "name": "2019-1c-parcial1",
+  "title": "Parking Lot Slots",
+  "kind": "refactoring",
+  "package": "ISW1-2019-1C-Parcial",
+  "description": "A parking lot with a configurable number of slots (one reserved for the owner when the count is odd) where cars ($100) and bikes ($50) park and the total money parked is queried. Given ParkingLot with its tests and an empty Slot class, the student must implement Slot without ifs so SlotTest passes and then remove the duplicated code from ParkingLot without touching the tests.",
+  "startingPackages": ["starting/ISW1-2019-1C-Parcial.st"],
+  "solutionPackages": [],
+  "acceptanceTests": null,
+  "source": "2019-1c",
+  "semester": "2019-1c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Slot's empty/occupied/reserved and car/bike distinctions must be modelled with state objects rather than ifs, while ParkingLot's do:+ifTrue: filters and three copy-pasted total loops must collapse into select:/inject: and a single parameterized method, all under fixed tests that dictate the protocol."
+  },
+  "sizeHint": {"classesInStartingCode": 6, "methodsInStartingCode": 64}
+}

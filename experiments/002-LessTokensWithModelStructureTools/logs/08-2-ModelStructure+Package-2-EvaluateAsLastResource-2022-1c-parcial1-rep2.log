@@ -1,0 +1,26 @@
+==> job 8: rep 2, 2-ModelStructure+Package / 2-EvaluateAsLastResource / exercises/2022-1c-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260910-205402-32035
+    image serving 32 tools on port 50096
+    installing starting/ISW1-2022-1C-Parcial-1.st
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 1800s
+    claude exited with status 0 after 836s, 215 tool calls logged by the server
+    saving the image
+    filing out package ISW1-2022-1C-Parcial-1
+    status completed, turns 216, cost $4.848608499999999
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260910-205402-32035
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260910-205402-32035
+    installing the run's package ISW1-2022-1C-Parcial-1
+    acceptance test classes: FormulaOneTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260910-205402-32035: 2-ModelStructure+Package / 2-EvaluateAsLastResource / free / 2022-1c-parcial1
+  acceptance         26/26 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 95.4%, by the agent's tests None
+  test smells        1
+  model              12 classes, 93 methods, 1.85 sends/method, 0 over 10, ifs 5, nil checks 0, type checks 0
+  diff               +58 methods, ~54 changed, -19 removed; classes +8 -0
+  tool calls         215 by the agent, 4 errors, evaluate kinds {'other': 6, 'reflection': 4, 'definesCode': 1}
+  mentor             32 findings {'Keyword message send format': 15, 'No empty method categories': 6, 'Method complexity': 6, 'Avoid setters': 3, 'Move helper method to the right class': 2}
+  agent              claude-opus-5 effort high, 836s, cost $4.848608499999999, tokens in 98 cache-read 3,713,517 out 73,208
+  refactorings       6 done by hand {'manualExtractMethod': 5, 'manualExtractFromSimilarCode': 1}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 5 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260910-205402-32035/analysis.json

@@ -1,0 +1,149 @@
+{
+  "experiment": "006-SmalltalkVsJava",
+  "runId": "20260915-110924-39024",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "1-Evaluate+TestRunning-University",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "CustomerImporter-Recu-1er-Parcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 006-SmalltalkVsJava, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "1-Evaluate+TestRunning-University",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8182.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-1-Evaluate+TestRunning-University.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools"
+    ],
+    "decorators": [],
+    "cuisDevCommit": "7b48a0fb4bdf47feff8ed6b95866efdf587ceba8",
+    "mcpServerCommit": "1d61daa41bbb1feb8ae0ec0569432cc0305f0e9b",
+    "builtAt": "2026-09-14T23:45:59Z",
+    "imageSha256": "de7b72fcb6a8c88ede352b9ffba66a7dc7da190bd2ec04f669965d704530ab4f"
+  },
+  "toolsServed": 7,
+  "toolDefinitionBytes": 3412,
+  "hashes": {
+    "prompt.md": "1a6c08c7102ac59a302a7c2e1ccabd3850546d786385d3d8ebf47fe411f954a1",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec.md": "428340b0ba4d4e35ac37c837ef1e35636f94d84df309b2385ba9da34c58336a6",
+    "skills": {}
+  },
+  "port": 64265,
+  "startedAt": "2026-09-15T14:09:27Z",
+  "endedAt": "2026-09-15T14:17:27Z",
+  "elapsedSeconds": 480,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 24,
+    "agentCalls": 22
+  },
+  "changesBytesAtStart": 8637338,
+  "changesBytesAtEnd": 8659505,
+  "usageFromTranscript": {
+    "totalCostUsd": 2.0836,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 46,
+        "cache_write_5m": 0,
+        "cache_write_1h": 63647,
+        "cache_read": 953185,
+        "output": 38811,
+        "thinking": 26848,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 23,
+        "cost_usd": 2.0835675
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_evaluate": 18,
+      "mcp__Cuis__smalltalk_run_test_class": 3,
+      "mcp__Cuis__smalltalk_save_image": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 23,
+    "durationMs": 478614,
+    "durationApiMs": 474002,
+    "totalCostUsd": 2.0835675,
+    "usage": {
+      "input_tokens": 46,
+      "cache_creation_input_tokens": 63647,
+      "cache_read_input_tokens": 953185,
+      "output_tokens": 38811,
+      "output_tokens_details": {
+        "thinking_tokens": 26848
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 63647,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1309,
+          "cache_read_input_tokens": 63419,
+          "cache_creation_input_tokens": 228,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 228
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 46,
+        "outputTokens": 38811,
+        "cacheReadInputTokens": 953185,
+        "cacheCreationInputTokens": 63647,
+        "webSearchRequests": 0,
+        "costUSD": 2.0835675,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 26848,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "Done \u2014 the 29 tests pass unchanged, and the image is saved.\n\n## What I changed\n\n**New hierarchy (category `CustomerImporter-Recu-1er-Parcial`)**\n\n```\nImportedValue\n  \u251c\u2500\u2500 Identification \u2500\u2500 DNI, CUIT\n  \u2514\u2500\u2500 ZipCode \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 OldZipCode, NewZipCode\n```\n\n`ImportedValue` holds the imported string and captures what both families share:\n\n- `typeHandling:` picks the concrete class with `subclasses detect: [:each | each canHandle: ...] ifNone: [self error: self invalidTypeErrorDescription]` \u2014 the same idiom already used by `Environment class>>current`. This is what replaces `idType = 'D' ifTrue: [...] ifFalse: [idType = 'C' ifTrue: ...]` and `zipCode first isDigit ifTrue: [...]`.\n- Creation validates once: `assertIsValid:` is the *only* guard left, and the message comes from the polymorphic `invalidValueErrorDescription`, so each of the four error texts is written exactly once instead of 3\u20135 times.\n- The repeated validations became shared predicates: `isAllDigits:`, `isAllLetters:`, `is:numberBetween:and:` (used by both `DNI` and `OldZipCode`), `numberFrom:`.\n- `NewZipCode class>>isValid:` reuses `OldZipCode isValid:` for its four digits \u2014 a new zip code *contains* an old one, so that rule is stated once.\n\nThe type tests the tests require are now polymorphic: `isDNI`/`isCUIT`, `isOld`/`isNew` answer `false` in the abstract class and `true` in the one class where it holds; `dniNumberIfNone:`/`cuitNumberIfNone:`/`oldValueIfNone:`/`newValueIfNone:` evaluate the none-block by default and answer `self value` in the matching class. `isKindOf: String` / `isKindOf: Integer` are gone.\n\n**Customer / Address** \u2014 `Customer` now holds one `identification` instead of `identificationType` + `identificationNumber`, and `Address` holds a `ZipCode` object; both just delegate. Both got instance-creation messages (`Customer named:lastNamed:identifiedBy:`, `Address at:number:town:zipCode:province:`) replacing the setter soup, so they can't exist half-built; the unused setters were removed. The identical `detect:` block duplicated in `TransientCustomerSystem` and `PersistentCustomerSystem` moved to `Customer>>hasIdentificationOfType:number:`.\n\n**CustomerImporter** \u2014 `importCustomer` and `importAddress` are now four and six lines, with no validation logic and no ifs.\n\n## Left alone, on purpose\n\n- `CustomerImporter>>importRecord`'s two `ifTrue:` (record-type dispatch) and `DataBaseSession>>persist:`'s `isKindOf: Customer` are pre-existing code, outside what the statement describes as the new developer's work. The first could use the same `canHandle:` dispatch, but the record importers need the importer's state (`newCustomer`, `system`), so it's a bigger restructure than the statement asks for; the second would mean giving domain objects persistence protocol, which I think is worse than the type test inside the fake DB session.\n- The message for an unrecognized zip code type is `'Invalid identification type'` \u2014 that's a copy/paste slip in the original, but `test29` asserts it, and the tests had to stay as they are. Both hierarchies now share that single description in `ImportedValue class>>invalidTypeErrorDescription`.\n\nI also moved `ImportTest` to `CustomerImporter-Recu-1er-Parcial-Tests` and added class comments to the seven new classes. I smoke-tested the `PersistentCustomerSystem` path too, since the tests only ever exercise the transient one."
+  }
+}

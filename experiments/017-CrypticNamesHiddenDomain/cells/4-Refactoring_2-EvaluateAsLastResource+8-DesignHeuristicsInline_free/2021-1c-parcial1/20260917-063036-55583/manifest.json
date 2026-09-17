@@ -1,0 +1,161 @@
+{
+  "experiment": "017-CrypticNamesHiddenDomain",
+  "runId": "20260917-063036-55583",
+  "warmUp": "classes 1 run 18 passed 18 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2021-1c-parcial1",
+  "package": "ISW1-2021-1C-1erParcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 017-CrypticNamesHiddenDomain, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:10Z",
+    "imageSha256": "b5f4b366a56949d0350d29a2756efc4fed4b2a6aa266163385aaa745d6efa3a5"
+  },
+  "toolsServed": 74,
+  "toolDefinitionBytes": 69457,
+  "hashes": {
+    "prompt.md": "afb2d6580b0f9d185b2153bf9cadf37d3d74ce9ea774e34d77706d0bee93f52c",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "21fa5911027b45c8c6431fa817d407dc17172a7c985b2dfc7d399ebacefe59fb",
+    "skills": {}
+  },
+  "port": 54694,
+  "startedAt": "2026-09-17T09:30:38Z",
+  "endedAt": "2026-09-17T09:32:51Z",
+  "elapsedSeconds": 133,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 38,
+    "agentCalls": 36
+  },
+  "changesBytesAtStart": 5196651,
+  "changesBytesAtEnd": 5219494,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.1556,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 20,
+        "cache_write_5m": 0,
+        "cache_write_1h": 55779,
+        "cache_read": 372460,
+        "output": 16461,
+        "thinking": 6443,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 10,
+        "cost_usd": 1.155645
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_batch": 5,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_method_source": 1,
+      "mcp__Cuis__smalltalk_define_methods": 1,
+      "mcp__Cuis__smalltalk_evaluate": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 10,
+    "durationMs": 132311,
+    "durationApiMs": 128811,
+    "totalCostUsd": 1.1556449999999998,
+    "usage": {
+      "input_tokens": 20,
+      "cache_creation_input_tokens": 55779,
+      "cache_read_input_tokens": 372460,
+      "output_tokens": 16461,
+      "output_tokens_details": {
+        "thinking_tokens": 6443
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 55779,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1221,
+          "cache_read_input_tokens": 55483,
+          "cache_creation_input_tokens": 296,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 296
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 20,
+        "outputTokens": 16461,
+        "cacheReadInputTokens": 372460,
+        "cacheCreationInputTokens": 55779,
+        "webSearchRequests": 0,
+        "costUSD": 1.1556449999999998,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6443,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I refactored RobotWars in the image. All 18 tests passed before I started and still pass afterwards.\n\n## Model (`ISW1-2021-1C-1erParcial`)\n\n**Types are now subclasses.** `Robot` has two subclasses, `Aluminum3000` and `TankRover`. `Weapon` has three: `Claw`, `HSBlaster` and `TurboLaserCannon`.\n- The `type` variables, the `type` getters and both `ofType:` methods are gone. You now create a robot or weapon with `new`, so the \"Invalid Robot/Weapon Type\" errors can no longer happen.\n- A robot's speed and maximum weapon weight, and a weapon's weight and speed impact, never changed after creation. Each subclass now just answers them, so those instance variables were removed. `Robot` only keeps `life` and `weapons`, and `Weapon` only keeps `usedTimes`.\n- Each class has a single `initialize`, which sets the starting life and an empty weapon list, or zero uses.\n\n**`attack:by:` uses double dispatch instead of nested ifs.** The weapon counts the use and sends `aVictim receiveAttackFrom: self by: anAttacker`. The robot then calls back `attackAluminum3000:by:` or `attackTankRover:by:`, so each of the six weapon/robot cases is a two-line method in its weapon class. Two shared helpers in `Weapon` handle retiring a weapon: `removeFrom:afterBeingUsed:` and `replaceWith:in:afterBeingUsed:`.\n\n**Weapons category of `Robot`:**\n- Starting `weapons` in `initialize` removed the repeated `weapons isNil ifTrue: [...]` line from seven methods.\n- The hand-written index loops were replaced with `sum:ifEmpty:` and `weaponsImpactingSpeed`.\n- `addWeapon:` and `attack:with:` now read as named checks: `assertMaxWeaponWeightIsNotExceededAdding:`, `assertSpeedIsNotBelowZeroAdding:` and `assertIncludesWeapon:`.\n\n**Encapsulation:** I removed the `life:` setter. Weapons now tell the victim `reduceLifeBy:` and ask `hasLifeAtMost:` instead of reading and setting its life. Swapping one weapon for another uses `replaceWeapon:with:`.\n\n## Tests (moved to `ISW1-2021-1C-1erParcial-Tests`)\n- Tests 07\u201312 each shrank to a single call to the new helper `assertAttacking:with:leavesItsLifeAt:`.\n- Tests 13\u201318 use the new helper `createAluminum3000ArmedWith:`.\n- The `create\u2026` helpers now use `new`. `includesWeaponOfType:` now takes the weapon class (e.g. `Claw`) instead of a symbol.\n- I didn't touch the class-side `initialize`, as its comment asks.\n\n## Two oddities I kept on purpose\n- **Speed impact rule:** `totalSpeedImpact` only counts weapons heavier than 10 kg, so a `Claw` never adds to it. But `addWeapon:` still counts the new weapon's impact when checking the limit, even if it's a Claw. I kept this exactly as it was, now as `Weapon>>impactsSpeed`. It looks like a hidden rule or a bug, and you should decide which.\n- **`test06ShouldAddSpeedImpactWhenAddingWeapons`:** despite its name, it checks total weight, not speed impact. I left it alone, because fixing it would change what the test checks."
+  }
+}

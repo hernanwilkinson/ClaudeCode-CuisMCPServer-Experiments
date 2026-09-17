@@ -1,0 +1,148 @@
+{
+  "experiment": "000-PipelineChecks",
+  "runId": "20260911-103241-51716",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "1-Evaluate+TestRunning",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "smoke",
+  "package": "BoundedStack",
+  "model": "claude-haiku-4-5-20251001",
+  "effort": "low",
+  "budgetUsd": 0.3,
+  "timeoutSeconds": 240,
+  "note": "isolation check: workdir outside HOME after Claude Code 2.1.267 change",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "1-Evaluate+TestRunning",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-1-Evaluate+TestRunning.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools"
+    ],
+    "decorators": [],
+    "cuisDevCommit": "5df8905ece86a4cc8cd4b667ae7a967af06249ad",
+    "mcpServerCommit": "766cc93f08d5240467e77b48dbbcf99ebb840f9f",
+    "builtAt": "2026-09-10T18:53:45Z",
+    "imageSha256": "752033185c68a413a19e5f6d449d5137ba87092db5016782bf13dfdb7452d6f7"
+  },
+  "toolsServed": 7,
+  "toolDefinitionBytes": 3365,
+  "hashes": {
+    "prompt.md": "3cb236870e48fb6b73bba2d6428e807a381765179beb2bc8767b379a339007cb",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec.md": "09ca3e3145d9f9359cdf0c623030d56debe5641da38282191460afbc827d4da6",
+    "skills": {}
+  },
+  "port": 56175,
+  "startedAt": "2026-09-11T13:32:43Z",
+  "endedAt": "2026-09-11T13:33:37Z",
+  "elapsedSeconds": 54,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 1,
+    "agentCallsToLine": 24,
+    "agentCalls": 24
+  },
+  "changesBytesAtStart": 4428451,
+  "changesBytesAtEnd": 4434619,
+  "usageFromTranscript": {
+    "totalCostUsd": 0.0806,
+    "perModel": {
+      "claude-haiku-4-5-20251001": {
+        "input": 202,
+        "cache_write_5m": 0,
+        "cache_write_1h": 15166,
+        "cache_read": 270482,
+        "output": 4596,
+        "thinking": 1149,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 25,
+        "cost_usd": 0.0805622
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_evaluate": 22,
+      "mcp__Cuis__smalltalk_run_test_class": 1,
+      "mcp__Cuis__smalltalk_save_image": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 25,
+    "durationMs": 53725,
+    "durationApiMs": 51140,
+    "totalCostUsd": 0.0805622,
+    "usage": {
+      "input_tokens": 202,
+      "cache_creation_input_tokens": 15166,
+      "cache_read_input_tokens": 270482,
+      "output_tokens": 4596,
+      "output_tokens_details": {
+        "thinking_tokens": 1149
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 15166,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 8,
+          "output_tokens": 306,
+          "cache_read_input_tokens": 14247,
+          "cache_creation_input_tokens": 617,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 617
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 202,
+        "outputTokens": 4596,
+        "cacheReadInputTokens": 270482,
+        "cacheCreationInputTokens": 15166,
+        "webSearchRequests": 0,
+        "costUSD": 0.0805622,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 1149,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "Done! I've implemented a bounded stack in Cuis with all requested features:\n\n**BoundedStack class** (category: 'BoundedStack'):\n- `newWithCapacity:` - creates a stack with validation that capacity is a positive integer\n- `push:` - adds objects to the stack, fails with \"stack is full\" when at capacity\n- `pop` - removes and returns the top object, fails with \"stack is empty\" when empty\n- `top` - returns the top object without removing it, fails with \"stack is empty\" when empty\n- `isEmpty` - returns true if the stack is empty\n- `size` - returns the current number of elements\n\n**Test suite** (category: 'BoundedStack-Tests') with 12 comprehensive tests:\n1. Creating a stack with valid capacity\n2. Validation errors for negative, zero, and non-integer capacities\n3. Basic push/pop operations\n4. Top method without removal\n5. Full stack push error\n6. Empty stack pop and top errors\n7. LIFO (Last In First Out) behavior with multiple elements\n8. Push/pop cycling\n9. Storing different object types\n\nAll 12 tests pass successfully."
+  }
+}

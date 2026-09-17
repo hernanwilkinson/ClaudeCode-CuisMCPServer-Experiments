@@ -1,0 +1,33 @@
+{
+  "name": "2022-1c-parcial1-cryptic",
+  "title": "ISW1-F1 Formula One Simulator (cryptic names)",
+  "kind": "refactoring",
+  "package": "Task2",
+  "description": "A Formula 1 race simulator (GrandPrix, Track made of Sectors, FormulaOneCar with a Turbo that boosts speed 20%/10%/5% and then is exhausted, usable only to overtake a car less than a second ahead in a turbo-enabled sector). The student must replace ifs with polymorphism (turbo states, sectors with/without turbo), rewrite index-based loops in Track and GrandPrix with collection protocol, remove duplication in the tests and improve the design while keeping all tests green. Cryptic twin: every class, selector, variable, symbol and string the exercise's author named is replaced by a meaningless one (level 2), comments removed; renames.json has the table.",
+  "startingPackages": [
+    "starting/Task2.pck.st"
+  ],
+  "solutionPackages": [],
+  "acceptanceTests": null,
+  "source": "2022-1c/1erParcial",
+  "semester": "2022-1c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "The turbo is a small state machine (deactivated, activated after 1/2/3 uses, exhausted) encoded as a boolean plus a counter and checked with ifs across FormulaOneCar and Sector; Track and GrandPrix walk sectors and cars with whileTrue: index loops that map directly onto detect:/inject:/anySatisfy:, and tests 20-25 repeat the same fixture setup."
+  },
+  "sizeHint": {
+    "classesInStartingCode": 9,
+    "methodsInStartingCode": 85
+  },
+  "acceptanceTestClasses": null,
+  "crypticTwinOf": "2022-1c-parcial1",
+  "obfuscationLevel": 2
+}

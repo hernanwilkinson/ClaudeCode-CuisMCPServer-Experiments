@@ -1,0 +1,160 @@
+{
+  "experiment": "014-LiveTypingFiveRuns",
+  "runId": "20260917-034432-20033",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring-University",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "CustomerImporter-Recu-1er-Parcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 014-LiveTypingFiveRuns, repetition 4",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring-University",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8185.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring-University.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:38:49Z",
+    "imageSha256": "96801c3307607a528c3a8319c33cfc693156980d465f42699a28d666038495de"
+  },
+  "toolsServed": 74,
+  "toolDefinitionBytes": 69457,
+  "hashes": {
+    "prompt.md": "1a6c08c7102ac59a302a7c2e1ccabd3850546d786385d3d8ebf47fe411f954a1",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "428340b0ba4d4e35ac37c837ef1e35636f94d84df309b2385ba9da34c58336a6",
+    "skills": {}
+  },
+  "port": 51206,
+  "startedAt": "2026-09-17T06:44:35Z",
+  "endedAt": "2026-09-17T06:46:53Z",
+  "elapsedSeconds": 138,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 28,
+    "agentCalls": 26
+  },
+  "changesBytesAtStart": 8669786,
+  "changesBytesAtEnd": 8691654,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.0038,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 18,
+        "cache_write_5m": 0,
+        "cache_write_1h": 42891,
+        "cache_read": 360073,
+        "output": 15790,
+        "thinking": 6712,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 9,
+        "cost_usd": 1.0037865
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_classes_in_category": 2,
+      "mcp__Cuis__smalltalk_class_source": 2,
+      "mcp__Cuis__smalltalk_run_test_class": 1,
+      "mcp__Cuis__smalltalk_batch": 3,
+      "mcp__Cuis__smalltalk_list_packages": 1,
+      "mcp__Cuis__smalltalk_define_methods": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 11,
+    "durationMs": 137307,
+    "durationApiMs": 129886,
+    "totalCostUsd": 1.0037865000000001,
+    "usage": {
+      "input_tokens": 18,
+      "cache_creation_input_tokens": 42891,
+      "cache_read_input_tokens": 360073,
+      "output_tokens": 15790,
+      "output_tokens_details": {
+        "thinking_tokens": 6712
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 42891,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 973,
+          "cache_read_input_tokens": 58418,
+          "cache_creation_input_tokens": 3795,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3795
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 18,
+        "outputTokens": 15790,
+        "cacheReadInputTokens": 360073,
+        "cacheCreationInputTokens": 42891,
+        "webSearchRequests": 0,
+        "costUSD": 1.0037865000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6712,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I removed the `if`s that checked document types and postal code types, and moved each type's checks into its own class. All 29 tests in `ImportTest` pass, and I didn't change any test. I did move `ImportTest` into `CustomerImporter-Recu-1er-Parcial-Tests`, as you asked. Everything else is in `CustomerImporter-Recu-1er-Parcial`.\n\n**Document types:** a new class `Identification` with two subclasses, `DNI` and `CUIT`.\n- `Identification type: record fourth number: record fifth` picks the subclass that matches the type code (`'D'` or `'C'`). If none matches, it raises \"Invalid identification type\".\n- The check that raises the error lives once in `Identification`. Each subclass only says what a valid number is and gives its own error message. `CUIT`'s check is split into small named parts: size, dash positions, valid first two digits, and digits.\n- `isDNI`/`isCUIT`, `dniNumberIfNone:` and `cuitNumberIfNone:` now just answer differently in each subclass, so `Customer` passes those questions on without any `if`.\n\n**Postal codes:** a new class `ZipCode` with two subclasses, `OldZipCode` and `NewZipCode`, built the same way.\n- `ZipCode from:` looks at the first character to pick the subclass.\n- An old code gives back a number and a new code gives back text, just as before.\n- A new code is checked partly by asking whether its four middle characters are a valid old code. That way the 1000\u20139999 range is written in one place only.\n- The type error still says \"Invalid identification type\", because `test29ZipCodeMustBeOldOrNew` expects exactly that text.\n\n**Other changes:**\n- **`Customer` and `Address`:** each is now created complete in one message (`firstName:lastName:identification:` and `streetName:streetNumber:town:zipCode:province:`). I removed all their setters. `Customer addresses` now returns a copy of the list.\n- **Importer:** `importCustomer` and `importAddress` shrank to building those objects.\n- **Customer lookup:** both customer systems now ask the customer `isIdentifiedAs:number:` instead of reading its type and number to compare them.\n- **Repeated character checks:** they became two small helper methods on `String`, `isAllDigits` and `isAllLetters`, saved as part of the `CustomerImporter` package.\n- **Error messages:** they are now class methods instead of text repeated inside the importer.\n\nI left alone the record-type `if`s in `CustomerImporter>>importRecord` (customer or address line) and the `isKindOf: Customer` check in `DataBaseSession`. They were there before this change and weren't about document or postal code types."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c17-customerimporter-3",
+  "title": "Customer Importer 3: decouple the tests from the database",
+  "kind": "refactoring",
+  "package": "10Pines-C17",
+  "description": "The nine importer tests are slow because the importer and the tests talk directly to DataBaseSession, a simulated database that sleeps on every persist and select. The student must decouple them from the database (an abstraction of the customer system with an in-memory implementation used in development and the persistent one used in the integration environment, chosen by the environment) so the tests run fast but can still run against the database.",
+  "startingPackages": ["starting/10Pines-C17-60.st"],
+  "solutionPackages": ["solution/10Pines-C17-76.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C17 - TDD Avanzado",
+  "semester": "10pines-c17",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Introducing a test double by design rather than by mocking: extract the protocol the importer and the tests need from the session into a CustomerSystem abstraction (extract interface + generalize type), give it a persistent and a transient implementation, and select one through an Environment object; the interesting part is what flows through 'session'/'system' and moving the session's lifecycle (start/stop/transactions) into the system."
+  },
+  "sizeHint": {"classesInStartingCode": 5, "methodsInStartingCode": 86}
+}

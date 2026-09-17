@@ -1,0 +1,53 @@
+{
+  "session": "claude-transcript",
+  "subagent_transcripts": 0,
+  "per_model": {
+    "claude-opus-5": {
+      "input": 98,
+      "cache_write_5m": 0,
+      "cache_write_1h": 116116,
+      "cache_read": 3713517,
+      "output": 73208,
+      "thinking": 40811,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 49,
+      "cost_usd": 4.8486085
+    }
+  },
+  "main_only": {
+    "claude-opus-5": {
+      "input": 98,
+      "cache_write_5m": 0,
+      "cache_write_1h": 116116,
+      "cache_read": 3713517,
+      "output": 73208,
+      "thinking": 40811,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 49
+    }
+  },
+  "subagents_only": {},
+  "tool_calls": {
+    "mcp__Cuis__smalltalk_classes_in_category": 2,
+    "mcp__Cuis__smalltalk_list_packages": 3,
+    "mcp__Cuis__smalltalk_evaluate": 11,
+    "mcp__Cuis__smalltalk_package_definition": 3,
+    "mcp__Cuis__smalltalk_class_definition": 5,
+    "mcp__Cuis__smalltalk_method_sources_of_class": 9,
+    "mcp__Cuis__smalltalk_run_test_class": 3,
+    "mcp__Cuis__smalltalk_run_test_method": 1,
+    "mcp__Cuis__smalltalk_list_classes": 1,
+    "mcp__Cuis__smalltalk_class_organization": 8,
+    "mcp__Cuis__smalltalk_method_source": 12,
+    "mcp__Cuis__smalltalk_method_sources_in_category": 1,
+    "mcp__Cuis__smalltalk_define_class": 15,
+    "mcp__Cuis__smalltalk_define_method": 118,
+    "mcp__Cuis__smalltalk_delete_method": 18,
+    "mcp__Cuis__smalltalk_classify_methods": 3,
+    "mcp__Cuis__smalltalk_run_tests_in_category": 1,
+    "mcp__Cuis__smalltalk_save_image": 1
+  },
+  "total_cost_usd": 4.8486
+}

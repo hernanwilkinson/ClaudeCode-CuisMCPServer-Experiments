@@ -1,0 +1,32 @@
+{
+  "name": "10pines-c6-tuslibros-iteracion2",
+  "title": "TusLibros Iteration 2: Cashier, Credit Card and Sales Book",
+  "kind": "feature",
+  "package": "TusLibros",
+  "description": "Second iteration of TusLibros.com: a cashier checks out the iteration-1 cart with a credit card on a given date, refusing empty carts and expired cards, computes the total from a price list and registers a Sale in a sales book. No Merchant Processor yet. The cart code of iteration 1 is given.",
+  "startingPackages": [
+    "starting/TusLibros-18.st"
+  ],
+  "solutionPackages": [
+    "solution/TusLibros-29.st"
+  ],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C6 - Construccion de Software Seguro usando Test Driven Development",
+  "semester": "10pines-c6",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "The catalog changes from a collection of ISBNs to a price list, the cashier's preconditions are checked at creation, and the current date is injected so the test controls card expiration; a test objects factory appears."
+  },
+  "sizeHint": {
+    "classesInStartingCode": 2,
+    "methodsInStartingCode": 23
+  }
+}

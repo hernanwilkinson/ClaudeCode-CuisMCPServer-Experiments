@@ -1,0 +1,23 @@
+{
+  "RUN_ID": "20260910-192329-84724",
+  "SCENARIO": "2-ModelStructure+Package",
+  "CONFIG": "2-EvaluateAsLastResource",
+  "TECHNIQUE": "free",
+  "EXERCISE_NAME": "2019-2c-parcial1",
+  "PACKAGE": "IngSof1-2019-2C-1Parcial",
+  "MODEL": "claude-opus-5",
+  "EFFORT": "high",
+  "BUDGET": "15",
+  "TIMEOUT": "1800",
+  "NOTE": "matrix tokens-opus-1, repetition 1",
+  "INTERACTIVE": "0",
+  "CLAUDE_VERSION": "2.1.268 (Claude Code)",
+  "BUILTIN_TOOLS": "",
+  "WORKDIR": "/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/runs/.active/20260910-192329-84724-84724",
+  "IMAGE_FILE": "/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2019-2c-parcial1/20260910-192329-84724/image/MCP-2-ModelStructure+Package.image",
+  "VM": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+  "STARTED_AT": "2026-09-10T22:23:31Z",
+  "START_SECONDS": "1789079011",
+  "CHANGES_BYTES_AT_START": "4446775",
+  "CALLS_LOGGED_BEFORE_RUN": "1"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "2018-1c-parcial2-masked",
+  "title": "Seabed Survey Crawler",
+  "kind": "greenfield",
+  "package": "SurveyCrawler",
+  "description": "A seabed survey crawler on a flat grid, with an integer position and a facing towards one of the four walls of its cell, receives a String of single-character commands (a, t, g, h) and must stop processing at the first invalid command. The student must build the model from scratch with TDD.",
+  "maskedFrom": "2018-1c-parcial2",
+  "startingPackages": [],
+  "solutionPackages": ["solution/MarsRover29.st", "solution/MarsRover-With MarsRoverPosition Hierarchy.st"],
+  "acceptanceTests": null,
+  "source": "2018-1c",
+  "semester": "2018-1c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "The natural temptation is a case-like dispatch on the facing symbol and on the command character; the good design replaces both with polymorphic facing objects and command objects, plus stopping the command stream on the first invalid command."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

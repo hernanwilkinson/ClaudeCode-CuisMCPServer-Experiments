@@ -1,0 +1,28 @@
+==> job 12: rep 2, 4-Refactoring / 4-Refactoring,9-BatchFirst / free / exercises/2022-1c-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/015-RefactoringFirstWithBatch/cells/4-Refactoring_4-Refactoring+9-BatchFirst_free/2022-1c-parcial1/20260917-044727-26742
+    image serving 74 tools on port 52547
+    installing starting/ISW1-2022-1C-Parcial-1.st
+    warm-up (given tests run once before the session): classes 1 run 25 passed 25 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 239s, 81 tool calls logged by the server
+    saving the image
+    filing out package ISW1-2022-1C-Parcial-1
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 17, cost $1.6797455
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/015-RefactoringFirstWithBatch/cells/4-Refactoring_4-Refactoring+9-BatchFirst_free/2022-1c-parcial1/20260917-044727-26742
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/015-RefactoringFirstWithBatch/cells/4-Refactoring_4-Refactoring+9-BatchFirst_free/2022-1c-parcial1/20260917-044727-26742
+    installing the run's package ISW1-2022-1C-Parcial-1
+    acceptance test classes: FormulaOneTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260917-044727-26742: 4-Refactoring / 4-Refactoring+9-BatchFirst / free / 2022-1c-parcial1
+  acceptance         25/25 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 95.7%, by the agent's tests None
+  test smells        5
+  model              14 classes, 93 methods, 1.85 sends/method, 1 over 10, ifs 5, nil checks 0, type checks 0
+  diff               +49 methods, ~38 changed, -11 removed; classes +10 -0
+  tool calls         14 by the agent, 1 errors, evaluate kinds {'other': 3, 'reflection': 1}
+  mentor             59 findings {'Keyword message send format': 18, 'Method complexity': 15, 'No empty method categories': 10, 'Move helper method to the right class': 4, 'Avoid setters': 3, 'No class-name prefix in names': 3, 'Instance creation format': 2, 'Instance variables read & written': 1, 'One initialize message doing only assignments': 1, 'No extra parenthesis': 1, 'ifEmpty: over isEmpty ifTrue:': 1}
+  agent              claude-opus-5 effort high, 239s, cost $1.6797455, tokens in 34 cache-read 901,881 out 26,731
+  refactorings       13 done by hand {'manualExtractMethod': 8, 'manualRename': 1, 'manualExtractFromSimilarCode': 4}, 13 while a tool was available, 0 right after the tool failed; 11 refactoring tool calls, 0 of them failed; 3 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/015-RefactoringFirstWithBatch/cells/4-Refactoring_4-Refactoring+9-BatchFirst_free/2022-1c-parcial1/20260917-044727-26742/analysis.json

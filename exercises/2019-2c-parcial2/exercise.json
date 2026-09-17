@@ -1,0 +1,25 @@
+{
+  "name": "2019-2c-parcial2",
+  "title": "Mars Rover with Ground Sensor and Safe Movement",
+  "kind": "feature",
+  "package": "MarsRover-IS1-2Parcial-2c2019",
+  "description": "A Mars Rover that processes command strings (f, b, l, r) with polymorphic headings is given. The student must add single-digit command repetition (digit + 2 times), a ground sensor with Earth/Ice/Rock ground types that change or forbid movement, and a parenthesized 'safe movement' state that undoes all movements when anything fails inside it.",
+  "startingPackages": ["starting/MarsRover-IS1-2Parcial-2c2019.st"],
+  "solutionPackages": ["solution/MarsRover-IS1-2Parcial-2c2019-Solucion-Video.st"],
+  "acceptanceTests": null,
+  "source": "2019-2c/2doParcial",
+  "semester": "2019-2c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Three orthogonal features interact: ground types must become polymorphic objects returned by an injected sensor (with randomness on ice to control in tests), safe/unsafe processing is a state machine with parenthesis parsing and nested/unterminated error cases, and undo requires recording inverse movements per heading."
+  },
+  "sizeHint": {"classesInStartingCode": 13, "methodsInStartingCode": 68}
+}

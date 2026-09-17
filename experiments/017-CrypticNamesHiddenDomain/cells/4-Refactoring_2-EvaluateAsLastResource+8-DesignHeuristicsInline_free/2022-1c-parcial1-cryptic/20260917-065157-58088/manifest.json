@@ -1,0 +1,164 @@
+{
+  "experiment": "017-CrypticNamesHiddenDomain",
+  "runId": "20260917-065157-58088",
+  "warmUp": "classes 1 run 25 passed 25 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-parcial1-cryptic",
+  "package": "Task2",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 017-CrypticNamesHiddenDomain, repetition 2",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:10Z",
+    "imageSha256": "b5f4b366a56949d0350d29a2756efc4fed4b2a6aa266163385aaa745d6efa3a5"
+  },
+  "toolsServed": 74,
+  "toolDefinitionBytes": 69457,
+  "hashes": {
+    "prompt.md": "e8efac97ce7743107ec34a6a8844d7f49eb3a0b2702acab2d3f5baa7a22f148f",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "b063dca249f3776a66c87912c8ec31cca550a614644a15c80c6d6a2edd00e645",
+    "skills": {}
+  },
+  "port": 55362,
+  "startedAt": "2026-09-17T09:51:59Z",
+  "endedAt": "2026-09-17T09:57:13Z",
+  "elapsedSeconds": 314,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 36,
+    "agentCalls": 34
+  },
+  "changesBytesAtStart": 5198805,
+  "changesBytesAtEnd": 5237720,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.8218,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 20,
+        "cache_write_5m": 0,
+        "cache_write_1h": 62069,
+        "cache_read": 484053,
+        "output": 38361,
+        "thinking": 22001,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 10,
+        "cost_usd": 1.8218415
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_batch": 2,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_implementors_of": 1,
+      "mcp__Cuis__smalltalk_method_source": 1,
+      "mcp__Cuis__smalltalk_run_test_class": 2,
+      "mcp__Cuis__smalltalk_define_methods": 2,
+      "mcp__Cuis__smalltalk_define_class": 1,
+      "mcp__Cuis__smalltalk_package_definition": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 12,
+    "durationMs": 312286,
+    "durationApiMs": 307599,
+    "totalCostUsd": 1.8218415,
+    "usage": {
+      "input_tokens": 20,
+      "cache_creation_input_tokens": 62069,
+      "cache_read_input_tokens": 484053,
+      "output_tokens": 38361,
+      "output_tokens_details": {
+        "thinking_tokens": 22001
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 62069,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1600,
+          "cache_read_input_tokens": 80916,
+          "cache_creation_input_tokens": 475,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 475
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 20,
+        "outputTokens": 38361,
+        "cacheReadInputTokens": 484053,
+        "cacheCreationInputTokens": 62069,
+        "webSearchRequests": 0,
+        "costUSD": 1.8218415,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 22001,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I've refactored the model in the image. The code is in category `Task2` and the tests are in `Task2-Tests`. All 26 tests pass: the original 25, rewritten, plus one new test. I haven't saved the package or the image.\n\nI kept the class names `C1`\u2013`C4` and the test class `C5`, because the assignment refers to the classes by those names. I renamed every method and variable, though, and deleted the old ones, so anything outside this package that calls the old names like `m50` or `m51:a51:` will break.\n\n**Name changes**\n| Class | Old | New |\n|---|---|---|\n| `C1` (car) | `m15:`, `m1`, `m5`, `m7`, `m9`, `m10:`, `m11` | `drivenBy:`, `activateTurbo`, `deactivateTurbo`, `isTurboActivated`, `speed`, `changeSpeedTo:`, `distanceTraveled` |\n| `C2` (race) | `m24:a24:`, `m19:`, `m18:`, `m48:`, `m50`, `m51:a51:` | `on:laps:`, `advance:`, `positionOf:`, `sectorOf:`, `length`, `put:at:` |\n| `C3` (sector) | `m44:`, `m45:`, `m49`, `m50`, `m51:a51:`, `m52:` | `turboEnabledOfLength:`, `turboDisabledOfLength:`, `cars`, `length`, `put:at:`, `positionOf:` |\n| `C4` (track) | `m56:`, `m49`, `m50`, `m51:a51:`, `m52:`, `m53:a53:` | `withSectors:`, `cars`, `length`, `put:at:`, `positionOf:`, `sectorOf:ifNone:` |\n\nThe error messages are now class-side methods with descriptive names, such as `C3 noCarToOvertakeErrorDescription`. The texts themselves (`'S1'` to `'S12'`) are unchanged.\n\n**1. Ifs replaced by polymorphism**\n- **Turbo states:** the car's on/off flag and use counter are gone. The car now holds a Turbo object that is either activated or deactivated. `Turbo unused` builds the chain of states from the boosts 12/10, 11/10 and 105/100. Once those are used up, activating the turbo still works but adds no speed, which matches the original.\n- **Sectors:** the \"turbo enabled\" flag on `C3` became two subclasses, `TurboEnabledSector` and `TurboDisabledSector`. Each answers `assertCanUseTurbo:` its own way, and only the enabled one looks for a car ahead within one second.\n\n**2. The methods the tech lead listed**\n- **`C2 advance:`** goes through `track cars` with `do:`.\n- **`C4`:**\n  - `cars` uses `inject:into:`.\n  - `includes:` uses `anySatisfy:`.\n  - `length` uses `sum:ifEmpty:`.\n  - `sectorOf:ifNone:` uses `detect:ifNone:`.\n  - `positionOf:` and `put:at:` now rely on two small helpers, `startOf:` and `sectorAt:`, instead of index loops.\n\n**3. Test duplication**\n- Tests 20\u201323 are now one line each, calling `assertSpeedAfterActivatingTurbo:timesIs:`.\n- Tests 05, 06, 24 and 25 share `overtakingCarAt:drivingAt:`.\n- Other shared setup went into `tenAndTwentyKilometersSectors`, `raceOn:` and `carDrivenBy:drivingAt:`.\n- Tests are renamed to say what they check (keeping their `testNN` prefix) and now put the actual value first in `assert:equals:`.\n\n**4. Other design changes**\n- **Removed unused code:**\n  - The car's `race` variable and its setter.\n  - The track's unused variable.\n  - `C2`'s error messages `m23` and `m26`.\n  - `C3 m30:` (put a car at a sector's start); the test now uses `put:at:`.\n- **Race creation:** `C2`'s third creation argument (the cars) is gone. All it did was set that unused `race` variable, and the cars already live on the track.\n- **Creation paths:** each class now has a single creation method that runs the checks, and the others delegate to it.\n- **New check:** a race now refuses a lap count of zero or less. Test 26 covers it, and its error text is a real sentence rather than an `'S\u2026'` code.\n- **Categories:** all methods are sorted into them.\n\nTwo things I left alone. A car that hasn't been placed on a sector still has no sector, so calling `activateTurbo` on it fails with a \"message not understood\" error. And the car's `driver` is still stored but never read."
+  }
+}

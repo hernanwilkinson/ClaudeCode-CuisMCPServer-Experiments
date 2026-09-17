@@ -1,0 +1,178 @@
+{
+  "experiment": "014-LiveTypingFiveRuns",
+  "runId": "20260917-024928-14557",
+  "warmUp": "classes 3 run 39 passed 39 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "6-LiveTypingRefactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "5-LiveTyping",
+    "6-LiveTypingRefactoring",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2024-1c-parcial1",
+  "package": "ISW1-2024-1C-Parcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 014-LiveTypingFiveRuns, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "6-LiveTypingRefactoring",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8185.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-6-LiveTypingRefactoring.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping",
+      "MCPServerLiveTypingRefactorings",
+      "MCPServerExtraLiveTypingRefactorings"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools",
+      "MCPLiveTypingTools"
+    ],
+    "decorators": [
+      "MCPActualImplementorsDecorator",
+      "MCPActualSendersDecorator",
+      "MCPInstanceVariableTypesDecorator",
+      "MCPMethodTypesDecorator",
+      "MCPAddParameterInActualScopeDecorator",
+      "MCPChangeKeywordsOrderInActualScopeDecorator",
+      "MCPExtractAsParameterInActualScopeDecorator",
+      "MCPInlineMethodInActualScopeDecorator",
+      "MCPRemoveParameterInActualScopeDecorator",
+      "MCPRenameSelectorInActualScopeDecorator",
+      "MCPExtractParameterObjectInActualScopeDecorator",
+      "MCPMoveInstanceVariableInActualScopeDecorator",
+      "MCPMoveMethodInActualScopeDecorator"
+    ],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:49Z",
+    "imageSha256": "f18f5b9ab96213d997107ebe156692b8acfcb7f15307fa051d56092f86a3e87f"
+  },
+  "toolsServed": 81,
+  "toolDefinitionBytes": 84353,
+  "hashes": {
+    "prompt.md": "4e9791830c14896706ba46609ad95a18a06d89d868d5153f3d9444768edf10a2",
+    "CLAUDE.md": "aa86360510bcc65cafd053831b3bebd741b6f1308b7ca98849d2b5e257d96c4d",
+    "spec.md": "8199582ea987c4a9cb945359dab13e0a3aefb3fa2154571c3b009e0e31fbf09f",
+    "skills": {}
+  },
+  "port": 50066,
+  "startedAt": "2026-09-17T05:49:31Z",
+  "endedAt": "2026-09-17T05:53:01Z",
+  "elapsedSeconds": 210,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 43,
+    "agentCalls": 41
+  },
+  "changesBytesAtStart": 8705835,
+  "changesBytesAtEnd": 8733674,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.4528,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 26,
+        "cache_write_5m": 0,
+        "cache_write_1h": 55154,
+        "cache_read": 702631,
+        "output": 21992,
+        "thinking": 7810,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 13,
+        "cost_usd": 1.4527855
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_classes_in_category": 2,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_batch": 8,
+      "mcp__Cuis__smalltalk_method_source": 1,
+      "mcp__Cuis__smalltalk_define_methods": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 14,
+    "durationMs": 208603,
+    "durationApiMs": 172173,
+    "totalCostUsd": 1.4527854999999998,
+    "usage": {
+      "input_tokens": 26,
+      "cache_creation_input_tokens": 55154,
+      "cache_read_input_tokens": 702631,
+      "output_tokens": 21992,
+      "output_tokens_details": {
+        "thinking_tokens": 7810
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 55154,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1323,
+          "cache_read_input_tokens": 77044,
+          "cache_creation_input_tokens": 1691,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1691
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 26,
+        "outputTokens": 21992,
+        "cacheReadInputTokens": 702631,
+        "cacheCreationInputTokens": 55154,
+        "webSearchRequests": 0,
+        "costUSD": 1.4527854999999998,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 7810,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I finished all 8 items, including the bonus. All 39 tests pass (the 36 that were there, plus Room tests 13\u201315, which now run for real instead of inside `shouldFail:`). The model classes are in `ISW1-2024-1C-Parcial`. The three test classes were in that category too, so I moved them to `ISW1-2024-1C-Parcial-Tests`.\n\n**1. Floor creation.** Floors are now made with `Floor withNumberOfRooms:priceList:`, which checks the number of rooms and the prices before creating the floor. The old setters and extra initializers are gone, and `createFloorWith:and:` in both test classes uses the new message.\n\n**2. Hotel creation.** Hotels are made with `Hotel withFloors:`, which checks that there are floors. I removed `setFloors:` and `initialize`, and `createHotel` uses the new message. I also removed the stored `availableRoomsCount`: it was never lowered when a guest arrived with a reservation, and the count is now worked out from the rooms.\n\n**3. Room states.** A room now holds a state object instead of a guest symbol: `AvailableRoomState`, `ReservedRoomState`, or `OccupiedRoomState` (which knows the guest type). All three share an abstract `RoomState`. `nil`, `#reserved` and the old `guest` variable are gone.\n\n**4. No repeated code in Room.** `receive:`, `reserve` and `receiveWithReservation:` are each one line that asks the current state for the next one and passes the error to raise if the change isn't allowed. Room no longer uses `if`s for this.\n\n**5. Encapsulation.** Floor has new messages `receive:atRoom:`, `receiveWithReservation:atRoom:` and `reserveRoom:`. `Floor>>#rooms` is deleted, and nothing uses it anymore.\n- **Changed error message:** since the floor now looks up the room, the \"room number does not exist\" error belongs to Floor. I removed it from Hotel, and Hotel tests 09, 11 and 13 now check `Floor roomNumberDoesNotExistErrorDescription`.\n\n**6. Losses.** I added `Room>>#lossUsing:ifAbsentGuestType:`. An available room loses the highest price, and a reserved or occupied room loses nothing. `Floor>>#totalLosses` and `#totalProfits` now add up this value over their rooms, and `Hotel>>#totalLosses` adds up its floors.\n- **Bug fix:** `Floor class>>#signalUnknownGuestType` was calling `self class unknownGuestTypeErrorDescription` on the class side, which would itself have failed. It now calls `self unknownGuestTypeErrorDescription`.\n\n**7. Hotel methods.**\n- The three guest methods each find the floor with one shared lookup that raises the \"floor does not exist\" error, then pass the request to the floor.\n- The totals, profits and losses are each `floors sum: [ :floor | ... ]`. `sum:` adds peso amounts without needing a zero starting value.\n- `isEmpty` is `floors allSatisfy: [ :floor | floor isAvailable ]`.\n- I kept the small `floors sum:` pattern repeated in each total instead of adding a helper that runs a method by name, because I think that helper would read worse.\n\n**8. Bonus (tests).**\n- No test reaches into `floor rooms` anymore.\n- FloorTest has a helper that builds a floor with two occupied rooms and one reserved room (`createFloorWithTwoRoomsOccupiedAndOneReserved`), used by tests 08 and 09.\n- HotelTest has `createHotelWithOneFloor` for tests 09\u201313, and a shared check, `assertHasNoRoomOccupied:`, that the hotel is untouched after an error.\n- The price list and guest type helpers are still copied in all three test classes. Removing that would need a shared test superclass, which I chose not to add."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "2023-1c-recuperatorio",
+  "title": "Driving assistant V2: lane sensor, turn signal and fuel consumption mode",
+  "kind": "feature",
+  "package": "ISW1-2023-1C-Recuperatorio",
+  "description": "Starting from the working driving assistant (manual, automatic and assisted-manual modes reacting to a front proximity sensor), the student must add a lane position sensor and turn signal handling (lane-departure beep or steering correction depending on the mode, plus a beep when the signal stays on for too long while going straight) and a fuel consumption mode (aggressive, normal, economic) that determines the acceleration sent to the driving system when speeding up.",
+  "startingPackages": ["starting/ISW1-2023-1C-Recuperatorio-CodigoInicial.st"],
+  "solutionPackages": ["solution/ISW1-2023-1C-Recuperatorio-SolucionAlumno.st"],
+  "acceptanceTests": null,
+  "source": "2023-1c/Recuperatorio",
+  "semester": "2023-1c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "The new lane behaviour must be spread over the existing DrivingMode hierarchy (manual beeps, automatic steers, assisted-manual combines both), the turn signal introduces time-dependent state (signal on for 2 minutes / more than 1 minute while going straight, modelled with GregorianDateTime) and the consumption mode adds a third polymorphic axis whose accelerate: only applies in the safe/no-object case of two of the three modes; all 21 provided tests must keep passing."
+  },
+  "sizeHint": {"classesInStartingCode": 12, "methodsInStartingCode": 116}
+}

@@ -1,0 +1,9 @@
+# Source
+
+- Course: `10Pines-Capacitacion/C6 - Construccion de Software Seguro usando Test Driven Development` (Dropbox), directory `Smalltalk/C6-TusLibros-Iteracion2`.
+- Statement: `TusLibros/EjercicioTusLibrosV3.pdf`, restricted to this iteration's scope in `spec.md` (full translation and version notes in `exercises/10pines-c6-tuslibros`); `spec-original.md` holds the Spanish paragraphs that belong to this iteration plus the related slide text.
+- Slides: none defines it; slide 127 (factories of test objects) is applied here (`StoreTestObjectsFactory`).
+- Iteration boundary: determined from `TusLibros-29.st` (last snapshot of the directory) and `TusLibros-30.st` (first of the next one, which adds the Merchant Processor collaborator `throught:` and `test05CashierChargesCreditCardUsingMerchantProcessor`). The instructor's notes `TusLibros/Resolucion de TusLibros.doc` ("Segundo conjunto de tests") match it. The previous guess that this iteration included the Merchant Processor simulation was wrong.
+- `starting/TusLibros-18.st`: copy of the last snapshot of iteration 1 (2 classes, 23 methods, category `TusLibros`). `solution/TusLibros-29.st`: copy of the last snapshot of this directory (8 classes, 50 methods). `solution/steps/TusLibros-19.st` .. `-29.st`: copies of the whole sequence of this iteration.
+- Verification (2026-09-10), fresh copies of `scenarios/2-ModelStructure+Package` (Cuis 7.9), `FileEntry ... fileIn` over the MCP server, `smalltalk_run_tests_in_category` `TusLibros`: starting file `TusLibros-18.st` -> `'OK'`, 8 run, 8 passed, 0 failed, 0 errors. Solution `TusLibros-29.st` (verified as the starting file of iteration 3) -> `'OK'`, 12 run, 12 passed, 0 failed, 0 errors (CartTest 8, CashierTest 4). `Month month:year:`, `DateAndTime now monthIndex` / `yearNumber` exist in Cuis; nothing missing.
+- Removed from the statement: nothing.

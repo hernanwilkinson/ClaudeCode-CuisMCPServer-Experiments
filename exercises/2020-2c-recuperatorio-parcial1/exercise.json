@@ -1,0 +1,25 @@
+{
+  "name": "2020-2c-recuperatorio-parcial1",
+  "title": "Adventure Games III: Hole prototype refactoring",
+  "kind": "refactoring",
+  "package": "ISW1-2020-2C-Recuperatorio-1erParcial",
+  "description": "A graphic adventure engine with rooms, a PlayableCharacter that moves and jumps, portable and non-portable objects, and a prototype Hole StageObject that the character jumps over. The student must remove the duplicated code in HoleTest and in Hole's instance creation, and replace the isKindOf: ifs in Room>>moveFrom:to:, PlayableCharacter>>jump and NonPortableObject class>>assertCanContain: with polymorphism.",
+  "startingPackages": ["starting/ISW1-2020-2C-Recuperatorio-1erParcial.st"],
+  "solutionPackages": [],
+  "acceptanceTests": null,
+  "source": "2020-2c/recuperatorio",
+  "semester": "2020-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "The isKindOf: Hole checks are spread over three classes (Room, PlayableCharacter, NonPortableObject class) and must be turned into messages the whole StageObject hierarchy understands, including the absent-object case in Room and the jump distance computed from the hole's size, while a 62-test suite must keep passing."
+  },
+  "sizeHint": {"classesInStartingCode": 22, "methodsInStartingCode": 188}
+}

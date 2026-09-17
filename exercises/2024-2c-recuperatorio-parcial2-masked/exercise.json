@@ -1,0 +1,29 @@
+{
+  "name": "2024-2c-recuperatorio-parcial2-masked",
+  "title": "Kiln Stacker",
+  "kind": "greenfield",
+  "package": "KilnStacker",
+  "description": "A simplified kiln-stacking simulator on a walled column of at least 4x5 whose state is checked through a string representation: five randomly chosen glazed-tile clusters descend one course per advance, can be moved sideways or dropped, settle on the floor or on other clusters, complete courses are fired and removed for 10 points each and the simulation ends when a new cluster cannot descend. An extension replaces the kiln-limit rule with per-cluster behaviour when hitting a side wall (reappear on the other side, bounce two columns, or return to the initial column).",
+  "startingPackages": [],
+  "solutionPackages": [
+    "solution/2024-2C-Recuperatorio.st",
+    "solution/2024-2C-Recuperatorio-1erY2doParcial.st"
+  ],
+  "acceptanceTests": null,
+  "source": "2024-2c/Recuperatorio",
+  "semester": "2024-2c",
+  "exam": "recuperatorio",
+  "maskedFrom": "2024-2c-recuperatorio-parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Beyond the cluster shapes, the student must model occupied positions, settling, course completion and shifting courses down with collection protocol, the game-over transition, and (in the extension) three different wall-hit behaviours that vary per cluster kind and invite polymorphic collaborators instead of type checks."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

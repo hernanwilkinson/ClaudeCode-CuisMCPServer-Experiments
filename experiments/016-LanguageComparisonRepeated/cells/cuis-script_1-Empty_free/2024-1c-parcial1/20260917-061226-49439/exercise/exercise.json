@@ -1,0 +1,25 @@
+{
+  "name": "2024-1c-parcial1",
+  "title": "Sims Hotels",
+  "kind": "refactoring",
+  "package": "ISW1-2024-1C-Parcial",
+  "description": "A space hotel simulation (Hotel, Floor, Room, guests typed by symbol) written by another team with technical debt. The student must fix instance creation, replace nil/#reserved guest hacks with explicit room states, restore encapsulation between Hotel and Floor, make three failing Room tests pass, and remove duplicated and imperative loop code using collection protocol.",
+  "startingPackages": ["starting/ISW1-2024-1C-Parcial.st"],
+  "solutionPackages": ["solution/ISW1-2024-1C-Parcial-Solucion.st"],
+  "acceptanceTests": null,
+  "source": "2024-1c/1erParcial",
+  "semester": "2024-1c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Room status is encoded as nil guest or a #reserved guest-type symbol and must become explicit state objects, while Hotel iterates floor rooms with index-based whileTrue loops that must be replaced by delegation to Floor and collection messages."
+  },
+  "sizeHint": {"classesInStartingCode": 9, "methodsInStartingCode": 110}
+}

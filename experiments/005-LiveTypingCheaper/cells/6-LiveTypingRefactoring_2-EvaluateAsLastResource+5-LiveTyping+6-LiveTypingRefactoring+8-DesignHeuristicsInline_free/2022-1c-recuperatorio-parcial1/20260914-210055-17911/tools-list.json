@@ -1,0 +1,1989 @@
+[
+  {
+    "name": "smalltalk_delete_class",
+    "description": "Remove several classes from the system in one call, in the order named, and answer the ones removed.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "classNames": {
+          "type": "string",
+          "description": "Names of the classes to remove, separated by commas"
+        }
+      },
+      "required": [
+        "classNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_run_test_class",
+    "description": "Run every test of a test case class and answer how many tests passed, failed and signalled an error, along with the name of each one that failed and each one that signalled.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the test case class"
+        }
+      },
+      "required": [
+        "className"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_change_package_description",
+    "description": "Change what a package describes itself as, which is the line its file carries as its header. Changing it leaves the package with changes to write out.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "packageName": {
+          "type": "string",
+          "description": "Name of the package"
+        },
+        "description": {
+          "type": "string",
+          "description": "What the package describes itself as"
+        }
+      },
+      "required": [
+        "packageName",
+        "description"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_unsaved_packages",
+    "description": "List the packages that hold changes their file does not have yet, which are the ones a change to the image left to be written out.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "smalltalk_refactor_move_instance_variable",
+    "description": "Move an instance variable to another class, which the class it is moved from reaches through an instance variable of its own. It also takes actual as the scope, which moves it to the class LiveTyping saw the instance variable it is reached through hold, so the class it is moved to is found instead of named.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that has the instance variable"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the instance variable to move"
+        },
+        "targetClassName": {
+          "type": "string",
+          "description": "Name of the class to move it to"
+        },
+        "accessingThrough": {
+          "type": "string",
+          "description": "Name of the instance variable that holds the class it is moved to"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        },
+        "scope": {
+          "type": "string",
+          "description": "Send actual to move the instance variable to the class LiveTyping saw accessingThrough hold, which needs no targetClassName. Send nothing to move it to the class named there"
+        }
+      },
+      "required": [
+        "className",
+        "variableName",
+        "targetClassName",
+        "accessingThrough"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_run_tests_in_category",
+    "description": "Run every test of the test case classes of several class categories as one suite and answer how many tests passed, failed and signalled an error, along with the name of each one that failed and each one that signalled. A category holding no test case class contributes the tests that exercise the classes it does hold.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "categoryNames": {
+          "type": "string",
+          "description": "Names of the class categories, separated by commas"
+        }
+      },
+      "required": [
+        "categoryNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_add_as_subclass_responsibility",
+    "description": "Declare a method of a class as the responsibility of its subclasses, adding it to the superclass as a subclassResponsibility.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements it"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_remove_unreferenced_instance_variables",
+    "description": "Remove every instance variable of a class that no method reads or writes.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class, or of its class side as in MCPServer class"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_temporary_to_instance_variable",
+    "description": "Turn a temporary of a method into an instance variable of its class.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the temporary to turn into an instance variable"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "variableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_types_of_instance_variables",
+    "description": "List, for every instance variable of a class, the classes it has held while the image ran. A list of types is led by the class they all inherit from, or by any when the only one they share is Object, and ends with can be nil when nil was assigned too. A capitalized name is a class and a lowercase one is a mark. A variable that held a single class is listed as that class alone.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class, or of its class side as in MCPServer class"
+        }
+      },
+      "required": [
+        "className"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_methods_in_category",
+    "description": "List the selectors a class files under one of its method categories. Name the class side the way it prints, as in MCPServer class.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class, or of its class side as in MCPServer class"
+        },
+        "category": {
+          "type": "string",
+          "description": "Name of the method category"
+        }
+      },
+      "required": [
+        "className",
+        "category"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_search_source",
+    "description": "List the methods whose source code contains a text, case sensitively. Class comments are searched too, and answered as the selector Comment.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Text the source code contains"
+        }
+      },
+      "required": [
+        "text"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_return_types_of_method",
+    "description": "List the classes a method has answered while the image ran. The name self means it answered its receiver. A list of types is led by the class they all inherit from, or by any when the only one they share is Object, and ends with can be nil when nil was assigned too. A capitalized name is a class and a lowercase one is a mark. A variable that held a single class is listed as that class alone.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        }
+      },
+      "required": [
+        "className",
+        "selector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_message_sends_of_method",
+    "description": "List every message send written in a method, in the order they are written, each with the classes LiveTyping saw its receiver hold, the methods the send really reaches, and the classes the send answered. The methods reached are the implementors of the selector in the hierarchy of each class the receiver was seen holding, classes that need not share a hierarchy, because a send in source code reaches whatever its receiver turned out to be. A send to something LiveTyping never saw hold anything reaches no method here, and a send the compiler inlines, such as ifTrue:, is not listed. A list of types is led by the class they all inherit from, or by any when the only one they share is Object, and ends with can be nil when nil was assigned too. A capitalized name is a class and a lowercase one is a mark. A variable that held a single class is listed as that class alone.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        },
+        "sentSelector": {
+          "type": "string",
+          "description": "Selector of the sends to list. Without it every send of the method is listed"
+        }
+      },
+      "required": [
+        "className",
+        "selector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_list_categories",
+    "description": "List all system categories.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "smalltalk_classes_in_category",
+    "description": "List all classes in a specific category.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "description": "Name of the category"
+        }
+      },
+      "required": [
+        "category"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_add_instance_variable",
+    "description": "Add an instance variable to a class.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class to add the instance variable to"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the instance variable to add"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "variableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_safely_remove_class",
+    "description": "Remove a class, refusing when something still refers to it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class to remove"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_evaluate",
+    "description": "Evaluate arbitrary Smalltalk code and return the result.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Smalltalk code to evaluate"
+        }
+      },
+      "required": [
+        "code"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_implementors_of",
+    "description": "List the methods that implement each of several selectors, under the selector, in its methods field. Naming a class adds, in actual, the implementors in the hierarchy of that class, which are the ones a send to an object of it could really reach: the ones implemented by it and by every subclass of the one highest up among its superclasses that implements it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "selectors": {
+          "type": "string",
+          "description": "Selectors the methods implement, separated by commas"
+        },
+        "className": {
+          "type": "string",
+          "description": "Name of the class the selector is sent to. Without it there is nothing to narrow, because every implementor implements it"
+        }
+      },
+      "required": [
+        "selectors"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_change_package_file_name",
+    "description": "Name the file a package is written to, and answer it. A package that was never written, or whose image was moved away from where it was written, does not know one and cannot be saved until it is told.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "packageName": {
+          "type": "string",
+          "description": "Name of the package"
+        },
+        "fileName": {
+          "type": "string",
+          "description": "Absolute path of the .pck.st file the package is written to"
+        }
+      },
+      "required": [
+        "packageName",
+        "fileName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_extract_as_parameter",
+    "description": "Turn a piece of a method into a parameter of it, giving every sender the scope takes in the piece to pass. The piece is named by the text it is written with, or by the interval it occupies. It also takes actual and actualAndPossible as the scope, and actual is the default: only the sends LiveTyping saw really reaching an object of the class of the method, or of one of its subclasses, are changed, and a send of the same name to anything else is left alone. actualAndPossible changes as well the sends LiveTyping could only guess at.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        },
+        "parameterName": {
+          "type": "string",
+          "description": "Name of the parameter to introduce"
+        },
+        "text": {
+          "type": "string",
+          "description": "Text of the piece to extract, looked for in the source of the method"
+        },
+        "start": {
+          "type": "string",
+          "description": "First character of the piece, counting from one. Sent instead of the text"
+        },
+        "stop": {
+          "type": "string",
+          "description": "Last character of the piece"
+        },
+        "scope": {
+          "type": "string",
+          "description": "Where the sends to change are looked for, around the class of the method: class, hierarchy, category, hierarchyAndCategories or system. category is the whole tree of the root class category, which is what a package usually is, but a class category tree does not always have a package of its own. actual is the scope LiveTyping saw, which only it can tell: the sends of the selector that really reached an object of the class of the method, or of one of its subclasses. actualAndPossible takes in as well the sends it could only guess at, whose receiver it never saw hold anything or saw incompletely. Defaults to actual"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "parameterName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_subclasses",
+    "description": "Answer, for each class named, its direct subclasses.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "classNames": {
+          "type": "string",
+          "description": "Names of the classes, separated by commas. A class side is named the way it prints, as in MCPServer class"
+        }
+      },
+      "required": [
+        "classNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_define_methods",
+    "description": "Define or modify several methods in one call, each on its class and under its category. Every method is compiled whatever happens to the others, and the answer says for each one, in the order sent, whether it was defined and its selector, or why it was not.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "methods": {
+          "type": "array",
+          "description": "The methods to define, each with the class, the source and optionally the category",
+          "items": {
+            "type": "object",
+            "properties": {
+              "className": {
+                "type": "string",
+                "description": "Name of the class, or of its class side as in MCPServer class"
+              },
+              "source": {
+                "type": "string",
+                "description": "Full method source including selector"
+              },
+              "category": {
+                "type": "string",
+                "description": "Optional method category. Defaults to as yet unclassified"
+              }
+            },
+            "required": [
+              "className",
+              "source"
+            ]
+          }
+        }
+      },
+      "required": [
+        "methods"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_senders_of",
+    "description": "List the methods that send each of several selectors, under the selector, in its methods field. A method that writes the selector but sends it to something else is one of them, because the text is all this looks at. The answer also carries, in actual, the ones LiveTyping saw really sending it to an object of the class named, or of one of its subclasses; without a class, to an object of any class that implements it. They are the senders a refactoring of the selector has to change. A method in methods and not in actual writes the selector for something else.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "selectors": {
+          "type": "string",
+          "description": "Selectors the methods send, separated by commas"
+        },
+        "className": {
+          "type": "string",
+          "description": "Name of the class the sends to narrow to are sent to. Defaults to every class that implements the selector"
+        }
+      },
+      "required": [
+        "selectors"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_extract_to_method_object",
+    "description": "Turn a method into an object of a new class of its own, which answers what the method did when it is sent the selector it is evaluated with. Everything the method uses is held by the new object: each parameter of the method, each instance variable of its class it reads, each global it names that is not in the system yet, and its receiver when it sends to itself; and the object is created with a message that takes all of them.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method to turn into an object"
+        },
+        "newClassName": {
+          "type": "string",
+          "description": "Name of the class the method becomes"
+        },
+        "evaluationSelector": {
+          "type": "string",
+          "description": "Selector the new object is sent to do what the method did"
+        },
+        "superclassName": {
+          "type": "string",
+          "description": "Name of the superclass of the new class. It has to exist already"
+        },
+        "category": {
+          "type": "string",
+          "description": "Class category to make the new class in. Defaults to the one of the class it came from"
+        },
+        "instanceVariableNames": {
+          "type": "string",
+          "description": "The instance variable the new object holds each thing the method uses in, as pairs of the form variable=instanceVariable separated by commas, self among the variables when the method sends to itself. One left out is held under its own name, and self as receiver"
+        },
+        "instanceCreationMessage": {
+          "type": "string",
+          "description": "The message the new object is created with, as pairs of the form keyword=variable separated by commas, in the order the keywords are sent, one for each thing the method uses. A third part, keyword=variable=parameter, names the parameter of that keyword; without it the parameter is named after the instance variable with an article. Left out to take each in turn under the name of its instance variable: self first, then the parameters of the method, then the instance variables of its class"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "newClassName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_types_of_method_variable",
+    "description": "List the classes a parameter or a temporary of a method has held while the image ran. A list of types is led by the class they all inherit from, or by any when the only one they share is Object, and ends with can be nil when nil was assigned too. A capitalized name is a class and a lowercase one is a mark. A variable that held a single class is listed as that class alone.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the parameter or temporary"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "variableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_push_down_instance_variable",
+    "description": "Move an instance variable of a class down to its subclasses.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that has the instance variable"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the instance variable to push down"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "variableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_actual_implementors_of",
+    "description": "List the implementors of a selector in the hierarchy of a class, which are the methods a send of it to an object of that class could really reach: the ones implemented by the class and by every subclass of the one highest up among its superclasses that implements it. The class does not have to implement the selector itself. What a send written in a method reaches is asked with the message sends of the method instead, because its receiver may have held classes of different hierarchies.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class the selector is sent to"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector that is sent"
+        },
+        "includingPossible": {
+          "type": "string",
+          "description": "Whether a class that answers the selector nowhere is listed too, saying so, true or false"
+        }
+      },
+      "required": [
+        "className",
+        "selector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_save_image",
+    "description": "Save the Smalltalk image to disk.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "smalltalk_class_source",
+    "description": "Read whole classes in one call. For each class named: its definition as it is written, its comment, the source of every method of its instance side under its selector and grouped by category, and under classSide the definition and the methods of its class side. A class side named answers the whole class. A category holding no method is left out.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "classNames": {
+          "type": "string",
+          "description": "Names of the classes, separated by commas. A class side is named the way it prints, as in MCPServer class"
+        }
+      },
+      "required": [
+        "classNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_change_keywords_order",
+    "description": "Reorder the keywords of a selector, moving the arguments of every sender the scope takes in with them. It also takes actual and actualAndPossible as the scope, and actual is the default: only the sends LiveTyping saw really reaching an object of the class of the method, or of one of its subclasses, are changed, and a send of the same name to anything else is left alone. actualAndPossible changes as well the sends LiveTyping could only guess at.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the selector"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector to reorder"
+        },
+        "newSelector": {
+          "type": "string",
+          "description": "Selector with the same keywords in the order wanted"
+        },
+        "scope": {
+          "type": "string",
+          "description": "Where the sends to change are looked for, around the class of the method: class, hierarchy, category, hierarchyAndCategories or system. category is the whole tree of the root class category, which is what a package usually is, but a class category tree does not always have a package of its own. actual is the scope LiveTyping saw, which only it can tell: the sends of the selector that really reached an object of the class of the method, or of one of its subclasses. actualAndPossible takes in as well the sends it could only guess at, whose receiver it never saw hold anything or saw incompletely. Defaults to actual"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "newSelector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_package_definition",
+    "description": "Read the definition of a code package: what it describes itself as, the file it is written to, whether the image holds changes that file does not, what it requires, and the system categories and classes it holds.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "packageName": {
+          "type": "string",
+          "description": "Name of the package"
+        }
+      },
+      "required": [
+        "packageName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_push_down_method_to_subclasses",
+    "description": "Copy a method down into every subclass of the class that implements it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements it"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method to push down"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_references_to_class_variable",
+    "description": "List the methods that refer to a class variable. A subclass sees the class variables of its superclass, so the methods of every subclass are listed too.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class, or of its class side as in MCPServer class"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the class variable"
+        }
+      },
+      "required": [
+        "className",
+        "variableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_list_classes",
+    "description": "List all classes in the system, optionally filtered by prefix.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "prefix": {
+          "type": "string",
+          "description": "Optional prefix to filter class names"
+        }
+      }
+    }
+  },
+  {
+    "name": "smalltalk_method_source",
+    "description": "Read the source code of several methods in one call, each under its name as Class>>#selector, in the source field. The answer also carries what LiveTyping saw while the image ran: the classes the method answered, in returns, and in variables the ones held by each parameter and temporary of it and by each instance variable of its class. A method that has not run has none of either. A list of types is led by the class they all inherit from, or by any when the only one they share is Object, and ends with can be nil when nil was assigned too. A capitalized name is a class and a lowercase one is a mark. A variable that held a single class is listed as that class alone.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "methods": {
+          "type": "string",
+          "description": "The methods, written as Class>>selector and separated by commas. A class side is named the way it prints, as in MCPServer class>>startUp:"
+        }
+      },
+      "required": [
+        "methods"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_actual_senders_of",
+    "description": "List the methods that really send a method: the ones LiveTyping saw sending its selector to an object of the class that implements it, or of one of its subclasses, which are the senders a refactoring of the method has to change. A method that writes the same selector but was seen sending it to anything else is not one of them, which is what tells this apart from listing the senders of a selector.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        },
+        "includingPossible": {
+          "type": "string",
+          "description": "Whether the sends LiveTyping could only guess at, whose receiver it never saw hold anything or saw incompletely, are listed too, true or false"
+        }
+      },
+      "required": [
+        "className",
+        "selector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_screenshot",
+    "description": "Write what the image looks like right now to a JPEG file and answer the name of the file, so that a change to something on screen can be looked at instead of guessed at.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileName": {
+          "type": "string",
+          "description": "Absolute path of the JPEG file to write"
+        }
+      },
+      "required": [
+        "fileName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_extract_method",
+    "description": "Extract a piece of a method into a method of its own and send it instead. The piece is named by the text it is written with, or by the interval it occupies. Only code that is the same as the piece is replaced, and how far it is looked for is what replacing says.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method to extract from"
+        },
+        "newSelector": {
+          "type": "string",
+          "description": "Selector of the method to create, with its keywords, as in totalFor:at:"
+        },
+        "argumentNames": {
+          "type": "string",
+          "description": "Names of the parameters of the new method, separated by commas, in the order of its keywords"
+        },
+        "text": {
+          "type": "string",
+          "description": "Text of the piece to extract, looked for in the source of the method"
+        },
+        "start": {
+          "type": "string",
+          "description": "First character of the piece, counting from one. Sent instead of the text"
+        },
+        "stop": {
+          "type": "string",
+          "description": "Last character of the piece"
+        },
+        "replacing": {
+          "type": "string",
+          "description": "Which pieces the new message replaces: selection for the one named, method for every piece of that method that is the same code, class for every piece of that class, hierarchy for every piece of that class and of all its subclasses. Defaults to selection"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "newSelector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_extract_method_from_similar_code",
+    "description": "Extract a piece of a method into a method of its own and send it wherever code like it is written, whatever differs between them becoming a parameter of it. Unlike extracting a method, the code it replaces is not the same as the piece named, so the new selector takes one keyword for each part that varies.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method to extract from"
+        },
+        "newSelector": {
+          "type": "string",
+          "description": "Selector of the method to create, with one keyword for each part that varies between the pieces"
+        },
+        "argumentNames": {
+          "type": "string",
+          "description": "Names of the parameters of the new method, separated by commas, in the order of its keywords"
+        },
+        "text": {
+          "type": "string",
+          "description": "Text of the piece to extract, looked for in the source of the method"
+        },
+        "start": {
+          "type": "string",
+          "description": "First character of the piece, counting from one. Sent instead of the text"
+        },
+        "stop": {
+          "type": "string",
+          "description": "Last character of the piece"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "newSelector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_search_selectors",
+    "description": "List the selectors that contain a text, which tells whether a message doing what is about to be written already has a name. A * in the text matches any text and a # any character, and several texts can be sent separated by semicolons.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "description": "Text the selector contains"
+        }
+      },
+      "required": [
+        "text"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_insert_superclass",
+    "description": "Insert a new class between a class and its superclass.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class to insert the new one above"
+        },
+        "newClassName": {
+          "type": "string",
+          "description": "Name of the class to insert above it"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "newClassName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_method_sources_in_category",
+    "description": "Read the source of every method a class files under one of its method categories, each under its selector, so that what a category says is read at once instead of a method at a time. Name the class side the way it prints, as in MCPServer class.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class, or of its class side as in MCPServer class"
+        },
+        "category": {
+          "type": "string",
+          "description": "Name of the method category"
+        }
+      },
+      "required": [
+        "className",
+        "category"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_define_class",
+    "description": "Define a new class or modify an existing class definition.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "definition": {
+          "type": "string",
+          "description": "Full class definition expression"
+        }
+      },
+      "required": [
+        "definition"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_delete_method",
+    "description": "Remove several methods of a class in one call, and answer the ones removed. A selector the class does not implement fails the whole call before anything is removed.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class, or of its class side as in MCPServer class"
+        },
+        "selectors": {
+          "type": "string",
+          "description": "Selectors of the methods to remove, separated by commas"
+        }
+      },
+      "required": [
+        "className",
+        "selectors"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_remove_instance_variable",
+    "description": "Remove an instance variable from a class.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that has the instance variable"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the instance variable to remove"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "variableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_hierarchy",
+    "description": "Answer, for each class named, the class and all its superclasses, from the class up to ProtoObject.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "classNames": {
+          "type": "string",
+          "description": "Names of the classes, separated by commas. A class side is named the way it prints, as in MCPServer class"
+        }
+      },
+      "required": [
+        "classNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_find_messages_by_example",
+    "description": "List the messages that answer an expected result when sent to a receiver, which tells whether the image already implements something before it is written. The receiver, the arguments and the expected result are sent as Smalltalk expressions. When the receiver is a collection that is not empty, the enumerating messages taking a block are looked for as well, the block being built from a message its elements understand, so a receiver of #(1 2 3 4) expecting #(1 3) answers select: along with the block it needs.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "receiver": {
+          "type": "string",
+          "description": "Smalltalk expression for the object the message is sent to, such as 'method'"
+        },
+        "expected": {
+          "type": "string",
+          "description": "Smalltalk expression for the result the message has to answer, such as 'methods'"
+        },
+        "arguments": {
+          "type": "string",
+          "description": "Smalltalk expression answering an Array with the arguments to send, such as #(4). Defaults to sending none"
+        }
+      },
+      "required": [
+        "receiver",
+        "expected"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_save_package",
+    "description": "Write a package to its file and answer the name of the file it was written to.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "packageName": {
+          "type": "string",
+          "description": "Name of the package"
+        }
+      },
+      "required": [
+        "packageName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_rename_instance_variable",
+    "description": "Rename an instance variable of a class, in every method that uses it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that has the instance variable"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the instance variable to rename"
+        },
+        "newVariableName": {
+          "type": "string",
+          "description": "Name to rename it to"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "variableName",
+        "newVariableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_run_test_method",
+    "description": "Run one test and answer how many tests passed, failed and signalled an error, along with the name of each one that failed and each one that signalled.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        }
+      },
+      "required": [
+        "className",
+        "selector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_package_of_class",
+    "description": "Answer the package a class belongs to, which is the one a change to the class leaves with changes to write out.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class, or of its class side as in MCPServer class"
+        }
+      },
+      "required": [
+        "className"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_rename_global",
+    "description": "Rename a global, in every method that names it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "globalName": {
+          "type": "string",
+          "description": "Name of the global to rename"
+        },
+        "newGlobalName": {
+          "type": "string",
+          "description": "Name to rename it to"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "globalName",
+        "newGlobalName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_push_up_method",
+    "description": "Move a method up to the superclass of the class that implements it. The methods of that class it sends to itself, which the superclass does not implement, can go up with it, and a sibling class implementing the same method the same way can lose its copy.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements it"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method to push up"
+        },
+        "pushingUpDependantMethods": {
+          "type": "string",
+          "description": "Whether the methods of the class this one sends to itself, directly or through them, and the superclass does not implement, are pushed up with it, true or false"
+        },
+        "removingEquivalentMethodsFromSiblings": {
+          "type": "string",
+          "description": "Whether a sibling class that implements a pushed up method the same way loses its copy, true or false"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_class_definition",
+    "description": "Read the definition of several classes in one call: for each, its superclass, its instance and class variables, its selectors and its comment. The answer also carries, in instanceVariableTypes, the classes LiveTyping saw each instance variable hold while the image ran. A variable of code that has not run holds none. A list of types is led by the class they all inherit from, or by any when the only one they share is Object, and ends with can be nil when nil was assigned too. A capitalized name is a class and a lowercase one is a mark. A variable that held a single class is listed as that class alone.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "classNames": {
+          "type": "string",
+          "description": "Names of the classes, separated by commas. A class side is named the way it prints, as in MCPServer class"
+        }
+      },
+      "required": [
+        "classNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_move_method",
+    "description": "Move a method to the class of the object it will be sent to, which the class it is moved from reaches through the receiver named: a variable of its own or of the method, or a global. A class is a global, so a method moved to a class becomes a class method of it. When the moved method still needs what it was moved from, it is given as a parameter named here. It also takes actual as the scope, which moves the method to the class LiveTyping saw the variable it is sent to hold, so that class is found instead of named. A global is moved to the way the tool it decorates does, because its class is already known.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method to move"
+        },
+        "receiver": {
+          "type": "string",
+          "description": "What the moved method is sent to from the class it is moved from: an instance variable, a class variable or a parameter of the method, holding an object of the class named in targetClassName, or a global, to the class of whose object the method goes. A class is a global, and a method moved to one becomes a class method of it"
+        },
+        "targetClassName": {
+          "type": "string",
+          "description": "Name of the class the method is moved to, which is the class of the object the receiver holds. Needed when the receiver is a variable; left out when it is a global, whose class is where the method goes"
+        },
+        "extraParameterName": {
+          "type": "string",
+          "description": "Name of the parameter the moved method takes to reach what it was moved from. Left out when it needs none"
+        },
+        "extraParameterKeyword": {
+          "type": "string",
+          "description": "Keyword the moved method takes that parameter with, when it is a keyword selector that needs a new keyword for it. Left out otherwise"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        },
+        "scope": {
+          "type": "string",
+          "description": "Send actual to move the method to the class LiveTyping saw the variable named as receiver hold, which needs no targetClassName. Send nothing to move it to the class named there, or to the class of the global named as receiver"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "receiver"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_method_sources_of_class",
+    "description": "Read the source of every method of a class, each under its selector and grouped by the method category it is filed under, in the order the class holds its categories, so that a whole class is read at once. A category holding no method is left out. Name the class side the way it prints, as in MCPServer class.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class, or of its class side as in MCPServer class"
+        }
+      },
+      "required": [
+        "className"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_classify_methods",
+    "description": "File methods of a class under a method category, making the category when the class does not have it yet and taking away the ones they left behind when nothing else is filed under them. Answers where each method was filed before, which is what nothing says once it has moved.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class, or of its class side as in MCPServer class"
+        },
+        "selectors": {
+          "type": "string",
+          "description": "Selectors of the methods to file, separated by commas"
+        },
+        "category": {
+          "type": "string",
+          "description": "Name of the method category to file them under"
+        }
+      },
+      "required": [
+        "className",
+        "selectors",
+        "category"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_run_tests_for_classes",
+    "description": "Run the tests of several classes as one suite and answer how many tests passed, failed and signalled an error, along with the name of each one that failed and each one that signalled. A class that is not a test case class contributes the tests that exercise it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "classNames": {
+          "type": "string",
+          "description": "Names of the classes, separated by commas"
+        }
+      },
+      "required": [
+        "classNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_change_package_requirements",
+    "description": "Change the packages a package requires, replacing the ones it required with the ones named, and answer what it requires now. Each requirement asks for any version.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "packageName": {
+          "type": "string",
+          "description": "Name of the package"
+        },
+        "requiredPackageNames": {
+          "type": "string",
+          "description": "Names of the packages it requires, separated by commas. An empty text leaves it requiring nothing"
+        }
+      },
+      "required": [
+        "packageName",
+        "requiredPackageNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_inline_method",
+    "description": "Replace the sends of a method by what the method does: every send the scope takes in, or one send alone when it is named by the method it is written in and by the text of its selector there, or the interval that selector occupies. The text has to fall on the selector of the send and not on its receiver. A send inside the method being inlined is left alone. It also takes actual and actualAndPossible as the scope, and actual is the default: every send LiveTyping saw really reaching an object of the class that implements the method is inlined, and with actualAndPossible the sends it could only guess at as well. A send named by its sending method is inlined alone whatever the scope.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method to inline"
+        },
+        "scope": {
+          "type": "string",
+          "description": "Where the sends to change are looked for, around the class of the method: class, hierarchy, category, hierarchyAndCategories or system. category is the whole tree of the root class category, which is what a package usually is, but a class category tree does not always have a package of its own. actual is the scope LiveTyping saw, which only it can tell: the sends of the selector that really reached an object of the class of the method, or of one of its subclasses. actualAndPossible takes in as well the sends it could only guess at, whose receiver it never saw hold anything or saw incompletely. Defaults to actual"
+        },
+        "senderClassName": {
+          "type": "string",
+          "description": "Name of the class whose method has the one send to inline. Left out to inline every send the scope takes in"
+        },
+        "senderSelector": {
+          "type": "string",
+          "description": "Selector of the method that has the one send to inline"
+        },
+        "text": {
+          "type": "string",
+          "description": "Text of the selector of the one send, looked for in the source of the sending method"
+        },
+        "start": {
+          "type": "string",
+          "description": "First character of the selector of the one send, counting from one. Sent instead of the text"
+        },
+        "stop": {
+          "type": "string",
+          "description": "Last character of it"
+        },
+        "removeMethod": {
+          "type": "string",
+          "description": "Whether the method is taken away once its sends are inlined, true or false"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_references_to_instance_variable",
+    "description": "List the methods that read or write an instance variable. A subclass sees the instance variables of its superclass, so the methods of every subclass are listed too.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that has the instance variable"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the instance variable"
+        }
+      },
+      "required": [
+        "className",
+        "variableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_extract_to_temporary",
+    "description": "Extract a piece of a method into a temporary of it. The piece is named by the text it is written with, or by the interval it occupies. Replacing all of them replaces every piece that is the same expression, which is found in the parse tree and so does not include a comment or a string saying the same.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the temporary to extract into"
+        },
+        "text": {
+          "type": "string",
+          "description": "Text of the piece to extract, looked for in the source of the method"
+        },
+        "start": {
+          "type": "string",
+          "description": "First character of the piece, counting from one. Sent instead of the text"
+        },
+        "stop": {
+          "type": "string",
+          "description": "Last character of the piece"
+        },
+        "replaceAll": {
+          "type": "string",
+          "description": "Whether every piece that is the same expression is replaced, true or false. Defaults to replacing only the one named"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "variableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_rename_selector",
+    "description": "Rename a selector, in the implementors and the senders the scope takes in around the class of the method named. It also takes actual and actualAndPossible as the scope, and actual is the default: only the sends LiveTyping saw really reaching an object of the class of the method, or of one of its subclasses, are changed, and a send of the same name to anything else is left alone. actualAndPossible changes as well the sends LiveTyping could only guess at.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the selector"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector to rename"
+        },
+        "newSelector": {
+          "type": "string",
+          "description": "Selector to rename it to"
+        },
+        "scope": {
+          "type": "string",
+          "description": "Where the sends to change are looked for, around the class of the method: class, hierarchy, category, hierarchyAndCategories or system. category is the whole tree of the root class category, which is what a package usually is, but a class category tree does not always have a package of its own. actual is the scope LiveTyping saw, which only it can tell: the sends of the selector that really reached an object of the class of the method, or of one of its subclasses. actualAndPossible takes in as well the sends it could only guess at, whose receiver it never saw hold anything or saw incompletely. Defaults to actual"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "newSelector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_remove_parameter",
+    "description": "Remove a parameter from a selector, in the implementors and the senders the scope takes in. It is refused when an implementor still uses the parameter. It also takes actual and actualAndPossible as the scope, and actual is the default: only the sends LiveTyping saw really reaching an object of the class of the method, or of one of its subclasses, are changed, and a send of the same name to anything else is left alone. actualAndPossible changes as well the sends LiveTyping could only guess at.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the selector"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector to remove the parameter from"
+        },
+        "parameterName": {
+          "type": "string",
+          "description": "Name of the parameter to remove"
+        },
+        "parameterIndex": {
+          "type": "string",
+          "description": "Position of the parameter, counting from one. Defaults to the first"
+        },
+        "scope": {
+          "type": "string",
+          "description": "Where the sends to change are looked for, around the class of the method: class, hierarchy, category, hierarchyAndCategories or system. category is the whole tree of the root class category, which is what a package usually is, but a class category tree does not always have a package of its own. actual is the scope LiveTyping saw, which only it can tell: the sends of the selector that really reached an object of the class of the method, or of one of its subclasses. actualAndPossible takes in as well the sends it could only guess at, whose receiver it never saw hold anything or saw incompletely. Defaults to actual"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "parameterName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_class_organization",
+    "description": "List, for each class named, its method categories, each with the selectors filed under it, in the order the class holds them. Name the class side the way it prints, as in MCPServer class.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "classNames": {
+          "type": "string",
+          "description": "Names of the classes, separated by commas. A class side is named the way it prints, as in MCPServer class"
+        }
+      },
+      "required": [
+        "classNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_list_packages",
+    "description": "List the code packages installed in the image, each with what it describes itself as and whether it holds changes its file does not have yet, optionally filtered by prefix.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "prefix": {
+          "type": "string",
+          "description": "Optional prefix to filter package names"
+        }
+      }
+    }
+  },
+  {
+    "name": "smalltalk_refactor_push_up_instance_variable",
+    "description": "Move an instance variable of a class up to its superclass.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that has the instance variable"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the instance variable to push up"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "variableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_push_down_method_to_one_subclass",
+    "description": "Move a method down into one subclass of the class that implements it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements it"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method to push down"
+        },
+        "subclassName": {
+          "type": "string",
+          "description": "Name of the subclass to push it down to"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "subclassName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_extract_parameter_object",
+    "description": "Gather some of the parameters of a method into an object of a new class, which the method then takes in their place, in the senders the scope takes in. The parameters are named, not numbered: where each one stands is what the method already says. It also takes actual and actualAndPossible as the scope, and actual is the default: only the sends LiveTyping saw really reaching an object of the class of the method, or of one of its subclasses, are changed, and a send of the same name to anything else is left alone. actualAndPossible changes as well the sends LiveTyping could only guess at.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        },
+        "newClassName": {
+          "type": "string",
+          "description": "Name of the class the parameters are gathered into"
+        },
+        "parameterNames": {
+          "type": "string",
+          "description": "Names of the parameters to gather, separated by commas"
+        },
+        "superclassName": {
+          "type": "string",
+          "description": "Name of the superclass of the new class. It has to exist already"
+        },
+        "category": {
+          "type": "string",
+          "description": "Class category to make the new class in. Defaults to the one of the class it came from"
+        },
+        "scope": {
+          "type": "string",
+          "description": "Where the sends to change are looked for, around the class of the method: class, hierarchy, category, hierarchyAndCategories or system. category is the whole tree of the root class category, which is what a package usually is, but a class category tree does not always have a package of its own. actual is the scope LiveTyping saw, which only it can tell: the sends of the selector that really reached an object of the class of the method, or of one of its subclasses. actualAndPossible takes in as well the sends it could only guess at, whose receiver it never saw hold anything or saw incompletely. Defaults to actual"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "newClassName",
+        "parameterNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_add_parameter",
+    "description": "Add a parameter to a selector, giving every sender the scope takes in the value to pass. A unary selector needs no keyword; a keyword one is told which keyword to add and where. It also takes actual and actualAndPossible as the scope, and actual is the default: only the sends LiveTyping saw really reaching an object of the class of the method, or of one of its subclasses, are changed, and a send of the same name to anything else is left alone. actualAndPossible changes as well the sends LiveTyping could only guess at.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the selector"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector to add the parameter to"
+        },
+        "parameterName": {
+          "type": "string",
+          "description": "Name of the parameter to add"
+        },
+        "parameterValue": {
+          "type": "string",
+          "description": "Expression every sender will pass for it"
+        },
+        "keyword": {
+          "type": "string",
+          "description": "Keyword to add, needed only when the selector is a keyword one"
+        },
+        "parameterIndex": {
+          "type": "string",
+          "description": "Position for the new keyword, counting from one. Defaults to the first"
+        },
+        "scope": {
+          "type": "string",
+          "description": "Where the sends to change are looked for, around the class of the method: class, hierarchy, category, hierarchyAndCategories or system. category is the whole tree of the root class category, which is what a package usually is, but a class category tree does not always have a package of its own. actual is the scope LiveTyping saw, which only it can tell: the sends of the selector that really reached an object of the class of the method, or of one of its subclasses. actualAndPossible takes in as well the sends it could only guess at, whose receiver it never saw hold anything or saw incompletely. Defaults to actual"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "parameterName",
+        "parameterValue"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_move_to_instance_or_class_method",
+    "description": "Move a method from the instance side of a class to its class side, or back.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements it"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method to move"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_package_of_method",
+    "description": "Answer the package a method belongs to, which is the package of its class unless it is filed under a method category naming another one, as an extension of a package is.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        }
+      },
+      "required": [
+        "className",
+        "selector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_types_of_instance_variable",
+    "description": "List the classes an instance variable has held, as LiveTyping saw them while the image ran. A variable of code that has not run yet holds none. A list of types is led by the class they all inherit from, or by any when the only one they share is Object, and ends with can be nil when nil was assigned too. A capitalized name is a class and a lowercase one is a mark. A variable that held a single class is listed as that class alone.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that has the instance variable"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the instance variable"
+        }
+      },
+      "required": [
+        "className",
+        "variableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_rename_class",
+    "description": "Rename a class, in every method that names it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class to rename"
+        },
+        "newClassName": {
+          "type": "string",
+          "description": "Name to rename it to"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "newClassName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_inline_temporary_variable",
+    "description": "Replace a use of a temporary by the value assigned to it. The use is named by the text it is written with, or by the interval it occupies when the text is written more than once.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the temporary to inline"
+        },
+        "text": {
+          "type": "string",
+          "description": "Text of the use to replace, looked for in the source of the method"
+        },
+        "start": {
+          "type": "string",
+          "description": "First character of the use, counting from one. Sent instead of the text"
+        },
+        "stop": {
+          "type": "string",
+          "description": "Last character of the use"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "variableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_references_to_class",
+    "description": "List the methods that refer to each of several classes, under the class name, in its methods field.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "classNames": {
+          "type": "string",
+          "description": "Names of the classes, separated by commas. A class side is named the way it prints, as in MCPServer class"
+        }
+      },
+      "required": [
+        "classNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_rename_temporary",
+    "description": "Rename a temporary or an argument of a method, in every use it has inside it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        },
+        "variableName": {
+          "type": "string",
+          "description": "Name of the temporary to rename"
+        },
+        "newVariableName": {
+          "type": "string",
+          "description": "Name to rename it to"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "selector",
+        "variableName",
+        "newVariableName"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_refactor_extract_class",
+    "description": "Extract instance variables and methods of a class into a new class of its own, which the class they came from reaches through a new instance variable.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class to extract from"
+        },
+        "newClassName": {
+          "type": "string",
+          "description": "Name of the class to create"
+        },
+        "instanceVariableName": {
+          "type": "string",
+          "description": "Name of the instance variable that will hold the new class"
+        },
+        "variableNames": {
+          "type": "string",
+          "description": "Names of the instance variables to extract, separated by commas"
+        },
+        "selectors": {
+          "type": "string",
+          "description": "Selectors of the methods to extract, separated by commas"
+        },
+        "acceptedWarnings": {
+          "type": "string",
+          "description": "Warnings of this refactoring already reviewed, as they were answered. The refactoring goes on through a warning whose description is included here and stops at the first one that is not, answering it instead of applying"
+        }
+      },
+      "required": [
+        "className",
+        "newClassName",
+        "instanceVariableName"
+      ]
+    }
+  }
+]

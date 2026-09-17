@@ -1,0 +1,170 @@
+{
+  "experiment": "007-CrypticNames",
+  "runId": "20260915-204213-74190",
+  "warmUp": "classes 1 run 18 passed 18 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2021-1c-parcial1",
+  "package": "ISW1-2021-1C-1erParcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 007-CrypticNames, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "cuisDevCommit": "7b48a0fb4bdf47feff8ed6b95866efdf587ceba8",
+    "mcpServerCommit": "1d61daa41bbb1feb8ae0ec0569432cc0305f0e9b",
+    "builtAt": "2026-09-14T23:44:15Z",
+    "imageSha256": "553266ab261a210f3c27754bd6b5f87763662950097fb108fef3869fb0e0b378"
+  },
+  "toolsServed": 73,
+  "toolDefinitionBytes": 68037,
+  "hashes": {
+    "prompt.md": "afb2d6580b0f9d185b2153bf9cadf37d3d74ce9ea774e34d77706d0bee93f52c",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "21fa5911027b45c8c6431fa817d407dc17172a7c985b2dfc7d399ebacefe59fb",
+    "skills": {}
+  },
+  "port": 60382,
+  "startedAt": "2026-09-15T23:42:15Z",
+  "endedAt": "2026-09-15T23:50:22Z",
+  "elapsedSeconds": 487,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 113,
+    "agentCalls": 111
+  },
+  "changesBytesAtStart": 5182891,
+  "changesBytesAtEnd": 5210354,
+  "usageFromTranscript": {
+    "totalCostUsd": 2.7123,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 54,
+        "cache_write_5m": 0,
+        "cache_write_1h": 84319,
+        "cache_read": 1663625,
+        "output": 41480,
+        "thinking": 27850,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 27,
+        "cost_usd": 2.7122725
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_classes_in_category": 2,
+      "mcp__Cuis__smalltalk_class_source": 2,
+      "mcp__Cuis__smalltalk_run_test_class": 3,
+      "mcp__Cuis__smalltalk_package_of_class": 1,
+      "mcp__Cuis__smalltalk_method_source": 2,
+      "mcp__Cuis__smalltalk_package_definition": 2,
+      "mcp__Cuis__smalltalk_search_selectors": 2,
+      "mcp__Cuis__smalltalk_delete_class": 1,
+      "mcp__Cuis__smalltalk_define_class": 8,
+      "mcp__Cuis__smalltalk_define_methods": 6,
+      "mcp__Cuis__smalltalk_delete_method": 2,
+      "mcp__Cuis__smalltalk_class_organization": 1,
+      "mcp__Cuis__smalltalk_evaluate": 2,
+      "mcp__Cuis__smalltalk_method_sources_of_class": 1,
+      "mcp__Cuis__smalltalk_save_image": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 37,
+    "durationMs": 486096,
+    "durationApiMs": 480142,
+    "totalCostUsd": 2.7122725,
+    "usage": {
+      "input_tokens": 54,
+      "cache_creation_input_tokens": 84319,
+      "cache_read_input_tokens": 1663625,
+      "output_tokens": 41480,
+      "output_tokens_details": {
+        "thinking_tokens": 27850
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 84319,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1438,
+          "cache_read_input_tokens": 83924,
+          "cache_creation_input_tokens": 395,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 395
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 54,
+        "outputTokens": 41480,
+        "cacheReadInputTokens": 1663625,
+        "cacheCreationInputTokens": 84319,
+        "webSearchRequests": 0,
+        "costUSD": 2.7122725,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 27850,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "The redesign is done and all tests pass (19/19, up from 18 \u2014 one added). The image is saved.\n\n## What changed\n\n**Two hierarchies replaced the two type-switching god-classes.**\n\n`Robot` (abstract) \u2192 `Aluminum3000`, `TankRover`. `Weapon` (abstract) \u2192 `Claw`, `HSBlaster`, `TurboLaserCannon`. The `type` instance variables and the `ofType:` cascades of `ifTrue:` are gone; each subclass just states its own characteristics (`maximumSpeed`, `maximumWeaponWeight`, `weight`, `speedImpact`). Creation is now `Aluminum3000 new` / `Claw new`, with `initialize` doing assignments only, so `'Invalid Robot Type'` can no longer happen.\n\n**`attack:by:` became double dispatch.** The 40-line nest of `type = #X ifTrue:` is now:\n\n```smalltalk\nWeapon>>attack: aVictim by: anAttacker      Aluminum3000>>beAttackedWith: aWeapon by: anAttacker\n    usedTimes := usedTimes + 1.                 ^ aWeapon attackAluminum3000: self by: anAttacker\n    ^ aVictim beAttackedWith: self by: anAttacker\n```\n\nso each weapon states its six-cell rule in one short method, e.g. `TurboLaserCannon>>attackTankRover:by:` is a `reduceLifeBy:` plus `self replaceIn: anAttacker with: HSBlaster afterBeingUsed: 5`. Wearing out is expressed once in `Weapon` (`removeFrom:afterBeingUsed:`, `replaceIn:with:afterBeingUsed:`).\n\n**The `weapons` category lost its repetition.** The `weapons isNil ifTrue: [...]` line repeated in seven methods is gone (`initialize` creates the collection), and the two hand-written `whileTrue:` index loops became `inject:into:`. The robot now tells the truth about the game rules: `speed` is `maximumSpeed - totalSpeedImpact` and `availableWeaponWeight` is `maximumWeaponWeight - totalWeaponWeight`, which makes `assertCanCarry:` read directly as \"does this weapon fit, and does it leave me moving\".\n\nAlso removed: `Robot>>type`, `Weapon>>type`, and the `life:` setter (replaced by `reduceLifeBy:`); `maxWeaponWeight` names spelled out.\n\n**Tests:** `RobotWarsTest` moved to `ISW1-2021-1C-1erParcial-Tests`. Tests 07\u201312 are now one line each through `assertAttacking:with:reducesLifeBy:`, and 13\u201318 share `attackerAfterAttacking:with:times:`. Names with typos were fixed keeping their `testNN` prefix.\n\n## Two judgment calls worth your attention\n\n1. **`test06ShouldAddSpeedImpactWhenAddingWeapons` asserted `totalWeaponWeight`**, not speed impact \u2014 it was a duplicate of `test04` under a wrong name. I made it assert `totalSpeedImpact`. It could not be fixed with its original weapons (`TurboLaserCannon` + `Claw`) because of the point below, so it now uses `TurboLaserCannon` + `HSBlaster` and expects 25 km/h.\n\n2. **`totalSpeedImpact` only counted weapons heavier than 10 kg**, so a `Claw` (exactly 10 kg) contributes nothing \u2014 while `addWeapon:` checks the *declared* `speedImpact` of the weapon being added. No test covered this, and it looks deliberate rather than accidental, so I preserved it exactly instead of silently changing the domain: it is now `Weapon>>speedImpactWhenCarried`, guarded by `slowsDownRobotCarryingIt`, with the one comment in the model explaining it. I added `test19ShouldNotAddSpeedImpactWhenAddedWeaponIsLightEnough` to pin it down, since otherwise the next refactoring would quietly drop it. If that rule is actually a bug, deleting `speedImpactWhenCarried` and that test is the whole fix."
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "experiment": "009-CuisByScripts",
+  "runId": "20260916-095228-4783",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "java-gradle",
+  "language": "java",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "customerimporter",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 009-CuisByScripts, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "gradle": "Gradle 9.7.1",
+  "java": "openjdk version 25.0.1 2025-10-21",
+  "hashes": {
+    "prompt.md": "b5e7b323f34c5602381394a28d0afebfee0cb4e72d5564401735ed332b1446e9",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "60da63f1906a5b4f5860eb0cc40e7e8ee172bbd6539df161cbc1fa9c75ab2d5f"
+  },
+  "startedAt": "2026-09-16T12:52:32Z",
+  "endedAt": "2026-09-16T12:54:20Z",
+  "elapsedSeconds": 108,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "ownTests": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "ImportTest"
+    ],
+    "classesRun": [
+      "customerimporter.ImportTest"
+    ],
+    "classesMissing": [],
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 0.6562,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 12,
+        "cache_write_5m": 0,
+        "cache_write_1h": 32084,
+        "cache_read": 121536,
+        "output": 10982,
+        "thinking": 4177,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 6,
+        "cost_usd": 0.656218
+      }
+    },
+    "toolCalls": {
+      "Bash": 5
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 6,
+    "durationMs": 107275,
+    "durationApiMs": 103795,
+    "totalCostUsd": 0.656218,
+    "usage": {
+      "input_tokens": 12,
+      "cache_creation_input_tokens": 32084,
+      "cache_read_input_tokens": 121536,
+      "output_tokens": 10982,
+      "output_tokens_details": {
+        "thinking_tokens": 4177
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 32084,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1114,
+          "cache_read_input_tokens": 35615,
+          "cache_creation_input_tokens": 902,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 902
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 12,
+        "outputTokens": 10982,
+        "cacheReadInputTokens": 121536,
+        "cacheCreationInputTokens": 32084,
+        "webSearchRequests": 0,
+        "costUSD": 0.656218,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4177,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "I removed the IFs on ID type and zip code type and the repeated validation code by replacing them with class hierarchies. All 29 tests in `ImportTest` pass with `gradle test`, and I didn't change the tests.\n\n## Design\n\n**Identification type** (`Identification`, abstract, with subclasses `DNI` and `CUIT`)\n- `Identification.of(type, number)` picks the subclass that handles the type code and creates it. If none does, it throws `\"Invalid identification type\"`.\n- Each subclass checks its own number in its constructor.\n- Each subclass answers `isDNI()`/`isCUIT()`, `type()`, `number()`, `dniNumberIfNone`/`cuitNumberIfNone` in its own way. The base class's default is to run the \"none\" block, and each subclass overrides only the method for its own type.\n- `Customer` now holds a single `Identification` instead of the `identificationType` + `identificationNumber` strings, and passes these calls on to it.\n\n**Zip code type** (`ZipCode`, abstract, with subclasses `OldZipCode` and `NewZipCode`)\n- It works the same way: `ZipCode.of(string)` picks `OldZipCode` if the code starts with a digit, or `NewZipCode` if it starts with a letter. Each subclass validates the code and answers `isOld`/`isNew`, `value()` and the `\u2026IfNone` methods.\n- `Address` holds a `ZipCode` instead of an `Object`, so the `instanceof` checks are gone.\n\n**Shared pieces that remove the repeated code**\n- **`Subtype<T>`:** a small record that pairs \"can this subclass handle the input?\" with \"create it\", plus a helper that finds the first match or throws. Both hierarchies use it, in the same style as `Environment.current()`.\n- **`Characters`:** `areAllDigits`, `areAllLetters`, `startsWithDigit` and `startsWithLetter`. These replace the `chars().allMatch(...)` code that was copied everywhere.\n- **`assertValid(condition)`:** each base class has this method. It throws the error message defined by the subclass, which replaces the many copies of `if (!\u2026) throw new RuntimeException(\"Invalid \u2026 number\")`.\n\n**Other changes**\n- `importCustomer` and `importAddress` in `CustomerImporter` now just build the objects, for example `Identification.of(record.get(3), record.get(4))` and `ZipCode.of(record.get(4))`.\n- The `identificationType().equals(...) && identificationNumber().equals(...)` check was repeated in `TransientCustomerSystem` and `PersistentCustomerSystem`. Both now call `customer.isIdentifiedAs(type, number)`.\n\n## Worth knowing\n- **Odd error message:** test 29 expects `\"Invalid identification type\"` for an unknown zip code type. The message looks like a copy-paste mistake, but I kept it so the test passes. `ZipCode` reuses the `Identification` message and has a comment saying why.\n- **IFs I left in place:** the remaining ones aren't choices between types. They are guard checks (record size, missing customer), search loops, and the record-type check in `importRecord` (`\"C\"`/`\"A\"`). That last one could be made polymorphic the same way, but it was in the code before the new developer's changes, so I left it alone."
+  }
+}

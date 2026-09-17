@@ -1,0 +1,38 @@
+{
+  "session": "claude-transcript",
+  "subagent_transcripts": 0,
+  "per_model": {
+    "claude-haiku-4-5-20251001": {
+      "input": 298,
+      "cache_write_5m": 0,
+      "cache_write_1h": 17851,
+      "cache_read": 476934,
+      "output": 6159,
+      "thinking": 1312,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 37,
+      "cost_usd": 0.11448839999999999
+    }
+  },
+  "main_only": {
+    "claude-haiku-4-5-20251001": {
+      "input": 298,
+      "cache_write_5m": 0,
+      "cache_write_1h": 17851,
+      "cache_read": 476934,
+      "output": 6159,
+      "thinking": 1312,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 37
+    }
+  },
+  "subagents_only": {},
+  "tool_calls": {
+    "mcp__Cuis__smalltalk_evaluate": 34,
+    "mcp__Cuis__smalltalk_run_test_class": 1,
+    "mcp__Cuis__smalltalk_save_image": 1
+  },
+  "total_cost_usd": 0.1145
+}

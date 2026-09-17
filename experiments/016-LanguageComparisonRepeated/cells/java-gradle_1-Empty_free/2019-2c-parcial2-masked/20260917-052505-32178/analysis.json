@@ -1,0 +1,174 @@
+{
+  "run": "20260917-052505-32178",
+  "language": "java",
+  "scenario": "java-gradle",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2019-2c-parcial2-masked",
+  "package": "surveycrawler",
+  "status": "completed",
+  "acceptance": {
+    "givenTestClasses": [
+      "SurveyCrawlerTest"
+    ],
+    "classesRun": [
+      "surveycrawler.SurveyCrawlerTest"
+    ],
+    "classesMissing": [],
+    "run": 59,
+    "passed": 59,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "agentTests": {
+    "classes": 1,
+    "run": 59,
+    "passed": 59,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "originalTestsAsGiven": {
+    "classes": 1,
+    "run": 16,
+    "passed": 16,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "coverageByAllTests": null,
+  "coverageByAgentTests": null,
+  "testSmells": null,
+  "mentor": {
+    "findings": null
+  },
+  "mentorFindings": null,
+  "model": {
+    "classes": 16,
+    "methods": 114,
+    "linesOfCode": 496,
+    "totals": {
+      "ifs": 10,
+      "switches": 0,
+      "ternaries": 0,
+      "typeChecks": 1,
+      "nilChecks": 0
+    }
+  },
+  "java": {
+    "main": {
+      "files": 16,
+      "linesOfCode": 496,
+      "classes": 16,
+      "methods": 114,
+      "ifs": 10,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 1,
+      "nullChecks": 0,
+      "tests": 0
+    },
+    "test": {
+      "files": 3,
+      "linesOfCode": 417,
+      "classes": 3,
+      "methods": 70,
+      "ifs": 2,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 0,
+      "nullChecks": 0,
+      "tests": 59
+    }
+  },
+  "diff": {
+    "filesAdded": [
+      "src/main/java/surveycrawler/BoulderGround.java",
+      "src/main/java/surveycrawler/CrawlerRunMode.java",
+      "src/main/java/surveycrawler/FirmSandEverywhereSonar.java",
+      "src/main/java/surveycrawler/FirmSandGround.java",
+      "src/main/java/surveycrawler/GroundType.java",
+      "src/main/java/surveycrawler/GuardedRun.java",
+      "src/main/java/surveycrawler/NormalRun.java",
+      "src/main/java/surveycrawler/SiltGround.java",
+      "src/main/java/surveycrawler/Sonar.java",
+      "src/test/java/surveycrawler/FixedRandom.java",
+      "src/test/java/surveycrawler/SimulatedSonar.java"
+    ],
+    "filesChanged": [
+      "src/main/java/surveycrawler/Point.java",
+      "src/main/java/surveycrawler/SurveyCrawler.java",
+      "src/test/java/surveycrawler/SurveyCrawlerTest.java"
+    ],
+    "filesRemoved": [],
+    "linesAdded": 825,
+    "linesRemoved": 6,
+    "methodsBefore": 78,
+    "methodsAfter": 184
+  },
+  "agent": {
+    "mode": "headless",
+    "model": "claude-opus-5",
+    "effort": "high",
+    "elapsedSeconds": 163,
+    "turns": 7,
+    "costUsd": 0.8683095000000001,
+    "tokens": {
+      "input": 12,
+      "cacheWrite": 31851,
+      "cacheRead": 106279,
+      "output": 19864,
+      "thinking": 5112,
+      "requests": 6
+    },
+    "toolsServed": null,
+    "toolDefinitionBytes": null,
+    "toolCalls": 6,
+    "toolCallsPerMinute": 2.21,
+    "toolErrors": 0,
+    "testRunCalls": 2,
+    "firstTestRunAtCall": 5,
+    "filesRead": 0,
+    "filesEdited": 0,
+    "refactoringToolCalls": 0,
+    "evaluateKinds": null,
+    "explorationCallsBeforeFirstChange": 6,
+    "liveTypingToolCalls": 0,
+    "actualScopeRefactoringCalls": 0,
+    "messageNotUnderstoodAnswers": null,
+    "failedTestRuns": null
+  },
+  "refactoringOpportunities": {},
+  "looseChanges": null,
+  "toolCalls": {
+    "agentCalls": 6,
+    "errors": 0,
+    "byTool": {
+      "Bash": {
+        "calls": 6
+      }
+    },
+    "sequence": [
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash"
+    ],
+    "bashCommands": [
+      "find . -type f -not -path './.gradle/*' -not -path './build/*' | head -50 && cat build.gradle* settings.gradle* 2>/dev/null; for f in $(find src -name '*.java'); do echo \"=== $f\"; cat $f; done",
+      "cat CLAUDE.md README.md .mcp.json gradle.properties",
+      "cd /private/tmp/claude-cells/20260917-052505-32178-32178/src/main/java/surveycrawler && python3 - <<'EOF'\np='Point.java'\ns=open(p).read()\ns=s.replace('''    @Override\n    public boolean equals''','''    public Point times(int aNumber) {\n        return new Point(x * aNumber, y * aNumber);\n    }\n\n    public Point negated() {\n        return times(-1);\n    }\n\n    @Override\n    public boolean equals''')\nopen(p,'w').write(s)\nEOF\ncat > Sonar.java <<'EOF'\npackage surveycrawler;\n\npublic interface Sonar {\n\n    GroundType groundTypeAt(Point aPosition);\n}\nEOF\ncat > FirmSandEverywhereSonar.java <<'EOF'\npackage surveycrawler;\n\npublic class FirmSandEverywhereSonar implements Sonar {\n\n    @Override\n    public GroundType groundTypeAt(Point aPosition) {\n        return new FirmSandGround();\n    }\n}\nEOF\ncat > GroundType.java <<'EOF'\npackage surveycrawler;\n\npublic abstract class GroundType {\n\n    // moving\n\n    public abstract void moveTowards(SurveyCrawler aCrawler, Point aDirection);\n\n    // facing\n\n    public abstract void assertCanTurn(SurveyCrawler aCrawler);\n}\nEOF\ncat > FirmSandGround.java <<'EOF'\npackage surveycrawler;\n\npublic class FirmSandGround extends GroundType {\n\n    // moving\n\n    @Override\n    public void moveTowards(SurveyCrawler aCrawler, Point aDirection) {\n        aCrawler.stepTowards(aDirection);\n    }\n\n    // facing\n\n    @Override\n    public void assertCanTurn(SurveyCrawler aCrawler) {\n    }\n}\nEOF\ncat > SiltGround.java <<'EOF'\npackage surveycrawler;\n\npublic class SiltGround extends GroundType {\n\n    // moving\n\n    @Override\n    public void moveTowards(SurveyCrawler aCrawler, Point aDirection) {\n        aCrawler.slideTowards(aDirection);\n    }\n\n    // facing\n\n    @Override\n    public void assertCanTurn(SurveyCrawler aCrawler) {\n    }\n}\nEOF\ncat > BoulderGround.java <<'EOF'\npackage surveycrawler;\n\npublic class BoulderGround extends GroundType {\n\n    // moving\n\n    @Override\n    public void moveTowards(SurveyCrawler aCrawler, Point aDirection) {\n        aCrawler.signalBoulderFound();\n    }\n\n    // facing\n\n    @Override\n    public void assertCanTurn(SurveyCrawler aCrawler) {\n        aCrawler.signalBoulderFound();\n    }\n}\nEOF\ncat > CrawlerRunMode.java <<'EOF'\npackage surveycrawler;\n\npublic abstract class CrawlerRunMode {\n\n    // guarded run\n\n    public abstract void startGuardedRun(SurveyCrawler aCrawler);\n\n    public abstract void finishGuardedRun(SurveyCrawler aCrawler);\n\n    public abstract void assertFinished(SurveyCrawler aCrawler);\n\n    // moving\n\n    public abstract void slideTowards(SurveyCrawler aCrawler, Point aDirection);\n\n    // undoing\n\n    public abstract void recordUndo(Runnable anUndoAction);\n\n    public abstract void recoverFromError(SurveyCrawler aCrawler);\n}\nEOF\ncat > NormalRun.java <<'EOF'\npackage surveycrawler;\n\npublic class NormalRun extends CrawlerRunMode {\n\n    // guarded run\n\n    @Override\n    public void startGuardedRun(SurveyCrawler aCrawler) {\n        aCrawler.runGuarded();\n    }\n\n    @Override\n    public void finishGuardedRun(SurveyCrawler aCrawler) {\n        aCrawler.signalGuardedRunNotStarted();\n    }\n\n    @Override\n    public void assertFinished(SurveyCrawler aCrawler) {\n    }\n\n    // moving\n\n    @Override\n    public void slideTowards(SurveyCrawler aCrawler, Point aDirection) {\n        aCrawler.stepTowards(aDirection.times(aCrawler.slidingDistance()));\n    }\n\n    // undoing\n\n    @Override\n    public void recordUndo(Runnable anUndoAction) {\n    }\n\n    @Override\n    public void recoverFromError(SurveyCrawler aCrawler) {\n    }\n}\nEOF\ncat > GuardedRun.java <<'EOF'\npackage surveycrawler;\n\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic class GuardedRun extends CrawlerRunMode {\n\n    private final List<Runnable> undoActions = new ArrayList<>();\n\n    // guarded run\n\n    @Override\n    public void startGuardedRun(SurveyCrawler aCrawler) {\n        aCrawler.signalNestedGuardedRun();\n    }\n\n    @Override\n    public void finishGuardedRun(SurveyCrawler aCrawler) {\n        aCrawler.runNormally();\n    }\n\n    @Override\n    public void assertFinished(SurveyCrawler aCrawler) {\n        aCrawler.signalUnfinishedGuardedRun();\n    }\n\n    // moving\n\n    @Override\n    public void slideTowards(SurveyCrawler aCrawler, Point aDirection) {\n        aCrawler.signalSiltFoundDuringGuardedRun();\n    }\n\n    // undoing\n\n    @Override\n    public void recordUndo(Runnable anUndoAction) {\n        undoActions.add(anUndoAction);\n    }\n\n    @Override\n    public void recoverFromError(SurveyCrawler aCrawler) {\n        for (int i = undoActions.size() - 1; i >= 0; i--) {\n            undoActions.get(i).run();\n        }\n        aCrawler.runNormally();\n    }\n}\nEOF",
+      "cat > SurveyCrawler.java <<'EOF'\npackage surveycrawler;\n\nimport java.util.Random;\n\npublic class SurveyCrawler {\n\n    private static final int MAXIMUM_SLIDING_DISTANCE = 10;\n    private static final int REPETITIONS_ADDED_TO_DIGIT = 2;\n    private static final char NO_COMMAND = '\\0';\n\n    private Point position;\n    private CrawlerFacing facing;\n    private final Sonar sonar;\n    private final Random random;\n    private CrawlerRunMode runMode;\n\n    // instance creation\n\n    public static SurveyCrawler atFacing(Point aPosition, String aFacingName) {\n        return atFacingWithSonar(aPosition, aFacingName, new FirmSandEverywhereSonar());\n    }\n\n    public static SurveyCrawler atFacingWithSonar(Point aPosition, String aFacingName, Sonar aSonar) {\n        return atFacingWithSonarAndRandom(aPosition, aFacingName, aSonar, new Random());\n    }\n\n    public static SurveyCrawler atFacingWithSonarAndRandom(Point aPosition, String aFacingName, Sonar aSonar, Random aRandom) {\n        return new SurveyCrawler(aPosition, CrawlerFacing.facing(aFacingName), aSonar, aRandom);\n    }\n\n    public static String invalidFacingErrorDescription() {\n        return \"Invalid facing\";\n    }\n\n    // exceptions\n\n    public String invalidCommandErrorDescription() {\n        return \"Invalid command\";\n    }\n\n    public void signalInvalidCommand() {\n        throw new RuntimeException(invalidCommandErrorDescription());\n    }\n\n    public String invalidRepetitionErrorDescription() {\n        return \"Only a, t, h and g commands can be repeated\";\n    }\n\n    public void signalInvalidRepetition() {\n        throw new RuntimeException(invalidRepetitionErrorDescription());\n    }\n\n    public String boulderFoundErrorDescription() {\n        return \"Boulder found\";\n    }\n\n    public void signalBoulderFound() {\n        throw new RuntimeException(boulderFoundErrorDescription());\n    }\n\n    public String siltFoundDuringGuardedRunErrorDescription() {\n        return \"Silt found during guarded run\";\n    }\n\n    public void signalSiltFoundDuringGuardedRun() {\n        throw new RuntimeException(siltFoundDuringGuardedRunErrorDescription());\n    }\n\n    public String nestedGuardedRunErrorDescription() {\n        return \"Can not start a guarded run inside another guarded run\";\n    }\n\n    public void signalNestedGuardedRun() {\n        throw new RuntimeException(nestedGuardedRunErrorDescription());\n    }\n\n    public String guardedRunNotStartedErrorDescription() {\n        return \"Can not finish a guarded run that was not started\";\n    }\n\n    public void signalGuardedRunNotStarted() {\n        throw new RuntimeException(guardedRunNotStartedErrorDescription());\n    }\n\n    public String unfinishedGuardedRunErrorDescription() {\n        return \"Guarded run was not finished\";\n    }\n\n    public void signalUnfinishedGuardedRun() {\n        throw new RuntimeException(unfinishedGuardedRunErrorDescription());\n    }\n\n    // initialization\n\n    private SurveyCrawler(Point aPosition, CrawlerFacing aFacing, Sonar aSonar, Random aRandom) {\n        position = aPosition;\n        facing = aFacing;\n        sonar = aSonar;\n        random = aRandom;\n        runMode = new NormalRun();\n    }\n\n    // facing\n\n    public void faceRight() {\n        facing = new CrawlerFacingRight();\n    }\n\n    public void faceUp() {\n        facing = new CrawlerFacingUp();\n    }\n\n    public void faceDown() {\n        facing = new CrawlerFacingDown();\n    }\n\n    public void faceLeft() {\n        facing = new CrawlerFacingLeft();\n    }\n\n    public void turnCounterClockwise() {\n        groundTypeAt(position).assertCanTurn(this);\n        facing.turnCounterClockwise(this);\n        runMode.recordUndo(() -> facing.turnClockwise(this));\n    }\n\n    public void turnClockwise() {\n        groundTypeAt(position).assertCanTurn(this);\n        facing.turnClockwise(this);\n        runMode.recordUndo(() -> facing.turnCounterClockwise(this));\n    }\n\n    // testing\n\n    public boolean isAtFacing(Point aPosition, String aFacingName) {\n        return position.equals(aPosition) && facing.isFacing(aFacingName);\n    }\n\n    public boolean isRetreatCommand(char aCommand) {\n        return aCommand == 't';\n    }\n\n    public boolean isAdvanceCommand(char aCommand) {\n        return aCommand == 'a';\n    }\n\n    public boolean isTurnCounterClockwiseCommand(char aCommand) {\n        return aCommand == 'g';\n    }\n\n    public boolean isTurnClockwiseCommand(char aCommand) {\n        return aCommand == 'h';\n    }\n\n    public boolean isStartGuardedRunCommand(char aCommand) {\n        return aCommand == '(';\n    }\n\n    public boolean isFinishGuardedRunCommand(char aCommand) {\n        return aCommand == ')';\n    }\n\n    public boolean isRepetitionCommand(char aCommand) {\n        return Character.isDigit(aCommand);\n    }\n\n    public boolean isRepeatableCommand(char aCommand) {\n        return isAdvanceCommand(aCommand)\n            || isRetreatCommand(aCommand)\n            || isTurnClockwiseCommand(aCommand)\n            || isTurnCounterClockwiseCommand(aCommand);\n    }\n\n    // moving\n\n    public void retreat() {\n        facing.retreat(this);\n    }\n\n    public void moveRight() {\n        moveTowards(new Point(1, 0));\n    }\n\n    public void advance() {\n        facing.advance(this);\n    }\n\n    public void moveUp() {\n        moveTowards(new Point(0, 1));\n    }\n\n    public void moveDown() {\n        moveTowards(new Point(0, -1));\n    }\n\n    public void moveLeft() {\n        moveTowards(new Point(-1, 0));\n    }\n\n    public void moveTowards(Point aDirection) {\n        groundTypeAt(position.plus(aDirection)).moveTowards(this, aDirection);\n    }\n\n    public void stepTowards(Point aDisplacement) {\n        position = position.plus(aDisplacement);\n        runMode.recordUndo(() -> position = position.plus(aDisplacement.negated()));\n    }\n\n    public void slideTowards(Point aDirection) {\n        runMode.slideTowards(this, aDirection);\n    }\n\n    public int slidingDistance() {\n        return random.nextInt(MAXIMUM_SLIDING_DISTANCE) + 1;\n    }\n\n    private GroundType groundTypeAt(Point aPosition) {\n        return sonar.groundTypeAt(aPosition);\n    }\n\n    // guarded run\n\n    public void runGuarded() {\n        runMode = new GuardedRun();\n    }\n\n    public void runNormally() {\n        runMode = new NormalRun();\n    }\n\n    // command processing\n\n    public void process(String aSequenceOfCommands) {\n        try {\n            processAll(aSequenceOfCommands);\n        } catch (RuntimeException anError) {\n            runMode.recoverFromError(this);\n            throw anError;\n        }\n    }\n\n    private void processAll(String aSequenceOfCommands) {\n        char lastCommand = NO_COMMAND;\n        for (char aCommand : aSequenceOfCommands.toCharArray()) {\n            if (isRepetitionCommand(aCommand)) {\n                repeat(lastCommand, Character.digit(aCommand, 10) + REPETITIONS_ADDED_TO_DIGIT);\n            } else {\n                processCommand(aCommand);\n            }\n            lastCommand = aCommand;\n        }\n        runMode.assertFinished(this);\n    }\n\n    public void repeat(char aCommand, int aNumberOfTimes) {\n        if (!isRepeatableCommand(aCommand)) {\n            signalInvalidRepetition();\n        }\n        for (int i = 0; i < aNumberOfTimes; i++) {\n            processCommand(aCommand);\n        }\n    }\n\n    public void processCommand(char aCommand) {\n        if (isAdvanceCommand(aCommand)) {\n            advance();\n            return;\n        }\n        if (isRetreatCommand(aCommand)) {\n            retreat();\n            return;\n        }\n        if (isTurnClockwiseCommand(aCommand)) {\n            turnClockwise();\n            return;\n        }\n        if (isTurnCounterClockwiseCommand(aCommand)) {\n            turnCounterClockwise();\n            return;\n        }\n        if (isStartGuardedRunCommand(aCommand)) {\n            runMode.startGuardedRun(this);\n            return;\n        }\n        if (isFinishGuardedRunCommand(aCommand)) {\n            runMode.finishGuardedRun(this);\n            return;\n        }\n\n        signalInvalidCommand();\n    }\n}\nEOF",
+      "cd /private/tmp/claude-cells/20260917-052505-32178-32178/src/test/java/surveycrawler && cat > SimulatedSonar.java <<'EOF'\npackage surveycrawler;\n\nimport java.util.HashMap;\nimport java.util.Map;\n\npublic class SimulatedSonar implements Sonar {\n\n    private final Map<Point, GroundType> groundTypes = new HashMap<>();\n\n    public SimulatedSonar boulderAt(Point aPosition) {\n        groundTypes.put(aPosition, new BoulderGround());\n        return this;\n    }\n\n    public SimulatedSonar siltAt(Point aPosition) {\n        groundTypes.put(aPosition, new SiltGround());\n        return this;\n    }\n\n    @Override\n    public GroundType groundTypeAt(Point aPosition) {\n        return groundTypes.getOrDefault(aPosition, new FirmSandGround());\n    }\n}\nEOF\ncat > FixedRandom.java <<'EOF'\npackage surveycrawler;\n\nimport java.util.Random;\n\npublic class FixedRandom extends Random {\n\n    private final int value;\n\n    public FixedRandom(int aValue) {\n        value = aValue;\n    }\n\n    @Override\n    public int nextInt(int aLimit) {\n        if (value >= aLimit) {\n            throw new IllegalArgumentException(\"Fixed value out of limit\");\n        }\n        return value;\n    }\n}\nEOF\npython3 - <<'EOF'\np='SurveyCrawlerTest.java'\ns=open(p).read()\ns=s.rstrip()\nassert s.endswith('}')\ns=s[:-1].replace('import static org.junit.jupiter.api.Assertions.assertEquals;','import java.util.Random;\\n\\nimport static org.junit.jupiter.api.Assertions.assertEquals;')\ns+='''\n    // repetition\n\n    @Test\n    void test17DigitAfterAdvanceRepeatsItDigitPlusTwoTimes() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        crawler.process(\"a0\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 5), \"Up\"));\n    }\n\n    @Test\n    void test18DigitAfterRetreatRepeatsIt() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        crawler.process(\"t3\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, -4), \"Up\"));\n    }\n\n    @Test\n    void test19DigitAfterTurnClockwiseRepeatsIt() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        crawler.process(\"h1\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Left\"));\n    }\n\n    @Test\n    void test20DigitAfterTurnCounterClockwiseRepeatsIt() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        crawler.process(\"g0\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Right\"));\n    }\n\n    @Test\n    void test21NineIsTheBiggestRepetition() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        crawler.process(\"a9\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 14), \"Up\"));\n    }\n\n    @Test\n    void test22RepetitionOnlyRepeatsTheLastCommand() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        crawler.process(\"ha0a\");\n\n        assertTrue(crawler.isAtFacing(new Point(5, 2), \"Right\"));\n    }\n\n    @Test\n    void test23CanNotStartWithARepetition() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        assertThrowsWithDescription(crawler.invalidRepetitionErrorDescription(), () -> crawler.process(\"3\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test24RepetitionIsASingleDigit() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        assertThrowsWithDescription(crawler.invalidRepetitionErrorDescription(), () -> crawler.process(\"a00\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 5), \"Up\"));\n    }\n\n    @Test\n    void test25CanNotRepeatGuardedRunCommands() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        assertThrowsWithDescription(crawler.invalidRepetitionErrorDescription(), () -> crawler.process(\"()0\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test26CanNotRepeatInvalidCommands() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        assertThrowsWithDescription(crawler.invalidCommandErrorDescription(), () -> crawler.process(\"x0\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    // boulder\n\n    @Test\n    void test27CanNotAdvanceToABoulder() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().boulderAt(new Point(1, 3)));\n\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"a\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test28CanNotRetreatToABoulder() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().boulderAt(new Point(1, 1)));\n\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"t\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test29CanNotTurnCounterClockwiseOnABoulder() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().boulderAt(new Point(1, 2)));\n\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"g\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test30CanNotTurnClockwiseOnABoulder() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().boulderAt(new Point(1, 2)));\n\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"h\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test31BoulderStopsARepetitionWhereItWasFound() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().boulderAt(new Point(1, 5)));\n\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"a3\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 4), \"Up\"));\n    }\n\n    @Test\n    void test32CanMoveAwayFromABoulderPosition() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().boulderAt(new Point(1, 2)));\n\n        crawler.process(\"a\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 3), \"Up\"));\n    }\n\n    // silt\n\n    @Test\n    void test33AdvancingToSiltSlidesTheRandomDistance() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().siltAt(new Point(1, 3)), new FixedRandom(3));\n\n        crawler.process(\"a\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 6), \"Up\"));\n    }\n\n    @Test\n    void test34SlidingOnSiltIsAtLeastOneCell() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().siltAt(new Point(1, 3)), new FixedRandom(0));\n\n        crawler.process(\"a\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 3), \"Up\"));\n    }\n\n    @Test\n    void test35SlidingOnSiltIsAtMostTenCells() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().siltAt(new Point(1, 3)), new FixedRandom(9));\n\n        crawler.process(\"a\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 12), \"Up\"));\n    }\n\n    @Test\n    void test36SlidingOnSiltWithRealRandomEndsBetweenOneAndTenCells() {\n        for (int i = 0; i < 200; i++) {\n            SurveyCrawler crawler = crawlerWith(new SimulatedSonar().siltAt(new Point(1, 3)), new Random());\n\n            crawler.process(\"a\");\n\n            assertTrue(isAtAnyOf(crawler, 3, 12));\n        }\n    }\n\n    @Test\n    void test37RetreatingToSiltSlidesInTheRetreatDirection() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().siltAt(new Point(1, 1)), new FixedRandom(2));\n\n        crawler.process(\"t\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, -1), \"Up\"));\n    }\n\n    @Test\n    void test38SiltDoesNotAffectTurning() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().siltAt(new Point(1, 2)));\n\n        crawler.process(\"hgg\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Left\"));\n    }\n\n    // guarded run\n\n    @Test\n    void test39GuardedRunWithoutProblemsProcessesItsCommands() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        crawler.process(\"(aah)\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 4), \"Right\"));\n    }\n\n    @Test\n    void test40EmptyGuardedRunDoesNothing() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        crawler.process(\"()\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test41BoulderDuringGuardedRunReturnsToInitialPosition() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().boulderAt(new Point(1, 4)));\n\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"(aa)\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test42GuardedRunUndoesTurnsAndMovements() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().boulderAt(new Point(3, 2)));\n\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"(ahtgaha0)\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test43SiltDuringGuardedRunReturnsToInitialPosition() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().siltAt(new Point(2, 3)));\n\n        assertThrowsWithDescription(crawler.siltFoundDuringGuardedRunErrorDescription(), () -> crawler.process(\"(aha)\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test44TurningOnSiltDuringGuardedRunIsAllowed() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().siltAt(new Point(1, 2)));\n\n        crawler.process(\"(hg)\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test45InvalidCommandDuringGuardedRunReturnsToInitialPosition() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        assertThrowsWithDescription(crawler.invalidCommandErrorDescription(), () -> crawler.process(\"(ahx)\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test46InvalidRepetitionDuringGuardedRunReturnsToInitialPosition() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        assertThrowsWithDescription(crawler.invalidRepetitionErrorDescription(), () -> crawler.process(\"(a(3\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test47GuardedRunOnlyUndoesItsOwnCommands() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().boulderAt(new Point(1, 6)));\n\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"aa(aa)\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 4), \"Up\"));\n    }\n\n    @Test\n    void test48ErrorOutsideGuardedRunDoesNotUndoPreviousGuardedRuns() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        assertThrowsWithDescription(crawler.invalidCommandErrorDescription(), () -> crawler.process(\"(aa)ax\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 5), \"Up\"));\n    }\n\n    @Test\n    void test49SeveralGuardedRunsCanBeProcessed() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        crawler.process(\"aha(aagt3)aa(ht)\");\n\n        assertTrue(crawler.isAtFacing(new Point(-3, 5), \"Right\"));\n    }\n\n    @Test\n    void test50ErrorInSecondGuardedRunOnlyUndoesTheSecondOne() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().boulderAt(new Point(1, 7)));\n\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"(aa)a(aa)\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 5), \"Up\"));\n    }\n\n    @Test\n    void test51CanNotNestGuardedRuns() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        assertThrowsWithDescription(crawler.nestedGuardedRunErrorDescription(), () -> crawler.process(\"aa(aa(ht)a)\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 4), \"Up\"));\n    }\n\n    @Test\n    void test52GuardedRunMustBeFinished() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        assertThrowsWithDescription(crawler.unfinishedGuardedRunErrorDescription(), () -> crawler.process(\"a(aa\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 3), \"Up\"));\n    }\n\n    @Test\n    void test53CanNotFinishAGuardedRunThatWasNotStarted() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        assertThrowsWithDescription(crawler.guardedRunNotStartedErrorDescription(), () -> crawler.process(\"a)\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 3), \"Up\"));\n    }\n\n    @Test\n    void test54GuardedRunCanNotBeFinishedTwice() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        assertThrowsWithDescription(crawler.guardedRunNotStartedErrorDescription(), () -> crawler.process(\"(a))\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 3), \"Up\"));\n    }\n\n    @Test\n    void test55GuardedRunDoesNotSpanSeveralProcessCalls() {\n        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), \"Up\");\n\n        assertThrows(RuntimeException.class, () -> crawler.process(\"(a\"));\n        crawler.process(\"(a)\");\n\n        assertTrue(crawler.isAtFacing(new Point(1, 3), \"Up\"));\n    }\n\n    @Test\n    void test56CrawlerKeepsWorkingAfterAFailedGuardedRun() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().boulderAt(new Point(1, 4)));\n\n        assertThrows(RuntimeException.class, () -> crawler.process(\"(aa)\"));\n        crawler.process(\"h(a)\");\n\n        assertTrue(crawler.isAtFacing(new Point(2, 2), \"Right\"));\n    }\n\n    @Test\n    void test57UndoingDoesNotSlideWhenReturningToSilt() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().siltAt(new Point(1, 2)).boulderAt(new Point(1, 4)), new FixedRandom(5));\n\n        assertThrows(RuntimeException.class, () -> crawler.process(\"(aa)\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test58UndoingDoesNotFailWhenStartingOnABoulder() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().boulderAt(new Point(1, 2)).boulderAt(new Point(1, 4)));\n\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"(aa)\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 2), \"Up\"));\n    }\n\n    @Test\n    void test59SlidingOutsideGuardedRunIsNotUndoneByALaterGuardedRun() {\n        SurveyCrawler crawler = crawlerWith(new SimulatedSonar().siltAt(new Point(1, 3)).boulderAt(new Point(1, 7)), new FixedRandom(2));\n\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"a(aa)\"));\n\n        assertTrue(crawler.isAtFacing(new Point(1, 5), \"Up\"));\n    }\n\n    // helpers\n\n    private SurveyCrawler crawlerWith(Sonar aSonar) {\n        return SurveyCrawler.atFacingWithSonar(new Point(1, 2), \"Up\", aSonar);\n    }\n\n    private SurveyCrawler crawlerWith(Sonar aSonar, Random aRandom) {\n        return SurveyCrawler.atFacingWithSonarAndRandom(new Point(1, 2), \"Up\", aSonar, aRandom);\n    }\n\n    private void assertThrowsWithDescription(String anErrorDescription, Runnable aBlock) {\n        RuntimeException anError = assertThrows(RuntimeException.class, aBlock::run);\n\n        assertEquals(anErrorDescription, anError.getMessage());\n    }\n\n    private boolean isAtAnyOf(SurveyCrawler aCrawler, int fromY, int toY) {\n        for (int y = fromY; y <= toY; y++) {\n            if (aCrawler.isAtFacing(new Point(1, y), \"Up\")) {\n                return true;\n            }\n        }\n        return false;\n    }\n}\n'''\nopen(p,'w').write(s)\nEOF\ncd /private/tmp/claude-cells/20260917-052505-32178-32178 && gradle test 2>&1 | tail -30",
+      "f=src/test/java/surveycrawler/SurveyCrawlerTest.java && python3 - \"$f\" <<'EOF'\nimport sys\np=sys.argv[1]; s=open(p).read()\nfor a,b in [('crawler.process(\"h1\");','crawler.process(\"h0\");'),\n            ('crawler.process(\"(a(3\")','crawler.process(\"(a33)\")'),\n            ('boulderAt(new Point(3, 2)));\\n\\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"(ahtgaha0)\"));','boulderAt(new Point(3, 4)));\\n\\n        assertThrowsWithDescription(crawler.boulderFoundErrorDescription(), () -> crawler.process(\"(ahtgaha0)\"));'),\n            ('assertTrue(crawler.isAtFacing(new Point(-3, 5), \"Right\"));','assertTrue(crawler.isAtFacing(new Point(3, -1), \"Right\"));')]:\n    assert s.count(a)==1, a\n    s=s.replace(a,b)\nopen(p,'w').write(s)\nEOF\ngradle test 2>&1 | grep -E \"FAILED|tests completed|BUILD\"; ls build/test-results/test/ && grep -o 'tests=\"[0-9]*\" skipped=\"[0-9]*\" failures=\"[0-9]*\" errors=\"[0-9]*\"' build/test-results/test/*.xml"
+    ]
+  }
+}

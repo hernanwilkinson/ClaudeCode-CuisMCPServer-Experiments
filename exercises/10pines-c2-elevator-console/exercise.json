@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c2-elevator-console",
+  "title": "Elevator status console (Observer)",
+  "kind": "feature",
+  "package": "Elevator-ConsoleExercise",
+  "description": "A finished State-based elevator controller must notify two given views (a text console that logs 'Puerta Cerrandose', 'Cabina Moviendose', etc., and a status view with cabin/door field models) of every cabin and door state change, without the elevator knowing its views. The student must add the Observer mechanism (the course suggests 'active variables') so the 4 ElevatorViewTest tests pass while the 25 elevator tests keep passing.",
+  "startingPackages": ["starting/Elevator-ConsoleExercise.st"],
+  "solutionPackages": ["solution/Elevator-ConsoleExercise-Solution.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C2 - Diseño Avanzado de Software con Objetos II",
+  "semester": "10pines-c2",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "The interesting decision is where the notification lives: the reference solution reifies the two state variables as ActiveVariable objects (observable and polymorphic with their subject through doesNotUnderstand:), so the seven transition methods change from assignment to a message and the views dispatch on the new state with the already given visitor protocol; a student may instead notify from each transition method or add an observer list to Elevator."
+  },
+  "sizeHint": {"classesInStartingCode": 23, "methodsInStartingCode": 145}
+}

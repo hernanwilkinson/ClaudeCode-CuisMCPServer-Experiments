@@ -1,0 +1,149 @@
+{
+  "experiment": "012-ToolsVersusGuidance",
+  "runId": "20260917-012022-25000",
+  "warmUp": "classes 0 run 0 passed 0 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "1-Evaluate+TestRunning",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2025-2c-parcial2",
+  "package": "2025-2C-2doParcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 012-ToolsVersusGuidance, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "1-Evaluate+TestRunning",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-1-Evaluate+TestRunning.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools"
+    ],
+    "decorators": [],
+    "batchTool": false,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:36:33Z",
+    "imageSha256": "6f4ba8e56af704ddbe8385c14ecadb5609c2b844231876cb7facfad16fdb989d"
+  },
+  "toolsServed": 7,
+  "toolDefinitionBytes": 3412,
+  "hashes": {
+    "prompt.md": "6fbd86ffa2ba9e962638dece57f81a8aaaefe41539cb97bfdb6819cce10bbd05",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec.md": "71f3e87522e397b5e9def349ee26605930850702d755de29dddfd592b3c0071c",
+    "skills": {}
+  },
+  "port": 61631,
+  "startedAt": "2026-09-17T04:20:24Z",
+  "endedAt": "2026-09-17T04:23:04Z",
+  "elapsedSeconds": 160,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 2,
+    "agentCallsToLine": 17,
+    "agentCalls": 16
+  },
+  "changesBytesAtStart": 4552229,
+  "changesBytesAtEnd": 4585173,
+  "usageFromTranscript": {
+    "totalCostUsd": 0.8516,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 32,
+        "cache_write_5m": 0,
+        "cache_write_1h": 25811,
+        "cache_read": 233167,
+        "output": 19070,
+        "thinking": 4113,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 16,
+        "cost_usd": 0.8516035
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_evaluate": 14,
+      "mcp__Cuis__smalltalk_run_test_class": 2
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 17,
+    "durationMs": 159265,
+    "durationApiMs": 156335,
+    "totalCostUsd": 0.8516035000000002,
+    "usage": {
+      "input_tokens": 32,
+      "cache_creation_input_tokens": 25811,
+      "cache_read_input_tokens": 233167,
+      "output_tokens": 19070,
+      "output_tokens_details": {
+        "thinking_tokens": 4113
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 25811,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1189,
+          "cache_read_input_tokens": 27046,
+          "cache_creation_input_tokens": 493,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 493
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 32,
+        "outputTokens": 19070,
+        "cacheReadInputTokens": 233167,
+        "cacheCreationInputTokens": 25811,
+        "webSearchRequests": 0,
+        "costUSD": 0.8516035000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4113,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I built the BAJE card system in the running image. All 25 tests in `ISWMetropolitanoTest` pass. I haven't saved the image, so the work is only in memory for now. I can save it if you want.\n\n**Model (`2025-2C-2doParcial`)**\n- **`Stop`**: a name and a distance to the head of the line. `distanceTo:` gives the absolute difference between two stops.\n- **`FareTable`**: a list of \"up to this distance \u2192 this price\" entries (`withFaresUpTo:`). A fixed price is one entry up to `PlusInfinity new` (`withFixedFare:`).\n- **`TransportLine`**: its stops and fare table. It checks that a line has at least two stops, that a stop belongs to the line, that origin and destination are different, and that a direction is the head of the line or the last stop.\n- **Card readers**\n  - `BusCardReader for: aLine` charges with `charge:from:to:on:`.\n  - `SubwayCardReader` and `TrainCardReader` are made with `for: aLine at: aStop`, since they sit at a stop's turnstile. Both charge with `charge:towards:on:`, and the fare is the distance to the direction stop.\n  - `TrainCardReader` also has `chargeExitOf:`, which adjusts the charge to the trip actually made and returns the refund.\n- **`BAJECard`**: holds the balance, the discount and its list of `Trip`s. It refuses to charge more than the balance. Each `Trip` stores its origin, start time, the share of the price paid (1, 1/2 or 0) and the amount charged.\n- **Discounts** (`NoDiscount`, `StudentDiscount`, `RetireeDiscount`): each one gives the share of the price to pay.\n  - **No discount**: full price, or half if it's a transfer.\n  - **Student**: half price Monday to Friday; on weekends, same as no discount.\n  - **Retiree**: the first two trips of each day are free; after that, same as no discount.\n  - Because each discount returns a single share, a student's weekday discount and the transfer discount are never combined.\n\n**Choices I made where the spec is open**\n- **Train exit refund**: it keeps the share paid at entry. A student who paid 300 and gets off at Belgrano gets 100 back, and a retiree's free trip refunds nothing.\n- **Transfers**: a trip that starts **within 2 hours or exactly at 2 hours** after the last trip started counts as a transfer. Transfers can chain.\n- **Retiree's two free trips**: they are the first two trips started that day, whatever line they were on.\n- **Exit time**: `chargeExitOf:` doesn't take a time, because the refund doesn't depend on it.\n\n**Tests (`2025-2C-2doParcial-Tests`)** cover:\n- every example in the statement;\n- fare ranges, and keeping the entry charge when the train exit isn't tapped;\n- the retiree's free trips resetting each day and transfer discounts on their paid trips;\n- chained transfers and the 2-hour cutoff;\n- the train refund keeping the student discount;\n- each validation. These also check that a rejected trip doesn't change the balance."
+  }
+}

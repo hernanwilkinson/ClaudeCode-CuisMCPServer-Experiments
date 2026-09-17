@@ -1,0 +1,9 @@
+!!! SurveyCrawlerTest | tests - guarded run
+test52BoulderInTheMiddleOfARepetitionInGuardedRunReturnsToInitialPosition
+
+	| crawler |
+
+	sonar placeBoulderAt: 1@5.
+	crawler := self crawlerAt: 1@2 facing: #Up.
+
+	self assertProcessing: '(a1)' with: crawler failsWith: crawler boulderFoundErrorDescription leavingItAt: 1@2 facing: #Up

@@ -1,0 +1,26 @@
+==> job 3: rep 1, 1-Evaluate+TestRunning / 1-Empty / exercises/2022-1c-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2022-1c-parcial1/20260910-195340-9250
+    image serving 7 tools on port 63113
+    installing starting/ISW1-2022-1C-Parcial-1.st
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 1800s
+    claude exited with status 0 after 727s, 34 tool calls logged by the server
+    saving the image
+    filing out package ISW1-2022-1C-Parcial-1
+    status completed, turns 35, cost $3.8338824999999987
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2022-1c-parcial1/20260910-195340-9250
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2022-1c-parcial1/20260910-195340-9250
+    installing the run's package ISW1-2022-1C-Parcial-1
+    acceptance test classes: FormulaOneTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260910-195340-9250: 1-Evaluate+TestRunning / 1-Empty / free / 2022-1c-parcial1
+  acceptance         26/26 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 95.6%, by the agent's tests None
+  test smells        0
+  model              12 classes, 96 methods, 1.83 sends/method, 0 over 10, ifs 5, nil checks 0, type checks 0
+  diff               +68 methods, ~59 changed, -22 removed; classes +8 -0
+  tool calls         34 by the agent, 3 errors, evaluate kinds {'other': 6, 'reflection': 13, 'definesCode': 10}
+  mentor             25 findings {'Method complexity': 14, 'No empty method categories': 4, 'Move helper method to the right class': 4, 'Avoid setters': 2, 'Instance variables read & written': 1}
+  agent              claude-opus-5 effort high, 727s, cost $3.8338824999999987, tokens in 64 cache-read 2,220,485 out 66,620
+  refactorings       0 done by hand {}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2022-1c-parcial1/20260910-195340-9250/analysis.json

@@ -1,0 +1,25 @@
+{
+  "name": "2019-1c-recuperatorio-extendido",
+  "title": "Fast Food Store Working Hours (extended)",
+  "kind": "greenfield",
+  "package": "Recu-1c2019",
+  "description": "Extended variant of the working-hours exam: employees register weekly availability as a weekday range or per-weekday slots (weeks must start on Monday, hours on the dot and within 7:00-23:00), sheets answer whether an employee works at a date-time, and the store reports both the uncovered hourly slots of a week and the employees working less than 40 hours. The student must build the model from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/Recuperatorio-SolucionDeVideo.st"],
+  "acceptanceTests": null,
+  "source": "2019-1c",
+  "semester": "2019-1c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "Same polymorphic working-hours design as the base exam plus validated creation (Monday start, whole hours, 7-23 range) and a second store query that sums hours per employee with inject: and filters with select:, which rewards a working-hours abstraction that knows its own duration."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

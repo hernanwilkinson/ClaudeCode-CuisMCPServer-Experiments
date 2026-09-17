@@ -1,0 +1,25 @@
+{
+  "name": "2019-1c-parcial2-extendido",
+  "title": "Personal and Team Calendars (extended)",
+  "kind": "greenfield",
+  "package": "Calendar",
+  "description": "Extended variant of the calendar exam: hierarchical individual and team calendars with one-off, periodically repeating and weekday-repeating events, availability queries, and a first-free-spot search with a configurable minute increment that skips given weekdays. The student must build the model from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/2doParcial-SolucionDeVideo.st", "solution/2doParcial-SolucionConMasTests.st"],
+  "acceptanceTests": null,
+  "source": "2019-1c",
+  "semester": "2019-1c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Adds a third event kind (weekday-based repetition) to the polymorphic event hierarchy and makes the spot search parametric in increment and excluded weekdays, so the search must be designed as a reusable object rather than a hard-coded hourly loop."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

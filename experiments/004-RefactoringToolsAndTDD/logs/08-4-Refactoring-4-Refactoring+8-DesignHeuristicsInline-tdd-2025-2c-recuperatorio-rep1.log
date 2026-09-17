@@ -1,0 +1,26 @@
+==> job 8: rep 1, 4-Refactoring / 4-Refactoring,8-DesignHeuristicsInline / tdd / exercises/2025-2c-recuperatorio
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_tdd/2025-2c-recuperatorio/20260911-163757-57798
+    image serving 73 tools on port 60554
+    installing starting/2025-2C-Recuperatorio-Original.st
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 908s, 189 tool calls logged by the server
+    saving the image
+    filing out package 2025-2C-Recuperatorio
+    status completed, turns 124, cost $6.14912
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_tdd/2025-2c-recuperatorio/20260911-163757-57798
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_tdd/2025-2c-recuperatorio/20260911-163757-57798
+    installing the run's package 2025-2C-Recuperatorio
+    acceptance test classes: TodasLasCombinacionesTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260911-163757-57798: 4-Refactoring / 4-Refactoring+8-DesignHeuristicsInline / tdd / 2025-2c-recuperatorio
+  acceptance         5/5 passed, 0 failed, 0 errors
+  agent tests        14/14 passed, 0 failed, 0 errors
+  coverage           by all tests 96.6%, by the agent's tests 96.6%
+  test smells        5
+  model              9 classes, 63 methods, 1.75 sends/method, 0 over 10, ifs 0, nil checks 0, type checks 0
+  diff               +82 methods, ~0 changed, -2 removed; classes +10 -0
+  tool calls         123 by the agent, 1 errors, evaluate kinds {'other': 8, 'reflection': 1}
+  mentor             41 findings {'Keyword message send format': 22, 'Method complexity': 10, 'No class-name prefix in names': 6, 'No empty method categories': 3}
+  agent              claude-opus-5 effort high, 908s, cost $6.14912, tokens in 2,754 cache-read 6,719,290 out 69,339
+  refactorings       8 done by hand {'manualExtractMethod': 5, 'manualExtractFromSimilarCode': 3}, 8 while a tool was available, 0 right after the tool failed; 11 refactoring tool calls, 0 of them failed; 12 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_tdd/2025-2c-recuperatorio/20260911-163757-57798/analysis.json

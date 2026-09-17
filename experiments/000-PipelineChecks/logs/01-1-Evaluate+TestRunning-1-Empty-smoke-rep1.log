@@ -1,0 +1,25 @@
+==> job 1: rep 1, 1-Evaluate+TestRunning / 1-Empty / exercises/smoke
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/000-PipelineChecks/cells/1-Evaluate+TestRunning_1-Empty_free/smoke/20260910-191901
+    image serving 7 tools on port 61340
+    claude 2.1.268 (Claude Code), model claude-haiku-4-5-20251001, effort low, budget $0.5, timeout 240s
+    claude exited with status 0 after 80s, 31 tool calls logged by the server
+    saving the image
+    filing out package BoundedStack
+    status completed, turns 32, cost $0.105097
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/000-PipelineChecks/cells/1-Evaluate+TestRunning_1-Empty_free/smoke/20260910-191901
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/000-PipelineChecks/cells/1-Evaluate+TestRunning_1-Empty_free/smoke/20260910-191901
+    installing the run's package BoundedStack
+    acceptance test classes: none
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260910-191901: 1-Evaluate+TestRunning / 1-Empty / free / smoke
+  acceptance         none
+  agent tests        14/14 passed, 0 failed, 0 errors
+  coverage           by all tests 97.6%, by the agent's tests 97.6%
+  test smells        32
+  model              1 classes, 7 methods, 3.29 sends/method, 0 over 10, ifs 4, nil checks 0, type checks 1
+  diff               +21 methods, ~0 changed, -0 removed; classes +2 -0
+  tool calls         31 by the agent, 4 errors, evaluate kinds {'other': 1, 'definesCode': 27}
+  mentor             57 findings {'Methods are categorized': 21, 'Prefer assert:equals: over assert: with =': 14, 'No extra parenthesis': 12, 'Method complexity': 6, 'isEmpty over size = 0': 2, 'One initialize message doing only assignments': 1, 'No empty method categories': 1}
+  agent              claude-haiku-4-5-20251001 effort low, 80s, cost $0.105097, tokens in 258 cache-read 401,640 out 6,081
+  refactorings       0 done by hand {}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/000-PipelineChecks/cells/1-Evaluate+TestRunning_1-Empty_free/smoke/20260910-191901/analysis.json

@@ -1,0 +1,25 @@
+{
+  "name": "2023-2c-parcial2",
+  "title": "MineField",
+  "kind": "greenfield",
+  "package": "ISW1-2023-2C-2doParcial",
+  "description": "A minefield board game: a player moves one step at a time on a configurable board with low- and high-power mines, light and heavy armours and bi-directional tunnels, wins on reaching the top row and loses when out of lives. The student must design and implement the whole model from scratch using TDD.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/ISW1-2023-2C-2doParcial.st"],
+  "acceptanceTests": null,
+  "source": "2023-2c/2doParcial",
+  "semester": "2023-2c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Heterogeneous field elements (mines, armour racks, tunnels, nothing) and the armour the player wears (none, light, heavy, with per-use consumption) call for double dispatch between element and armour instead of ifs, plus recursive landing after flying, board-bound validation and a valid-creation protocol."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

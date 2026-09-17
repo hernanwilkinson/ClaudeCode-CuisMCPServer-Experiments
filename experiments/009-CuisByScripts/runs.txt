@@ -1,0 +1,9 @@
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/cuis-script_1-Empty_free/2022-1c-recuperatorio-parcial1/20260916-094215-514
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/cuis-script_1-Empty_free/2019-2c-parcial2-masked/20260916-094215-515
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/cuis-script_1-Empty_free/2024-1c-parcial1/20260916-094513-2361
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/1-Evaluate+TestRunning-University_1-Empty_free/2022-1c-recuperatorio-parcial1/20260916-095228-4782
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/java-gradle_1-Empty_free/2022-1c-recuperatorio-parcial1/20260916-095228-4783
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/1-Evaluate+TestRunning-University_1-Empty_free/2019-2c-parcial2-masked/20260916-095405-5922
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260916-095426-6223
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260916-095748-7943
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/1-Evaluate+TestRunning-University_1-Empty_free/2024-1c-parcial1/20260916-095739-7669

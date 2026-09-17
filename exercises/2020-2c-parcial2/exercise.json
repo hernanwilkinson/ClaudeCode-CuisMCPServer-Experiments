@@ -1,0 +1,25 @@
+{
+  "name": "2020-2c-parcial2",
+  "title": "Adventure Games II: Rooms and taking objects",
+  "kind": "feature",
+  "package": "ISW1-2020-2C-2doParcial",
+  "description": "A graphic adventure engine with a Backpack, portable objects and a MarsRover-style PlayableCharacter. The student must add a Room of NxM cells in which the character moves onto free positions, place portable and non-portable StageObjects (non-portable ones can contain others) and let the character take the portable objects in front of it, including those nested inside non-portable objects, as long as the backpack has room.",
+  "startingPackages": ["starting/ISW1-2020-2C-2doParcial.st"],
+  "solutionPackages": ["solution/ISW1-2020-2C-2doParcial-SolucionDadaEnClase.st", "solution/ISW1-2020-2C-2doParcial-Solucion-Otra.st"],
+  "acceptanceTests": null,
+  "source": "2020-2c/2doParcial",
+  "semester": "2020-2c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "The character, portable and non-portable objects share the room's cells, and take must recursively pull portable objects out of a composite of non-portable containers without stopping at the first backpack rejection, which invites double dispatch over the StageObject hierarchy instead of isKindOf: checks."
+  },
+  "sizeHint": {"classesInStartingCode": 14, "methodsInStartingCode": 87}
+}

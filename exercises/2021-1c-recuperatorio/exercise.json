@@ -1,0 +1,25 @@
+{
+  "name": "2021-1c-recuperatorio",
+  "title": "Truco: envido and a game of several rounds",
+  "kind": "feature",
+  "package": "ISW1-2021-1C-Recuperatorio-ConRondaYJugador",
+  "description": "Starting from a finished model of a two-player truco round (cards, round, player), the student must add with TDD a simplified envido (who may call it and when, wanting or not wanting it, declaring valid envido sums, 2 or 1 points) and a Truco game that plays rounds until a player reaches 30 points, counting envido points and one point per round won.",
+  "startingPackages": ["starting/ISW1-2021-1C-Recuperatorio-ConRondaYJugador.st"],
+  "solutionPackages": ["solution/ISW1-2021-1C-Recuperatorio-ConRondaYJugador-Solucion.st"],
+  "acceptanceTests": null,
+  "source": "2021-1c/Recuperatorio",
+  "semester": "2021-1c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "The envido adds a second state machine (called, wanted or not, sums declared in mano-first order) on top of the round's turn logic, the envido sum is a small collection computation over a hand grouped by suit, and the student must understand a sizable given round model (three alternative designs are offered) before extending it and wrapping it in a multi-round game."
+  },
+  "sizeHint": {"classesInStartingCode": 8, "methodsInStartingCode": 129}
+}

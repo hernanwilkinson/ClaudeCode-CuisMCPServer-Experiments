@@ -1,0 +1,167 @@
+{
+  "experiment": "005-LiveTypingCheaper",
+  "runId": "20260914-212701-20627",
+  "warmUp": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring-University",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2019-2c-parcial2-masked",
+  "package": "SurveyCrawler",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 005-LiveTypingCheaper, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring-University",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8182.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring-University.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "cuisDevCommit": "7b48a0fb4bdf47feff8ed6b95866efdf587ceba8",
+    "mcpServerCommit": "1d61daa41bbb1feb8ae0ec0569432cc0305f0e9b",
+    "builtAt": "2026-09-14T23:46:24Z",
+    "imageSha256": "175fffdd8bcef8e08e04a0f81eb72a5e9b359aa28ecfafc1386ca11e61364f6c"
+  },
+  "toolsServed": 73,
+  "toolDefinitionBytes": 68037,
+  "hashes": {
+    "prompt.md": "65dcd2ee704f06e671bd567a3ad482fc9414a22de2ab087d6526142a6c63ce6d",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "a16618115f691a49534959e02c8f3f9da4708f450e430c66b9ae9f9bea7ca49c",
+    "skills": {}
+  },
+  "port": 58161,
+  "startedAt": "2026-09-15T00:27:03Z",
+  "endedAt": "2026-09-15T00:39:24Z",
+  "elapsedSeconds": 741,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 203,
+    "agentCalls": 201
+  },
+  "changesBytesAtStart": 8609217,
+  "changesBytesAtEnd": 8661816,
+  "usageFromTranscript": {
+    "totalCostUsd": 3.8133,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 64,
+        "cache_write_5m": 0,
+        "cache_write_1h": 93285,
+        "cache_read": 2551348,
+        "output": 64178,
+        "thinking": 38718,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 32,
+        "cost_usd": 3.813294
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_list_classes": 1,
+      "mcp__Cuis__smalltalk_list_categories": 1,
+      "mcp__Cuis__smalltalk_classes_in_category": 2,
+      "mcp__Cuis__smalltalk_class_source": 2,
+      "mcp__Cuis__smalltalk_define_class": 16,
+      "mcp__Cuis__smalltalk_define_methods": 12,
+      "mcp__Cuis__smalltalk_delete_method": 7,
+      "mcp__Cuis__smalltalk_run_test_class": 4,
+      "mcp__Cuis__smalltalk_list_packages": 1,
+      "mcp__Cuis__smalltalk_package_definition": 1,
+      "mcp__Cuis__smalltalk_evaluate": 1,
+      "mcp__Cuis__smalltalk_method_sources_of_class": 1,
+      "mcp__Cuis__smalltalk_senders_of": 1,
+      "mcp__Cuis__smalltalk_run_tests_in_category": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 52,
+    "durationMs": 739600,
+    "durationApiMs": 728155,
+    "totalCostUsd": 3.8132940000000004,
+    "usage": {
+      "input_tokens": 64,
+      "cache_creation_input_tokens": 93285,
+      "cache_read_input_tokens": 2551348,
+      "output_tokens": 64178,
+      "output_tokens_details": {
+        "thinking_tokens": 38718
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 93285,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1378,
+          "cache_read_input_tokens": 111688,
+          "cache_creation_input_tokens": 556,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 556
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 64,
+        "outputTokens": 64178,
+        "cacheReadInputTokens": 2551348,
+        "cacheCreationInputTokens": 93285,
+        "webSearchRequests": 0,
+        "costUSD": 3.8132940000000004,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 38718,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "Done. All 50 tests pass (the run above shows 100 because the two categories share the test class).\n\n## What's in the image\n\n**Category `SurveyCrawler`** (model):\n\n| Class | Role |\n|---|---|\n| `SurveyCrawler` | knows `position`, `facing`, its `sonar` and the `run` it is in; processes a command stream |\n| `CrawlerFacing` + `Up/Down/Left/Right` | each knows its `direction`, its `clockwise` and `counterClockwise` facings |\n| `SeabedGround` + `FirmSandGround`, `SiltGround`, `BoulderGround` | decide what happens to the crawler that moves onto them or turns on them |\n| `CrawlerSonar` | answers the ground of a position, firm sand where nothing else was detected |\n| `CrawlerCommand` + `Advance/Retreat/TurnClockwise/TurnCounterClockwise` | know their character, how to apply themselves to a crawler and how to undo themselves |\n| `CrawlerRun` + `CrawlerUnguardedRun`, `CrawlerGuardedRun` | the state the crawler runs in |\n\n**Category `SurveyCrawler-Tests`**: `SurveyCrawlerTest` (50 tests) and `PredictableRandom`, a test double so the silt slide is deterministic.\n\n## Design decisions worth knowing\n\n- **Repetitions**: `'a0'` runs advance 3 times \u2014 total executions are `1 + 2 + digit` (`SurveyCrawler class>>singleExecution`, `implicitRepetitions`). A digit that follows anything other than `a t h g` (including another digit) is an invalid command; commands are executed as they are read, so `'a00'` leaves the crawler three cells ahead before signalling.\n- **Grounds decide, the crawler obeys**: the crawler asks the sonar for the ground of the destination (or of its own position, when turning) and tells it `moveCrawler:towards:` / `turnCrawler:to:`. Boulder signals, firm sand moves, silt slides `1..10` cells from the starting position \u2014 so from `1@2` facing Up onto silt at `1@3`, it ends between `1@3` and `1@12`, as the statement describes.\n- **Undo, not snapshot**: a guarded run records each command it executed and, on any error, sends `undoOn:` to them in reverse order. Undoing uses the crawler's raw movements, bypassing the sonar, which is what makes going back over silt safe. Because undo runs in reverse, each turn is undone before the movements made under it, so every move is undone with the facing it was made with.\n- **Guarded vs unguarded is polymorphic, not an `if`**: sliding on silt is allowed by `CrawlerUnguardedRun` and refused by `CrawlerGuardedRun`; starting a run is answered by one and refused by the other. The `ensure:` in `startGuardedRunReading:` leaves the crawler usable after a failure (test50).\n- I also moved the invalid-facing error message from `SurveyCrawler class` to `CrawlerFacing class`, which is the one that signals it, and the invalid-command one to `CrawlerCommand class`; `test06` and `test16` were updated accordingly. The v1 facing double dispatch (`advance:`, `turnClockwise:`\u2026) was replaced by `direction`/`clockwise`/`counterClockwise`, since the sonar needs the destination before moving.\n\nTwo things I did not do, since they weren't asked: the `SurveyCrawler` package has unsaved changes and no file name yet (nothing to write it to), and the image itself is unsaved. Say the word and I'll set a file name and save either one."
+  }
+}

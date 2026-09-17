@@ -1,0 +1,12 @@
+{
+  "name": "smoke",
+  "kind": "greenfield",
+  "package": "BoundedStack",
+  "description": "Tiny greenfield task used to exercise the pipeline, not to measure anything.",
+  "startingPackages": [],
+  "acceptanceTests": null,
+  "title": "Bounded stack",
+  "solutionPackages": [],
+  "semester": "-",
+  "exam": "-"
+}

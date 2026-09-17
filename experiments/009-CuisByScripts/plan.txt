@@ -1,0 +1,6 @@
+1	1-Evaluate+TestRunning-University	1-Empty	free	exercises/2022-1c-recuperatorio-parcial1
+1	java-gradle	1-Empty	free	exercises/2022-1c-recuperatorio-parcial1
+1	1-Evaluate+TestRunning-University	1-Empty	free	exercises/2019-2c-parcial2-masked
+1	java-gradle	1-Empty	free	exercises/2019-2c-parcial2-masked
+1	1-Evaluate+TestRunning-University	1-Empty	free	exercises/2024-1c-parcial1
+1	java-gradle	1-Empty	free	exercises/2024-1c-parcial1

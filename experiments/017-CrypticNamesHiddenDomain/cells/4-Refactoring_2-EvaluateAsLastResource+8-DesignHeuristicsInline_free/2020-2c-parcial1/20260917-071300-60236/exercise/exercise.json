@@ -1,0 +1,25 @@
+{
+  "name": "2020-2c-parcial1",
+  "title": "Adventure Games: Backpack and Door refactoring",
+  "kind": "refactoring",
+  "package": "ISW1-2020-2C-Parcial-Enunciado",
+  "description": "A point-and-click adventure engine with a Backpack that stores portable objects (with weight and game points), a PlayableCharacter and Doors with three states. The student must remove duplicated loops in Backpack accessing, replace the isKindOf: ifs in Backpack>>add: with polymorphism, redesign Door with state objects (a DoorState class is given as a starting point) and remove duplication in some tests.",
+  "startingPackages": ["starting/ISW1-2020-2C-Parcial-Enunciado.st"],
+  "solutionPackages": ["solution/ISW1-2020-2C-Parcial-Solucion.st"],
+  "acceptanceTests": null,
+  "source": "2020-2c/1erParcial",
+  "semester": "2020-2c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Three classic refactorings in one: index-based whileTrue: loops to inject:into:/detect-style collection protocol, isKindOf: dispatch to double dispatch on PortableObject subclasses, and a symbol-based Door state (with a key check nested inside) to State objects, all while keeping the given tests untouched."
+  },
+  "sizeHint": {"classesInStartingCode": 16, "methodsInStartingCode": 102}
+}

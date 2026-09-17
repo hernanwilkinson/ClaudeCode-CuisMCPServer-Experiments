@@ -1,0 +1,165 @@
+{
+  "experiment": "014-LiveTypingFiveRuns",
+  "runId": "20260917-023346-13212",
+  "warmUp": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "5-LiveTyping",
+  "config": [
+    "5-LiveTyping",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2019-2c-parcial2-masked",
+  "package": "SurveyCrawler",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 014-LiveTypingFiveRuns, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "5-LiveTyping",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8185.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-5-LiveTyping.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools",
+      "MCPLiveTypingTools"
+    ],
+    "decorators": [
+      "MCPActualImplementorsDecorator",
+      "MCPActualSendersDecorator",
+      "MCPInstanceVariableTypesDecorator",
+      "MCPMethodTypesDecorator"
+    ],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:28Z",
+    "imageSha256": "98fd0a04173b7b0b1c5a07653d1fccd6454c3815cab3e12a0648116a05f901ca"
+  },
+  "toolsServed": 81,
+  "toolDefinitionBytes": 78807,
+  "hashes": {
+    "prompt.md": "65dcd2ee704f06e671bd567a3ad482fc9414a22de2ab087d6526142a6c63ce6d",
+    "CLAUDE.md": "4bcf462d30335eb4f70d7086e242ac6455350ec765a343c62836c28366390169",
+    "spec.md": "a16618115f691a49534959e02c8f3f9da4708f450e430c66b9ae9f9bea7ca49c",
+    "skills": {}
+  },
+  "port": 49765,
+  "startedAt": "2026-09-17T05:33:49Z",
+  "endedAt": "2026-09-17T05:39:32Z",
+  "elapsedSeconds": 343,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 64,
+    "agentCalls": 62
+  },
+  "changesBytesAtStart": 8642817,
+  "changesBytesAtEnd": 8693102,
+  "usageFromTranscript": {
+    "totalCostUsd": 2.0102,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 24,
+        "cache_write_5m": 0,
+        "cache_write_1h": 66545,
+        "cache_read": 632563,
+        "output": 41132,
+        "thinking": 17707,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 12,
+        "cost_usd": 2.0101515
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_list_categories": 1,
+      "mcp__Cuis__smalltalk_classes_in_category": 1,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_batch": 6,
+      "mcp__Cuis__smalltalk_define_methods": 2
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 12,
+    "durationMs": 341800,
+    "durationApiMs": 332749,
+    "totalCostUsd": 2.0101515,
+    "usage": {
+      "input_tokens": 24,
+      "cache_creation_input_tokens": 66545,
+      "cache_read_input_tokens": 632563,
+      "output_tokens": 41132,
+      "output_tokens_details": {
+        "thinking_tokens": 17707
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 66545,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1465,
+          "cache_read_input_tokens": 87542,
+          "cache_creation_input_tokens": 891,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 891
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 24,
+        "outputTokens": 41132,
+        "cacheReadInputTokens": 632563,
+        "cacheCreationInputTokens": 66545,
+        "webSearchRequests": 0,
+        "costUSD": 2.0101515,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 17707,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "All three improvements are in the image, and all 49 tests pass: the 16 from the first version and 33 new ones. I rebuilt the command handling from the first version instead of adding more `ifTrue:` checks. Classes are in `SurveyCrawler`; `SurveyCrawlerTest` and the `RandomStub` test helper are now in `SurveyCrawler-Tests`.\n\n## Design\n- **Commands:** each character becomes a command object (`CrawlerCommand for: aCharacter`), and an unknown character raises \"Invalid command\".\n  - `a`, `t`, `h` and `g` are repeatable commands.\n  - A digit, `(`, `)` and the \"no command\" object used at the start of a sequence are not repeatable.\n  - A digit repeats the previous command digit + 2 times. So a digit at the start, after `(` or `)`, or after another digit raises an exception.\n- **Ground types:** `FirmSand`, `Silt` and `Boulder` decide what happens when the crawler moves or turns, so there are no `if`s on the ground type.\n  - `SeabedSonar` answers the ground at a position and assumes firm sand wherever it wasn't told otherwise.\n  - The slide distance comes from an object you pass in that answers `nextInteger:`. By default it's `Random new`; tests use `RandomStub`.\n- **Directions and turns:** the facing classes now just answer a direction or the next facing, and the crawler changes its own position and facing. This replaces the old back-and-forth calls between the crawler and its facing, and methods like `moveUp` and `faceLeft` are gone.\n- **Guarded runs:** two state objects handle them.\n  - `CrawlerUnguardedRun` doesn't record anything, and raises an exception on a `)` that has no matching `(`.\n  - `CrawlerGuardedRun` records each move and turn. It raises an exception on a nested `(`, on silt, and when the sequence ends before the run is closed.\n  - `process:` catches any error, undoes the recorded moves and turns in reverse order, goes back to unguarded, and passes the error on with `pass`.\n- **Undo:** it doesn't ask the sonar again, because it only goes back over cells the crawler already crossed.\n\n## Choices the requirements didn't settle\n- **Silt during a guarded run:** the exception is raised before sliding. The crawler ends up back at the start either way.\n- **Errors outside a guarded run:** earlier moves are kept (e.g. `'aaa'` hitting a boulder on the third step stops at `1@4`).\n- **Slides:** the cells passed through while sliding aren't checked, so a slide can go past a boulder. If a slide should stop at a boulder, that needs to be added.\n- **Crawler state after an error:** it always returns to unguarded, so the next `process:` can start a new guarded run.\n\n## Changes to existing code\n- **Error messages:** they are now class-side methods on `SurveyCrawler`, so test 06 now uses `SurveyCrawler invalidCommandErrorDescription`.\n- **Test 16:** it now uses `should:raise:withMessageText:`.\n- **Constructor:** `at:facing:` still works and assumes firm sand everywhere. `at:facing:sonar:` and `at:facing:sonar:slidingWith:` are the new ones.\n- **Removed:** the unused class-side variable `facings`.\n\n## Tests\n- **Repetition (17\u201325):** every repeatable command, a digit in each place where it isn't allowed, and `'a9'` = 12 advances.\n- **Sonar (26\u201335):** a boulder when moving forward, backward and turning either way; silt sliding forward and backward, the 10-cell limit, a real `Random` landing between 1 and 10 cells, and turning on silt.\n- **Guarded runs (36\u201349):** a boulder, silt and an invalid command inside a run; nested, unclosed and unopened runs; the example `'aha(aagt3)aa(ht)'` (ends at `3@-1` facing Right); a failed run undoing only its own moves; repeated moves being undone; and the crawler working normally after a failed run.\n\nThe `SurveyCrawler` package has changes that haven't been written to its file, and I haven't saved the package or the image."
+  }
+}

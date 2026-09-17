@@ -1,0 +1,8 @@
+# Source
+
+- Original directory: `2022-1c/Recu1erParcial/` in the parciales repository.
+- Statement: `2022-1c/Recu1erParcial/ISW1-2022-1C-Recuperatorio-Enunciado.pdf` (3 pages, Spanish). This PDF is SHARED with the make-up of the second midterm: the same file (identical bytes) also sits in `2022-1c/Recu2doParcial/` and holds both statements, "Recuperatorio 1er Parcial: Types, types, types…" and "Recuperatorio 2do Parcial: CustomerImporter - El regreso". Only the first part was translated into this exercise's `spec.md`; the second part belongs to `2022-1c-recuperatorio-parcial2`. Copied whole as `spec-original.pdf`.
+- starting/: `CustomerImporter-Recu-1er-Parcial.st` — the initial code named by the statement ("Usar el archivo CustomerImporter-Recu-1er-Parcial como punto de partida"): category `CustomerImporter-Recu-1er-Parcial` with `ImportTest`, `Address`, `Customer`, `CustomerImporter`, `CustomerSystem` (persistent/transient), `DataBaseSession` and the `Environment` hierarchy; `importCustomer`/`importAddress` contain the nested ifs on 'D'/'C' and on old/new zip codes, and `Customer`/`Address` use `isKindOf:` and string comparisons for their type-testing protocol.
+- solution/: `CustomerImporter-Recu-1er-Parcial-Solucion.st` — the solution (adds the `CustomerIdentification` hierarchy `DNI`/`CUIT` and the `ZipCode` hierarchy `OldZipcode`/`NewZipCode`).
+- `LinkAVideo.txt` (verbatim): "https://www.youtube.com/watch?v=ti7sQ2KgtWE".
+- Removed from the statement: the second-midterm make-up part (kept in the other exercise) and the whole "Entrega" section (mail submission, fileout, user.changes file, testing the fileout in a clean image, mail subject, uploading the image to the group repos, not leaving without the teachers' ok).

@@ -1,0 +1,130 @@
+{
+  "experiment": "016-LanguageComparisonRepeated",
+  "runId": "20260917-061856-52134",
+  "warmUp": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "java-gradle",
+  "language": "java",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2019-2c-parcial2-masked",
+  "package": "surveycrawler",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 016-LanguageComparisonRepeated, repetition 5",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "gradle": "Gradle 9.7.1",
+  "java": "openjdk version 25.0.1 2025-10-21",
+  "hashes": {
+    "prompt.md": "e9d3853189663ef18a1cbc204476b8a0fd3de2dc763bf91dba07306552a8d620",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "502ac0a22ec99d7df12863324d8473038d5332bacfc05d3634efdba704c14f45"
+  },
+  "startedAt": "2026-09-17T09:18:58Z",
+  "endedAt": "2026-09-17T09:21:45Z",
+  "elapsedSeconds": 167,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "ownTests": "classes 1 run 53 passed 53 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "SurveyCrawlerTest"
+    ],
+    "classesRun": [
+      "surveycrawler.SurveyCrawlerTest"
+    ],
+    "classesMissing": [],
+    "run": 53,
+    "passed": 53,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 0.9163,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 16,
+        "cache_write_5m": 0,
+        "cache_write_1h": 32465,
+        "cache_read": 166078,
+        "output": 20342,
+        "thinking": 5624,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 8,
+        "cost_usd": 0.916319
+      }
+    },
+    "toolCalls": {
+      "Bash": 7,
+      "Write": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 9,
+    "durationMs": 165386,
+    "durationApiMs": 162150,
+    "totalCostUsd": 0.916319,
+    "usage": {
+      "input_tokens": 16,
+      "cache_creation_input_tokens": 32465,
+      "cache_read_input_tokens": 166078,
+      "output_tokens": 20342,
+      "output_tokens_details": {
+        "thinking_tokens": 5624
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 32465,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1256,
+          "cache_read_input_tokens": 36037,
+          "cache_creation_input_tokens": 861,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 861
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 16,
+        "outputTokens": 20342,
+        "cacheReadInputTokens": 166078,
+        "cacheCreationInputTokens": 32465,
+        "webSearchRequests": 0,
+        "costUSD": 0.916319,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 5624,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "I added repeated commands, the sonar and guarded runs, and `gradle test` passes all 53 tests (the 16 original ones plus 37 new). When I first ran them, 5 new tests failed, but in each case I had worked out the expected result wrong (for example, `g0` turns counter-clockwise 3 times, so the crawler ends up facing Right). The code was right, so I fixed those tests.\n\n## Design\n- **Sonar and ground types:** `Sonar` is an interface with `groundAt(Point)`, which returns `FirmSand`, `Silt` or `Boulder`. Each ground type decides for itself what happens when the crawler moves onto it or turns on it, so there are no if-chains on ground type.\n  - Moving checks the ground at the cell the crawler is heading to; turning checks the ground it is standing on.\n  - Firm sand moves one cell. Silt slides `random.nextInt(10) + 1` cells in the same direction. A boulder raises `\"Boulder found\"` and leaves the crawler where it was.\n  - The facing classes still decide the direction; `moveUp`/`moveDown`/... now all go through one `moveTowards(direction)`.\n- **Guarded runs:** the crawler is always in one of two run states, `NormalRun` or `GuardedRun`.\n  - Every change of position or facing registers an undo action. `NormalRun` ignores them; `GuardedRun` keeps them in order.\n  - `process` has a single `try/catch`: on any error, the current state undoes what it has to, then the exception is rethrown. In `NormalRun` that does nothing; in `GuardedRun` it reverses the recorded moves in reverse order and goes back to `NormalRun`.\n  - These errors are raised by the state: `(` inside a guarded run, `)` with no guarded run open, a sequence that ends before its guarded run is closed, and reaching silt during a guarded run.\n- **Repetition:** a digit runs the command before it `digit + 2` more times, and only `a`, `t`, `h` and `g` can be repeated. So a digit at the start, a second digit (`a00`), or a digit after `(` or `)` raises `\"Invalid command\"`.\n- **Creating a crawler:** `SurveyCrawler.atFacing(...)` still works and assumes every cell is firm sand. The new `atFacingWithSonar(...)` and `atFacingWithSonarAndRandom(...)` let tests supply their own sonar and a fixed random number.\n\n## Cases the requirements didn't cover, and what I chose\n- **Silt in a guarded run:** the crawler actually slides, then raises the error, then undoes the slide. It ends up back where the guarded run started.\n- **A `)` with no matching `(`** (e.g. `\"a)a\"` or `\"(a))\"`) raises `\"Guarded run not started\"`.\n- **An unclosed guarded run doesn't carry over:** after `\"(a\"` fails, a following `\"a)\"` in a new call is still an error.\n- **After a failed guarded run, the crawler is back in normal mode:** later errors don't undo anything.\n- **An error outside a guarded run** stops processing, and the moves already made stay in place. This includes a boulder in the middle of a repetition like `a9`.\n- **Undoing doesn't use the sonar:** it just goes back over cells the crawler already crossed. Also, silt only affects the cell the crawler moves onto, not the cells it slides across.\n\nThe new classes are `Sonar`, `Ground`, `FirmSand`, `Silt`, `Boulder`, `CrawlerRunState`, `NormalRun` and `GuardedRun`. I also added `times` and `negated` to `Point`. All new tests are in `SurveyCrawlerTest.java` (test17 to test53)."
+  }
+}

@@ -1,0 +1,9 @@
+# Source
+
+- Original directory: `2021-2c/Recuperatorio/` in `/Users/hernan/Documents/IngSoft1-Repos/parciales`.
+- Statement: `ISW1-2021-2C-Recuperatorio-Enunciado.pdf` (copied as `spec-original.pdf`). The single PDF holds two separate exercises: "Recuperatorio 1erParcial únicamente" (exercise `2021-2c-recuperatorio-parcial1`) and "Recuperatorio 2doParcial - ISW-Prop" (this exercise). Only the second-midterm part was translated here.
+- No `starting/` directory: the statement asks to develop the model from scratch with TDD and there is no initial file for this part in the directory.
+- `solution/ISW1-2021-2C-Recuperatorio-2doParcial-Solucion.st`: the solution (name contains "Solucion"; category `ISW1-2021-2C-Recuperatorio-2doParcial`). It defines `InmobiliariaTest` (20 tests), `Inmobiliaria`, `Propiedad`, `PrecioDeArea`, the `ModificadorDePrecio` hierarchy (`PrecioEstablecido`, `PrecioDiferencial`, `PrecioPorDia` with `paraFinesDeSemanaDe:`) and the `TransaccionInmobiliaria` hierarchy (`Venta`, `Seña`). The class name `Seña` contains a non-ASCII character and the file is ISO-8859-1 encoded. Needs Aconcagua (`meter`, `peso`, `day`) and Chalten-style dates (`December/6/2021`, `December of: 2021`, `Saturday`).
+- `ISW1-2021-2C-Recuperatorio-1erParcial.st` and `ISW1-2021-2C-Recuperatorio-1erParcial-Solucion.st` in the same directory belong to the other exercise and were not copied here.
+- No Readme or video link found in the directory.
+- Removed from the statement: the "rules and norms for the remote exam" page (Discord, individual audio rooms, camera, allowed materials, image-saving recommendation), the "questions during the exam", "general notifications" and "bathroom breaks" sections with the spreadsheet link, and the "Delivery" section (category and file naming per make-up type, .user.changes, email subject, git repo upload, confirmation before disconnecting from Discord).

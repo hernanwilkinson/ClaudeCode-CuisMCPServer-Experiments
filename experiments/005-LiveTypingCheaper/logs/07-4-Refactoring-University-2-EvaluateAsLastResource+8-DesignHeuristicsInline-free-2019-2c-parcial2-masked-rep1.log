@@ -1,0 +1,28 @@
+==> job 7: rep 1, 4-Refactoring-University / 2-EvaluateAsLastResource,8-DesignHeuristicsInline / free / exercises/2019-2c-parcial2-masked
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/4-Refactoring-University_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2019-2c-parcial2-masked/20260914-212701-20627
+    image serving 73 tools on port 58161
+    installing starting/SurveyCrawler.st
+    warm-up (given tests run once before the session): classes 1 run 16 passed 16 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 741s, 201 tool calls logged by the server
+    saving the image
+    filing out package SurveyCrawler
+    status completed, turns 52, cost $3.8132940000000004
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/4-Refactoring-University_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2019-2c-parcial2-masked/20260914-212701-20627
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/4-Refactoring-University_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2019-2c-parcial2-masked/20260914-212701-20627
+    installing the run's package SurveyCrawler
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    acceptance test classes: SurveyCrawlerTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260914-212701-20627: 4-Refactoring-University / 2-EvaluateAsLastResource+8-DesignHeuristicsInline / free / 2019-2c-parcial2-masked
+  acceptance         50/50 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 97.0%, by the agent's tests None
+  test smells        1
+  model              20 classes, 123 methods, 1.59 sends/method, 1 over 10, ifs 4, nil checks 0, type checks 0
+  diff               +144 methods, ~9 changed, -37 removed; classes +14 -0
+  tool calls         51 by the agent, 0 errors, evaluate kinds {'runsTests': 1}
+  mentor             37 findings {'Method complexity': 22, 'Class is referenced': 4, 'No empty method categories': 4, 'Move helper method to the right class': 3, 'No class-name prefix in names': 2, 'Methods have senders': 1, 'Avoid setters': 1}
+  agent              claude-opus-5 effort high, 741s, cost $3.8132940000000004, tokens in 64 cache-read 2,551,348 out 64,178
+  refactorings       10 done by hand {'manualExtractMethod': 9, 'manualMoveMethod': 1}, 10 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 3 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/4-Refactoring-University_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2019-2c-parcial2-masked/20260914-212701-20627/analysis.json

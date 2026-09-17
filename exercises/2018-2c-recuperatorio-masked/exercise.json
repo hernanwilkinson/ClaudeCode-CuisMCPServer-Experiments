@@ -1,0 +1,27 @@
+{
+  "name": "2018-2c-recuperatorio-masked",
+  "title": "Cascade",
+  "kind": "greenfield",
+  "package": "Cascade",
+  "description": "A two-player rack game on an 8x8 grid of slots where amber and teal alternate dropping glass beads into columns, each bead sliding to the lowest free slot, and the victory rule (five consecutive beads along rows, columns, diagonals or any combination) is configured when the game is created; a full rack with no winner is a draw. The student must build the game from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/Super4EnLinea.st"],
+  "acceptanceTests": null,
+  "source": "2018-2c",
+  "semester": "2018-2c",
+  "exam": "recuperatorio",
+  "maskedFrom": "2018-2c-recuperatorio",
+  "maskingChangesNumbers": true,
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "The configurable victory rule (and its combinations) is a natural place for composable strategy objects instead of flags, the alternating colours and the playing/won/draw phases form a small state machine, and detecting five consecutive beads over rows, columns and diagonals invites shared collection-based traversal rather than several copies of a loop."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

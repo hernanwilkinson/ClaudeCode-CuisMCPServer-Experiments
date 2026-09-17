@@ -1,0 +1,536 @@
+== SonarSimulator | initialization
+initialize
+
+	groundTypes := Dictionary new
+== SonarSimulator | ground types
+boulderAt: aPosition
+
+	groundTypes at: aPosition put: SeabedBoulder new
+== SonarSimulator | ground types
+siltAt: aPosition
+
+	groundTypes at: aPosition put: SeabedSilt new
+== SonarSimulator | ground types
+groundTypeAt: aPosition
+
+	^groundTypes at: aPosition ifAbsent: [ SeabedFirmSand new ]
+== FixedRandom class | instance creation
+returning: anInteger
+
+	^self new initializeReturning: anInteger
+== FixedRandom | initialization
+initializeReturning: anInteger
+
+	value := anInteger.
+	requestedLimits := OrderedCollection new
+== FixedRandom | accessing
+nextInteger: aLimit
+
+	requestedLimits add: aLimit.
+	^value
+== FixedRandom | accessing
+requestedLimits
+
+	^requestedLimits
+== SurveyCrawlerTest | setUp
+setUp
+
+	sonar := SonarSimulator new.
+	slideRandom := FixedRandom returning: 4
+== SurveyCrawlerTest | helpers
+crawlerAt: aPosition facing: aFacingName
+
+	^SurveyCrawler at: aPosition facing: aFacingName sonar: sonar random: slideRandom
+== SurveyCrawlerTest | helpers
+should: aBlock failWith: anErrorDescription leaving: aCrawler at: aPosition facing: aFacingName
+
+	self 
+		should: aBlock
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: anErrorDescription equals: anError messageText.
+			self assert: (aCrawler isAt: aPosition facing: aFacingName) ]
+== SurveyCrawlerTest | tests
+test01EmptyCommandStringDoesNothing
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: ''.
+	
+	self assert: (crawler isAt: 1@2 facing: #Up)
+== SurveyCrawlerTest | tests
+test02aWhenFacingUpIncrementsY
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: 'a'.
+	
+	self assert: (crawler isAt: 1@3 facing: #Up)
+== SurveyCrawlerTest | tests
+test03tWhenFacingUpDecrementsY
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: 't'.
+	
+	self assert: (crawler isAt: 1@1 facing: #Up)
+== SurveyCrawlerTest | tests
+test04hWhenFacingUpMakesCrawlerFaceRight
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: 'h'.
+	
+	self assert: (crawler isAt: 1@2 facing: #Right)
+== SurveyCrawlerTest | tests
+test05gWhenFacingUpMakesCrawlerFaceLeft
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: 'g'.
+	
+	self assert: (crawler isAt: 1@2 facing: #Left)
+== SurveyCrawlerTest | tests
+test06InvalidCommandsAreNotProcessed
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: 'x' ]
+		failWith: crawler invalidCommandErrorDescription
+		leaving: crawler at: 1@2 facing: #Up
+== SurveyCrawlerTest | tests
+test07MoreThanOneCommandAreProcessedCorrectly
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: 'aa'.
+	
+	self assert: (crawler isAt: 1@4 facing: #Up)
+== SurveyCrawlerTest | tests
+test08aWhenFacingRightIncrementsX
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Right.
+	
+	crawler process: 'a'.
+	
+	self assert: (crawler isAt: 2@2 facing: #Right)
+== SurveyCrawlerTest | tests
+test09tWhenFacingRightDecrementsX
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Right.
+	
+	crawler process: 't'.
+	
+	self assert: (crawler isAt: 0@2 facing: #Right)
+== SurveyCrawlerTest | tests
+test10hWhenFacingRightMakesCrawlerFaceDown
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Right.
+	
+	crawler process: 'h'.
+	
+	self assert: (crawler isAt: 1@2 facing: #Down)
+== SurveyCrawlerTest | tests
+test11gWhenFacingRightMakesCrawlerFaceUp
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Right.
+	
+	crawler process: 'g'.
+	
+	self assert: (crawler isAt: 1@2 facing: #Up)
+== SurveyCrawlerTest | tests
+test12athAreProcessedCorrectlyWhenFacingDown
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Down.
+	
+	crawler process: 'aath'.
+	
+	self assert: (crawler isAt: 1@1 facing: #Left)
+== SurveyCrawlerTest | tests
+test13gWhenFacingDownMakesCrawlerFaceRight
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Down.
+	
+	crawler process: 'g'.
+	
+	self assert: (crawler isAt: 1@2 facing: #Right)
+== SurveyCrawlerTest | tests
+test14athAreProcessedCorrectlyWhenFacingLeft
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Left.
+	
+	crawler process: 'aath'.
+	
+	self assert: (crawler isAt: 0@2 facing: #Up)
+== SurveyCrawlerTest | tests
+test15gWhenFacingLeftMakesCrawlerFaceDown
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Left.
+	
+	crawler process: 'g'.
+	
+	self assert: (crawler isAt: 1@2 facing: #Down)
+== SurveyCrawlerTest | tests
+test16CanNotCreateACrawlerWithAnInvalidFacing
+
+	self 
+		should: [ SurveyCrawler at: 1@2 facing: #X sonar: sonar ]
+		raise: Error
+		withExceptionDo: [:anError |
+			self assert: SurveyCrawler invalidFacingErrorDescription equals: anError messageText ]
+== SurveyCrawlerTest | tests - repetition
+test17DigitRepeatsLastCommandTheDigitPlusTwoTimes
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: 'a0'.
+	
+	self assert: (crawler isAt: 1@5 facing: #Up)
+== SurveyCrawlerTest | tests - repetition
+test18DigitCanRepeatRetreat
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: 't9'.
+	
+	self assert: (crawler isAt: 1@-10 facing: #Up)
+== SurveyCrawlerTest | tests - repetition
+test19DigitCanRepeatTurns
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: 'h2'.
+	self assert: (crawler isAt: 1@2 facing: #Right).
+	
+	crawler process: 'g0'.
+	self assert: (crawler isAt: 1@2 facing: #Down)
+== SurveyCrawlerTest | tests - repetition
+test20DigitAtTheBeginningIsInvalid
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: '3' ]
+		failWith: crawler invalidCommandErrorDescription
+		leaving: crawler at: 1@2 facing: #Up
+== SurveyCrawlerTest | tests - repetition
+test21RepetitionIsASingleDigit
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: 'a00' ]
+		failWith: crawler invalidCommandErrorDescription
+		leaving: crawler at: 1@5 facing: #Up
+== SurveyCrawlerTest | tests - repetition
+test22LastCommandOfPreviousSequenceIsNotRepeated
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	crawler process: 'a'.
+	
+	self 
+		should: [ crawler process: '0' ]
+		failWith: crawler invalidCommandErrorDescription
+		leaving: crawler at: 1@3 facing: #Up
+== SurveyCrawlerTest | tests - repetition
+test23GuardedRunDelimitersCanNotBeRepeated
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: 'a()0' ]
+		failWith: crawler invalidCommandErrorDescription
+		leaving: crawler at: 1@3 facing: #Up.
+	self 
+		should: [ crawler process: '(0)' ]
+		failWith: crawler invalidCommandErrorDescription
+		leaving: crawler at: 1@3 facing: #Up
+== SurveyCrawlerTest | tests - sonar
+test24CanNotAdvanceToABoulder
+
+	| crawler |
+	
+	sonar boulderAt: 1@3.
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: 'a' ]
+		failWith: crawler boulderFoundErrorDescription
+		leaving: crawler at: 1@2 facing: #Up
+== SurveyCrawlerTest | tests - sonar
+test25CanNotRetreatToABoulder
+
+	| crawler |
+	
+	sonar boulderAt: 1@1.
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: 't' ]
+		failWith: crawler boulderFoundErrorDescription
+		leaving: crawler at: 1@2 facing: #Up
+== SurveyCrawlerTest | tests - sonar
+test26CanNotTurnOnABoulder
+
+	| crawler |
+	
+	sonar boulderAt: 1@2.
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: 'g' ]
+		failWith: crawler boulderFoundErrorDescription
+		leaving: crawler at: 1@2 facing: #Up.
+	self 
+		should: [ crawler process: 'h' ]
+		failWith: crawler boulderFoundErrorDescription
+		leaving: crawler at: 1@2 facing: #Up
+== SurveyCrawlerTest | tests - sonar
+test27RepeatedCommandStopsAtABoulder
+
+	| crawler |
+	
+	sonar boulderAt: 1@5.
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: 'a3' ]
+		failWith: crawler boulderFoundErrorDescription
+		leaving: crawler at: 1@4 facing: #Up
+== SurveyCrawlerTest | tests - sonar
+test28AdvancingOnSiltSlidesARandomNumberOfCellsUpToTen
+
+	| crawler |
+	
+	sonar siltAt: 1@3.
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: 'a'.
+	
+	self assert: (crawler isAt: 1@6 facing: #Up).
+	self assert: (OrderedCollection with: 10) equals: slideRandom requestedLimits
+== SurveyCrawlerTest | tests - sonar
+test29RetreatingOnSiltSlidesBackwards
+
+	| crawler |
+	
+	sonar siltAt: 0@2.
+	crawler := self crawlerAt: 1@2 facing: #Right.
+	
+	crawler process: 't'.
+	
+	self assert: (crawler isAt: -3@2 facing: #Right)
+== SurveyCrawlerTest | tests - sonar
+test30SlidingOnSiltEndsWithinTheSlideLimit
+
+	| crawler |
+	
+	sonar siltAt: 1@3.
+	100 timesRepeat: [
+		crawler := SurveyCrawler at: 1@2 facing: #Up sonar: sonar.
+		crawler process: 'a'.
+		self assert: ((1 to: 10) anySatisfy: [ :cells | crawler isAt: 1@(2 + cells) facing: #Up ]) ]
+== SurveyCrawlerTest | tests - sonar
+test31SiltDoesNotAffectTurning
+
+	| crawler |
+	
+	sonar siltAt: 1@2.
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: 'hhg'.
+	
+	self assert: (crawler isAt: 1@2 facing: #Right)
+== SurveyCrawlerTest | tests - guarded run
+test32GuardedRunWithoutProblemsKeepsItsMovements
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: '(ah)a'.
+	
+	self assert: (crawler isAt: 2@3 facing: #Right)
+== SurveyCrawlerTest | tests - guarded run
+test33BoulderInGuardedRunReturnsToInitialPosition
+
+	| crawler |
+	
+	sonar boulderAt: 1@4.
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: '(aa)' ]
+		failWith: crawler boulderFoundErrorDescription
+		leaving: crawler at: 1@2 facing: #Up
+== SurveyCrawlerTest | tests - guarded run
+test34SiltInGuardedRunReturnsToInitialPositionWithoutSliding
+
+	| crawler |
+	
+	sonar siltAt: 1@4.
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: '(aa)' ]
+		failWith: crawler siltInGuardedRunErrorDescription
+		leaving: crawler at: 1@2 facing: #Up.
+	self assert: slideRandom requestedLimits isEmpty
+== SurveyCrawlerTest | tests - guarded run
+test35InvalidCommandInGuardedRunReturnsToInitialPosition
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: '(ahax)' ]
+		failWith: crawler invalidCommandErrorDescription
+		leaving: crawler at: 1@2 facing: #Up
+== SurveyCrawlerTest | tests - guarded run
+test36AllMovementsOfGuardedRunAreUndone
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: '(a3ht1gg4x)' ]
+		failWith: crawler invalidCommandErrorDescription
+		leaving: crawler at: 1@2 facing: #Up
+== SurveyCrawlerTest | tests - guarded run
+test37OnlyMovementsOfTheFailingGuardedRunAreUndone
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: 'a(a)h(ax)' ]
+		failWith: crawler invalidCommandErrorDescription
+		leaving: crawler at: 1@4 facing: #Right
+== SurveyCrawlerTest | tests - guarded run
+test38ASequenceCanHaveSeveralGuardedRuns
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	crawler process: 'aha(aagt3)aa(ht)'.
+	
+	self assert: (crawler isAt: 3@-1 facing: #Right)
+== SurveyCrawlerTest | tests - guarded run
+test39CanNotStartAGuardedRunInsideAnotherOne
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: 'aa(aa(ht)a)' ]
+		failWith: crawler nestedGuardedRunErrorDescription
+		leaving: crawler at: 1@4 facing: #Up
+== SurveyCrawlerTest | tests - guarded run
+test40GuardedRunMustBeFinished
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: 'a(aa' ]
+		failWith: crawler unfinishedGuardedRunErrorDescription
+		leaving: crawler at: 1@3 facing: #Up
+== SurveyCrawlerTest | tests - guarded run
+test41CanNotFinishAGuardedRunThatWasNotStarted
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: 'a)' ]
+		failWith: crawler guardedRunNotStartedErrorDescription
+		leaving: crawler at: 1@3 facing: #Up
+== SurveyCrawlerTest | tests - guarded run
+test42ErrorsOutsideGuardedRunsAreNotUndone
+
+	| crawler |
+	
+	sonar boulderAt: 1@5.
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: '(a)aaa' ]
+		failWith: crawler boulderFoundErrorDescription
+		leaving: crawler at: 1@4 facing: #Up
+== SurveyCrawlerTest | tests - guarded run
+test43AfterAFailedGuardedRunTheCrawlerIsNotGuarded
+
+	| crawler |
+	
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	self should: [ crawler process: '(ax' ] raise: Error - MessageNotUnderstood.
+	
+	self 
+		should: [ crawler process: 'ax' ]
+		failWith: crawler invalidCommandErrorDescription
+		leaving: crawler at: 1@3 facing: #Up
+== SurveyCrawlerTest | tests - guarded run
+test44UndoingRetracesMovementsEvenIfStartedOnSilt
+
+	| crawler |
+	
+	sonar siltAt: 1@2.
+	crawler := self crawlerAt: 1@2 facing: #Up.
+	
+	self 
+		should: [ crawler process: '(ahax)' ]
+		failWith: crawler invalidCommandErrorDescription
+		leaving: crawler at: 1@2 facing: #Up.
+	self assert: slideRandom requestedLimits isEmpty

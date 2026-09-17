@@ -1,0 +1,1 @@
+[ (FileEntry withAbsolutePathName: '/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/exercises/2022-1c-recuperatorio-parcial1/starting/CustomerImporter-Recu-1er-Parcial.st') readStreamDo: [ :aStream | aStream fileIn ]. 'OK' ] on: Error do: [ :anError | 'FAILED: ', anError description ]

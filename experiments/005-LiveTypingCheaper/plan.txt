@@ -1,0 +1,12 @@
+1	1-Evaluate+TestRunning-University	8-DesignHeuristicsInline	free	exercises/2022-1c-recuperatorio-parcial1
+1	5-LiveTyping	5-LiveTyping,8-DesignHeuristicsInline	free	exercises/2022-1c-recuperatorio-parcial1
+1	4-Refactoring-University	2-EvaluateAsLastResource,8-DesignHeuristicsInline	free	exercises/2022-1c-recuperatorio-parcial1
+1	6-LiveTypingRefactoring	2-EvaluateAsLastResource,5-LiveTyping,6-LiveTypingRefactoring,8-DesignHeuristicsInline	free	exercises/2022-1c-recuperatorio-parcial1
+1	1-Evaluate+TestRunning-University	8-DesignHeuristicsInline	free	exercises/2019-2c-parcial2-masked
+1	5-LiveTyping	5-LiveTyping,8-DesignHeuristicsInline	free	exercises/2019-2c-parcial2-masked
+1	4-Refactoring-University	2-EvaluateAsLastResource,8-DesignHeuristicsInline	free	exercises/2019-2c-parcial2-masked
+1	6-LiveTypingRefactoring	2-EvaluateAsLastResource,5-LiveTyping,6-LiveTypingRefactoring,8-DesignHeuristicsInline	free	exercises/2019-2c-parcial2-masked
+1	1-Evaluate+TestRunning-University	8-DesignHeuristicsInline	free	exercises/2024-1c-parcial1
+1	5-LiveTyping	5-LiveTyping,8-DesignHeuristicsInline	free	exercises/2024-1c-parcial1
+1	4-Refactoring-University	2-EvaluateAsLastResource,8-DesignHeuristicsInline	free	exercises/2024-1c-parcial1
+1	6-LiveTypingRefactoring	2-EvaluateAsLastResource,5-LiveTyping,6-LiveTypingRefactoring,8-DesignHeuristicsInline	free	exercises/2024-1c-parcial1

@@ -1,0 +1,27 @@
+==> job 1: rep 1, 1-Evaluate+TestRunning-University / 8-DesignHeuristicsInline / free / exercises/2022-1c-recuperatorio-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/1-Evaluate+TestRunning-University_8-DesignHeuristicsInline_free/2022-1c-recuperatorio-parcial1/20260914-205048-16085
+    image serving 7 tools on port 57274
+    installing starting/CustomerImporter-Recu-1er-Parcial.st
+    warm-up (given tests run once before the session): classes 1 run 29 passed 29 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 584s, 26 tool calls logged by the server
+    saving the image
+    filing out package CustomerImporter-Recu-1er-Parcial
+    status completed, turns 27, cost $2.614004
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/1-Evaluate+TestRunning-University_8-DesignHeuristicsInline_free/2022-1c-recuperatorio-parcial1/20260914-205048-16085
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/1-Evaluate+TestRunning-University_8-DesignHeuristicsInline_free/2022-1c-recuperatorio-parcial1/20260914-205048-16085
+    installing the run's package CustomerImporter-Recu-1er-Parcial
+    acceptance test classes: ImportTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260914-205048-16085: 1-Evaluate+TestRunning-University / 8-DesignHeuristicsInline / free / 2022-1c-recuperatorio-parcial1
+  acceptance         29/29 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 83.3%, by the agent's tests None
+  test smells        1
+  model              18 classes, 176 methods, 1.62 sends/method, 0 over 10, ifs 7, nil checks 0, type checks 1
+  diff               +97 methods, ~23 changed, -13 removed; classes +8 -0
+  tool calls         26 by the agent, 0 errors, evaluate kinds {'reflection': 11, 'other': 2, 'definesCode': 9}
+  mentor             40 findings {'Keyword message send format': 17, 'No class-name prefix in names': 7, 'No empty method categories': 5, 'Class is referenced': 4, 'Instance variables read & written': 3, 'Method complexity': 3, 'Instance creation format': 1}
+  agent              claude-opus-5 effort high, 584s, cost $2.614004, tokens in 50 cache-read 1,195,928 out 48,856
+  refactorings       0 done by hand {}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/1-Evaluate+TestRunning-University_8-DesignHeuristicsInline_free/2022-1c-recuperatorio-parcial1/20260914-205048-16085/analysis.json

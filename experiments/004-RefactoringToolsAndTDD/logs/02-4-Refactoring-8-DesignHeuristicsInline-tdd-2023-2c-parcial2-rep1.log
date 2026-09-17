@@ -1,0 +1,25 @@
+==> job 2: rep 1, 4-Refactoring / 8-DesignHeuristicsInline / tdd / exercises/2023-2c-parcial2
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_8-DesignHeuristicsInline_tdd/2023-2c-parcial2/20260911-151410-39006
+    image serving 73 tools on port 54328
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 1047s, 257 tool calls logged by the server
+    saving the image
+    filing out package ISW1-2023-2C-2doParcial
+    status completed, turns 175, cost $7.187930999999999
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_8-DesignHeuristicsInline_tdd/2023-2c-parcial2/20260911-151410-39006
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_8-DesignHeuristicsInline_tdd/2023-2c-parcial2/20260911-151410-39006
+    installing the run's package ISW1-2023-2C-2doParcial
+    acceptance test classes: none
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260911-151410-39006: 4-Refactoring / 8-DesignHeuristicsInline / tdd / 2023-2c-parcial2
+  acceptance         none
+  agent tests        43/43 passed, 0 failed, 0 errors
+  coverage           by all tests 99.1%, by the agent's tests 99.1%
+  test smells        3
+  model              11 classes, 62 methods, 2.08 sends/method, 0 over 10, ifs 8, nil checks 0, type checks 0
+  diff               +110 methods, ~0 changed, -0 removed; classes +12 -0
+  tool calls         174 by the agent, 0 errors, evaluate kinds {'other': 2}
+  mentor             48 findings {'Method complexity': 20, 'No empty method categories': 9, 'Move helper method to the right class': 6, 'No class-name prefix in names': 5, 'Keyword message send format': 3, 'Shared leaf-subclass protocol in root': 2, 'Avoid setters': 2, 'Instance creation format': 1}
+  agent              claude-opus-5 effort high, 1047s, cost $7.187930999999999, tokens in 3,330 cache-read 7,643,242 out 79,930
+  refactorings       27 done by hand {'manualExtractFromSimilarCode': 6, 'manualExtractMethod': 18, 'manualChangeSignature': 1, 'manualMoveMethod': 2}, 27 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 34 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_8-DesignHeuristicsInline_tdd/2023-2c-parcial2/20260911-151410-39006/analysis.json

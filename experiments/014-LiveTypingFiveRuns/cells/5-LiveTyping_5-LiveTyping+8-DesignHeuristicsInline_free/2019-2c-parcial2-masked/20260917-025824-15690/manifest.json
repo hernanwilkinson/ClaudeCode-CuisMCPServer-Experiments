@@ -1,0 +1,163 @@
+{
+  "experiment": "014-LiveTypingFiveRuns",
+  "runId": "20260917-025824-15690",
+  "warmUp": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "5-LiveTyping",
+  "config": [
+    "5-LiveTyping",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2019-2c-parcial2-masked",
+  "package": "SurveyCrawler",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 014-LiveTypingFiveRuns, repetition 2",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "5-LiveTyping",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8185.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-5-LiveTyping.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools",
+      "MCPLiveTypingTools"
+    ],
+    "decorators": [
+      "MCPActualImplementorsDecorator",
+      "MCPActualSendersDecorator",
+      "MCPInstanceVariableTypesDecorator",
+      "MCPMethodTypesDecorator"
+    ],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:28Z",
+    "imageSha256": "98fd0a04173b7b0b1c5a07653d1fccd6454c3815cab3e12a0648116a05f901ca"
+  },
+  "toolsServed": 81,
+  "toolDefinitionBytes": 78807,
+  "hashes": {
+    "prompt.md": "65dcd2ee704f06e671bd567a3ad482fc9414a22de2ab087d6526142a6c63ce6d",
+    "CLAUDE.md": "4bcf462d30335eb4f70d7086e242ac6455350ec765a343c62836c28366390169",
+    "spec.md": "a16618115f691a49534959e02c8f3f9da4708f450e430c66b9ae9f9bea7ca49c",
+    "skills": {}
+  },
+  "port": 50302,
+  "startedAt": "2026-09-17T05:58:27Z",
+  "endedAt": "2026-09-17T06:03:57Z",
+  "elapsedSeconds": 330,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 64,
+    "agentCalls": 62
+  },
+  "changesBytesAtStart": 8642817,
+  "changesBytesAtEnd": 8688502,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.9008,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 20,
+        "cache_write_5m": 0,
+        "cache_write_1h": 63907,
+        "cache_read": 532712,
+        "output": 39811,
+        "thinking": 16843,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 10,
+        "cost_usd": 1.900801
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_batch": 6,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_define_methods": 2
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 10,
+    "durationMs": 329051,
+    "durationApiMs": 317981,
+    "totalCostUsd": 1.900801,
+    "usage": {
+      "input_tokens": 20,
+      "cache_creation_input_tokens": 63907,
+      "cache_read_input_tokens": 532712,
+      "output_tokens": 39811,
+      "output_tokens_details": {
+        "thinking_tokens": 16843
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 63907,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1463,
+          "cache_read_input_tokens": 82837,
+          "cache_creation_input_tokens": 2958,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2958
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 20,
+        "outputTokens": 39811,
+        "cacheReadInputTokens": 532712,
+        "cacheCreationInputTokens": 63907,
+        "webSearchRequests": 0,
+        "costUSD": 1.900801,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 16843,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I built all three improvements in the running Cuis image, and all 51 tests pass (the original 16 plus 35 new ones). I moved `SurveyCrawlerTest` into `SurveyCrawler-Tests`, since it had been sitting in `SurveyCrawler`. I haven't saved the image.\n\n## How it works (category `SurveyCrawler`)\n\n**Commands.** Each character becomes a command object, and `CrawlerCommand for:` picks the right one:\n- `a`, `t`, `h` and `g` are the repeatable commands.\n- A digit becomes `CrawlerRepeatCommand`, which runs the command just before it (digit + 2) more times.\n- `(` and `)` start and end a guarded run.\n- Any other character becomes `CrawlerInvalidCommand`.\n\n`process:` goes through the string with `inject:into:`, so each command gets the previous one. A digit is only valid right after `a`, `t`, `h` or `g`. So `'0'`, `'a00'`, `'(0a)'` and `'(a)0'` all raise \"Invalid command\". As before, commands run one at a time, so everything before an invalid command outside a guarded run stays done.\n\n**Sonar and ground types.**\n- `SeabedSonar groundAt:` answers `SeabedFirmSand`, `SeabedSilt` or `SeabedBoulder`, and anything not in its map is firm sand.\n- The facings now answer a `direction`. Advancing moves along it and retreating moves the opposite way, and the ground at the target cell decides what happens.\n  - **Firm sand:** moves one cell.\n  - **Silt:** slides `random nextInteger: 10` cells the way the crawler was going. The random source is passed in, so tests can control it.\n  - **Boulder:** raises an exception and the crawler doesn't move.\n- Turning checks the crawler's current cell, and only a boulder stops it.\n- `SurveyCrawler at:facing:` still works and uses a sonar that sees only firm sand. The new `at:facing:detectingWith:` takes a sonar.\n\n**Guarded runs.** The crawler has a run mode, `CrawlerUnguardedRun` or `CrawlerGuardedRun`, which makes these checks without `if`s:\n- While guarded, every displacement and turn is recorded.\n- If an error happens, the moves are undone in reverse order, the run mode goes back to unguarded, and the exception is passed on with `pass`.\n- Silt during a guarded run raises an exception before sliding.\n- Starting a guarded run inside another one raises an exception.\n- `)` without a matching `(` raises an exception.\n- A sequence that ends with a run still open raises an exception and undoes it.\n\nAll error messages are class methods on `SurveyCrawler`.\n\n## Changes to the existing code\n- I removed the old `processCommand:`, `isXCommand:`, `moveUp/Down/Left/Right` and the facings' `advance:`/`retreat:`. Command objects and `direction` replace them.\n- `invalidCommandErrorDescription` moved to the class side, so test06 uses `SurveyCrawler invalidCommandErrorDescription`. Test16 now uses `should:raise:withMessageText:`.\n\n## Tests (category `SurveyCrawler-Tests`)\nThe new tests cover:\n- repetition of each command, and digits in invalid places;\n- boulder and silt when advancing, retreating and turning, including the 10-cell slide limit (checked with a random stub, `SurveyCrawlerMaximumRandom`) and a range check with a real `Random`;\n- guarded runs: undoing advances, retreats, both kinds of turns and repeated commands, and each failure case from the spec (boulder, silt, invalid command, nested run, unfinished run);\n- `)` without `(`, a sequence with several guarded runs, and a failure in a later run not undoing earlier runs;\n- the crawler not staying guarded after a run fails.\n\nTwo choices I made where the spec is open:\n- **Silt in a guarded run:** the crawler raises the exception before sliding rather than sliding and then undoing. It ends up in the same place either way.\n- **Sliding path:** the sonar only checks the first cell the crawler moves into, not every cell along a silt slide."
+  }
+}

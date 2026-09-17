@@ -1,0 +1,1 @@
+[ (FileEntry withAbsolutePathName: '/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/exercises/2024-1c-parcial1/starting/ISW1-2024-1C-Parcial.st') readStreamDo: [ :aStream | aStream fileIn ]. 'OK' ] on: Error do: [ :anError | 'FAILED: ', anError description ]

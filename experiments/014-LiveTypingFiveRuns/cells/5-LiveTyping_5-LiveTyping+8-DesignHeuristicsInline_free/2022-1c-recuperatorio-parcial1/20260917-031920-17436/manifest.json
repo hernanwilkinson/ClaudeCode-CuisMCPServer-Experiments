@@ -1,0 +1,165 @@
+{
+  "experiment": "014-LiveTypingFiveRuns",
+  "runId": "20260917-031920-17436",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "5-LiveTyping",
+  "config": [
+    "5-LiveTyping",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "CustomerImporter-Recu-1er-Parcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 014-LiveTypingFiveRuns, repetition 3",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "5-LiveTyping",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8185.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-5-LiveTyping.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools",
+      "MCPLiveTypingTools"
+    ],
+    "decorators": [
+      "MCPActualImplementorsDecorator",
+      "MCPActualSendersDecorator",
+      "MCPInstanceVariableTypesDecorator",
+      "MCPMethodTypesDecorator"
+    ],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:28Z",
+    "imageSha256": "98fd0a04173b7b0b1c5a07653d1fccd6454c3815cab3e12a0648116a05f901ca"
+  },
+  "toolsServed": 81,
+  "toolDefinitionBytes": 78807,
+  "hashes": {
+    "prompt.md": "1a6c08c7102ac59a302a7c2e1ccabd3850546d786385d3d8ebf47fe411f954a1",
+    "CLAUDE.md": "4bcf462d30335eb4f70d7086e242ac6455350ec765a343c62836c28366390169",
+    "spec.md": "428340b0ba4d4e35ac37c837ef1e35636f94d84df309b2385ba9da34c58336a6",
+    "skills": {}
+  },
+  "port": 50657,
+  "startedAt": "2026-09-17T06:19:23Z",
+  "endedAt": "2026-09-17T06:22:05Z",
+  "elapsedSeconds": 162,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 35,
+    "agentCalls": 33
+  },
+  "changesBytesAtStart": 8668250,
+  "changesBytesAtEnd": 8690447,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.1541,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 20,
+        "cache_write_5m": 0,
+        "cache_write_1h": 46878,
+        "cache_read": 457635,
+        "output": 18257,
+        "thinking": 7811,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 10,
+        "cost_usd": 1.1541225
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_classes_in_category": 2,
+      "mcp__Cuis__smalltalk_class_source": 2,
+      "mcp__Cuis__smalltalk_batch": 4,
+      "mcp__Cuis__smalltalk_define_methods": 1,
+      "mcp__Cuis__smalltalk_evaluate": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 11,
+    "durationMs": 160802,
+    "durationApiMs": 147439,
+    "totalCostUsd": 1.1541225,
+    "usage": {
+      "input_tokens": 20,
+      "cache_creation_input_tokens": 46878,
+      "cache_read_input_tokens": 457635,
+      "output_tokens": 18257,
+      "output_tokens_details": {
+        "thinking_tokens": 7811
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 46878,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1282,
+          "cache_read_input_tokens": 68246,
+          "cache_creation_input_tokens": 520,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 520
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 20,
+        "outputTokens": 18257,
+        "cacheReadInputTokens": 457635,
+        "cacheCreationInputTokens": 46878,
+        "webSearchRequests": 0,
+        "costUSD": 1.1541225,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 7811,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I replaced the IFs for identification types and zip code types with polymorphism, and removed the repeated code. All 29 `ImportTest` tests pass, and I didn't change any of them. I also ran an import by hand through the persistent customer system (the one that goes through `DataBaseSession`): the customer was found and its DNI and zip code came back right. The tests on their own only use the in-memory system.\n\n**New classes** (in `CustomerImporter-Recu-1er-Parcial`)\n- **`CustomerIdentification`**, with subclasses **`DNIIdentification`** and **`CUITIdentification`**:\n  - `CustomerIdentification ofType:number:` picks the subclass whose `type` matches (`'D'` or `'C'`), instead of the old `idType = 'D' ifTrue: \u2026 ifFalse: [idType = 'C' \u2026]`. If none matches, it signals 'Invalid identification type'.\n  - All creation goes through one class-side `number:` method, which checks the number before `self new`.\n  - Each subclass has its own number check (`isValidNumber:`) and error message. The CUIT check is split into `hasDashesInPlace:`, `hasValidHeader:` and `hasDigitsInPlace:`.\n  - `isDNI`/`isCUIT` and `dniNumberIfNone:`/`cuitNumberIfNone:` are answered by each subclass, so `Customer` no longer compares type strings.\n- **`ZipCode`**, with subclasses **`OldZipCode`** and **`NewZipCode`**:\n  - `ZipCode fromText:` picks the subclass from the first character (a digit means old, a letter means new).\n  - Validation and creation go through one `from:` method in the same way.\n  - `isOld`/`isNew` and `oldValueIfNone:`/`newValueIfNone:` are polymorphic. The `isKindOf: String` / `isKindOf: Integer` checks are gone.\n\n**Changes to existing classes**\n- **`Customer`** and **`Address`** are now created complete, with `firstName:lastName:identification:` and `streetName:streetNumber:town:zipCode:province:`. I removed their setters.\n  - `Customer` holds a single `identification` instead of `identificationType` and `identificationNumber`, and passes the identification questions on to it.\n  - `Address` passes the zip code questions on to its `ZipCode`. `zipCode` still answers the Integer or String the tests expect.\n- **`CustomerImporter`**:\n  - `importCustomer` and `importAddress` now just build the objects; the validation lives in the new classes.\n  - The two repeated record-size checks now share `assertRecordHasSize:orSignal:`.\n- **`TransientCustomerSystem`** and **`PersistentCustomerSystem`** now find a customer with `aCustomer isIdentifiedAsType:number:`, instead of reading its type and number and comparing them.\n- The same \"every character is a digit\" check appeared several times, so I added `String>>isAllDigits` and `String>>isAllLetters` as extensions of the `CustomerImporter` package.\n\n**Housekeeping**\n- I moved `ImportTest` to the `CustomerImporter-Recu-1er-Parcial-Tests` category.\n- I renamed `Address`'s misspelled \"twon\" method category to \"town\".\n\n**Left as it was**\n- Test 29 expects the message 'Invalid identification type' for a zip code that is neither old nor new. `ZipCode` therefore uses that same text for its own error message.\n- The `importRecord` choice between a customer and an address record, and the `isKindOf: Customer` check in `DataBaseSession>>persist:`, still use IFs. They weren't part of the new code you asked about.\n\nI haven't saved the `CustomerImporter` package or the image, so the changes exist only in the running image for now."
+  }
+}

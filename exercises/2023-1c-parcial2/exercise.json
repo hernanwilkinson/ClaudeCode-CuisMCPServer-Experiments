@@ -1,0 +1,25 @@
+{
+  "name": "2023-1c-parcial2",
+  "title": "Driving assistant with manual, automatic and assisted-manual modes",
+  "kind": "greenfield",
+  "package": "ISW1-2023-1C-2doParcial",
+  "description": "A real-time driving assistant reads a speed sensor and a front proximity sensor on each #tick and, depending on its mode (manual, automatic or assisted-manual) and on whether the object ahead is in the danger, warning or safe zone, tells the driving system to beep, brake, connect or disconnect the throttle and keep a speed; the student must design and test it from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/ISW1-2023-1C-2doParcial.st"],
+  "acceptanceTests": null,
+  "source": "2023-1c/2doParcial",
+  "semester": "2023-1c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "typeInformationHelps": false,
+    "fromScratch": true,
+    "stateMachine": false,
+    "notes": "Two independent axes (three driving modes x three distance zones plus no object) must be modelled without a 3x4 grid of ifs, the assisted-manual mode is the composition of the other two, sensors are simulated with ReadStreams, the driving system is a collaborator whose state the tests must observe, and the boundaries of the zones (DMF inclusive, 2*DMF inclusive) demand careful test cases."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

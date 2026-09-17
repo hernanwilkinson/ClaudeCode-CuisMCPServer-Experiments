@@ -1,0 +1,25 @@
+{
+  "name": "2023-2c-parcial1",
+  "title": "Penalty shoot-out (Penales)",
+  "kind": "greenfield",
+  "package": "ISW1-2023-2C-Parcial-1",
+  "description": "A single-shot penalty kick: a striker who shoots 'placed' or 'blasted', a Jabulani or a beach ball, and a keeper who picks a direction beforehand or waits and steps forward; each combination changes strengths, trajectories and who scores. The student must build the model that passes the 34 given tests, first with ifs and then replacing them with polymorphism.",
+  "startingPackages": ["starting/ISW1-2023-2C-Parcial-1.st"],
+  "solutionPackages": ["solution/ISW1-2023-2C-Parcial-1-Ifs.st", "solution/ISW1-2023-2C-Parcial-1-Solu1.st"],
+  "acceptanceTests": null,
+  "source": "2023-2c/1erParcial",
+  "semester": "2023-2c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "The outcome depends on the combination of three independent kinds (shot type x ball x keeper strategy, 8 cases), so the interesting design question is how to replace the designer's nested ifs on symbols with a multiple dispatch among strategy objects without duplicating the strength/direction rules."
+  },
+  "sizeHint": {"classesInStartingCode": 6, "methodsInStartingCode": 37}
+}

@@ -1,0 +1,111 @@
+[
+  {
+    "name": "smalltalk_evaluate",
+    "description": "Evaluate arbitrary Smalltalk code and return the result.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "description": "Smalltalk code to evaluate"
+        }
+      },
+      "required": [
+        "code"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_run_test_class",
+    "description": "Run every test of a test case class and answer how many tests passed, failed and signalled an error, along with the name of each one that failed and each one that signalled.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the test case class"
+        }
+      },
+      "required": [
+        "className"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_run_tests_for_classes",
+    "description": "Run the tests of several classes as one suite and answer how many tests passed, failed and signalled an error, along with the name of each one that failed and each one that signalled. A class that is not a test case class contributes the tests that exercise it.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "classNames": {
+          "type": "string",
+          "description": "Names of the classes, separated by commas"
+        }
+      },
+      "required": [
+        "classNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_run_test_method",
+    "description": "Run one test and answer how many tests passed, failed and signalled an error, along with the name of each one that failed and each one that signalled.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "className": {
+          "type": "string",
+          "description": "Name of the class that implements the method"
+        },
+        "selector": {
+          "type": "string",
+          "description": "Selector of the method"
+        }
+      },
+      "required": [
+        "className",
+        "selector"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_save_image",
+    "description": "Save the Smalltalk image to disk.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  {
+    "name": "smalltalk_run_tests_in_category",
+    "description": "Run every test of the test case classes of several class categories as one suite and answer how many tests passed, failed and signalled an error, along with the name of each one that failed and each one that signalled. A category holding no test case class contributes the tests that exercise the classes it does hold.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "categoryNames": {
+          "type": "string",
+          "description": "Names of the class categories, separated by commas"
+        }
+      },
+      "required": [
+        "categoryNames"
+      ]
+    }
+  },
+  {
+    "name": "smalltalk_screenshot",
+    "description": "Write what the image looks like right now to a JPEG file and answer the name of the file, so that a change to something on screen can be looked at instead of guessed at.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "fileName": {
+          "type": "string",
+          "description": "Absolute path of the JPEG file to write"
+        }
+      },
+      "required": [
+        "fileName"
+      ]
+    }
+  }
+]

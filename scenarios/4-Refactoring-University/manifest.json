@@ -1,0 +1,30 @@
+{
+  "scenario": "4-Refactoring-University",
+  "base": "university",
+  "baseImage": "CuisUniversity7.9-8185.image",
+  "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+  "image": "MCP-4-Refactoring-University.image",
+  "features": [
+    "Tools-Finder",
+    "MCPServer",
+    "MCPServerMethodFinder",
+    "MCPServerExtraRefactoring",
+    "MCPServerLiveTyping"
+  ],
+  "toolGroups": [
+    "MCPImageTools",
+    "MCPTestRunningTools",
+    "MCPModelStructureTools",
+    "MCPPackageTools",
+    "MCPSearchTools",
+    "MCPMethodFinderTools",
+    "MCPRefactoringTools",
+    "MCPExtraRefactoringTools"
+  ],
+  "decorators": [],
+  "batchTool": true,
+  "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+  "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+  "builtAt": "2026-09-16T01:38:49Z",
+  "imageSha256": "96801c3307607a528c3a8319c33cfc693156980d465f42699a28d666038495de"
+}

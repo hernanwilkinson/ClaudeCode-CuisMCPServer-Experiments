@@ -1,0 +1,28 @@
+==> job 18: rep 2, 5-LiveTyping / 5-LiveTyping,8-DesignHeuristicsInline / free / exercises/2019-2c-parcial2-masked
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/014-LiveTypingFiveRuns/cells/5-LiveTyping_5-LiveTyping+8-DesignHeuristicsInline_free/2019-2c-parcial2-masked/20260917-025824-15690
+    image serving 81 tools on port 50302
+    installing starting/SurveyCrawler.st
+    warm-up (given tests run once before the session): classes 1 run 16 passed 16 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 330s, 62 tool calls logged by the server
+    saving the image
+    filing out package SurveyCrawler
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 10, cost $1.900801
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/014-LiveTypingFiveRuns/cells/5-LiveTyping_5-LiveTyping+8-DesignHeuristicsInline_free/2019-2c-parcial2-masked/20260917-025824-15690
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/014-LiveTypingFiveRuns/cells/5-LiveTyping_5-LiveTyping+8-DesignHeuristicsInline_free/2019-2c-parcial2-masked/20260917-025824-15690
+    installing the run's package SurveyCrawler
+    acceptance test classes: SurveyCrawlerTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260917-025824-15690: 5-LiveTyping / 5-LiveTyping+8-DesignHeuristicsInline / free / 2019-2c-parcial2-masked
+  acceptance         51/51 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 94.0%, by the agent's tests None
+  test smells        0
+  model              29 classes, 131 methods, 1.36 sends/method, 0 over 10, ifs 0, nil checks 0, type checks 0
+  diff               +137 methods, ~9 changed, -21 removed; classes +23 -0
+  tool calls         9 by the agent, 1 errors, evaluate kinds {'reflection': 1}
+  mentor             29 findings {'No empty method categories': 13, 'Class is referenced': 7, 'Keyword message send format': 4, 'No class-name prefix in names': 2, 'Move helper method to the right class': 2, 'Instance creation format': 1}
+  agent              claude-opus-5 effort high, 330s, cost $1.900801, tokens in 20 cache-read 532,712 out 39,811
+  refactorings       9 done by hand {'manualExtractMethod': 9}, 9 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 7 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/014-LiveTypingFiveRuns/cells/5-LiveTyping_5-LiveTyping+8-DesignHeuristicsInline_free/2019-2c-parcial2-masked/20260917-025824-15690/analysis.json

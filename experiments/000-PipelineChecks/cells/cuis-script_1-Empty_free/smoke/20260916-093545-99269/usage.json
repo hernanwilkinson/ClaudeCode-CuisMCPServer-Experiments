@@ -1,0 +1,38 @@
+{
+  "session": "claude-transcript",
+  "subagent_transcripts": 0,
+  "per_model": {
+    "claude-haiku-4-5-20251001": {
+      "input": 386,
+      "cache_write_5m": 0,
+      "cache_write_1h": 32542,
+      "cache_read": 1329450,
+      "output": 20458,
+      "thinking": 4176,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 48,
+      "cost_usd": 0.300705
+    }
+  },
+  "main_only": {
+    "claude-haiku-4-5-20251001": {
+      "input": 386,
+      "cache_write_5m": 0,
+      "cache_write_1h": 32542,
+      "cache_read": 1329450,
+      "output": 20458,
+      "thinking": 4176,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 48
+    }
+  },
+  "subagents_only": {},
+  "tool_calls": {
+    "Bash": 25,
+    "Read": 2,
+    "Write": 20
+  },
+  "total_cost_usd": 0.3007
+}

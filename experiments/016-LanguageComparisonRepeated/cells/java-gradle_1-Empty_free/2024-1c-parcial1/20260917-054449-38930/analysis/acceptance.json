@@ -1,0 +1,19 @@
+{
+  "givenTestClasses": [
+    "FloorTest",
+    "HotelTest",
+    "RoomTest"
+  ],
+  "classesRun": [
+    "simshotels.FloorTest",
+    "simshotels.HotelTest",
+    "simshotels.RoomTest"
+  ],
+  "classesMissing": [],
+  "run": 43,
+  "passed": 43,
+  "failed": 0,
+  "errors": 0,
+  "failures": [],
+  "errorTests": []
+}

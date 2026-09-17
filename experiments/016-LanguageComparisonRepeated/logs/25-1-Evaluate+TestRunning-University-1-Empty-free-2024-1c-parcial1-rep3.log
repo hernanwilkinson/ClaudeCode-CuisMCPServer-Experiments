@@ -1,0 +1,28 @@
+==> job 25: rep 3, 1-Evaluate+TestRunning-University / 1-Empty / free / exercises/2024-1c-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/1-Evaluate+TestRunning-University_1-Empty_free/2024-1c-parcial1/20260917-055533-43670
+    image serving 7 tools on port 54032
+    installing starting/ISW1-2024-1C-Parcial.st
+    warm-up (given tests run once before the session): classes 3 run 39 passed 39 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 153s, 10 tool calls logged by the server
+    saving the image
+    filing out package ISW1-2024-1C-Parcial
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 11, cost $0.9432539999999999
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/1-Evaluate+TestRunning-University_1-Empty_free/2024-1c-parcial1/20260917-055533-43670
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/1-Evaluate+TestRunning-University_1-Empty_free/2024-1c-parcial1/20260917-055533-43670
+    installing the run's package ISW1-2024-1C-Parcial
+    acceptance test classes: FloorTest HotelTest RoomTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260917-055533-43670: 1-Evaluate+TestRunning-University / 1-Empty / free / 2024-1c-parcial1
+  acceptance         39/39 passed, 0 failed, 0 errors
+  agent tests        39/39 passed, 0 failed, 0 errors
+  coverage           by all tests 89.1%, by the agent's tests 89.1%
+  test smells        8
+  model              7 classes, 92 methods, 1.48 sends/method, 0 over 10, ifs 5, nil checks 0, type checks 1
+  diff               +56 methods, ~38 changed, -23 removed; classes +5 -0
+  tool calls         10 by the agent, 0 errors, evaluate kinds {'reflection': 3, 'definesCode': 4, 'other': 1}
+  mentor             47 findings {'Keyword message send format': 20, 'Method complexity': 14, 'No empty method categories': 6, 'ifEmpty: over isEmpty ifTrue:': 2, 'No class-name prefix in names': 2, 'Methods have senders': 1, 'Move helper method to the right class': 1, 'Prefer self / self class over explicit class reference': 1}
+  agent              claude-opus-5 effort high, 153s, cost $0.9432539999999999, tokens in 18 cache-read 230,258 out 17,999
+  refactorings       0 done by hand {}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/1-Evaluate+TestRunning-University_1-Empty_free/2024-1c-parcial1/20260917-055533-43670/analysis.json

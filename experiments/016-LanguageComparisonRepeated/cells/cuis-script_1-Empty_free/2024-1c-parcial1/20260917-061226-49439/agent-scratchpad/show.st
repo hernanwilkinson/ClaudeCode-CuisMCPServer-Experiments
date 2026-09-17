@@ -1,0 +1,1 @@
+(FloorTest sourceCodeAt: #test06WhenAFloorReceivesOnReservationAGuestInARoomKeepsTheAvailableRoomsAndOccupiedAndReducesTheReservedByOne) asString

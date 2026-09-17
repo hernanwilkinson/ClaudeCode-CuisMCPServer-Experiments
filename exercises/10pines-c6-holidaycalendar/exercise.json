@@ -1,0 +1,30 @@
+{
+  "name": "10pines-c6-holidaycalendar",
+  "title": "Holiday Calendar",
+  "kind": "greenfield",
+  "package": "Calendar",
+  "description": "A holiday calendar that answers whether a date is a holiday given holidays defined by day of week, day of month or specific date, and then a new requirement: holidays valid only within a date interval. Built from scratch with TDD following slides 54 and 65.",
+  "startingPackages": [],
+  "solutionPackages": [
+    "solution/HolidayCalendar.st"
+  ],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C6 - Construccion de Software Seguro usando Test Driven Development",
+  "semester": "10pines-c6",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "The new requirement (intervals) breaks the first solution based on separate collections per kind of holiday and pushes toward a heterogeneous collection of polymorphic holiday rules, including a rule that decorates another one with a date range (slides 66-67)."
+  },
+  "sizeHint": {
+    "classesInStartingCode": 0,
+    "methodsInStartingCode": 0
+  }
+}

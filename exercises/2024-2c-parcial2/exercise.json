@@ -1,0 +1,29 @@
+{
+  "name": "2024-2c-parcial2",
+  "title": "Pacman Prototype",
+  "kind": "greenfield",
+  "package": "2024-2C-Parcial-2",
+  "description": "A simplified Pacman: a pacman and two ghosts move on a walled board eating pills, with lives, score, tick-delayed ghosts that pick random directions at walls, and a game-over condition. The student must build the whole game model on top of a given StringPacmanBoard that parses and visits a string representation of the board, and must produce that representation back for the tests.",
+  "startingPackages": ["starting/2024-2C-Parcial-2.st"],
+  "solutionPackages": [
+    "solution/2024-2C-Parcial-2-Solucion.st",
+    "solution/2024-2C-Parcial-2-Solucion-ConGhostOverPill.st",
+    "solution/TomasRodriguezNadin-Fix-GhostOverPill.cs.st"
+  ],
+  "acceptanceTests": null,
+  "source": "2024-2c/2doParcial",
+  "semester": "2024-2c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "A heterogeneous board of walls, pills, spaces, ghosts and pacman built through a visitor, where ghosts must remember what they cover, start after different tick counts and choose directions from a random 1-5 mapping, plus lives, score and game-over; the reference solution itself had a ghost-over-pill game-over bug, showing how subtle the element/collision model is."
+  },
+  "sizeHint": {"classesInStartingCode": 5, "methodsInStartingCode": 68}
+}

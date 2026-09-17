@@ -1,0 +1,26 @@
+{
+  "name": "2024-2c-recuperatorio-parcial1-masked",
+  "title": "Kiln Stacker (reduced scope)",
+  "kind": "greenfield",
+  "package": "KilnStacker",
+  "description": "A simplified kiln-stacking simulator on a walled column of at least 4x5 whose state is checked through a string representation. In this reduced scope the student models the simulator and the five glazed-tile clusters (chosen by a random number), the advance that moves the current cluster down one course, moving it left and right, and the rule that clusters cannot leave the kiln.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/2024-2C-Recuperatorio.st"],
+  "acceptanceTests": null,
+  "source": "2024-2c/Recuperatorio",
+  "semester": "2024-2c",
+  "exam": "recuperatorio",
+  "maskedFrom": "2024-2c-recuperatorio-parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "The five cluster shapes invite five subclasses or five sets of offsets, the random number must be mapped to a cluster without a case statement, and the kiln rendering to strings plus the anchor-position convention must be designed from nothing."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

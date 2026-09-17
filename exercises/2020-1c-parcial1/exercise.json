@@ -1,0 +1,25 @@
+{
+  "name": "2020-1c-parcial1",
+  "title": "I, Robot – warehouse robots, cashier and trailers",
+  "kind": "refactoring",
+  "package": "ISW1-2020-1C-Parcial-Enunciado",
+  "description": "Warehouse robots with four states (working normal, sensors failure, mechanical failure, out of order) take products into a weight/height-limited trailer and close orders through a cashier. The student must replace the status ifs in Robot and Cashier with polymorphism, remove duplicated code in Robot, Cashier and Trailer, and clean up the Cashier and Trailer tests without changing behaviour.",
+  "startingPackages": ["starting/ISW1-2020-1C-Parcial-Enunciado.st"],
+  "solutionPackages": ["solution/ISW1-2020-1C-Parcial-Solucion.st"],
+  "acceptanceTests": null,
+  "source": "2020-1c/1erParcial",
+  "semester": "2020-1c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "Robot status is a symbol compared with = in both Robot and Cashier; the good design reifies the four states as a RobotStatus hierarchy that also answers the cashier's decisions, while Trailer's index-based whileTrue loops should become inject:into:/select:, all without touching the model tests."
+  },
+  "sizeHint": {"classesInStartingCode": 14, "methodsInStartingCode": 89}
+}

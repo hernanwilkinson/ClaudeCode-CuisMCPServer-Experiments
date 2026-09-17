@@ -1,0 +1,160 @@
+{
+  "experiment": "017-CrypticNamesHiddenDomain",
+  "runId": "20260917-064343-56990",
+  "warmUp": "classes 2 run 27 passed 27 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2020-2c-parcial1-cryptic",
+  "package": "Task3",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 017-CrypticNamesHiddenDomain, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:10Z",
+    "imageSha256": "b5f4b366a56949d0350d29a2756efc4fed4b2a6aa266163385aaa745d6efa3a5"
+  },
+  "toolsServed": 74,
+  "toolDefinitionBytes": 69457,
+  "hashes": {
+    "prompt.md": "5018a7e9c8ec7f9a2ed19cf11f4ecac8fb862ca72f4d04486db9f3bcc01154a1",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "3427f228fb3002bcba714753d1defe1817dde389622072a200fd81a8ee104372",
+    "skills": {}
+  },
+  "port": 55081,
+  "startedAt": "2026-09-17T09:43:45Z",
+  "endedAt": "2026-09-17T09:45:37Z",
+  "elapsedSeconds": 112,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 22,
+    "agentCalls": 20
+  },
+  "changesBytesAtStart": 5198994,
+  "changesBytesAtEnd": 5207689,
+  "usageFromTranscript": {
+    "totalCostUsd": 0.7019,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 14,
+        "cache_write_5m": 0,
+        "cache_write_1h": 29154,
+        "cache_read": 240059,
+        "output": 11610,
+        "thinking": 6412,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 7,
+        "cost_usd": 0.7018895
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_batch": 4,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_define_methods": 1,
+      "mcp__Cuis__smalltalk_run_test_class": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 8,
+    "durationMs": 110964,
+    "durationApiMs": 107749,
+    "totalCostUsd": 0.7018895,
+    "usage": {
+      "input_tokens": 14,
+      "cache_creation_input_tokens": 29154,
+      "cache_read_input_tokens": 240059,
+      "output_tokens": 11610,
+      "output_tokens_details": {
+        "thinking_tokens": 6412
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 29154,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1020,
+          "cache_read_input_tokens": 47098,
+          "cache_creation_input_tokens": 1378,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1378
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 14,
+        "outputTokens": 11610,
+        "cacheReadInputTokens": 240059,
+        "cacheCreationInputTokens": 29154,
+        "webSearchRequests": 0,
+        "costUSD": 0.7018895,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6412,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "All three tasks and both extras are done in the image, and all 27 tests still pass (15 in `C5`, 12 in `C7`).\n\nThe code in the image uses scrambled names. The class the task calls \"`C1`'s tests\" is `C5`, the door tests are `C7`, and every method is filed under the category `x`. I kept every existing name, because the tests you said not to touch call them, and gave the new methods readable names.\n\n**1. Repeated code in the accessing methods of `C1`.** The two totals (weight `m7` and game points `m6`) had the same hand-written loop. Both now use one new method, `sumOf:`, which adds up a value over the items. The game-points total used to check each item's type (`m48`). Instead, `C9` (items that add no points) now answers `m53` with 0, and `C8` declares `m53` as a subclass responsibility.\n\n**2. `add:` without `ifs`.** It is now three lines: check the weight, check the game points, add the item. Instead of checking the class, each item answers `allowedOverweight` (0 for `C9`, 5 for `C10`). The game-points check now runs for every item. For a `C9` it can never fail, since it adds 0 points.\n\n**3. Door design.** I built the three door states on `C2`:\n- **New classes:** `OpenDoorState`, `ClosedDoorState` and `LockedDoorState`. Each one implements `C2`'s abstract messages: `m19` closes, `m22` opens, `m23:` unlocks with a key and `m37` says whether the door is open. I added one more, `useBy:`, for `m34:`.\n- **The door:** `C6`'s reaction methods (`m31:`, `m32:`, `m33:a33:`, `m34:`) and `m37` now just pass the message to the current state. The states switch the door with `beOpen` and `beClosed`, and the error texts are the same as before.\n- **The key:** it now belongs to `LockedDoorState`, so open and closed doors no longer carry a `nil` key. `C6`'s `v8` variable and the old setters `m35:` and `m36:a36:` are removed.\n- **Creating doors:** the three class-side methods (`m46`, `m40`, `m41:`) all go through one new method, `stateCreatedBy:`.\n- **One `if` left:** `LockedDoorState>>m23:` checks whether the key matches. That compares a value, not a type, so polymorphism doesn't replace it.\n\n**Extras.** The shared part of `test07`/`test08` is now `assertAddingIsRejectedForOverweight:`. The two items that `test09` and `test10` both start with are added by `backpackWithElementsWeighing41AndAdding5GamePoints`. The assertions are unchanged, and I only renamed the `t1` variable to `backpack` in those four tests.\n\n**Test categories.** The new classes are in `Task3`. I left `C5` and `C7` in `Task3` where they were and didn't move them to `Task3-Tests`. I wrote no new test classes, so nothing was added to that category. Say if you want the two test classes moved there."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "2024-1c-recuperatorio",
+  "title": "SW-Project 2.0",
+  "kind": "feature",
+  "package": "ISW1-2024-1C-Recuperatorio",
+  "description": "The finished SW-Project tracking system (projects, concrete tasks, developers, mob teams, worksheet) is given. The student must add validations to all creation messages, introduce parallel and fast team kinds that must not mix with mob teams when nested, print an indented textual representation of the project tree with exact formatting, and add a main-project concept that validates that every dependency belongs to it and that it contains no other main project.",
+  "startingPackages": ["starting/ISW1-2024-1C-Recuperatorio.st"],
+  "solutionPackages": ["solution/ISW1-2024-1C-Recuperatorio-Solucion.st"],
+  "acceptanceTests": null,
+  "source": "2024-1c/Recuperatorio",
+  "semester": "2024-1c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Team kinds (mob, fast, parallel) differ only in how they turn effort into days and must reject nested teams of another kind, and the tree printer must compute depth, duration and developer count across a heterogeneous Project/ConcreteTask composite, so dispatch on kinds and consistent validation across many constructors are central."
+  },
+  "sizeHint": {"classesInStartingCode": 13, "methodsInStartingCode": 65}
+}

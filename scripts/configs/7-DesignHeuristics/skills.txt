@@ -1,0 +1,3 @@
+~/.claude/skills/smalltalk-design-heuristics
+~/.claude/skills/smalltalk-single-initialize
+~/.claude/skills/smalltalk-no-class-name-prefix

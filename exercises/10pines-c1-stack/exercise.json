@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c1-stack",
+  "title": "Stack without ifs",
+  "kind": "greenfield",
+  "package": "Stack-Exercise",
+  "description": "A LIFO stack (push:, pop, top, size, isEmpty) that must signal 'Stack is empty' when pop or top is sent to an empty stack. The student must implement Stack so the 10 given tests pass, and then remove the empty/not-empty if by replacing it with polymorphic objects (state objects or a null-object base element).",
+  "startingPackages": ["starting/Stack-Exercise.st"],
+  "solutionPackages": ["solution/Stack-Solution-with-States-intermedia.st", "solution/Stack-Solution-with-States-final.st", "solution/Stack-Solution-with-Recursion-intermedia.st", "solution/Stack-Solution-with-Recursion-final.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C1 - Diseño Avanzado de Software con Objetos I",
+  "semester": "10pines-c1",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "The given Stack class is empty; the natural first implementation needs an 'isEmpty ifTrue: [error]' in top/pop, and the exercise is about removing that if by modelling the empty and not-empty situations as objects (EmptyStackState/NotEmptyStackState with double dispatch, or a StackBase null object in a linked chain of PushedObject) so that the objects decide instead of the conditional."
+  },
+  "sizeHint": {"classesInStartingCode": 3, "methodsInStartingCode": 12}
+}

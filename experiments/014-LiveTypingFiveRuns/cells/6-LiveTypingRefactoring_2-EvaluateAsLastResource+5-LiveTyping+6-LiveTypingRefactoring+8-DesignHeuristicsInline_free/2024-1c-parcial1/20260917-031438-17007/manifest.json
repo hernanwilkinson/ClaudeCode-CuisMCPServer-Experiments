@@ -1,0 +1,178 @@
+{
+  "experiment": "014-LiveTypingFiveRuns",
+  "runId": "20260917-031438-17007",
+  "warmUp": "classes 3 run 39 passed 39 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "6-LiveTypingRefactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "5-LiveTyping",
+    "6-LiveTypingRefactoring",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2024-1c-parcial1",
+  "package": "ISW1-2024-1C-Parcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 014-LiveTypingFiveRuns, repetition 2",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "6-LiveTypingRefactoring",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8185.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-6-LiveTypingRefactoring.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping",
+      "MCPServerLiveTypingRefactorings",
+      "MCPServerExtraLiveTypingRefactorings"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools",
+      "MCPLiveTypingTools"
+    ],
+    "decorators": [
+      "MCPActualImplementorsDecorator",
+      "MCPActualSendersDecorator",
+      "MCPInstanceVariableTypesDecorator",
+      "MCPMethodTypesDecorator",
+      "MCPAddParameterInActualScopeDecorator",
+      "MCPChangeKeywordsOrderInActualScopeDecorator",
+      "MCPExtractAsParameterInActualScopeDecorator",
+      "MCPInlineMethodInActualScopeDecorator",
+      "MCPRemoveParameterInActualScopeDecorator",
+      "MCPRenameSelectorInActualScopeDecorator",
+      "MCPExtractParameterObjectInActualScopeDecorator",
+      "MCPMoveInstanceVariableInActualScopeDecorator",
+      "MCPMoveMethodInActualScopeDecorator"
+    ],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:49Z",
+    "imageSha256": "f18f5b9ab96213d997107ebe156692b8acfcb7f15307fa051d56092f86a3e87f"
+  },
+  "toolsServed": 81,
+  "toolDefinitionBytes": 84353,
+  "hashes": {
+    "prompt.md": "4e9791830c14896706ba46609ad95a18a06d89d868d5153f3d9444768edf10a2",
+    "CLAUDE.md": "aa86360510bcc65cafd053831b3bebd741b6f1308b7ca98849d2b5e257d96c4d",
+    "spec.md": "8199582ea987c4a9cb945359dab13e0a3aefb3fa2154571c3b009e0e31fbf09f",
+    "skills": {}
+  },
+  "port": 50586,
+  "startedAt": "2026-09-17T06:14:41Z",
+  "endedAt": "2026-09-17T06:18:49Z",
+  "elapsedSeconds": 248,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 37,
+    "agentCalls": 35
+  },
+  "changesBytesAtStart": 8705835,
+  "changesBytesAtEnd": 8733646,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.5043,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 24,
+        "cache_write_5m": 0,
+        "cache_write_1h": 54853,
+        "cache_read": 675731,
+        "output": 24713,
+        "thinking": 11580,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 12,
+        "cost_usd": 1.5043405
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_classes_in_category": 2,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_batch": 5,
+      "mcp__Cuis__smalltalk_define_methods": 3,
+      "mcp__Cuis__smalltalk_senders_of": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 13,
+    "durationMs": 246483,
+    "durationApiMs": 202079,
+    "totalCostUsd": 1.5043404999999999,
+    "usage": {
+      "input_tokens": 24,
+      "cache_creation_input_tokens": 54853,
+      "cache_read_input_tokens": 675731,
+      "output_tokens": 24713,
+      "output_tokens_details": {
+        "thinking_tokens": 11580
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 54853,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1426,
+          "cache_read_input_tokens": 77731,
+          "cache_creation_input_tokens": 703,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 703
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 24,
+        "outputTokens": 24713,
+        "cacheReadInputTokens": 675731,
+        "cacheCreationInputTokens": 54853,
+        "webSearchRequests": 0,
+        "costUSD": 1.5043404999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 11580,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I finished all 8 items, including the bonus. All 39 tests pass, and tests 13\u201315 now run without the `shouldFail:` wrapper. The model classes are in `ISW1-2024-1C-Parcial`. I moved the three test classes to `ISW1-2024-1C-Parcial-Tests`, since they had been in the model category.\n\n**1. Creating a Floor:** `Floor withRooms: aNumberOfRooms pricedAt: aPriceList` checks its inputs on the class side (`assertIsValidNumberOfRooms:` and `assertIsValidPriceList:`) and then sends `initializeWithRooms:pricedAt:`. I removed the setters and the old init and check methods. I also fixed a bug in `Floor class>>signalUnknownGuestType`: it sent `self class` from the class side, so it could never find the error text. Both test classes' `createFloorWith:and:` now use the new message.\n\n**2. Creating a Hotel:** `Hotel withFloors:` checks that there are floors and then sends `initializeWithFloors:`. I removed `setFloors:` and `initialize`, and updated `createHotel` and every test that built a hotel by hand.\n\n**3. Room states:** Room no longer uses `guest = nil` and `#reserved`. It holds a `state`, which is one of three new classes under `RoomState`:\n- `AvailableRoomState`\n- `ReservedRoomState`\n- `OccupiedRoomState`, which knows the guest type\n\nEach state answers `isAvailable`, `isOccupied` and `isReserved`, gives its own profit and loss, and returns the next state (e.g., reserving an available room gives a `ReservedRoomState`). Room just forwards these messages to its state.\n\n**4. No repeated code in Room:** The errors live once, in `RoomState`: \"not empty\" for `receive:` and `reserve`, and \"not reserved\" for `receiveWithReservation:`. Only the states that allow a change override them. `Room>>#receive:`, `#receiveWithReservation:` and `#reserve` are each a single line: `state := state \u2026`.\n\n**5. Encapsulation in Hotel:** Floor has a new message, `atRoom:do:ifNone:`, and I removed `Floor>>#rooms`. Hotel reaches a room only through its own `atFloor:atRoom:do:`, which signals the floor or room error when either doesn't exist.\n\n**6. Losses:** I added `Room>>#lossUsing:ifAbsentGuestType:`. An available room loses the highest price in the list, and a reserved or occupied room loses 0 pesos. `Floor>>#totalLosses` now adds up each room's loss, the same way `totalProfits` adds up profits. The tests call this message with an `ifAbsentGuestType:` block, so Room accepts it, but no state uses it because a loss never depends on the guest type.\n\n**7. Repeated code in Hotel:**\n- `receive:atFloor:atRoom:`, `receiveWithReservation:atFloor:atRoom:` and `reserveRoom:atFloor:` are now one-line sends of `atFloor:atRoom:do:`.\n- `totalProfits`, `totalLosses` and the four room totals each use `floors sum: [...]`.\n- `isEmpty` uses `floors allSatisfy: [:floor | floor isAvailable]`.\n- I removed the `availableRoomsCount` counter; the hotel now adds up each floor's available rooms instead.\n\n**8. Bonus, tests:**\n- FloorTest no longer uses `floor rooms at:`. It uses three helpers: `receive:in:atRoom:`, `receiveWithReservation:in:atRoom:` and `reserveRoom:in:`.\n- HotelTest tests 09\u201313 use `createHotel` instead of building their own one-floor hotel.\n- Their repeated \"no guests or reservations\" checks are now one helper, `assertHasNoGuestsNorReservations:`.\n- I dropped the check at the start of test06 that all rooms are available on a new hotel; test02 already covers that.\n\n`priceMustBeIntegerErrorDescription` and `signalPriceMustBeInteger` in `Floor class` were already unused, and I left them in place. I didn't save the image."
+  }
+}

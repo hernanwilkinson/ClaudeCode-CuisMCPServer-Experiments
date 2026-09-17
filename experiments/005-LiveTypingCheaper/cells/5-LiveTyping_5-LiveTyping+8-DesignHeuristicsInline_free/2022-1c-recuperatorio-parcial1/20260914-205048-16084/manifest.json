@@ -1,0 +1,177 @@
+{
+  "experiment": "005-LiveTypingCheaper",
+  "runId": "20260914-205048-16084",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "5-LiveTyping",
+  "config": [
+    "5-LiveTyping",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "CustomerImporter-Recu-1er-Parcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 005-LiveTypingCheaper, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "5-LiveTyping",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8182.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-5-LiveTyping.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools",
+      "MCPLiveTypingTools"
+    ],
+    "decorators": [
+      "MCPActualImplementorsDecorator",
+      "MCPActualSendersDecorator",
+      "MCPInstanceVariableTypesDecorator",
+      "MCPMethodTypesDecorator"
+    ],
+    "cuisDevCommit": "7b48a0fb4bdf47feff8ed6b95866efdf587ceba8",
+    "mcpServerCommit": "1d61daa41bbb1feb8ae0ec0569432cc0305f0e9b",
+    "builtAt": "2026-09-14T23:44:36Z",
+    "imageSha256": "03e5394c4814c3f8d0c4117cddd3e73eecfac6354402c9a89f6b0c1e4d1d5dd0"
+  },
+  "toolsServed": 80,
+  "toolDefinitionBytes": 77387,
+  "hashes": {
+    "prompt.md": "64a88a04d2641530a0c9aead75f87428a30e570e520e7589aa5c3883ea368c65",
+    "CLAUDE.md": "4bcf462d30335eb4f70d7086e242ac6455350ec765a343c62836c28366390169",
+    "spec.md": "350580bde1271f57213ad50df190caea70d9c0fea0ab50f6de76c5a94b48e107",
+    "skills": {}
+  },
+  "port": 57275,
+  "startedAt": "2026-09-14T23:50:51Z",
+  "endedAt": "2026-09-15T00:00:30Z",
+  "elapsedSeconds": 579,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 147,
+    "agentCalls": 145
+  },
+  "changesBytesAtStart": 8633114,
+  "changesBytesAtEnd": 8657148,
+  "usageFromTranscript": {
+    "totalCostUsd": 3.9195,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 86,
+        "cache_write_5m": 0,
+        "cache_write_1h": 106336,
+        "cache_read": 3378686,
+        "output": 46655,
+        "thinking": 32792,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 43,
+        "cost_usd": 3.919508
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_classes_in_category": 2,
+      "mcp__Cuis__smalltalk_class_source": 4,
+      "mcp__Cuis__smalltalk_run_test_class": 4,
+      "mcp__Cuis__smalltalk_package_of_class": 1,
+      "mcp__Cuis__smalltalk_types_of_instance_variables": 5,
+      "mcp__Cuis__smalltalk_package_definition": 2,
+      "mcp__Cuis__smalltalk_list_classes": 3,
+      "mcp__Cuis__smalltalk_search_selectors": 1,
+      "mcp__Cuis__smalltalk_find_messages_by_example": 1,
+      "mcp__Cuis__smalltalk_method_source": 1,
+      "mcp__Cuis__smalltalk_evaluate": 3,
+      "mcp__Cuis__smalltalk_define_class": 8,
+      "mcp__Cuis__smalltalk_define_methods": 13,
+      "mcp__Cuis__smalltalk_delete_method": 2,
+      "mcp__Cuis__smalltalk_classify_methods": 1,
+      "mcp__Cuis__smalltalk_search_source": 1,
+      "mcp__Cuis__smalltalk_senders_of": 1,
+      "mcp__Cuis__smalltalk_method_sources_of_class": 3
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 57,
+    "durationMs": 577964,
+    "durationApiMs": 568660,
+    "totalCostUsd": 3.9195080000000004,
+    "usage": {
+      "input_tokens": 86,
+      "cache_creation_input_tokens": 106336,
+      "cache_read_input_tokens": 3378686,
+      "output_tokens": 46655,
+      "output_tokens_details": {
+        "thinking_tokens": 32792
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 106336,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1477,
+          "cache_read_input_tokens": 105108,
+          "cache_creation_input_tokens": 1228,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1228
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 86,
+        "outputTokens": 46655,
+        "cacheReadInputTokens": 3378686,
+        "cacheCreationInputTokens": 106336,
+        "webSearchRequests": 0,
+        "costUSD": 3.9195080000000004,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 32792,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "All 29 tests pass, unchanged. Here is what is now in the image.\n\n## Identification: `CustomerIdentification` \u2190 `DNI`, `CUIT`\n\n`Customer` no longer keeps `identificationType` + `identificationNumber` as raw data; it keeps one `identification` object created complete and valid:\n\n```smalltalk\nCustomerIdentification class>>ofType: aTypeCode numbered: aNumber\n\t^(self typeCodedBy: aTypeCode) numbered: aNumber\n\nCustomerIdentification class>>typeCodedBy: aTypeCode\n\t^self subclasses\n\t\tdetect: [ :anIdentificationType | anIdentificationType isCodedBy: aTypeCode ]\n\t\tifNone: [ self signalInvalidIdentificationType ]\n\nCustomerIdentification class>>numbered: aNumber\n\tself assertIsValidNumber: aNumber.\n\t^self new initializeNumbered: aNumber\n```\n\nThe `idType = 'D' ifTrue: [...] ifFalse: [idType = 'C' ifTrue: [...]]` chain is gone: the type code selects the class, and the class validates its own number (`DNI class>>isValidNumber:` is one line; `CUIT class>>isValidNumber:` is a short tree of named predicates over `validPrefixes`, `separator`, `documentNumberOf:`). The abstract class answers \"I am not of that kind\" (`isDNI ^false`, `dniNumberIfNone: ^aNoneBlock value`), and each subclass overrides only its own two, so `Customer`'s test protocol is pure delegation and a third kind of identification costs two methods.\n\n## Zip codes: `ZipCode` \u2190 `OldZipCode`, `NewZipCode`\n\nSame shape, driven by the first character instead of a type code (`canBeCodedAs:`), so `isKindOf: String` / `isKindOf: Integer` disappeared. `Address>>zipCode` answers `zipCode code` \u2014 a `Number` for the old one, the `String` for the new one, as the tests expect. The duplicated \"four digits over 999\" logic is gone: a new zip code simply asks whether it contains a valid old one.\n\n```smalltalk\nNewZipCode class>>hasValidOldZipCodeIn: anImportedZipCode\n\t^OldZipCode isValidCode: (self oldZipCodePartOf: anImportedZipCode)\n```\n\n## Other changes\n\n- The 16 repeated `self error: 'Invalid ...'` literals are now four class-side error descriptions, each reached through a `signal...` message.\n- `Customer` and `Address` are created complete and valid (`withFirstName:lastName:identifiedBy:`, `at:number:town:zipCode:province:`), with a single `initialize...` doing assignments only; all setters were deleted, so `importCustomer` and `importAddress` are now declarative.\n- `String>>isAllDigits` / `isAllLetters` extensions, since the digit test was inlined in three classes.\n- `ImportTest` moved to `CustomerImporter-Recu-1er-Parcial-Tests`; its code is untouched. The package picked up both categories and the two extension methods.\n\nTwo things worth flagging:\n\n- `ZipCode class>>invalidZipCodeTypeErrorDescription` has to answer `'Invalid identification type'`, because `test29ZipCodeMustBeOldOrNew` expects that text for an unrecognized zip code. It looks like a copy/paste slip in the original, but the tests had to be kept, so I left the text and put a one-line comment saying why.\n- I deliberately did **not** touch `importRecord`'s `isCustomerRecord` / `isAddressRecord` dispatch. It is the same smell, but it belongs to the original importer rather than to the types the new developer added, and replacing it means restructuring the importer's shared `newCustomer` state. Say the word and I'll turn record kinds into objects too.\n\nNothing was written to disk: the package has no file name and I did not save the image. Tell me if you want either done."
+  }
+}

@@ -1,0 +1,1 @@
+{ (Collection canUnderstand: #sum:). (Collection canUnderstand: #allSatisfy:). (Collection canUnderstand: #sum:ifEmpty:). #(1 2) sum: [:x | x*peso]. (0*peso) + (3*peso). TestCase class canUnderstand: #isAbstract. (TestCase class sourceCodeAt: #isAbstract) }

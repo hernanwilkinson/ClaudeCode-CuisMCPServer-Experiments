@@ -1,0 +1,8 @@
+# Source
+
+- Original directory: `2021-2c/2doParcial/` in `/Users/hernan/Documents/IngSoft1-Repos/parciales`.
+- Statement: `ISW1-2021-2C-Parcial-2-Enunciado.pdf` (copied as `spec-original.pdf`). It is the only PDF; there is no "Práctica"/"Teórica" split. Page 4 of the PDF is blank.
+- No `starting/` directory: the statement asks to develop the model from scratch with TDD and never mentions provided code.
+- `solution/ISW1-2021-2C-2doParcial.st`: the only `.st` in the directory. Although its name has no "Solucion" suffix, it is NOT initial code: it is a complete, working model (category `ISW1-2021-2C-2doParcial`; `TestISWSmartBuilding` with 22 tests, `EquipoDeTrabajo`/`EquipoSimple`/`EquipoCombinado`, `CapacidadDeConstruccion`/`CapacidadFija`/`CapacidadVariable`, `PrecioDeConstruccion`/`PrecioFijo`/`PrecioDependienteDeClima`, `ServicioMeteorologico`), authored by HAW between 11/23 and 11/27/2021, and it is exactly the code the Recuperatorio-1erParcial initial file was derived from (same classes plus the mood feature). It was therefore placed in `solution/` as the professor's solution. `ServicioMeteorologico>>diasLluviososEn:` has an empty body (the test case itself plays the weather service).
+- No Readme or video link found in the directory.
+- Removed from the statement: the "rules and norms for the remote exam" page (Discord, individual audio rooms, camera, allowed materials, image-saving recommendation), the "questions during the exam", "general notifications" and "bathroom breaks" sections with the spreadsheet link, and the "Delivery" section (category and file naming, .user.changes, email subject, git repo upload, confirmation before disconnecting from Discord).

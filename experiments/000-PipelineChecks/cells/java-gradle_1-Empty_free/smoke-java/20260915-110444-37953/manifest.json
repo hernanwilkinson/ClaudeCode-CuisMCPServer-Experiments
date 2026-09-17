@@ -1,0 +1,116 @@
+{
+  "experiment": "000-PipelineChecks",
+  "runId": "20260915-110444-37953",
+  "warmUp": "classes 1 run 1 passed 1 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "java-gradle",
+  "language": "java",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "smoke-java",
+  "package": "app",
+  "model": "claude-haiku-4-5-20251001",
+  "effort": "low",
+  "budgetUsd": 0.4,
+  "timeoutSeconds": 300,
+  "note": "Java runner smoke",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "gradle": "Gradle 9.7.1",
+  "java": "openjdk version 25.0.1 2025-10-21",
+  "hashes": {
+    "prompt.md": "8741f631794934fc4dc45ca597500226835dab62163ba1c4f586115305d76090",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "15e4ecc48185a35be1ecf3b49b93f2e7dd8802b9d2be656795c52d0821d6ec9a"
+  },
+  "startedAt": "2026-09-15T14:04:47Z",
+  "endedAt": "2026-09-15T14:05:11Z",
+  "elapsedSeconds": 24,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "acceptance": "classes 1 run 1 passed 1 failed 0 errors 0",
+  "ownTests": "classes 1 run 2 passed 2 failed 0 errors 0",
+  "usageFromTranscript": {
+    "totalCostUsd": 0.0365,
+    "perModel": {
+      "claude-haiku-4-5-20251001": {
+        "input": 66,
+        "cache_write_5m": 0,
+        "cache_write_1h": 8273,
+        "cache_read": 110316,
+        "output": 1779,
+        "thinking": 517,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 8,
+        "cost_usd": 0.0365386
+      }
+    },
+    "toolCalls": {
+      "Bash": 3,
+      "Read": 4,
+      "Edit": 2
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 10,
+    "durationMs": 22787,
+    "durationApiMs": 19979,
+    "totalCostUsd": 0.036538600000000004,
+    "usage": {
+      "input_tokens": 66,
+      "cache_creation_input_tokens": 8273,
+      "cache_read_input_tokens": 110316,
+      "output_tokens": 1779,
+      "output_tokens_details": {
+        "thinking_tokens": 517
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8273,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 8,
+          "output_tokens": 253,
+          "cache_read_input_tokens": 15837,
+          "cache_creation_input_tokens": 586,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 586
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 66,
+        "outputTokens": 1779,
+        "cacheReadInputTokens": 110316,
+        "cacheCreationInputTokens": 8273,
+        "webSearchRequests": 0,
+        "costUSD": 0.036538600000000004,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 517,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "Done! I've added the `greetFormally` method to the Greeter class and a corresponding test. Both the new formal greeting and the existing casual greeting are now working:\n\n- **Greeter.java**: Added `greetFormally(String aName)` that returns `\"Good day, \" + aName + \".\"`\n- **GreeterTest.java**: Added `greetsFormallyByName()` test that verifies `greetFormally(\"Ada\")` returns `\"Good day, Ada.\"`\n- All tests pass, including the original `greet()` test"
+  }
+}

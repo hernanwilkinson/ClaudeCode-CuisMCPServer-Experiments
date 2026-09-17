@@ -1,0 +1,162 @@
+{
+  "experiment": "017-CrypticNamesHiddenDomain",
+  "runId": "20260917-064840-57717",
+  "warmUp": "classes 1 run 18 passed 18 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2021-1c-parcial1-cryptic3",
+  "package": "Task1",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 017-CrypticNamesHiddenDomain, repetition 2",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:10Z",
+    "imageSha256": "b5f4b366a56949d0350d29a2756efc4fed4b2a6aa266163385aaa745d6efa3a5"
+  },
+  "toolsServed": 74,
+  "toolDefinitionBytes": 69457,
+  "hashes": {
+    "prompt.md": "4f7aeb85c25bb02bb19b4bbd70df460764943a266a9734ebc7988ff6a8a7a278",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "bff07563227996ab68dba2a439bf988cc9e7f472f990f9f7fdd389e0c188a740",
+    "skills": {}
+  },
+  "port": 55277,
+  "startedAt": "2026-09-17T09:48:42Z",
+  "endedAt": "2026-09-17T09:51:44Z",
+  "elapsedSeconds": 182,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 31,
+    "agentCalls": 29
+  },
+  "changesBytesAtStart": 5189590,
+  "changesBytesAtEnd": 5205388,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.062,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 22,
+        "cache_write_5m": 0,
+        "cache_write_1h": 35895,
+        "cache_read": 402800,
+        "output": 20060,
+        "thinking": 11249,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 11,
+        "cost_usd": 1.06196
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_batch": 5,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_run_test_class": 1,
+      "mcp__Cuis__smalltalk_senders_of": 1,
+      "mcp__Cuis__smalltalk_class_organization": 1,
+      "mcp__Cuis__smalltalk_define_methods": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 11,
+    "durationMs": 180338,
+    "durationApiMs": 176969,
+    "totalCostUsd": 1.06196,
+    "usage": {
+      "input_tokens": 22,
+      "cache_creation_input_tokens": 35895,
+      "cache_read_input_tokens": 402800,
+      "output_tokens": 20060,
+      "output_tokens_details": {
+        "thinking_tokens": 11249
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 35895,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1362,
+          "cache_read_input_tokens": 52283,
+          "cache_creation_input_tokens": 2934,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2934
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 22,
+        "outputTokens": 20060,
+        "cacheReadInputTokens": 402800,
+        "cacheCreationInputTokens": 35895,
+        "webSearchRequests": 0,
+        "costUSD": 1.06196,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 11249,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I redesigned W5Wars in the image, and all 18 tests in `C3` still pass. The model classes are in 'Task1' and `C3` is now in 'Task1-Tests'.\n\nI kept the existing class names and selectors (`C1`, `m1:`, \u2026) because tests call them and I can't know the real words behind the obfuscation. For new names I used the placeholder words from the task: w3, w4, w6, w7 time, w1, w2. One of those is based on how the code uses it: `v2` (the w7 time) is what an attack reduces.\n\n**1. Repeated code and making things declarative (`C1`, category w3s)**\n- The line `v5 isNil ifTrue: [...]` was repeated in almost every method. `v5` is now set once, in the single initialize method.\n- The manual `whileTrue:` loops in `m12` and `m13` are now `select:` / `inject:into:`.\n- `m2:a2:` now uses `m3:` to check whether the w5 has the w3, instead of checking its collection again.\n\n**2. Ifs replaced by polymorphism**\n- **Subclasses per type:** `C1OfTypeS1` and `C1OfTypeS2` for the w5s; `C2OfTypeS3`, `C2OfTypeS4` and `C2OfTypeS5` for the w3s.\n- **The attack (`m20:a20:`):** its nested ifs on both types are gone. The w3 counts the use, then the target w5 calls back the right w3 method (`w1C1OfTypeS1:by:` or `w1C1OfTypeS2:by:`). Each of the 6 combinations is a small method in its w3 subclass.\n- **Rules shared by those methods:** two methods in `C2` hold them: \"leave the attacker after N uses\" (`removeFrom:whenW1edTimes:`) and \"swap for another w3 after N uses\" (`replaceIn:with:whenW1edTimes:`).\n- **Instance creation (`m25:`):** it picks the subclass whose class-side `m22` is the type asked for. Each subclass supplies its values through `withDefaultCharacteristics`, and everything goes through one creation message (`w7Time:w6:maxW3W4:` and `w4:w2OnW6:`). The 'S4' and 'S5' error texts are now class methods.\n\n**3. Tests**\n- Two helpers, `attackerW1ing:with:times:` and `w7TimeOf:afterBeingW1edWith:`, remove the duplicated setup. Tests 07\u201312 are one line each now.\n- The hint only named 07\u201312, but I used the same helper in 13\u201318 because they repeated the same setup. The new assertions put the actual value first.\n\n**4. Other clean-up**\n- **Type variables:** removed from both classes (`v1`, `v6`), since the subclass now holds the type. The unused `C1>>m22` went with them.\n- **Old initializers:** removed `m5:a5:b5:c5:` and `m21:a21:b21:`.\n- **The w7 time setter `m7:`:** replaced by `w2W7TimeBy:`, which tells the w5 to reduce its own w7 time. The rule \"add an s3 when the w7 time is at most 50 years\" now calls `isW7TimeAtMost:` instead of reading the value from outside.\n- **Categories:** the methods I rewrote now sit in named categories instead of the generic \"x\".\n\nI left some things as they were:\n- **The speed check in `m1:`:** a new w3 is always counted against the w6, but carried w3s count only if they weigh more than 10 kg. That looks inconsistent, but the tests depend on it.\n- **Test names:** still `testNN`.\n- **`C3 class>>initialize`:** unchanged.\n- **Creation lookup:** `C1 class` and `C2 class` each keep a short copy of the method that picks the subclass. The two classes aren't the same kind of thing, so a shared superclass would be misleading."
+  }
+}

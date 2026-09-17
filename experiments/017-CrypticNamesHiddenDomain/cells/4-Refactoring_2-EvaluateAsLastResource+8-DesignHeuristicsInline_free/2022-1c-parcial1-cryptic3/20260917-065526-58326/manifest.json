@@ -1,0 +1,162 @@
+{
+  "experiment": "017-CrypticNamesHiddenDomain",
+  "runId": "20260917-065526-58326",
+  "warmUp": "classes 1 run 25 passed 25 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-parcial1-cryptic3",
+  "package": "Task2",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 017-CrypticNamesHiddenDomain, repetition 2",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:10Z",
+    "imageSha256": "b5f4b366a56949d0350d29a2756efc4fed4b2a6aa266163385aaa745d6efa3a5"
+  },
+  "toolsServed": 74,
+  "toolDefinitionBytes": 69457,
+  "hashes": {
+    "prompt.md": "29e72c409b611f2c5d7a69beedea785f4e84aa544b987a7f2519f323c136a497",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "d2bfce802caafbd0eeccd9463ce5ca8e1f8889495b5510b24c5da86ebbd296d1",
+    "skills": {}
+  },
+  "port": 55440,
+  "startedAt": "2026-09-17T09:55:28Z",
+  "endedAt": "2026-09-17T10:00:12Z",
+  "elapsedSeconds": 284,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 53,
+    "agentCalls": 51
+  },
+  "changesBytesAtStart": 5198774,
+  "changesBytesAtEnd": 5247802,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.7262,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 24,
+        "cache_write_5m": 0,
+        "cache_write_1h": 59161,
+        "cache_read": 622938,
+        "output": 32922,
+        "thinking": 17019,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 12,
+        "cost_usd": 1.726249
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_batch": 6,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_implementors_of": 1,
+      "mcp__Cuis__smalltalk_run_test_class": 1,
+      "mcp__Cuis__smalltalk_define_methods": 2,
+      "mcp__Cuis__smalltalk_define_class": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 13,
+    "durationMs": 283469,
+    "durationApiMs": 278232,
+    "totalCostUsd": 1.7262490000000001,
+    "usage": {
+      "input_tokens": 24,
+      "cache_creation_input_tokens": 59161,
+      "cache_read_input_tokens": 622938,
+      "output_tokens": 32922,
+      "output_tokens_details": {
+        "thinking_tokens": 17019
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 59161,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1431,
+          "cache_read_input_tokens": 77515,
+          "cache_creation_input_tokens": 968,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 968
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 24,
+        "outputTokens": 32922,
+        "cacheReadInputTokens": 622938,
+        "cacheCreationInputTokens": 59161,
+        "webSearchRequests": 0,
+        "costUSD": 1.7262490000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 17019,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I refactored the model in the image and all 25 tests pass. The domain classes are in `Task2` and the tests are in `Task2-Tests`. I kept the class names (`C1`\u2013`C5`) and the `mNN` selectors the tests and the other classes use. The new classes and messages I added have normal names.\n\n**1. Replacing ifs with polymorphism**\n- **Turbo states:** the car now holds a turbo state object instead of an on/off flag plus a usage counter. `TurboState` has two subclasses, `ActivatedTurbo` and `DeactivatedTurbo`. Activating, deactivating, `m7` and `m9` are now answered by the state. The chain of `v7 = 1 ifTrue:` checks became a list of boost factors (12/10, 11/10, 105/100) looked up by use count, with 1 after the third use.\n- **Car\u2013sector interaction:** a sector's enabled flag became a policy object, `TurboEnabled` or `TurboDisabled` (subclasses of `SectorTurboPolicy`). The sector hands the turbo check to it. The sector check no longer calls back into the car: `C1>>m1` works out the activated state, lets the sector check the move, and only then keeps the new state.\n\n**2. The seven methods**\n- `C2#advance` (`m19:`) is a single `do:`.\n- In `C4`, the index loops were replaced with collection messages: `anySatisfy:`, `detect:ifNone:`, `inject:into:` and `sum:ifEmpty:`.\n- `C4#put:at:` and `C4#positionOf:` now use small helpers: `sectorAt:`, `startOf:`, `endOf:` and `lengthOf:`.\n\n**3. Tests**\n- **Tests 20\u201325:** the repeated setup is now a few helpers (`carReadyToOvertake`, `activateTurboOf:afterUsingIt:`, `assertTurboActivatedAfter:previousUsesBoostsMaxSpeedTo:`), so tests 20\u201323 are one line each.\n- **Tests 04\u201306:** they use the same sector-and-two-cars helper as 20\u201325. The race and circuit tests share `sectorsWithAndWithoutTurbo`, `raceOn:` and `raceOnOneSector`.\n- **Names:** each test is renamed to say what it checks, keeping its `testNN` prefix (for example `test21SecondTurboUseBoostsMaxSpeedByTenPercent`). Temporaries have role names and assertions are written `assert: actual equals: expected`.\n- **Asserts dropped:** test19 used to check the car's position both before and after advancing. I kept only the check after advancing, because test17 already covers the first one.\n\n**4. Other design fixes**\n- **Unused code removed:** instance variables `v1` (the car's race, set but never read) and `v14`, plus `C2 m23`, `m26`, `C1 m2`, `C3 m31:` and the `m38:` setter.\n- **Object creation:** each class now creates its objects through one class-side message that runs the checks and calls a single `initialize\u2026`.\n- **Error messages:** `C1 m13`, `C1 m14` and `C4 m46` moved to the class side.\n- **Other:** instance variables and temporaries were renamed. A car's starting position is now `0 * kilometer` instead of a plain `0`. Methods are sorted into categories, and `C1` got a `printOn:` so its name is used.\n\n**Changes you should know about:**\n- **Test method names:** the old `test01`\u2026`test25` methods are gone. Anything that runs them by those exact names will no longer find them.\n- **Race creation:** I removed `C2 class>>m25:a25:b25:`. Its only effect was to tell each car its race, and the car never read that. Races are now created only with `m24:a24:`, and the tests that used the old message were updated. Code outside these tests that calls it will break.\n- **Error-message tests:** tests 24 and 25 now read `C1 m13` / `C1 m14` from the class instead of from a car instance.\n- **Car not in the circuit:** `C4 m52:` now raises the \"car not in circuit\" error (`m46`) instead of failing on an index lookup.\n\nNothing has been saved to disk: I didn't save the image or write the `Task2` package out."
+  }
+}

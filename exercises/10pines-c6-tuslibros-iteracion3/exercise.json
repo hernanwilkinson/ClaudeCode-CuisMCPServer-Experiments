@@ -1,0 +1,32 @@
+{
+  "name": "10pines-c6-tuslibros-iteracion3",
+  "title": "TusLibros Iteration 3: Merchant Processor Simulation",
+  "kind": "feature",
+  "package": "TusLibros",
+  "description": "Third iteration of TusLibros.com: the cashier debits the sale's total through a Merchant Processor collaborator (debit:from:) that the tests simulate with a configurable block; when the debit fails the error reaches the caller and nothing is registered in the sales book. The cart and cashier code of iterations 1 and 2 is given.",
+  "startingPackages": [
+    "starting/TusLibros-29.st"
+  ],
+  "solutionPackages": [
+    "solution/TusLibros-33.st"
+  ],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C6 - Construccion de Software Seguro usando Test Driven Development",
+  "semester": "10pines-c6",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "The Merchant Processor charges per call, so the cashier must depend on a collaborator the test replaces (the test case itself, with a block per test); the checkout is split into calculate, debit and register so the failure leaves the sales book untouched."
+  },
+  "sizeHint": {
+    "classesInStartingCode": 8,
+    "methodsInStartingCode": 50
+  }
+}

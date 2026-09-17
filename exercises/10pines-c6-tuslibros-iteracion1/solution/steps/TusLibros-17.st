@@ -1,0 +1,177 @@
+Object subclass: #Cart
+	instanceVariableNames: 'catalog items'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+!Cart methodsFor: 'error messages' stamp: 'HernanWilkinson 6/17/2013 17:45'!
+invalidQuantityErrorMessage
+	
+	^'Invalid number of items'! !
+
+!Cart methodsFor: 'error messages' stamp: 'HernanWilkinson 6/17/2013 17:45'!
+invalidItemErrorMessage
+	
+	^'Item is not in catalog'! !
+
+
+!Cart methodsFor: 'initialization' stamp: 'HernanWilkinson 6/17/2013 17:48'!
+initializeAcceptingItemsOf: aCatalog
+
+	catalog := aCatalog.
+	items := OrderedCollection new.! !
+
+
+!Cart methodsFor: 'queries' stamp: 'HernanWilkinson 6/17/2013 17:45'!
+occurrencesOf: anItem
+
+	^items occurrencesOf: anItem  ! !
+
+
+!Cart methodsFor: 'testing' stamp: 'HernanWilkinson 6/17/2013 17:44'!
+includes: anItem
+
+	^items includes: anItem ! !
+
+!Cart methodsFor: 'testing' stamp: 'HernanWilkinson 6/17/2013 17:44'!
+isEmpty
+	
+	^items isEmpty ! !
+
+
+!Cart methodsFor: 'adding' stamp: 'HernanWilkinson 6/17/2013 17:45'!
+add: aQuantity of: anItem
+
+	aQuantity strictlyPositive ifFalse: [ self error: self invalidQuantityErrorMessage ].
+	(catalog includes: anItem) ifFalse: [ self error: self invalidItemErrorMessage].
+	
+	1 to: aQuantity do: [:aNumber | items add: anItem]! !
+
+!Cart methodsFor: 'adding' stamp: 'HernanWilkinson 6/17/2013 17:44'!
+add: anItem
+
+	^ self add: 1 of: anItem ! !
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+Cart class
+	instanceVariableNames: ''!
+
+!Cart class methodsFor: 'instance creation' stamp: 'HernanWilkinson 6/17/2013 17:48'!
+acceptingItemsOf: aCatalog
+
+	^self new initializeAcceptingItemsOf: aCatalog ! !
+
+
+TestCase subclass: #CartTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'TusLibros'!
+
+!CartTest methodsFor: 'tests' stamp: 'HernanWilkinson 6/17/2013 17:43'!
+test04CanNotAddNonPositiveNumberOfItems
+
+	| cart |
+	
+	cart := self createCart.
+	
+	self 
+		should: [cart add: 0 of: self itemSellByTheStore ]
+		raise: Error - MessageNotUnderstood
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = cart invalidQuantityErrorMessage.
+			self assert: cart isEmpty ]! !
+
+!CartTest methodsFor: 'tests' stamp: 'HernanWilkinson 6/17/2013 17:45'!
+test02CanNotAddItemsThatDoNotBelongToStore
+
+	| cart |
+	
+	cart := self createCart.
+	
+	self 
+		should: [ cart add: self itemNotSellByTheStore ]
+		raise: Error - MessageNotUnderstood
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = cart invalidItemErrorMessage.
+			self assert: cart isEmpty ]! !
+
+!CartTest methodsFor: 'tests' stamp: 'HernanWilkinson 6/17/2013 17:45'!
+test08CartRemembersTheNumberOfAddedItems
+
+	| cart |
+	
+	cart := self createCart.
+	
+	cart add: 2 of: self itemSellByTheStore.
+	self assert: (cart occurrencesOf: self itemSellByTheStore) = 2! !
+
+!CartTest methodsFor: 'tests' stamp: 'HernanWilkinson 6/17/2013 17:08'!
+test01NewCartsAreCreatedEmpty
+
+	self assert: self createCart isEmpty! !
+
+!CartTest methodsFor: 'tests' stamp: 'HernanWilkinson 6/17/2013 17:43'!
+test03AfterAddingAnItemTheCartIsNotEmptyAnymore
+
+	| cart |
+	
+	cart := self createCart.
+	
+	cart add: self itemSellByTheStore.
+	self deny: cart isEmpty ! !
+
+!CartTest methodsFor: 'tests' stamp: 'HernanWilkinson 6/17/2013 17:43'!
+test07CartDoesNotHoldNotAddedItems
+
+	| cart |
+	
+	cart := self createCart.
+	
+	self deny: (cart includes: self itemSellByTheStore)! !
+
+!CartTest methodsFor: 'tests' stamp: 'HernanWilkinson 6/17/2013 17:45'!
+test05CanNotAddMoreThanOneItemNotSellByTheStore
+
+	| cart |
+	
+	cart := self createCart.
+	
+	self 
+		should: [cart add: 2 of: self itemNotSellByTheStore  ]
+		raise: Error - MessageNotUnderstood
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = cart invalidItemErrorMessage.
+			self assert: cart isEmpty ]! !
+
+!CartTest methodsFor: 'tests' stamp: 'HernanWilkinson 6/17/2013 17:43'!
+test06CartRemembersAddedItems
+
+	| cart |
+	
+	cart := self createCart.
+	
+	cart add: self itemSellByTheStore.
+	self assert: (cart includes: self itemSellByTheStore)! !
+
+
+!CartTest methodsFor: 'support' stamp: 'HernanWilkinson 6/17/2013 17:44'!
+itemNotSellByTheStore
+	
+	^'invalidBook'! !
+
+!CartTest methodsFor: 'support' stamp: 'HernanWilkinson 6/17/2013 17:48'!
+createCart
+	
+	^Cart acceptingItemsOf: self defaultCatalog! !
+
+!CartTest methodsFor: 'support' stamp: 'HernanWilkinson 6/17/2013 17:43'!
+defaultCatalog
+	
+	^ Array with: self itemSellByTheStore! !
+
+!CartTest methodsFor: 'support' stamp: 'HernanWilkinson 6/17/2013 17:43'!
+itemSellByTheStore
+	
+	^ 'validBook'! !

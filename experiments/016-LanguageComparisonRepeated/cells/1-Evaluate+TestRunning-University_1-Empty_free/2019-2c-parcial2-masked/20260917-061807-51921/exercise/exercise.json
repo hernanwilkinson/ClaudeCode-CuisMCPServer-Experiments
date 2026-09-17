@@ -1,0 +1,26 @@
+{
+  "name": "2019-2c-parcial2-masked",
+  "title": "Seabed Survey Crawler: Repeated Commands, Sonar and Guarded Runs",
+  "kind": "feature",
+  "package": "SurveyCrawler",
+  "description": "A seabed survey crawler that processes command strings (a, t, g, h) with polymorphic facings is given. The student must add single-digit command repetition (digit + 2 times), a sonar with firm sand/silt/boulder ground types that change or forbid movement, and a parenthesized 'guarded run' state that undoes all movements when anything fails inside it.",
+  "maskedFrom": "2019-2c-parcial2",
+  "startingPackages": ["starting/SurveyCrawler.st"],
+  "solutionPackages": ["solution/SurveyCrawler-Solution.st"],
+  "acceptanceTests": null,
+  "source": "2019-2c/2doParcial",
+  "semester": "2019-2c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Three orthogonal features interact: ground types must become polymorphic objects returned by an injected sonar (with randomness on silt to control in tests), guarded/free processing is a state machine with parenthesis parsing and nested/unterminated error cases, and undo requires recording inverse movements per facing."
+  },
+  "sizeHint": {"classesInStartingCode": 13, "methodsInStartingCode": 68}
+}

@@ -1,0 +1,25 @@
+{
+  "name": "2022-2c-parcial2",
+  "title": "Qatar OnLine Football",
+  "kind": "greenfield",
+  "package": "ISW1-2022-2C-2doParcial",
+  "description": "An online football game on a 20x20 board with a defender, a midfielder and a forward per team, alternating turns, a ball owned by one player or none, movement and kicks adjusted by two die rolls, and six kind-vs-kind rules deciding who keeps the ball when two players meet on it. The student must design and implement the first iteration from scratch with TDD, with all validations (turn, board bounds, integer positions).",
+  "startingPackages": [],
+  "solutionPackages": ["solution/ISW1-2022-2C-2doParcial.st"],
+  "acceptanceTests": null,
+  "source": "2022-2c/2doParcial",
+  "semester": "2022-2c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "The six forward/defender/midfielder possession match-ups call for double dispatch instead of kind checks, randomness must be injected as a die collaborator the tests can script, and turn alternation plus ball possession are game state that every action must validate and update."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

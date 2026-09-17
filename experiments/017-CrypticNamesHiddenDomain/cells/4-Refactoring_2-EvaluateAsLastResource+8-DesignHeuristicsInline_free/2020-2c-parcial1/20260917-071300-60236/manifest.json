@@ -1,0 +1,159 @@
+{
+  "experiment": "017-CrypticNamesHiddenDomain",
+  "runId": "20260917-071300-60236",
+  "warmUp": "classes 2 run 27 passed 27 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2020-2c-parcial1",
+  "package": "ISW1-2020-2C-Parcial-Enunciado",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 017-CrypticNamesHiddenDomain, repetition 3",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:10Z",
+    "imageSha256": "b5f4b366a56949d0350d29a2756efc4fed4b2a6aa266163385aaa745d6efa3a5"
+  },
+  "toolsServed": 74,
+  "toolDefinitionBytes": 69457,
+  "hashes": {
+    "prompt.md": "3c6eb34752de9880d656d1e69ffe990e05189606c669a02c4e6512839dda5107",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "7cc998c60087bc2b4ed44db43681db3e314b5b0714d44b416989a926005ac770",
+    "skills": {}
+  },
+  "port": 55945,
+  "startedAt": "2026-09-17T10:13:02Z",
+  "endedAt": "2026-09-17T10:14:43Z",
+  "elapsedSeconds": 101,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 33,
+    "agentCalls": 31
+  },
+  "changesBytesAtStart": 5210066,
+  "changesBytesAtEnd": 5222872,
+  "usageFromTranscript": {
+    "totalCostUsd": 0.8404,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 18,
+        "cache_write_5m": 0,
+        "cache_write_1h": 36843,
+        "cache_read": 367422,
+        "output": 11525,
+        "thinking": 4887,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 9,
+        "cost_usd": 0.840356
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_batch": 5,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_define_methods": 3
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 10,
+    "durationMs": 100061,
+    "durationApiMs": 97696,
+    "totalCostUsd": 0.8403560000000001,
+    "usage": {
+      "input_tokens": 18,
+      "cache_creation_input_tokens": 36843,
+      "cache_read_input_tokens": 367422,
+      "output_tokens": 11525,
+      "output_tokens_details": {
+        "thinking_tokens": 4887
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 36843,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 902,
+          "cache_read_input_tokens": 53875,
+          "cache_creation_input_tokens": 2290,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2290
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 18,
+        "outputTokens": 11525,
+        "cacheReadInputTokens": 367422,
+        "cacheCreationInputTokens": 36843,
+        "webSearchRequests": 0,
+        "costUSD": 0.8403560000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4887,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I did all three tasks and both extras in the image, and all 27 tests pass (15 for `Backpack`, 12 for `Door`). I didn't change tests 01\u201306 and 11\u201315 of `Backpack` or any `Door` test. `BackpackTest` and `DoorTest` were in the main category, so I moved them to `ISW1-2020-2C-Parcial-Enunciado-Tests`.\n\n**1. Backpack, accessing.** `totalWeight` and `totalPoints` each send one new private method, `sumOf:`, with a block that reads the weight or the points. `NoPointsPortableObject` now answers `points` with 0, so the `doesItAddPoints` check is gone and I removed that method.\n\n**2. Backpack, adding.** `add:` asks the item to check itself (`aPortableObject assertCanBeAddedTo: self`) and then stores it. The `isKindOf:` checks are replaced by each item class calling back to the backpack:\n- A `NoPointsPortableObject` has the backpack check only the weight, with no margin over the limit.\n- A `PointsPortableObject` has it check the weight with a margin of 5, then the points.\n\nThe margins 0 and 5 are now named methods on `Backpack`. The unused `addTo:` is removed.\n\n**3. Door.** I used the state pattern: `DoorState` now has three subclasses, `OpenedDoorState`, `ClosedDoorState` and `KeyClosedDoorState`.\n- Each state has `open`, `close`, `openUsing:`, `use` and `isOpen`. A move that's allowed returns the next state; one that isn't raises the same error messages as before.\n- In `Door`, each method in `playable character reactions` is one line (for example `state := state close`), and `isOpen` just asks the state.\n- The key moved from `Door` into `KeyClosedDoorState`. That's the only state that needs it, and the only `if` left is where it compares the key it was given.\n- I removed the door reference and `for:` from `DoorState`, since the states no longer need to know their door.\n- The three creation methods (`opened`, `closed`, `closedWith:`) all go through a single new one, `Door in: aDoorState`.\n\n**Extras.**\n- **test07 and test08** now send one helper, `assertAddingExceedsMaxWeight:`. It has the same `should:raise:withMessageText:` check and the same `isEmpty` check as before.\n- **test09 and test10** share `backpackWithHammerAndSign` and `assert:hasSize:weight:points:`. The helper runs the same three `assert:equals:` checks on size, weight and points.\n- Both extras use a new `emptyBackpack` helper that creates the 42/100 backpack."
+  }
+}

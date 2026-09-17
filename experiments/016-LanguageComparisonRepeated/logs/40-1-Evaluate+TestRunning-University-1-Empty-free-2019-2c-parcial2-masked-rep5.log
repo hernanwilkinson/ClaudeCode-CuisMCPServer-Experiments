@@ -1,0 +1,28 @@
+==> job 40: rep 5, 1-Evaluate+TestRunning-University / 1-Empty / free / exercises/2019-2c-parcial2-masked
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/1-Evaluate+TestRunning-University_1-Empty_free/2019-2c-parcial2-masked/20260917-061807-51921
+    image serving 7 tools on port 54476
+    installing starting/SurveyCrawler.st
+    warm-up (given tests run once before the session): classes 1 run 16 passed 16 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 173s, 9 tool calls logged by the server
+    saving the image
+    filing out package SurveyCrawler
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 10, cost $0.8331985000000001
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/1-Evaluate+TestRunning-University_1-Empty_free/2019-2c-parcial2-masked/20260917-061807-51921
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/1-Evaluate+TestRunning-University_1-Empty_free/2019-2c-parcial2-masked/20260917-061807-51921
+    installing the run's package SurveyCrawler
+    acceptance test classes: SurveyCrawlerTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260917-061807-51921: 1-Evaluate+TestRunning-University / 1-Empty / free / 2019-2c-parcial2-masked
+  acceptance         43/43 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 95.7%, by the agent's tests None
+  test smells        2
+  model              15 classes, 110 methods, 1.6 sends/method, 1 over 10, ifs 7, nil checks 0, type checks 0
+  diff               +90 methods, ~25 changed, -2 removed; classes +9 -0
+  tool calls         9 by the agent, 0 errors, evaluate kinds {'reflection': 3, 'definesCode': 4}
+  mentor             53 findings {'Keyword message send format': 25, 'Move helper method to the right class': 9, 'No empty method categories': 8, 'No class-name prefix in names': 4, 'Methods are categorized': 4, 'Method complexity': 3}
+  agent              claude-opus-5 effort high, 173s, cost $0.8331985000000001, tokens in 16 cache-read 124,407 out 19,621
+  refactorings       0 done by hand {}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/1-Evaluate+TestRunning-University_1-Empty_free/2019-2c-parcial2-masked/20260917-061807-51921/analysis.json

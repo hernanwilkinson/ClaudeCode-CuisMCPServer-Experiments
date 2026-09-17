@@ -1,0 +1,12 @@
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2019-2c-parcial1/20260910-192329-84724
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260910-192329-84725
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260910-195340-9276
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2022-1c-parcial1/20260910-195340-9250
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260910-202352-30225
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2019-2c-parcial1/20260910-202353-30261
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260910-205402-32035
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2022-1c-parcial1/20260910-205402-32009
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260910-212414-32844
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2019-2c-parcial1/20260910-212415-32884
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2022-1c-parcial1/20260910-215424-33684
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260910-215425-33727

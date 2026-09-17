@@ -1,0 +1,25 @@
+{
+  "name": "2023-1c-parcial1",
+  "title": "Drilling simulator: bits, soil layers and sonar",
+  "kind": "refactoring",
+  "package": "ISW1-2023-1C-Parcial-1",
+  "description": "A vertical drill with interchangeable bits (soft, widia, diamond) hits a stack of soil layers (sandy, earth, concrete with resistance) that react differently to each bit; the student must replace the symbol-based ifs with polymorphism, remove duplication in model and tests, rewrite the loop-based depth/count methods with collection protocol, and add the rule that two contiguous layers cannot be of the same type.",
+  "startingPackages": ["starting/ISW1-2023-1C-Parcial-1.st"],
+  "solutionPackages": ["solution/ISW1-2023-1C-Parcial-1-Solucion.st", "solution/ISW1-2023-1C-Parcial-1-SinScanNiEsnnn.st"],
+  "acceptanceTests": null,
+  "source": "2023-1c/1erParcial",
+  "semester": "2023-1c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": true,
+    "typeInformationHelps": true,
+    "fromScratch": false,
+    "stateMachine": false,
+    "notes": "Two orthogonal kinds (bit type x layer type) are both encoded as symbols and dispatched in one 3x3 nested-if method, the soil is a heterogeneous Array mixing CapaDeSuelo instances with plain strings (stones), and the scan constants 7/10/50 are duplicated across three whileTrue: loops; the student must decide which axis becomes the receiver (double dispatch) and how the bit's broken state is modelled."
+  },
+  "sizeHint": {"classesInStartingCode": 5, "methodsInStartingCode": 55}
+}

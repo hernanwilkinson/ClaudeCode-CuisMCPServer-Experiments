@@ -1,0 +1,11 @@
+# Source
+
+- Original directory: `2021-2c/Recuperatorio/` in `/Users/hernan/Documents/IngSoft1-Repos/parciales`.
+- Statement: `ISW1-2021-2C-Recuperatorio-Enunciado.pdf` (copied as `spec-original.pdf`). The single PDF holds two separate exercises: "Recuperatorio 1erParcial únicamente" (this exercise) and "Recuperatorio 2doParcial - ISW-Prop" (exercise `2021-2c-recuperatorio-parcial2`). Only the first-midterm part was translated here.
+- `starting/ISW1-2021-2C-Recuperatorio-1erParcial.st`: the initial code the student receives (the ".st provided in the mail"; name without "Solucion"; category `ISW1-2021-2C-Recuperatorio-1erParcial`). It is the second-midterm SmartBuilding model with `EquipoSimple` extended with an `estadoDeAnimo` symbol (`#Normal`, `#MuyBueno`, `#Malo`), `tiempoEnConstruir:` branching on it with ifs, a class-side validity check, two initializers, and tests 23-25 added to `TestISWSmartBuilding` (25 tests, all with the team-construction code repeated inline). Needs Aconcagua (`meter`, `centimeter`, `day`, `peso`).
+- `solution/ISW1-2021-2C-Recuperatorio-1erParcial-Solucion.st`: the solution (name contains "Solucion"). Note: it removes the test duplication (helper messages for teams, areas and assertions) and the extra initializer, but it still keeps the `if`s on the mood symbol in `EquipoSimple>>tiempoEnConstruir:`; the polymorphism part is not shown in it.
+- `ISW1-2021-2C-Recuperatorio-2doParcial-Solucion.st` in the same directory belongs to the other exercise and was not copied here.
+- No Readme or video link found in the directory.
+- Removed from the statement: the "rules and norms for the remote exam" page (Discord, individual audio rooms, camera, allowed materials, image-saving recommendation), the "questions during the exam", "general notifications" and "bathroom breaks" sections with the spreadsheet link, and the "Delivery" section (category and file naming per make-up type, .user.changes, email subject, git repo upload, confirmation before disconnecting from Discord).
+
+- `starting/ISW1-2021-2C-Recuperatorio-1erParcial.st` was ISO-8859-1 encoded; it was re-encoded as UTF-8 so Cuis 7.9 files it in correctly. The verbatim copy is `starting/original/ISW1-2021-2C-Recuperatorio-1erParcial.st`.

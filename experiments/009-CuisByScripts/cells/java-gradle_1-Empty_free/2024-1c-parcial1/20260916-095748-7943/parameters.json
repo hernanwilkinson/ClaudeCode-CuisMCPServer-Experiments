@@ -1,0 +1,20 @@
+{
+  "RUN_ID": "20260916-095748-7943",
+  "EXPERIMENT": "009-CuisByScripts",
+  "SCENARIO": "java-gradle",
+  "CONFIG": "1-Empty",
+  "TECHNIQUE": "free",
+  "EXERCISE_NAME": "2024-1c-parcial1",
+  "JAVA_PACKAGE": "simshotels",
+  "MODEL": "claude-opus-5",
+  "EFFORT": "high",
+  "BUDGET": "15",
+  "TIMEOUT": "2400",
+  "NOTE": "experiment 009-CuisByScripts, repetition 1",
+  "TOOLS": "Read,Edit,Write,Bash,Glob,Grep",
+  "CLAUDE_VERSION": "2.1.268 (Claude Code)",
+  "WORKDIR": "/private/tmp/claude-cells/20260916-095748-7943-7943",
+  "STARTED_AT": "2026-09-16T12:57:52Z",
+  "START_SECONDS": "1789563472",
+  "WARM_UP": "classes 3 run 39 passed 39 failed 0 errors 0"
+}

@@ -1,0 +1,25 @@
+==> job 3: rep 1, cuis-script / 1-Empty / free / exercises/2024-1c-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/cuis-script_1-Empty_free/2024-1c-parcial1/20260916-094513-2361
+    installing starting/ISW1-2024-1C-Parcial.st
+    warm-up (given tests run once before the session): tests run: 39, passed: 39, failed: 0, errors: 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, tools Read,Edit,Write,Bash,Glob,Grep, budget $15, timeout 2400s
+    claude exited with status 0 after 243s, 10 script runs
+    filing out package ISW1-2024-1C-Parcial
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 8, cost $1.1901095000000002, script runs 10 (0 failed)
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/cuis-script_1-Empty_free/2024-1c-parcial1/20260916-094513-2361
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/cuis-script_1-Empty_free/2024-1c-parcial1/20260916-094513-2361
+    installing the run's package ISW1-2024-1C-Parcial
+    acceptance test classes: FloorTest HotelTest RoomTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260916-094513-2361: cuis-script / 1-Empty / free / 2024-1c-parcial1
+  acceptance         40/40 passed, 0 failed, 0 errors
+  agent tests        0/0 passed, 0 failed, 0 errors
+  coverage           by all tests 89.9%, by the agent's tests 0.0%
+  test smells        4
+  model              7 classes, 93 methods, 1.51 sends/method, 0 over 10, ifs 4, nil checks 0, type checks 1
+  diff               +68 methods, ~58 changed, -23 removed; classes +5 -0
+  tool calls         7 by the agent, 0 errors, evaluate kinds {}
+  mentor             46 findings {'Keyword message send format': 27, 'No empty method categories': 7, 'Method complexity': 6, 'ifEmpty: over isEmpty ifTrue:': 2, 'No class-name prefix in names': 2, 'Methods have senders': 1, 'Move helper method to the right class': 1}
+  agent              claude-opus-5 effort high, 243s, cost $1.1901095000000002, tokens in 16 cache-read 207,629 out 25,185
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/cuis-script_1-Empty_free/2024-1c-parcial1/20260916-094513-2361/analysis.json

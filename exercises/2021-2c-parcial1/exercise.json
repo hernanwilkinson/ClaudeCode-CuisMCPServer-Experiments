@@ -1,0 +1,25 @@
+{
+  "name": "2021-2c-parcial1",
+  "title": "iswCity: zones and services refactoring",
+  "kind": "refactoring",
+  "package": "ISW1-2021-2C-1erParcial",
+  "description": "A SimCity-like engine where a City has services (solar plants producing 500 ep, water towers producing 200 wp) and zones (residential, commercial, industrial) that consume energy and water per cell and can only be added when enough is available. The student must remove duplicated code from model and tests, replace the type-symbol ifs with polymorphism, use collection protocol and improve the given design while keeping all 25 tests green.",
+  "startingPackages": ["starting/ISW1-2021-2C-1erParcial.st"],
+  "solutionPackages": ["solution/ISW1-2021-2C-1erParcial-Solution.st"],
+  "acceptanceTests": null,
+  "source": "2021-2c/1erParcial",
+  "semester": "2021-2c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Zone and Service carry a type symbol and City dispatches on it in four index-based whileTrue: loops plus a three-branch addZone: validation, so the student must move the per-kind consumption/production and the 'commercial needs a residential zone' rule into a Zone hierarchy (or double dispatch) and replace the loops with sum:/anySatisfy:, while also fixing lazy ifNil: initialization, setter-based construction and the wp/ep Aconcagua units."
+  },
+  "sizeHint": {"classesInStartingCode": 8, "methodsInStartingCode": 52}
+}

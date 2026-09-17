@@ -1,0 +1,25 @@
+{
+  "name": "2020-1c-parcial2-tema2",
+  "title": "Warehouse robots – packing trailers and product shipping (Tema 2)",
+  "kind": "feature",
+  "package": "ISW1-2020-1C-2doParcial",
+  "description": "Starting from the first-midterm warehouse model (robots, products, trailers, cashier), the student must add smart trailers with pluggable packers (bubble wrap adding 4 protection points, made-to-measure carton box adding 75% but skipping type B products) without modifying the Trailer class, and model shipping a robot's trailer through a distribution center that picks a cargo vehicle by destination, arrival time (via a simulated external travel-time service) and weight capacity, using a configurable selection criterion (heaviest vehicle or first to arrive).",
+  "startingPackages": ["starting/ISW1-2020-1C-2doParcial-CodigoParaEmpezar.st"],
+  "solutionPackages": ["solution/ISW1-2020-1C-2doParcial-SolucionDeVideo.st", "solution/ISW1-2020-1C-2doParcial-SolucionDecoratorRobotShipper.st"],
+  "acceptanceTests": null,
+  "source": "2020-1c/2doParcial",
+  "semester": "2020-1c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Mirror image of Tema 1: Trailer cannot be modified so packers need a decorator or wrapper plus double dispatch on the product kind, the selection criterion must be a swappable strategy object, and the vehicle choice is a select:/detect:/inject: pipeline over heterogeneous vehicles whose travel times come from a simulated external service."
+  },
+  "sizeHint": {"classesInStartingCode": 21, "methodsInStartingCode": 117}
+}

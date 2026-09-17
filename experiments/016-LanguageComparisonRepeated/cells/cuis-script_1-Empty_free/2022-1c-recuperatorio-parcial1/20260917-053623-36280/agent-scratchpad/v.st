@@ -1,0 +1,1 @@
+{ ImportTest category. Customer instVarNames. (Smalltalk allCallsOn: #identificationType:) size. (Smalltalk allCallsOn: #identificationNumber:) size. (SystemOrganization listAtCategoryNamed: 'CustomerImporter-Recu-1er-Parcial') }

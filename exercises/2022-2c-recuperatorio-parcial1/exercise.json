@@ -1,0 +1,25 @@
+{
+  "name": "2022-2c-recuperatorio-parcial1",
+  "title": "Qatar OnLine: Kick at Goal",
+  "kind": "feature",
+  "package": "ISW1-2022-2C-2doParcial",
+  "description": "Starting from the course staff's Qatar OnLine football game (20x20 board, three player kinds per team, alternating turns, die-adjusted moves and kicks, possession match-ups), the student must add, with TDD, a single #patearAlArco message: forwards and half-field midfielders score depending on die roll and distance to the opposing goal, defenders cannot kick, a goal resets positions and possession, a miss gives the ball to the opposing defender, and goals per team can be queried.",
+  "startingPackages": ["starting/ISW1-2022-2C-2doParcial.st"],
+  "solutionPackages": ["solution/ISW1-2022-2C-Recuperatorio.st"],
+  "acceptanceTests": null,
+  "source": "2022-2c/Recuperatorio",
+  "semester": "2022-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "The kick rule differs per player kind (forward threshold 10, midfielder threshold 15 only past half field, defender forbidden) and should be dispatched on the possessor rather than if-ed; the given model has no Team object and keeps players as Dictionary keys, so goal position, goal count and initial-position reset push toward introducing Equipo; the outcome changes turn/possession state."
+  },
+  "sizeHint": {"classesInStartingCode": 7, "methodsInStartingCode": 100}
+}

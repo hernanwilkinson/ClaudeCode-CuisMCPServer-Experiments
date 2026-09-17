@@ -1,0 +1,25 @@
+{
+  "name": "2018-1c-recuperatorio",
+  "title": "Garage Reservation",
+  "kind": "greenfield",
+  "package": "GarageReservation",
+  "description": "A company with a single garage space receives reservation requests (date, person, reason) and, when the day is closed, assigns the space by reason priority and then by fewest uses in the last 30 days. The student must build the model from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": [],
+  "acceptanceTests": null,
+  "source": "2018-1c",
+  "semester": "2018-1c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "Reasons carry a priority that should be modelled as objects rather than compared with ifs, the tie-break needs collection protocol over the usage history of the last 30 days, and the day has an open/closed state that rejects requests after assignment."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

@@ -1,0 +1,28 @@
+{
+  "name": "2024-2c-recuperatorio-parcial2",
+  "title": "Tetris Prototype",
+  "kind": "greenfield",
+  "package": "2024-2C-Recuperatorio",
+  "description": "A simplified Tetris on a walled board of at least 4x5 whose state is checked through a string representation: five randomly chosen tetrominoes fall one row per tick, can be moved sideways or dropped, land on the floor or on other pieces, complete rows are removed for 10 points each and the game ends when a new piece cannot descend. An extension replaces the board-limit rule with per-piece behavior when hitting a side wall (wrap around, bounce two columns, or return to the initial column).",
+  "startingPackages": [],
+  "solutionPackages": [
+    "solution/2024-2C-Recuperatorio.st",
+    "solution/2024-2C-Recuperatorio-1erY2doParcial.st"
+  ],
+  "acceptanceTests": null,
+  "source": "2024-2c/Recuperatorio",
+  "semester": "2024-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Beyond the piece shapes, the student must model occupied positions, landing, row completion and shifting rows down with collection protocol, the game-over transition, and (in the extension) three different wall-hit behaviors that vary per piece kind and invite polymorphic collaborators instead of type checks."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

@@ -1,0 +1,27 @@
+==> job 23: rep 4, 2-ModelStructure+Package / 9-BatchFirst / free / exercises/2025-2c-parcial2
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/013-BatchToolFiveRuns/cells/2-ModelStructure+Package_9-BatchFirst_free/2025-2c-parcial2/20260917-021408-42203
+    image serving 34 tools on port 49231
+    warm-up (given tests run once before the session): classes 0 run 0 passed 0 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 181s, 35 tool calls logged by the server
+    saving the image
+    filing out package 2025-2C-2doParcial
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 11, cost $0.9455284999999999
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/013-BatchToolFiveRuns/cells/2-ModelStructure+Package_9-BatchFirst_free/2025-2c-parcial2/20260917-021408-42203
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/013-BatchToolFiveRuns/cells/2-ModelStructure+Package_9-BatchFirst_free/2025-2c-parcial2/20260917-021408-42203
+    installing the run's package 2025-2C-2doParcial
+    acceptance test classes: none
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260917-021408-42203: 2-ModelStructure+Package / 9-BatchFirst / free / 2025-2c-parcial2
+  acceptance         none
+  agent tests        27/27 passed, 0 failed, 0 errors
+  coverage           by all tests 91.1%, by the agent's tests 91.1%
+  test smells        1
+  model              13 classes, 57 methods, 2.18 sends/method, 0 over 10, ifs 8, nil checks 0, type checks 0
+  diff               +90 methods, ~0 changed, -0 removed; classes +14 -0
+  tool calls         10 by the agent, 3 errors, evaluate kinds {'other': 4, 'reflection': 4}
+  mentor             66 findings {'Keyword message send format': 36, 'Method complexity': 11, 'No empty method categories': 8, 'No extra parenthesis': 5, 'Move helper method to the right class': 4, 'No class-name prefix in names': 1, 'Prefer = over ==': 1}
+  agent              claude-opus-5 effort high, 181s, cost $0.9455284999999999, tokens in 22 cache-read 153,717 out 22,068
+  refactorings       3 done by hand {'manualExtractMethod': 1, 'manualExtractFromSimilarCode': 1, 'manualRename': 1}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 2 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/013-BatchToolFiveRuns/cells/2-ModelStructure+Package_9-BatchFirst_free/2025-2c-parcial2/20260917-021408-42203/analysis.json

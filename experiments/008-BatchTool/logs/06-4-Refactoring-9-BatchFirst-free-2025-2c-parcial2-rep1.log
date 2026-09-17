@@ -1,0 +1,27 @@
+==> job 6: rep 1, 4-Refactoring / 9-BatchFirst / free / exercises/2025-2c-parcial2
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/008-BatchTool/cells/4-Refactoring_9-BatchFirst_free/2025-2c-parcial2/20260916-084535-95360
+    image serving 74 tools on port 49982
+    warm-up (given tests run once before the session): classes 0 run 0 passed 0 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 172s, 38 tool calls logged by the server
+    saving the image
+    filing out package 2025-2C-2doParcial
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 12, cost $1.0546745000000002
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/008-BatchTool/cells/4-Refactoring_9-BatchFirst_free/2025-2c-parcial2/20260916-084535-95360
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/008-BatchTool/cells/4-Refactoring_9-BatchFirst_free/2025-2c-parcial2/20260916-084535-95360
+    installing the run's package 2025-2C-2doParcial
+    acceptance test classes: none
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260916-084535-95360: 4-Refactoring / 9-BatchFirst / free / 2025-2c-parcial2
+  acceptance         none
+  agent tests        21/21 passed, 0 failed, 0 errors
+  coverage           by all tests 93.2%, by the agent's tests 93.2%
+  test smells        1
+  model              13 classes, 49 methods, 2.33 sends/method, 1 over 10, ifs 8, nil checks 0, type checks 0
+  diff               +77 methods, ~0 changed, -0 removed; classes +14 -0
+  tool calls         11 by the agent, 1 errors, evaluate kinds {'other': 5, 'reflection': 1}
+  mentor             48 findings {'Keyword message send format': 31, 'No empty method categories': 9, 'Method complexity': 6, 'Move helper method to the right class': 2}
+  agent              claude-opus-5 effort high, 172s, cost $1.0546745000000002, tokens in 24 cache-read 426,599 out 20,737
+  refactorings       3 done by hand {'manualExtractMethod': 1, 'manualExtractFromSimilarCode': 1, 'manualRename': 1}, 3 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 3 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/008-BatchTool/cells/4-Refactoring_9-BatchFirst_free/2025-2c-parcial2/20260916-084535-95360/analysis.json

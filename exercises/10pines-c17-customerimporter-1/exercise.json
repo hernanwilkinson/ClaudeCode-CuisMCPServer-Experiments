@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c17-customerimporter-1",
+  "title": "Customer Importer 1: test it and decouple it from the file",
+  "kind": "refactoring",
+  "package": "10Pines-C17",
+  "description": "A legacy god method Customer class>>importCustomers reads customers and addresses from a CSV file into a simulated database session, with two hidden bugs and one assertion-less test. The student must move it under a real test (set-up/tear-down for the session, assertions on the two imported customers and their addresses), fix the bugs, parameterize the input stream and the session, and turn it into a method object.",
+  "startingPackages": ["starting/10Pines-C17.st"],
+  "solutionPackages": ["solution/10Pines-C17-35.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C17 - TDD Avanzado",
+  "semester": "10pines-c17",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": true,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "Characterization-test iteration: the difficulty is breaking the dependencies of a god method (file, database session, transaction) with small safe refactorings (extract to setUp/tearDown, introduce parameter, generalize the file stream to a ReadStream, method object) before touching its logic, and writing declarative assertions that reveal the two field-index bugs."
+  },
+  "sizeHint": {"classesInStartingCode": 4, "methodsInStartingCode": 36}
+}

@@ -1,0 +1,28 @@
+==> job 1: rep 1, 1-Evaluate+TestRunning-University / 1-Empty / free / exercises/2022-1c-recuperatorio-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/1-Evaluate+TestRunning-University_1-Empty_free/2022-1c-recuperatorio-parcial1/20260916-095228-4782
+    image serving 7 tools on port 51520
+    installing starting/CustomerImporter-Recu-1er-Parcial.st
+    warm-up (given tests run once before the session): classes 1 run 29 passed 29 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 70s, 7 tool calls logged by the server
+    saving the image
+    filing out package CustomerImporter-Recu-1er-Parcial
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 8, cost $0.487826
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/1-Evaluate+TestRunning-University_1-Empty_free/2022-1c-recuperatorio-parcial1/20260916-095228-4782
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/1-Evaluate+TestRunning-University_1-Empty_free/2022-1c-recuperatorio-parcial1/20260916-095228-4782
+    installing the run's package CustomerImporter-Recu-1er-Parcial
+    acceptance test classes: ImportTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260916-095228-4782: 1-Evaluate+TestRunning-University / 1-Empty / free / 2022-1c-recuperatorio-parcial1
+  acceptance         29/29 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 80.4%, by the agent's tests None
+  test smells        1
+  model              17 classes, 150 methods, 1.7 sends/method, 4 over 10, ifs 7, nil checks 2, type checks 1
+  diff               +60 methods, ~13 changed, -2 removed; classes +7 -0
+  tool calls         7 by the agent, 0 errors, evaluate kinds {'reflection': 2, 'other': 1, 'definesCode': 2}
+  mentor             46 findings {'Keyword message send format': 14, 'Avoid setters': 8, 'No empty method categories': 7, 'Method complexity': 7, 'Class is referenced': 5, 'Instance variables read & written': 3, 'ifEmpty: over isEmpty ifTrue:': 1, 'No class-name prefix in names': 1}
+  agent              claude-opus-5 effort high, 70s, cost $0.487826, tokens in 12 cache-read 92,002 out 8,209
+  refactorings       0 done by hand {}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/1-Evaluate+TestRunning-University_1-Empty_free/2022-1c-recuperatorio-parcial1/20260916-095228-4782/analysis.json

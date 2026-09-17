@@ -1,0 +1,25 @@
+{
+  "name": "2018-1c-parcial2",
+  "title": "Mars Rover",
+  "kind": "greenfield",
+  "package": "MarsRover",
+  "description": "A Mars Rover on a plane, with a position and a cardinal heading, receives a String of single-character commands (f, b, l, r) and must stop processing at the first invalid command. The student must build the model from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/MarsRover29.st", "solution/MarsRover-With MarsRoverPosition Hierarchy.st"],
+  "acceptanceTests": null,
+  "source": "2018-1c",
+  "semester": "2018-1c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "The natural temptation is a case-like dispatch on the heading character and on the command character; the good design replaces both with polymorphic heading objects and command objects, plus stopping the command stream on the first invalid command."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

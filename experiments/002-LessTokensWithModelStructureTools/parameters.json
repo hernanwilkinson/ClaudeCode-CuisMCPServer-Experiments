@@ -1,0 +1,3 @@
+{"label": "tokens-opus-1", "cells": "1-Evaluate+TestRunning:1-Empty,2-ModelStructure+Package:2-EvaluateAsLastResource", "exercises": "exercises/2019-2c-parcial1,exercises/2022-1c-parcial1", "repetitions": 3,
+ "model": "claude-opus-5", "effort": "high", "technique": "free", "budget": 15, "timeout": 1800,
+ "parallel": 2, "startedAt": "2026-09-10T22:23:28Z"}

@@ -1,0 +1,163 @@
+{
+  "experiment": "017-CrypticNamesHiddenDomain",
+  "runId": "20260917-070027-58908",
+  "warmUp": "classes 2 run 27 passed 27 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2020-2c-parcial1-cryptic3",
+  "package": "Task3",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 017-CrypticNamesHiddenDomain, repetition 2",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:10Z",
+    "imageSha256": "b5f4b366a56949d0350d29a2756efc4fed4b2a6aa266163385aaa745d6efa3a5"
+  },
+  "toolsServed": 74,
+  "toolDefinitionBytes": 69457,
+  "hashes": {
+    "prompt.md": "c9a00e02b83e0493f7d25409a73257d520635ca5b55f4214198faf136066cb11",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "9b6392650f3aa1caa29e377e237b207f99a28977fbb3264a4181d577b0908174",
+    "skills": {}
+  },
+  "port": 55610,
+  "startedAt": "2026-09-17T10:00:29Z",
+  "endedAt": "2026-09-17T10:02:16Z",
+  "elapsedSeconds": 107,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 24,
+    "agentCalls": 22
+  },
+  "changesBytesAtStart": 5198995,
+  "changesBytesAtEnd": 5207935,
+  "usageFromTranscript": {
+    "totalCostUsd": 0.712,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 16,
+        "cache_write_5m": 0,
+        "cache_write_1h": 28918,
+        "cache_read": 280974,
+        "output": 11289,
+        "thinking": 6151,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 8,
+        "cost_usd": 0.711972
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_batch": 3,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_run_tests_for_classes": 1,
+      "mcp__Cuis__smalltalk_senders_of": 1,
+      "mcp__Cuis__smalltalk_define_methods": 1,
+      "mcp__Cuis__smalltalk_classify_methods": 1,
+      "mcp__Cuis__smalltalk_run_test_class": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 10,
+    "durationMs": 105836,
+    "durationApiMs": 103103,
+    "totalCostUsd": 0.7119720000000002,
+    "usage": {
+      "input_tokens": 16,
+      "cache_creation_input_tokens": 28918,
+      "cache_read_input_tokens": 280974,
+      "output_tokens": 11289,
+      "output_tokens_details": {
+        "thinking_tokens": 6151
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 28918,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 917,
+          "cache_read_input_tokens": 46733,
+          "cache_creation_input_tokens": 1507,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1507
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 16,
+        "outputTokens": 11289,
+        "cacheReadInputTokens": 280974,
+        "cacheCreationInputTokens": 28918,
+        "webSearchRequests": 0,
+        "costUSD": 0.7119720000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6151,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "All three tasks and both extras are done, and all 27 tests pass (15 backpack tests in `C5`, 12 door tests in `C7`). I didn't touch tests `test01`\u2013`test06`, `test11`\u2013`test15` or any door test.\n\nOne thing to know first: every method sat in a category called `x`, so the categories the task names ('accessing', 'adding', 'playable character reactions') didn't exist. I filed the methods I worked on under those names.\n\n**1. Repeated code in `C1` 'accessing'.** `m7` (total weight) and `m6` (total game points) each had their own counting loop. Both now use one new method, `sumOf:`. The \"skip items that give no points\" check is gone: items of `C9` (the kind that adds no points) now answer 0 for `m53`.\n\n**2. `C1>>add:` without ifs.**\n```smalltalk\nadd: t1\n\tself m2: t1 a2: t1 weightTolerance.\n\tself m1: t1.\n\tv3 add: t1\n```\nEach kind of item answers its own `weightTolerance` (0 for `C9`, 5 for `C10`), so the `isKindOf:` checks are gone. The points check now runs for `C9` items too, but since they add 0 points it can never fail for them.\n\n**3. Door design (`C6`).** The three states are now subclasses of `C2`: `OpenDoorState`, `ClosedDoorState` and `LockedDoorState`.\n- Each state handles close (`m19`), open (`m22`), unlock (`m23:`), is-open (`m37`) and a new `toggle` for `m34:`. It either raises the right error or tells the door to `beOpen` or `beClosed`.\n- The door methods in 'playable character reactions' now just pass the call to the current state, with no ifs.\n- The key moved out of the door and into `LockedDoorState`, so I removed the door's key variable (`v8`) and the old setters `m35:` and `m36:a36:`.\n- The only if left is in `LockedDoorState>>m23:`, where it checks whether the key is the right one. That's a comparison, not a state check. It uses `=` instead of the original `==`, which gives the same result because the item classes don't redefine `=`.\n\n**Extras.**\n- `test07` and `test08` now both call `assertAddingExceedsMaximumWeight:`, which holds the original assertions.\n- `test09` and `test10` both start from `backpackWithOneItemOfEachKind`, and their assertions are unchanged.\n\nI also moved `C5` and `C7` from 'Task3' to 'Task3-Tests', as you asked.\n\n`m48` (whether an item gives points) and `m47:` (an abstract method on `C8`) are now unused, but I left them in place. They can be deleted if you don't want dead code."
+  }
+}

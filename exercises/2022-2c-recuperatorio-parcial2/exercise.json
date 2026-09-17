@@ -1,0 +1,25 @@
+{
+  "name": "2022-2c-recuperatorio-parcial2",
+  "title": "Qatar OnLine: Goals and Offside",
+  "kind": "feature",
+  "package": "ISW1-2022-2C-2doParcial",
+  "description": "Starting from the course staff's Qatar OnLine football game (20x20 board, three player kinds per team, alternating turns, die-adjusted moves and kicks, possession match-ups), the student must add, with TDD, kicking at goal (#patearAlArco, with per-kind scoring rules, goal reset and goal counting) and offside calling by 1 to 3 biased referees whose favoritism and die rolls yield a chance compared with a per-kind threshold.",
+  "startingPackages": ["starting/ISW1-2022-2C-2doParcial.st"],
+  "solutionPackages": ["solution/ISW1-2022-2C-Recuperatorio.st"],
+  "acceptanceTests": null,
+  "source": "2022-2c/Recuperatorio",
+  "semester": "2022-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Kick rules and offside thresholds differ per player kind and should be dispatched, not if-ed; the given model keeps players as keys of per-team Dictionaries with no Team object, so goals per team, opposing goal position and 'ahead of all opponents' (allSatisfy:/inject: over players and referees) push toward introducing Equipo and Arbitro; goal and offside outcomes reset positions and possession, extending the turn/possession state."
+  },
+  "sizeHint": {"classesInStartingCode": 7, "methodsInStartingCode": 100}
+}

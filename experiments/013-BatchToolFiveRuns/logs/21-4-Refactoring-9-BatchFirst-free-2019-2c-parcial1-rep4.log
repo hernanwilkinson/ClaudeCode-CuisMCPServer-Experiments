@@ -1,0 +1,28 @@
+==> job 21: rep 4, 4-Refactoring / 9-BatchFirst / free / exercises/2019-2c-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/013-BatchToolFiveRuns/cells/4-Refactoring_9-BatchFirst_free/2019-2c-parcial1/20260917-021217-41860
+    image serving 74 tools on port 49163
+    installing starting/IngSof1-2019-2C-1Parcial.st
+    warm-up (given tests run once before the session): classes 1 run 14 passed 14 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 94s, 34 tool calls logged by the server
+    saving the image
+    filing out package IngSof1-2019-2C-1Parcial
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 7, cost $0.6479410000000001
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/013-BatchToolFiveRuns/cells/4-Refactoring_9-BatchFirst_free/2019-2c-parcial1/20260917-021217-41860
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/013-BatchToolFiveRuns/cells/4-Refactoring_9-BatchFirst_free/2019-2c-parcial1/20260917-021217-41860
+    installing the run's package IngSof1-2019-2C-1Parcial
+    acceptance test classes: CoffeeShopTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260917-021217-41860: 4-Refactoring / 9-BatchFirst / free / 2019-2c-parcial1
+  acceptance         14/14 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 86.7%, by the agent's tests None
+  test smells        2
+  model              13 classes, 48 methods, 1.52 sends/method, 0 over 10, ifs 0, nil checks 0, type checks 0
+  diff               +27 methods, ~22 changed, -6 removed; classes +7 -0
+  tool calls         6 by the agent, 0 errors, evaluate kinds {}
+  mentor             25 findings {'Keyword message send format': 12, 'No empty method categories': 8, 'No class-name prefix in names': 2, 'Class is referenced': 2, 'No extra parenthesis': 1}
+  agent              claude-opus-5 effort high, 94s, cost $0.6479410000000001, tokens in 14 cache-read 218,032 out 10,435
+  refactorings       11 done by hand {'manualExtractMethod': 10, 'manualExtractFromSimilarCode': 1}, 11 while a tool was available, 0 right after the tool failed; 1 refactoring tool calls, 0 of them failed; 1 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/013-BatchToolFiveRuns/cells/4-Refactoring_9-BatchFirst_free/2019-2c-parcial1/20260917-021217-41860/analysis.json

@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c2-portfolio",
+  "title": "Portfolio of accounts (Composite)",
+  "kind": "feature",
+  "package": "Portfolio-Ejercicio",
+  "description": "Bank accounts register deposits and withdraws; a Portfolio groups accounts and other portfolios and must answer balance, transactions, transactionsOf:, doesManage: and hasRegistered: polymorphically with ReceptiveAccount, and refuse to be created with repeated accounts or with accounts already managed through nested portfolios. The student implements the given empty Portfolio class so the 21 tests pass.",
+  "startingPackages": ["starting/Portfolio-Ejercicio.st"],
+  "solutionPackages": ["solution/PortfolioTreePrinter-Ejercicio.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C2 - Diseño Avanzado de Software con Objetos II",
+  "semester": "10pines-c2",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Composite where the whole (Portfolio) must be polymorphic with the parts (ReceptiveAccount) for balance, transactions and management queries over a heterogeneous collection, with recursive doesManage: in both directions for the creation preconditions; the temptation is to ask isKindOf: Portfolio or to duplicate the recursion."
+  },
+  "sizeHint": {"classesInStartingCode": 11, "methodsInStartingCode": 48}
+}

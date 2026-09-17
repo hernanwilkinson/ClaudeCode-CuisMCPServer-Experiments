@@ -1,0 +1,25 @@
+==> job 4: rep 1, 4-Refactoring / 4-Refactoring,8-DesignHeuristicsInline / test-after / exercises/2023-2c-parcial2
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_test-after/2023-2c-parcial2/20260911-153152-54314
+    image serving 73 tools on port 58692
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 571s, 171 tool calls logged by the server
+    saving the image
+    filing out package ISW1-2023-2C-2doParcial
+    status completed, turns 30, cost $2.2642419999999994
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_test-after/2023-2c-parcial2/20260911-153152-54314
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_test-after/2023-2c-parcial2/20260911-153152-54314
+    installing the run's package ISW1-2023-2C-2doParcial
+    acceptance test classes: none
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260911-153152-54314: 4-Refactoring / 4-Refactoring+8-DesignHeuristicsInline / test-after / 2023-2c-parcial2
+  acceptance         none
+  agent tests        54/54 passed, 0 failed, 0 errors
+  coverage           by all tests 97.4%, by the agent's tests 97.4%
+  test smells        5
+  model              12 classes, 81 methods, 2.04 sends/method, 0 over 10, ifs 11, nil checks 0, type checks 0
+  diff               +144 methods, ~0 changed, -0 removed; classes +15 -0
+  tool calls         29 by the agent, 1 errors, evaluate kinds {'other': 5}
+  mentor             102 findings {'Keyword message send format': 28, 'No extra parenthesis': 27, 'Method complexity': 20, 'Move helper method to the right class': 14, 'No empty method categories': 10, 'Avoid setters': 2, 'Instance creation format': 1}
+  agent              claude-opus-5 effort high, 571s, cost $2.2642419999999994, tokens in 322 cache-read 511,534 out 53,409
+  refactorings       3 done by hand {'manualExtractMethod': 3}, 3 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_test-after/2023-2c-parcial2/20260911-153152-54314/analysis.json

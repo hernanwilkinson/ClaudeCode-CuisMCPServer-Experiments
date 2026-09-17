@@ -1,0 +1,124 @@
+{
+  "runId": "20260910-171127",
+  "mode": "interactive",
+  "userMemoryPausedDuringSession": true,
+  "scenario": "4-Refactoring",
+  "config": [
+    "4-Refactoring"
+  ],
+  "technique": "free",
+  "exercise": "2019-2c-parcial1",
+  "package": "IngSof1-2019-2C-1Parcial",
+  "model": "claude-fable-5-1",
+  "effort": "high",
+  "budgetUsd": 20.0,
+  "timeoutSeconds": 3600,
+  "note": "first interactive session; collection interrupted, finished with --finish",
+  "claudeCodeVersion": "2.1.212 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "cuisDevCommit": "5df8905ece86a4cc8cd4b667ae7a967af06249ad",
+    "mcpServerCommit": "766cc93f08d5240467e77b48dbbcf99ebb840f9f",
+    "builtAt": "2026-09-10T18:54:30Z",
+    "imageSha256": "bbe820acef080272027853954a9048de8645c6a2dc2823a1a2b1f235698c95fd"
+  },
+  "toolsServed": 72,
+  "toolDefinitionBytes": 65879,
+  "hashes": {
+    "prompt.md": "a4729af75737d60f46f55085a79091f4ade41d9ba5752eaf4db3c2612eb83ba6",
+    "CLAUDE.md": "6f554f6c149ff856e8d49ec3cc496d57503a23f0834995afde748cef7d09e542",
+    "spec.md": "1d23060be5332744e4f21e4a1303fdf8f26706732a15597dd79f4e0cbeeb56b5",
+    "skills": {}
+  },
+  "port": 57460,
+  "startedAt": "2026-09-10T20:11:27Z",
+  "endedAt": "2026-09-10T20:51:08Z",
+  "elapsedSeconds": 584,
+  "claudeExitStatus": 130,
+  "status": "interrupted",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 2,
+    "agentCallsToLine": 155,
+    "agentCalls": 154
+  },
+  "changesBytesAtStart": 5054079,
+  "changesBytesAtEnd": 5108931,
+  "usageFromTranscript": {
+    "totalCostUsd": 5.1476,
+    "perModel": {
+      "claude-fable-5-1": {
+        "input": 808,
+        "cache_write_5m": 0,
+        "cache_write_1h": 118680,
+        "cache_read": 1933539,
+        "output": 45650,
+        "thinking": 18624,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 29,
+        "cost_usd": 5.14756475
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_classes_in_category": 4,
+      "mcp__Cuis__smalltalk_class_definition": 8,
+      "mcp__Cuis__smalltalk_method_sources_of_class": 23,
+      "mcp__Cuis__smalltalk_run_test_class": 5,
+      "mcp__Cuis__smalltalk_evaluate": 6,
+      "mcp__Cuis__smalltalk_define_method": 59,
+      "mcp__Cuis__smalltalk_senders_of": 6,
+      "mcp__Cuis__smalltalk_list_classes": 2,
+      "mcp__Cuis__smalltalk_define_class": 6,
+      "mcp__Cuis__smalltalk_delete_method": 7,
+      "mcp__Cuis__smalltalk_refactor_remove_instance_variable": 1,
+      "mcp__Cuis__smalltalk_refactor_extract_method_from_similar_code": 8,
+      "mcp__Cuis__smalltalk_refactor_rename_temporary": 8,
+      "mcp__Cuis__smalltalk_method_source": 3,
+      "mcp__Cuis__smalltalk_classify_methods": 1,
+      "mcp__Cuis__smalltalk_search_source": 3,
+      "mcp__Cuis__smalltalk_unsaved_packages": 1,
+      "mcp__Cuis__smalltalk_save_image": 1,
+      "mcp__Cuis__smalltalk_implementors_of": 1
+    }
+  },
+  "result": {
+    "subtype": null,
+    "isError": null,
+    "numTurns": null,
+    "durationMs": null,
+    "durationApiMs": null,
+    "totalCostUsd": null,
+    "usage": null,
+    "modelUsage": null,
+    "stopReason": null,
+    "terminalReason": null,
+    "text": null
+  }
+}

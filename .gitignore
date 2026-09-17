@@ -1,0 +1,19 @@
+# Artefactos de imagen Smalltalk: se reconstruyen con scripts/1-createScenarioImage.sh
+# y con cada corrida. Excluidos a pedido (imágenes, sources y changes).
+*.image
+*.changes
+*.sources
+image/
+image-UserFiles/
+
+# Ruido del sistema y herramientas descargadas
+.DS_Store
+tools/
+crash.dmp
+UnicodeData.txt
+
+# PDFs originales de los enunciados y configuraciones MCP de cada corrida (con su token)
+spec*original.pdf
+.mcp.json
+spec*original.txt
+spec*original.md

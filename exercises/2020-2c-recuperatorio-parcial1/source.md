@@ -1,0 +1,7 @@
+# Source
+
+- Original directory: `2020-2c/recuperatorio/` in the parciales repository (it holds both make-up exams; only the files of the first-midterm make-up belong to this exercise).
+- Statement: `ISW1-2020-2C-Recuperatorio1erParcial.pdf` (2 pages; the exercise, "Adventure Games III", is the second half of page 2). Copied as `spec-original.pdf`.
+- `starting/ISW1-2020-2C-Recuperatorio-1erParcial.st`: the only `.st` file of this exam. It is the initial code, not a solution: it contains the `Hole`/`HoleTest` prototype the statement describes, and the five methods named in the statement have exactly the flaws to be removed (`Hole class>>from:to:in:movingTo:` repeats the `x < 0` / `y < 0` checks, `Room>>moveFrom:to:` and `PlayableCharacter>>jump` use `isKindOf: Hole`, `NonPortableObject class>>assertCanContain:` uses `anySatisfy: [... isKindOf: Hole]`, and the `HoleTest` tests repeat the room/character setup). It is the second-midterm class solution plus the Hole prototype. Category `ISW1-2020-2C-Recuperatorio-1erParcial`.
+- No solution file, no Readme and no video link were found for this exam.
+- Removed from the statement: page 1 (rules for the remote make-up exam: screen sharing, camera, microphone, Zoom reconnection, question sign-up spreadsheet, penalties) and the "Entrega del recuperatorio" section on page 2 (fileout name, `.user.changes` file, clean-image check, submission email and subject, reception confirmation).

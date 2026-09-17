@@ -1,0 +1,12 @@
+1	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1
+1	2-ModelStructure+Package	2-EvaluateAsLastResource	free	exercises/2019-2c-parcial1
+1	1-Evaluate+TestRunning	1-Empty	free	exercises/2022-1c-parcial1
+1	2-ModelStructure+Package	2-EvaluateAsLastResource	free	exercises/2022-1c-parcial1
+2	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1
+2	2-ModelStructure+Package	2-EvaluateAsLastResource	free	exercises/2019-2c-parcial1
+2	1-Evaluate+TestRunning	1-Empty	free	exercises/2022-1c-parcial1
+2	2-ModelStructure+Package	2-EvaluateAsLastResource	free	exercises/2022-1c-parcial1
+3	1-Evaluate+TestRunning	1-Empty	free	exercises/2019-2c-parcial1
+3	2-ModelStructure+Package	2-EvaluateAsLastResource	free	exercises/2019-2c-parcial1
+3	1-Evaluate+TestRunning	1-Empty	free	exercises/2022-1c-parcial1
+3	2-ModelStructure+Package	2-EvaluateAsLastResource	free	exercises/2022-1c-parcial1

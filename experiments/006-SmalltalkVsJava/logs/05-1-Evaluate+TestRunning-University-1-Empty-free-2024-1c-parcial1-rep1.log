@@ -1,0 +1,28 @@
+==> job 5: rep 1, 1-Evaluate+TestRunning-University / 1-Empty / free / exercises/2024-1c-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/1-Evaluate+TestRunning-University_1-Empty_free/2024-1c-parcial1/20260915-112638-41597
+    image serving 7 tools on port 64605
+    installing starting/ISW1-2024-1C-Parcial.st
+    warm-up (given tests run once before the session): classes 3 run 39 passed 39 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 417s, 28 tool calls logged by the server
+    saving the image
+    filing out package ISW1-2024-1C-Parcial
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 29, cost $2.0287195000000002
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/1-Evaluate+TestRunning-University_1-Empty_free/2024-1c-parcial1/20260915-112638-41597
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/1-Evaluate+TestRunning-University_1-Empty_free/2024-1c-parcial1/20260915-112638-41597
+    installing the run's package ISW1-2024-1C-Parcial
+    acceptance test classes: FloorTest HotelTest RoomTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260915-112638-41597: 1-Evaluate+TestRunning-University / 1-Empty / free / 2024-1c-parcial1
+  acceptance         40/40 passed, 0 failed, 0 errors
+  agent tests        0/0 passed, 0 failed, 0 errors
+  coverage           by all tests 90.5%, by the agent's tests 0.0%
+  test smells        5
+  model              7 classes, 81 methods, 1.53 sends/method, 0 over 10, ifs 5, nil checks 0, type checks 1
+  diff               +56 methods, ~64 changed, -29 removed; classes +5 -0
+  tool calls         28 by the agent, 3 errors, evaluate kinds {'other': 4, 'reflection': 9, 'definesCode': 9}
+  mentor             37 findings {'Keyword message send format': 19, 'No empty method categories': 7, 'Method complexity': 5, 'ifEmpty: over isEmpty ifTrue:': 2, 'No class-name prefix in names': 2, 'Move helper method to the right class': 2}
+  agent              claude-opus-5 effort high, 417s, cost $2.0287195000000002, tokens in 54 cache-read 1,030,999 out 37,450
+  refactorings       0 done by hand {}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/1-Evaluate+TestRunning-University_1-Empty_free/2024-1c-parcial1/20260915-112638-41597/analysis.json

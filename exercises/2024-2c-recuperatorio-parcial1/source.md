@@ -1,0 +1,8 @@
+# Source
+
+- Original directory: `2024-2c/Recuperatorio/` in the parciales repository. The single statement covers three scopes ("For the 1st Midterm", "For the 2nd Midterm", "For the 1st and 2nd Midterm"); this exercise is the 1st-midterm scope (actions 1 and 2, rules 1 to 4). The 2nd-midterm and both-midterms scopes are the exercise `2024-2c-recuperatorio-parcial2`.
+- Statement: `2024-2C-Recuperatorio - Práctica.pdf` (copied as `spec-original.pdf`). `2024-2C-Recu - Teórica.pdf` is the theory exam and was skipped. The PDF shows a drawing of each tetromino; the drawings were transcribed to ASCII in spec.md (marked as an editor's note), using the solution's Tetromino definitions for the orientation of Z and L.
+- No initial code: the statement does not tell the student to file anything in, and both `.st` files in the directory are complete solutions (a `TetrisTest` with 22 and 30 tests, `TetrisGame`, `Tetromino`). Therefore there is no `starting/` directory.
+- `solution/2024-2C-Recuperatorio.st`: the complete solution for the "do everything" (2nd midterm) scope, category `2024-2C-Recuperatorio`. It is a superset of what this exercise asks (tests 01 to 13 cover creation, piece representation, initial column, tick, moving left/right and not leaving the board). There is no separate solution restricted to the 1st-midterm scope.
+- No Readme and no video link were found in the directory.
+- Removed from the statement: the "Entrega" section (file-out name and category, user.changes file, clean-image check, submission form, teacher ID, e-mail, autosave recommendation, closing times) and the page numbers.

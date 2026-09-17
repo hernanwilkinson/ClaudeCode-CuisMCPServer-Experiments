@@ -1,0 +1,9 @@
+# Source
+
+- Original directory: `2023-2c/1erParcial/` in the parciales repository.
+- Statement: `ISW1-2023-2C-1erParcial-ISW1-Penales.pdf` (copied as `spec-original.pdf`, translated in `spec.md`).
+- `starting/ISW1-2023-2C-Parcial-1.st`: the initial code given to the student. It contains the 34 tests of `PenalesTest` (which cannot be modified), four empty model classes (`Arquero`, `Delantero`, `Pelota`, `Penales`), the two error-message class methods of `Penales`, and the designer's "sketch" of the main method `Penales>>#arbitroPitaConPelota:delanteroRemataAlArcoConDireccion:arqueroSeLanzaEnDirección:` (a comment describing the nested ifs). Category: `ISW1-2023-2C-Parcial-1`.
+- `solution/ISW1-2023-2C-Parcial-1-Ifs.st`: solution variant that follows recommendation 1 of the statement: the whole penalty is resolved in the main method of `Penales` with nested ifs on symbols (`#AColocar`/`#AMatar`, `#Jabulani`/`#Playera`, `#EligeDireccionAntesTiro`/`#EsperaTiroYSeAdelanta`). Category `ISW1-2023-2C-Parcial-1-Ifs`, 9 classes, 67 methods. Useful as the "step 1" (operational model with ifs).
+- `solution/ISW1-2023-2C-Parcial-1-Solu1.st`: solution variant that follows recommendations 2 and 3: the ifs are replaced by polymorphism through a triple dispatch: the striker's shooting strategy (`RemateAArco` with subclasses `AColocar`/`AMatar`) kicks the ball (`Pelota` with subclasses `Jabulani`/`Playera`), which is received by the keeper's diving strategy (`Atajada` with subclasses `ElegirDireccionAntesTiro`/`EsperaTiroYSeAdelanta`); each leaf configures the resulting strength/direction rules in `Penales`, which then decides the winner. Category `ISW1-2023-2C-Parcial-1-Solu1`, 19 classes, 112 methods.
+- No Readme or video link was found in the directory.
+- Removed from the statement: the "Entrega" (submission) section, the "IMPORTANTE" note about not leaving the lab, and recommendations 4-6 (grading/passing mark, saving the image, autosave).

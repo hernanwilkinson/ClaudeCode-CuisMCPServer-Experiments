@@ -1,0 +1,1 @@
+{ (Collection sourceCodeAt: #sum:) asString. #(1 2) allSatisfy: [:x | x > 0]. (Array with: 100*peso with: 50*peso) sum: [:x | x]. 0 + (3*peso). (Smalltalk allClasses select: [:c | (c category ifNil: ['']) beginsWith: 'ISW1']) collect: [:c | c name]. (Smalltalk allCallsOn: #guestType). (Smalltalk allCallsOn: #rooms) }

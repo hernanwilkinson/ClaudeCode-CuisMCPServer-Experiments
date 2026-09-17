@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c17-customerimporter",
+  "title": "Customer Importer (Advanced TDD, four iterations)",
+  "kind": "refactoring",
+  "package": "10Pines-C17",
+  "description": "A legacy 'god method' Customer class>>importCustomers reads customers and their addresses from a CSV file into a slow simulated database session. In four iterations the student must put it under test and decouple it from the file (1), make it understandable and robust against invalid records (2), decouple the tests from the database while keeping a persistent variant for the integration environment (3), and add a Supplier import (S/NC/EC/A records) with TDD (4).",
+  "startingPackages": ["starting/10Pines-C17.st"],
+  "solutionPackages": ["solution/10Pines-C17-130.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C17 - TDD Avanzado",
+  "semester": "10pines-c17",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": true,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "The whole course exercise: characterization tests on a deliberately bad importer, breaking its dependencies on the file and the database (method object, parameterized stream and session, transient vs persistent system chosen by an Environment), then extending it with a Supplier import by extracting a PartyImporter superclass, a Party hierarchy and a PartyIdentification value object; knowing what flows through 'session'/'system' (DataBaseSession vs CustomerSystem/ErpSystem variants) matters in steps 3 and 4."
+  },
+  "sizeHint": {"classesInStartingCode": 4, "methodsInStartingCode": 36}
+}

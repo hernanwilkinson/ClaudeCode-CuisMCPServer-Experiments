@@ -1,0 +1,30 @@
+{
+  "name": "2025-1c-parcial2",
+  "title": "Painter (Pintor)",
+  "kind": "greenfield",
+  "package": "2025-1C-Parcial-2",
+  "description": "Model of a screen-painting tool: a painter places rectangular paintings on a wall, selects several of them, aligns the selection left or right, and can undo/redo every action through a consistent history. The student designs everything from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": [
+    "solution/2025-1C-Parcial-2-Solucion.st"
+  ],
+  "acceptanceTests": null,
+  "source": "2025-1c/2doParcial",
+  "semester": "2025-1c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "Undo/redo asks for reified actions (command objects) and a history whose invariants (no undo without actions, no redo without undo, discard redo list on a new action) must be kept, plus the left/right alignment symmetry invites removing duplication; the starting file has no model code, only the category and exam-control patches."
+  },
+  "sizeHint": {
+    "classesInStartingCode": 0,
+    "methodsInStartingCode": 0
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "run": "20260917-061134-48859",
+  "language": "java",
+  "scenario": "java-gradle",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2024-1c-parcial1",
+  "package": "simshotels",
+  "status": "completed",
+  "acceptance": {
+    "givenTestClasses": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesRun": [
+      "simshotels.FloorTest",
+      "simshotels.HotelTest",
+      "simshotels.RoomTest"
+    ],
+    "classesMissing": [],
+    "run": 39,
+    "passed": 39,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "agentTests": {
+    "classes": 3,
+    "run": 39,
+    "passed": 39,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "originalTestsAsGiven": "COMPILE ERROR: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260917-06113",
+  "coverageByAllTests": null,
+  "coverageByAgentTests": null,
+  "testSmells": null,
+  "mentor": {
+    "findings": null
+  },
+  "mentorFindings": null,
+  "model": {
+    "classes": 16,
+    "methods": 91,
+    "linesOfCode": 340,
+    "totals": {
+      "ifs": 7,
+      "switches": 0,
+      "ternaries": 0,
+      "typeChecks": 1,
+      "nilChecks": 0
+    }
+  },
+  "java": {
+    "main": {
+      "files": 7,
+      "linesOfCode": 340,
+      "classes": 16,
+      "methods": 91,
+      "ifs": 7,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 1,
+      "nullChecks": 0,
+      "tests": 0
+    },
+    "test": {
+      "files": 3,
+      "linesOfCode": 459,
+      "classes": 4,
+      "methods": 59,
+      "ifs": 0,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 0,
+      "nullChecks": 0,
+      "tests": 39
+    }
+  },
+  "diff": {
+    "filesAdded": [
+      "src/main/java/simshotels/AvailableRoomState.java",
+      "src/main/java/simshotels/OccupiedRoomState.java",
+      "src/main/java/simshotels/ReservedRoomState.java",
+      "src/main/java/simshotels/RoomState.java"
+    ],
+    "filesChanged": [
+      "src/main/java/simshotels/Floor.java",
+      "src/main/java/simshotels/Hotel.java",
+      "src/main/java/simshotels/Room.java",
+      "src/test/java/simshotels/FloorTest.java",
+      "src/test/java/simshotels/HotelTest.java",
+      "src/test/java/simshotels/RoomTest.java"
+    ],
+    "filesRemoved": [],
+    "linesAdded": 382,
+    "linesRemoved": 509,
+    "methodsBefore": 153,
+    "methodsAfter": 150
+  },
+  "agent": {
+    "mode": "headless",
+    "model": "claude-opus-5",
+    "effort": "high",
+    "elapsedSeconds": 140,
+    "turns": 9,
+    "costUsd": 0.9693080000000001,
+    "tokens": {
+      "input": 18,
+      "cacheWrite": 41599,
+      "cacheRead": 248556,
+      "output": 17158,
+      "thinking": 4873,
+      "requests": 9
+    },
+    "toolsServed": null,
+    "toolDefinitionBytes": null,
+    "toolCalls": 8,
+    "toolCallsPerMinute": 3.43,
+    "toolErrors": 0,
+    "testRunCalls": 2,
+    "firstTestRunAtCall": 3,
+    "filesRead": 0,
+    "filesEdited": 0,
+    "refactoringToolCalls": 0,
+    "evaluateKinds": null,
+    "explorationCallsBeforeFirstChange": 8,
+    "liveTypingToolCalls": 0,
+    "actualScopeRefactoringCalls": 0,
+    "messageNotUnderstoodAnswers": null,
+    "failedTestRuns": null
+  },
+  "refactoringOpportunities": {},
+  "looseChanges": null,
+  "toolCalls": {
+    "agentCalls": 8,
+    "errors": 0,
+    "byTool": {
+      "Bash": {
+        "calls": 8
+      }
+    },
+    "sequence": [
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash"
+    ],
+    "bashCommands": [
+      "find . -type f -not -path './.gradle/*' -not -path './build/*' | head -50 && cat build.gradle* settings.gradle* 2>/dev/null; for f in src/main/java/simshotels/*.java; do echo \"=== $f\"; cat -n $f; done",
+      "cat CLAUDE.md .mcp.json; for f in src/test/java/simshotels/*.java; do echo \"=== $f\"; cat -n $f; done",
+      "gradle test -q 2>&1 | tail -20; echo EXIT $?",
+      "cd /private/tmp/claude-cells/20260917-061134-48859-48859/src/main/java/simshotels && cat > RoomState.java <<'EOF'\npackage simshotels;\n\nimport java.util.HashMap;\nimport java.util.function.Supplier;\n\nabstract class RoomState {\n\n    // guests (by default a transition is not allowed; each state overrides the ones it accepts)\n\n    RoomState receive(String aGuestType) {\n        throw new RuntimeException(Room.roomIsNotEmptyErrorDescription());\n    }\n\n    RoomState receiveWithReservation(String aGuestType) {\n        throw new RuntimeException(Room.roomIsNotReservedErrorDescription());\n    }\n\n    RoomState reserve() {\n        throw new RuntimeException(Room.roomIsNotEmptyErrorDescription());\n    }\n\n    // testing\n\n    boolean isAvailable() {\n        return false;\n    }\n\n    boolean isOccupied() {\n        return false;\n    }\n\n    boolean isReserved() {\n        return false;\n    }\n\n    // accounting\n\n    abstract Integer profitUsingIfAbsentGuestType(HashMap<String, Integer> aPriceList, Supplier<Integer> unknownGuestTypeBlock);\n\n    abstract Integer lossUsingIfAbsentGuestType(HashMap<String, Integer> aPriceList, Supplier<Integer> unknownGuestTypeBlock);\n}\nEOF\ncat > AvailableRoomState.java <<'EOF'\npackage simshotels;\n\nimport java.util.Collections;\nimport java.util.HashMap;\nimport java.util.function.Supplier;\n\nclass AvailableRoomState extends RoomState {\n\n    // guests\n\n    @Override\n    RoomState receive(String aGuestType) {\n        return new OccupiedRoomState(aGuestType);\n    }\n\n    @Override\n    RoomState reserve() {\n        return new ReservedRoomState();\n    }\n\n    // testing\n\n    @Override\n    boolean isAvailable() {\n        return true;\n    }\n\n    // accounting\n\n    @Override\n    Integer profitUsingIfAbsentGuestType(HashMap<String, Integer> aPriceList, Supplier<Integer> unknownGuestTypeBlock) {\n        return 0;\n    }\n\n    @Override\n    Integer lossUsingIfAbsentGuestType(HashMap<String, Integer> aPriceList, Supplier<Integer> unknownGuestTypeBlock) {\n        return Collections.max(aPriceList.values());\n    }\n}\nEOF\ncat > ReservedRoomState.java <<'EOF'\npackage simshotels;\n\nimport java.util.Collections;\nimport java.util.HashMap;\nimport java.util.function.Supplier;\n\nclass ReservedRoomState extends RoomState {\n\n    // guests\n\n    @Override\n    RoomState receiveWithReservation(String aGuestType) {\n        return new OccupiedRoomState(aGuestType);\n    }\n\n    // testing\n\n    @Override\n    boolean isOccupied() {\n        return true;\n    }\n\n    @Override\n    boolean isReserved() {\n        return true;\n    }\n\n    // accounting\n\n    @Override\n    Integer profitUsingIfAbsentGuestType(HashMap<String, Integer> aPriceList, Supplier<Integer> unknownGuestTypeBlock) {\n        return Collections.min(aPriceList.values()) / 2;\n    }\n\n    @Override\n    Integer lossUsingIfAbsentGuestType(HashMap<String, Integer> aPriceList, Supplier<Integer> unknownGuestTypeBlock) {\n        return 0;\n    }\n}\nEOF\ncat > OccupiedRoomState.java <<'EOF'\npackage simshotels;\n\nimport java.util.HashMap;\nimport java.util.function.Supplier;\n\nclass OccupiedRoomState extends RoomState {\n\n    private final String guestType;\n\n    OccupiedRoomState(String aGuestType) {\n        guestType = aGuestType;\n    }\n\n    // testing\n\n    @Override\n    boolean isOccupied() {\n        return true;\n    }\n\n    // accounting\n\n    @Override\n    Integer profitUsingIfAbsentGuestType(HashMap<String, Integer> aPriceList, Supplier<Integer> unknownGuestTypeBlock) {\n        if (aPriceList.containsKey(guestType)) {\n            return aPriceList.get(guestType);\n        }\n        return unknownGuestTypeBlock.get();\n    }\n\n    @Override\n    Integer lossUsingIfAbsentGuestType(HashMap<String, Integer> aPriceList, Supplier<Integer> unknownGuestTypeBlock) {\n        return 0;\n    }\n}\nEOF\ncat > Room.java <<'EOF'\npackage simshotels;\n\nimport java.util.HashMap;\nimport java.util.function.Supplier;\n\npublic class Room {\n\n    private RoomState state;\n\n    // initialization\n\n    public Room() {\n        state = new AvailableRoomState();\n    }\n\n    // guests\n\n    public void receive(String aGuestType) {\n        state = state.receive(aGuestType);\n    }\n\n    public void receiveWithReservation(String aGuestType) {\n        state = state.receiveWithReservation(aGuestType);\n    }\n\n    public void reserve() {\n        state = state.reserve();\n    }\n\n    // testing\n\n    public boolean isAvailable() {\n        return state.isAvailable();\n    }\n\n    public boolean isOccupied() {\n        return state.isOccupied();\n    }\n\n    public boolean isReserved() {\n        return state.isReserved();\n    }\n\n    // accounting\n\n    public Integer profitUsingIfAbsentGuestType(HashMap<String, Integer> aPriceList, Supplier<Integer> unknownGuestTypeBlock) {\n        return state.profitUsingIfAbsentGuestType(aPriceList, unknownGuestTypeBlock);\n    }\n\n    public Integer lossUsingIfAbsentGuestType(HashMap<String, Integer> aPriceList, Supplier<Integer> unknownGuestTypeBlock) {\n        return state.lossUsingIfAbsentGuestType(aPriceList, unknownGuestTypeBlock);\n    }\n\n    // error messages (class side)\n\n    public static String roomIsNotEmptyErrorDescription() {\n        return \"Room is not empty.\";\n    }\n\n    public static String roomIsNotReservedErrorDescription() {\n        return \"Room is not reserved.\";\n    }\n}\nEOF",
+      "cat > Floor.java <<'EOF'\npackage simshotels;\n\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.function.Predicate;\nimport java.util.function.Supplier;\nimport java.util.function.ToIntFunction;\nimport java.util.stream.IntStream;\n\npublic class Floor {\n\n    private final ArrayList<Room> rooms;\n    private final HashMap<String, Integer> prices;\n\n    // instance creation (class side)\n\n    public static Floor withRoomsAndPrices(Number aNumberOfRooms, HashMap<String, Integer> aPriceList) {\n        Floor.assertIsValidNumberOfRooms(aNumberOfRooms);\n        Floor.assertIsValidPriceList(aPriceList);\n\n        return new Floor(aNumberOfRooms.intValue(), aPriceList);\n    }\n\n    // initialization\n\n    private Floor(int aNumberOfRooms, HashMap<String, Integer> aPriceList) {\n        rooms = new ArrayList<>();\n        IntStream.rangeClosed(1, aNumberOfRooms).forEach(ix -> rooms.add(new Room()));\n        prices = new HashMap<>(aPriceList);\n    }\n\n    // testing\n\n    public boolean isAvailable() {\n        return rooms.stream().allMatch(Room::isAvailable);\n    }\n\n    // guests\n\n    public void receiveAtRoom(String aGuestType, int aRoomNumber) {\n        roomNumbered(aRoomNumber).receive(aGuestType);\n    }\n\n    public void receiveWithReservationAtRoom(String aGuestType, int aRoomNumber) {\n        roomNumbered(aRoomNumber).receiveWithReservation(aGuestType);\n    }\n\n    public void reserveRoom(int aRoomNumber) {\n        roomNumbered(aRoomNumber).reserve();\n    }\n\n    private Room roomNumbered(int aRoomNumber) {\n        if (aRoomNumber < 1 || aRoomNumber > totalRooms()) {\n            Floor.signalRoomNumberDoesNotExist();\n        }\n        return rooms.get(aRoomNumber - 1);\n    }\n\n    // accounting\n\n    public int totalLosses() {\n        return sumOverRooms(room -> room.lossUsingIfAbsentGuestType(prices, Floor::unknownGuestTypeBlock));\n    }\n\n    public int totalProfits() {\n        return sumOverRooms(room -> room.profitUsingIfAbsentGuestType(prices, Floor::unknownGuestTypeBlock));\n    }\n\n    private int sumOverRooms(ToIntFunction<Room> aRoomValue) {\n        return rooms.stream().mapToInt(aRoomValue).sum();\n    }\n\n    private static Integer unknownGuestTypeBlock() {\n        Floor.signalUnknownGuestType();\n        return null;\n    }\n\n    // totals\n\n    public int totalRooms() {\n        return rooms.size();\n    }\n\n    public int totalRoomsAvailable() {\n        return countRoomsThat(Room::isAvailable);\n    }\n\n    public int totalRoomsOccupied() {\n        return countRoomsThat(Room::isOccupied);\n    }\n\n    public int totalRoomsReserved() {\n        return countRoomsThat(Room::isReserved);\n    }\n\n    private int countRoomsThat(Predicate<Room> aCondition) {\n        return (int) rooms.stream().filter(aCondition).count();\n    }\n\n    // assertions (class side)\n\n    public static void assertIsValidNumberOfRooms(Number aNumberOfRooms) {\n        Floor.assertIsPositiveIfFalse(aNumberOfRooms, () -> Floor.signalNumberOfRoomsMustBePositive());\n        Floor.assertIsIntegerIfFalse(aNumberOfRooms, () -> Floor.signalNumberOfRoomsMustBeInteger());\n    }\n\n    public static void assertIsValidPriceList(HashMap<String, Integer> aPriceList) {\n        if (aPriceList.isEmpty()) {\n            Floor.signalNoPrices();\n        }\n        aPriceList.values().forEach(price ->\n            Floor.assertIsPositiveIfFalse(price, () -> Floor.signalPriceMustBePositive()));\n    }\n\n    public static void assertIsIntegerIfFalse(Number aNumber, Runnable signalsBlock) {\n        if (!(aNumber instanceof Integer)) {\n            signalsBlock.run();\n        }\n    }\n\n    public static void assertIsPositiveIfFalse(Number aNumber, Runnable signalsBlock) {\n        if (!(aNumber.doubleValue() > 0)) {\n            signalsBlock.run();\n        }\n    }\n\n    // error messages (class side)\n\n    public static String numberOfRoomsMustBeIntegerErrorDescription() {\n        return \"Number of rooms must be integer\";\n    }\n\n    public static String numberOfRoomsMustBePositiveErrorDescription() {\n        return \"The number of rooms must be positive\";\n    }\n\n    public static String priceMustBeIntegerErrorDescription() {\n        return \"Price must be integer\";\n    }\n\n    public static String priceMustBePositiveErrorDescription() {\n        return \"Price must be positive\";\n    }\n\n    public static String pricesListCannotBeEmptyErrorDescription() {\n        return \"Prices List must not be empty\";\n    }\n\n    public static String roomNumberDoesNotExistErrorDescription() {\n        return \"Room number does not exist\";\n    }\n\n    public static String unknownGuestTypeErrorDescription() {\n        return \"The guest type is unknown\";\n    }\n\n    // exceptions (class side)\n\n    public static void signalNoPrices() {\n        throw new RuntimeException(Floor.pricesListCannotBeEmptyErrorDescription());\n    }\n\n    public static void signalNumberOfRoomsMustBeInteger() {\n        throw new RuntimeException(Floor.numberOfRoomsMustBeIntegerErrorDescription());\n    }\n\n    public static void signalNumberOfRoomsMustBePositive() {\n        throw new RuntimeException(Floor.numberOfRoomsMustBePositiveErrorDescription());\n    }\n\n    public static void signalPriceMustBeInteger() {\n        throw new RuntimeException(Floor.priceMustBeIntegerErrorDescription());\n    }\n\n    public static void signalPriceMustBePositive() {\n        throw new RuntimeException(Floor.priceMustBePositiveErrorDescription());\n    }\n\n    public static void signalRoomNumberDoesNotExist() {\n        throw new RuntimeException(Floor.roomNumberDoesNotExistErrorDescription());\n    }\n\n    public static void signalUnknownGuestType() {\n        throw new RuntimeException(Floor.unknownGuestTypeErrorDescription());\n    }\n}\nEOF\ncat > Hotel.java <<'EOF'\npackage simshotels;\n\nimport java.util.ArrayList;\nimport java.util.List;\nimport java.util.function.ToIntFunction;\n\npublic class Hotel {\n\n    private final ArrayList<Floor> floors;\n\n    // instance creation (class side)\n\n    public static Hotel withFloors(List<Floor> aFloorsCollection) {\n        Hotel.assertHaveFloors(aFloorsCollection);\n\n        return new Hotel(aFloorsCollection);\n    }\n\n    // initialization\n\n    private Hotel(List<Floor> aFloorsCollection) {\n        floors = new ArrayList<>(aFloorsCollection);\n    }\n\n    // accounting\n\n    public int totalLosses() {\n        return sumOverFloors(Floor::totalLosses);\n    }\n\n    public int totalProfits() {\n        return sumOverFloors(Floor::totalProfits);\n    }\n\n    // totals\n\n    public int totalRooms() {\n        return sumOverFloors(Floor::totalRooms);\n    }\n\n    public int totalRoomsAvailable() {\n        return sumOverFloors(Floor::totalRoomsAvailable);\n    }\n\n    public int totalRoomsOccupied() {\n        return sumOverFloors(Floor::totalRoomsOccupied);\n    }\n\n    public int totalRoomsReserved() {\n        return sumOverFloors(Floor::totalRoomsReserved);\n    }\n\n    private int sumOverFloors(ToIntFunction<Floor> aFloorValue) {\n        return floors.stream().mapToInt(aFloorValue).sum();\n    }\n\n    // testing\n\n    public boolean isEmpty() {\n        return floors.stream().allMatch(Floor::isAvailable);\n    }\n\n    // guests\n\n    public void receiveAtFloorAtRoom(String aGuestType, int aFloorNumber, int aRoomNumber) {\n        floorNumbered(aFloorNumber).receiveAtRoom(aGuestType, aRoomNumber);\n    }\n\n    public void receiveWithReservationAtFloorAtRoom(String aGuestType, int aFloorNumber, int aRoomNumber) {\n        floorNumbered(aFloorNumber).receiveWithReservationAtRoom(aGuestType, aRoomNumber);\n    }\n\n    public void reserveRoomAtFloor(int aRoomNumber, int aFloorNumber) {\n        floorNumbered(aFloorNumber).reserveRoom(aRoomNumber);\n    }\n\n    private Floor floorNumbered(int aFloorNumber) {\n        if (aFloorNumber < 1 || aFloorNumber > floors.size()) {\n            Hotel.signalFloorNumberDoesNotExist();\n        }\n        return floors.get(aFloorNumber - 1);\n    }\n\n    // assertions (class side)\n\n    public static void assertHaveFloors(List<Floor> aFloorsCollection) {\n        if (aFloorsCollection.isEmpty()) {\n            Hotel.signalNoFloors();\n        }\n    }\n\n    // error description (class side)\n\n    public static String floorNumberDoesNotExistErrorDescription() {\n        return \"Floor number does not exist\";\n    }\n\n    public static String noFloorsErrorDescription() {\n        return \"Cannot have a Hotel without floors\";\n    }\n\n    // exceptions (class side)\n\n    public static void signalFloorNumberDoesNotExist() {\n        throw new RuntimeException(Hotel.floorNumberDoesNotExistErrorDescription());\n    }\n\n    public static void signalNoFloors() {\n        throw new RuntimeException(Hotel.noFloorsErrorDescription());\n    }\n}\nEOF",
+      "cd /private/tmp/claude-cells/20260917-061134-48859-48859/src/test/java/simshotels && python3 - <<'EOF'\nimport re\np='FloorTest.java'; s=open(p).read()\ns=s.replace(\"\"\"        Floor floor;\n\n        floor = new Floor();\n        floor.setNumberOfRooms(aNumberOfRooms);\n        floor.setPrices(aPrice);\n\n        return floor;\"\"\",\"\"\"        return Floor.withRoomsAndPrices(aNumberOfRooms, aPrice);\"\"\")\ns=s.replace(\"        // Tech Debt\\n\",\"\")\ns=re.sub(r\"floor\\.rooms\\(\\)\\.get\\((\\d)\\)\\.receive\\((\\w+\\(\\))\\)\", lambda m:f\"floor.receiveAtRoom({m.group(2)}, {int(m.group(1))+1})\", s)\ns=re.sub(r\"floor\\.rooms\\(\\)\\.get\\((\\d)\\)\\.receiveWithReservation\\((\\w+\\(\\))\\)\", lambda m:f\"floor.receiveWithReservationAtRoom({m.group(2)}, {int(m.group(1))+1})\", s)\ns=re.sub(r\"floor\\.rooms\\(\\)\\.get\\((\\d)\\)\\.reserve\\(\\)\", lambda m:f\"floor.reserveRoom({int(m.group(1))+1})\", s)\nopen(p,'w').write(s)\n\np='RoomTest.java'; s=open(p).read()\ndef unwrap(m):\n    body=m.group(1)\n    return \"\\n\".join(l[4:] if l.startswith(\"    \") else l for l in body.split(\"\\n\"))\ns=re.sub(r\"        shouldFail\\(\\(\\) -> \\{\\n(.*?)\\n        \\}\\);\\n\", lambda m: unwrap(m.group(1))+\"\\n\", s, flags=re.S)\ns=s.replace(\"\"\"    // support (Cuis TestCase>>shouldFail: is `self should: aBlock raise: Exception`)\n\n    private void shouldFail(Executable aBlock) {\n        assertThrows(Throwable.class, aBlock);\n    }\n\n\"\"\",\"\")\ns=s.replace(\"import org.junit.jupiter.api.function.Executable;\\n\",\"\")\nopen(p,'w').write(s)\nEOF\ngrep -n \"rooms()\\|shouldFail\\|Tech Debt\" *.java; sed -n 200,240p RoomTest.java; grep -n \"floor\\.\\(receive\\|reserve\\)\" FloorTest.java",
+      "python3 - <<'EOF'\nimport re\np='RoomTest.java'; s=open(p).read()\ndef unwrap(m):\n    return \"\\n\".join(l[4:] if l.startswith(\"    \") else l for l in m.group(1).split(\"\\n\"))+\"\\n\"\ns=re.sub(r\"        shouldFail\\(\\(\\) -> \\{\\n(.*?)\\n        \\}\\);\\n\", unwrap, s, flags=re.S)\ns=s.replace(\"\"\"    // support (Cuis TestCase>>shouldFail: is `self should: aBlock raise: Exception`)\n\n    private void shouldFail(Executable aBlock) {\n        assertThrows(Throwable.class, aBlock);\n    }\n\n\"\"\",\"\")\ns=s.replace(\"import org.junit.jupiter.api.function.Executable;\\n\",\"\")\nopen(p,'w').write(s)\nEOF\ngrep -n \"shouldFail\\|Executable\" *.java; sed -n 200,235p RoomTest.java",
+      "cat > HotelTest.java <<'EOF'\npackage simshotels;\n\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\n\nimport org.junit.jupiter.api.Test;\nimport org.junit.jupiter.api.function.Executable;\n\nimport static org.junit.jupiter.api.Assertions.assertEquals;\nimport static org.junit.jupiter.api.Assertions.assertThrows;\nimport static org.junit.jupiter.api.Assertions.assertTrue;\n\nclass HotelTest {\n\n    // testing\n\n    @Test\n    void test01CannotCreateHotelWithoutFloors() {\n        assertFailsWithDescription(() -> Hotel.withFloors(new ArrayList<Floor>()), Hotel.noFloorsErrorDescription());\n    }\n\n    @Test\n    void test02NewHotelsAreEmpty() {\n        Hotel hotel;\n\n        hotel = createHotel();\n\n        assertTrue(hotel.isEmpty());\n    }\n\n    @Test\n    void test03HotelCanReceiveATypeOfGuestInRoomAtFloor() {\n        Hotel hotel;\n\n        hotel = createHotel();\n\n        assertEquals(hotel.totalRooms(), hotel.totalRoomsAvailable());\n\n        hotel.receiveAtFloorAtRoom(guestTypeVacation(), 1, 2);\n\n        assertRoomsUnavailableReservedAndOccupied(hotel, 1, 0, 1);\n    }\n\n    @Test\n    void test04HotelCanTakeAReservationForARoomAtFloor() {\n        Hotel hotel;\n\n        hotel = createHotel();\n\n        assertEquals(hotel.totalRooms(), hotel.totalRoomsAvailable());\n\n        hotel.reserveRoomAtFloor(2, 1);\n\n        assertRoomsUnavailableReservedAndOccupied(hotel, 1, 1, 1);\n    }\n\n    @Test\n    void test05HotelCanReceiveWithReservationATypeOfGuestInRoomAtFloor() {\n        Hotel hotel;\n\n        hotel = createHotel();\n\n        assertEquals(hotel.totalRooms(), hotel.totalRoomsAvailable());\n\n        hotel.reserveRoomAtFloor(2, 1);\n        hotel.receiveWithReservationAtFloorAtRoom(guestTypeVacation(), 1, 2);\n\n        assertRoomsUnavailableReservedAndOccupied(hotel, 1, 0, 1);\n    }\n\n    @Test\n    void test06HotelCannotReceiveWithReservationWithoutPreviousReservation() {\n        Hotel hotel;\n\n        hotel = createHotel();\n\n        assertEquals(hotel.totalRooms(), hotel.totalRoomsAvailable());\n\n        assertFailsWithDescription(() -> hotel.receiveWithReservationAtFloorAtRoom(guestTypeVacation(), 1, 2),\n            Room.roomIsNotReservedErrorDescription());\n\n        assertRoomsUnavailableReservedAndOccupied(hotel, 0, 0, 0);\n    }\n\n    @Test\n    void test07HotelProfitsAreTheSumOfEachFloorProfits() {\n        Hotel hotel;\n        Floor floor1;\n        Floor floor2;\n\n        floor1 = createDefaultFloor();\n        floor2 = createDefaultFloor();\n        hotel = Hotel.withFloors(List.of(floor1, floor2));\n\n        hotel.receiveAtFloorAtRoom(guestTypeVacation(), 1, 1);\n        hotel.receiveAtFloorAtRoom(guestTypeConference(), 2, 1);\n\n        assertEquals(floor1.totalProfits() + floor2.totalProfits(), hotel.totalProfits());\n    }\n\n    @Test\n    void test08HotelLossesAreTheSumOfEachFloorLosses() {\n        Hotel hotel;\n        Floor floor1;\n        Floor floor2;\n\n        floor1 = createDefaultFloor();\n        floor2 = createDefaultFloor();\n        hotel = Hotel.withFloors(List.of(floor1, floor2));\n\n        hotel.receiveAtFloorAtRoom(guestTypeVacation(), 1, 1);\n        hotel.receiveAtFloorAtRoom(guestTypeConference(), 2, 1);\n\n        hotel.reserveRoomAtFloor(4, 1);\n        hotel.reserveRoomAtFloor(2, 2);\n\n        assertEquals(floor1.totalLosses() + floor2.totalLosses(), hotel.totalLosses());\n    }\n\n    @Test\n    void test09HotelCannotReserveANonexistentRoom() {\n        Hotel hotel;\n\n        hotel = createHotelWithOneFloor();\n\n        assertFailsWithDescription(() -> hotel.reserveRoomAtFloor(42, 1), Floor.roomNumberDoesNotExistErrorDescription());\n\n        assertRoomsUnavailableReservedAndOccupied(hotel, 0, 0, 0);\n    }\n\n    @Test\n    void test10HotelCannotReserveANonexistentFloor() {\n        Hotel hotel;\n\n        hotel = createHotelWithOneFloor();\n\n        assertFailsWithDescription(() -> hotel.reserveRoomAtFloor(1, 42), Hotel.floorNumberDoesNotExistErrorDescription());\n\n        assertRoomsUnavailableReservedAndOccupied(hotel, 0, 0, 0);\n    }\n\n    @Test\n    void test11HotelCannotReceiveAtNonexistentRoom() {\n        Hotel hotel;\n\n        hotel = createHotelWithOneFloor();\n\n        assertFailsWithDescription(() -> hotel.receiveAtFloorAtRoom(guestTypeVacation(), 1, 42),\n            Floor.roomNumberDoesNotExistErrorDescription());\n\n        assertRoomsUnavailableReservedAndOccupied(hotel, 0, 0, 0);\n    }\n\n    @Test\n    void test12HotelCannotReceiveAtNonexistentFloor() {\n        Hotel hotel;\n\n        hotel = createHotelWithOneFloor();\n\n        assertFailsWithDescription(() -> hotel.receiveAtFloorAtRoom(guestTypeVacation(), 42, 1),\n            Hotel.floorNumberDoesNotExistErrorDescription());\n\n        assertRoomsUnavailableReservedAndOccupied(hotel, 0, 0, 0);\n    }\n\n    @Test\n    void test13HotelCannotReceiveWithReservationAtNonexistentRoom() {\n        Hotel hotel;\n\n        hotel = createHotelWithOneFloor();\n\n        hotel.reserveRoomAtFloor(1, 1);\n\n        assertFailsWithDescription(() -> hotel.receiveWithReservationAtFloorAtRoom(guestTypeVacation(), 1, 42),\n            Floor.roomNumberDoesNotExistErrorDescription());\n\n        assertRoomsUnavailableReservedAndOccupied(hotel, 1, 1, 1);\n    }\n\n    // assertions\n\n    private void assertFailsWithDescription(Executable aBlock, String anErrorDescription) {\n        RuntimeException error = assertThrows(RuntimeException.class, aBlock);\n        assertEquals(anErrorDescription, error.getMessage());\n    }\n\n    private void assertRoomsUnavailableReservedAndOccupied(Hotel aHotel, int unavailable, int reserved, int occupied) {\n        assertEquals(aHotel.totalRooms() - unavailable, aHotel.totalRoomsAvailable());\n        assertEquals(reserved, aHotel.totalRoomsReserved());\n        assertEquals(occupied, aHotel.totalRoomsOccupied());\n    }\n\n    // create\n\n    private Floor createFloorWithAnd(Number aNumberOfRooms, HashMap<String, Integer> aPrice) {\n        return Floor.withRoomsAndPrices(aNumberOfRooms, aPrice);\n    }\n\n    private Floor createDefaultFloor() {\n        return createFloorWithAnd(10, defaultPriceList());\n    }\n\n    private Hotel createHotel() {\n        return Hotel.withFloors(List.of(createDefaultFloor(), createFloorWithAnd(1, defaultPriceList())));\n    }\n\n    private Hotel createHotelWithOneFloor() {\n        return Hotel.withFloors(List.of(createDefaultFloor()));\n    }\n\n    private HashMap<String, Integer> defaultPriceList() {\n        HashMap<String, Integer> priceList = new HashMap<>();\n        priceList.put(guestTypeVacation(), minPriceInList());\n        priceList.put(guestTypeConference(), maxPriceInList());\n        return priceList;\n    }\n\n    private String guestTypeConference() {\n        return \"conferenceGuest\";\n    }\n\n    private String guestTypeVacation() {\n        return \"vacationGuest\";\n    }\n\n    private int maxPriceInList() {\n        return 200;\n    }\n\n    private int minPriceInList() {\n        return 100;\n    }\n}\nEOF\ncd ../../../.. && gradle test 2>&1 | tail -20; ls build/test-results/test/ && grep -ho 'tests=\"[0-9]*\" skipped=\"[0-9]*\" failures=\"[0-9]*\" errors=\"[0-9]*\"' build/test-results/test/*.xml"
+    ]
+  }
+}

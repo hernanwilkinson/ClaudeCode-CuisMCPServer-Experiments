@@ -1,0 +1,9 @@
+# Source
+
+- Course: `10Pines-Capacitacion/C6 - Construccion de Software Seguro usando Test Driven Development` (Dropbox), directory `Smalltalk/C6-TusLibros-Iteracion3`.
+- Statement: `TusLibros/EjercicioTusLibrosV3.pdf`, restricted to this iteration's scope in `spec.md` (full translation and version notes in `exercises/10pines-c6-tuslibros`); `spec-original.md` holds the Spanish paragraphs that belong to this iteration plus the related slide text.
+- Slides: 119-128 (test doubles) and 125-126 (the Cashier / MerchantProcessor stub example) are the theory of this iteration; 140 (two sides of an interface) is mentioned in the instructor's notes for it.
+- Iteration boundary: determined from `TusLibros-33.st` (last snapshot of the directory) and `TusLibros-34.st` (first of the next one, which adds `RestInterfaceTest>>test01CanCreateCartWithValidUserAndPassword`). The instructor's notes `TusLibros/Resolucion de TusLibros.doc` ("Test del tercer conjunto: modelar la relación con el merchant processor") match it. The previous guess (client interface) was wrong and has been corrected.
+- `starting/TusLibros-29.st`: copy of the last snapshot of iteration 2 (8 classes, 50 methods, category `TusLibros`). `solution/TusLibros-33.st`: copy of the last snapshot of this directory (7 classes, 56 methods). `solution/steps/TusLibros-30.st` .. `-33.st`: copies of the whole sequence of this iteration.
+- Verification (2026-09-10), fresh copies of `scenarios/2-ModelStructure+Package` (Cuis 7.9), `FileEntry ... fileIn` over the MCP server, `smalltalk_run_tests_in_category` `TusLibros`: starting file `TusLibros-29.st` -> `'OK'`, 12 run, 12 passed, 0 failed, 0 errors (CartTest 8, CashierTest 4). Solution `TusLibros-33.st` (verified as the starting file of iteration 4) -> `'OK'`, 14 run, 14 passed, 0 failed, 0 errors (CartTest 8, CashierTest 6). Nothing missing in the image.
+- Removed from the statement: nothing.

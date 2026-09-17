@@ -1,0 +1,11 @@
+# Source
+
+- Original directory: `2024-2c/2doParcial/` in the parciales repository.
+- Statement: `2024-2C-Parcial 2 - Práctica.pdf` (copied as `spec-original.pdf`). `2024-2C-Parcial 2 - Teórica.pdf` is the theory exam and was skipped.
+- `starting/2024-2C-Parcial-2.st`: the initial code the statement tells the student to file in. Category `2024-2C-Parcial-2`: `StringPacmanBoard` (validates the string representation of a board and visits its elements), `StringPacmanBoardTest` (10 tests; `test10BoardTranslationExample` fails on purpose and must be made to pass) and `BoardTranslatorExample` (an example visitor that translates the board to a Dictionary; its `visitPacmanAt:` stores a string instead of `#pacman`, which is the bug behind test10).
+- `solution/2024-2C-Parcial-2-Solucion.st`: the complete solution (game, elements, ghosts, pacman, tests).
+- `solution/2024-2C-Parcial-2-Solucion-ConGhostOverPill.st`: the complete solution corrected for the "ghost over pill" bug described in the Readme (the game was reported as over while a ghost was standing on the last pill).
+- `solution/TomasRodriguezNadin-Fix-GhostOverPill.cs.st`: a change set with the fix proposed by the student Tomás Rodríguez Nadín for the same bug (adds `test24GameIsNotOverWhenGhostsHoverOverPills` and `isOrIsOnPill`).
+- `solution/Readme.txt`: copied verbatim. Translation: "The student Tomas Rodriguez Nadin found an error in the solution that happens when a ghost is over a pill and the game is asked whether it is over. In the solution I built it would say the game is over when it is not. His proposed solution is in the change set TomasRodriguezNadin-Fix-GhostOverPill.cs.st. I built a slightly different one which is in the complete solution 2024-2C-Parcial-2-Solucion-ConGhostOverPill.st. That this happened is good because it shows how even in such simple things complexity hides, that testing does not imply absence of errors and that we all can make mistakes, even the professor!!!! hahaha."
+- No video link was found for this exam.
+- Removed from the statement: the "Entrega" section (file-out name and category, user.changes file, clean-image check, submission form and e-mail, autosave recommendation, closing times) and the page numbers.

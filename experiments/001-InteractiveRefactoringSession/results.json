@@ -1,0 +1,57 @@
+{
+  "experiment": "001-InteractiveRefactoringSession",
+  "cells": [
+    {
+      "exercise": "2019-2c-parcial1",
+      "scenario": "4-Refactoring",
+      "config": "4-Refactoring",
+      "runs": 1,
+      "passingRuns": 0,
+      "medians": {
+        "cost": null,
+        "inputSide": null,
+        "uncachedInput": null,
+        "cacheRead": null,
+        "output": null,
+        "thinking": null,
+        "requests": null,
+        "inputPerRequest": null,
+        "toolCalls": null,
+        "toolErrors": null,
+        "elapsed": null,
+        "ifs": null,
+        "mentorFindings": null,
+        "coverage": null
+      },
+      "perRun": [
+        {
+          "cost": 5.1476,
+          "inputSide": 2053027,
+          "uncachedInput": 119488,
+          "cacheRead": 1933539,
+          "output": 45650,
+          "thinking": 18624,
+          "requests": 29,
+          "inputPerRequest": 70794,
+          "toolCalls": 154,
+          "toolErrors": 7,
+          "elapsed": 584,
+          "ifs": 0,
+          "mentorFindings": 17,
+          "coverage": 90.15,
+          "acceptancePassed": true,
+          "acceptance": {
+            "run": 14,
+            "passed": 14,
+            "failed": 0,
+            "errors": 0,
+            "failures": [],
+            "errorTests": []
+          },
+          "status": "interrupted",
+          "run": "/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/001-InteractiveRefactoringSession/cells/4-Refactoring_4-Refactoring_free/2019-2c-parcial1/20260910-171127"
+        }
+      ]
+    }
+  ]
+}

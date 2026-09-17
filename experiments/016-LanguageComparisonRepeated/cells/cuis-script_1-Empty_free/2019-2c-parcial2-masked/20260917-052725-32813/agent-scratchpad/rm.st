@@ -1,0 +1,1 @@
+SurveyCrawlerTest removeSelector: #test21HighestDigitRepeatsCommandElevenTimes. #ok

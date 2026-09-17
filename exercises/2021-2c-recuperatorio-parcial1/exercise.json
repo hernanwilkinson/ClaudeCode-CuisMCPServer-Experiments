@@ -1,0 +1,25 @@
+{
+  "name": "2021-2c-recuperatorio-parcial1",
+  "title": "SmartBuilding: team mood refactoring",
+  "kind": "refactoring",
+  "package": "ISW1-2021-2C-Recuperatorio-1erParcial",
+  "description": "The SmartBuilding construction-teams model now lets a simple team have a mood (#Normal, #MuyBueno, #Malo) that halves or doubles its construction time, implemented with ifs on a symbol and validated against a literal list. The student must replace those ifs with polymorphism (mood objects) and remove the duplicated code from the 25 tests, keeping them green.",
+  "startingPackages": ["starting/ISW1-2021-2C-Recuperatorio-1erParcial.st"],
+  "solutionPackages": ["solution/ISW1-2021-2C-Recuperatorio-1erParcial-Solucion.st"],
+  "acceptanceTests": null,
+  "source": "2021-2c/Recuperatorio",
+  "semester": "2021-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "The ifs are small and local (a mood symbol in EquipoSimple>>tiempoEnConstruir: plus a class-side includes: check and a redundant second initializer), so the interesting part is deciding what the mood objects look like, how the invalid-mood test survives when symbols disappear, and how to remove duplication from 25 tests that each rebuild teams, capacities, prices and Aconcagua areas inline; the rest of the model (composite teams, price and capacity strategies) is already well designed and must not be broken."
+  },
+  "sizeHint": {"classesInStartingCode": 17, "methodsInStartingCode": 74}
+}

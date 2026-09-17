@@ -1,0 +1,37 @@
+{
+  "session": "claude-transcript",
+  "subagent_transcripts": 0,
+  "per_model": {
+    "claude-opus-5": {
+      "input": 20,
+      "cache_write_5m": 0,
+      "cache_write_1h": 24081,
+      "cache_read": 132063,
+      "output": 19850,
+      "thinking": 6026,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 10,
+      "cost_usd": 0.8031915
+    }
+  },
+  "main_only": {
+    "claude-opus-5": {
+      "input": 20,
+      "cache_write_5m": 0,
+      "cache_write_1h": 24081,
+      "cache_read": 132063,
+      "output": 19850,
+      "thinking": 6026,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 10
+    }
+  },
+  "subagents_only": {},
+  "tool_calls": {
+    "mcp__Cuis__smalltalk_evaluate": 8,
+    "mcp__Cuis__smalltalk_run_test_class": 1
+  },
+  "total_cost_usd": 0.8032
+}

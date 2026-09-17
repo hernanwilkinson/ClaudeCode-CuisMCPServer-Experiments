@@ -1,0 +1,171 @@
+{
+  "experiment": "007-CrypticNames",
+  "runId": "20260915-212651-78350",
+  "warmUp": "classes 1 run 25 passed 25 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-parcial1",
+  "package": "ISW1-2022-1C-Parcial-1",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 007, rerun of the Formula One original cell after the first run stalled in thinking and timed out",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "cuisDevCommit": "7b48a0fb4bdf47feff8ed6b95866efdf587ceba8",
+    "mcpServerCommit": "1d61daa41bbb1feb8ae0ec0569432cc0305f0e9b",
+    "builtAt": "2026-09-14T23:44:15Z",
+    "imageSha256": "553266ab261a210f3c27754bd6b5f87763662950097fb108fef3869fb0e0b378"
+  },
+  "toolsServed": 73,
+  "toolDefinitionBytes": 68037,
+  "hashes": {
+    "prompt.md": "d54977df8af89239298ceacba945cfefcd10a036c5bc734172d911e8eda87b85",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "5ef754e284953b05c6ee57c4e0b4e31ee0bca521546d0e5f3adca5b92ac992ec",
+    "skills": {}
+  },
+  "port": 61335,
+  "startedAt": "2026-09-16T00:26:53Z",
+  "endedAt": "2026-09-16T00:43:09Z",
+  "elapsedSeconds": 976,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 173,
+    "agentCalls": 171
+  },
+  "changesBytesAtStart": 5195276,
+  "changesBytesAtEnd": 5240586,
+  "usageFromTranscript": {
+    "totalCostUsd": 5.9762,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 106,
+        "cache_write_5m": 0,
+        "cache_write_1h": 124890,
+        "cache_read": 5385175,
+        "output": 81366,
+        "thinking": 58481,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 53,
+        "cost_usd": 5.9761675
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_classes_in_category": 2,
+      "mcp__Cuis__smalltalk_class_source": 5,
+      "mcp__Cuis__smalltalk_run_test_class": 4,
+      "mcp__Cuis__smalltalk_list_packages": 1,
+      "mcp__Cuis__smalltalk_package_definition": 2,
+      "mcp__Cuis__smalltalk_implementors_of": 3,
+      "mcp__Cuis__smalltalk_method_source": 2,
+      "mcp__Cuis__smalltalk_class_organization": 3,
+      "mcp__Cuis__smalltalk_hierarchy": 1,
+      "mcp__Cuis__smalltalk_define_class": 12,
+      "mcp__Cuis__smalltalk_define_methods": 13,
+      "mcp__Cuis__smalltalk_delete_method": 7,
+      "mcp__Cuis__smalltalk_senders_of": 1,
+      "mcp__Cuis__smalltalk_classify_methods": 3,
+      "mcp__Cuis__smalltalk_evaluate": 1,
+      "mcp__Cuis__smalltalk_refactor_rename_temporary": 2
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 63,
+    "durationMs": 974433,
+    "durationApiMs": 968574,
+    "totalCostUsd": 5.9761675,
+    "usage": {
+      "input_tokens": 106,
+      "cache_creation_input_tokens": 124890,
+      "cache_read_input_tokens": 5385175,
+      "output_tokens": 81366,
+      "output_tokens_details": {
+        "thinking_tokens": 58481
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 124890,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1454,
+          "cache_read_input_tokens": 143440,
+          "cache_creation_input_tokens": 409,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 409
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 106,
+        "outputTokens": 81366,
+        "cacheReadInputTokens": 5385175,
+        "cacheCreationInputTokens": 124890,
+        "webSearchRequests": 0,
+        "costUSD": 5.9761675,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 58481,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "All 27 tests pass (25 original + 2 new). Here's what changed in the image.\n\n## 1. Ifs replaced by polymorphism\n\n**Turbo states** \u2014 `Turbo` is now a hierarchy of immutable states; a car replaces its turbo with the one each transition answers, so `speed`, `activateTurbo` and `deactivateTurbo` have no conditionals:\n\n```\nTurbo\n\u251c\u2500\u2500 DeactivatedTurbo (activation)      isActivated ^false, activate ^activation\n\u2514\u2500\u2500 ActivatedTurbo                     isActivated ^true, activate ^error\n    \u251c\u2500\u2500 BoostingTurbo (speedIncreasePercentage, deactivation)\n    \u2514\u2500\u2500 ExhaustedTurbo                 no boost left\n```\n\n`Turbo class>>unused` folds `#(20 10 5)` into the chain of states, ending in `DeactivatedTurbo exhausted`; the exhausted pair cycles between itself, which is what makes the fourth and later activations give no boost.\n\n**Sector** \u2014 `withTurbo` boolean gone: `Sector` is abstract with `SectorWithTurbo` and `SectorWithoutTurbo`, each implementing `allowTurboTo:`. `Sector withTurboOf:`/`withoutTurboOf:` still work, funnelled through `Sector class>>of:`, which runs the length precondition.\n\n**nil sector** \u2014 a car starts `OutsideOfTrack`, which refuses turbo with its own error instead of a doesNotUnderstand on nil (new test26).\n\n## 2. The methods the tech lead asked for\n\n`GrandPrix#advance:` is `track cars do: [...]`; `Track#cars` is an `inject:into:` over a Set, `#includes:` an `anySatisfy:`, `#length` an `inject:into:`, `#sectorOf:ifNone:` a `detect:ifNone:`, `#positionOf:` `lengthUpTo:` + the sector's own position, and `#put:at:` a `detect:` for the sector at that position. All index loops are gone.\n\n## 3. Test duplication\n\nTests 20\u201325 are now three lines each over `carLessThanASecondBehindAnotherCarInSectorWithTurbo` and `activateTurboOf:numberOfTimes:`. Shared helpers also cover car placement (`carDrivenBy:in:at:speedingAt:`), the two-sector collection, the one-sector track and the grand prix construction. The test class moved to system category `ISW1-2022-1C-Parcial-1-Tests`.\n\n## 4. Other design work\n\n- `FormulaOneCar` lost `grandPrix`, `turboActivated` and `turboActivations`; `Track` lost `driversDistanceFromBeginning`; `GrandPrix` lost two unused error messages. `runningInGrandPrix:` and `activateTurboInSectorWithTurbo` are gone.\n- A `GrandPrix` now lines its cars up at the start line, so the cars it is created with are actually in the race; `advance:` tells each car to `advanceDuring:` instead of asking its speed and telling it a distance.\n- Error descriptions are all class-side (`Turbo alreadyActivatedErrorDescription`, `Sector canNotPlaceCarOutsideSectorErrorDescription`, `Track canNotPlaceCarOutsideTrackErrorDescription`), preconditions are encapsulated class-side assertions, and a new one rejects a non-positive number of laps (test27).\n- Every class got a real comment, and methods were re-categorized.\n\nTwo things I did not do, since they weren't part of the ask: the `ISW1` package has never been written to a file (it has no file name), and I have not saved the image. Say the word and I'll set a file name and save the package, and/or snapshot the image."
+  }
+}

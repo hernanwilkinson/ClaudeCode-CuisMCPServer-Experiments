@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c17-customerimporter-2",
+  "title": "Customer Importer 2: make it understandable and robust",
+  "kind": "refactoring",
+  "package": "10Pines-C17",
+  "description": "The CSV customer importer is now a tested method object but its value method is still the original tangled loop, and it crashes on invalid input (an address before any customer, records with the wrong number of fields, empty lines, record types that only start with C or A). The student must refactor the loop into meaningful methods and object state, then make the import robust with a test per invalid case and explicit error messages.",
+  "startingPackages": ["starting/10Pines-C17-35.st"],
+  "solutionPackages": ["solution/10Pines-C17-60.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C17 - TDD Avanzado",
+  "semester": "10pines-c17",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": true,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "First half is pure refactoring of a loop (remove the duplicated split and read-line, temporaries to instance variables, name the record-type conditions and the if bodies); second half adds behaviour with TDD: validation of record type and field count with one test and one error description per invalid case, checking partial imports."
+  },
+  "sizeHint": {"classesInStartingCode": 5, "methodsInStartingCode": 50}
+}

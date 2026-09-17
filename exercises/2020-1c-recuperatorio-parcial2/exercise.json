@@ -1,0 +1,25 @@
+{
+  "name": "2020-1c-recuperatorio-parcial2",
+  "title": "Warehouse shipping – vehicles carrying vehicles and mountable trailers",
+  "kind": "feature",
+  "package": "ISW1-2020-1C-2doParcial",
+  "description": "Extending the second-midterm warehouse/shipping model, the student must let cargo vehicles carry other vehicles (trucks carry motorbikes and drones, motorbikes carry drones) that depart from the conveyor's destination after its arrival and are considered when shipping, and add mountable trailers that hold other trailers and route each product to one of them by a fixed selection rule (largest capacity or lightest load), falling through on rejection and counting failures per trailer.",
+  "startingPackages": ["starting/ISW1-2020-1C-2doParcial-SolucionDeVideo.st"],
+  "solutionPackages": ["solution/ISW1-2020-1C-Recuperatorio.st"],
+  "acceptanceTests": null,
+  "source": "2020-1c/Recuperatorios",
+  "semester": "2020-1c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Two composite structures at once: vehicles that recursively contain vehicles (with kind-based carrying rules that invite isKindOf: checks unless solved with double dispatch) and trailers that recursively contain trailers with a strategy-chosen target, fall-through on rejection and per-child failure counters, all while keeping mountable trailers out of the shipping."
+  },
+  "sizeHint": {"classesInStartingCode": 35, "methodsInStartingCode": 179}
+}

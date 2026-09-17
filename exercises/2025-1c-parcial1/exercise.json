@@ -1,0 +1,30 @@
+{
+  "name": "2025-1c-parcial1",
+  "title": "The Smugglers Run! (Escape de Flota)",
+  "kind": "greenfield",
+  "package": "ISW-Parcial1-1C25",
+  "description": "A fleet of spaceships (heavy cruiser, smugglers transport, light interceptor) with impulse, graviton or warp thrusters crosses a route of galactic sectors (planetary, asteroids, nebula) that damage the hull and consume fuel. The student must design the model from scratch so that the 20 given tests pass, replacing conditionals with polymorphism.",
+  "startingPackages": ["starting/ISW-Parcial1-1C25.st"],
+  "solutionPackages": [
+    "solution/ISW-Parcial1-1C25-Solu.st",
+    "solution/historicas/ISW-Parcial1-1C25.st",
+    "solution/historicas/ISW-Parcial1-1C25-ConIf.st",
+    "solution/historicas/ISW-Parcial1-1C25-Solucion.st"
+  ],
+  "acceptanceTests": null,
+  "source": "2025-1c/1erParcial",
+  "semester": "2025-1c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Only the tests are given; the behaviour depends on the combination of sector type and thruster type, so the design needs double dispatch or strategy objects for sectors and thrusters instead of nested ifs, while ships stay open to their existing protocol in the larger game."
+  },
+  "sizeHint": {"classesInStartingCode": 3, "methodsInStartingCode": 35}
+}

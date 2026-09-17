@@ -1,0 +1,25 @@
+==> job 2: rep 1, 2-ModelStructure+Package / 2-EvaluateAsLastResource / exercises/smoke
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/000-PipelineChecks/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/smoke/20260910-191901
+    image serving 32 tools on port 61339
+    claude 2.1.268 (Claude Code), model claude-haiku-4-5-20251001, effort low, budget $0.5, timeout 240s
+    claude exited with status 0 after 70s, 35 tool calls logged by the server
+    saving the image
+    filing out package BoundedStack
+    status completed, turns 36, cost $0.09463689999999998
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/000-PipelineChecks/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/smoke/20260910-191901
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/000-PipelineChecks/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/smoke/20260910-191901
+    installing the run's package BoundedStack
+    acceptance test classes: none
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260910-191901: 2-ModelStructure+Package / 2-EvaluateAsLastResource / free / smoke
+  acceptance         none
+  agent tests        15/15 passed, 0 failed, 0 errors
+  coverage           by all tests 100.0%, by the agent's tests 100.0%
+  test smells        13
+  model              1 classes, 7 methods, 3.29 sends/method, 0 over 10, ifs 4, nil checks 0, type checks 1
+  diff               +22 methods, ~0 changed, -0 removed; classes +2 -0
+  tool calls         35 by the agent, 1 errors, evaluate kinds {}
+  mentor             18 findings {'Prefer assert:equals: over assert: with =': 10, 'Method complexity': 4, 'isEmpty over size = 0': 2, 'Instance creation format': 1, 'No empty method categories': 1}
+  agent              claude-haiku-4-5-20251001 effort low, 70s, cost $0.09463689999999998, tokens in 106 cache-read 196,729 out 6,582
+  refactorings       0 done by hand {}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 5 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/000-PipelineChecks/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/smoke/20260910-191901/analysis.json

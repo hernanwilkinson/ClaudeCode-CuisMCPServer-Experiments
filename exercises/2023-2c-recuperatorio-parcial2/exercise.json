@@ -1,0 +1,25 @@
+{
+  "name": "2023-2c-recuperatorio-parcial2",
+  "title": "BattleField (two teams on the MineField)",
+  "kind": "feature",
+  "package": "ISW1-2023-2C-2doParcial",
+  "description": "Turn the single-player MineField into a two-team BattleField: teams of soldiers with bayonet, pistol or machine gun start on opposite rows, move in alternating turns, fight when they meet (winner by weapon or by the parity of the clock's seconds), and only bayonet soldiers may wear armour. The student must extend the given MineField model while keeping all its 40 tests passing.",
+  "startingPackages": ["starting/ISW1-2023-2C-2doParcial.st"],
+  "solutionPackages": ["solution/ISW1-2023-2C-Recuperatorio.st"],
+  "acceptanceTests": null,
+  "source": "2023-2c/Recuperatorio",
+  "semester": "2023-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "The player state is scattered across MineField instance variables and must be extracted into Player/Team abstractions before adding turns, three soldier kinds with a symmetric fight table (double dispatch), armour restrictions per kind and the backwards-compatible single-player creation protocol."
+  },
+  "sizeHint": {"classesInStartingCode": 18, "methodsInStartingCode": 119}
+}

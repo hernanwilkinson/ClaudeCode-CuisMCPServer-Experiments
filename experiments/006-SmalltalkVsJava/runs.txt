@@ -1,0 +1,6 @@
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2022-1c-recuperatorio-parcial1/20260915-110924-39025
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/1-Evaluate+TestRunning-University_1-Empty_free/2022-1c-recuperatorio-parcial1/20260915-110924-39024
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/1-Evaluate+TestRunning-University_1-Empty_free/2019-2c-parcial2-masked/20260915-111535-40127
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260915-111749-40413
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/1-Evaluate+TestRunning-University_1-Empty_free/2024-1c-parcial1/20260915-112638-41597

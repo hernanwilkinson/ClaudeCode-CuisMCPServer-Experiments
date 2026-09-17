@@ -1,0 +1,49 @@
+{
+  "scenario": "analysis",
+  "base": "university",
+  "baseImage": "CuisUniversity7.9-8182.image",
+  "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+  "image": "MCP-analysis.image",
+  "features": [
+    "Tools-Finder",
+    "MCPServer",
+    "MCPServerMethodFinder",
+    "MCPServerExtraRefactoring",
+    "MCPServerLiveTyping",
+    "MCPServerLiveTypingRefactorings",
+    "MCPServerExtraLiveTypingRefactorings",
+    "SmalltalkMentor",
+    "TestLint"
+  ],
+  "toolGroups": [
+    "MCPImageTools",
+    "MCPTestRunningTools",
+    "MCPModelStructureTools",
+    "MCPPackageTools",
+    "MCPSearchTools",
+    "MCPMethodFinderTools",
+    "MCPRefactoringTools",
+    "MCPExtraRefactoringTools",
+    "MCPLiveTypingTools",
+    "MCPDebugTools"
+  ],
+  "decorators": [
+    "MCPActualImplementorsDecorator",
+    "MCPActualSendersDecorator",
+    "MCPInstanceVariableTypesDecorator",
+    "MCPMethodTypesDecorator",
+    "MCPAddParameterInActualScopeDecorator",
+    "MCPChangeKeywordsOrderInActualScopeDecorator",
+    "MCPExtractAsParameterInActualScopeDecorator",
+    "MCPInlineMethodInActualScopeDecorator",
+    "MCPRemoveParameterInActualScopeDecorator",
+    "MCPRenameSelectorInActualScopeDecorator",
+    "MCPExtractParameterObjectInActualScopeDecorator",
+    "MCPMoveInstanceVariableInActualScopeDecorator",
+    "MCPMoveMethodInActualScopeDecorator"
+  ],
+  "cuisDevCommit": "7b48a0fb4bdf47feff8ed6b95866efdf587ceba8",
+  "mcpServerCommit": "1d61daa41bbb1feb8ae0ec0569432cc0305f0e9b",
+  "builtAt": "2026-09-14T23:46:53Z",
+  "imageSha256": "933a7b54e049e88dfa2a49ee480a657d5c5ecc9f178b212d8c7dde3d7a7ac7ab"
+}

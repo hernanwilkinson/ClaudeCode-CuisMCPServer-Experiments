@@ -1,0 +1,25 @@
+{
+  "name": "2025-2c-parcial1",
+  "title": "Marine ROV specimen capture",
+  "kind": "greenfield",
+  "package": "2025-2C-1erParcial",
+  "description": "Simulate a marine ROV capturing specimens on a 2D map: two arms (vacuum, net) whose grab area depends on the environment (muddy, rocky), two specimen kinds with escape moves, and a contingency mode once the net breaks. The student must design the model from scratch so that 16 given tests pass, implementing the stubbed test helpers.",
+  "startingPackages": ["starting/2025-2C-1erParcial-Original.st"],
+  "solutionPackages": ["solution/2025-2C-1erParcial-SolucionConIfs.st", "solution/2025-2C-1erParcial-SolucionSinIfs.st"],
+  "acceptanceTests": null,
+  "source": "2025-2c/1erParcial",
+  "semester": "2025-2c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Behaviour is a three-way combination of arm x environment x specimen kind (area shape, escape move, breakage) plus a normal/contingency ROV state, which invites polymorphic dispatch across several small hierarchies instead of nested ifs; the tests fix only the helper protocol, leaving the model's abstractions open."
+  },
+  "sizeHint": {"classesInStartingCode": 3, "methodsInStartingCode": 31}
+}

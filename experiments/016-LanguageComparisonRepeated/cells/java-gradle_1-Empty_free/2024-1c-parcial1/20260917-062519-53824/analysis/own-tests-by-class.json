@@ -1,0 +1,20 @@
+{
+  "simshotels.FloorTest": {
+    "tests": 10,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "simshotels.HotelTest": {
+    "tests": 13,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "simshotels.RoomTest": {
+    "tests": 17,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  }
+}

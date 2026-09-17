@@ -1,0 +1,32 @@
+{
+  "scenario": "4-Refactoring",
+  "base": "cuis",
+  "baseImage": "Cuis7.9-8149.image",
+  "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+  "image": "MCP-4-Refactoring.image",
+  "features": [
+    "Aconcagua",
+    "Chalten",
+    "CodeCoverage",
+    "Tools-Finder",
+    "MCPServer",
+    "MCPServerMethodFinder",
+    "MCPServerExtraRefactoring"
+  ],
+  "toolGroups": [
+    "MCPImageTools",
+    "MCPTestRunningTools",
+    "MCPModelStructureTools",
+    "MCPPackageTools",
+    "MCPSearchTools",
+    "MCPMethodFinderTools",
+    "MCPRefactoringTools",
+    "MCPExtraRefactoringTools"
+  ],
+  "decorators": [],
+  "batchTool": true,
+  "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+  "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+  "builtAt": "2026-09-16T01:37:10Z",
+  "imageSha256": "b5f4b366a56949d0350d29a2756efc4fed4b2a6aa266163385aaa745d6efa3a5"
+}

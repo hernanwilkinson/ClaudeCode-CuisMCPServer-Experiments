@@ -1,0 +1,25 @@
+{
+  "name": "2020-2c-recuperatorio-parcial2",
+  "title": "Adventure Games III: Doors between rooms",
+  "kind": "feature",
+  "package": "ISW1-2020-2C-Recuperatorio-2doParcial",
+  "description": "A graphic adventure engine with rooms, a PlayableCharacter that moves and takes objects, and portable/non-portable StageObjects. The student must add bi-directional Doors that occupy a position in two different rooms, move the character to the other room when he walks into an open door, and can be closed and opened only with the key they were closed with, which must be in the backpack.",
+  "startingPackages": ["starting/ISW1-2020-2C-Recuperatorio-2doParcial.st"],
+  "solutionPackages": [],
+  "acceptanceTests": null,
+  "source": "2020-2c/recuperatorio",
+  "semester": "2020-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "A Door is a StageObject that lives in two rooms at once, has an open/closed-with-key state shared across both rooms, must reject take and containment, and must intercept moveForward to relocate the character into the other room one step past the door, so movement, taking and containment all need door-aware polymorphic behaviour."
+  },
+  "sizeHint": {"classesInStartingCode": 19, "methodsInStartingCode": 151}
+}

@@ -1,0 +1,4 @@
+1	1-Evaluate+TestRunning	1-Empty	exercises/2019-2c-parcial1
+1	2-ModelStructure+Package	2-EvaluateAsLastResource	exercises/2019-2c-parcial1
+1	1-Evaluate+TestRunning	1-Empty	exercises/2025-2c-parcial2
+1	2-ModelStructure+Package	2-EvaluateAsLastResource	exercises/2025-2c-parcial2

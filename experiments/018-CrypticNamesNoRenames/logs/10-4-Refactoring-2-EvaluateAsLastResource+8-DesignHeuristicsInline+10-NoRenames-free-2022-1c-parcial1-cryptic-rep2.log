@@ -1,0 +1,28 @@
+==> job 10: rep 2, 4-Refactoring / 2-EvaluateAsLastResource,8-DesignHeuristicsInline,10-NoRenames / free / exercises/2022-1c-parcial1-cryptic
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/018-CrypticNamesNoRenames/cells/4-Refactoring_2-EvaluateAsLastResource+8-DesignHeuristicsInline+10-NoRenames_free/2022-1c-parcial1-cryptic/20260917-073356-62598
+    image serving 74 tools on port 56466
+    installing starting/Task2.pck.st
+    warm-up (given tests run once before the session): classes 1 run 25 passed 25 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 252s, 57 tool calls logged by the server
+    saving the image
+    filing out package Task2
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 11, cost $1.5495245
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/018-CrypticNamesNoRenames/cells/4-Refactoring_2-EvaluateAsLastResource+8-DesignHeuristicsInline+10-NoRenames_free/2022-1c-parcial1-cryptic/20260917-073356-62598
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/018-CrypticNamesNoRenames/cells/4-Refactoring_2-EvaluateAsLastResource+8-DesignHeuristicsInline+10-NoRenames_free/2022-1c-parcial1-cryptic/20260917-073356-62598
+    installing the run's package Task2
+    acceptance test classes: C5
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260917-073356-62598: 4-Refactoring / 2-EvaluateAsLastResource+8-DesignHeuristicsInline+10-NoRenames / free / 2022-1c-parcial1-cryptic
+  acceptance         25/25 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 97.8%, by the agent's tests None
+  test smells        27
+  model              13 classes, 94 methods, 1.84 sends/method, 1 over 10, ifs 4, nil checks 0, type checks 0
+  diff               +50 methods, ~41 changed, -10 removed; classes +9 -0
+  tool calls         10 by the agent, 0 errors, evaluate kinds {}
+  mentor             34 findings {'Method complexity': 15, 'No empty method categories': 7, 'Avoid setters': 3, 'Keyword message send format': 3, 'Instance creation format': 2, 'Move helper method to the right class': 2, 'Instance variables read & written': 1, 'No class-name prefix in names': 1}
+  agent              claude-opus-5 effort high, 252s, cost $1.5495245, tokens in 22 cache-read 542,979 out 29,171
+  refactorings       13 done by hand {'manualExtractMethod': 11, 'manualExtractFromSimilarCode': 2}, 13 while a tool was available, 0 right after the tool failed; 5 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/018-CrypticNamesNoRenames/cells/4-Refactoring_2-EvaluateAsLastResource+8-DesignHeuristicsInline+10-NoRenames_free/2022-1c-parcial1-cryptic/20260917-073356-62598/analysis.json

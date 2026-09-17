@@ -1,0 +1,1 @@
+((Smalltalk allClasses select: [:c | (c category ifNil: ['']) beginsWith: 'SurveyCrawler']) collect: [:c | c name]) asArray, (Array with: SystemVersion current printString with: (Random canUnderstand: #nextInteger:))

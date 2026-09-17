@@ -1,0 +1,25 @@
+{
+  "name": "2025-2c-parcial2",
+  "title": "BAJE public transport card readers",
+  "kind": "greenfield",
+  "package": "2025-2C-2doParcial",
+  "description": "Model the card readers of Buenos Aires buses, subways and trains charging trips on a BAJE card: routes with stops and distance-based fare tables, card discount configurations (none, student, retiree), transfer discounts within 2 hours, and train entry/exit fare adjustment. The student must build the whole model with TDD from an empty test class.",
+  "startingPackages": [""],
+  "solutionPackages": ["solution/2025-2C-2doParcial-Solucion.st", "solution/2025-2C-2doParcial-SolucionDelVideo.st"],
+  "acceptanceTests": null,
+  "source": "2025-2c/2doParcial",
+  "semester": "2025-2c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Three reader kinds with different charging moments (bus on tap, subway fixed, train entry then optional exit refund), three discount policies and a non-cumulative transfer rule interact on a card that records its trips and per-day free trips, so the hard part is assigning responsibilities among reader, transport, fare table, card, discount and trip objects and using Chalten/Aconcagua for dates and units."
+  },
+  "sizeHint": {"classesInStartingCode": 1, "methodsInStartingCode": 0}
+}

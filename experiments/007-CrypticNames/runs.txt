@@ -1,0 +1,7 @@
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/007-CrypticNames/cells/4-Refactoring_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2021-1c-parcial1/20260915-204213-74190
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/007-CrypticNames/cells/4-Refactoring_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2021-1c-parcial1-cryptic/20260915-204213-74189
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/007-CrypticNames/cells/4-Refactoring_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2022-1c-parcial1-cryptic/20260915-205049-75701
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/007-CrypticNames/cells/4-Refactoring_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2020-2c-parcial1/20260915-210841-76900
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/007-CrypticNames/cells/4-Refactoring_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2020-2c-parcial1-cryptic/20260915-211435-77481
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/007-CrypticNames/cells/4-Refactoring_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2022-1c-parcial1/20260915-212651-78350
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/007-CrypticNames/cells/4-Refactoring_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2022-1c-parcial1/20260915-205036-75543

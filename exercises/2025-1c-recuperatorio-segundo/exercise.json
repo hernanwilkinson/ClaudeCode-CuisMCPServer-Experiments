@@ -1,0 +1,25 @@
+{
+  "name": "2025-1c-recuperatorio-segundo",
+  "title": "Painter Reloaded (Pintor Recargado)",
+  "kind": "feature",
+  "package": "2025-1C-Recuperatorio-2",
+  "description": "Starting from the course's Painter solution (painter, wall, rectangular paintings, selection, left/right alignment with undo/redo history), add align-up, align-down, same-width and same-height actions on the selection, and a query returning the horizontal 'movement lines' to draw when a painting is dragged near the top or bottom edges of other paintings.",
+  "startingPackages": ["starting/2025-1C-Recuperatorio-2-Original.st"],
+  "solutionPackages": [],
+  "acceptanceTests": null,
+  "source": "2025-1c/Recuperatorio-2do",
+  "semester": "2025-1c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "The new alignments mirror the existing left/right command objects (undoable actions with their own preconditions), so the interesting part is generalizing the alignment hierarchy without duplicating it, and the movement-lines query is a collection/geometry exercise over Rectangle protocol (top, bottom, left, right, setOrigin:corner:)."
+  },
+  "sizeHint": {"classesInStartingCode": 16, "methodsInStartingCode": 80}
+}

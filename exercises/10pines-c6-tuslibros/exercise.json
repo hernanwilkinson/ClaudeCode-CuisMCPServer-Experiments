@@ -1,0 +1,30 @@
+{
+  "name": "10pines-c6-tuslibros",
+  "title": "TusLibros.com On-line Bookstore",
+  "kind": "greenfield",
+  "package": "TusLibros",
+  "description": "An on-line REST sales channel and a batch file channel for the publishing house TusLibros: authenticated clients, shopping carts over a catalog that expire 30 minutes after their last operation, check-out with a credit card through an external Merchant Processor that charges per call, a sales book and a 0|... / 1|ERROR encoding. The student builds the system with TDD, simulating the Merchant Processor and the clock; the course material reaches the object facade with sessions and clock (no string encoding, HTTP or batch files).",
+  "startingPackages": [],
+  "solutionPackages": [
+    "solution/TusLibros-78.st"
+  ],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C6 - Construccion de Software Seguro usando Test Driven Development",
+  "semester": "10pines-c6",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Many collaborators (cart, catalog, cashier, credit card, merchant processor, sales book, clock, sessions) and two external dependencies the tests must keep in control (the merchant processor and time), so the design hinges on injecting simulators and separating the inner and outer sides of the interface."
+  },
+  "sizeHint": {
+    "classesInStartingCode": 0,
+    "methodsInStartingCode": 0
+  }
+}

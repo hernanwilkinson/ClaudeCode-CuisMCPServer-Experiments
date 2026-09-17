@@ -1,0 +1,20 @@
+{
+  "RUN_ID": "20260915-110444-37953",
+  "EXPERIMENT": "000-PipelineChecks",
+  "SCENARIO": "java-gradle",
+  "CONFIG": "1-Empty",
+  "TECHNIQUE": "free",
+  "EXERCISE_NAME": "smoke-java",
+  "JAVA_PACKAGE": "app",
+  "MODEL": "claude-haiku-4-5-20251001",
+  "EFFORT": "low",
+  "BUDGET": "0.4",
+  "TIMEOUT": "300",
+  "NOTE": "Java runner smoke",
+  "TOOLS": "Read,Edit,Write,Bash,Glob,Grep",
+  "CLAUDE_VERSION": "2.1.268 (Claude Code)",
+  "WORKDIR": "/private/tmp/claude-cells/20260915-110444-37953-37953",
+  "STARTED_AT": "2026-09-15T14:04:47Z",
+  "START_SECONDS": "1789481087",
+  "WARM_UP": "classes 1 run 1 passed 1 failed 0 errors 0"
+}

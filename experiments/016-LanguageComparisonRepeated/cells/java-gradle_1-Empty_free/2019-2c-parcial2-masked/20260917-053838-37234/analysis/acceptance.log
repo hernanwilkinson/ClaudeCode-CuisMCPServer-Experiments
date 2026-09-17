@@ -1,0 +1,181 @@
+Starting a Gradle Daemon, 9 stopped Daemons could not be reused, use --status for details
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+
+> Task :compileTestJava FAILED
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:13: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:22: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:31: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:40: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:49: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:58: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:68: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:77: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Right");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:86: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Right");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:95: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Right");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:104: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Right");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:113: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Down");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:122: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Down");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:131: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Left");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:140: error: cannot find symbol
+        SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Left");
+                                             ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:149: error: cannot find symbol
+        RuntimeException anError = assertThrows(RuntimeException.class, () -> SurveyCrawler.atFacing(new Point(1, 2), "X"));
+                                                                                           ^
+  symbol:   method atFacing(Point,String)
+  location: class SurveyCrawler
+16 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
+> Compilation failed; see the compiler output below.
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:13: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:22: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:31: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:40: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:49: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:58: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:68: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Up");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:77: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Right");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:86: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Right");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:95: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Right");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:104: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Right");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:113: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Down");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:122: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Down");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:131: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Left");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:140: error: cannot find symbol
+          SurveyCrawler crawler = SurveyCrawler.atFacing(new Point(1, 2), "Left");
+                                               ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/016-LanguageComparisonRepeated/cells/java-gradle_1-Empty_free/2019-2c-parcial2-masked/20260917-053838-37234/analysis/acceptance-project/src/test/java/surveycrawler/SurveyCrawlerTest.java:149: error: cannot find symbol
+          RuntimeException anError = assertThrows(RuntimeException.class, () -> SurveyCrawler.atFacing(new Point(1, 2), "X"));
+                                                                                             ^
+    symbol:   method atFacing(Point,String)
+    location: class SurveyCrawler
+  16 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 2s
+2 actionable tasks: 2 executed

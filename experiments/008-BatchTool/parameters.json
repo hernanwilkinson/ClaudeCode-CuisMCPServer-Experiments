@@ -1,0 +1,4 @@
+{"experiment": "008-BatchTool", "hypothesis": "(repetitions appended on 2026-09-16: three more runs per cell, so each cell holds four)",
+ "cells": "1-Evaluate+TestRunning:1-Empty:free,2-ModelStructure+Package:9-BatchFirst:free,4-Refactoring:9-BatchFirst:free", "exercises": "exercises/2019-2c-parcial1,exercises/2025-2c-parcial2", "repetitions": 3,
+ "model": "claude-opus-5", "effort": "high", "technique": "free", "budget": 15, "timeout": 2400,
+ "parallel": 2, "startedAt": "2026-09-16T11:40:38Z", "claudeCodeVersion": "2.1.268 (Claude Code)"}

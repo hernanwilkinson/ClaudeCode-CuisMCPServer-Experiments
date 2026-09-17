@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="surveycrawler.SurveyCrawlerTest" tests="53" skipped="0" failures="0" errors="0" timestamp="2026-09-17T09:21:29.713Z" hostname="M4.local" time="0.029">
+  <properties/>
+  <testcase name="test22ADigitCanNotStartTheSequence()" classname="surveycrawler.SurveyCrawlerTest" time="0.006"/>
+  <testcase name="test37SiltDoesNotAffectTurning()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test36SlidingWithARealRandomEndsBetweenOneAndTenCellsAway()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test48AGuardedRunMustBeFinished()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test38ASuccessfulGuardedRunKeepsItsMovements()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test35SlidingKeepsTheMovementDirection()" classname="surveycrawler.SurveyCrawlerTest" time="0.001"/>
+  <testcase name="test03tWhenFacingUpDecrementsY()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test45AFailingGuardedRunOnlyUndoesItsOwnMovements()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test53SiltOutsideAGuardedRunIsNotAnError()" classname="surveycrawler.SurveyCrawlerTest" time="0.001"/>
+  <testcase name="test23RepetitionIsASingleDigit()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test08aWhenFacingRightIncrementsX()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test43AnInvalidCommandInAGuardedRunUndoesItsMovements()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test13gWhenFacingDownMakesCrawlerFaceRight()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test40ABoulderInAGuardedRunUndoesItsMovements()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test14athAreProcessedCorrectlyWhenFacingLeft()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test19RetreatCanBeRepeated()" classname="surveycrawler.SurveyCrawlerTest" time="0.001"/>
+  <testcase name="test07MoreThanOneCommandAreProcessedCorrectly()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test11gWhenFacingRightMakesCrawlerFaceUp()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test25ARepetitionInsideAGuardedRunCanNotRepeatTheOpenParenthesis()" classname="surveycrawler.SurveyCrawlerTest" time="0.001"/>
+  <testcase name="test24GuardedRunDelimitersCanNotBeRepeated()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test51AGuardedRunDoesNotSpanManySequences()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test10hWhenFacingRightMakesCrawlerFaceDown()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test28CanNotRetreatIntoABoulder()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test49AGuardedRunCanNotBeFinishedWithoutBeingStarted()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test01EmptyCommandStringDoesNothing()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test41AGuardedRunUndoesTurnsAndMovementsInEveryDirection()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test02aWhenFacingUpIncrementsY()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test31ABoulderOnlyAffectsTheCommandThatReachesIt()" classname="surveycrawler.SurveyCrawlerTest" time="0.001"/>
+  <testcase name="test32ABoulderStopsARepetition()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test39AnEmptyGuardedRunDoesNothing()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test33OnSiltTheCrawlerSlidesAtLeastOneCell()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test20TurnsCanBeRepeated()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test46ASequenceCanHaveManyGuardedRuns()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test27CanNotAdvanceIntoABoulder()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test06InvalidCommandsAreNotProcessed()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test21OnlyTheCommandJustBeforeTheDigitIsRepeated()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test26OnFirmSandTheCrawlerMovesNormally()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test12athAreProcessedCorrectlyWhenFacingDown()" classname="surveycrawler.SurveyCrawlerTest" time="0.001"/>
+  <testcase name="test34OnSiltTheCrawlerSlidesAtMostTenCells()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test16CanNotCreateACrawlerWithAnInvalidFacing()" classname="surveycrawler.SurveyCrawlerTest" time="0.001"/>
+  <testcase name="test44AnInvalidRepetitionInAGuardedRunUndoesItsMovements()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test29CanNotTurnCounterClockwiseOnABoulder()" classname="surveycrawler.SurveyCrawlerTest" time="0.001"/>
+  <testcase name="test18NineIsTheBiggestRepetition()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test04hWhenFacingUpMakesCrawlerFaceRight()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test09tWhenFacingRightDecrementsX()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test47AGuardedRunCanNotBeStartedInsideAnother()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test42SiltInAGuardedRunRaisesAndUndoesTheSlide()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test30CanNotTurnClockwiseOnABoulder()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test50AGuardedRunCanNotBeFinishedTwice()" classname="surveycrawler.SurveyCrawlerTest" time="0.001"/>
+  <testcase name="test17aDigitRepeatsTheLastCommandTheDigitPlusTwoTimes()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test15gWhenFacingLeftMakesCrawlerFaceDown()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test05gWhenFacingUpMakesCrawlerFaceLeft()" classname="surveycrawler.SurveyCrawlerTest" time="0.0"/>
+  <testcase name="test52AfterAFailedGuardedRunTheCrawlerIsNotGuardedAnymore()" classname="surveycrawler.SurveyCrawlerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

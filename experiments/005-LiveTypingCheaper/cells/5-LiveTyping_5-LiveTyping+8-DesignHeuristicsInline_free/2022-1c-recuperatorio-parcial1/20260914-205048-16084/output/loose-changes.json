@@ -1,0 +1,15 @@
+{
+  "methods": [
+    "a MethodReference String>>#isAllDigits",
+    "a MethodReference String>>#isAllLetters"
+  ],
+  "classesChangedOutsidePackage": [
+    "String"
+  ],
+  "changeSets": [
+    "UnsavedChangesTo-MCPServer (0 methods)",
+    "8183-CuisCore-AuthorName-2026Sep14-20h50m (0 methods)",
+    "UnsavedChangesTo-CustomerImporter (243 methods)"
+  ],
+  "fileOutChars": 232
+}

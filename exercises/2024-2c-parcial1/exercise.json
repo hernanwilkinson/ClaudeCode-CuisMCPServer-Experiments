@@ -1,0 +1,29 @@
+{
+  "name": "2024-2c-parcial1",
+  "title": "Monsters and Adventurers",
+  "kind": "greenfield",
+  "package": "2024-2C-Parcial-1",
+  "description": "A small RPG combat model: warriors and mages equip swords, staffs, armors and magic shields to fight goblins and ogres, with type-dependent penalties. The student must implement the whole model from a given, unmodifiable test class whose creation methods are left unimplemented.",
+  "startingPackages": ["starting/2024-2C-Parcial-1.st"],
+  "solutionPackages": [
+    "solution/2024-2C-Parcial-1 Solu FCEN con Bonus.st",
+    "solution/2024-2C-Parcial 1 Paso a paso con bonus.zip",
+    "solution/6509-FixBrokenChangesOn-SaveAs-overwritingImage-JuanVuletich-2024Jul08-16h21m-jmv.001.cs.st"
+  ],
+  "acceptanceTests": null,
+  "source": "2024-2c/1erParcial",
+  "semester": "2024-2c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Attack damage depends on both the item kind and the adventurer kind (and on the monster kind for the staff), so the temptation is to ask objects their type; the tests fix the protocol (equiparItemDeAtaque:, atacarA:con:, tienePuntosDeVida:) and use Aconcagua units (pv), and the optional bonus adds a defeated state."
+  },
+  "sizeHint": {"classesInStartingCode": 2, "methodsInStartingCode": 21}
+}

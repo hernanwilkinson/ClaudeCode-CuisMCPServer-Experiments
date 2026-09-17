@@ -1,0 +1,20 @@
+{
+  "RUN_ID": "20260917-061856-52134",
+  "EXPERIMENT": "016-LanguageComparisonRepeated",
+  "SCENARIO": "java-gradle",
+  "CONFIG": "1-Empty",
+  "TECHNIQUE": "free",
+  "EXERCISE_NAME": "2019-2c-parcial2-masked",
+  "JAVA_PACKAGE": "surveycrawler",
+  "MODEL": "claude-opus-5",
+  "EFFORT": "high",
+  "BUDGET": "15",
+  "TIMEOUT": "2400",
+  "NOTE": "experiment 016-LanguageComparisonRepeated, repetition 5",
+  "TOOLS": "Read,Edit,Write,Bash,Glob,Grep",
+  "CLAUDE_VERSION": "2.1.268 (Claude Code)",
+  "WORKDIR": "/private/tmp/claude-cells/20260917-061856-52134-52134",
+  "STARTED_AT": "2026-09-17T09:18:58Z",
+  "START_SECONDS": "1789636738",
+  "WARM_UP": "classes 1 run 16 passed 16 failed 0 errors 0"
+}

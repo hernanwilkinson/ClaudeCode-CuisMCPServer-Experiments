@@ -1,0 +1,25 @@
+{
+  "name": "2023-2c-recuperatorio-parcial1",
+  "title": "BattleField, reduced scope (teams of bayonet soldiers)",
+  "kind": "feature",
+  "package": "ISW1-2023-2C-2doParcial",
+  "description": "Turn the single-player MineField into a two-team game: create the game with two teams of Soldiers with Bayonet that start on opposite rows with equal size and total lives, and move one player of each team per turn, without handling players meeting at a position. The student must extract the player from the given MineField and add teams and turns while keeping all its 40 tests passing.",
+  "startingPackages": ["starting/ISW1-2023-2C-2doParcial.st"],
+  "solutionPackages": ["solution/ISW1-2023-2C-Recuperatorio.st"],
+  "acceptanceTests": null,
+  "source": "2023-2c/Recuperatorio",
+  "semester": "2023-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "The work is extracting Player and Team abstractions from the player state scattered in MineField, keeping the old single-player creation protocol working (one team with one player, the other empty), and modelling the alternating turn order across teams and across players within a team."
+  },
+  "sizeHint": {"classesInStartingCode": 18, "methodsInStartingCode": 119}
+}

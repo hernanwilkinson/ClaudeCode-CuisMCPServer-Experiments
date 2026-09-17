@@ -1,0 +1,28 @@
+==> job 37: rep 4, 1-Evaluate+TestRunning-University / 8-DesignHeuristicsInline / free / exercises/2022-1c-recuperatorio-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/014-LiveTypingFiveRuns/cells/1-Evaluate+TestRunning-University_8-DesignHeuristicsInline_free/2022-1c-recuperatorio-parcial1/20260917-034046-19637
+    image serving 7 tools on port 51133
+    installing starting/CustomerImporter-Recu-1er-Parcial.st
+    warm-up (given tests run once before the session): classes 1 run 29 passed 29 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 125s, 9 tool calls logged by the server
+    saving the image
+    filing out package CustomerImporter-Recu-1er-Parcial
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: ['String']
+    status completed, turns 10, cost $0.8013105
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/014-LiveTypingFiveRuns/cells/1-Evaluate+TestRunning-University_8-DesignHeuristicsInline_free/2022-1c-recuperatorio-parcial1/20260917-034046-19637
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/014-LiveTypingFiveRuns/cells/1-Evaluate+TestRunning-University_8-DesignHeuristicsInline_free/2022-1c-recuperatorio-parcial1/20260917-034046-19637
+    installing the run's package CustomerImporter-Recu-1er-Parcial
+    acceptance test classes: ImportTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260917-034046-19637: 1-Evaluate+TestRunning-University / 8-DesignHeuristicsInline / free / 2022-1c-recuperatorio-parcial1
+  acceptance         29/29 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 80.9%, by the agent's tests None
+  test smells        1
+  model              16 classes, 155 methods, 1.64 sends/method, 1 over 10, ifs 8, nil checks 2, type checks 1
+  diff               +73 methods, ~16 changed, -10 removed; classes +6 -0
+  tool calls         9 by the agent, 0 errors, evaluate kinds {'reflection': 3, 'definesCode': 4}
+  mentor             34 findings {'Keyword message send format': 16, 'Class is referenced': 4, 'Method complexity': 4, 'No empty method categories': 4, 'Instance variables read & written': 3, 'No class-name prefix in names': 2, 'ifEmpty: over isEmpty ifTrue:': 1}
+  agent              claude-opus-5 effort high, 125s, cost $0.8013105, tokens in 16 cache-read 206,481 out 13,540
+  refactorings       0 done by hand {}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/014-LiveTypingFiveRuns/cells/1-Evaluate+TestRunning-University_8-DesignHeuristicsInline_free/2022-1c-recuperatorio-parcial1/20260917-034046-19637/analysis.json

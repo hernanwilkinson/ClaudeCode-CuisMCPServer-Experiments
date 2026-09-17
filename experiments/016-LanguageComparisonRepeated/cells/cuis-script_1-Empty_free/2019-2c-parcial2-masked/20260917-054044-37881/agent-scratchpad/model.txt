@@ -1,0 +1,352 @@
+== SurveyCrawler class | instance creation
+at: aPosition facing: aFacingName sonar: aSonar
+
+	^self at: aPosition facing: aFacingName sonar: aSonar random: Random new
+== SurveyCrawler class | instance creation
+at: aPosition facing: aFacingName sonar: aSonar random: aRandom
+	
+	^self new initializeAt: aPosition facing: (CrawlerFacing facing: aFacingName) sonar: aSonar random: aRandom
+== SurveyCrawler class | silt
+siltSlideLimit
+
+	^10
+== SurveyCrawler | initialization
+initializeAt: aPosition facing: aFacing sonar: aSonar random: aRandom
+
+	position := aPosition.
+	facing := aFacing.
+	sonar := aSonar.
+	random := aRandom.
+	runMode := CrawlerFreeRun new.
+	lastCommand := CrawlerNonRepeatableCommand new
+== SurveyCrawler | command processing
+process: aSequenceOfCommands
+
+	lastCommand := CrawlerNonRepeatableCommand new.
+	[ aSequenceOfCommands do: [:aCommand | self processCommand: aCommand ].
+	runMode assertFinishedOn: self ]
+		on: Error
+		do: [:anError |
+			runMode abortOn: self.
+			anError pass ]
+== SurveyCrawler | command processing
+processCommand: aCommand
+
+	| command |
+	
+	aCommand isDigit ifTrue: [ ^self repeatLastCommand: aCommand digitValue ].
+	
+	command := CrawlerCommand for: aCommand ifNone: [ ^self signalInvalidCommand ].
+	command executeOn: self.
+	lastCommand := command asRepeatableCommand
+== SurveyCrawler | command processing
+repeatLastCommand: aDigit
+
+	| commandToRepeat |
+	
+	commandToRepeat := lastCommand.
+	lastCommand := CrawlerNonRepeatableCommand new.
+	commandToRepeat repeat: aDigit + 2 on: self
+== SurveyCrawler | moving
+advance
+	
+	self moveTowards: facing direction
+== SurveyCrawler | moving
+retreat
+	
+	self moveTowards: facing direction negated
+== SurveyCrawler | moving
+moveTowards: aDirection
+
+	(sonar groundTypeAt: position + aDirection) receive: self movingTowards: aDirection
+== SurveyCrawler | moving
+displaceBy: aDisplacement
+
+	position := position + aDisplacement.
+	runMode registerUndo: [ position := position - aDisplacement ]
+== SurveyCrawler | moving
+slideTowards: aDirection
+
+	runMode slide: self towards: aDirection
+== SurveyCrawler | moving
+slideFreelyTowards: aDirection
+
+	self displaceBy: aDirection * (random nextInteger: self class siltSlideLimit)
+== SurveyCrawler | facing
+turnClockwise
+	
+	(sonar groundTypeAt: position) allowTurningOf: self.
+	facing turnClockwise: self.
+	runMode registerUndo: [ facing turnCounterClockwise: self ]
+== SurveyCrawler | facing
+turnCounterClockwise
+	
+	(sonar groundTypeAt: position) allowTurningOf: self.
+	facing turnCounterClockwise: self.
+	runMode registerUndo: [ facing turnClockwise: self ]
+== SurveyCrawler | guarded run
+startGuardedRun
+
+	runMode startGuardedRunOn: self
+== SurveyCrawler | guarded run
+endGuardedRun
+
+	runMode endGuardedRunOn: self
+== SurveyCrawler | guarded run
+changeRunModeTo: aRunMode
+
+	runMode := aRunMode
+== SurveyCrawler | exceptions
+boulderFoundErrorDescription
+
+	^'Boulder found'
+== SurveyCrawler | exceptions
+siltInGuardedRunErrorDescription
+
+	^'Silt found during guarded run'
+== SurveyCrawler | exceptions
+nestedGuardedRunErrorDescription
+
+	^'Can not start a guarded run inside another guarded run'
+== SurveyCrawler | exceptions
+unfinishedGuardedRunErrorDescription
+
+	^'Guarded run was not finished'
+== SurveyCrawler | exceptions
+guardedRunNotStartedErrorDescription
+
+	^'Can not finish a guarded run that was not started'
+== SurveyCrawler | exceptions
+signalBoulderFound
+
+	self error: self boulderFoundErrorDescription
+== SurveyCrawler | exceptions
+signalSiltInGuardedRun
+
+	self error: self siltInGuardedRunErrorDescription
+== SurveyCrawler | exceptions
+signalNestedGuardedRun
+
+	self error: self nestedGuardedRunErrorDescription
+== SurveyCrawler | exceptions
+signalUnfinishedGuardedRun
+
+	self error: self unfinishedGuardedRunErrorDescription
+== SurveyCrawler | exceptions
+signalGuardedRunNotStarted
+
+	self error: self guardedRunNotStartedErrorDescription
+== CrawlerFacing | moving
+direction
+
+	self subclassResponsibility
+== CrawlerFacingUp | moving
+direction
+
+	^0@1
+== CrawlerFacingDown | moving
+direction
+
+	^0@-1
+== CrawlerFacingLeft | moving
+direction
+
+	^-1@0
+== CrawlerFacingRight | moving
+direction
+
+	^1@0
+== SeabedGroundType | moving
+receive: aCrawler movingTowards: aDirection
+
+	self subclassResponsibility
+== SeabedGroundType | facing
+allowTurningOf: aCrawler
+
+	self subclassResponsibility
+== SeabedFirmSand | moving
+receive: aCrawler movingTowards: aDirection
+
+	aCrawler displaceBy: aDirection
+== SeabedFirmSand | facing
+allowTurningOf: aCrawler
+== SeabedSilt | moving
+receive: aCrawler movingTowards: aDirection
+
+	aCrawler slideTowards: aDirection
+== SeabedSilt | facing
+allowTurningOf: aCrawler
+== SeabedBoulder | moving
+receive: aCrawler movingTowards: aDirection
+
+	aCrawler signalBoulderFound
+== SeabedBoulder | facing
+allowTurningOf: aCrawler
+
+	aCrawler signalBoulderFound
+== CrawlerRunMode | undoing
+registerUndo: anUndoAction
+
+	self subclassResponsibility
+== CrawlerRunMode | undoing
+abortOn: aCrawler
+
+	self subclassResponsibility
+== CrawlerRunMode | moving
+slide: aCrawler towards: aDirection
+
+	self subclassResponsibility
+== CrawlerRunMode | guarded run
+startGuardedRunOn: aCrawler
+
+	self subclassResponsibility
+== CrawlerRunMode | guarded run
+endGuardedRunOn: aCrawler
+
+	self subclassResponsibility
+== CrawlerRunMode | guarded run
+assertFinishedOn: aCrawler
+
+	self subclassResponsibility
+== CrawlerFreeRun | undoing
+registerUndo: anUndoAction
+== CrawlerFreeRun | undoing
+abortOn: aCrawler
+== CrawlerFreeRun | moving
+slide: aCrawler towards: aDirection
+
+	aCrawler slideFreelyTowards: aDirection
+== CrawlerFreeRun | guarded run
+startGuardedRunOn: aCrawler
+
+	aCrawler changeRunModeTo: CrawlerGuardedRun new
+== CrawlerFreeRun | guarded run
+endGuardedRunOn: aCrawler
+
+	aCrawler signalGuardedRunNotStarted
+== CrawlerFreeRun | guarded run
+assertFinishedOn: aCrawler
+== CrawlerGuardedRun | initialization
+initialize
+
+	undoActions := OrderedCollection new
+== CrawlerGuardedRun | undoing
+registerUndo: anUndoAction
+
+	undoActions add: anUndoAction
+== CrawlerGuardedRun | undoing
+abortOn: aCrawler
+
+	undoActions reverseDo: [:anUndoAction | anUndoAction value ].
+	aCrawler changeRunModeTo: CrawlerFreeRun new
+== CrawlerGuardedRun | moving
+slide: aCrawler towards: aDirection
+
+	aCrawler signalSiltInGuardedRun
+== CrawlerGuardedRun | guarded run
+startGuardedRunOn: aCrawler
+
+	aCrawler signalNestedGuardedRun
+== CrawlerGuardedRun | guarded run
+endGuardedRunOn: aCrawler
+
+	aCrawler changeRunModeTo: CrawlerFreeRun new
+== CrawlerGuardedRun | guarded run
+assertFinishedOn: aCrawler
+
+	aCrawler signalUnfinishedGuardedRun
+== CrawlerCommand class | instance creation
+for: aCharacter ifNone: aNoneBlock
+
+	^self subclasses 
+		detect: [ :aCommandClass | aCommandClass isFor: aCharacter ]
+		ifFound: [ :aCommandClass | aCommandClass new ]
+		ifNone: aNoneBlock
+== CrawlerCommand class | testing
+isFor: aCharacter
+
+	^self character = aCharacter
+== CrawlerCommand class | character
+character
+
+	self subclassResponsibility
+== CrawlerCommand | executing
+executeOn: aCrawler
+
+	self subclassResponsibility
+== CrawlerCommand | executing
+repeat: aNumberOfTimes on: aCrawler
+
+	aNumberOfTimes timesRepeat: [ self executeOn: aCrawler ]
+== CrawlerCommand | repeating
+asRepeatableCommand
+
+	^CrawlerNonRepeatableCommand new
+== CrawlerAdvanceCommand class | character
+character
+
+	^$a
+== CrawlerAdvanceCommand | executing
+executeOn: aCrawler
+
+	aCrawler advance
+== CrawlerAdvanceCommand | repeating
+asRepeatableCommand
+
+	^self
+== CrawlerRetreatCommand class | character
+character
+
+	^$t
+== CrawlerRetreatCommand | executing
+executeOn: aCrawler
+
+	aCrawler retreat
+== CrawlerRetreatCommand | repeating
+asRepeatableCommand
+
+	^self
+== CrawlerTurnClockwiseCommand class | character
+character
+
+	^$h
+== CrawlerTurnClockwiseCommand | executing
+executeOn: aCrawler
+
+	aCrawler turnClockwise
+== CrawlerTurnClockwiseCommand | repeating
+asRepeatableCommand
+
+	^self
+== CrawlerTurnCounterClockwiseCommand class | character
+character
+
+	^$g
+== CrawlerTurnCounterClockwiseCommand | executing
+executeOn: aCrawler
+
+	aCrawler turnCounterClockwise
+== CrawlerTurnCounterClockwiseCommand | repeating
+asRepeatableCommand
+
+	^self
+== CrawlerStartGuardedRunCommand class | character
+character
+
+	^$(
+== CrawlerStartGuardedRunCommand | executing
+executeOn: aCrawler
+
+	aCrawler startGuardedRun
+== CrawlerEndGuardedRunCommand class | character
+character
+
+	^$)
+== CrawlerEndGuardedRunCommand | executing
+executeOn: aCrawler
+
+	aCrawler endGuardedRun
+== CrawlerNonRepeatableCommand | executing
+repeat: aNumberOfTimes on: aCrawler
+
+	aCrawler signalInvalidCommand

@@ -1,0 +1,25 @@
+{
+  "name": "2022-2c-parcial1",
+  "title": "Ahoy! Pirate Crew",
+  "kind": "refactoring",
+  "package": "ISW1-2022-2C-1erParcial",
+  "description": "A crew of three kinds of pirates (corsair, filibuster, buccaneer) moves across an island grid with tree, dig and free cells to bury a treasure while drawing a map that only a Captain can read. The student must refactor the given, working, badly designed model and its tests: remove duplication, replace isKindOf:/symbol ifs with polymorphism, use collection protocol, and improve names, categories and encapsulation without breaking the tests.",
+  "startingPackages": ["starting/ISW1-2022-2C-1erParcial.st"],
+  "solutionPackages": ["solution/ISW1-2022-2C-1erParcial-Solucion.st"],
+  "acceptanceTests": null,
+  "source": "2022-2c/1erParcial",
+  "semester": "2022-2c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Crew>>moveTo: and buryTreasureAt: are nested isKindOf: x terrain-symbol ifs over a heterogeneous pirates collection, ranks are symbols duplicated in three pirate classes, and Island/Map use index whileTrue: loops that should become includes:/detect:/inject:; the tests repeat the same fixture eight times."
+  },
+  "sizeHint": {"classesInStartingCode": 13, "methodsInStartingCode": 44}
+}

@@ -1,0 +1,25 @@
+==> job 2: rep 1, cuis-script / 1-Empty / free / exercises/2019-2c-parcial2-masked
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/cuis-script_1-Empty_free/2019-2c-parcial2-masked/20260916-094215-515
+    installing starting/SurveyCrawler.st
+    warm-up (given tests run once before the session): tests run: 16, passed: 16, failed: 0, errors: 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, tools Read,Edit,Write,Bash,Glob,Grep, budget $15, timeout 2400s
+    claude exited with status 0 after 303s, 13 script runs
+    filing out package SurveyCrawler
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 12, cost $1.3039365, script runs 13 (0 failed)
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/cuis-script_1-Empty_free/2019-2c-parcial2-masked/20260916-094215-515
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/cuis-script_1-Empty_free/2019-2c-parcial2-masked/20260916-094215-515
+    installing the run's package SurveyCrawler
+    acceptance test classes: SurveyCrawlerTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260916-094215-515: cuis-script / 1-Empty / free / 2019-2c-parcial2-masked
+  acceptance         58/58 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 96.3%, by the agent's tests None
+  test smells        3
+  model              15 classes, 95 methods, 1.69 sends/method, 1 over 10, ifs 7, nil checks 0, type checks 0
+  diff               +119 methods, ~22 changed, -30 removed; classes +9 -0
+  tool calls         11 by the agent, 0 errors, evaluate kinds {}
+  mentor             60 findings {'Keyword message send format': 36, 'No empty method categories': 9, 'Move helper method to the right class': 7, 'No class-name prefix in names': 4, 'Method complexity': 3, 'Avoid setters': 1}
+  agent              claude-opus-5 effort high, 303s, cost $1.3039365, tokens in 24 cache-read 315,813 out 29,224
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/009-CuisByScripts/cells/cuis-script_1-Empty_free/2019-2c-parcial2-masked/20260916-094215-515/analysis.json

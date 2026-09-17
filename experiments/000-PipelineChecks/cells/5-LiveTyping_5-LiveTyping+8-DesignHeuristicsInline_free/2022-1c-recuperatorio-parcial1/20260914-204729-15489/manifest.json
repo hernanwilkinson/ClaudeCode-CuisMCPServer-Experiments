@@ -1,0 +1,167 @@
+{
+  "experiment": "000-PipelineChecks",
+  "runId": "20260914-204729-15489",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "5-LiveTyping",
+  "config": [
+    "5-LiveTyping",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "CustomerImporter-Recu-1er-Parcial",
+  "model": "claude-haiku-4-5-20251001",
+  "effort": "low",
+  "budgetUsd": 0.6,
+  "timeoutSeconds": 420,
+  "note": "warm-up + LiveTyping smoke on the 8182 base",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "5-LiveTyping",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8182.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-5-LiveTyping.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools",
+      "MCPLiveTypingTools"
+    ],
+    "decorators": [
+      "MCPActualImplementorsDecorator",
+      "MCPActualSendersDecorator",
+      "MCPInstanceVariableTypesDecorator",
+      "MCPMethodTypesDecorator"
+    ],
+    "cuisDevCommit": "7b48a0fb4bdf47feff8ed6b95866efdf587ceba8",
+    "mcpServerCommit": "1d61daa41bbb1feb8ae0ec0569432cc0305f0e9b",
+    "builtAt": "2026-09-14T23:44:36Z",
+    "imageSha256": "03e5394c4814c3f8d0c4117cddd3e73eecfac6354402c9a89f6b0c1e4d1d5dd0"
+  },
+  "toolsServed": 80,
+  "toolDefinitionBytes": 77387,
+  "hashes": {
+    "prompt.md": "64a88a04d2641530a0c9aead75f87428a30e570e520e7589aa5c3883ea368c65",
+    "CLAUDE.md": "4bcf462d30335eb4f70d7086e242ac6455350ec765a343c62836c28366390169",
+    "spec.md": "350580bde1271f57213ad50df190caea70d9c0fea0ab50f6de76c5a94b48e107",
+    "skills": {}
+  },
+  "port": 56817,
+  "startedAt": "2026-09-14T23:47:34Z",
+  "endedAt": "2026-09-14T23:50:05Z",
+  "elapsedSeconds": 151,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 90,
+    "agentCalls": 88
+  },
+  "changesBytesAtStart": 8633114,
+  "changesBytesAtEnd": 8649318,
+  "usageFromTranscript": {
+    "totalCostUsd": 0.2925,
+    "perModel": {
+      "claude-haiku-4-5-20251001": {
+        "input": 226,
+        "cache_write_5m": 0,
+        "cache_write_1h": 54047,
+        "cache_read": 1190877,
+        "output": 13014,
+        "thinking": 4978,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 28,
+        "cost_usd": 0.2924777
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_list_classes": 1,
+      "mcp__Cuis__smalltalk_classes_in_category": 2,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_define_class": 8,
+      "mcp__Cuis__smalltalk_define_methods": 12,
+      "mcp__Cuis__smalltalk_run_test_class": 5,
+      "mcp__Cuis__smalltalk_method_source": 2,
+      "mcp__Cuis__smalltalk_method_sources_of_class": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 33,
+    "durationMs": 150443,
+    "durationApiMs": 147768,
+    "totalCostUsd": 0.29247770000000006,
+    "usage": {
+      "input_tokens": 226,
+      "cache_creation_input_tokens": 54047,
+      "cache_read_input_tokens": 1190877,
+      "output_tokens": 13014,
+      "output_tokens_details": {
+        "thinking_tokens": 4978
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 54047,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 8,
+          "output_tokens": 835,
+          "cache_read_input_tokens": 53073,
+          "cache_creation_input_tokens": 974,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 974
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 226,
+        "outputTokens": 13014,
+        "cacheReadInputTokens": 1190877,
+        "cacheCreationInputTokens": 54047,
+        "webSearchRequests": 0,
+        "costUSD": 0.29247770000000006,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 4978,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "Perfect! The refactoring is complete and all 29 tests pass. Here's a summary of the improvements:\n\n## Refactoring Summary\n\n### **IFs and Duplicated Code Removed:**\n\n1. **Eliminated nested IFs in `CustomerImporter>>importCustomer`**\n   - Old: Multiple nested IFs checking `idType = 'D'` vs `idType = 'C'` with validation logic scattered\n   - New: Delegates to `IdentificationType` polymorphic hierarchy\n\n2. **Eliminated nested IFs in `CustomerImporter>>importAddress`**\n   - Old: Multiple nested IFs checking if zipcode is numeric or letter-based\n   - New: Delegates to `ZipCode` polymorphic hierarchy\n\n### **Polymorphic Design Introduced:**\n\n**IdentificationType Hierarchy:**\n- `IdentificationType` (abstract) with factory method `from:number:`\n- `DNIIdentification` - encapsulates DNI validation (all digits, 1-99999999)\n- `CUITIdentification` - encapsulates CUIT validation (format with dashes, header checks, etc.)\n\n**ZipCode Hierarchy:**\n- `ZipCode` (abstract) with factory method `from:`\n- `OldZipCode` - encapsulates old format validation (numeric 1000-9999)\n- `NewZipCode` - encapsulates new format validation (letter + 4 digits + 3 letters)\n\n### **Benefits:**\n- \u2705 All complex validation logic moved to type-specific classes\n- \u2705 CustomerImporter is now declarative and easy to read\n- \u2705 Easy to extend: adding new identification/zipcode types requires only new subclasses\n- \u2705 No code duplication\n- \u2705 All 29 tests pass without modification"
+  }
+}

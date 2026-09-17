@@ -1,0 +1,1 @@
+{"name": "smoke-java", "title": "Greeter (Java pipeline smoke)", "kind": "feature", "package": "app", "startingPackages": [], "acceptanceTests": null, "description": "Pipeline check for the Java runner", "sizeHint": {"classesInStartingCode": 1, "methodsInStartingCode": 1}}

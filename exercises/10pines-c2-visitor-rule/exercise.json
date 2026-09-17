@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c2-visitor-rule",
+  "title": "Visitor implementation rule (metaprogramming)",
+  "kind": "greenfield",
+  "package": "Visitor-ImplementationRule",
+  "description": "A VisitorRule object that verifies by reflection that a class hierarchy and a visitor class follow the course's Visitor convention (abstract accept: in the root, each concrete subclass X sending visitX: self, the visitor understanding every visitX:), signaling descriptive errors; the 6 given tests fix the API and the error messages. Only the solution file exists for Cuis, so a starting point would have to be derived from it.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/Visitor-ImplementationRule.pck.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C2 - Diseño Avanzado de Software con Objetos II",
+  "semester": "10pines-c2",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "Metaprogramming rather than domain design: reading the structure (compiledMethodAt:, isAbstract, canUnderstand:, allSubclasses) and observing behaviour by sending accept: to a basicNew instance with a ProtoObject message eater that records what accept: sends; the naming convention visitX: is computed from class names."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

@@ -1,0 +1,12 @@
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-005838-10403
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2019-2c-parcial1/20260917-005838-10404
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/1-Evaluate+TestRunning_1-Empty_free/2022-1c-parcial1/20260917-010000-10829
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260917-010003-10905
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-010407-12475
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2019-2c-parcial1/20260917-010430-12706
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/1-Evaluate+TestRunning_1-Empty_free/2022-1c-parcial1/20260917-010530-13071
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-010916-14248
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260917-010607-13362
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2019-2c-parcial1/20260917-011049-15081
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/1-Evaluate+TestRunning_1-Empty_free/2022-1c-parcial1/20260917-011050-15113
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260917-011218-19221

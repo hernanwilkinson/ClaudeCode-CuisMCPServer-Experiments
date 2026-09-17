@@ -1,0 +1,20 @@
+{
+  "RUN_ID": "20260917-053042-33823",
+  "EXPERIMENT": "016-LanguageComparisonRepeated",
+  "SCENARIO": "java-gradle",
+  "CONFIG": "1-Empty",
+  "TECHNIQUE": "free",
+  "EXERCISE_NAME": "2024-1c-parcial1",
+  "JAVA_PACKAGE": "simshotels",
+  "MODEL": "claude-opus-5",
+  "EFFORT": "high",
+  "BUDGET": "15",
+  "TIMEOUT": "2400",
+  "NOTE": "experiment 016-LanguageComparisonRepeated, repetition 1",
+  "TOOLS": "Read,Edit,Write,Bash,Glob,Grep",
+  "CLAUDE_VERSION": "2.1.268 (Claude Code)",
+  "WORKDIR": "/private/tmp/claude-cells/20260917-053042-33823-33823",
+  "STARTED_AT": "2026-09-17T08:30:45Z",
+  "START_SECONDS": "1789633845",
+  "WARM_UP": "classes 3 run 39 passed 39 failed 0 errors 0"
+}

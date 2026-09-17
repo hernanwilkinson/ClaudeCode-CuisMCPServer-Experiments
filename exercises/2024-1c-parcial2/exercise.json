@@ -1,0 +1,25 @@
+{
+  "name": "2024-1c-parcial2",
+  "title": "SW-Project",
+  "kind": "greenfield",
+  "package": "ISW1-2024-1C-2doParcial",
+  "description": "A project tracking system where projects are trees of subprojects and concrete tasks with dependencies, effort, desired start dates and a responsible developer or mob-programming team. The student must design it from scratch with TDD, computing start/end dates and a worksheet that reports developer overassignment, overassignment days and total cost.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/ISW1-2024-1C-2doParcial.st"],
+  "acceptanceTests": null,
+  "source": "2024-1c/2doParcial",
+  "semester": "2024-1c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Two composite hierarchies (Project/ConcreteTask and Team/Developer) interact: the task's end date depends on the slowest member of a possibly nested team, start dates depend on dependencies, and the worksheet must aggregate per-developer per-day work across the whole tree using units (hour, day, dollar)."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

@@ -1,0 +1,7 @@
+# Source
+
+- Course: `10Pines-Capacitacion/C6 - Construccion de Software Seguro usando Test Driven Development` (Dropbox). The first import only had the slides and the TusLibros V2 statement; this pass had `Smalltalk/C6-GameOfLife/GameOfLife.st` (dated 2018-06-12, stamps `HAW` 2017-05 to 2018-06).
+- Slides: none. The deck was searched page by page for "life", "vida", "Conway" and every "Ejercicio"/"Tarea" slide; the Game of Life does not appear. `spec.md` now describes the exercise exactly as the file poses it (tests, protocol, rules), flagged as not being a translation of course material; `spec-original.md` records that there is no Spanish original.
+- `GameOfLife.st` is a **solution**, not a starting point: it contains the model (`GameOfLife`), its 6 tests (`GameOfLifeTest`) and a Morphic view (`GameOfLifeView`, with blinker/toad/random examples). It is in Cuis chunk format (`!classDefinition:` markers, LF line endings, ASCII), category `GameOfLife`. Copied as `solution/GameOfLife.st`; there is no `starting/`.
+- Verification (2026-09-10): filed into a fresh copy of `scenarios/2-ModelStructure+Package` (Cuis 7.9) with `FileEntry ... fileIn` over the MCP server -> `'OK'`; `smalltalk_run_tests_in_category` `GameOfLife`: 6 run, 6 passed, 0 failed, 0 errors. `Point>>eightNeighbors`, `allSatisfy:`, `ImageMorph`, `Form>>fillBlack:`/`fillWhite:` all exist in Cuis; nothing missing.
+- Removed from the statement: nothing.

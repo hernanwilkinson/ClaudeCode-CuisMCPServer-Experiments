@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/scripts/mcp-client.py", line 112, in <module>
+    main()
+    ~~~~^^
+  File "/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/scripts/mcp-client.py", line 88, in main
+    text = server.tool("smalltalk_evaluate", {"code": code})
+  File "/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/scripts/mcp-client.py", line 68, in tool
+    result = self.call("tools/call", {"name": name, "arguments": arguments})
+  File "/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/scripts/mcp-client.py", line 52, in call
+    with urllib.request.urlopen(request, timeout=600) as response:
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 187, in urlopen
+    return opener.open(url, data, timeout)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 487, in open
+    response = self._open(req, data)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 504, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+                              '_open', req)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 464, in _call_chain
+    result = func(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 1349, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/urllib/request.py", line 1324, in do_open
+    r = h.getresponse()
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 1478, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 343, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/http/client.py", line 304, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/socket.py", line 729, in readinto
+    return self._sock.recv_into(b)
+           ~~~~~~~~~~~~~~~~~~~~^^^
+ConnectionResetError: [Errno 54] Connection reset by peer
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/scripts/2-runCell.sh: line 126: 75571 Killed: 9               ( cd "$RUN/image"; SMALLTALK_MCP_TOKEN="$TOKEN" exec "$VM" "$IMAGE_FILE" "--mcpHttpPort=$PORT" "--mcpLogCalls=$MCP_CALLS_LOG" ) >> "$RUN/vm.log" 2>&1

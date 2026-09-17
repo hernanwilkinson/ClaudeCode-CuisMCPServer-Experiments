@@ -1,0 +1,6 @@
+1	4-Refactoring	2-EvaluateAsLastResource,8-DesignHeuristicsInline	free	exercises/2021-1c-parcial1
+1	4-Refactoring	2-EvaluateAsLastResource,8-DesignHeuristicsInline	free	exercises/2021-1c-parcial1-cryptic
+1	4-Refactoring	2-EvaluateAsLastResource,8-DesignHeuristicsInline	free	exercises/2022-1c-parcial1
+1	4-Refactoring	2-EvaluateAsLastResource,8-DesignHeuristicsInline	free	exercises/2022-1c-parcial1-cryptic
+1	4-Refactoring	2-EvaluateAsLastResource,8-DesignHeuristicsInline	free	exercises/2020-2c-parcial1
+1	4-Refactoring	2-EvaluateAsLastResource,8-DesignHeuristicsInline	free	exercises/2020-2c-parcial1-cryptic

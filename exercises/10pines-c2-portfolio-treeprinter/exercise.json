@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c2-portfolio-treeprinter",
+  "title": "Portfolio transfers, certificates of deposit and tree printer (Visitor)",
+  "kind": "feature",
+  "package": "PortfolioTreePrinter-Ejercicio",
+  "description": "On a finished account/portfolio composite the student adds transfers between accounts and certificates of deposit, a human-readable account summary ('Deposito por 100', 'Plazo fijo por 1000 durante 30 dias a una tna de 10%'), the net transferred, the net invested and the investment earnings, and depth-first and reverse printers of the portfolio tree, choosing the API by implementing six test-support methods; the course expects the Visitor pattern over the transactions and over the composite.",
+  "startingPackages": ["starting/PortfolioTreePrinter-Ejercicio.st"],
+  "solutionPackages": ["solution/PortfolioTimeConsuming-Ejercicio.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C2 - Diseño Avanzado de Software con Objetos II",
+  "semester": "10pines-c2",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Five operations over a heterogeneous collection of four transaction kinds plus two traversals of the composite: the naive path is isKindOf: / class checks or polluting the transactions with printing and reporting methods, the intended one is double dispatch (accept:/visit...) with one visitor per operation, and a transfer that must appear as a transaction in two accounts at once."
+  },
+  "sizeHint": {"classesInStartingCode": 13, "methodsInStartingCode": 73}
+}

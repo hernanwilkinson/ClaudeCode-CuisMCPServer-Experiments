@@ -1,0 +1,161 @@
+{
+  "experiment": "017-CrypticNamesHiddenDomain",
+  "runId": "20260917-063305-55887",
+  "warmUp": "classes 1 run 18 passed 18 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2021-1c-parcial1-cryptic3",
+  "package": "Task1",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 017-CrypticNamesHiddenDomain, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:10Z",
+    "imageSha256": "b5f4b366a56949d0350d29a2756efc4fed4b2a6aa266163385aaa745d6efa3a5"
+  },
+  "toolsServed": 74,
+  "toolDefinitionBytes": 69457,
+  "hashes": {
+    "prompt.md": "4f7aeb85c25bb02bb19b4bbd70df460764943a266a9734ebc7988ff6a8a7a278",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "bff07563227996ab68dba2a439bf988cc9e7f472f990f9f7fdd389e0c188a740",
+    "skills": {}
+  },
+  "port": 54746,
+  "startedAt": "2026-09-17T09:33:07Z",
+  "endedAt": "2026-09-17T09:36:11Z",
+  "elapsedSeconds": 184,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 41,
+    "agentCalls": 39
+  },
+  "changesBytesAtStart": 5189590,
+  "changesBytesAtEnd": 5204097,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.0979,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 20,
+        "cache_write_5m": 0,
+        "cache_write_1h": 37756,
+        "cache_read": 404859,
+        "output": 20712,
+        "thinking": 12006,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 10,
+        "cost_usd": 1.0978895
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_batch": 6,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_list_classes": 1,
+      "mcp__Cuis__smalltalk_method_source": 1,
+      "mcp__Cuis__smalltalk_define_methods": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 11,
+    "durationMs": 183252,
+    "durationApiMs": 180802,
+    "totalCostUsd": 1.0978895,
+    "usage": {
+      "input_tokens": 20,
+      "cache_creation_input_tokens": 37756,
+      "cache_read_input_tokens": 404859,
+      "output_tokens": 20712,
+      "output_tokens_details": {
+        "thinking_tokens": 12006
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 37756,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1255,
+          "cache_read_input_tokens": 55792,
+          "cache_creation_input_tokens": 1286,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1286
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 20,
+        "outputTokens": 20712,
+        "cacheReadInputTokens": 404859,
+        "cacheCreationInputTokens": 37756,
+        "webSearchRequests": 0,
+        "costUSD": 1.0978895,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 12006,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I've refactored the model and the tests, and all 18 tests in `C3` still pass. The model classes are in `Task1`; I moved the test class `C3` to `Task1-Tests`.\n\nI kept the existing class and message names (`C1`, `C2`, `m1:`, `m25:`\u2026) because the tests and the assignment use them. The new classes and messages are named with the assignment's own terms (W5, W3, w7, w1\u2026).\n\n## Model\n**Instance creation, no ifs (hint 2):**\n- **New subclasses:** each type is now a subclass: `S1W5` and `S2W5` under `C1`, and `S3W3`, `S4W3` and `S5W3` under `C2`. Each one holds its own fixed data: its type, its w6 and maximum w4 (for W5s), and its w4 and w2 (for W3s).\n- **Creating by type:** `m25:` now picks the subclass whose type matches and creates it with `new`. That calls the one `initialize`. An unknown type still raises 'S4' or 'S5', which are now class methods.\n- **Instance variables:** I removed the ones that only held fixed data (`v1 v3 v4 v6 v7 v8`), along with `m5:a5:b5:c5:` and `m21:a21:b21:`. The ones that change were renamed: `w7` and `w3s` in `C1`, and `numberOfW1s` in `C2`.\n\n**`m20:a20:`, ifs replaced by double dispatch:** the W3 counts the use and tells the target, through `receiveW1Of:from:`, that it is being w1ed. The target's subclass calls back `w1S1W5:from:` or `w1S2W5:from:` on the W3's subclass, so each type pair has its own short method.\n- **Removing or replacing the W3:** two shared helpers do this: `removeFrom:afterW1s:` and `replaceIn:by:afterW1s:`.\n- **The target's w7:** it is now told to change (`decreaseW7By:`, `hasW7AtMost:`) instead of being set from outside, so I removed the setter `m7:`.\n\n**The w3s category (hint 1):**\n- **Lazy setup:** the `isNil ifTrue:` checks repeated in every method are gone; the collection is created in `initialize`.\n- **Sums:** `m12` and `m13` are now single declarative `sum:ifEmpty:` expressions instead of index loops.\n- **Adding a W3:** `m1:` reads as two checks, `assertCanCarryW4Of:` and `assertW6AllowsW2Of:`. They replace the error helpers `m9`, `m10` and `m11`, which I removed.\n- **w1ing:** `m2:a2:` now uses `m3:`.\n\nThe edge cases behave as before:\n- **w6 sum:** only W3s heavier than 10 kg count towards it (now `affectsW6`), but the check when adding one still counts every W3's w2.\n- **Use counts:** they are shared across targets and compared with `=`.\n\n## Tests\n- **test07\u2013test12 (hint 3):** each is now one line calling the helper `assertW1ing:with:leavesItsW7At:`.\n- **test01 and test02:** they check that a failed add changes nothing, so they now use `should:raise:withExceptionDo:`. The error text is checked inside the block.\n\n**Still in place:**\n- **Similar lookup in both classes:** `C1 class` and `C2 class` each have a near-identical `subclassFor:`. They aren't related, and making them share a superclass would be wrong for what they are.\n- **`C3 class>>initialize`:** it sets up units. I left it alone because it has nothing to do with the refactoring.\n- **Test names:** they are still `testNN`. Renaming them was outside what was asked."
+  }
+}

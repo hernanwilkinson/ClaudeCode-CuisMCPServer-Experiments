@@ -1,0 +1,25 @@
+{
+  "name": "2025-1c-recuperatorio",
+  "title": "Fleet Escape! (Escape de Flota!)",
+  "kind": "feature",
+  "package": "2025-1C-Recu",
+  "description": "Starting from the Spanish solution of the first midterm (fleet of ships with thrusters crossing galactic sectors), add: a tank that cracks under gravity > 300 and leaks fuel exponentially, an overheating warp thruster, ship 'blink' that skips sectors, the stranded-sector index, and motherships that dock and refuel out-of-fuel ships with capacity, maneuverability and shield rules.",
+  "startingPackages": ["starting/2025-1C-Recu.st"],
+  "solutionPackages": ["solution/2025-1C-Recu1-Ptos123.st", "solution/2025-1C-Recu1-Pto4.st"],
+  "acceptanceTests": null,
+  "source": "2025-1c/Recuperatorio",
+  "semester": "2025-1c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "The new rules are state changes of the ship (intact/cracked tank, warp overheated for two sectors, docked/undocked in a mothership) layered on an existing double dispatch between sectors and thrusters, so the challenge is adding them as state objects without multiplying the if cases; point 4 (a separate exam for those recovering the second midterm; points 1-3 are for the first) adds recursive composition (motherships inside motherships) with ordering and random choice."
+  },
+  "sizeHint": {"classesInStartingCode": 14, "methodsInStartingCode": 105}
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="simshotels.HotelTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2026-09-17T09:13:43.483Z" hostname="M4.local" time="0.005">
+  <properties/>
+  <testcase name="test07HotelProfitsAreTheSumOfEachFloorProfits()" classname="simshotels.HotelTest" time="0.001"/>
+  <testcase name="test04HotelCanTakeAReservationForARoomAtFloor()" classname="simshotels.HotelTest" time="0.0"/>
+  <testcase name="test08HotelLossesAreTheSumOfEachFloorLosses()" classname="simshotels.HotelTest" time="0.001"/>
+  <testcase name="test10HotelCannotReserveANonexistentFloor()" classname="simshotels.HotelTest" time="0.0"/>
+  <testcase name="test02NewHotelsAreEmpty()" classname="simshotels.HotelTest" time="0.0"/>
+  <testcase name="test06HotelCannotReceiveWithReservationWithoutPreviousReservation()" classname="simshotels.HotelTest" time="0.001"/>
+  <testcase name="test01CannotCreateHotelWithoutFloors()" classname="simshotels.HotelTest" time="0.0"/>
+  <testcase name="test12HotelCannotReceiveAtNonexistentFloor()" classname="simshotels.HotelTest" time="0.0"/>
+  <testcase name="test03HotelCanReceiveATypeOfGuestInRoomAtFloor()" classname="simshotels.HotelTest" time="0.001"/>
+  <testcase name="test11HotelCannotReceiveAtNonexistentRoom()" classname="simshotels.HotelTest" time="0.0"/>
+  <testcase name="test13HotelCannotReceiveWithReservationAtNonexistentRoom()" classname="simshotels.HotelTest" time="0.001"/>
+  <testcase name="test09HotelCannotReserveANonexistentRoom()" classname="simshotels.HotelTest" time="0.0"/>
+  <testcase name="test05HotelCanReceiveWithReservationATypeOfGuestInRoomAtFloor()" classname="simshotels.HotelTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

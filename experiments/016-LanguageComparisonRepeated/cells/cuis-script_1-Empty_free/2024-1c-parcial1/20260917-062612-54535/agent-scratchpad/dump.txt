@@ -1,0 +1,1127 @@
+===== ISW1-2024-1C-Parcial Object subclass: #Floor
+	instanceVariableNames: 'rooms prices'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ISW1-2024-1C-Parcial'
+--- Floor class>>assertIsInteger:ifFalse: (assertions)
+assertIsInteger: aNumber ifFalse: signalsBlock
+
+	aNumber isInteger ifFalse: signalsBlock
+--- Floor class>>assertIsPositive:ifFalse: (assertions)
+assertIsPositive: aNumber ifFalse: signalsBlock
+
+	aNumber strictlyPositive ifFalse: signalsBlock
+--- Floor class>>numberOfRoomsMustBeIntegerErrorDescription (error messages)
+numberOfRoomsMustBeIntegerErrorDescription
+	
+	^ 'Number of rooms must be integer'
+--- Floor class>>numberOfRoomsMustBePositiveErrorDescription (error messages)
+numberOfRoomsMustBePositiveErrorDescription
+	
+	^'The number of rooms must be positive'
+--- Floor class>>priceMustBeIntegerErrorDescription (error messages)
+priceMustBeIntegerErrorDescription
+	
+	^ 'Price must be integer'
+--- Floor class>>priceMustBePositiveErrorDescription (error messages)
+priceMustBePositiveErrorDescription
+	
+	^'Price must be positive'
+--- Floor class>>pricesListCannotBeEmptyErrorDescription (error messages)
+pricesListCannotBeEmptyErrorDescription 
+	
+	^ 'Prices List must not be empty'
+--- Floor class>>signalNoPrices (exceptions)
+signalNoPrices
+	
+	self error: self pricesListCannotBeEmptyErrorDescription 
+--- Floor class>>signalNumberOfRoomsMustBeInteger (exceptions)
+signalNumberOfRoomsMustBeInteger
+	
+	self error: self numberOfRoomsMustBeIntegerErrorDescription 
+--- Floor class>>signalNumberOfRoomsMustBePositive (exceptions)
+signalNumberOfRoomsMustBePositive
+
+	self error: self numberOfRoomsMustBePositiveErrorDescription
+--- Floor class>>signalPriceMustBeInteger (exceptions)
+signalPriceMustBeInteger
+	
+	self error: self priceMustBeIntegerErrorDescription 
+--- Floor class>>signalPriceMustBePositive (exceptions)
+signalPriceMustBePositive
+
+	self error: self priceMustBePositiveErrorDescription
+--- Floor class>>signalUnknownGuestType (exceptions)
+signalUnknownGuestType
+
+	self error: self class unknownGuestTypeErrorDescription
+
+--- Floor class>>unknownGuestTypeErrorDescription (error messages)
+unknownGuestTypeErrorDescription
+	
+	^ 'The guest type is unknown'
+--- Floor>>initializeRoomsWith: (initialization)
+initializeRoomsWith: aNumberOfRooms
+
+	| ix |
+	
+	rooms := OrderedCollection new.
+	
+	ix := 1.
+	[ ix <= aNumberOfRooms ] whileTrue: [ 
+		rooms add: Room new.
+		ix := ix + 1.
+	]
+
+--- Floor>>initializeWith: (initialization)
+initializeWith: aPriceList
+
+	prices := aPriceList
+--- Floor>>isAvailable (testing)
+isAvailable
+	
+	^ self totalRooms = self totalRoomsAvailable
+
+		
+
+--- Floor>>rooms (accessing)
+rooms
+
+	^ rooms
+--- Floor>>setNumberOfRooms: (setters)
+setNumberOfRooms: aNumberOfRooms
+
+	self class assertIsPositive: aNumberOfRooms ifFalse: [ self class signalNumberOfRoomsMustBePositive ].
+	self class assertIsInteger: aNumberOfRooms ifFalse: [ self class signalNumberOfRoomsMustBeInteger ].
+	
+	self initializeRoomsWith: aNumberOfRooms.
+
+--- Floor>>setPrices: (setters)
+setPrices: aPriceList
+
+	aPriceList isEmpty ifTrue: [ self class signalNoPrices ].
+	
+	aPriceList values do: [ :price | 
+		self class assertIsPositive: price ifFalse: [ self class signalPriceMustBePositive ].
+	].
+	
+	self initializeWith: aPriceList.
+--- Floor>>totalLosses (accounting)
+totalLosses
+	
+	| total |
+	
+	total := 0*peso.
+	rooms do: [ :room | room isAvailable ifTrue: [ total := total + prices values max ] ].
+
+	^ total
+
+		
+
+--- Floor>>totalProfits (accounting)
+totalProfits
+
+	| total |
+	
+	total := 0*peso.
+	rooms do: [ :room | | roomTotal | 
+		room isOccupied ifTrue: [
+			roomTotal := 	room profitUsing: prices ifAbsentGuestType: [ self class signalUnknownGuestType ].
+			total := total + roomTotal.
+		]
+	].
+
+	^ total
+
+--- Floor>>totalRooms (totals)
+totalRooms
+	
+	^ rooms size
+		
+
+--- Floor>>totalRoomsAvailable (totals)
+totalRoomsAvailable
+	
+	^rooms count: [ :room | room isAvailable ]
+		
+
+--- Floor>>totalRoomsOccupied (totals)
+totalRoomsOccupied
+	
+	^rooms count: [ :room | room isOccupied ]
+		
+
+--- Floor>>totalRoomsReserved (totals)
+totalRoomsReserved
+	
+	^rooms count: [ :room | room isReserved ]
+===== ISW1-2024-1C-Parcial TestCase subclass: #FloorTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ISW1-2024-1C-Parcial'
+--- FloorTest>>createFloorWith:and: (create)
+createFloorWith: aNumberOfRooms and: aPrice
+
+	| floor |
+
+	floor := Floor new.
+	floor setNumberOfRooms: aNumberOfRooms.
+	floor setPrices: aPrice.
+	
+	^ floor.
+--- FloorTest>>defaultPriceList (create)
+defaultPriceList
+	
+	^ Dictionary new
+		at: self guestTypeVacation put: 100*peso;
+		at: self guestTypeConference put: 200*peso;
+		yourself 
+--- FloorTest>>guestTypeConference (create)
+guestTypeConference
+	
+	^ #conferenceGuest
+--- FloorTest>>guestTypeVacation (create)
+guestTypeVacation
+	
+	^ #vacationGuest
+--- FloorTest>>test01CannotCreateFloorWithoutRooms (testing)
+test01CannotCreateFloorWithoutRooms
+
+	self
+		should: [ self createFloorWith: 0 and: self defaultPriceList ]
+		raise: Error - MessageNotUnderstood 
+		withMessageText: Floor numberOfRoomsMustBePositiveErrorDescription 
+--- FloorTest>>test02CannotCreateFloorWithNoIntergerNumberOfRooms (testing)
+test02CannotCreateFloorWithNoIntergerNumberOfRooms
+
+	self
+		should: [ self createFloorWith: 1.5 and: self defaultPriceList ]
+		raise: Error - MessageNotUnderstood 
+		withMessageText: Floor numberOfRoomsMustBeIntegerErrorDescription 
+--- FloorTest>>test03CannotCreateFloorWithoutPrices (testing)
+test03CannotCreateFloorWithoutPrices
+
+	self
+		should: [ self createFloorWith: 10 and:  Dictionary new ]
+		raise: Error - MessageNotUnderstood 
+		withMessageText: Floor pricesListCannotBeEmptyErrorDescription 
+--- FloorTest>>test04WhenAFloorIsCreatedAllTheRoomsAreAvailable (testing)
+test04WhenAFloorIsCreatedAllTheRoomsAreAvailable
+
+	| floor |
+	
+	floor := self createFloorWith: 10 and: self defaultPriceList.
+	
+	self assert: floor isAvailable.
+	self assert: 0 equals: floor totalRoomsOccupied.
+	self assert: 0 equals: floor totalRoomsReserved.
+
+--- FloorTest>>test05WhenAFloorReceivesAGuestInARoomReducesTheAvailableRoomsByOneAndIncreaseOccupiedByOne (testing)
+test05WhenAFloorReceivesAGuestInARoomReducesTheAvailableRoomsByOneAndIncreaseOccupiedByOne
+
+	| floor roomsNumber |
+	
+	roomsNumber := 10.
+	floor := self createFloorWith: roomsNumber and: self defaultPriceList.
+	
+	"Tech Debt"
+	((floor rooms) at: 1) receive: self guestTypeVacation.
+	
+	self assert: roomsNumber - 1 equals: floor totalRoomsAvailable. 
+	self assert: 1 equals: floor totalRoomsOccupied.
+	self assert: 0 equals: floor totalRoomsReserved.
+
+--- FloorTest>>test06WhenAFloorReceivesOnReservationAGuestInARoomKeepsTheAvailableRoomsAndOccupiedAndReducesTheReservedByOne (testing)
+test06WhenAFloorReceivesOnReservationAGuestInARoomKeepsTheAvailableRoomsAndOccupiedAndReducesTheReservedByOne
+
+	| floor roomsNumber roomsAvailable roomsOccupied roomsReserved |
+	
+	roomsNumber := 10.
+	floor := self createFloorWith: roomsNumber and: self defaultPriceList.
+	
+	"Tech Debt"
+	((floor rooms) at: 1) reserve.
+
+	roomsAvailable := floor totalRoomsAvailable.
+	roomsOccupied := floor totalRoomsOccupied.
+	roomsReserved := floor totalRoomsReserved.
+
+	"Tech Debt"
+	((floor rooms) at: 1) receiveWithReservation: self guestTypeVacation.
+	
+	self assert: roomsAvailable equals: floor totalRoomsAvailable. 
+	self assert: roomsOccupied equals: floor totalRoomsOccupied.
+	self assert: roomsReserved - 1 equals: floor totalRoomsReserved.
+
+--- FloorTest>>test07WhenARoomIsReservedTheFloorAvailableRoomsReducesByOneAndIncreaseReservedAndOccupiedByOne (testing)
+test07WhenARoomIsReservedTheFloorAvailableRoomsReducesByOneAndIncreaseReservedAndOccupiedByOne
+
+	| floor roomsNumber |
+	
+	roomsNumber := 10.
+	floor := self createFloorWith: roomsNumber and: self defaultPriceList.
+	
+	"Tech Debt"
+	((floor rooms) at: 1) reserve.
+	
+	self assert: roomsNumber - 1 equals: floor totalRoomsAvailable. 
+	self assert: 1 equals: floor totalRoomsOccupied.
+	self assert: 1 equals: floor totalRoomsReserved.
+
+--- FloorTest>>test08TotalProfitShouldBeTheSumOfOccupiedRoomsProfits (testing)
+test08TotalProfitShouldBeTheSumOfOccupiedRoomsProfits
+
+	| floor roomsNumber |
+	
+	roomsNumber := 10.
+	floor := self createFloorWith: roomsNumber and: self defaultPriceList.
+	
+	"Tech Debt"
+	((floor rooms) at: 1) receive: self guestTypeVacation.
+	((floor rooms) at: 2) receive: self guestTypeConference.
+	((floor rooms) at: 3) reserve.
+		
+	self assert: (100*peso) + (200*peso) + (50*peso) equals: floor totalProfits
+
+--- FloorTest>>test09TotalLossesShouldBeTheSumOfAvailableRoomsLosses (testing)
+test09TotalLossesShouldBeTheSumOfAvailableRoomsLosses
+
+	| floor roomsNumber |
+	
+	roomsNumber := 10.
+	floor := self createFloorWith: roomsNumber and: self defaultPriceList.
+	
+	"Tech Debt"
+	((floor rooms) at: 1) receive: self guestTypeVacation.
+	((floor rooms) at: 2) receive: self guestTypeConference.
+	((floor rooms) at: 3) reserve.
+		
+	self assert: (200*peso) * 7 equals: floor totalLosses
+
+===== ISW1-2024-1C-Parcial Object subclass: #Hotel
+	instanceVariableNames: 'floors availableRoomsCount'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ISW1-2024-1C-Parcial'
+--- Hotel class>>assertHaveFloors: (assertions)
+assertHaveFloors: aFloorsCollection
+
+	aFloorsCollection isEmpty ifTrue: [ self signalNoFloors ].
+--- Hotel class>>floorNumberDoesNotExistErrorDescription (error description)
+floorNumberDoesNotExistErrorDescription
+
+	^ 'Floor number does not exist'.
+--- Hotel class>>noFloorsErrorDescription (error description)
+noFloorsErrorDescription
+
+	^ 'Cannot have a Hotel without floors'
+--- Hotel class>>roomNumberDoesNotExistErrorDescription (error description)
+roomNumberDoesNotExistErrorDescription
+
+	^ 'Room number does not exist'.
+--- Hotel class>>signalFloorNumberDoesNotExist (exceptions)
+signalFloorNumberDoesNotExist
+
+	self error: self floorNumberDoesNotExistErrorDescription.
+--- Hotel class>>signalNoFloors (exceptions)
+signalNoFloors
+
+	self error: self noFloorsErrorDescription.
+--- Hotel class>>signalRoomNumberDoesNotExist (exceptions)
+signalRoomNumberDoesNotExist
+
+	self error: self roomNumberDoesNotExistErrorDescription.
+--- Hotel>>initialize (initialization)
+initialize
+
+	availableRoomsCount := 0.
+
+--- Hotel>>isEmpty (testing)
+isEmpty
+
+	| ix acc |
+	
+	acc := true.
+
+	ix := 1.	
+	[ ix <= floors size ] whileTrue: [ | floor jx |
+		floor := floors at: ix.
+
+		jx := 1.
+		[ jx <= floor rooms size ] whileTrue: [ | room |
+			room := floor rooms at: jx.
+			acc := acc and: room isAvailable.
+			
+			jx := jx + 1.
+		].
+			
+		ix := ix + 1.				
+	].
+
+	^ acc.
+
+--- Hotel>>receive:atFloor:atRoom: (guests)
+receive: aGuestType atFloor: aFloorNumber atRoom: aRoomNumber
+
+	| floor room |
+	
+	floor := floors at: aFloorNumber ifAbsent:  [ self class signalFloorNumberDoesNotExist ].
+	room := floor rooms at: aRoomNumber ifAbsent: [ self class signalRoomNumberDoesNotExist ].
+
+	room receive: aGuestType.
+	
+	availableRoomsCount := availableRoomsCount - 1.
+
+--- Hotel>>receiveWithReservation:atFloor:atRoom: (guests)
+receiveWithReservation: aGuestType atFloor: aFloorNumber atRoom: aRoomNumber
+
+	| floor room |
+	
+	floor := floors at: aFloorNumber ifAbsent:  [ self class signalFloorNumberDoesNotExist ].
+	room := floor rooms at: aRoomNumber ifAbsent: [ self class signalRoomNumberDoesNotExist ].
+
+	room receiveWithReservation: aGuestType.
+
+
+--- Hotel>>reserveRoom:atFloor: (guests)
+reserveRoom: aRoomNumber atFloor: aFloorNumber
+
+	| floor room |
+	
+	floor := floors at: aFloorNumber ifAbsent:  [ self class signalFloorNumberDoesNotExist ].
+	room := floor rooms at: aRoomNumber ifAbsent: [ self class signalRoomNumberDoesNotExist ].
+	 
+	room reserve.
+	
+	availableRoomsCount := availableRoomsCount - 1.
+
+--- Hotel>>setFloors: (setters)
+setFloors: aFloorsCollection
+
+	self class assertHaveFloors: aFloorsCollection.
+
+	floors := aFloorsCollection.
+	
+	availableRoomsCount := self totalRooms.
+--- Hotel>>totalLosses (accounting)
+totalLosses
+
+	| acc |
+	
+	acc := 0.
+	floors do: [ :floor | acc := acc + floor totalLosses ]. 
+
+	^ acc.
+
+--- Hotel>>totalProfits (accounting)
+totalProfits
+
+	| acc |
+	
+	acc := 0.
+	floors do: [ :floor | acc := acc + floor totalProfits ]. 
+
+	^ acc.
+
+--- Hotel>>totalRooms (totals)
+totalRooms
+
+	| ix acc |
+
+	acc := 0.
+
+	ix := 1.	
+	[ ix <= floors size ] whileTrue: [ | floor jx |
+		floor := floors at: ix.
+
+		jx := 1.
+		[ jx <= floor rooms size ] whileTrue: [ 
+			acc := acc + 1.
+			
+			jx := jx + 1.
+		].
+			
+		ix := ix + 1.				
+	].
+
+	^ acc.
+
+
+--- Hotel>>totalRoomsAvailable (totals)
+totalRoomsAvailable
+
+	^ availableRoomsCount.
+
+--- Hotel>>totalRoomsOccupied (totals)
+totalRoomsOccupied
+
+	| ix acc |
+
+	acc := 0.
+
+	ix := 1.	
+	[ ix <= floors size ] whileTrue: [ | floor jx |
+		floor := floors at: ix.
+
+		jx := 1.
+		[ jx <= floor rooms size ] whileTrue: [ | room | 
+			room := floor rooms at: jx.
+			room isOccupied ifTrue: [ 			acc := acc + 1. ].
+			
+			jx := jx + 1.
+		].
+			
+		ix := ix + 1.				
+	].
+
+	^ acc.
+
+
+--- Hotel>>totalRoomsReserved (totals)
+totalRoomsReserved
+
+	| ix acc |
+
+	acc := 0.
+
+	ix := 1.	
+	[ ix <= floors size ] whileTrue: [ | floor jx |
+		floor := floors at: ix.
+
+		jx := 1.
+		[jx <= floor rooms size] whileTrue: [ | room | 
+			room := floor rooms at: jx.
+			room isReserved ifTrue: [ 			acc := acc + 1. ].
+			
+			jx := jx + 1.
+		].
+			
+		ix := ix + 1.				
+	].
+
+	^ acc.
+
+
+===== ISW1-2024-1C-Parcial TestCase subclass: #HotelTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ISW1-2024-1C-Parcial'
+--- HotelTest>>createFloorWith:and: (create)
+createFloorWith: aNumberOfRooms and: aPrice
+
+	| floor |
+
+	floor := Floor new.
+	floor setNumberOfRooms: aNumberOfRooms.
+	floor setPrices: aPrice.
+	
+	^ floor.
+--- HotelTest>>createHotel (create)
+createHotel
+
+	^ Hotel new 
+		      setFloors: (OrderedCollection with: (self createFloorWith: 10 and: self defaultPriceList)
+								      	 with: (self createFloorWith: 1 and: self defaultPriceList)).
+								
+--- HotelTest>>defaultPriceList (create)
+defaultPriceList
+	
+	^ Dictionary new
+		at: self guestTypeVacation put: self minPriceInList;
+		at: self guestTypeConference put: self maxPriceInList;
+		yourself 
+--- HotelTest>>guestTypeConference (create)
+guestTypeConference
+	
+	^ #conferenceGuest
+--- HotelTest>>guestTypeVacation (create)
+guestTypeVacation
+	
+	^ #vacationGuest
+--- HotelTest>>maxPriceInList (create)
+maxPriceInList
+	
+	^ 200*peso 
+--- HotelTest>>minPriceInList (create)
+minPriceInList
+	
+	^ 100*peso 
+--- HotelTest>>test01CannotCreateHotelWithoutFloors (testing)
+test01CannotCreateHotelWithoutFloors
+
+	self
+		should: [ Hotel new setFloors: OrderedCollection new. ]
+		raise: Error - MessageNotUnderstood 
+		withMessageText: Hotel noFloorsErrorDescription.
+--- HotelTest>>test02NewHotelsAreEmpty (testing)
+test02NewHotelsAreEmpty
+
+	| hotel |
+	
+	hotel := self createHotel.
+	
+	self assert: hotel isEmpty.
+--- HotelTest>>test03HotelCanReceiveATypeOfGuestInRoomAtFloor (testing)
+test03HotelCanReceiveATypeOfGuestInRoomAtFloor
+
+	| hotel |
+	
+	hotel := self createHotel.
+	
+	self assert: hotel totalRooms equals: hotel	 totalRoomsAvailable.
+
+	hotel receive: self guestTypeVacation atFloor: 1 atRoom: 2.
+
+	self assert: hotel	 totalRooms - 1 equals: hotel totalRoomsAvailable.
+	self assert: 0 equals: hotel totalRoomsReserved.
+	self assert: 1 equals: hotel totalRoomsOccupied.
+
+--- HotelTest>>test04HotelCanTakeAReservationForARoomAtFloor (testing)
+test04HotelCanTakeAReservationForARoomAtFloor
+
+	| hotel |
+	
+	hotel := self createHotel.
+
+	self assert: hotel totalRooms equals: hotel	 totalRoomsAvailable.
+
+	hotel reserveRoom: 2 atFloor: 1.
+
+	self assert: hotel	 totalRooms - 1 equals: hotel totalRoomsAvailable.
+	self assert: 1 equals: hotel totalRoomsReserved.
+	self assert: 1 equals: hotel totalRoomsOccupied.
+--- HotelTest>>test05HotelCanReceiveWithReservationATypeOfGuestInRoomAtFloor (testing)
+test05HotelCanReceiveWithReservationATypeOfGuestInRoomAtFloor
+
+	| hotel |
+	
+	hotel := self createHotel.
+	
+	self assert: hotel totalRooms equals: hotel	 totalRoomsAvailable.
+
+	hotel reserveRoom: 2 atFloor: 1.
+	hotel receiveWithReservation: self guestTypeVacation atFloor: 1 atRoom: 2.
+
+	self assert: hotel	 totalRooms - 1 equals: hotel totalRoomsAvailable.
+	self assert: 0 equals: hotel totalRoomsReserved.
+	self assert: 1 equals: hotel totalRoomsOccupied.
+
+--- HotelTest>>test06HotelCannotReceiveWithReservationWithoutPreviousReservation (testing)
+test06HotelCannotReceiveWithReservationWithoutPreviousReservation
+	
+	| hotel |
+	
+	hotel := self createHotel.
+	
+	self assert: hotel totalRooms equals: hotel	 totalRoomsAvailable.
+
+	self 
+		should: [ 	hotel receiveWithReservation: self guestTypeVacation atFloor: 1 atRoom: 2. ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [		:error |	
+			self assert: Room roomIsNotReservedErrorDescription equals: error messageText.
+			
+			self assert: hotel	 totalRooms equals: hotel totalRoomsAvailable.
+			self assert: 0 equals: hotel totalRoomsReserved.
+			self assert: 0 equals: hotel totalRoomsOccupied.
+		]
+
+
+
+--- HotelTest>>test07HotelProfitsAreTheSumOfEachFloorProfits (testing)
+test07HotelProfitsAreTheSumOfEachFloorProfits
+	
+	| hotel floor1 floor2 floors |
+	
+	
+	floor1 := self createFloorWith: 10 and: self defaultPriceList.
+	floor2 := self createFloorWith: 10 and: self defaultPriceList.
+
+	floors := OrderedCollection with: floor1 with: floor2.
+	hotel := 	Hotel new setFloors: floors.
+	
+	hotel receive: self guestTypeVacation atFloor: 1 atRoom: 1.
+	hotel receive: self guestTypeConference atFloor: 2 atRoom: 1.
+
+	self assert: floor1 totalProfits + floor2 totalProfits equals:		hotel totalProfits.
+--- HotelTest>>test08HotelLossesAreTheSumOfEachFloorLosses (testing)
+test08HotelLossesAreTheSumOfEachFloorLosses
+	
+	| hotel floor1 floor2 floors |
+	
+	
+	floor1 := self createFloorWith: 10 and: self defaultPriceList.
+	floor2 := self createFloorWith: 10 and: self defaultPriceList.
+
+	floors := OrderedCollection with: floor1 with: floor2.
+	hotel := 	Hotel new setFloors: floors.
+	
+	hotel receive: self guestTypeVacation atFloor: 1 atRoom: 1.
+	hotel receive: self guestTypeConference atFloor: 2 atRoom: 1.
+
+	hotel reserveRoom: 4 atFloor: 1.
+	hotel reserveRoom: 2 atFloor: 2.
+
+	self assert: floor1 totalLosses + floor2 totalLosses equals:		hotel totalLosses.
+--- HotelTest>>test09HotelCannotReserveANonexistentRoom (testing)
+test09HotelCannotReserveANonexistentRoom
+	
+	| hotel floor1 floors |
+	
+	floor1 := self createFloorWith: 10 and: self defaultPriceList.
+
+	floors := OrderedCollection with: floor1.
+	hotel := 	Hotel new setFloors: floors.
+	
+	self 
+	should: [ 	hotel reserveRoom: 42 atFloor: 1. ]
+	raise: Error - MessageNotUnderstood 
+	withExceptionDo: [		:error |	
+		self assert: Hotel roomNumberDoesNotExistErrorDescription equals: error messageText.
+		
+		self assert: hotel	 totalRooms equals: hotel totalRoomsAvailable.
+		self assert: 0 equals: hotel totalRoomsReserved.
+		self assert: 0 equals: hotel totalRoomsOccupied.
+	]
+
+--- HotelTest>>test10HotelCannotReserveANonexistentFloor (testing)
+test10HotelCannotReserveANonexistentFloor
+	
+	| hotel floor1 floors |
+	
+	floor1 := self createFloorWith: 10 and: self defaultPriceList.
+
+	floors := OrderedCollection with: floor1.
+	hotel := 	Hotel new setFloors: floors.
+	
+	self 
+	should: [ 	hotel reserveRoom: 1 atFloor: 42. ]
+	raise: Error - MessageNotUnderstood 
+	withExceptionDo: [		:error |	
+		self assert: Hotel floorNumberDoesNotExistErrorDescription equals: error messageText.
+		
+		self assert: hotel	 totalRooms equals: hotel totalRoomsAvailable.
+		self assert: 0 equals: hotel totalRoomsReserved.
+		self assert: 0 equals: hotel totalRoomsOccupied.
+	]
+--- HotelTest>>test11HotelCannotReceiveAtNonexistentRoom (testing)
+test11HotelCannotReceiveAtNonexistentRoom
+	
+	| hotel floor1 floors |
+	
+	floor1 := self createFloorWith: 10 and: self defaultPriceList.
+
+	floors := OrderedCollection with: floor1.
+	hotel := 	Hotel new setFloors: floors.
+	
+	self 
+	should: [ 	hotel receive: self guestTypeVacation atFloor: 1 atRoom: 42. ]
+	raise: Error - MessageNotUnderstood 
+	withExceptionDo: [		:error |	
+		self assert: Hotel roomNumberDoesNotExistErrorDescription equals: error messageText.
+		
+		self assert: hotel	 totalRooms equals: hotel totalRoomsAvailable.
+		self assert: 0 equals: hotel totalRoomsReserved.
+		self assert: 0 equals: hotel totalRoomsOccupied.
+	]
+--- HotelTest>>test12HotelCannotReceiveAtNonexistentFloor (testing)
+test12HotelCannotReceiveAtNonexistentFloor
+	
+	| hotel floor1 floors |
+	
+	floor1 := self createFloorWith: 10 and: self defaultPriceList.
+
+	floors := OrderedCollection with: floor1.
+	hotel := 	Hotel new setFloors: floors.
+	
+	self 
+	should: [ 	hotel receive: self guestTypeVacation atFloor: 42 atRoom: 1. ]
+	raise: Error - MessageNotUnderstood 
+	withExceptionDo: [		:error |	
+		self assert: Hotel floorNumberDoesNotExistErrorDescription equals: error messageText.
+		
+		self assert: hotel	 totalRooms equals: hotel totalRoomsAvailable.
+		self assert: 0 equals: hotel totalRoomsReserved.
+		self assert: 0 equals: hotel totalRoomsOccupied.
+	]
+--- HotelTest>>test13HotelCannotReceiveWithReservationAtNonexistentRoom (testing)
+test13HotelCannotReceiveWithReservationAtNonexistentRoom
+	
+	| hotel floor1 floors |
+	
+	floor1 := self createFloorWith: 10 and: self defaultPriceList.
+
+	floors := OrderedCollection with: floor1.
+	hotel := 	Hotel new setFloors: floors.
+
+	hotel reserveRoom: 1 atFloor: 1. 
+	
+	self 
+	should: [ 	hotel receiveWithReservation: self guestTypeVacation atFloor: 1 atRoom: 42. ]
+	raise: Error - MessageNotUnderstood 
+	withExceptionDo: [		:error |	
+		self assert: Hotel roomNumberDoesNotExistErrorDescription equals: error messageText.
+		
+		self assert: hotel	 totalRooms - 1 equals: hotel totalRoomsAvailable.
+		self assert: 1 equals: hotel totalRoomsReserved.
+		self assert: 1 equals: hotel totalRoomsOccupied.
+	]
+===== ISW1-2024-1C-Parcial Object subclass: #Room
+	instanceVariableNames: 'guest'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ISW1-2024-1C-Parcial'
+--- Room class>>roomIsNotEmptyErrorDescription (error messages)
+roomIsNotEmptyErrorDescription
+
+	^ 'Room is not empty.'
+--- Room class>>roomIsNotReservedErrorDescription (error messages)
+roomIsNotReservedErrorDescription
+
+	^ 'Room is not reserved.'
+--- Room>>guestType (guests)
+guestType
+
+	^ guest
+--- Room>>isAvailable (testing)
+isAvailable
+
+	^ guest isNil
+--- Room>>isOccupied (testing)
+isOccupied
+
+	^ guest notNil or: [guest = #reserved]
+
+--- Room>>isReserved (testing)
+isReserved
+
+	^ guest = #reserved
+--- Room>>profitUsing:ifAbsentGuestType: (accounting)
+profitUsing: aPriceList ifAbsentGuestType: unknownGuestTypeBlock
+
+	"Room Available"
+	guest isNil ifTrue: [ ^ 0*peso ].
+
+	"Room Reserved"
+	guest = #reserved ifTrue: [ ^ aPriceList values min / 2 ].
+	
+	"Room Occupied"
+	(guest notNil or: [guest = #reserved]) ifTrue: [ ^ aPriceList at: guest ifAbsent: unknownGuestTypeBlock ].
+	
+	
+--- Room>>receive: (guests)
+receive: aGuestType
+
+	"Room Occupied"
+	(guest notNil or: [guest = #reserved])
+		ifTrue: [ self error: self class roomIsNotEmptyErrorDescription ]
+		ifFalse: [  guest := aGuestType ] 
+--- Room>>receiveWithReservation: (guests)
+receiveWithReservation: aGuestType
+	
+	"Room Reserved"
+	guest = #reserved
+		ifTrue: [  guest := aGuestType ] 
+		ifFalse: [ self error: self class roomIsNotReservedErrorDescription ]
+
+--- Room>>reserve (guests)
+reserve
+
+	"Room Occupied"
+	(guest notNil or: [guest = #reserved]) 
+		ifTrue: [ self error: self class roomIsNotEmptyErrorDescription ]
+		ifFalse: [  	guest := #reserved ]
+===== ISW1-2024-1C-Parcial TestCase subclass: #RoomTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ISW1-2024-1C-Parcial'
+--- RoomTest>>defaultPriceList (create)
+defaultPriceList
+	
+	^ Dictionary new
+		at: self guestTypeVacation put: self minPriceInList;
+		at: self guestTypeConference put: self maxPriceInList;
+		yourself 
+--- RoomTest>>guestTypeConference (create)
+guestTypeConference
+	
+	^ #conferenceGuest
+--- RoomTest>>guestTypeVacation (create)
+guestTypeVacation
+	
+	^ #vacationGuest
+--- RoomTest>>maxPriceInList (create)
+maxPriceInList
+	
+	^ 200*peso 
+--- RoomTest>>minPriceInList (create)
+minPriceInList
+	
+	^ 100*peso 
+--- RoomTest>>test01NewRoomsAreAvailable (testing)
+test01NewRoomsAreAvailable
+
+	| room |
+	
+	room := Room new.
+
+	self assert: room isAvailable.
+	
+	self deny: room isOccupied.
+	self deny: room isReserved.
+--- RoomTest>>test02ReceivingAGuestMakesTheRoomOccupied (testing)
+test02ReceivingAGuestMakesTheRoomOccupied
+
+	| room |
+	
+	room := Room new.
+
+	room receive: self guestTypeVacation.
+
+	self assert: room isOccupied.
+
+	self deny: room isAvailable.
+	self deny: room isReserved.
+--- RoomTest>>test03ReservingARoomMakesTheRoomReservedAndOccupied (testing)
+test03ReservingARoomMakesTheRoomReservedAndOccupied
+
+	| room |
+	
+	room := Room new.
+
+	room reserve.
+
+	self assert: room isReserved.
+	self assert: room isOccupied.
+
+	self deny: room isAvailable.
+
+--- RoomTest>>test04CannotReceiveAGuestInAOccupiedRoom (testing)
+test04CannotReceiveAGuestInAOccupiedRoom
+
+	| room |
+	
+	room := Room new.
+
+	room receive: self guestTypeVacation.
+	
+	self 
+		should: [ room receive: self guestTypeVacation ] 
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo:  [ 	:error |
+			self assert: Room roomIsNotEmptyErrorDescription equals: error messageText.
+
+			self assert: room isOccupied.
+			
+			self deny: room isAvailable.
+			self deny: room isReserved.
+		]
+	
+
+--- RoomTest>>test05CannotReceiveAGuestInAReservedRoom (testing)
+test05CannotReceiveAGuestInAReservedRoom
+
+	| room |
+	
+	room := Room new.
+
+	room reserve.
+	
+	self 
+		should: [ room receive: self guestTypeVacation ] 
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo:  [ 	:error |
+			self assert: Room roomIsNotEmptyErrorDescription equals: error messageText.
+			
+			self assert: room isReserved.
+			self assert: room isOccupied.
+			
+			self deny: room isAvailable.
+		]
+
+	
+
+	
+
+--- RoomTest>>test06ReceivingOnReservationMakesTheRoomOccupied (testing)
+test06ReceivingOnReservationMakesTheRoomOccupied
+
+	| room |
+	
+	room := Room new.
+
+	room reserve.
+	
+	room receiveWithReservation: self guestTypeVacation.
+	
+	self assert: room isOccupied.
+	
+	self deny: room isReserved.
+	self deny: room isAvailable.
+
+--- RoomTest>>test07CannotReceiveOnReservationAnAvailableRoom (testing)
+test07CannotReceiveOnReservationAnAvailableRoom
+
+	| room |
+	
+	room := Room new.
+
+	self 
+		should: [ room receiveWithReservation: self guestTypeVacation. ] 
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo:  [ 	:error |
+			self assert: Room roomIsNotReservedErrorDescription equals: error messageText.
+
+			self assert: room isAvailable.
+
+			self deny: room isReserved.
+			self deny: room isOccupied.
+		]
+
+	
+
+--- RoomTest>>test08CannotReceiveOnReservationAnOccupiedRoom (testing)
+test08CannotReceiveOnReservationAnOccupiedRoom
+
+	| room |
+	
+	room := Room new.
+
+	room receive: self guestTypeVacation.
+
+	self 
+		should: [ room receiveWithReservation: self guestTypeVacation. ] 
+		raise: Error - MessageNotUnderstood 	
+		withExceptionDo:  [ 	:error |
+			self assert: Room roomIsNotReservedErrorDescription equals: error messageText.
+			
+			self assert: room isOccupied.
+
+			self deny: room isReserved.
+			self deny: room isAvailable.
+		]
+
+	
+
+--- RoomTest>>test09ProfitOfAvailableRoomIsCeroPesos (testing)
+test09ProfitOfAvailableRoomIsCeroPesos
+
+	| room |
+	
+	room := Room new.
+
+	self assert: 0*peso equals: (room profitUsing: self defaultPriceList ifAbsentGuestType: [ self fail ]).
+	
+
+--- RoomTest>>test10ProfitOfReservedRoomIsHalfTheMinPriceInList (testing)
+test10ProfitOfReservedRoomIsHalfTheMinPriceInList
+
+	| room |
+	
+	room := Room new.
+
+	room reserve.
+
+	self assert: self minPriceInList / 2 equals: (room profitUsing: self defaultPriceList ifAbsentGuestType: [ self fail ]).
+
+--- RoomTest>>test11ProfitOfOccupiedRoomDependsOnGuestType (testing)
+test11ProfitOfOccupiedRoomDependsOnGuestType
+
+	| roomWithConferenceGuest roomWithVacationGuest |
+	
+	roomWithConferenceGuest := Room new.
+	roomWithConferenceGuest receive: self guestTypeConference.
+	
+	roomWithVacationGuest := Room new.
+	roomWithVacationGuest receive: self guestTypeVacation.
+
+	self assert: (self defaultPriceList at: self guestTypeConference) 
+		equals: (roomWithConferenceGuest profitUsing: self defaultPriceList ifAbsentGuestType: [ self fail ]).
+
+	self assert: (self defaultPriceList at: self guestTypeVacation) 
+		equals: (roomWithVacationGuest profitUsing: self defaultPriceList ifAbsentGuestType: [ self fail ]).
+
+--- RoomTest>>test12NoProfitOnOccupiedRoomByUnknownGuestType (testing)
+test12NoProfitOnOccupiedRoomByUnknownGuestType
+
+	| room |
+	
+	room := Room new.
+	room receive: #unknownGuest.
+	
+	room profitUsing: self defaultPriceList ifAbsentGuestType: [ ^self ].
+	
+	"we should not get here"
+	self failWith: 'should not calculate profit on room occupied by unknown guest type'.
+
+--- RoomTest>>test13LossesOfAvailableRoomIsTheMaxPriceInList (testing)
+test13LossesOfAvailableRoomIsTheMaxPriceInList
+
+	self shouldFail: [
+		| room |
+	
+		room := Room new.
+
+		self assert: self maxPriceInList equals: (room lossUsing: self defaultPriceList ifAbsentGuestType: [ self fail ]).
+	]	
+
+--- RoomTest>>test14LossesOfReservedRoomIsCeroPesos (testing)
+test14LossesOfReservedRoomIsCeroPesos
+
+	self shouldFail: [
+		| room |
+	
+		room := Room new.
+
+		room reserve.
+
+		self assert: 0*peso equals: (room lossUsing: self defaultPriceList ifAbsentGuestType: [ self fail ]).
+	]	
+
+--- RoomTest>>test15LossesOfOccupiedRoomIsCeroPesos (testing)
+test15LossesOfOccupiedRoomIsCeroPesos
+
+	self shouldFail: [
+		| room |
+		
+		room := Room new.
+
+		room receive: self guestTypeVacation.
+
+		self assert: 0*peso equals: (room lossUsing: self defaultPriceList ifAbsentGuestType: [ self fail ]).
+	]
+--- RoomTest>>test16CannotReserveWhenReserved (testing)
+test16CannotReserveWhenReserved
+
+	| room |
+	
+	room := Room new.
+
+	room reserve.
+
+	self 
+		should: [ room reserve ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: Room roomIsNotEmptyErrorDescription equals: anError messageText.
+			self assert: room isReserved ].
+--- RoomTest>>test17CannotReserveWhenOccupied (testing)
+test17CannotReserveWhenOccupied
+
+	| room |
+	
+	room := Room new.
+
+	room receive: self guestTypeVacation.
+
+	self 
+		should: [ room reserve ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: Room roomIsNotEmptyErrorDescription equals: anError messageText.
+			self assert: room isOccupied ].
+
+nil

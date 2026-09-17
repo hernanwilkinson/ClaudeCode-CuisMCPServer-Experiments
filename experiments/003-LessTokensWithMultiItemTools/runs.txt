@@ -1,0 +1,4 @@
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/003-LessTokensWithMultiItemTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2019-2c-parcial1/20260911-124643-18053
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/003-LessTokensWithMultiItemTools/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260911-124643-18052
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/003-LessTokensWithMultiItemTools/cells/1-Evaluate+TestRunning_1-Empty_free/2025-2c-parcial2/20260911-131653-20801
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/003-LessTokensWithMultiItemTools/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2025-2c-parcial2/20260911-131653-20821

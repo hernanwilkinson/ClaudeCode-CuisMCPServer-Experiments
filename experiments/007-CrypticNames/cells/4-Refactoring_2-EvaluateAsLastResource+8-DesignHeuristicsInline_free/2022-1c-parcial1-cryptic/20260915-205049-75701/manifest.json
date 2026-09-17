@@ -1,0 +1,170 @@
+{
+  "experiment": "007-CrypticNames",
+  "runId": "20260915-205049-75701",
+  "warmUp": "classes 1 run 25 passed 25 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-parcial1-cryptic",
+  "package": "Task2",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 007-CrypticNames, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "cuisDevCommit": "7b48a0fb4bdf47feff8ed6b95866efdf587ceba8",
+    "mcpServerCommit": "1d61daa41bbb1feb8ae0ec0569432cc0305f0e9b",
+    "builtAt": "2026-09-14T23:44:15Z",
+    "imageSha256": "553266ab261a210f3c27754bd6b5f87763662950097fb108fef3869fb0e0b378"
+  },
+  "toolsServed": 73,
+  "toolDefinitionBytes": 68037,
+  "hashes": {
+    "prompt.md": "e8efac97ce7743107ec34a6a8844d7f49eb3a0b2702acab2d3f5baa7a22f148f",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "b063dca249f3776a66c87912c8ec31cca550a614644a15c80c6d6a2edd00e645",
+    "skills": {}
+  },
+  "port": 60640,
+  "startedAt": "2026-09-15T23:50:51Z",
+  "endedAt": "2026-09-16T00:08:24Z",
+  "elapsedSeconds": 1053,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 162,
+    "agentCalls": 160
+  },
+  "changesBytesAtStart": 5185013,
+  "changesBytesAtEnd": 5222892,
+  "usageFromTranscript": {
+    "totalCostUsd": 5.7205,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 96,
+        "cache_write_5m": 0,
+        "cache_write_1h": 120445,
+        "cache_read": 4705096,
+        "output": 86520,
+        "thinking": 66685,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 48,
+        "cost_usd": 5.720478
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_list_categories": 1,
+      "mcp__Cuis__smalltalk_classes_in_category": 1,
+      "mcp__Cuis__smalltalk_class_source": 3,
+      "mcp__Cuis__smalltalk_list_packages": 1,
+      "mcp__Cuis__smalltalk_package_definition": 2,
+      "mcp__Cuis__smalltalk_run_test_class": 2,
+      "mcp__Cuis__smalltalk_list_classes": 1,
+      "mcp__Cuis__smalltalk_evaluate": 2,
+      "mcp__Cuis__smalltalk_implementors_of": 3,
+      "mcp__Cuis__smalltalk_method_source": 2,
+      "mcp__Cuis__smalltalk_define_class": 14,
+      "mcp__Cuis__smalltalk_define_methods": 12,
+      "mcp__Cuis__smalltalk_delete_class": 1,
+      "mcp__Cuis__smalltalk_run_tests_in_category": 1,
+      "mcp__Cuis__smalltalk_search_source": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 48,
+    "durationMs": 1051972,
+    "durationApiMs": 1036774,
+    "totalCostUsd": 5.720478,
+    "usage": {
+      "input_tokens": 96,
+      "cache_creation_input_tokens": 120445,
+      "cache_read_input_tokens": 4705096,
+      "output_tokens": 86520,
+      "output_tokens_details": {
+        "thinking_tokens": 66685
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 120445,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2225,
+          "cache_read_input_tokens": 136526,
+          "cache_creation_input_tokens": 2878,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2878
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 96,
+        "outputTokens": 86520,
+        "cacheReadInputTokens": 4705096,
+        "cacheCreationInputTokens": 120445,
+        "webSearchRequests": 0,
+        "costUSD": 5.720478,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 66685,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "All 26 tests pass and the old `C1`\u2013`C5` are gone. Here's what the model looks like now.\n\n## The classes (system category `Task2`)\n\n| Was | Is |\n|---|---|\n| `C1` | `Car` |\n| `C2` | `Competition` |\n| `C3` | `Sector` \u2192 `TurboEnabledSector`, `TurboDisabledSector` (+ `NoSector`) |\n| `C4` | `Track` |\n| turbo state inside `C1` | `Turbo` \u2192 `ActivatedTurbo`, `DeactivatedTurbo` |\n| turbo use counter | `TurboBoost` \u2192 `IncreasingTurboBoost`, `ExhaustedTurboBoost` |\n| `C5` | `F1SimulatorTest` (category `Task2-Tests`) |\n\n**1. Ifs replaced by polymorphism.** `C1#m9`'s cascade of `v7 = 1/2/3` tests and the `v4` activated flag are gone: a car holds a `Turbo` that answers `speedFrom: maximumSpeed`, and activating/deactivating answers the turbo that replaces it (`turbo _ turbo activatedFor: self`). The 20%/10%/5%/exhausted rule is a chain of `TurboBoost`s; `ExhaustedTurboBoost>>next` answers itself, so an exhausted turbo still activates but boosts nothing \u2014 no counter, no if. `C3#m27`'s `v12 ifFalse: [self error: ...]` became the `TurboEnabledSector`/`TurboDisabledSector` split, each with its own `validateTurboUseBy:`.\n\n**2. The tech lead's list.** `C2#advance` is now `advance:`/`advance:during:` over `track cars do:`; `Track` uses `sum:`, `sum:ifEmpty:`, `copyUpTo:`, `detect:`, `detect:ifNone:`, `anySatisfy:` and `inject:into:` instead of the `whileTrue:` index loops \u2014 every one of the seven methods is a single expression now.\n\n**3. Test repetition.** Tests 20\u201325 (and 04\u201306) go through `carAt:withAnotherCarAt:` with intention-revealing wrappers `carReadyToOvertake`, `carTooFarBehindTheCarAhead`, `carWithNoCarAhead`; tracks/sectors come from `sectorsOfTenAndTwentyKilometers` and `trackOfTenKilometers`. Assertions use `assert:actual equals:expected` in Cuis's order (the originals had it backwards, so failures printed expected and actual swapped).\n\n**4. Other design work.** Cars are created complete (`drivenBy:maximumSpeed:`) instead of being built and then sent a speed setter; a competition is created with its cars and puts them on the starting line; `keyAtValue:` is gone \u2014 the sector answers the car ahead, not its position. I removed the unused car\u2192competition back-pointer (`v1`/`m8:`), `C4`'s unused `v14`, and the unused error messages `C2#m23`/`m26`. Error descriptions are class-side and now carry meaningful text ('Turbo is already activated' rather than `'S1'`); the tests name the messages, not the strings, so that's invisible to them.\n\nOne addition worth flagging: a fresh `Car` used to hold `nil` as its sector, so activating the turbo before being put on a track was a doesNotUnderstand. It now starts in `NoSector`, which signals a proper error, and `test26` covers it \u2014 that's the only test I added.\n\n**I did not save the package.** Its file is `.../exercises/2022-1c-parcial1-cryptic/starting/Task2.pck.st` \u2014 writing it would overwrite the exercise's starting code, so the work currently lives only in the image. Tell me whether to overwrite that file, write it somewhere else (I can point the package at a new path), or leave it and save the image instead."
+  }
+}

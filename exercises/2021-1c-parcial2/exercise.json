@@ -1,0 +1,30 @@
+{
+  "name": "2021-1c-parcial2",
+  "title": "Truco: a round of two players",
+  "kind": "greenfield",
+  "package": "ISW1-2021-1C-2doParcial",
+  "description": "Given a finished model of Spanish truco cards (CartaDeTruco with mataA: and empardaCon:), the student must model with TDD a two-player round of truco: up to three confrontations, who plays first in each one (mano, previous winner, or the rule after a tied first confrontation), who wins the round, and no play after the round is decided.",
+  "startingPackages": ["starting/ISW1-2021-1C-2doParcial.st"],
+  "solutionPackages": [
+    "solution/ISW1-2021-1C-2doParcial-Resolucion.st",
+    "solution/ISW1-2021-1C-2doParcial-Resolucion-SoloReificandoRondaDeTruco.st",
+    "solution/ISW1-2021-1C-2doParcial-Resolucion-ConRondaDeTrucoYJugador.st",
+    "solution/ISW1-2021-1C-2doParcial-Resolucion-ConRondaDeTrucoyTurno.st"
+  ],
+  "acceptanceTests": null,
+  "source": "2021-1c/2doParcial",
+  "semester": "2021-1c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "The whole round is a turn/state machine (who plays next, first confrontation tied, round finished) and the four official solutions show very different ways to reify it (confrontation objects with states, a Turno hierarchy, a player object, or just the round), so the design freedom is large while the given card model is only a leaf collaborator."
+  },
+  "sizeHint": {"classesInStartingCode": 3, "methodsInStartingCode": 69}
+}

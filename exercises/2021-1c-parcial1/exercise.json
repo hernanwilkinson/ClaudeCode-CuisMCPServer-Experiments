@@ -1,0 +1,25 @@
+{
+  "name": "2021-1c-parcial1",
+  "title": "RobotWars: robots and weapons refactoring",
+  "kind": "refactoring",
+  "package": "ISW1-2021-1C-1erParcial",
+  "description": "A real-time strategy game where robots (Aluminum3000, TankRover) attack each other with weapons (Claw, HSBlaster, TurboLaserCannon), with the attack effect depending on the weapon and the victim's type. The student must remove duplicated code, replace type-symbol ifs with polymorphism, clean up the tests and improve the given design while keeping all tests green.",
+  "startingPackages": ["starting/ISW1-2021-1C-1erParcial-11Parcial.st"],
+  "solutionPackages": ["solution/ISW1-2021-1C-1erParcial-11Resolucion.st"],
+  "acceptanceTests": null,
+  "source": "2021-1c/1erParcial",
+  "semester": "2021-1c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Weapon>>attack:by: dispatches on both the weapon type symbol and the victim robot type symbol (a 3x2 matrix of ifs), so the student must choose between double dispatch and a class hierarchy for each axis, while the lazy 'weapons isNil' initialization and index-based whileTrue loops hide simple collection protocol."
+  },
+  "sizeHint": {"classesInStartingCode": 6, "methodsInStartingCode": 49}
+}

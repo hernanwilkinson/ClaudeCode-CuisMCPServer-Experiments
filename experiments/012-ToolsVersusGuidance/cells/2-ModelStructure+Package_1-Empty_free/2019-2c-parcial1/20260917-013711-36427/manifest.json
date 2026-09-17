@@ -1,0 +1,151 @@
+{
+  "experiment": "012-ToolsVersusGuidance",
+  "runId": "20260917-013711-36427",
+  "warmUp": "classes 1 run 14 passed 14 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "2-ModelStructure+Package",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2019-2c-parcial1",
+  "package": "IngSof1-2019-2C-1Parcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 012-ToolsVersusGuidance, repetition 3",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "2-ModelStructure+Package",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-2-ModelStructure+Package.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools"
+    ],
+    "decorators": [],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:36:44Z",
+    "imageSha256": "eae38ee005382d93cf3c5893d27f35f7984818c9bda937b06e7ac7969b888941"
+  },
+  "toolsServed": 34,
+  "toolDefinitionBytes": 19637,
+  "hashes": {
+    "prompt.md": "d6aa9b7de9f49fb97af63d16dcf48c64d063c4277c25bd0d83cf2b4cbd2216ac",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec.md": "28de12114b353c576eeda1323d2b9ce5fa14470fd45f99261cc72c6a142c7938",
+    "skills": {}
+  },
+  "port": 64263,
+  "startedAt": "2026-09-17T04:37:13Z",
+  "endedAt": "2026-09-17T04:38:34Z",
+  "elapsedSeconds": 81,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 31,
+    "agentCalls": 29
+  },
+  "changesBytesAtStart": 4570807,
+  "changesBytesAtEnd": 4586174,
+  "usageFromTranscript": {
+    "totalCostUsd": 0.5338,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 12,
+        "cache_write_5m": 0,
+        "cache_write_1h": 23509,
+        "cache_read": 87366,
+        "output": 10198,
+        "thinking": 1978,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 6,
+        "cost_usd": 0.533783
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_batch": 4,
+      "mcp__Cuis__smalltalk_class_source": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 6,
+    "durationMs": 80022,
+    "durationApiMs": 77399,
+    "totalCostUsd": 0.533783,
+    "usage": {
+      "input_tokens": 12,
+      "cache_creation_input_tokens": 23509,
+      "cache_read_input_tokens": 87366,
+      "output_tokens": 10198,
+      "output_tokens_details": {
+        "thinking_tokens": 1978
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 23509,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1180,
+          "cache_read_input_tokens": 24717,
+          "cache_creation_input_tokens": 4956,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4956
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 12,
+        "outputTokens": 10198,
+        "cacheReadInputTokens": 87366,
+        "cacheCreationInputTokens": 23509,
+        "webSearchRequests": 0,
+        "costUSD": 0.533783,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1978,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I made all three improvements, and all 14 tests in `CoffeeShopTest` pass afterwards (they also passed before I started). I also checked the classes and none of them use `ifTrue:` or `ifFalse:` any more.\n\n**1. Duplicated code in tests 2 and 3**\n- Both tests now call a new helper, `assertOnlySaleTo: aCustomer is: aProduct`, which checks that the customer's sales are exactly one of that product.\n- The line creating `CoffeeShopSalesSystem new` was repeated in every test, so I moved it into `setUp`.\n\n**2. Duplicated code in the last 6 tests**\n- One general helper, `assertRewardOf:afterBuying:isQuantity:of:at:`, registers the purchases, gets the reward and checks its quantity, product and price.\n- Two shorter helpers build on it, one per reward rule: `assertRewardWhenRule1HoldsOf:isOneCombo2At:` and `assertRewardWhenRule2HoldsOf:isTwoCombo1At:`. Each of tests 9\u201314 is now a single line giving the customer and the expected price.\n- The Combo 1 tests expect a reward of 2 combos, not 1 as their names say. I kept that quantity and didn't rename the tests.\n\n**3. `if`s replaced by polymorphism**\n- **Products:** new classes `Combo1` and `Combo2` (under `CoffeeShopProduct`) each know their own `price` and `volume`. This replaces the `if` chains in `CoffeeShopSalesSystem>>volumeOf:` and `RewardRule>>priceOf:`, which I deleted.\n- **Customer types:** new classes `GoldCustomerType`, `SilverCustomerType` and `NormalCustomerType`. Each one asks the reward rule for its own price (for example `rewardPriceForGoldCustomer`), and each rule answers it: fixed prices of 75, 83 and 97 pesos for Combo 1, and a share of the Combo 2 price for Combo 2. This removes the `if`s on the customer type.\n- **Reward creation:** the two `createRewardFor:` methods were almost the same, so there is now one in `RewardRule`. It uses the rule's product and quantity and the price that fits the customer's type.\n\n**Changes that affect how the code is used**\n- Customers are now created with a type object instead of a symbol, e.g. `ofType: GoldCustomerType new` instead of `ofType: #Gold`.\n- Products are instances of `Combo1` and `Combo2` instead of `#Combo1` and `#Combo2`. Two products count as equal when they are the same kind of combo.\n- On rewards, `isFor: aProduct` replaces `isForCombo1` and `isForCombo2`.\n\n**Other cleanup**\n- `RewardRule` no longer has the `product` instance variable. It was only filled in as a side effect inside `createRewardFor:`.\n- I deleted an unused temporary variable in `rewardOf:ifNone:`.\n- `CoffeeShopTest` was in 'IngSof1-2019-2C-1Parcial', so I moved it to 'IngSof1-2019-2C-1Parcial-Tests'. All the new classes are in 'IngSof1-2019-2C-1Parcial'.\n\nThe work is only in the running image: I haven't saved the image or written the `IngSof1` package to its file."
+  }
+}

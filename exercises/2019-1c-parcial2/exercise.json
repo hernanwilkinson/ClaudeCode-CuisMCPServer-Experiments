@@ -1,0 +1,25 @@
+{
+  "name": "2019-1c-parcial2",
+  "title": "Personal and Team Calendars",
+  "kind": "greenfield",
+  "package": "Calendar",
+  "description": "Individual calendars grouped into a hierarchy of team calendars, holding one-off and periodically repeating events, that answer whether a time span is free and find the first available spot of a given duration within a time-of-day range and a date range, scanning hour by hour. The student must build the model from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/2doParcial-SolucionDeVideo.st", "solution/2doParcial-SolucionConMasTests.st"],
+  "acceptanceTests": null,
+  "source": "2019-1c",
+  "semester": "2019-1c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "A composite of calendars, a polymorphic event hierarchy (one-off vs repeating with optional end) and a nested date/time search over intervals built with the Chalten date library; the difficulty is keeping the spot-finding loop expressed with interval protocol rather than manual counters."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

@@ -1,0 +1,25 @@
+{
+  "name": "2022-1c-parcial2",
+  "title": "Ladders & Slides 3D",
+  "kind": "greenfield",
+  "package": "ISW1-2022-1C-2doParcial",
+  "description": "A board game with several rectangular floors stacked on top of each other, players that move by rolling a 12-sided die twice (values interpreted as -5..6 for x and y, clamped at the floor edges), and stairs/slides that jump between floors; the game must validate its shortcut configuration (no two shortcuts from one position, no cycles, none from the initial or final position). The student must design and build the model from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/ISW1-2022-1C-2doParcial-PruebaArmadoDeEnunciado.pck.st", "solution/ISW1-2022-1C-2doParcial-SolucionYouTube.pck.st"],
+  "acceptanceTests": null,
+  "source": "2022-1c/2doParcial",
+  "semester": "2022-1c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "Three-dimensional positions (floor plus x@y), a die abstraction that must be injectable for tests (CircularReadStream), edge clamping, and a set of construction-time validations over the shortcuts (uniqueness of origin, direction up/down for stairs/slides, cycle detection) that are naturally expressed with collection protocol such as combinations:atATimeDo: and detect:."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

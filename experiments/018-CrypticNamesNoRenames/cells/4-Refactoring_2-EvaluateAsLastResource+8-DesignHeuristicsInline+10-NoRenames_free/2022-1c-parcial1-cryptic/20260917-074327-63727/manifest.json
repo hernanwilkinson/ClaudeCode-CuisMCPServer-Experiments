@@ -1,0 +1,161 @@
+{
+  "experiment": "018-CrypticNamesNoRenames",
+  "runId": "20260917-074327-63727",
+  "warmUp": "classes 1 run 25 passed 25 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline",
+    "10-NoRenames"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-parcial1-cryptic",
+  "package": "Task2",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 018-CrypticNamesNoRenames, repetition 3",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:10Z",
+    "imageSha256": "b5f4b366a56949d0350d29a2756efc4fed4b2a6aa266163385aaa745d6efa3a5"
+  },
+  "toolsServed": 74,
+  "toolDefinitionBytes": 69457,
+  "hashes": {
+    "prompt.md": "e8efac97ce7743107ec34a6a8844d7f49eb3a0b2702acab2d3f5baa7a22f148f",
+    "CLAUDE.md": "426b722d6fcb35d8b054d51ac2ea02391bf7761fe3474fde37d3761a2e42af76",
+    "spec.md": "b063dca249f3776a66c87912c8ec31cca550a614644a15c80c6d6a2edd00e645",
+    "skills": {}
+  },
+  "port": 56716,
+  "startedAt": "2026-09-17T10:43:29Z",
+  "endedAt": "2026-09-17T10:47:50Z",
+  "elapsedSeconds": 261,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 54,
+    "agentCalls": 52
+  },
+  "changesBytesAtStart": 5198805,
+  "changesBytesAtEnd": 5221326,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.612,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 24,
+        "cache_write_5m": 0,
+        "cache_write_1h": 54732,
+        "cache_read": 607728,
+        "output": 30429,
+        "thinking": 16762,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 12,
+        "cost_usd": 1.612029
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_batch": 6,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_define_methods": 3,
+      "mcp__Cuis__smalltalk_class_organization": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 12,
+    "durationMs": 259795,
+    "durationApiMs": 255810,
+    "totalCostUsd": 1.6120290000000002,
+    "usage": {
+      "input_tokens": 24,
+      "cache_creation_input_tokens": 54732,
+      "cache_read_input_tokens": 607728,
+      "output_tokens": 30429,
+      "output_tokens_details": {
+        "thinking_tokens": 16762
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 54732,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1550,
+          "cache_read_input_tokens": 70865,
+          "cache_creation_input_tokens": 3189,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3189
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 24,
+        "outputTokens": 30429,
+        "cacheReadInputTokens": 607728,
+        "cacheCreationInputTokens": 54732,
+        "webSearchRequests": 0,
+        "costUSD": 1.6120290000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 16762,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I refactored the model and all 25 tests still pass. I kept every existing name, as the project instructions require. The test class `C5` has moved to `Task2-Tests`, and all new classes are in `Task2`. I haven't saved the package or the image.\n\n**1. Replacing ifs with polymorphism**\n- **Turbo on/off:** `C1`'s `v4` was true/false; it now holds a `TurboActivated` or `TurboDeactivated` object. That object handles activating (`m1`), deactivating (`m5`), whether it is active (`m7`) and the speed (`m9`), so `C1` no longer checks `v4` anywhere.\n- **Turbo uses:** `v7` was a count checked by `= 1`, `= 2`, `= 3` inside `m9`. It now holds one object per use: `TurboNotUsed`, `TurboFirstUse`, `TurboSecondUse`, `TurboThirdUse` and `TurboExhausted`. Each one knows how much it boosts the speed and which use comes next, so `m9` is one line.\n- **Turbo-enabled sectors:** `C3`'s `v12` was true/false; it now holds `SectorTurboEnabled` or `SectorTurboDisabled`. In `m27:`, the `ifFalse:` became `v12 assertAllowsTurbo`.\n\n**2. The methods the tech lead named**\n- **`C2` advance (`m19:`):** one `do:` over the cars. The code that puts a car back on the track, repeated in `m21:a21:` and `m51:a51:`, is now `placeOnTrack:`.\n- **`C4`:**\n  - `includes:` uses `anySatisfy:`.\n  - cars (`m49`) uses `inject:into:`.\n  - length (`m50`) uses `sum:`.\n  - sector of (`m53:a53:`) uses `detect:ifNone:`.\n  - put at (`m51:a51:`) and position of (`m52:`) now rely on three new helpers, `startOf:`, `endOf:` and `sectorAt:`, instead of index loops.\n\n**3. Repeated test code**\n- **Tests 20 to 25:** these now use the new helpers `carReadyToUseTurbo`, `useTurboOf:times:` and `assertSpeedOfCarUsingTurbo:timesIs:`, so tests 20 to 23 are one line each.\n- **Tests 04 to 06:** they build their two cars with `carAt:withAnotherCarAt:bothDrivingAt:`.\n- **Other tests:** `sectorsOfTenAndTwentyKilometers` and `raceOn:with:` replace the repeated setup in tests 08 to 19.\n- **Removed lines:** tests 15 and 16 no longer set the speed to 0 before starting, because a car already starts at 0.\n- **Test 04:** it now uses a 24 km sector instead of 20 km. This doesn't change what it checks.\n\n**4. Other improvements**\n- **Error messages on the class side:** `C1`'s `m13` and `m14` and `C4`'s `m46` moved there, and tests 24 and 25 now read `C1 m13` and `C1 m14`.\n- **Object creation:**\n  - `C3`'s `m44:` and `m45:` both go through one new creation method, `length:turboPermission:`, which checks the length. It sets the length and turbo permission in a single initializer, `m33:turboPermission:`, which replaces `m33:` and `m38:`.\n  - `C4`'s `m56:` checks for sectors in its own assertion method.\n  - A car's position now starts at `0 * kilometer` instead of `0`.\n- **Removed:** the unused variable `v14` in `C4`, the unused `C2 class` messages `m23` and `m26`, and a pointless `remove:` in `C3>>m37:a37:`.\n- **Categories:** every method has a real category. `C1 class` and `C4` still show an empty `x` category.\n\n**Left as they were:**\n- **The car's race (`v1`, set by `m8:`):** no method reads it. I kept it because the race description says a race includes its cars, and removing it would also mean changing how a race is created.\n- **`C2`'s initializer (`m16:a16:b16:`):** it still tells each car which race it is in, not just assigning variables, for the same reason."
+  }
+}

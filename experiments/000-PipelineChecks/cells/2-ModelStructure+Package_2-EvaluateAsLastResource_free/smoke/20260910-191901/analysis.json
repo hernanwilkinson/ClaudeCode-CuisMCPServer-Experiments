@@ -1,0 +1,1213 @@
+{
+  "run": "20260910-191901",
+  "scenario": "2-ModelStructure+Package",
+  "config": [
+    "2-EvaluateAsLastResource"
+  ],
+  "technique": "free",
+  "exercise": "smoke",
+  "package": "BoundedStack",
+  "status": "completed",
+  "cost": 0.09463689999999998,
+  "turns": 36,
+  "acceptance": null,
+  "acceptanceClasses": [],
+  "agentTests": {
+    "run": 15,
+    "passed": 15,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "agentTestClasses": [
+    "BoundedStackTests"
+  ],
+  "coverageByAgentTests": {
+    "percentCovered": 100.0,
+    "perClass": {
+      "BoundedStack": 1.0
+    }
+  },
+  "coverageByAllTests": {
+    "percentCovered": 100.0,
+    "perClass": {
+      "BoundedStack": 1.0
+    }
+  },
+  "testSmells": [
+    {
+      "class": "BoundedStackTests",
+      "node": "testIsEmpty",
+      "rule": "ProperOrganizationTestRule",
+      "title": "Improper Organization",
+      "message": "It does not have a Proper Organization.\n\nTests should have the following structure:\n\n- Arrange: This is where you initialize objects and set the value of the data to be passed to the function under test.\n\n- Act: The act section invokes the function under test.\n\n- Assert: This is where you verify that the action of the function under test behaves as expected.\n\nSo asserts should be together at the end of the test."
+    },
+    {
+      "class": "BoundedStackTests",
+      "node": "testMultiplePushPopCycles",
+      "rule": "ProperOrganizationTestRule",
+      "title": "Improper Organization",
+      "message": "It does not have a Proper Organization.\n\nTests should have the following structure:\n\n- Arrange: This is where you initialize objects and set the value of the data to be passed to the function under test.\n\n- Act: The act section invokes the function under test.\n\n- Assert: This is where you verify that the action of the function under test behaves as expected.\n\nSo asserts should be together at the end of the test."
+    },
+    {
+      "class": "BoundedStackTests",
+      "node": "testSize",
+      "rule": "ProperOrganizationTestRule",
+      "title": "Improper Organization",
+      "message": "It does not have a Proper Organization.\n\nTests should have the following structure:\n\n- Arrange: This is where you initialize objects and set the value of the data to be passed to the function under test.\n\n- Act: The act section invokes the function under test.\n\n- Assert: This is where you verify that the action of the function under test behaves as expected.\n\nSo asserts should be together at the end of the test."
+    },
+    {
+      "class": "BoundedStackTests",
+      "node": "testCreateStackWithValidCapacity",
+      "rule": "WrongAssertUsageTestRule",
+      "title": "Wrong Assert Usage",
+      "message": "(assert: a = b) should be replaced with the message #assert:equals:"
+    },
+    {
+      "class": "BoundedStackTests",
+      "node": "testErrorMessageForFullStack",
+      "rule": "WrongAssertUsageTestRule",
+      "title": "Wrong Assert Usage",
+      "message": "(assert: a = b) should be replaced with the message #assert:equals:"
+    },
+    {
+      "class": "BoundedStackTests",
+      "node": "testErrorMessageForInvalidCapacity",
+      "rule": "WrongAssertUsageTestRule",
+      "title": "Wrong Assert Usage",
+      "message": "(assert: a = b) should be replaced with the message #assert:equals:"
+    },
+    {
+      "class": "BoundedStackTests",
+      "node": "testErrorMessageForPopOnEmpty",
+      "rule": "WrongAssertUsageTestRule",
+      "title": "Wrong Assert Usage",
+      "message": "(assert: a = b) should be replaced with the message #assert:equals:"
+    },
+    {
+      "class": "BoundedStackTests",
+      "node": "testErrorMessageForTopOnEmpty",
+      "rule": "WrongAssertUsageTestRule",
+      "title": "Wrong Assert Usage",
+      "message": "(assert: a = b) should be replaced with the message #assert:equals:"
+    },
+    {
+      "class": "BoundedStackTests",
+      "node": "testLIFOBehavior",
+      "rule": "WrongAssertUsageTestRule",
+      "title": "Wrong Assert Usage",
+      "message": "(assert: a = b) should be replaced with the message #assert:equals:"
+    },
+    {
+      "class": "BoundedStackTests",
+      "node": "testMultiplePushPopCycles",
+      "rule": "WrongAssertUsageTestRule",
+      "title": "Wrong Assert Usage",
+      "message": "(assert: a = b) should be replaced with the message #assert:equals:"
+    },
+    {
+      "class": "BoundedStackTests",
+      "node": "testPushAndPop",
+      "rule": "WrongAssertUsageTestRule",
+      "title": "Wrong Assert Usage",
+      "message": "(assert: a = b) should be replaced with the message #assert:equals:"
+    },
+    {
+      "class": "BoundedStackTests",
+      "node": "testSize",
+      "rule": "WrongAssertUsageTestRule",
+      "title": "Wrong Assert Usage",
+      "message": "(assert: a = b) should be replaced with the message #assert:equals:"
+    },
+    {
+      "class": "BoundedStackTests",
+      "node": "testTopWithoutRemoving",
+      "rule": "WrongAssertUsageTestRule",
+      "title": "Wrong Assert Usage",
+      "message": "(assert: a = b) should be replaced with the message #assert:equals:"
+    }
+  ],
+  "model": {
+    "classes": 1,
+    "methods": 7,
+    "instanceMethods": 6,
+    "classMethods": 1,
+    "linesOfCode": 24,
+    "linesPerMethod": {
+      "mean": 3.43,
+      "max": 6
+    },
+    "sendsPerMethod": {
+      "mean": 3.29,
+      "max": 7,
+      "over10": 0
+    },
+    "instanceVariablesPerClass": {
+      "BoundedStack": 3
+    },
+    "maxInheritanceDepth": 2,
+    "methodsWithComments": 0,
+    "unparsedMethods": [],
+    "totals": {
+      "sends": 23,
+      "ifs": 4,
+      "nilChecks": 0,
+      "nilReferences": 0,
+      "typeChecks": 1,
+      "identityComparisons": 0,
+      "sizeEqualsZero": 0,
+      "isEmptyIfTrue": 0,
+      "andOrWithoutBlock": 0,
+      "assertEquals": 0,
+      "assertOnEquality": 0,
+      "assertNot": 0,
+      "deny": 0,
+      "shouldRaise": 0,
+      "errorWithLiteralString": 4
+    },
+    "perHundredMethods": {
+      "sends": 328.57,
+      "ifs": 57.14,
+      "nilChecks": 0.0,
+      "nilReferences": 0.0,
+      "typeChecks": 14.29,
+      "identityComparisons": 0.0,
+      "sizeEqualsZero": 0.0,
+      "isEmptyIfTrue": 0.0,
+      "andOrWithoutBlock": 0.0,
+      "assertEquals": 0.0,
+      "assertOnEquality": 0.0,
+      "assertNot": 0.0,
+      "deny": 0.0,
+      "shouldRaise": 0.0,
+      "errorWithLiteralString": 57.14
+    }
+  },
+  "tests": {
+    "classes": 1,
+    "methods": 15,
+    "instanceMethods": 15,
+    "classMethods": 0,
+    "linesOfCode": 111,
+    "linesPerMethod": {
+      "mean": 7.4,
+      "max": 12
+    },
+    "sendsPerMethod": {
+      "mean": 8.33,
+      "max": 20,
+      "over10": 4
+    },
+    "instanceVariablesPerClass": {
+      "BoundedStackTests": 0
+    },
+    "maxInheritanceDepth": 3,
+    "methodsWithComments": 0,
+    "unparsedMethods": [],
+    "totals": {
+      "sends": 125,
+      "ifs": 0,
+      "nilChecks": 0,
+      "nilReferences": 0,
+      "typeChecks": 0,
+      "identityComparisons": 0,
+      "sizeEqualsZero": 3,
+      "isEmptyIfTrue": 0,
+      "andOrWithoutBlock": 0,
+      "assertEquals": 0,
+      "assertOnEquality": 21,
+      "assertNot": 0,
+      "deny": 1,
+      "shouldRaise": 10,
+      "errorWithLiteralString": 0
+    },
+    "perHundredMethods": {
+      "sends": 833.33,
+      "ifs": 0.0,
+      "nilChecks": 0.0,
+      "nilReferences": 0.0,
+      "typeChecks": 0.0,
+      "identityComparisons": 0.0,
+      "sizeEqualsZero": 20.0,
+      "isEmptyIfTrue": 0.0,
+      "andOrWithoutBlock": 0.0,
+      "assertEquals": 0.0,
+      "assertOnEquality": 140.0,
+      "assertNot": 0.0,
+      "deny": 6.67,
+      "shouldRaise": 66.67,
+      "errorWithLiteralString": 0.0
+    }
+  },
+  "heuristics": {
+    "model": {
+      "initializeMethodsPerClass": {
+        "BoundedStack": 1
+      },
+      "classesWithSeveralInitialize": [],
+      "classSideMethodsSendingNewPerClass": {
+        "BoundedStack": 1
+      },
+      "classesWithSeveralCreationFunnels": [],
+      "setters": [],
+      "plainGetters": [
+        "BoundedStack>>size"
+      ],
+      "methodsWithComments": [],
+      "parametersNotPrefixedWithArticle": []
+    },
+    "tests": {
+      "initializeMethodsPerClass": {
+        "BoundedStackTests": 0
+      },
+      "classesWithSeveralInitialize": [],
+      "classSideMethodsSendingNewPerClass": {
+        "BoundedStackTests": 0
+      },
+      "classesWithSeveralCreationFunnels": [],
+      "setters": [],
+      "plainGetters": [],
+      "methodsWithComments": [],
+      "parametersNotPrefixedWithArticle": []
+    }
+  },
+  "mentor": {
+    "findings": 18,
+    "errors": 0,
+    "byHeuristic": {
+      "Prefer assert:equals: over assert: with =": 10,
+      "Method complexity": 4,
+      "isEmpty over size = 0": 2,
+      "Instance creation format": 1,
+      "No empty method categories": 1
+    }
+  },
+  "mentorFindings": [
+    {
+      "kind": "method",
+      "target": "BoundedStack class>>capacity:",
+      "heuristic": "InstanceCreationFormatHeuristic",
+      "name": "Instance creation format",
+      "title": "Instance creation format: BoundedStack class>>capacity:",
+      "detail": "The method BoundedStack class>>capacity: does not follow the heuristic: An instance creation message runs its preconditions, each as a self assert... send, and then answers ^self new initialize..."
+    },
+    {
+      "kind": "class",
+      "target": "BoundedStackTests",
+      "heuristic": "NoEmptyMethodCategoriesHeuristic",
+      "name": "No empty method categories",
+      "title": "No empty method categories: BoundedStackTests class - as yet unclassified",
+      "detail": "The method category as yet unclassified has no methods. Remove it."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testErrorMessageForPopOnEmpty",
+      "heuristic": "TestingForEqualityHeuristic",
+      "name": "Prefer assert:equals: over assert: with =",
+      "title": "Prefer assert:equals: over assert: with =: BoundedStackTests>>testErrorMessageForPopOnEmpty",
+      "detail": "The method BoundedStackTests>>testErrorMessageForPopOnEmpty does not follow the heuristic: A test compares with assert: actual equals: expected, not with assert: expected = actual, so a failure shows both values."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testLIFOBehavior",
+      "heuristic": "TestingForEqualityHeuristic",
+      "name": "Prefer assert:equals: over assert: with =",
+      "title": "Prefer assert:equals: over assert: with =: BoundedStackTests>>testLIFOBehavior",
+      "detail": "The method BoundedStackTests>>testLIFOBehavior does not follow the heuristic: A test compares with assert: actual equals: expected, not with assert: expected = actual, so a failure shows both values."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testLIFOBehavior",
+      "heuristic": "MethodComplexityHeuristic",
+      "name": "Method complexity",
+      "title": "Method complexity: BoundedStackTests>>testLIFOBehavior",
+      "detail": "The method BoundedStackTests>>testLIFOBehavior sends 13 messages; a method does not send more than 10 or so."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testErrorMessageForFullStack",
+      "heuristic": "TestingForEqualityHeuristic",
+      "name": "Prefer assert:equals: over assert: with =",
+      "title": "Prefer assert:equals: over assert: with =: BoundedStackTests>>testErrorMessageForFullStack",
+      "detail": "The method BoundedStackTests>>testErrorMessageForFullStack does not follow the heuristic: A test compares with assert: actual equals: expected, not with assert: expected = actual, so a failure shows both values."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testMultiplePushPopCycles",
+      "heuristic": "TestingForEqualityHeuristic",
+      "name": "Prefer assert:equals: over assert: with =",
+      "title": "Prefer assert:equals: over assert: with =: BoundedStackTests>>testMultiplePushPopCycles",
+      "detail": "The method BoundedStackTests>>testMultiplePushPopCycles does not follow the heuristic: A test compares with assert: actual equals: expected, not with assert: expected = actual, so a failure shows both values."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testMultiplePushPopCycles",
+      "heuristic": "MethodComplexityHeuristic",
+      "name": "Method complexity",
+      "title": "Method complexity: BoundedStackTests>>testMultiplePushPopCycles",
+      "detail": "The method BoundedStackTests>>testMultiplePushPopCycles sends 15 messages; a method does not send more than 10 or so."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testTopWithoutRemoving",
+      "heuristic": "TestingForEqualityHeuristic",
+      "name": "Prefer assert:equals: over assert: with =",
+      "title": "Prefer assert:equals: over assert: with =: BoundedStackTests>>testTopWithoutRemoving",
+      "detail": "The method BoundedStackTests>>testTopWithoutRemoving does not follow the heuristic: A test compares with assert: actual equals: expected, not with assert: expected = actual, so a failure shows both values."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testTopWithoutRemoving",
+      "heuristic": "MethodComplexityHeuristic",
+      "name": "Method complexity",
+      "title": "Method complexity: BoundedStackTests>>testTopWithoutRemoving",
+      "detail": "The method BoundedStackTests>>testTopWithoutRemoving sends 11 messages; a method does not send more than 10 or so."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testCreateStackWithValidCapacity",
+      "heuristic": "TestingForEqualityHeuristic",
+      "name": "Prefer assert:equals: over assert: with =",
+      "title": "Prefer assert:equals: over assert: with =: BoundedStackTests>>testCreateStackWithValidCapacity",
+      "detail": "The method BoundedStackTests>>testCreateStackWithValidCapacity does not follow the heuristic: A test compares with assert: actual equals: expected, not with assert: expected = actual, so a failure shows both values."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testCreateStackWithValidCapacity",
+      "heuristic": "SizeComparedWithZeroHeuristic",
+      "name": "isEmpty over size = 0",
+      "title": "isEmpty over size = 0: BoundedStackTests>>testCreateStackWithValidCapacity",
+      "detail": "The method BoundedStackTests>>testCreateStackWithValidCapacity does not follow the heuristic: Prefer isEmpty and notEmpty over comparing size with 0."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testErrorMessageForTopOnEmpty",
+      "heuristic": "TestingForEqualityHeuristic",
+      "name": "Prefer assert:equals: over assert: with =",
+      "title": "Prefer assert:equals: over assert: with =: BoundedStackTests>>testErrorMessageForTopOnEmpty",
+      "detail": "The method BoundedStackTests>>testErrorMessageForTopOnEmpty does not follow the heuristic: A test compares with assert: actual equals: expected, not with assert: expected = actual, so a failure shows both values."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testErrorMessageForInvalidCapacity",
+      "heuristic": "TestingForEqualityHeuristic",
+      "name": "Prefer assert:equals: over assert: with =",
+      "title": "Prefer assert:equals: over assert: with =: BoundedStackTests>>testErrorMessageForInvalidCapacity",
+      "detail": "The method BoundedStackTests>>testErrorMessageForInvalidCapacity does not follow the heuristic: A test compares with assert: actual equals: expected, not with assert: expected = actual, so a failure shows both values."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testPushAndPop",
+      "heuristic": "TestingForEqualityHeuristic",
+      "name": "Prefer assert:equals: over assert: with =",
+      "title": "Prefer assert:equals: over assert: with =: BoundedStackTests>>testPushAndPop",
+      "detail": "The method BoundedStackTests>>testPushAndPop does not follow the heuristic: A test compares with assert: actual equals: expected, not with assert: expected = actual, so a failure shows both values."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testSize",
+      "heuristic": "TestingForEqualityHeuristic",
+      "name": "Prefer assert:equals: over assert: with =",
+      "title": "Prefer assert:equals: over assert: with =: BoundedStackTests>>testSize",
+      "detail": "The method BoundedStackTests>>testSize does not follow the heuristic: A test compares with assert: actual equals: expected, not with assert: expected = actual, so a failure shows both values."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testSize",
+      "heuristic": "MethodComplexityHeuristic",
+      "name": "Method complexity",
+      "title": "Method complexity: BoundedStackTests>>testSize",
+      "detail": "The method BoundedStackTests>>testSize sends 20 messages; a method does not send more than 10 or so."
+    },
+    {
+      "kind": "method",
+      "target": "BoundedStackTests>>testSize",
+      "heuristic": "SizeComparedWithZeroHeuristic",
+      "name": "isEmpty over size = 0",
+      "title": "isEmpty over size = 0: BoundedStackTests>>testSize",
+      "detail": "The method BoundedStackTests>>testSize does not follow the heuristic: Prefer isEmpty and notEmpty over comparing size with 0."
+    }
+  ],
+  "llmReview": null,
+  "llmReviews": null,
+  "diff": {
+    "startingClasses": [],
+    "classesAdded": [
+      "BoundedStack",
+      "BoundedStackTests"
+    ],
+    "classesRemoved": [],
+    "startingMethods": 0,
+    "finalMethods": 22,
+    "methodsAdded": [
+      "BoundedStack class>>capacity:",
+      "BoundedStack>>initializeCapacity:",
+      "BoundedStack>>isEmpty",
+      "BoundedStack>>pop",
+      "BoundedStack>>push:",
+      "BoundedStack>>size",
+      "BoundedStack>>top",
+      "BoundedStackTests>>testCapacityMustBePositiveInteger",
+      "BoundedStackTests>>testCreateStackWithValidCapacity",
+      "BoundedStackTests>>testErrorMessageForFullStack",
+      "BoundedStackTests>>testErrorMessageForInvalidCapacity",
+      "BoundedStackTests>>testErrorMessageForPopOnEmpty",
+      "BoundedStackTests>>testErrorMessageForTopOnEmpty",
+      "BoundedStackTests>>testIsEmpty",
+      "BoundedStackTests>>testLIFOBehavior",
+      "BoundedStackTests>>testMultiplePushPopCycles",
+      "BoundedStackTests>>testPopOnEmptyStackFails",
+      "BoundedStackTests>>testPushAndPop",
+      "BoundedStackTests>>testPushOnFullStackFails",
+      "BoundedStackTests>>testSize",
+      "BoundedStackTests>>testTopOnEmptyStackFails",
+      "BoundedStackTests>>testTopWithoutRemoving"
+    ],
+    "methodsRemoved": [],
+    "methodsChanged": [],
+    "methodsUntouched": 0
+  },
+  "agent": {
+    "mode": "headless",
+    "model": "claude-haiku-4-5-20251001",
+    "effort": "low",
+    "status": "completed",
+    "elapsedSeconds": 70,
+    "turns": 36,
+    "costUsd": 0.09463689999999998,
+    "tokens": {
+      "input": 106,
+      "cacheWrite": 20974,
+      "cacheRead": 196729,
+      "output": 6582,
+      "thinking": 1500,
+      "requests": 13
+    },
+    "toolsServed": 32,
+    "toolDefinitionBytes": 16255,
+    "toolCalls": 35,
+    "toolCallsPerMinute": 30.0,
+    "toolErrors": 1,
+    "testRunCalls": 2,
+    "firstTestRunAtCall": 28,
+    "definitionsBeforeFirstTestRun": 25,
+    "refactoringToolCalls": 0,
+    "evaluateKinds": {}
+  },
+  "refactoringOpportunities": {
+    "definitions": 27,
+    "deletions": 0,
+    "redefinitions": {
+      "BoundedStack>>pop": 1,
+      "BoundedStackTests>>testErrorMessageForInvalidCapacity": 1,
+      "BoundedStackTests>>testErrorMessageForFullStack": 1,
+      "BoundedStackTests>>testErrorMessageForPopOnEmpty": 1,
+      "BoundedStackTests>>testErrorMessageForTopOnEmpty": 1
+    },
+    "redefinedMethods": 5,
+    "givenMethodsRewritten": [],
+    "manualRefactorings": 0,
+    "byKind": {},
+    "missedWhileToolAvailable": 0,
+    "afterAFailedToolCall": 0,
+    "failedRefactoringToolCalls": [],
+    "refactoringToolsAvailable": [],
+    "findings": []
+  },
+  "toolCalls": {
+    "agentCalls": 35,
+    "harnessCallsBefore": 0,
+    "harnessCallsAfter": 2,
+    "errors": 1,
+    "totalMilliseconds": 1227,
+    "totalAnswerChars": 3676,
+    "byTool": {
+      "smalltalk_define_method": {
+        "calls": 27,
+        "milliseconds": 88,
+        "answerChars": 702,
+        "errors": 1
+      },
+      "smalltalk_define_class": {
+        "calls": 2,
+        "milliseconds": 102,
+        "answerChars": 52,
+        "errors": 0
+      },
+      "smalltalk_run_test_class": {
+        "calls": 2,
+        "milliseconds": 7,
+        "answerChars": 375,
+        "errors": 0
+      },
+      "smalltalk_list_categories": {
+        "calls": 1,
+        "milliseconds": 1,
+        "answerChars": 2185,
+        "errors": 0
+      },
+      "smalltalk_list_classes": {
+        "calls": 1,
+        "milliseconds": 0,
+        "answerChars": 2,
+        "errors": 0
+      },
+      "smalltalk_method_source": {
+        "calls": 1,
+        "milliseconds": 0,
+        "answerChars": 170,
+        "errors": 0
+      },
+      "smalltalk_save_image": {
+        "calls": 1,
+        "milliseconds": 1029,
+        "answerChars": 190,
+        "errors": 0
+      }
+    },
+    "evaluateKinds": {},
+    "evaluateSamples": {},
+    "sequence": [
+      "smalltalk_list_categories",
+      "smalltalk_list_classes",
+      "smalltalk_define_class",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_class",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_run_test_class",
+      "smalltalk_method_source",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_define_method",
+      "smalltalk_run_test_class",
+      "smalltalk_save_image"
+    ]
+  },
+  "classes": [
+    {
+      "name": "BoundedStack",
+      "superclass": "Object",
+      "category": "BoundedStack",
+      "isTest": false,
+      "depth": 2,
+      "instanceVariables": [
+        "items",
+        "capacity",
+        "currentSize"
+      ],
+      "classInstanceVariables": [],
+      "instanceMethods": 6,
+      "classMethods": 1,
+      "hasComment": true
+    },
+    {
+      "name": "BoundedStackTests",
+      "superclass": "TestCase",
+      "category": "BoundedStack-Tests",
+      "isTest": true,
+      "depth": 3,
+      "instanceVariables": [],
+      "classInstanceVariables": [],
+      "instanceMethods": 15,
+      "classMethods": 0,
+      "hasComment": true
+    }
+  ],
+  "methods": [
+    {
+      "class": "BoundedStack",
+      "classSide": false,
+      "selector": "pop",
+      "category": "accessing",
+      "linesOfCode": 6,
+      "counts": {
+        "sends": 5,
+        "ifs": 1,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 0,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 1,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStack",
+      "classSide": false,
+      "selector": "push:",
+      "category": "accessing",
+      "linesOfCode": 4,
+      "counts": {
+        "sends": 5,
+        "ifs": 1,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 0,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 1,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStack",
+      "classSide": false,
+      "selector": "isEmpty",
+      "category": "accessing",
+      "linesOfCode": 2,
+      "counts": {
+        "sends": 1,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 0,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStack",
+      "classSide": false,
+      "selector": "top",
+      "category": "accessing",
+      "linesOfCode": 3,
+      "counts": {
+        "sends": 4,
+        "ifs": 1,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 0,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 1,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStack",
+      "classSide": false,
+      "selector": "size",
+      "category": "accessing",
+      "linesOfCode": 2,
+      "counts": {
+        "sends": 0,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 0,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStack",
+      "classSide": false,
+      "selector": "initializeCapacity:",
+      "category": "initialization",
+      "linesOfCode": 4,
+      "counts": {
+        "sends": 1,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 0,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStack",
+      "classSide": true,
+      "selector": "capacity:",
+      "category": "instance creation",
+      "linesOfCode": 3,
+      "counts": {
+        "sends": 7,
+        "ifs": 1,
+        "nilChecks": 0,
+        "typeChecks": 1,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 0,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 1,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testErrorMessageForPopOnEmpty",
+      "category": "tests",
+      "linesOfCode": 8,
+      "counts": {
+        "sends": 6,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 1,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 1,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testLIFOBehavior",
+      "category": "tests",
+      "linesOfCode": 9,
+      "counts": {
+        "sends": 13,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 3,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testErrorMessageForFullStack",
+      "category": "tests",
+      "linesOfCode": 9,
+      "counts": {
+        "sends": 7,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 1,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 1,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testMultiplePushPopCycles",
+      "category": "tests",
+      "linesOfCode": 10,
+      "counts": {
+        "sends": 15,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 3,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testTopWithoutRemoving",
+      "category": "tests",
+      "linesOfCode": 9,
+      "counts": {
+        "sends": 11,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 3,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testCreateStackWithValidCapacity",
+      "category": "tests",
+      "linesOfCode": 5,
+      "counts": {
+        "sends": 6,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 1,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 1,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testErrorMessageForTopOnEmpty",
+      "category": "tests",
+      "linesOfCode": 8,
+      "counts": {
+        "sends": 6,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 1,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 1,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testCapacityMustBePositiveInteger",
+      "category": "tests",
+      "linesOfCode": 4,
+      "counts": {
+        "sends": 6,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 0,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 3,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testTopOnEmptyStackFails",
+      "category": "tests",
+      "linesOfCode": 4,
+      "counts": {
+        "sends": 3,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 0,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 1,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testErrorMessageForInvalidCapacity",
+      "category": "tests",
+      "linesOfCode": 6,
+      "counts": {
+        "sends": 5,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 1,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 1,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testPopOnEmptyStackFails",
+      "category": "tests",
+      "linesOfCode": 4,
+      "counts": {
+        "sends": 3,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 0,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 1,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testPushAndPop",
+      "category": "tests",
+      "linesOfCode": 9,
+      "counts": {
+        "sends": 10,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 2,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testIsEmpty",
+      "category": "tests",
+      "linesOfCode": 8,
+      "counts": {
+        "sends": 9,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 0,
+        "assertNot": 0,
+        "deny": 1,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testSize",
+      "category": "tests",
+      "linesOfCode": 12,
+      "counts": {
+        "sends": 20,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 2,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 5,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 0,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    },
+    {
+      "class": "BoundedStackTests",
+      "classSide": false,
+      "selector": "testPushOnFullStackFails",
+      "category": "tests",
+      "linesOfCode": 6,
+      "counts": {
+        "sends": 5,
+        "ifs": 0,
+        "nilChecks": 0,
+        "typeChecks": 0,
+        "identityComparisons": 0,
+        "sizeEqualsZero": 0,
+        "isEmptyIfTrue": 0,
+        "andOrWithoutBlock": 0,
+        "assertEquals": 0,
+        "assertOnEquality": 0,
+        "assertNot": 0,
+        "deny": 0,
+        "shouldRaise": 1,
+        "errorWithLiteralString": 0,
+        "hasComment": false,
+        "parsed": true,
+        "nilReferences": 0
+      }
+    }
+  ]
+}

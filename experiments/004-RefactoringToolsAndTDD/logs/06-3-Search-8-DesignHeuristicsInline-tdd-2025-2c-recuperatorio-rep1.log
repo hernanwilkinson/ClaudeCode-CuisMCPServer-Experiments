@@ -1,0 +1,27 @@
+==> job 6: rep 1, 3-Search / 8-DesignHeuristicsInline / tdd / exercises/2025-2c-recuperatorio
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/3-Search_8-DesignHeuristicsInline_tdd/2025-2c-recuperatorio/20260911-155316-55727
+    image serving 41 tools on port 59227
+    installing starting/2025-2C-Recuperatorio-Original.st
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/scripts/2-runCell.sh: line 541: 55779 Terminated: 15          ( sleep "$TIMEOUT"; kill -TERM "$CLAUDE_PID" 2> /dev/null && echo "timeout after ${TIMEOUT}s" >> "$RUN/claude-stderr.log" ) > /dev/null 2>&1
+    claude exited with status 0 after 2668s, 214 tool calls logged by the server
+    saving the image
+    filing out package 2025-2C-Recuperatorio
+    status completed, turns 124, cost $5.9461875000000015
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/3-Search_8-DesignHeuristicsInline_tdd/2025-2c-recuperatorio/20260911-155316-55727
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/3-Search_8-DesignHeuristicsInline_tdd/2025-2c-recuperatorio/20260911-155316-55727
+    installing the run's package 2025-2C-Recuperatorio
+    acceptance test classes: TodasLasCombinacionesTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260911-155316-55727: 3-Search / 8-DesignHeuristicsInline / tdd / 2025-2c-recuperatorio
+  acceptance         5/5 passed, 0 failed, 0 errors
+  agent tests        14/14 passed, 0 failed, 0 errors
+  coverage           by all tests 98.1%, by the agent's tests 98.1%
+  test smells        3
+  model              10 classes, 66 methods, 1.82 sends/method, 0 over 10, ifs 0, nil checks 0, type checks 0
+  diff               +88 methods, ~0 changed, -2 removed; classes +11 -0
+  tool calls         123 by the agent, 1 errors, evaluate kinds {'other': 4}
+  mentor             37 findings {'Keyword message send format': 14, 'Method complexity': 9, 'No class-name prefix in names': 7, 'Move helper method to the right class': 3, 'No empty method categories': 3, 'No extra parenthesis': 1}
+  agent              claude-opus-5 effort high, 2668s, cost $5.9461875000000015, tokens in 2,594 cache-read 5,885,214 out 72,282
+  refactorings       21 done by hand {'manualChangeSignature': 5, 'manualExtractMethod': 10, 'manualExtractFromSimilarCode': 3, 'manualMoveMethod': 3}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 19 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/3-Search_8-DesignHeuristicsInline_tdd/2025-2c-recuperatorio/20260911-155316-55727/analysis.json

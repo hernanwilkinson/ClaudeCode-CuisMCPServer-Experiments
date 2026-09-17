@@ -1,0 +1,25 @@
+{
+  "name": "2020-1c-recuperatorio-parcial1",
+  "title": "Locomotive automatic and manual control",
+  "kind": "refactoring",
+  "package": "ISW1-2020-1C-Recu1erParcial",
+  "description": "A locomotive in manual or automatic mode reacts to obstacles (proximity sensor) and curves (odometer friction) by accelerating, decelerating and applying its brakes. The student must remove the repeated code and the nested ifs from Locomotive>>step and the duplication in the tests without changing behaviour.",
+  "startingPackages": ["starting/ISW1-2020-1C-Recu1erParcial.st"],
+  "solutionPackages": [],
+  "acceptanceTests": null,
+  "source": "2020-1c/Recuperatorios",
+  "semester": "2020-1c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "The manual/automatic boolean flag and the curve/obstacle conditions are nested three levels deep in step; the good design reifies the pilot mode as state objects and pushes the accelerate/decelerate and brake/release decisions into them, while the tests need a builder for the locomotive with simulated sensors."
+  },
+  "sizeHint": {"classesInStartingCode": 7, "methodsInStartingCode": 30}
+}

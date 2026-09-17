@@ -1,0 +1,25 @@
+{
+  "name": "2024-2c-recuperatorio-parcial1",
+  "title": "Tetris Prototype (pieces and movement)",
+  "kind": "greenfield",
+  "package": "2024-2C-Recuperatorio",
+  "description": "A simplified Tetris on a walled board of at least 4x5 whose state is checked through a string representation. In this reduced scope the student models the game and the five tetrominoes (chosen by a random number), the tick that moves the current piece down, moving it left and right, and the rule that pieces cannot leave the board.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/2024-2C-Recuperatorio.st"],
+  "acceptanceTests": null,
+  "source": "2024-2c/Recuperatorio",
+  "semester": "2024-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "The five piece shapes invite five subclasses or five sets of offsets, the random number must be mapped to a piece without a case statement, and the board rendering to strings plus the anchor-position convention must be designed from nothing."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

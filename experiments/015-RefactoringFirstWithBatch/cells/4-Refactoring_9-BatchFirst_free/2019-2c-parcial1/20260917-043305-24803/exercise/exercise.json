@@ -1,0 +1,25 @@
+{
+  "name": "2019-2c-parcial1",
+  "title": "Ada's Coffee Shop Rewards",
+  "kind": "refactoring",
+  "package": "IngSof1-2019-2C-1Parcial",
+  "description": "A coffee shop sales system rewards customers with combos priced by customer type (Gold/Silver/Normal) according to the volume of coffee bought. The student must remove duplication in the given tests and replace the ifs on product and customer-type symbols with polymorphism, keeping the 14 tests green.",
+  "startingPackages": ["starting/IngSof1-2019-2C-1Parcial.st"],
+  "solutionPackages": ["solution/IngSof1-2019-2C-1Parcial-SolucionMinima.st", "solution/IngSof1-2019-2C-1Parcial-SolucionMaxima.st"],
+  "acceptanceTests": null,
+  "source": "2019-2c/1erParcial",
+  "semester": "2019-2c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Products and customer types are plain symbols (#Combo1, #Gold...) compared with = in several places; the student must turn them into collaborating objects (product and customer-type hierarchies) and also refactor test duplication with setUp/helper methods without changing behavior."
+  },
+  "sizeHint": {"classesInStartingCode": 13, "methodsInStartingCode": 48}
+}

@@ -1,0 +1,25 @@
+{
+  "name": "2025-2c-recuperatorio",
+  "title": "Aterrizar.com flight search",
+  "kind": "greenfield",
+  "package": "2025-2C-Recuperatorio",
+  "description": "Build a flight search engine for a travel site: flight definitions (code, airports, weekdays, departure time, duration, cost), one-way, round-trip and multi-leg searches that check seat availability through an external REST passenger counter, and special-date and leg discounts reported per amount. The student builds the model with TDD; only a combinations helper on OrderedCollection and its tests are given.",
+  "startingPackages": ["starting/2025-2C-Recuperatorio-Original.st"],
+  "solutionPackages": ["solution/2025-2c-Recuperatorio-Solucion.st", "solution/2025-2c-Recu-Video.st"],
+  "acceptanceTests": null,
+  "source": "2025-2c/Recu",
+  "semester": "2025-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Round-trip and one-way searches are special cases of the multi-leg search (legs combined with #todasLasCombinaciones and filtered by chronological order, weekday and availability), the external REST passenger counter must be abstracted and simulated in tests, and discounts are polymorphic objects that must report which ones applied and for how much."
+  },
+  "sizeHint": {"classesInStartingCode": 1, "methodsInStartingCode": 7}
+}

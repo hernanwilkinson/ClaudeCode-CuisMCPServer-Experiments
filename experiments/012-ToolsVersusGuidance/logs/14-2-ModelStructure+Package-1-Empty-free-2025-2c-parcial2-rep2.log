@@ -1,0 +1,27 @@
+==> job 14: rep 2, 2-ModelStructure+Package / 1-Empty / free / exercises/2025-2c-parcial2
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/012-ToolsVersusGuidance/cells/2-ModelStructure+Package_1-Empty_free/2025-2c-parcial2/20260917-013046-35590
+    image serving 34 tools on port 64083
+    warm-up (given tests run once before the session): classes 0 run 0 passed 0 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 183s, 27 tool calls logged by the server
+    saving the image
+    filing out package 2025-2C-2doParcial
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 11, cost $0.9483415000000001
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/012-ToolsVersusGuidance/cells/2-ModelStructure+Package_1-Empty_free/2025-2c-parcial2/20260917-013046-35590
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/012-ToolsVersusGuidance/cells/2-ModelStructure+Package_1-Empty_free/2025-2c-parcial2/20260917-013046-35590
+    installing the run's package 2025-2C-2doParcial
+    acceptance test classes: none
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260917-013046-35590: 2-ModelStructure+Package / 1-Empty / free / 2025-2c-parcial2
+  acceptance         none
+  agent tests        27/27 passed, 0 failed, 0 errors
+  coverage           by all tests 86.2%, by the agent's tests 86.2%
+  test smells        5
+  model              14 classes, 61 methods, 2.07 sends/method, 0 over 10, ifs 8, nil checks 0, type checks 0
+  diff               +97 methods, ~0 changed, -0 removed; classes +15 -0
+  tool calls         10 by the agent, 3 errors, evaluate kinds {'reflection': 1, 'other': 6}
+  mentor             60 findings {'Keyword message send format': 37, 'No empty method categories': 8, 'Method complexity': 8, 'Move helper method to the right class': 3, 'Instance variables read & written': 1, 'Methods have senders': 1, 'Avoid setters': 1, 'No extra parenthesis': 1}
+  agent              claude-opus-5 effort high, 183s, cost $0.9483415000000001, tokens in 22 cache-read 151,553 out 22,467
+  refactorings       0 done by hand {}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/012-ToolsVersusGuidance/cells/2-ModelStructure+Package_1-Empty_free/2025-2c-parcial2/20260917-013046-35590/analysis.json

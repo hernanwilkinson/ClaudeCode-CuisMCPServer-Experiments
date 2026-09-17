@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c17-customerimporter-4",
+  "title": "Customer Importer 4: supplier import with TDD",
+  "kind": "feature",
+  "package": "10Pines-C17",
+  "description": "The tested, database-decoupled customer importer must grow into an ERP system: add with TDD an import of suppliers from records S (supplier), NC (new customer of the supplier), EC (existing customer of the supplier) and A (supplier address), with the same validation of record types and field counts, reusing the customer import logic and keeping transient and persistent implementations selectable by the environment.",
+  "startingPackages": ["starting/10Pines-C17-76.st"],
+  "solutionPackages": ["solution/10Pines-C17-130.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C17 - TDD Avanzado",
+  "semester": "10pines-c17",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": true,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Adding a second importer that shares the record loop, the address import and the customer-record parsing with the existing one forces extracting a PartyImporter superclass (pull up), a Party superclass of Customer and Supplier, a PartyIdentification parameter object for the type/number pairs, and an ErpSystem composed of customer and supplier sub-systems in transient and persistent variants; the supplier importer must look customers up in the customer sub-system."
+  },
+  "sizeHint": {"classesInStartingCode": 11, "methodsInStartingCode": 112}
+}

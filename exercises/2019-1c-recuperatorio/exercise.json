@@ -1,0 +1,25 @@
+{
+  "name": "2019-1c-recuperatorio",
+  "title": "Fast Food Store Working Hours",
+  "kind": "greenfield",
+  "package": "Recu-1c2019",
+  "description": "Employees of a fast food store register weekly availability either as a weekday range with one time slot or as per-weekday time slots; a sheet answers whether the employee works at a given date-time (end hour excluded), and the store reports which hourly slots between 7:00 and 23:00 of a week nobody covers. The student must build the model from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/Recuperatorio-SolucionDeVideo.st"],
+  "acceptanceTests": null,
+  "source": "2019-1c",
+  "semester": "2019-1c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "Two ways of declaring availability (weekday interval vs per-weekday) should be polymorphic working-hours objects answering includes:, and the uncovered-hours query is a nested date/hour traversal that should be expressed with intervals and select:/reject:/anySatisfy: over the employees' sheets."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

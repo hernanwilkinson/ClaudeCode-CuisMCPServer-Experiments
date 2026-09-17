@@ -1,0 +1,30 @@
+{
+  "name": "10pines-c6-gameoflife",
+  "title": "Conway's Game of Life",
+  "kind": "greenfield",
+  "package": "GameOfLife",
+  "description": "Conway's Game of Life on a bounded board of Point cells: create a game from its live cells and board size (cells outside the board are rejected), ask whether a cell is alive or dead, count live neighbours and compute the next generation from the survival and birth rules. Built from scratch with TDD; the exercise is defined by the course's solution file since no slide defines it.",
+  "startingPackages": [],
+  "solutionPackages": [
+    "solution/GameOfLife.st"
+  ],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C6 - Construccion de Software Seguro usando Test Driven Development",
+  "semester": "10pines-c6",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "Representing the grid as a set of live cells versus a matrix, and computing all cell transitions simultaneously from the previous generation, are the design decisions the tests drive out."
+  },
+  "sizeHint": {
+    "classesInStartingCode": 0,
+    "methodsInStartingCode": 0
+  }
+}

@@ -1,0 +1,25 @@
+==> job 1: rep 1, 3-Search / 8-DesignHeuristicsInline / tdd / exercises/2023-2c-parcial2
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/3-Search_8-DesignHeuristicsInline_tdd/2023-2c-parcial2/20260911-151410-39007
+    image serving 41 tools on port 54327
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 1023s, 259 tool calls logged by the server
+    saving the image
+    filing out package ISW1-2023-2C-2doParcial
+    status completed, turns 177, cost $7.500488500000003
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/3-Search_8-DesignHeuristicsInline_tdd/2023-2c-parcial2/20260911-151410-39007
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/3-Search_8-DesignHeuristicsInline_tdd/2023-2c-parcial2/20260911-151410-39007
+    installing the run's package ISW1-2023-2C-2doParcial
+    acceptance test classes: none
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260911-151410-39007: 3-Search / 8-DesignHeuristicsInline / tdd / 2023-2c-parcial2
+  acceptance         none
+  agent tests        39/39 passed, 0 failed, 0 errors
+  coverage           by all tests 99.6%, by the agent's tests 99.6%
+  test smells        11
+  model              9 classes, 77 methods, 1.9 sends/method, 0 over 10, ifs 9, nil checks 0, type checks 0
+  diff               +121 methods, ~0 changed, -0 removed; classes +10 -0
+  tool calls         176 by the agent, 0 errors, evaluate kinds {'reflection': 1}
+  mentor             58 findings {'Keyword message send format': 24, 'Method complexity': 14, 'Move helper method to the right class': 11, 'No class-name prefix in names': 4, 'No empty method categories': 3, 'Avoid setters': 2}
+  agent              claude-opus-5 effort high, 1023s, cost $7.500488500000003, tokens in 5,026 cache-read 9,314,687 out 68,731
+  refactorings       14 done by hand {'manualExtractFromSimilarCode': 2, 'manualExtractMethod': 11, 'manualChangeSignature': 1}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 20 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/3-Search_8-DesignHeuristicsInline_tdd/2023-2c-parcial2/20260911-151410-39007/analysis.json

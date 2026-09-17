@@ -1,0 +1,10 @@
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/010-VariancePilot/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-004943-99392
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/010-VariancePilot/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-004943-99391
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/010-VariancePilot/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-005112-1614
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/010-VariancePilot/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-005124-1776
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/010-VariancePilot/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-005237-2449
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/010-VariancePilot/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-005256-2885
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/010-VariancePilot/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-005402-4127
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/010-VariancePilot/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-005434-5016
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/010-VariancePilot/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-005533-7806
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/010-VariancePilot/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260917-005602-8591

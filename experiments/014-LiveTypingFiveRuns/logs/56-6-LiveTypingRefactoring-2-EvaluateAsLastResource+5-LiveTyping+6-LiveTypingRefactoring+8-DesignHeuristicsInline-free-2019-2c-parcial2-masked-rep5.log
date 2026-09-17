@@ -1,0 +1,28 @@
+==> job 56: rep 5, 6-LiveTypingRefactoring / 2-EvaluateAsLastResource,5-LiveTyping,6-LiveTypingRefactoring,8-DesignHeuristicsInline / free / exercises/2019-2c-parcial2-masked
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/014-LiveTypingFiveRuns/cells/6-LiveTypingRefactoring_2-EvaluateAsLastResource+5-LiveTyping+6-LiveTypingRefactoring+8-DesignHeuristicsInline_free/2019-2c-parcial2-masked/20260917-041849-23520
+    image serving 81 tools on port 51923
+    installing starting/SurveyCrawler.st
+    warm-up (given tests run once before the session): classes 1 run 16 passed 16 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 329s, 42 tool calls logged by the server
+    saving the image
+    filing out package SurveyCrawler
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 18, cost $1.876087
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/014-LiveTypingFiveRuns/cells/6-LiveTypingRefactoring_2-EvaluateAsLastResource+5-LiveTyping+6-LiveTypingRefactoring+8-DesignHeuristicsInline_free/2019-2c-parcial2-masked/20260917-041849-23520
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/014-LiveTypingFiveRuns/cells/6-LiveTypingRefactoring_2-EvaluateAsLastResource+5-LiveTyping+6-LiveTypingRefactoring+8-DesignHeuristicsInline_free/2019-2c-parcial2-masked/20260917-041849-23520
+    installing the run's package SurveyCrawler
+    acceptance test classes: SurveyCrawlerTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260917-041849-23520: 6-LiveTypingRefactoring / 2-EvaluateAsLastResource+5-LiveTyping+6-LiveTypingRefactoring+8-DesignHeuristicsInline / free / 2019-2c-parcial2-masked
+  acceptance         51/51 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 94.4%, by the agent's tests None
+  test smells        2
+  model              25 classes, 133 methods, 1.34 sends/method, 0 over 10, ifs 0, nil checks 0, type checks 0
+  diff               +128 methods, ~9 changed, -8 removed; classes +19 -0
+  tool calls         17 by the agent, 5 errors, evaluate kinds {}
+  mentor             47 findings {'Keyword message send format': 19, 'No empty method categories': 9, 'Class is referenced': 7, 'Methods are categorized': 4, 'Method complexity': 3, 'No class-name prefix in names': 2, 'Move helper method to the right class': 2, 'Instance creation format': 1}
+  agent              claude-opus-5 effort high, 329s, cost $1.876087, tokens in 24 cache-read 625,924 out 38,353
+  refactorings       9 done by hand {'manualExtractMethod': 9}, 9 while a tool was available, 0 right after the tool failed; 1 refactoring tool calls, 0 of them failed; 2 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/014-LiveTypingFiveRuns/cells/6-LiveTypingRefactoring_2-EvaluateAsLastResource+5-LiveTyping+6-LiveTypingRefactoring+8-DesignHeuristicsInline_free/2019-2c-parcial2-masked/20260917-041849-23520/analysis.json

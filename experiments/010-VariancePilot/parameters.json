@@ -1,0 +1,4 @@
+{"experiment": "010-VariancePilot", "hypothesis": "E0 pilot: run-to-run variance of one cell on one exercise, same day. Ten runs of 1-Evaluate+TestRunning with no guidance on Ada's Coffee (2019-2c-parcial1), Opus 5 high, free technique, two in parallel. Purpose: measure the spread of tokens, requests and calls across identical runs so the other experiments' one-to-four-run comparisons can be read against it (H5 of the research design: fewer than five runs per cell is not interpretable).",
+ "cells": "1-Evaluate+TestRunning:1-Empty:free", "exercises": "exercises/2019-2c-parcial1", "repetitions": 10,
+ "model": "claude-opus-5", "effort": "high", "technique": "free", "budget": 15, "timeout": 2400,
+ "parallel": 2, "startedAt": "2026-09-17T03:49:43Z", "claudeCodeVersion": "2.1.268 (Claude Code)"}

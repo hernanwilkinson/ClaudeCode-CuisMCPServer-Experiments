@@ -1,0 +1,27 @@
+==> job 13: rep 2, 1-Evaluate+TestRunning / 1-Empty / free / exercises/2025-2c-parcial2
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/012-ToolsVersusGuidance/cells/1-Evaluate+TestRunning_1-Empty_free/2025-2c-parcial2/20260917-012928-35381
+    image serving 7 tools on port 64041
+    warm-up (given tests run once before the session): classes 0 run 0 passed 0 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 171s, 18 tool calls logged by the server
+    saving the image
+    filing out package 2025-2C-2doParcial
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 19, cost $0.8700354999999999
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/012-ToolsVersusGuidance/cells/1-Evaluate+TestRunning_1-Empty_free/2025-2c-parcial2/20260917-012928-35381
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/012-ToolsVersusGuidance/cells/1-Evaluate+TestRunning_1-Empty_free/2025-2c-parcial2/20260917-012928-35381
+    installing the run's package 2025-2C-2doParcial
+    acceptance test classes: none
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260917-012928-35381: 1-Evaluate+TestRunning / 1-Empty / free / 2025-2c-parcial2
+  acceptance         none
+  agent tests        28/28 passed, 0 failed, 0 errors
+  coverage           by all tests 92.4%, by the agent's tests 92.4%
+  test smells        3
+  model              12 classes, 57 methods, 2.23 sends/method, 0 over 10, ifs 8, nil checks 0, type checks 0
+  diff               +91 methods, ~0 changed, -0 removed; classes +13 -0
+  tool calls         18 by the agent, 6 errors, evaluate kinds {'reflection': 6, 'other': 5, 'definesCode': 6}
+  mentor             57 findings {'Keyword message send format': 38, 'Method complexity': 11, 'No empty method categories': 5, 'Move helper method to the right class': 2, 'No class-name prefix in names': 1}
+  agent              claude-opus-5 effort high, 171s, cost $0.8700354999999999, tokens in 36 cache-read 241,581 out 19,739
+  refactorings       0 done by hand {}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/012-ToolsVersusGuidance/cells/1-Evaluate+TestRunning_1-Empty_free/2025-2c-parcial2/20260917-012928-35381/analysis.json

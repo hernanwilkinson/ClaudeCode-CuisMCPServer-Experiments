@@ -1,0 +1,25 @@
+{
+  "name": "2021-2c-recuperatorio-parcial2",
+  "title": "ISW-Prop: real estate sales and deposits",
+  "kind": "greenfield",
+  "package": "ISW1-2021-2C-Recuperatorio-2doParcial",
+  "description": "A real estate agency with properties located in neighborhoods, square-meter prices per neighborhood and month, and price modifiers (established, differential within +/-15%, weekend or chosen-weekday surcharge). The student must design from scratch with TDD the selling and deposit (seña) flow: a 10% deposit freezes the price and takes the property off the market until a deadline, paying the rest turns it into a sale, an expired deposit puts it back on sale, and all sales and active deposits are kept for auditing.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/ISW1-2021-2C-Recuperatorio-2doParcial-Solucion.st"],
+  "acceptanceTests": null,
+  "source": "2021-2c/Recuperatorio",
+  "semester": "2021-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "Beyond the obvious price-modifier hierarchy, the property lifecycle (for sale -> reserved with a frozen price -> sold, or back to for sale when the deadline passes, checked lazily at payment time) plus the audit requirement forces the student to reify sales and deposits as transactions and decide who owns the state (the agency's collections versus the property), while prices are looked up by neighborhood and month with Aconcagua money-per-area measures and Chalten dates."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

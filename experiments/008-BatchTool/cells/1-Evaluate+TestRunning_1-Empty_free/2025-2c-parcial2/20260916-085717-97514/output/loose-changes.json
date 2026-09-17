@@ -1,0 +1,14 @@
+{
+  "methods": [
+    "a MethodReference MCPImageTools>>#addToolsTo:"
+  ],
+  "classesChangedOutsidePackage": [
+    "MCPImageTools"
+  ],
+  "changeSets": [
+    "UnsavedChangesTo-MCPServer (1 methods)",
+    "8186-CuisCore-AuthorName-2026Sep16-08h58m (0 methods)",
+    "UnsavedChangesTo-2025 (93 methods)"
+  ],
+  "fileOutChars": 169
+}

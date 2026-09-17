@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c1-numero",
+  "title": "Numero: Entero and Fraccion arithmetic",
+  "kind": "feature",
+  "package": "Numero-Exercise",
+  "description": "A small number model (Numero with subclasses Entero and Fraccion) where integers and fractions must add, multiply and divide with each other, reduce fractions, collapse to an Entero when the denominator is one and refuse division by zero. The student must make the 26 given tests pass (the mixed Entero/Fraccion operations do not work yet) and end with a design that does not ask objects for their class: the intermediate solution uses isKindOf:, the final one uses double dispatch.",
+  "startingPackages": ["starting/Numero-Exercise.st"],
+  "solutionPackages": ["solution/Numero-Solution-intermedia.st", "solution/Numero-Solution-final.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C1 - Diseño Avanzado de Software con Objetos I",
+  "semester": "10pines-c1",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "The binary operations + * / receive either an Entero or a Fraccion and the given code assumes the argument is of the receiver's own class; the quick fix is an isKindOf: test in every operation, and the point of the exercise is to replace those conditionals with double dispatch (masEntero:/masFraccion:, porEntero:/porFraccion:, divididoEntero:/divididoFraccion:) while keeping fraction reduction and the Entero/Fraccion collapse rules in Fraccion class>>with:over:."
+  },
+  "sizeHint": {"classesInStartingCode": 7, "methodsInStartingCode": 58}
+}

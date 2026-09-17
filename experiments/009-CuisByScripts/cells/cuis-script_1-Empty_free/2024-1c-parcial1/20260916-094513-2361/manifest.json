@@ -1,0 +1,145 @@
+{
+  "experiment": "009-CuisByScripts",
+  "runId": "20260916-094513-2361",
+  "warmUp": "tests run: 39, passed: 39, failed: 0, errors: 0",
+  "mode": "headless",
+  "scenario": "cuis-script",
+  "imageScenario": "1-Evaluate+TestRunning-University",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2024-1c-parcial1",
+  "package": "ISW1-2024-1C-Parcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 009-CuisByScripts, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "1-Evaluate+TestRunning-University",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8185.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-1-Evaluate+TestRunning-University.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools"
+    ],
+    "decorators": [],
+    "batchTool": false,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:38:30Z",
+    "imageSha256": "4c1d91a3b892f3b5803a3756aa306e2d99c56c6cb7a5482907c88fc64794a87f"
+  },
+  "toolsServed": 0,
+  "toolDefinitionBytes": 0,
+  "hashes": {
+    "prompt.md": "b7bfe4e2c4b627eb885cf3020c7cbaa04f4b79dcc230a0e0878777849b5974eb",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec.md": "8199582ea987c4a9cb945359dab13e0a3aefb3fa2154571c3b009e0e31fbf09f",
+    "wrapper": "0569491dce202e69376b073269281a7858bd4a81e2c6159c08c0c922d0dbbe43"
+  },
+  "startedAt": "2026-09-16T12:45:17Z",
+  "endedAt": "2026-09-16T12:49:20Z",
+  "elapsedSeconds": 243,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "scriptRuns": {
+    "total": 10,
+    "failed": 0,
+    "testRuns": 3
+  },
+  "changesBytesAtStart": 8665762,
+  "changesBytesAtEnd": 8730020,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.1901,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 16,
+        "cache_write_5m": 0,
+        "cache_write_1h": 45659,
+        "cache_read": 207629,
+        "output": 25185,
+        "thinking": 8842,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 8,
+        "cost_usd": 1.1901095
+      }
+    },
+    "toolCalls": {
+      "Bash": 7
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 8,
+    "durationMs": 241842,
+    "durationApiMs": 223799,
+    "totalCostUsd": 1.1901095000000002,
+    "usage": {
+      "input_tokens": 16,
+      "cache_creation_input_tokens": 45659,
+      "cache_read_input_tokens": 207629,
+      "output_tokens": 25185,
+      "output_tokens_details": {
+        "thinking_tokens": 8842
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 45659,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1561,
+          "cache_read_input_tokens": 47398,
+          "cache_creation_input_tokens": 2694,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2694
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 16,
+        "outputTokens": 25185,
+        "cacheReadInputTokens": 207629,
+        "cacheCreationInputTokens": 45659,
+        "webSearchRequests": 0,
+        "costUSD": 1.1901095000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 8842,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "I finished all 8 items, including the bonus, and saved them in the image. `./cuis.sh run-tests.st` gives **40 run, 40 passed, 0 failed, 0 errors**. That's the original 39 plus one new Floor test. The test classes are now in `ISW1-2024-1C-Parcial-Tests`, and the model classes stay in `ISW1-2024-1C-Parcial`.\n\n**1\u20132. Creating Floor and Hotel**\n- A floor is now created with `Floor withRooms: aNumberOfRooms pricedAt: aPriceList`. It runs all the checks before it builds anything, then calls `initializeWithRooms:pricedAt:`.\n- A hotel is now created with `Hotel withFloors:`, which also checks its input first.\n- I removed the old setters (`setNumberOfRooms:`, `setPrices:`, `setFloors:`) and the `whileTrue:` loop that built the rooms. `createFloorWith:and:` and `createHotel` in the tests now use the new messages.\n- I fixed an existing bug: `Floor class>>signalUnknownGuestType` was sending `self class unknownGuestTypeErrorDescription`, so it asked the metaclass, which doesn't understand that message.\n- The Hotel's `availableRoomsCount` was a counter it decremented by hand. I removed it; the number of available rooms is now calculated from the floors.\n\n**3\u20134. Room states**\n- `nil` and `#reserved` are replaced by a state object: `RoomState`, with subclasses `AvailableRoomState`, `ReservedRoomState` and `OccupiedRoomState` (which holds the guest type).\n- `Room>>receive:`, `receiveWithReservation:` and `reserve` are now one line each: they pass the request to the state.\n- `RoomState` raises the matching error by default. Each subclass only overrides the moves it allows, so there are no `ifTrue:` checks left.\n- Profit and loss also depend on the state:\n  - **Available:** profit is 0; loss is the highest price in the list.\n  - **Reserved:** profit is half the lowest price; loss is 0.\n  - **Occupied:** profit is the price for that guest type; loss is 0.\n\n**5\u20136. Encapsulation and losses**\n- Floor has new messages: `receive:atRoom:ifNone:`, `receiveWithReservation:atRoom:ifNone:` and `reserveRoom:ifNone:`. They share one private method, `withRoomNumber:do:ifNone:`.\n- Hotel uses these, so the `Floor>>rooms` accessor is gone and nothing refers to it.\n- I added `Room>>lossUsing:ifAbsentGuestType:` and removed `shouldFail:` from Room tests 13\u201315.\n- `Floor>>totalProfits` and `Floor>>totalLosses` now just add up each room's profit or loss with `sum:`. `Hotel>>totalLosses` adds up the floors' losses.\n\n**7. Repeated code in Hotel**\n- The three guest methods share `floorNumber:` and are one line each. They still each pass the same `ifNone:` block that raises the \"room does not exist\" error. I kept that on purpose: going further made the code harder to read.\n- `totalProfits`, `totalLosses`, `totalRooms`, `totalRoomsAvailable`, `totalRoomsOccupied` and `totalRoomsReserved` all use `sumForEachFloor:`.\n- `isEmpty` is now `floors allSatisfy: [:floor | floor isAvailable]`.\n\n**8. Bonus: tests**\n- A new superclass, `SimsHotelTest`, holds the helpers the three test classes shared: the price list, guest types, prices and `createFloorWith:and:`.\n- The tests no longer reach into `floor rooms`.\n- I pulled the repeated checks into helpers such as `assertFloor:hasAvailable:occupied:reserved:`, `assertIsUntouched:` and `assertOn:that:failsWith:`, used by Hotel tests 09\u201312.\n- The new test is `FloorTest>>test10`: it checks that the `ifNone:` block runs when a room number doesn't exist.\n\nTwo things came up while doing this:\n- My first run reported 80 tests. Marking `SimsHotelTest` as abstract made its suite include its subclasses' tests, and `run-tests.st` also runs each subclass, so every test ran twice. I removed that override, and the superclass now runs no tests of its own.\n- Removing `availableRoomsCount` left a stale entry in `Undeclared`. I confirmed nothing refers to it and deleted it."
+  }
+}

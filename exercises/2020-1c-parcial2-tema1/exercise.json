@@ -1,0 +1,25 @@
+{
+  "name": "2020-1c-parcial2-tema1",
+  "title": "Warehouse robots – cleaning trailers and product shipping (Tema 1)",
+  "kind": "feature",
+  "package": "ISW1-2020-1C-2doParcial",
+  "description": "Starting from the first-midterm warehouse model (robots, products, trailers, cashier), the student must add smart trailers with pluggable cleaners (bleach sprayer skipping type A products, UV emitter) without modifying the Trailer class, and model shipping a robot's trailer through a distribution center that picks a cargo vehicle by destination, arrival time (via a simulated external travel-time service) and weight capacity, using a configurable selection criterion (lightest vehicle or last to arrive).",
+  "startingPackages": ["starting/ISW1-2020-1C-2doParcial-CodigoParaEmpezar.st"],
+  "solutionPackages": ["solution/ISW1-2020-1C-2doParcial-SolucionDeVideo.st", "solution/ISW1-2020-1C-2doParcial-SolucionDecoratorRobotShipper.st"],
+  "acceptanceTests": null,
+  "source": "2020-1c/2doParcial",
+  "semester": "2020-1c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Open/closed pressure everywhere: Trailer cannot be modified so cleaners need a decorator or wrapper plus double dispatch on the product kind, the selection criterion must be a swappable strategy object, and the vehicle choice is a select:/detect:/inject: pipeline over heterogeneous vehicles whose travel times come from a simulated external service."
+  },
+  "sizeHint": {"classesInStartingCode": 21, "methodsInStartingCode": 117}
+}

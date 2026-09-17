@@ -1,0 +1,159 @@
+{
+  "experiment": "017-CrypticNamesHiddenDomain",
+  "runId": "20260917-063625-56267",
+  "warmUp": "classes 1 run 25 passed 25 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-parcial1-cryptic",
+  "package": "Task2",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 017-CrypticNamesHiddenDomain, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "batchTool": true,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:37:10Z",
+    "imageSha256": "b5f4b366a56949d0350d29a2756efc4fed4b2a6aa266163385aaa745d6efa3a5"
+  },
+  "toolsServed": 74,
+  "toolDefinitionBytes": 69457,
+  "hashes": {
+    "prompt.md": "e8efac97ce7743107ec34a6a8844d7f49eb3a0b2702acab2d3f5baa7a22f148f",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "b063dca249f3776a66c87912c8ec31cca550a614644a15c80c6d6a2edd00e645",
+    "skills": {}
+  },
+  "port": 54815,
+  "startedAt": "2026-09-17T09:36:27Z",
+  "endedAt": "2026-09-17T09:41:29Z",
+  "elapsedSeconds": 302,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 49,
+    "agentCalls": 47
+  },
+  "changesBytesAtStart": 5198805,
+  "changesBytesAtEnd": 5244481,
+  "usageFromTranscript": {
+    "totalCostUsd": 1.6872,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 18,
+        "cache_write_5m": 0,
+        "cache_write_1h": 59384,
+        "cache_read": 422183,
+        "output": 35288,
+        "thinking": 19375,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 9,
+        "cost_usd": 1.6872215
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_batch": 6,
+      "mcp__Cuis__smalltalk_class_source": 1,
+      "mcp__Cuis__smalltalk_define_methods": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 9,
+    "durationMs": 300871,
+    "durationApiMs": 296993,
+    "totalCostUsd": 1.6872215000000002,
+    "usage": {
+      "input_tokens": 18,
+      "cache_creation_input_tokens": 59384,
+      "cache_read_input_tokens": 422183,
+      "output_tokens": 35288,
+      "output_tokens_details": {
+        "thinking_tokens": 19375
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 59384,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1697,
+          "cache_read_input_tokens": 77910,
+          "cache_creation_input_tokens": 796,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 796
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 18,
+        "outputTokens": 35288,
+        "cacheReadInputTokens": 422183,
+        "cacheCreationInputTokens": 59384,
+        "webSearchRequests": 0,
+        "costUSD": 1.6872215000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 19375,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I redesigned the model in the image and all 25 tests pass. The model classes are in `Task2` and the test class `C5` is in `Task2-Tests`. I didn't save the package or the image.\n\nI kept the class names and the selectors that the statement and the tests use (`m1`, `m50`, `m51:a51:`, `m53:a53:`\u2026). Instance variables, temporaries and the internal selectors now have names that say what they are (`driver`, `turbo`, `sector`, `positions`, `advanceDuring:`, `placeOnTrack:`, \u2026).\n\n## 1. Replacing the ifs with polymorphism\n- **Turbo states:** the car (`C1`) now holds a `TurboState`, either `TurboDeactivated` or `TurboActivated`. Each state holds a `TurboUsage`: `TurboFirstUsage` (+20%), `TurboSecondUsage` (+10%), `TurboThirdUsage` (+5%) or `TurboExhaustedUsage` (no increase). Each usage knows its boost and which usage comes next. `m1`, `m5`, `m7` and `m9` just pass the message to the state, so the boolean flag, the use counter and the chain of ifs are gone.\n- **Car and sector:** `C3` is now the superclass of `TurboEnabledSector` and `TurboDisabledSector`, created with `m44:` and `m45:`. The flag is gone, and each subclass answers `assertTurboCanBeActivatedBy:` in its own way. The enabled sector finds the car ahead (`carAheadOf:ifNone:`, using `select:` and `detectMin:`) and checks that it is less than one second away. The disabled sector just raises its error.\n- **Checks happen in the same order as before:** \"already activated\" first, then the sector's rules. The car no longer gets a callback from the sector; the state changes only if every check passes.\n\n## 2. The methods the tech lead asked for\n- **`C2` advance (`m19:`):** `track m49 do:`\n- **`C4#cars` (`m49`):** `inject:into:` over a `Set`\n- **`C4#includes:`:** `anySatisfy:`\n- **`C4#length` (`m50`):** `sum:ifEmpty:`\n- **`C4#positionOf:` (`m52:`):** the start of the car's sector plus its position in that sector\n- **`C4#put:at:` (`m51:a51:`):** `detect:` finds the sector that contains the position (`sectorAt:`, `startOf:`, `endOf:`, which use `copyUpTo:`)\n- **`C4#sectorOf:ifNone:` (`m53:a53:`):** `detect:ifNone:`\n- **`C4#remove:`:** `do:` over the sectors\n\n## 3. Tests\n- **Tests 20\u201323** are now one line each, using `assertSpeedAfterActivatingTurbo:equals:`.\n- **Tests 24\u201325 and 5\u20136** reuse `carAbleToActivateTurbo` and `carAt:runningAt:behindCarAt:`.\n- **Other shared helpers:** `placeCarDrivenBy:at:in:` works for a sector, a track or a race. `tenKilometersTurboEnabledSectorAndTwentyKilometersTurboDisabledSector` and `raceOfOneHundredLapsOn:` build the rest of the repeated setups.\n- **Names and style:** each test is renamed to say what it checks and keeps its `testNN` prefix. Assertions are written as `assert: actual equals: expected`.\n\n## 4. Other design changes\n- **Removed because nothing used them:**\n  - the car's `v1` variable, which pointed back to its race (and `m8:`, which set it)\n  - the track's `v14`\n  - `C3>>m31:` and `m38:`\n  - the race error messages `m23` and `m26`\n  - the old `m2`/`m4:`-style callbacks\n- **Race creation changed:** the cars passed to `m25:a25:b25:` were only used to set that back pointer, so I removed the parameter. `m24:a24:` is now the only way to create a race, and the tests that used `m25:a25:b25:` now use it.\n- **One instance creation message per class:** each class creates instances through one message that runs its checks on the class side and sends the only `initialize\u2026` message.\n- **Error messages:** they are all class methods now. The turbo errors moved to `TurboState alreadyActivatedErrorDescription` and `notActivatedErrorDescription`, and `C4 m46` moved to the class side.\n- **Other fixes:** the car's starting distance is now `0 * kilometer` instead of a plain `0`. Every method is filed under a category.\n\n**Changed things tests might use:**\n- **Race creation:** `m25:a25:b25:` no longer exists.\n- **Turbo error messages:** they are no longer `car m13` / `car m14`.\n\nAny test written against the old versions will need those updates.\n\n**Still to do:** a car still has no sector (`nil`) until it is placed. If you want, a \"not placed\" sector object would remove that `nil`."
+  }
+}

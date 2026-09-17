@@ -1,0 +1,3 @@
+{"label": "plumbing-test", "cells": "1-Evaluate+TestRunning:1-Empty,2-ModelStructure+Package:2-EvaluateAsLastResource", "exercises": "exercises/smoke", "repetitions": 1,
+ "model": "claude-haiku-4-5-20251001", "effort": "low", "technique": "free", "budget": 0.5, "timeout": 240,
+ "parallel": 2, "startedAt": "2026-09-10T22:19:00Z"}

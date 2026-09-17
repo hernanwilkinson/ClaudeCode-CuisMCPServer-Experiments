@@ -1,0 +1,8 @@
+# Source
+
+- Original directory: `2022-1c/Recu2doParcial/` in the parciales repository.
+- Statement: `2022-1c/Recu2doParcial/ISW1-2022-1C-Recuperatorio-Enunciado.pdf` (3 pages, Spanish). This PDF is SHARED with the make-up of the first midterm: the same file (identical bytes) also sits in `2022-1c/Recu1erParcial/` and holds both statements, "Recuperatorio 1er Parcial: Types, types, types…" and "Recuperatorio 2do Parcial: CustomerImporter - El regreso". Only the second part was translated into this exercise's `spec.md`; the first part belongs to `2022-1c-recuperatorio-parcial1`. Copied whole as `spec-original.pdf`.
+- starting/: `CustomerImporter-Recu-2doParcial.st` — the initial code named by the statement ("Usar el archivo CustomerImporter-Recu-2do-Parcial como punto de partida"; the actual file name has no hyphen in "2doParcial"): category `CustomerImporter-Recu-2doParcial` with the plain customer importer (`ImportTest`, `Address`, `Customer`, `CustomerImporter`, `CustomerSystem` persistent/transient, `DataBaseSession`, `Environment` hierarchy), without any sale support.
+- solution/: `CustomerImporter-Recu-2doParcial-Solucion.st` — the solution (adds `CSVImporter` as superclass of `CustomerImporter` and `SaleImporter`, renames the system to `ERPSystem`, and adds `Sale`, `SoldProduct` and `RecordToCustomerMapper`).
+- `LinkAVideo.txt` (verbatim): "https://youtu.be/cDqEGjXYZF4".
+- Removed from the statement: the first-midterm make-up part (kept in the other exercise) and the whole "Entrega" section (mail submission, fileout, user.changes file, testing the fileout in a clean image, mail subject, uploading the image to the group repos, not leaving without the teachers' ok).

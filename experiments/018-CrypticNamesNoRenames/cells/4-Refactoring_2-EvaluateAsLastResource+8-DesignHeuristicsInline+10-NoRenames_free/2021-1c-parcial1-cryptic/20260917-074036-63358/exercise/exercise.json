@@ -1,0 +1,33 @@
+{
+  "name": "2021-1c-parcial1-cryptic",
+  "title": "RobotWars: robots and weapons refactoring (cryptic names)",
+  "kind": "refactoring",
+  "package": "Task1",
+  "description": "A real-time strategy game where robots (Aluminum3000, TankRover) attack each other with weapons (Claw, HSBlaster, TurboLaserCannon), with the attack effect depending on the weapon and the victim's type. The student must remove duplicated code, replace type-symbol ifs with polymorphism, clean up the tests and improve the given design while keeping all tests green. Cryptic twin: every class, selector, variable, symbol and string the exercise's author named is replaced by a meaningless one (level 2), comments removed; renames.json has the table.",
+  "startingPackages": [
+    "starting/Task1.pck.st"
+  ],
+  "solutionPackages": [],
+  "acceptanceTests": null,
+  "source": "2021-1c/1erParcial",
+  "semester": "2021-1c",
+  "exam": "parcial1",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "Weapon>>attack:by: dispatches on both the weapon type symbol and the victim robot type symbol (a 3x2 matrix of ifs), so the student must choose between double dispatch and a class hierarchy for each axis, while the lazy 'weapons isNil' initialization and index-based whileTrue loops hide simple collection protocol."
+  },
+  "sizeHint": {
+    "classesInStartingCode": 6,
+    "methodsInStartingCode": 49
+  },
+  "acceptanceTestClasses": null,
+  "crypticTwinOf": "2021-1c-parcial1",
+  "obfuscationLevel": 2
+}

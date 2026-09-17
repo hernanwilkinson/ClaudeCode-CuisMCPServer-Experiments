@@ -1,0 +1,25 @@
+{
+  "name": "2021-2c-parcial2",
+  "title": "SmartBuilding: construction teams budget",
+  "kind": "greenfield",
+  "package": "ISW1-2021-2C-2doParcial",
+  "description": "A budgeting model for a construction company whose work teams have a price policy (fixed per day, or rainy/non-rainy prices using a weather service) and a construction capacity (constant area per day, or an initial rate for the first n days then a lower one), and can be combined into immutable composite teams that split the area equally, sum costs and take the maximum time. The student must design it from scratch with TDD, including per-team time/cost queries and cheapest/fastest team selection, using Aconcagua measures.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/ISW1-2021-2C-2doParcial.st"],
+  "acceptanceTests": null,
+  "source": "2021-2c/2doParcial",
+  "semester": "2021-2c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "Two open-ended strategy families (price and capacity, both explicitly required to be extensible without touching existing code), a Composite of teams with a no-repeated-leaves invariant checked through nested composites, whole-day rounding, a weather service collaborator to simulate in tests, and Aconcagua unit arithmetic (m2/day, peso/day) all at once."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

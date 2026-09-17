@@ -1,0 +1,1 @@
+((Smalltalk allClasses select: [:c | (c category ifNil: ['']) asLowercase includesSubString: 'crawl']) collect: [:c | c name]) asArray, (SystemOrganization categories select: [:c | (c asLowercase includesSubString: 'survey') or: [c asLowercase includesSubString: 'rover']]) asArray

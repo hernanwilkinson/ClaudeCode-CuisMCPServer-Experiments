@@ -1,0 +1,28 @@
+==> job 11: rep 1, 4-Refactoring-University / 2-EvaluateAsLastResource,8-DesignHeuristicsInline / free / exercises/2024-1c-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/4-Refactoring-University_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2024-1c-parcial1/20260914-214835-22373
+    image serving 73 tools on port 58526
+    installing starting/ISW1-2024-1C-Parcial.st
+    warm-up (given tests run once before the session): classes 3 run 39 passed 39 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 592s, 145 tool calls logged by the server
+    saving the image
+    filing out package ISW1-2024-1C-Parcial
+    status completed, turns 54, cost $3.70763
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/4-Refactoring-University_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2024-1c-parcial1/20260914-214835-22373
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/4-Refactoring-University_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2024-1c-parcial1/20260914-214835-22373
+    installing the run's package ISW1-2024-1C-Parcial
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    acceptance test classes: FloorTest HotelTest RoomTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260914-214835-22373: 4-Refactoring-University / 2-EvaluateAsLastResource+8-DesignHeuristicsInline / free / 2024-1c-parcial1
+  acceptance         39/39 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 90.7%, by the agent's tests None
+  test smells        8
+  model              7 classes, 86 methods, 1.45 sends/method, 0 over 10, ifs 3, nil checks 0, type checks 1
+  diff               +50 methods, ~52 changed, -17 removed; classes +4 -0
+  tool calls         53 by the agent, 0 errors, evaluate kinds {'reflection': 1}
+  mentor             45 findings {'Method complexity': 19, 'Keyword message send format': 18, 'No empty method categories': 6, 'No class-name prefix in names': 2}
+  agent              claude-opus-5 effort high, 592s, cost $3.70763, tokens in 98 cache-read 3,552,850 out 43,827
+  refactorings       10 done by hand {'manualExtractMethod': 6, 'manualExtractFromSimilarCode': 4}, 10 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 2 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/4-Refactoring-University_2-EvaluateAsLastResource+8-DesignHeuristicsInline_free/2024-1c-parcial1/20260914-214835-22373/analysis.json

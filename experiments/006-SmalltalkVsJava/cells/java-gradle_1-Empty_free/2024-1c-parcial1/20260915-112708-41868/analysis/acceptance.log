@@ -1,0 +1,293 @@
+Starting a Gradle Daemon, 12 stopped Daemons could not be reused, use --status for details
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+
+> Task :compileTestJava FAILED
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:19: error: constructor Hotel in class Hotel cannot be applied to given types;
+            () -> new Hotel().setFloors(new ArrayList<Floor>()));
+                  ^
+  required: List<Floor>
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:109: error: constructor Hotel in class Hotel cannot be applied to given types;
+        hotel = new Hotel().setFloors(floors);
+                ^
+  required: List<Floor>
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:130: error: constructor Hotel in class Hotel cannot be applied to given types;
+        hotel = new Hotel().setFloors(floors);
+                ^
+  required: List<Floor>
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:151: error: constructor Hotel in class Hotel cannot be applied to given types;
+        hotel = new Hotel().setFloors(floors);
+                ^
+  required: List<Floor>
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:173: error: constructor Hotel in class Hotel cannot be applied to given types;
+        hotel = new Hotel().setFloors(floors);
+                ^
+  required: List<Floor>
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:195: error: constructor Hotel in class Hotel cannot be applied to given types;
+        hotel = new Hotel().setFloors(floors);
+                ^
+  required: List<Floor>
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:217: error: constructor Hotel in class Hotel cannot be applied to given types;
+        hotel = new Hotel().setFloors(floors);
+                ^
+  required: List<Floor>
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:239: error: constructor Hotel in class Hotel cannot be applied to given types;
+        hotel = new Hotel().setFloors(floors);
+                ^
+  required: List<Floor>
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:258: error: constructor Floor in class Floor cannot be applied to given types;
+        floor = new Floor();
+                ^
+  required: int,Map<String,Integer>
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:259: error: cannot find symbol
+        floor.setNumberOfRooms(aNumberOfRooms);
+             ^
+  symbol:   method setNumberOfRooms(Number)
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:260: error: cannot find symbol
+        floor.setPrices(aPrice);
+             ^
+  symbol:   method setPrices(HashMap<String,Integer>)
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:269: error: constructor Hotel in class Hotel cannot be applied to given types;
+        return new Hotel().setFloors(floors);
+               ^
+  required: List<Floor>
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:56: error: cannot find symbol
+        floor.rooms().get(0).receive(guestTypeVacation());
+             ^
+  symbol:   method rooms()
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:75: error: cannot find symbol
+        floor.rooms().get(0).reserve();
+             ^
+  symbol:   method rooms()
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:82: error: cannot find symbol
+        floor.rooms().get(0).receiveWithReservation(guestTypeVacation());
+             ^
+  symbol:   method rooms()
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:98: error: cannot find symbol
+        floor.rooms().get(0).reserve();
+             ^
+  symbol:   method rooms()
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:114: error: cannot find symbol
+        floor.rooms().get(0).receive(guestTypeVacation());
+             ^
+  symbol:   method rooms()
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:115: error: cannot find symbol
+        floor.rooms().get(1).receive(guestTypeConference());
+             ^
+  symbol:   method rooms()
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:116: error: cannot find symbol
+        floor.rooms().get(2).reserve();
+             ^
+  symbol:   method rooms()
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:130: error: cannot find symbol
+        floor.rooms().get(0).receive(guestTypeVacation());
+             ^
+  symbol:   method rooms()
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:131: error: cannot find symbol
+        floor.rooms().get(1).receive(guestTypeConference());
+             ^
+  symbol:   method rooms()
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:132: error: cannot find symbol
+        floor.rooms().get(2).reserve();
+             ^
+  symbol:   method rooms()
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:142: error: constructor Floor in class Floor cannot be applied to given types;
+        floor = new Floor();
+                ^
+  required: int,Map<String,Integer>
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:143: error: cannot find symbol
+        floor.setNumberOfRooms(aNumberOfRooms);
+             ^
+  symbol:   method setNumberOfRooms(Number)
+  location: variable floor of type Floor
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:144: error: cannot find symbol
+        floor.setPrices(aPrice);
+             ^
+  symbol:   method setPrices(HashMap<String,Integer>)
+  location: variable floor of type Floor
+25 errors
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
+> Compilation failed; see the compiler output below.
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:19: error: constructor Hotel in class Hotel cannot be applied to given types;
+              () -> new Hotel().setFloors(new ArrayList<Floor>()));
+                    ^
+    required: List<Floor>
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:109: error: constructor Hotel in class Hotel cannot be applied to given types;
+          hotel = new Hotel().setFloors(floors);
+                  ^
+    required: List<Floor>
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:130: error: constructor Hotel in class Hotel cannot be applied to given types;
+          hotel = new Hotel().setFloors(floors);
+                  ^
+    required: List<Floor>
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:151: error: constructor Hotel in class Hotel cannot be applied to given types;
+          hotel = new Hotel().setFloors(floors);
+                  ^
+    required: List<Floor>
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:173: error: constructor Hotel in class Hotel cannot be applied to given types;
+          hotel = new Hotel().setFloors(floors);
+                  ^
+    required: List<Floor>
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:195: error: constructor Hotel in class Hotel cannot be applied to given types;
+          hotel = new Hotel().setFloors(floors);
+                  ^
+    required: List<Floor>
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:217: error: constructor Hotel in class Hotel cannot be applied to given types;
+          hotel = new Hotel().setFloors(floors);
+                  ^
+    required: List<Floor>
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:239: error: constructor Hotel in class Hotel cannot be applied to given types;
+          hotel = new Hotel().setFloors(floors);
+                  ^
+    required: List<Floor>
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:258: error: constructor Floor in class Floor cannot be applied to given types;
+          floor = new Floor();
+                  ^
+    required: int,Map<String,Integer>
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:269: error: constructor Hotel in class Hotel cannot be applied to given types;
+          return new Hotel().setFloors(floors);
+                 ^
+    required: List<Floor>
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:142: error: constructor Floor in class Floor cannot be applied to given types;
+          floor = new Floor();
+                  ^
+    required: int,Map<String,Integer>
+    found:    no arguments
+    reason: actual and formal argument lists differ in length
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:259: error: cannot find symbol
+          floor.setNumberOfRooms(aNumberOfRooms);
+               ^
+    symbol:   method setNumberOfRooms(Number)
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/HotelTest.java:260: error: cannot find symbol
+          floor.setPrices(aPrice);
+               ^
+    symbol:   method setPrices(HashMap<String,Integer>)
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:56: error: cannot find symbol
+          floor.rooms().get(0).receive(guestTypeVacation());
+               ^
+    symbol:   method rooms()
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:75: error: cannot find symbol
+          floor.rooms().get(0).reserve();
+               ^
+    symbol:   method rooms()
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:82: error: cannot find symbol
+          floor.rooms().get(0).receiveWithReservation(guestTypeVacation());
+               ^
+    symbol:   method rooms()
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:98: error: cannot find symbol
+          floor.rooms().get(0).reserve();
+               ^
+    symbol:   method rooms()
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:114: error: cannot find symbol
+          floor.rooms().get(0).receive(guestTypeVacation());
+               ^
+    symbol:   method rooms()
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:115: error: cannot find symbol
+          floor.rooms().get(1).receive(guestTypeConference());
+               ^
+    symbol:   method rooms()
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:116: error: cannot find symbol
+          floor.rooms().get(2).reserve();
+               ^
+    symbol:   method rooms()
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:130: error: cannot find symbol
+          floor.rooms().get(0).receive(guestTypeVacation());
+               ^
+    symbol:   method rooms()
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:131: error: cannot find symbol
+          floor.rooms().get(1).receive(guestTypeConference());
+               ^
+    symbol:   method rooms()
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:132: error: cannot find symbol
+          floor.rooms().get(2).reserve();
+               ^
+    symbol:   method rooms()
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:143: error: cannot find symbol
+          floor.setNumberOfRooms(aNumberOfRooms);
+               ^
+    symbol:   method setNumberOfRooms(Number)
+    location: variable floor of type Floor
+  /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/006-SmalltalkVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260915-112708-41868/analysis/acceptance-project/src/test/java/simshotels/FloorTest.java:144: error: cannot find symbol
+          floor.setPrices(aPrice);
+               ^
+    symbol:   method setPrices(HashMap<String,Integer>)
+    location: variable floor of type Floor
+  25 errors
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+
+BUILD FAILED in 2s
+2 actionable tasks: 2 executed

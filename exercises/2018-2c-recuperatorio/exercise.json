@@ -1,0 +1,25 @@
+{
+  "name": "2018-2c-recuperatorio",
+  "title": "Super 4 in a Line",
+  "kind": "greenfield",
+  "package": "ISW1-Super4EnLinea",
+  "description": "A Connect Four variant on a 6x7 board where red and yellow alternate dropping chips into columns and the winning condition (horizontal, vertical, diagonal or any combination) is configured when the game is created; a full board with no winner is a draw. The student must build the game from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/Super4EnLinea.st"],
+  "acceptanceTests": null,
+  "source": "2018-2c",
+  "semester": "2018-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "The configurable winning strategy (and its combinations) is a natural place for composable strategy objects instead of flags, the alternating colors and the playing/won/draw phases form a small state machine, and detecting four in a line over rows, columns and diagonals invites shared collection-based traversal rather than four copies of a loop."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

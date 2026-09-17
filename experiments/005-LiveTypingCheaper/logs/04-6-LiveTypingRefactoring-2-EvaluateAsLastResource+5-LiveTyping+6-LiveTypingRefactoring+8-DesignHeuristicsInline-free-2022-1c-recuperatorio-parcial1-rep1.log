@@ -1,0 +1,27 @@
+==> job 4: rep 1, 6-LiveTypingRefactoring / 2-EvaluateAsLastResource,5-LiveTyping,6-LiveTypingRefactoring,8-DesignHeuristicsInline / free / exercises/2022-1c-recuperatorio-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/6-LiveTypingRefactoring_2-EvaluateAsLastResource+5-LiveTyping+6-LiveTypingRefactoring+8-DesignHeuristicsInline_free/2022-1c-recuperatorio-parcial1/20260914-210055-17911
+    image serving 80 tools on port 57527
+    installing starting/CustomerImporter-Recu-1er-Parcial.st
+    warm-up (given tests run once before the session): classes 1 run 29 passed 29 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 659s, 149 tool calls logged by the server
+    saving the image
+    filing out package CustomerImporter-Recu-1er-Parcial
+    status completed, turns 64, cost $4.005234999999999
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/6-LiveTypingRefactoring_2-EvaluateAsLastResource+5-LiveTyping+6-LiveTypingRefactoring+8-DesignHeuristicsInline_free/2022-1c-recuperatorio-parcial1/20260914-210055-17911
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/6-LiveTypingRefactoring_2-EvaluateAsLastResource+5-LiveTyping+6-LiveTypingRefactoring+8-DesignHeuristicsInline_free/2022-1c-recuperatorio-parcial1/20260914-210055-17911
+    installing the run's package CustomerImporter-Recu-1er-Parcial
+    acceptance test classes: ImportTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260914-210055-17911: 6-LiveTypingRefactoring / 2-EvaluateAsLastResource+5-LiveTyping+6-LiveTypingRefactoring+8-DesignHeuristicsInline / free / 2022-1c-recuperatorio-parcial1
+  acceptance         ERROR: MessageNotUnderstood: String>>hasOnlyDigits
+  agent tests        none
+  coverage           by all tests ERROR: MessageNotUnderstood: String>>hasOnlyDigits, by the agent's tests None
+  test smells        1
+  model              16 classes, 169 methods, 1.67 sends/method, 1 over 10, ifs 8, nil checks 2, type checks 1
+  diff               +87 methods, ~13 changed, -10 removed; classes +6 -0
+  tool calls         63 by the agent, 0 errors, evaluate kinds {'reflection': 1}
+  mentor             43 findings {'Keyword message send format': 19, 'Messages have implementers': 4, 'Class is referenced': 4, 'Method complexity': 4, 'No empty method categories': 4, 'No class-name prefix in names': 4, 'Instance variables read & written': 3, 'ifEmpty: over isEmpty ifTrue:': 1}
+  agent              claude-opus-5 effort high, 659s, cost $4.005234999999999, tokens in 84 cache-read 3,381,650 out 48,316
+  refactorings       5 done by hand {'manualExtractMethod': 5}, 5 while a tool was available, 0 right after the tool failed; 1 refactoring tool calls, 0 of them failed; 1 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/005-LiveTypingCheaper/cells/6-LiveTypingRefactoring_2-EvaluateAsLastResource+5-LiveTyping+6-LiveTypingRefactoring+8-DesignHeuristicsInline_free/2022-1c-recuperatorio-parcial1/20260914-210055-17911/analysis.json

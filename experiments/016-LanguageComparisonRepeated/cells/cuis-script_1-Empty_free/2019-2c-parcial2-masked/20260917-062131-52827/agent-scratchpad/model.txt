@@ -1,0 +1,337 @@
+!! SurveyCrawler class | instance creation
+at: aPosition facing: aFacingName
+
+	^self at: aPosition facing: aFacingName sonar: SimulatedSonar allFirmSand
+!! SurveyCrawler class | instance creation
+at: aPosition facing: aFacingName sonar: aSonar
+
+	^self new initializeAt: aPosition facing: (CrawlerFacing facing: aFacingName) sonar: aSonar
+!! SurveyCrawler | initialization
+initializeAt: aPosition facing: aFacing sonar: aSonar
+
+	position := aPosition.
+	facing := aFacing.
+	sonar := aSonar.
+	runMode := CrawlerNormalRun new
+!! SurveyCrawler | command processing
+process: aSequenceOfCommands
+
+	lastRepeatableCommand := nil.
+	aSequenceOfCommands do: [ :aCommand | runMode process: aCommand for: self ].
+	runMode finishCommandSequenceFor: self
+!! SurveyCrawler | command processing
+processCommand: aCommand
+
+	| commandToRepeat |
+	
+	commandToRepeat := lastRepeatableCommand.
+	lastRepeatableCommand := nil.
+	
+	aCommand isDigit ifTrue: [ ^self repeat: commandToRepeat times: aCommand digitValue + 2 ].
+	(self isStartGuardedRunCommand: aCommand) ifTrue: [ ^runMode startGuardedRunFor: self ].
+	(self isEndGuardedRunCommand: aCommand) ifTrue: [ ^runMode endGuardedRunFor: self ].
+	
+	self processMovementCommand: aCommand.
+	lastRepeatableCommand := aCommand
+!! SurveyCrawler | command processing
+processMovementCommand: aCommand
+
+	(self isAdvanceCommand: aCommand) ifTrue: [ ^ self advance ].
+	(self isRetreatCommand: aCommand) ifTrue: [ ^ self retreat ].
+	(self isTurnClockwiseCommand: aCommand) ifTrue: [ ^ self turnClockwise ].
+	(self isTurnCounterClockwiseCommand: aCommand) ifTrue: [ ^ self turnCounterClockwise ].
+
+	self signalInvalidCommand
+!! SurveyCrawler | command processing
+repeat: aCommand times: aNumberOfRepetitions
+
+	aCommand ifNil: [ ^self signalInvalidRepetition ].
+	
+	aNumberOfRepetitions timesRepeat: [ self processMovementCommand: aCommand ]
+!! SurveyCrawler | testing
+isStartGuardedRunCommand: aCommand
+
+	^aCommand = $(
+!! SurveyCrawler | testing
+isEndGuardedRunCommand: aCommand
+
+	^aCommand = $)
+!! SurveyCrawler | moving
+moveDown
+	
+	self moveTowards: 0@-1
+!! SurveyCrawler | moving
+moveLeft
+	
+	self moveTowards: -1@0
+!! SurveyCrawler | moving
+moveRight
+	
+	self moveTowards: 1@0
+!! SurveyCrawler | moving
+moveUp
+	
+	self moveTowards: 0@1
+!! SurveyCrawler | moving
+moveTowards: aDirection
+
+	(sonar groundTypeAt: position + aDirection) moveCrawler: self towards: aDirection
+!! SurveyCrawler | moving
+slideTowards: aDirection cells: aNumberOfCells
+
+	runMode slide: self towards: aDirection cells: aNumberOfCells
+!! SurveyCrawler | moving
+displaceBy: aDisplacement
+
+	position := position + aDisplacement.
+	runMode recordUndoAction: [ self displaceBy: aDisplacement negated ]
+!! SurveyCrawler | facing
+turnClockwise
+	
+	self 
+		turnDoing: [ facing turnClockwise: self ]
+		undoneBy: [ facing turnCounterClockwise: self ]
+!! SurveyCrawler | facing
+turnCounterClockwise
+	
+	self 
+		turnDoing: [ facing turnCounterClockwise: self ]
+		undoneBy: [ facing turnClockwise: self ]
+!! SurveyCrawler | facing
+turnDoing: aTurnAction undoneBy: anUndoAction
+
+	(sonar groundTypeAt: position) turnCrawler: self doing: aTurnAction undoneBy: anUndoAction
+!! SurveyCrawler | facing
+changeFacingDoing: aTurnAction undoneBy: anUndoAction
+
+	aTurnAction value.
+	runMode recordUndoAction: anUndoAction
+!! SurveyCrawler | guarded run
+startGuardedRun
+
+	runMode := CrawlerGuardedRun new
+!! SurveyCrawler | guarded run
+endGuardedRun
+
+	runMode := CrawlerNormalRun new
+!! SurveyCrawler | exceptions
+signalInvalidRepetition
+	
+	self error: self invalidRepetitionErrorDescription
+!! SurveyCrawler | exceptions
+invalidRepetitionErrorDescription
+	
+	^'A repetition digit must follow a movement command'
+!! SurveyCrawler | exceptions
+signalBoulderFound
+	
+	self error: self boulderFoundErrorDescription
+!! SurveyCrawler | exceptions
+boulderFoundErrorDescription
+	
+	^'Boulder found'
+!! SurveyCrawler | exceptions
+signalSiltFoundInGuardedRun
+	
+	self error: self siltFoundInGuardedRunErrorDescription
+!! SurveyCrawler | exceptions
+siltFoundInGuardedRunErrorDescription
+	
+	^'Silt found during a guarded run'
+!! SurveyCrawler | exceptions
+signalNestedGuardedRun
+	
+	self error: self nestedGuardedRunErrorDescription
+!! SurveyCrawler | exceptions
+nestedGuardedRunErrorDescription
+	
+	^'A guarded run can not be started inside another guarded run'
+!! SurveyCrawler | exceptions
+signalGuardedRunNotStarted
+	
+	self error: self guardedRunNotStartedErrorDescription
+!! SurveyCrawler | exceptions
+guardedRunNotStartedErrorDescription
+	
+	^'Can not finish a guarded run that was not started'
+!! SurveyCrawler | exceptions
+signalUnfinishedGuardedRun
+	
+	self error: self unfinishedGuardedRunErrorDescription
+!! SurveyCrawler | exceptions
+unfinishedGuardedRunErrorDescription
+	
+	^'Guarded run was not finished'
+!! SimulatedSonar class | instance creation
+allFirmSand
+
+	^self withGroundTypes: Dictionary new
+!! SimulatedSonar class | instance creation
+withGroundTypes: aDictionaryOfGroundTypesByPosition
+
+	^self new initializeWithGroundTypes: aDictionaryOfGroundTypesByPosition
+!! SimulatedSonar | initialization
+initializeWithGroundTypes: aDictionaryOfGroundTypesByPosition
+
+	groundTypesByPosition := aDictionaryOfGroundTypesByPosition
+!! SimulatedSonar | sensing
+groundTypeAt: aPosition
+
+	^groundTypesByPosition at: aPosition ifAbsent: [ FirmSandGround new ]
+!! SeabedGround | crawler movement
+moveCrawler: aCrawler towards: aDirection
+
+	self subclassResponsibility
+!! SeabedGround | crawler movement
+turnCrawler: aCrawler doing: aTurnAction undoneBy: anUndoAction
+
+	self subclassResponsibility
+!! FirmSandGround | crawler movement
+moveCrawler: aCrawler towards: aDirection
+
+	aCrawler displaceBy: aDirection
+!! FirmSandGround | crawler movement
+turnCrawler: aCrawler doing: aTurnAction undoneBy: anUndoAction
+
+	aCrawler changeFacingDoing: aTurnAction undoneBy: anUndoAction
+!! BoulderGround | crawler movement
+moveCrawler: aCrawler towards: aDirection
+
+	aCrawler signalBoulderFound
+!! BoulderGround | crawler movement
+turnCrawler: aCrawler doing: aTurnAction undoneBy: anUndoAction
+
+	aCrawler signalBoulderFound
+!! SiltGround class | instance creation
+new
+
+	^self slidingWith: Random new
+!! SiltGround class | instance creation
+slidingWith: aSlideDistanceGenerator
+
+	^self basicNew initializeSlidingWith: aSlideDistanceGenerator
+!! SiltGround class | sliding
+maximumSlideDistance
+
+	^10
+!! SiltGround | initialization
+initializeSlidingWith: aSlideDistanceGenerator
+
+	slideDistanceGenerator := aSlideDistanceGenerator
+!! SiltGround | crawler movement
+moveCrawler: aCrawler towards: aDirection
+
+	aCrawler 
+		slideTowards: aDirection 
+		cells: (slideDistanceGenerator nextInteger: self class maximumSlideDistance)
+!! SiltGround | crawler movement
+turnCrawler: aCrawler doing: aTurnAction undoneBy: anUndoAction
+
+	aCrawler changeFacingDoing: aTurnAction undoneBy: anUndoAction
+!! CrawlerRunMode | command processing
+process: aCommand for: aCrawler
+
+	self subclassResponsibility
+!! CrawlerRunMode | command processing
+finishCommandSequenceFor: aCrawler
+
+	self subclassResponsibility
+!! CrawlerRunMode | guarded run
+startGuardedRunFor: aCrawler
+
+	self subclassResponsibility
+!! CrawlerRunMode | guarded run
+endGuardedRunFor: aCrawler
+
+	self subclassResponsibility
+!! CrawlerRunMode | moving
+slide: aCrawler towards: aDirection cells: aNumberOfCells
+
+	self subclassResponsibility
+!! CrawlerRunMode | undoing
+recordUndoAction: anUndoAction
+
+	self subclassResponsibility
+!! CrawlerNormalRun | command processing
+process: aCommand for: aCrawler
+
+	aCrawler processCommand: aCommand
+!! CrawlerNormalRun | command processing
+finishCommandSequenceFor: aCrawler
+
+	
+!! CrawlerNormalRun | guarded run
+startGuardedRunFor: aCrawler
+
+	aCrawler startGuardedRun
+!! CrawlerNormalRun | guarded run
+endGuardedRunFor: aCrawler
+
+	aCrawler signalGuardedRunNotStarted
+!! CrawlerNormalRun | moving
+slide: aCrawler towards: aDirection cells: aNumberOfCells
+
+	aCrawler displaceBy: aDirection * aNumberOfCells
+!! CrawlerNormalRun | undoing
+recordUndoAction: anUndoAction
+
+	
+!! CrawlerGuardedRun class | instance creation
+new
+
+	^super new initialize
+!! CrawlerGuardedRun | initialization
+initialize
+
+	undoActions := OrderedCollection new
+!! CrawlerGuardedRun | command processing
+process: aCommand for: aCrawler
+
+	[ aCrawler processCommand: aCommand ]
+		on: Error
+		do: [ :anError |
+			self undoMovementsOf: aCrawler.
+			anError pass ]
+!! CrawlerGuardedRun | command processing
+finishCommandSequenceFor: aCrawler
+
+	self undoMovementsOf: aCrawler.
+	aCrawler signalUnfinishedGuardedRun
+!! CrawlerGuardedRun | guarded run
+startGuardedRunFor: aCrawler
+
+	aCrawler signalNestedGuardedRun
+!! CrawlerGuardedRun | guarded run
+endGuardedRunFor: aCrawler
+
+	aCrawler endGuardedRun
+!! CrawlerGuardedRun | moving
+slide: aCrawler towards: aDirection cells: aNumberOfCells
+
+	aCrawler signalSiltFoundInGuardedRun
+!! CrawlerGuardedRun | undoing
+recordUndoAction: anUndoAction
+
+	undoActions add: anUndoAction
+!! CrawlerGuardedRun | undoing
+undoMovementsOf: aCrawler
+
+	aCrawler endGuardedRun.
+	undoActions reverseDo: [ :anUndoAction | anUndoAction value ]
+!! SlideDistanceGeneratorStub class | instance creation
+alwaysSliding: aDistance
+
+	^self new initializeAlwaysSliding: aDistance
+!! SlideDistanceGeneratorStub | initialization
+initializeAlwaysSliding: aDistance
+
+	distance := aDistance
+!! SlideDistanceGeneratorStub | generating
+nextInteger: aLimit
+
+	requestedLimit := aLimit.
+	^distance
+!! SlideDistanceGeneratorStub | accessing
+requestedLimit
+
+	^requestedLimit

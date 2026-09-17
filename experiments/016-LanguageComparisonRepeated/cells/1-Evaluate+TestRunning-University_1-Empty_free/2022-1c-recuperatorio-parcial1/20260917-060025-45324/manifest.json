@@ -1,0 +1,150 @@
+{
+  "experiment": "016-LanguageComparisonRepeated",
+  "runId": "20260917-060025-45324",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "1-Evaluate+TestRunning-University",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "CustomerImporter-Recu-1er-Parcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 016-LanguageComparisonRepeated, repetition 4",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "1-Evaluate+TestRunning-University",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8185.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-1-Evaluate+TestRunning-University.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools"
+    ],
+    "decorators": [],
+    "batchTool": false,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:38:30Z",
+    "imageSha256": "4c1d91a3b892f3b5803a3756aa306e2d99c56c6cb7a5482907c88fc64794a87f"
+  },
+  "toolsServed": 7,
+  "toolDefinitionBytes": 3412,
+  "hashes": {
+    "prompt.md": "1a6c08c7102ac59a302a7c2e1ccabd3850546d786385d3d8ebf47fe411f954a1",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec.md": "428340b0ba4d4e35ac37c837ef1e35636f94d84df309b2385ba9da34c58336a6",
+    "skills": {}
+  },
+  "port": 54115,
+  "startedAt": "2026-09-17T09:00:28Z",
+  "endedAt": "2026-09-17T09:01:42Z",
+  "elapsedSeconds": 74,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 10,
+    "agentCalls": 8
+  },
+  "changesBytesAtStart": 8671642,
+  "changesBytesAtEnd": 8687462,
+  "usageFromTranscript": {
+    "totalCostUsd": 0.4783,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 12,
+        "cache_write_5m": 0,
+        "cache_write_1h": 22704,
+        "cache_read": 87040,
+        "output": 8308,
+        "thinking": 1862,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 6,
+        "cost_usd": 0.47832
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_evaluate": 5,
+      "mcp__Cuis__smalltalk_run_test_class": 2,
+      "mcp__Cuis__smalltalk_save_image": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 9,
+    "durationMs": 72745,
+    "durationApiMs": 68404,
+    "totalCostUsd": 0.47831999999999997,
+    "usage": {
+      "input_tokens": 12,
+      "cache_creation_input_tokens": 22704,
+      "cache_read_input_tokens": 87040,
+      "output_tokens": 8308,
+      "output_tokens_details": {
+        "thinking_tokens": 1862
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 22704,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 999,
+          "cache_read_input_tokens": 23568,
+          "cache_creation_input_tokens": 864,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 864
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 12,
+        "outputTokens": 8308,
+        "cacheReadInputTokens": 87040,
+        "cacheCreationInputTokens": 22704,
+        "webSearchRequests": 0,
+        "costUSD": 0.47831999999999997,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1862,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I replaced the IFs on document type and postal code type with polymorphism. All 29 `ImportTest` tests passed before the change and still pass after it, and I didn't touch any test code. The image is saved.\n\n**New classes** (in `CustomerImporter-Recu-1er-Parcial`)\n- **`Identification`**, with subclasses **`DNI`** (`'D'`) and **`CUIT`** (`'C'`):\n  - `Identification type:number:` finds the subclass whose `type` matches. If none matches, it signals `'Invalid identification type'`.\n  - Each subclass checks its own number rules (`isValidNumber:`) and has its own error message. The shared `assertIsValidNumber:` raises that error, so the repeated `ifFalse: [self error: ...]` lines are gone.\n  - `isDNI` / `isCUIT` and `dniNumberIfNone:` / `cuitNumberIfNone:` are defined once in the superclass (`false` / run the block) and overridden in the matching subclass.\n- **`ZipCode`**, with subclasses **`OldZipCode`** (starts with a digit) and **`NewZipCode`** (starts with a letter):\n  - `ZipCode from:` picks the subclass with `canHandle:`, checks the value (`isValid:`) and converts it (`codeFrom:`). Old codes become an Integer and new codes stay a String.\n  - The \"4 digits, at least 1000\" check that both formats repeated is now one method, `isValidFourDigitsNumber:lowerLimit:`.\n  - `isOld` / `isNew` and `oldZipCodeIfNone:` / `newZipCodeIfNone:` follow the same pattern as the identifications.\n\n**Changed classes**\n- **`Customer`** now holds a single `identification` object instead of the type and number variables, and passes all identification questions to it.\n- **`Address`** holds a `ZipCode` object and passes its zip code questions to it.\n- **`CustomerImporter`**: `importCustomer` and `importAddress` shrank to a few lines each, building the objects with `Identification type: record fourth number: record fifth` and `ZipCode from: record fifth`.\n- **`ImportTest`** was in the main category, so I moved it unchanged to `CustomerImporter-Recu-1er-Parcial-Tests`.\n\n**Things to know**\n- An invalid zip code still gives the error `'Invalid identification type'`. The message is wrong, but test 29 expects exactly that text, so I kept it.\n- The tests only ran with the in-memory system that `DevelopmentEnvironment` sets up. They were not run against the simulated database (`PersistentCustomerSystem`).\n- The small \"all characters are digits\" helper (`areAllDigits:`) is still copied in both `Identification` and `ZipCode`.\n- `DataBaseSession>>persist:` still has an `isKindOf: Customer` check. It belongs to the database simulation rather than the new code, so I left it alone."
+  }
+}

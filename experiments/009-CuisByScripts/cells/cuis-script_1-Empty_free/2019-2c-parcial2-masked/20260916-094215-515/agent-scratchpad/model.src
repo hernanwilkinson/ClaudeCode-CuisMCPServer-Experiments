@@ -1,0 +1,342 @@
+Object subclass: #SurveyCrawler instanceVariableNames: 'position facing sonar random runState' classVariableNames: '' poolDictionaries: '' category: 'SurveyCrawler'.
+Object subclass: #SeabedGround instanceVariableNames: '' classVariableNames: '' poolDictionaries: '' category: 'SurveyCrawler'.
+SeabedGround subclass: #FirmSandGround instanceVariableNames: '' classVariableNames: '' poolDictionaries: '' category: 'SurveyCrawler'.
+SeabedGround subclass: #SiltGround instanceVariableNames: '' classVariableNames: '' poolDictionaries: '' category: 'SurveyCrawler'.
+SeabedGround subclass: #BoulderGround instanceVariableNames: '' classVariableNames: '' poolDictionaries: '' category: 'SurveyCrawler'.
+Object subclass: #CrawlerRunState instanceVariableNames: '' classVariableNames: '' poolDictionaries: '' category: 'SurveyCrawler'.
+CrawlerRunState subclass: #UnguardedRun instanceVariableNames: '' classVariableNames: '' poolDictionaries: '' category: 'SurveyCrawler'.
+CrawlerRunState subclass: #GuardedRun instanceVariableNames: 'undoActions' classVariableNames: '' poolDictionaries: '' category: 'SurveyCrawler'.
+(CrawlerFacing withAllSubclasses) do: [ :aClass |
+	#(advance: retreat: turnClockwise: turnCounterClockwise:) do: [ :aSelector | aClass removeSelector: aSelector ] ].
+#(moveUp moveDown moveLeft moveRight faceUp faceDown faceLeft faceRight initializeAt:facing:) do: [ :aSelector | SurveyCrawler removeSelector: aSelector ].
+SurveyCrawler class removeSelector: #at:facing:.
+!!! CrawlerFacing | moving
+direction
+
+	self subclassResponsibility
+!!! CrawlerFacing | facing
+clockwise
+
+	self subclassResponsibility
+!!! CrawlerFacing | facing
+counterClockwise
+
+	self subclassResponsibility
+!!! CrawlerFacingUp | moving
+direction
+
+	^0@1
+!!! CrawlerFacingUp | facing
+clockwise
+
+	^CrawlerFacingRight new
+!!! CrawlerFacingUp | facing
+counterClockwise
+
+	^CrawlerFacingLeft new
+!!! CrawlerFacingUp class | facing name
+facingName
+
+	^#Up
+!!! CrawlerFacingRight | moving
+direction
+
+	^1@0
+!!! CrawlerFacingRight | facing
+clockwise
+
+	^CrawlerFacingDown new
+!!! CrawlerFacingRight | facing
+counterClockwise
+
+	^CrawlerFacingUp new
+!!! CrawlerFacingRight class | facing name
+facingName
+
+	^#Right
+!!! CrawlerFacingDown | moving
+direction
+
+	^0@-1
+!!! CrawlerFacingDown | facing
+clockwise
+
+	^CrawlerFacingLeft new
+!!! CrawlerFacingDown | facing
+counterClockwise
+
+	^CrawlerFacingRight new
+!!! CrawlerFacingDown class | facing name
+facingName
+
+	^#Down
+!!! CrawlerFacingLeft | moving
+direction
+
+	^-1@0
+!!! CrawlerFacingLeft | facing
+clockwise
+
+	^CrawlerFacingUp new
+!!! CrawlerFacingLeft | facing
+counterClockwise
+
+	^CrawlerFacingDown new
+!!! CrawlerFacingLeft class | facing name
+facingName
+
+	^#Left
+!!! SeabedGround | crawler movement
+move: aCrawler towards: aDirection
+
+	self subclassResponsibility
+!!! SeabedGround | crawler movement
+turn: aCrawler to: aFacing
+
+	self subclassResponsibility
+!!! FirmSandGround | crawler movement
+move: aCrawler towards: aDirection
+
+	aCrawler moveBy: aDirection
+!!! FirmSandGround | crawler movement
+turn: aCrawler to: aFacing
+
+	aCrawler face: aFacing
+!!! SiltGround | crawler movement
+move: aCrawler towards: aDirection
+
+	aCrawler slideTowards: aDirection
+!!! SiltGround | crawler movement
+turn: aCrawler to: aFacing
+
+	aCrawler face: aFacing
+!!! BoulderGround | crawler movement
+move: aCrawler towards: aDirection
+
+	aCrawler signalBoulderFound
+!!! BoulderGround | crawler movement
+turn: aCrawler to: aFacing
+
+	aCrawler signalBoulderFound
+!!! CrawlerRunState | guarded run
+startGuardedRunOf: aCrawler
+
+	self subclassResponsibility
+!!! CrawlerRunState | guarded run
+finishGuardedRunOf: aCrawler
+
+	self subclassResponsibility
+!!! CrawlerRunState | guarded run
+assertIsFinished
+
+	self subclassResponsibility
+!!! CrawlerRunState | guarded run
+abortOn: aCrawler
+
+	self subclassResponsibility
+!!! CrawlerRunState | movements
+recordUndo: anUndoAction
+
+	self subclassResponsibility
+!!! CrawlerRunState | movements
+crawlerSlid
+
+	self subclassResponsibility
+!!! UnguardedRun | guarded run
+startGuardedRunOf: aCrawler
+
+	aCrawler startGuardedRun
+!!! UnguardedRun | guarded run
+finishGuardedRunOf: aCrawler
+
+	self error: SurveyCrawler guardedRunNotStartedErrorDescription
+!!! UnguardedRun | guarded run
+assertIsFinished
+!!! UnguardedRun | guarded run
+abortOn: aCrawler
+!!! UnguardedRun | movements
+recordUndo: anUndoAction
+!!! UnguardedRun | movements
+crawlerSlid
+!!! GuardedRun | initialization
+initialize
+
+	undoActions := OrderedCollection new
+!!! GuardedRun | guarded run
+startGuardedRunOf: aCrawler
+
+	self error: SurveyCrawler nestedGuardedRunErrorDescription
+!!! GuardedRun | guarded run
+finishGuardedRunOf: aCrawler
+
+	aCrawler finishGuardedRun
+!!! GuardedRun | guarded run
+assertIsFinished
+
+	self error: SurveyCrawler unfinishedGuardedRunErrorDescription
+!!! GuardedRun | guarded run
+abortOn: aCrawler
+
+	undoActions reverseDo: [ :anUndoAction | anUndoAction value ].
+	aCrawler finishGuardedRun
+!!! GuardedRun | movements
+recordUndo: anUndoAction
+
+	undoActions add: anUndoAction
+!!! GuardedRun | movements
+crawlerSlid
+
+	self error: SurveyCrawler siltFoundInGuardedRunErrorDescription
+!!! SurveyCrawler class | instance creation
+at: aPosition facing: aFacingName sonar: aSonar
+
+	^self at: aPosition facing: aFacingName sonar: aSonar random: Random new
+!!! SurveyCrawler class | instance creation
+at: aPosition facing: aFacingName sonar: aSonar random: aRandom
+
+	^self new initializeAt: aPosition facing: (CrawlerFacing facing: aFacingName) sonar: aSonar random: aRandom
+!!! SurveyCrawler class | exceptions
+invalidFacingErrorDescription
+
+	^'Invalid facing'
+!!! SurveyCrawler class | exceptions
+boulderFoundErrorDescription
+
+	^'A boulder was found'
+!!! SurveyCrawler class | exceptions
+siltFoundInGuardedRunErrorDescription
+
+	^'Silt was found during a guarded run'
+!!! SurveyCrawler class | exceptions
+nestedGuardedRunErrorDescription
+
+	^'A guarded run can not be started inside another guarded run'
+!!! SurveyCrawler class | exceptions
+unfinishedGuardedRunErrorDescription
+
+	^'The guarded run was not finished'
+!!! SurveyCrawler class | exceptions
+guardedRunNotStartedErrorDescription
+
+	^'Can not finish a guarded run that was not started'
+!!! SurveyCrawler class | sliding
+slideLimit
+
+	^10
+!!! SurveyCrawler | initialization
+initializeAt: aPosition facing: aFacing sonar: aSonar random: aRandom
+
+	position := aPosition.
+	facing := aFacing.
+	sonar := aSonar.
+	random := aRandom.
+	runState := UnguardedRun new
+!!! SurveyCrawler | command processing
+process: aSequenceOfCommands
+
+	| commands |
+	
+	commands := ReadStream on: aSequenceOfCommands.
+	[ [ commands atEnd ] whileFalse: [ self processNextCommandFrom: commands ].
+	runState assertIsFinished ]
+		on: Error
+		do: [ :anError |
+			runState abortOn: self.
+			anError pass ]
+!!! SurveyCrawler | command processing
+processNextCommandFrom: commands
+
+	| command |
+	
+	command := commands next.
+	(self timesToProcess: command from: commands) timesRepeat: [ self processCommand: command ]
+!!! SurveyCrawler | command processing
+timesToProcess: aCommand from: commands
+
+	^((self isRepeatableCommand: aCommand) and: [ self isRepetitionNextIn: commands ])
+		ifTrue: [ 1 + (commands next digitValue + 2) ]
+		ifFalse: [ 1 ]
+!!! SurveyCrawler | command processing
+processCommand: aCommand
+
+	(self isAdvanceCommand: aCommand) ifTrue: [ ^ self advance ].
+	(self isRetreatCommand: aCommand) ifTrue: [ ^ self retreat ].
+	(self isTurnClockwiseCommand: aCommand) ifTrue: [ ^ self turnClockwise ].
+	(self isTurnCounterClockwiseCommand: aCommand) ifTrue: [ ^ self turnCounterClockwise ].
+	(self isStartGuardedRunCommand: aCommand) ifTrue: [ ^ runState startGuardedRunOf: self ].
+	(self isFinishGuardedRunCommand: aCommand) ifTrue: [ ^ runState finishGuardedRunOf: self ].
+
+	self signalInvalidCommand.
+!!! SurveyCrawler | testing
+isRepeatableCommand: aCommand
+
+	^(self isAdvanceCommand: aCommand)
+		or: [ (self isRetreatCommand: aCommand)
+		or: [ (self isTurnClockwiseCommand: aCommand)
+		or: [ self isTurnCounterClockwiseCommand: aCommand ] ] ]
+!!! SurveyCrawler | testing
+isRepetitionNextIn: commands
+
+	^commands atEnd not and: [ commands peek isDigit ]
+!!! SurveyCrawler | testing
+isStartGuardedRunCommand: aCommand
+
+	^aCommand = $(
+!!! SurveyCrawler | testing
+isFinishGuardedRunCommand: aCommand
+
+	^aCommand = $)
+!!! SurveyCrawler | moving
+advance
+
+	self moveTowards: facing direction
+!!! SurveyCrawler | moving
+retreat
+
+	self moveTowards: facing direction negated
+!!! SurveyCrawler | moving
+moveTowards: aDirection
+
+	(sonar groundAt: position + aDirection) move: self towards: aDirection
+!!! SurveyCrawler | facing
+turnClockwise
+
+	self turnTo: facing clockwise
+!!! SurveyCrawler | facing
+turnCounterClockwise
+
+	self turnTo: facing counterClockwise
+!!! SurveyCrawler | facing
+turnTo: aFacing
+
+	(sonar groundAt: position) turn: self to: aFacing
+!!! SurveyCrawler | ground movements
+moveBy: aDisplacement
+
+	position := position + aDisplacement.
+	runState recordUndo: [ position := position - aDisplacement ]
+!!! SurveyCrawler | ground movements
+slideTowards: aDirection
+
+	self moveBy: aDirection * (random nextInteger: self class slideLimit).
+	runState crawlerSlid
+!!! SurveyCrawler | ground movements
+face: aFacing
+
+	| previousFacing |
+	
+	previousFacing := facing.
+	facing := aFacing.
+	runState recordUndo: [ facing := previousFacing ]
+!!! SurveyCrawler | ground movements
+signalBoulderFound
+
+	self error: self class boulderFoundErrorDescription
+!!! SurveyCrawler | guarded run
+startGuardedRun
+
+	runState := GuardedRun new
+!!! SurveyCrawler | guarded run
+finishGuardedRun
+
+	runState := UnguardedRun new

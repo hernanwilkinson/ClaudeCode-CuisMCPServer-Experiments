@@ -1,0 +1,25 @@
+{
+  "name": "2022-1c-recuperatorio-parcial2",
+  "title": "CustomerImporter: The Return (Sales Import)",
+  "kind": "feature",
+  "package": "CustomerImporter-Recu-2doParcial",
+  "description": "Starting from the existing CSV customer importer, the student must add, with TDD, an importer for a sales CSV made of multi-line records (S sale header, EC existing customer or NC new customer, one or more P products, ES end of sale), robust to format errors, where a sale is only created when it is valid (one buyer, at least one product), storing sales in the same transient system.",
+  "startingPackages": ["starting/CustomerImporter-Recu-2doParcial.st"],
+  "solutionPackages": ["solution/CustomerImporter-Recu-2doParcial-Solucion.st"],
+  "acceptanceTests": null,
+  "source": "2022-1c/Recu2doParcial",
+  "semester": "2022-1c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "A sale spans several CSV lines, so the importer is a small parser state machine (outside a sale / inside a sale collecting a buyer and products until ES) that should end in a Builder creating a complete valid Sale; the hints push toward extracting a generic CSVImporter superclass (Insert Superclass, Push Up) and reusing the customer-record import for NC records."
+  },
+  "sizeHint": {"classesInStartingCode": 16, "methodsInStartingCode": 112}
+}

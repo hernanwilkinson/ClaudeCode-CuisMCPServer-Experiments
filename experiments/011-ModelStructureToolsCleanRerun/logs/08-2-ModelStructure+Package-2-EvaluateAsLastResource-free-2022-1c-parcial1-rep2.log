@@ -1,0 +1,28 @@
+==> job 8: rep 2, 2-ModelStructure+Package / 2-EvaluateAsLastResource / free / exercises/2022-1c-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260917-010607-13362
+    image serving 34 tools on port 60691
+    installing starting/ISW1-2022-1C-Parcial-1.st
+    warm-up (given tests run once before the session): classes 1 run 25 passed 25 failed 0 errors 0
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 2400s
+    claude exited with status 0 after 263s, 47 tool calls logged by the server
+    saving the image
+    filing out package ISW1-2022-1C-Parcial-1
+        loose changes: 0 method(s) outside the package ; classes changed outside the package: []
+    status completed, turns 10, cost $1.633478
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260917-010607-13362
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260917-010607-13362
+    installing the run's package ISW1-2022-1C-Parcial-1
+    acceptance test classes: FormulaOneTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260917-010607-13362: 2-ModelStructure+Package / 2-EvaluateAsLastResource / free / 2022-1c-parcial1
+  acceptance         28/28 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 97.7%, by the agent's tests None
+  test smells        1
+  model              11 classes, 88 methods, 1.95 sends/method, 0 over 10, ifs 6, nil checks 0, type checks 0
+  diff               +54 methods, ~50 changed, -15 removed; classes +7 -0
+  tool calls         9 by the agent, 2 errors, evaluate kinds {'other': 1}
+  mentor             59 findings {'Keyword message send format': 28, 'Method complexity': 13, 'No empty method categories': 6, 'Move helper method to the right class': 4, 'Avoid setters': 3, 'Instance variables read & written': 1, 'One initialize message doing only assignments': 1, 'No extra parenthesis': 1, 'Instance creation format': 1, 'ifEmpty: over isEmpty ifTrue:': 1}
+  agent              claude-opus-5 effort high, 263s, cost $1.633478, tokens in 20 cache-read 339,746 out 33,857
+  refactorings       8 done by hand {'manualExtractMethod': 8}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/011-ModelStructureToolsCleanRerun/cells/2-ModelStructure+Package_2-EvaluateAsLastResource_free/2022-1c-parcial1/20260917-010607-13362/analysis.json

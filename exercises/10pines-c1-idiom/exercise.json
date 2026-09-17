@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c1-idiom",
+  "title": "CustomerBook test idioms",
+  "kind": "refactoring",
+  "package": "Idiom-Exercise",
+  "description": "A CustomerBook that adds and removes customers by name, with four tests: two measure that adding/removing does not take more than a time limit and two verify that an error (Error / NotFound) is raised with the right message and the book left untouched. The student must remove the duplicated code in the tests by extracting the repeated idioms into parametrised assertion methods that receive blocks, keeping the four tests green.",
+  "startingPackages": ["starting/Idiom-Exercise.st"],
+  "solutionPackages": ["solution/Idiom-Solution.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C1 - Diseño Avanzado de Software con Objetos I",
+  "semester": "10pines-c1",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": true,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "The duplication is in the tests, not in the model: the timing idiom (read the clock, run, read the clock, assert the difference) and the should-raise idiom ([...  self fail] on: Error do: [...]) each appear twice with different code in the middle, so the student must apply 'copy the repeated code to one place, parametrise what changes with a closure, name it' and end with assertExecuting:doesNotTakeMoreThan: and assert:raises:andVerify:."
+  },
+  "sizeHint": {"classesInStartingCode": 4, "methodsInStartingCode": 20}
+}

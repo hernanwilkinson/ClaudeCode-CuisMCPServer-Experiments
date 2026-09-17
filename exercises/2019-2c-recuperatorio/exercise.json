@@ -1,0 +1,25 @@
+{
+  "name": "2019-2c-recuperatorio",
+  "title": "The Towers Game",
+  "kind": "greenfield",
+  "package": "Chess-IS1-2Recu-2c2019",
+  "description": "A chess variant on an 8x8 board where each player has two rooks ('towers'): alternating turns, straight-line moves without jumping, captured towers return to their original square (or the next free square towards the center) with a 3-square movement limit for their next 4 moves, and each side wins by occupying a given pair of central squares. The student must design and test the whole game from scratch.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/Chess-IS1-2Recu-2c2019-TowersGame.st"],
+  "acceptanceTests": null,
+  "source": "2019-2c/Recu",
+  "semester": "2019-2c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": true,
+    "notes": "Many interacting rules to model from nothing: whose turn / who won as game states, tower colour as polymorphism instead of ifs, a per-tower moving state (normal vs limited for 4 moves) that changes on capture, path-blocking checks over the board, and relocation of an eaten tower towards the center."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

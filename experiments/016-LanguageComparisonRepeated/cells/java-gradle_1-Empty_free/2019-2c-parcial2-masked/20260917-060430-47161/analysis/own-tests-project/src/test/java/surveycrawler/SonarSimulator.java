@@ -1,0 +1,24 @@
+package surveycrawler;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class SonarSimulator implements Sonar {
+
+    private final Map<Point, GroundType> groundTypes = new HashMap<>();
+
+    public SonarSimulator withBoulderAt(Point aPosition) {
+        groundTypes.put(aPosition, new Boulder());
+        return this;
+    }
+
+    public SonarSimulator withSiltAt(Point aPosition) {
+        groundTypes.put(aPosition, new Silt());
+        return this;
+    }
+
+    @Override
+    public GroundType groundTypeAt(Point aPosition) {
+        return groundTypes.getOrDefault(aPosition, new FirmSand());
+    }
+}

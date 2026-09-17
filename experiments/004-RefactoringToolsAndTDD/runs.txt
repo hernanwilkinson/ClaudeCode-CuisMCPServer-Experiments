@@ -1,0 +1,11 @@
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/3-Search_8-DesignHeuristicsInline_tdd/2023-2c-parcial2/20260911-151410-39007
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_8-DesignHeuristicsInline_tdd/2023-2c-parcial2/20260911-151410-39006
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_test-after/2023-2c-parcial2/20260911-153152-54314
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_free/2023-2c-parcial2/20260911-154139-55181
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_tdd/2023-2c-parcial2/20260911-153131-54159
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/3-Search_8-DesignHeuristicsInline_tdd/2025-2c-recuperatorio/20260911-155316-55727
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_8-DesignHeuristicsInline_tdd/2025-2c-recuperatorio/20260911-155712-56535
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_test-after/2025-2c-recuperatorio/20260911-164404-58548
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_tdd/2025-2c-recuperatorio/20260911-163757-57798
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_free/2025-2c-recuperatorio/20260911-165225-59389
+/Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/004-RefactoringToolsAndTDD/cells/4-Refactoring_4-Refactoring+8-DesignHeuristicsInline_free/2025-2c-recuperatorio/20260911-174604-62189

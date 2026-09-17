@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c2-portfolio-timeconsuming",
+  "title": "Account summary with a time-consuming calculation (Future)",
+  "kind": "feature",
+  "package": "PortfolioTimeConsuming-Ejercicio",
+  "description": "A finished portfolio/visitor package simulates slow operations with one-second delays in the account summary and in the investment visitors; two summary classes that append 'Ganancias por ...' and 'Inversiones por ...' take 2 and 3 seconds sequentially. The student must compute the investment values concurrently with the summary so both summaries take about one second (tests 30 and 31 assert at most 1100 ms), ideally by introducing a Future that represents the not-yet-available value.",
+  "startingPackages": ["starting/PortfolioTimeConsuming-Ejercicio.st"],
+  "solutionPackages": ["solution/PortfolioTimeConsuming-FutureNoPolimorfico.st", "solution/PortfolioTimeConsuming-FuturePolimorfico.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C2 - Diseño Avanzado de Software con Objetos II",
+  "semester": "10pines-c2",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": false,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "Small change inside a large given package (39 classes): reify the pending computation as a Future built on a forked process and a Semaphore, and decide whether it is explicit (send value) or transparent (ProtoObject with doesNotUnderstand: so the summary can treat it as the number); the reference solutions also show the raw Semaphore version for contrast."
+  },
+  "sizeHint": {"classesInStartingCode": 39, "methodsInStartingCode": 175}
+}

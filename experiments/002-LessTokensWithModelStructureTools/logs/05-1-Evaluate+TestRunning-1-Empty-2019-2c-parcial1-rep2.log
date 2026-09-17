@@ -1,0 +1,26 @@
+==> job 5: rep 2, 1-Evaluate+TestRunning / 1-Empty / exercises/2019-2c-parcial1
+==> run /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260910-202352-30225
+    image serving 7 tools on port 49709
+    installing starting/IngSof1-2019-2C-1Parcial.st
+    claude 2.1.268 (Claude Code), model claude-opus-5, effort high, budget $15, timeout 1800s
+    claude exited with status 0 after 221s, 17 tool calls logged by the server
+    saving the image
+    filing out package IngSof1-2019-2C-1Parcial
+    status completed, turns 18, cost $1.0006065
+==> done: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260910-202352-30225
+==> analyzing /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260910-202352-30225
+    installing the run's package IngSof1-2019-2C-1Parcial
+    acceptance test classes: CoffeeShopTest
+    running tests, coverage, test smells, heuristics and metrics in the image
+analysis of 20260910-202352-30225: 1-Evaluate+TestRunning / 1-Empty / free / 2019-2c-parcial1
+  acceptance         14/14 passed, 0 failed, 0 errors
+  agent tests        none
+  coverage           by all tests 89.8%, by the agent's tests None
+  test smells        2
+  model              11 classes, 49 methods, 1.61 sends/method, 0 over 10, ifs 0, nil checks 0, type checks 1
+  diff               +29 methods, ~23 changed, -7 removed; classes +5 -0
+  tool calls         17 by the agent, 1 errors, evaluate kinds {'reflection': 6, 'other': 3, 'definesCode': 4}
+  mentor             17 findings {'No empty method categories': 5, 'No class-name prefix in names': 5, 'Keyword message send format': 4, 'Class is referenced': 2, 'No extra parenthesis': 1}
+  agent              claude-opus-5 effort high, 221s, cost $1.0006065, tokens in 28 cache-read 326,073 out 19,522
+  refactorings       0 done by hand {}, 0 while a tool was available, 0 right after the tool failed; 0 refactoring tool calls, 0 of them failed; 0 methods redefined
+==> /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/002-LessTokensWithModelStructureTools/cells/1-Evaluate+TestRunning_1-Empty_free/2019-2c-parcial1/20260910-202352-30225/analysis.json

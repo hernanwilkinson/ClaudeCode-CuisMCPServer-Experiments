@@ -1,0 +1,150 @@
+{
+  "experiment": "005-LiveTypingCheaper",
+  "runId": "20260914-205048-16085",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "1-Evaluate+TestRunning-University",
+  "config": [
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "CustomerImporter-Recu-1er-Parcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 005-LiveTypingCheaper, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "1-Evaluate+TestRunning-University",
+    "base": "university",
+    "baseImage": "CuisUniversity7.9-8182.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/LiveTypingVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-1-Evaluate+TestRunning-University.image",
+    "features": [
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring",
+      "MCPServerLiveTyping"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools"
+    ],
+    "decorators": [],
+    "cuisDevCommit": "7b48a0fb4bdf47feff8ed6b95866efdf587ceba8",
+    "mcpServerCommit": "1d61daa41bbb1feb8ae0ec0569432cc0305f0e9b",
+    "builtAt": "2026-09-14T23:45:59Z",
+    "imageSha256": "de7b72fcb6a8c88ede352b9ffba66a7dc7da190bd2ec04f669965d704530ab4f"
+  },
+  "toolsServed": 7,
+  "toolDefinitionBytes": 3412,
+  "hashes": {
+    "prompt.md": "64a88a04d2641530a0c9aead75f87428a30e570e520e7589aa5c3883ea368c65",
+    "CLAUDE.md": "508b88ef98bf53fa636d8a26930f3a379a14e6a65aaa092534405f6cdcfc355c",
+    "spec.md": "350580bde1271f57213ad50df190caea70d9c0fea0ab50f6de76c5a94b48e107",
+    "skills": {}
+  },
+  "port": 57274,
+  "startedAt": "2026-09-14T23:50:51Z",
+  "endedAt": "2026-09-15T00:00:35Z",
+  "elapsedSeconds": 584,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 28,
+    "agentCalls": 26
+  },
+  "changesBytesAtStart": 8636314,
+  "changesBytesAtEnd": 8664138,
+  "usageFromTranscript": {
+    "totalCostUsd": 2.614,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 50,
+        "cache_write_5m": 0,
+        "cache_write_1h": 79439,
+        "cache_read": 1195928,
+        "output": 48856,
+        "thinking": 35067,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 25,
+        "cost_usd": 2.614004
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_evaluate": 22,
+      "mcp__Cuis__smalltalk_run_test_class": 2,
+      "mcp__Cuis__smalltalk_run_tests_in_category": 1,
+      "mcp__Cuis__smalltalk_save_image": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 27,
+    "durationMs": 582200,
+    "durationApiMs": 577421,
+    "totalCostUsd": 2.614004,
+    "usage": {
+      "input_tokens": 50,
+      "cache_creation_input_tokens": 79439,
+      "cache_read_input_tokens": 1195928,
+      "output_tokens": 48856,
+      "output_tokens_details": {
+        "thinking_tokens": 35067
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 79439,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1147,
+          "cache_read_input_tokens": 79122,
+          "cache_creation_input_tokens": 317,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 317
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 50,
+        "outputTokens": 48856,
+        "cacheReadInputTokens": 1195928,
+        "cacheCreationInputTokens": 79439,
+        "webSearchRequests": 0,
+        "costUSD": 2.614004,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 35067,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "All 29 tests pass unchanged, and the image is saved.\n\n## What I did\n\n**Replaced the identification IFs with a polymorphic hierarchy** (`Identification` \u2190 `DNI`, `CUIT`):\n- `Identification class >> ofType:number:` finds the type with `typeFor:`, which detects among `self subclasses` the one whose `typeCode` matches (`'D'`/`'C'`), signalling `InvalidTypeError` when none does \u2014 the same `subclasses detect:` idiom the existing `Environment class >> current` already uses.\n- The instance-creation funnel `number:` lives once in the abstract class: it runs `assertIsValidNumber:` and sends the only `initialize`. Each subclass supplies just `isValidNumber:` and its error description, so the DNI/CUIT validations no longer repeat the \"check then `self error:`\" scaffolding.\n- `Customer` now holds an `identification` and delegates: `hasDNIAsIdentification` \u2192 `identification isDNI`, `dniNumberIfNone:` \u2192 `identification dniNumberIfNone:`, etc. No conditional survives in `Customer`.\n\n**Same treatment for zip codes** (`ZipCode` \u2190 `OldZipCode`, `NewZipCode`), dispatching on `canRepresent:` (first character digit vs. letter). `codeFrom:` is polymorphic too, so `OldZipCode` keeps an Integer and `NewZipCode` a String without an IF. A new zip code's four middle digits are validated by asking `OldZipCode isValidCode:` \u2014 the duplicated \"4 digits, greater than 999\" rule now exists in one place.\n\n**Other repetition removed:** `String >> isAllDigits` / `isAllLetters` (the `allSatisfy: [:c | c isDigit]` block appeared five times); the shared `'Invalid identification type'` text now lives once in `InvalidTypeError`; the identical customer-lookup block duplicated in `TransientCustomerSystem` and `PersistentCustomerSystem` became `Customer >> isIdentifiedWithType:number:`.\n\n**Collateral clean-up:** `Customer` and `Address` are now created complete (`named:lastNamed:identifiedBy:`, `at:number:town:zipCode:province:`) instead of `new` plus setters, so `importCustomer`/`importAddress` are five declarative lines each; the `newCustomer ifNil:` check became a `NoCustomerImported` null object (which owns the error text `CustomerImporter` still publishes for the test); `value` loops on `atEnd` instead of testing `nextLine` for nil; `record isEmpty ifTrue:` became `ifEmpty:`.\n\n**What I deliberately left alone:** the `isCustomerRecord` / `isAddressRecord` dispatch in `importRecord` and the `isKindOf: Customer` check in `DataBaseSession >> persist:`. Both are pre-existing code outside the type explosion the exam describes, and polymorphizing the record dispatch would mean a whole record hierarchy for a two-branch guard. Say the word if you want those converted as well.\n\nTests were not modified; `ImportTest` was moved to the category `CustomerImporter-Recu-1er-Parcial-Tests` as requested. I also exercised `PersistentCustomerSystem` manually (the tests only run the transient one) to confirm persistence and address id assignment still work."
+  }
+}

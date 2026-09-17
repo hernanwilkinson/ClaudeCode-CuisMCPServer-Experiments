@@ -1,0 +1,30 @@
+{
+  "name": "10pines-c6-tuslibros-iteracion1",
+  "title": "TusLibros Iteration 1: Shopping Cart",
+  "kind": "greenfield",
+  "package": "TusLibros",
+  "description": "First iteration of TusLibros.com: a shopping cart over the publisher's catalog that accepts books by ISBN with a quantity >= 1, rejects unknown ISBNs and invalid quantities, and lists its contents. Built from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": [
+    "solution/TusLibros-18.st"
+  ],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C6 - Construccion de Software Seguro usando Test Driven Development",
+  "semester": "10pines-c6",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "Small greenfield model whose interest is in the validations (catalog membership, quantity >= 1) signalled with exceptions and in representing quantities per book without exposing the collection."
+  },
+  "sizeHint": {
+    "classesInStartingCode": 0,
+    "methodsInStartingCode": 0
+  }
+}

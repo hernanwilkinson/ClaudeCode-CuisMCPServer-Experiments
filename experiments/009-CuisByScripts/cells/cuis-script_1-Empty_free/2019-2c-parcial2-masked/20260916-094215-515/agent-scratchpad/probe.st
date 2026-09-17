@@ -1,0 +1,1 @@
+((Smalltalk allClasses select: [:c | (c category ifNil: ['']) beginsWith: 'SurveyCrawler']) collect: [:c | c name -> c category]) asArray, { SurveyCrawler selectors asSortedCollection asArray. SurveyCrawler class selectors asSortedCollection asArray. CrawlerFacingUp selectors asArray. SurveyCrawlerTest selectors size }

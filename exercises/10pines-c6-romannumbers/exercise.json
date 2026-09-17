@@ -1,0 +1,30 @@
+{
+  "name": "10pines-c6-romannumbers",
+  "title": "Roman Numbers",
+  "kind": "greenfield",
+  "package": "RomanNumbers",
+  "description": "Convert Arabic numbers to their Roman numeral string (1 -> I, 4 -> IV, 9 -> IX, 50 -> L, 1000 -> M) with TDD, without recursion, generalising only by removing repeated code. The course's Randori kata.",
+  "startingPackages": [],
+  "solutionPackages": [
+    "solution/RomanNumbers-34.st"
+  ],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C6 - Construccion de Software Seguro usando Test Driven Development",
+  "semester": "10pines-c6",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": false,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": false,
+    "stateMachine": false,
+    "notes": "The whole point is letting the table of value/numeral pairs emerge by removing duplicated if-branches step by step, under the constraints of no recursion and no added accidental complexity."
+  },
+  "sizeHint": {
+    "classesInStartingCode": 0,
+    "methodsInStartingCode": 0
+  }
+}

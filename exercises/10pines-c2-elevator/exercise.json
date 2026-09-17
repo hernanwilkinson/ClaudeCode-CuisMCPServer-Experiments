@@ -1,0 +1,25 @@
+{
+  "name": "10pines-c2-elevator",
+  "title": "Elevator controller with states",
+  "kind": "greenfield",
+  "package": "Elevator-Exercise",
+  "description": "An automatic elevator controller that reacts to button and sensor events (calls from floors, door closed/opened, cabin on floor, wait for people timed out) and reports whether it is idle or working, the cabin stopped/moving/waiting and the door opened/opening/closing/closed, signaling ElevatorEmergency when sensors are out of sync. The student must implement Elevator from scratch so the 25 given tests pass, using the State pattern instead of conditionals.",
+  "startingPackages": ["starting/Elevator-Exercise.st"],
+  "solutionPackages": ["solution/Elevator-ConsoleExercise.st"],
+  "acceptanceTests": null,
+  "source": "10Pines-Capacitacion/C2 - Diseño Avanzado de Software con Objetos II",
+  "semester": "10pines-c2",
+  "exam": "quiz",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Three orthogonal state variables (controller idle/working, cabin stopped/moving/waiting, door opened/opening/closing/closed) whose combination decides what each event does; the naive solution is a web of nested ifs on booleans, the intended one is three State hierarchies with double dispatch back to the elevator, plus deciding who performs the transitions."
+  },
+  "sizeHint": {"classesInStartingCode": 3, "methodsInStartingCode": 25}
+}

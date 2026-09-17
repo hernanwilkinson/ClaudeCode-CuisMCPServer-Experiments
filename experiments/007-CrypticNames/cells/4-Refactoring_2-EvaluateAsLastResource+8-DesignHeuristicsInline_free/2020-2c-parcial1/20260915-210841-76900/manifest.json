@@ -1,0 +1,168 @@
+{
+  "experiment": "007-CrypticNames",
+  "runId": "20260915-210841-76900",
+  "warmUp": "classes 2 run 27 passed 27 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "4-Refactoring",
+  "config": [
+    "2-EvaluateAsLastResource",
+    "8-DesignHeuristicsInline"
+  ],
+  "technique": "free",
+  "exercise": "2020-2c-parcial1",
+  "package": "ISW1-2020-2C-Parcial-Enunciado",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 007-CrypticNames, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "4-Refactoring",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-4-Refactoring.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer",
+      "MCPServerMethodFinder",
+      "MCPServerExtraRefactoring"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools",
+      "MCPModelStructureTools",
+      "MCPPackageTools",
+      "MCPSearchTools",
+      "MCPMethodFinderTools",
+      "MCPRefactoringTools",
+      "MCPExtraRefactoringTools"
+    ],
+    "decorators": [],
+    "cuisDevCommit": "7b48a0fb4bdf47feff8ed6b95866efdf587ceba8",
+    "mcpServerCommit": "1d61daa41bbb1feb8ae0ec0569432cc0305f0e9b",
+    "builtAt": "2026-09-14T23:44:15Z",
+    "imageSha256": "553266ab261a210f3c27754bd6b5f87763662950097fb108fef3869fb0e0b378"
+  },
+  "toolsServed": 73,
+  "toolDefinitionBytes": 68037,
+  "hashes": {
+    "prompt.md": "3c6eb34752de9880d656d1e69ffe990e05189606c669a02c4e6512839dda5107",
+    "CLAUDE.md": "970451780755a061052263cec35b04804b69c8ca186df372326d386860a509fd",
+    "spec.md": "7cc998c60087bc2b4ed44db43681db3e314b5b0714d44b416989a926005ac770",
+    "skills": {}
+  },
+  "port": 60957,
+  "startedAt": "2026-09-16T00:08:43Z",
+  "endedAt": "2026-09-16T00:14:18Z",
+  "elapsedSeconds": 335,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 3,
+    "agentCallsToLine": 89,
+    "agentCalls": 87
+  },
+  "changesBytesAtStart": 5196274,
+  "changesBytesAtEnd": 5211927,
+  "usageFromTranscript": {
+    "totalCostUsd": 2.0102,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 50,
+        "cache_write_5m": 0,
+        "cache_write_1h": 58732,
+        "cache_read": 1485213,
+        "output": 27202,
+        "thinking": 18193,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 25,
+        "cost_usd": 2.0102265
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_classes_in_category": 2,
+      "mcp__Cuis__smalltalk_class_source": 4,
+      "mcp__Cuis__smalltalk_run_tests_for_classes": 4,
+      "mcp__Cuis__smalltalk_package_of_class": 1,
+      "mcp__Cuis__smalltalk_senders_of": 2,
+      "mcp__Cuis__smalltalk_define_methods": 4,
+      "mcp__Cuis__smalltalk_delete_method": 7,
+      "mcp__Cuis__smalltalk_run_test_class": 1,
+      "mcp__Cuis__smalltalk_define_class": 6,
+      "mcp__Cuis__smalltalk_refactor_remove_unreferenced_instance_variables": 1,
+      "mcp__Cuis__smalltalk_evaluate": 1,
+      "mcp__Cuis__smalltalk_package_definition": 1,
+      "mcp__Cuis__smalltalk_run_tests_in_category": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 36,
+    "durationMs": 334000,
+    "durationApiMs": 329470,
+    "totalCostUsd": 2.0102265,
+    "usage": {
+      "input_tokens": 50,
+      "cache_creation_input_tokens": 58732,
+      "cache_read_input_tokens": 1485213,
+      "output_tokens": 27202,
+      "output_tokens_details": {
+        "thinking_tokens": 18193
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 58732,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1505,
+          "cache_read_input_tokens": 77512,
+          "cache_creation_input_tokens": 179,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 179
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 50,
+        "outputTokens": 27202,
+        "cacheReadInputTokens": 1485213,
+        "cacheCreationInputTokens": 58732,
+        "webSearchRequests": 0,
+        "costUSD": 2.0102265,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 18193,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "All 27 tests pass (none of the protected ones were touched).\n\n## 1. `Backpack` accessing (repeated code)\n\nThe two hand-rolled `whileTrue:` loops became one traversal:\n\n```smalltalk\ntotalWeight            ^ self totalOf: [ :aPortableObject | aPortableObject weight ]\ntotalPoints            ^ self totalOf: [ :aPortableObject | aPortableObject points ]\n\ntotalOf: aQuantityToAdd\n\t^ container\n\t\tinject: 0\n\t\tinto: [ :accumulatedTotal :aPortableObject | accumulatedTotal + (aQuantityToAdd value: aPortableObject) ]\n```\n\nThe `doesItAddPoints ifTrue:` inside `totalPoints` is gone: `NoPointsPortableObject` now answers `points` `^ 0`, so `doesItAddPoints` was removed from the three classes and `points` moved up to `PortableObject` as a subclass responsibility.\n\n## 2. `Backpack` adding (repeated code, no `if`s)\n\n`isKindOf:` was replaced by double dispatch on the already-declared `PortableObject>>addTo:`:\n\n```smalltalk\nBackpack>>add: aPortableObject          aPortableObject addTo: self\nPortableObject>>addTo: aBackpack        aBackpack store: self toleratingWeightExcessOf: self toleratedWeightExcess\n```\n\n`toleratedWeightExcess` is `0` for `NoPointsPortableObject` and `5` for `PointsPortableObject` \u2014 the only thing that actually varied. `store:toleratingWeightExcessOf:` holds the single copy of assert-weight / assert-points / add, and the points assertion is now harmless for point-less objects because they are worth 0.\n\n## 3. `Door`\n\nThe `#Opened`/`#Closed`/`#KeyClosed` symbols and their `if` cascades are gone. `DoorState` became the root of `OpenedDoorState`, `ClosedDoorState` and `KeyClosedDoorState` (a subclass of `ClosedDoorState`, since a locked door *is* a closed door \u2014 it inherits `isOpen`, `afterClosing` and `afterBeingUsed`, and overrides only how it is opened). The key moved out of `Door` and into the state that needs it, so `Door` now knows only its state:\n\n```smalltalk\ntoBeOpenedBy: aPlayableCharacter             state := state afterOpening\ntoBeClosedBy: aPlayableCharacter             state := state afterClosing\ntoBeOpenedBy: aPlayableCharacter using: aKey state := state afterOpeningUsing: aKey\ntoBeUsedBy: aPlayableCharacter               state := state afterBeingUsed\n```\n\nStates are immutable and answer the state the reaction leaves the door in, or signal the error. Creation funnels through `Door class>>inState:`; error descriptions stay on `Door class` (the tests read them) and gained `signalXXX` messages the states send. I also removed the unused `keyClosedErrorDescription`, a dead duplicate of `closedWithKeyErrorDescription`, and the stale `DoorState` scaffolding (`for:`, `initializeFor:`, `open`, `close`, `openUsing:`) \u2014 `initializeFor:` was left broken once the `door` variable went away.\n\n## Extras\n\n`test07`/`test08` now share `assertMaximumWeightIsExceededAdding:`, and `test09`/`test10` share `backpackContainingHammerAndSign`, both built on `emptyBackpack` / `weightCapacity` / `pointsCapacity`. The assertions in all four are unchanged.\n\nTwo notes: I moved `BackpackTest` and `DoorTest` to the `ISW1-2020-2C-Parcial-Enunciado-Tests` category as you asked (their code was untouched by the move), and the `ISW1` package has unsaved changes but no file name recorded, so I did not write it out or save the image \u2014 tell me the path if you want it filed."
+  }
+}

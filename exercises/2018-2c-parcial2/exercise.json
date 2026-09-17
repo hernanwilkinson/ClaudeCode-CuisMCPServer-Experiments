@@ -1,0 +1,25 @@
+{
+  "name": "2018-2c-parcial2",
+  "title": "ISW1COIN Fintech",
+  "kind": "greenfield",
+  "package": "ISW1-Fintech",
+  "description": "A fintech that manages ISW1COIN wallets identified by id, with slow (2%, 1 hour) and fast (4%, 10 minutes) transfers whose deposits stay pending until credited, immutable transaction records, no negative balances and a rejected 23:00-23:59:59 crediting window. The student must build the model from scratch with TDD.",
+  "startingPackages": [],
+  "solutionPackages": ["solution/2doParcial-2c2018-Solucion.st"],
+  "acceptanceTests": null,
+  "source": "2018-2c",
+  "semester": "2018-2c",
+  "exam": "parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": false,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "Slow/fast transfers, withdrawal/deposit legs and pending/credited transactions invite polymorphism instead of flags, time must be simulated through a clock collaborator, balances are computed by folding over transactions with units (Aconcagua), and the wallet is hidden behind ids."
+  },
+  "sizeHint": {"classesInStartingCode": 0, "methodsInStartingCode": 0}
+}

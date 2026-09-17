@@ -1,0 +1,149 @@
+{
+  "experiment": "012-ToolsVersusGuidance",
+  "runId": "20260917-012928-35381",
+  "warmUp": "classes 0 run 0 passed 0 failed 0 errors 0",
+  "mode": "headless",
+  "userMemoryPausedDuringSession": false,
+  "scenario": "1-Evaluate+TestRunning",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2025-2c-parcial2",
+  "package": "2025-2C-2doParcial",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 012-ToolsVersusGuidance, repetition 2",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "",
+  "skills": [],
+  "scenarioManifest": {
+    "scenario": "1-Evaluate+TestRunning",
+    "base": "cuis",
+    "baseImage": "Cuis7.9-8149.image",
+    "vm": "/Users/hernan/Documents/Cuis/Cuis-University-Installer/Cuis-Smalltalk-Dev/CuisVM.app/Contents/MacOS/Squeak",
+    "image": "MCP-1-Evaluate+TestRunning.image",
+    "features": [
+      "Aconcagua",
+      "Chalten",
+      "CodeCoverage",
+      "Tools-Finder",
+      "MCPServer"
+    ],
+    "toolGroups": [
+      "MCPImageTools",
+      "MCPTestRunningTools"
+    ],
+    "decorators": [],
+    "batchTool": false,
+    "cuisDevCommit": "73c43cac45a55157ea0276ab0b932c9243b16322",
+    "mcpServerCommit": "9e990b0a92636417cf282364c284c164f3805b4b",
+    "builtAt": "2026-09-16T01:36:33Z",
+    "imageSha256": "6f4ba8e56af704ddbe8385c14ecadb5609c2b844231876cb7facfad16fdb989d"
+  },
+  "toolsServed": 7,
+  "toolDefinitionBytes": 3412,
+  "hashes": {
+    "prompt.md": "6fbd86ffa2ba9e962638dece57f81a8aaaefe41539cb97bfdb6819cce10bbd05",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec.md": "71f3e87522e397b5e9def349ee26605930850702d755de29dddfd592b3c0071c",
+    "skills": {}
+  },
+  "port": 64041,
+  "startedAt": "2026-09-17T04:29:29Z",
+  "endedAt": "2026-09-17T04:32:20Z",
+  "elapsedSeconds": 171,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "mcpCallsLog": {
+    "file": "mcp-calls.jsonl",
+    "agentCallsFromLine": 2,
+    "agentCallsToLine": 19,
+    "agentCalls": 18
+  },
+  "changesBytesAtStart": 4552229,
+  "changesBytesAtEnd": 4582919,
+  "usageFromTranscript": {
+    "totalCostUsd": 0.87,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 36,
+        "cache_write_5m": 0,
+        "cache_write_1h": 25559,
+        "cache_read": 241581,
+        "output": 19739,
+        "thinking": 4290,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 18,
+        "cost_usd": 0.8700355
+      }
+    },
+    "toolCalls": {
+      "mcp__Cuis__smalltalk_evaluate": 17,
+      "mcp__Cuis__smalltalk_run_test_class": 1
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 19,
+    "durationMs": 169433,
+    "durationApiMs": 166969,
+    "totalCostUsd": 0.8700354999999999,
+    "usage": {
+      "input_tokens": 36,
+      "cache_creation_input_tokens": 25559,
+      "cache_read_input_tokens": 241581,
+      "output_tokens": 19739,
+      "output_tokens_details": {
+        "thinking_tokens": 4290
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 25559,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1098,
+          "cache_read_input_tokens": 26884,
+          "cache_creation_input_tokens": 403,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 403
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 36,
+        "outputTokens": 19739,
+        "cacheReadInputTokens": 241581,
+        "cacheCreationInputTokens": 25559,
+        "webSearchRequests": 0,
+        "costUSD": 0.8700354999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4290,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "terminalReason": "completed",
+    "text": "I built the fare system in the running image, and all 28 tests in `ISWMetropolitanoTest` pass. I haven't saved the image; tell me if you want me to.\n\n## Model (`2025-2C-2doParcial`)\n- **`Stop`**: a name plus its distance to the head of the line. `distanceTo:` gives the absolute difference between two stops.\n- **`FareTable`**: a list of `upToDistance -> fare` pairs; `fareFor:` picks the first one the distance fits in. `FareTable fixed: 1000 * peso` is a single pair that goes up to `PlusInfinity new`, which gives the Subway its fixed price.\n- **`MeansOfTransport`**: stops and a fare table. It is the same class for Bus, Subway and Train, since only the readers behave differently. It checks that there are at least two stops and that a direction is the head of the line or the last stop.\n- **`Trip`**: the means of transport, origin, destination and start time. It checks that both stops belong to that means of transport and are different. It knows its full fare, whether it falls on a weekend, whether it's on the same day as another trip, and whether it's a transfer (within 2 hours).\n- **`BajeCard`**: balance, discount plan and trips.\n  - `pay:` gives an error if the balance is too low. In that case nothing is charged and no trip is recorded.\n  - `endLastTripAt:` handles the train exit. It swaps the last trip for the shorter one, works out both fares in the same context and refunds the difference. This way discounts and transfers are applied the same way on entry and on exit.\n- **Discount plans** (subclasses of `DiscountPlan`):\n  - `NoDiscount`: full price, with the 50% transfer discount when it applies.\n  - `StudentDiscount`: 50% on weekdays with no transfer discount on top; weekends work like no discount.\n  - `RetireeDiscount`: the first 2 trips of each day are free; after that it works like no discount, transfers included.\n- **Readers**:\n  - `BusCardReader for: line`, then `charge:from:to:at:`.\n  - `Turnstile at: stop of: line` (Subway), then `charge:towards:at:`.\n  - `TrainTurnstile` is a `Turnstile` that adds `registerExitOf:`.\n\n## Tests (`2025-2C-2doParcial-Tests`)\nThe tests cover:\n- every example in the spec (600, 650, 0, and 600 on train entry with 200 back on exit);\n- the student weekday and weekend rules, including that discounts don't stack;\n- the retiree daily limit, which starts over each day, and paid retiree trips getting the transfer discount;\n- transfers: within 2 hours, after 2 hours, and with no limit on how many;\n- a card with too little balance, and a retiree travelling free with no balance;\n- all the required validations;\n- a train exit adjustment when the card has a discount or the trip was a transfer.\n\n## Choices I made where the spec was silent\n- **Retiree trips:** once the 2 free trips are used, the transfer discount can still apply.\n- **Transfer window:** a trip exactly 2 hours after the last one still counts as a transfer.\n- **Train exit:** tapping out at the same stop you entered is rejected, and the entry charge stays as it was."
+  }
+}

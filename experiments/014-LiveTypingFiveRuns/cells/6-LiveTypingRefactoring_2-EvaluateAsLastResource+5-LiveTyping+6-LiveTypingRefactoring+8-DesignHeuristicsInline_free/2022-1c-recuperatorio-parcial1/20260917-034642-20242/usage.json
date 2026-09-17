@@ -1,0 +1,48 @@
+{
+  "session": "claude-transcript",
+  "subagent_transcripts": 0,
+  "per_model": {
+    "claude-opus-5": {
+      "input": 26,
+      "cache_write_5m": 0,
+      "cache_write_1h": 45729,
+      "cache_read": 660395,
+      "output": 17102,
+      "thinking": 7139,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 13,
+      "cost_usd": 1.2151675
+    }
+  },
+  "main_only": {
+    "claude-opus-5": {
+      "input": 26,
+      "cache_write_5m": 0,
+      "cache_write_1h": 45729,
+      "cache_read": 660395,
+      "output": 17102,
+      "thinking": 7139,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 13
+    }
+  },
+  "subagents_only": {},
+  "tool_calls": {
+    "mcp__Cuis__smalltalk_classes_in_category": 2,
+    "mcp__Cuis__smalltalk_class_source": 2,
+    "mcp__Cuis__smalltalk_run_test_class": 2,
+    "mcp__Cuis__smalltalk_batch": 1,
+    "mcp__Cuis__smalltalk_list_packages": 1,
+    "mcp__Cuis__smalltalk_search_selectors": 1,
+    "mcp__Cuis__smalltalk_implementors_of": 1,
+    "mcp__Cuis__smalltalk_senders_of": 1,
+    "mcp__Cuis__smalltalk_define_class": 9,
+    "mcp__Cuis__smalltalk_define_methods": 1,
+    "mcp__Cuis__smalltalk_delete_method": 2,
+    "mcp__Cuis__smalltalk_refactor_remove_unreferenced_instance_variables": 1,
+    "mcp__Cuis__smalltalk_evaluate": 1
+  },
+  "total_cost_usd": 1.2152
+}

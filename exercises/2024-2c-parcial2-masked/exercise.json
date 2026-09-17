@@ -1,0 +1,30 @@
+{
+  "name": "2024-2c-parcial2-masked",
+  "title": "Orchard Harvester",
+  "kind": "greenfield",
+  "package": "OrchardHarvester",
+  "description": "A simplified orchard harvester prototype: a harvester bot and two scarecrow drones move on a hedge-lined board where the harvester collects small and large fruit for points, with lives, score, tick-delayed drones that pick random directions at hedges, and a game-over condition. The student must build the whole game model on top of a given StringOrchardBoard that parses and visits a string representation of the board, and must produce that representation back for the tests.",
+  "startingPackages": ["starting/StringOrchardBoard.st"],
+  "solutionPackages": [
+    "solution/2024-2C-Parcial-2-Solucion-masked.st",
+    "solution/2024-2C-Parcial-2-Solucion-ConGhostOverPill-masked.st",
+    "solution/TomasRodriguezNadin-Fix-GhostOverPill-masked.cs.st"
+  ],
+  "acceptanceTests": null,
+  "source": "2024-2c/2doParcial",
+  "semester": "2024-2c",
+  "exam": "parcial2",
+  "maskedFrom": "2024-2c-parcial2",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": true,
+    "refactoringOfGivenCode": false,
+    "newBehaviorOnGivenCode": true,
+    "fromScratch": true,
+    "typeInformationHelps": true,
+    "stateMachine": true,
+    "notes": "A heterogeneous board of hedges, fruit, bare ground, drones and the harvester built through a visitor, where drones must remember what they cover, start after different tick counts and choose directions from a random 1-5 mapping, plus lives, score and game-over; the reference solution itself had a drone-over-fruit game-over bug, showing how subtle the element/collision model is."
+  },
+  "sizeHint": {"classesInStartingCode": 5, "methodsInStartingCode": 68}
+}
