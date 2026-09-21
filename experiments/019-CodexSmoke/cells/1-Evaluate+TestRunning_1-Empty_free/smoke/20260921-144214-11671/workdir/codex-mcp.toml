@@ -1,0 +1,3 @@
+[mcp_servers.Cuis]
+url = "http://127.0.0.1:59740/mcp"
+bearer_token_env_var = "CUIS_MCP_TOKEN"

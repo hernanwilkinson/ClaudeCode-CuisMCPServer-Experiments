@@ -17,3 +17,9 @@ spec*original.pdf
 .mcp.json
 spec*original.txt
 spec*original.md
+
+# Notas de trabajo que no se publican
+ErrorsToFix/
+NewPackages/
+UserChanges/
+research-design.md

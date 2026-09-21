@@ -71,6 +71,7 @@ TIMEOUT="3600"
 NOTE=""
 INTERACTIVE=0
 FINISH=""
+AGENT="claude"
 
 usage() {
   sed -n '2,34p' "$0" | sed 's/^# \{0,1\}//'
@@ -90,6 +91,7 @@ while [ $# -gt 0 ]; do
     --experiment) EXPERIMENT="$2"; shift 2 ;;
     --experiments-dir) EXPERIMENTS_DIR="$2"; shift 2 ;;
     --note)      NOTE="$2"; shift 2 ;;
+    --agent)     AGENT="$2"; shift 2 ;;
     --interactive) INTERACTIVE=1; shift ;;
     --finish)    FINISH="$2"; shift 2 ;;
     -h|--help)   usage ;;
@@ -163,6 +165,22 @@ for line in open('$RUN/claude-stream.jsonl'):
     if r.get('type') == 'system' and r.get('subtype') == 'init':
         print(r['session_id']); break
 " 2>/dev/null || true)"
+if [ "$AGENT" = codex ]; then
+  # The thread id of the session names its rollout file under CODEX_HOME.
+  SESSION_ID="$(python3 -c "
+import json, sys
+for line in open('$RUN/claude-stream.jsonl'):
+    try: r = json.loads(line)
+    except ValueError: continue
+    if r.get('type') == 'thread.started':
+        print(r['thread_id']); break
+" 2>/dev/null || true)"
+  TRANSCRIPT="$(find "${CODEX_HOME:-$HOME/.codex}/sessions" -name "rollout-*$SESSION_ID.jsonl" 2>/dev/null | head -1)"
+  if [ -n "$TRANSCRIPT" ] && [ -f "$TRANSCRIPT" ]; then
+    cp "$TRANSCRIPT" "$RUN/codex-rollout.jsonl"
+    python3 "$SCRIPT_DIR/codex-session-tokens.py" "$RUN/codex-rollout.jsonl" --json > "$RUN/usage.json" 2>/dev/null || true
+  fi
+else
 TRANSCRIPT="$(find "$HOME/.claude/projects" -name "$SESSION_ID.jsonl" 2>/dev/null | head -1)"
 if [ -z "$SESSION_ID" ]; then
   # No stream (interactive session): the transcript is the one that records this working
@@ -173,6 +191,7 @@ fi
 if [ -n "$SESSION_ID" ] && [ -f "$TRANSCRIPT" ]; then
   cp "$TRANSCRIPT" "$RUN/claude-transcript.jsonl"
   python3 "$SCRIPT_DIR/session-tokens.py" "$RUN/claude-transcript.jsonl" --json > "$RUN/usage.json" 2>/dev/null || true
+fi
 fi
 
 # ---------------------------------------------------------------- manifest
@@ -185,6 +204,9 @@ def sha256(path):
     return hashlib.sha256(open(path, "rb").read()).hexdigest()
 
 result = {}
+# Codex has no single "result" record: a session is a sequence of turns, the last agent message
+# is its answer and the usage of each turn is reported when the turn closes.
+turns, last_message, codex_usage = 0, None, None
 for line in open(f"{run}/claude-stream.jsonl"):
     try:
         record = json.loads(line)
@@ -192,6 +214,16 @@ for line in open(f"{run}/claude-stream.jsonl"):
         continue
     if record.get("type") == "result":
         result = record
+    elif record.get("type") == "turn.completed":
+        turns += 1
+        codex_usage = record.get("usage")
+    elif record.get("type") in ("turn.failed", "error"):
+        result = {"subtype": "error", "is_error": True, "result": json.dumps(record)[:1000]}
+    elif record.get("type") == "item.completed" and (record.get("item") or {}).get("type") == "agent_message":
+        last_message = record["item"].get("text")
+if "$AGENT" == "codex" and not result and turns:
+    result = {"subtype": "success", "is_error": False, "num_turns": turns,
+              "usage": codex_usage, "result": last_message}
 
 interactive = "$INTERACTIVE" == "1"
 status = "completed"
@@ -220,6 +252,7 @@ manifest = {
     "technique": "$TECHNIQUE",
     "exercise": "$EXERCISE_NAME",
     "package": "$PACKAGE",
+    "agent": "$AGENT",
     "model": "$MODEL",
     "effort": "$EFFORT",
     "budgetUsd": float("$BUDGET"),
@@ -233,7 +266,7 @@ manifest = {
     "toolDefinitionBytes": os.path.getsize(f"{run}/tools-list.json"),
     "hashes": {
         "prompt.md": sha256(f"{run}/prompt.md"),
-        "CLAUDE.md": sha256(f"{run}/workdir/CLAUDE.md"),
+        "$MEMORY_FILE": sha256(f"{run}/workdir/$MEMORY_FILE"),
         "spec.md": sha256(f"{run}/exercise/spec.md"),
         "skills": {name: sha256(f"{run}/workdir/.claude/skills/{name}/SKILL.md") for name in skills},
     },
@@ -361,6 +394,8 @@ VM="$(python3 -c "import json; print(json.load(open('$SCENARIO_DIR/manifest.json
 
 # ---------------------------------------------------------------- Claude Code working directory
 
+# Claude Code reads CLAUDE.md as project memory, Codex reads AGENTS.md.
+MEMORY_FILE="$( [ "$AGENT" = codex ] && echo AGENTS.md || echo CLAUDE.md )"
 SKILL_SOURCES=()
 {
   for name in "${CONFIG_NAMES[@]}"; do
@@ -378,10 +413,13 @@ SKILL_SOURCES=()
       done < "$SCRIPT_DIR/configs/$name/skills.txt"
     fi
   done
-} > "$WORKDIR/CLAUDE.md"
+} > "$WORKDIR/$MEMORY_FILE"
 
 BUILTIN_TOOLS=""
 SKILLS_FLAG="--disable-slash-commands"
+if [ "${#SKILL_SOURCES[@]}" -gt 0 ] && [ "$AGENT" = codex ]; then
+  echo "configuration brings skills, which Codex has no equivalent for; use 8-DesignHeuristicsInline" >&2; exit 2
+fi
 if [ "${#SKILL_SOURCES[@]}" -gt 0 ]; then
   mkdir -p "$WORKDIR/.claude/skills"
   for source in "${SKILL_SOURCES[@]}"; do
@@ -421,6 +459,11 @@ cat > "$WORKDIR/.mcp.json" <<EOF
     }
   }
 }
+EOF
+cat > "$WORKDIR/codex-mcp.toml" <<EOF
+[mcp_servers.Cuis]
+url = "http://127.0.0.1:$PORT/mcp"
+bearer_token_env_var = "CUIS_MCP_TOKEN"
 EOF
 
 # ---------------------------------------------------------------- prompt
@@ -470,10 +513,14 @@ CALLS_LOGGED_BEFORE_RUN="$( [ -f "$MCP_CALLS_LOG" ] && wc -l < "$MCP_CALLS_LOG" 
 
 # ---------------------------------------------------------------- run Claude Code
 
-CLAUDE_VERSION="$(claude --version 2>/dev/null | head -1)"
+if [ "$AGENT" = codex ]; then
+  CLAUDE_VERSION="$(codex --version 2>/dev/null | head -1)"
+else
+  CLAUDE_VERSION="$(claude --version 2>/dev/null | head -1)"
+fi
 STARTED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 START_SECONDS=$(date +%s)
-log "claude $CLAUDE_VERSION, model $MODEL, effort $EFFORT, budget \$$BUDGET, timeout ${TIMEOUT}s"
+log "$AGENT $CLAUDE_VERSION, model $MODEL, effort $EFFORT, budget \$$BUDGET, timeout ${TIMEOUT}s"
 
 # Everything --finish needs to collect this run if the collection below never happens.
 python3 - "$RUN/parameters.json" <<PARAMS
@@ -534,6 +581,35 @@ if [ "$INTERACTIVE" -eq 1 ]; then
   trap - INT
   restore_user_memory
   trap stop_vm EXIT
+elif [ "$AGENT" = codex ]; then
+# Codex always has a shell, so the scenario cannot take its tools away the way --tools "" does
+# for Claude Code: the sandbox is set read-only and the working directory holds nothing but the
+# guidance file, which is the closest the CLI gets to "the image is the only workplace":
+# read-only forbids writing and the network, and "never" turns a refused command into an answer
+# the model reads instead of a prompt nobody is there to accept. The image's tools are exempted
+# with default_tools_approval_mode="approve": without it "never" refuses every MCP call too.
+# --ignore-user-config leaves the user's config.toml, plugins and marketplaces out; auth still
+# comes from CODEX_HOME. Without < /dev/null the session waits on stdin forever.
+(
+  cd "$WORKDIR"
+  export CUIS_MCP_TOKEN="$TOKEN"
+  exec codex exec "$(cat "$RUN/prompt.md")" \
+    --json --ignore-user-config --ignore-rules --skip-git-repo-check \
+    --sandbox read-only -c approval_policy="never" \
+    --model "$MODEL" \
+    -c model_reasoning_effort="$EFFORT" \
+    -c "mcp_servers.Cuis.url=\"http://127.0.0.1:$PORT/mcp\"" \
+    -c 'mcp_servers.Cuis.bearer_token_env_var="CUIS_MCP_TOKEN"' \
+    -c 'mcp_servers.Cuis.default_tools_approval_mode="approve"' \
+    < /dev/null
+) > "$RUN/claude-stream.jsonl" 2> "$RUN/claude-stderr.log" &
+CLAUDE_PID=$!
+( sleep "$TIMEOUT"; kill -TERM "$CLAUDE_PID" 2>/dev/null && echo "timeout after ${TIMEOUT}s" >> "$RUN/claude-stderr.log" ) > /dev/null 2>&1 &
+WATCHDOG_PID=$!
+wait "$CLAUDE_PID" || CLAUDE_STATUS=$?
+pkill -P "$WATCHDOG_PID" 2>/dev/null || true
+kill "$WATCHDOG_PID" 2>/dev/null || true
+wait "$WATCHDOG_PID" 2>/dev/null || true
 else
 (
   cd "$WORKDIR"

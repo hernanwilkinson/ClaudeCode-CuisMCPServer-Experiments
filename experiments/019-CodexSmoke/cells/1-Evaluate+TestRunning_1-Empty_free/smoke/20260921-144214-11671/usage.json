@@ -1,0 +1,32 @@
+{
+  "session": "codex-rollout",
+  "subagent_transcripts": 0,
+  "per_model": {
+    "gpt-6-astra": {
+      "input": 5832,
+      "cache_write_5m": 0,
+      "cache_write_1h": 0,
+      "cache_read": 72448,
+      "output": 1892,
+      "thinking": 15,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 5,
+      "cost_usd": null
+    }
+  },
+  "main_only": {
+    "gpt-6-astra": {
+      "input": 5832,
+      "cache_write_5m": 0,
+      "cache_write_1h": 0,
+      "cache_read": 72448,
+      "output": 1892,
+      "thinking": 15,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 5,
+      "cost_usd": null
+    }
+  }
+}

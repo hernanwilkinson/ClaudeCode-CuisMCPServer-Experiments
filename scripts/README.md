@@ -180,6 +180,28 @@ when it ends, however it ends. Other Claude Code sessions started in that window
 names inlined at its end, because the agent has no file tools; the heuristics skill's "re-read
 the canonical file" therefore works without a Read tool.
 
+## 2a. Running one cell with Codex instead of Claude Code
+
+```bash
+scripts/2-runCell.sh --experiment 019-CodexSmoke --agent codex \
+  --scenario 1-Evaluate+TestRunning --config 1-Empty --technique free \
+  --exercise exercises/smoke --model gpt-6-astra --effort low
+```
+
+`--agent codex` runs the same cell through `codex exec`: the guidance goes to `AGENTS.md`, the
+server is passed as `-c mcp_servers.Cuis.*` (streamable HTTP with the same per-run bearer token),
+the session's rollout is copied to `codex-rollout.jsonl` and `codex-session-tokens.py` writes the
+same `usage.json` every other run has. `--ignore-user-config` keeps the user's `config.toml`,
+plugins and marketplaces out; authentication still comes from `CODEX_HOME`, so no credential is
+copied into the run. Configurations that install skills are refused, since Codex has no
+equivalent: use `8-DesignHeuristicsInline`.
+
+Two differences to keep in mind. Codex always has a shell, so a scenario cannot take its tools
+away the way `--tools ""` does for Claude Code; the sandbox is set to `read-only` in an empty
+working directory, which is the closest approximation. And there is no budget cap, so the
+timeout is the only limit. See [experiments/019-CodexSmoke](../experiments/019-CodexSmoke/README.md)
+for what had to be discovered to make it run and for what the measures do and do not compare.
+
 ## 2b. Running one cell in Java (the language comparison)
 
 ```bash
