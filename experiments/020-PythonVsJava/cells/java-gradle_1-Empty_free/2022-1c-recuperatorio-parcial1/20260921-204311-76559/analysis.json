@@ -1,0 +1,198 @@
+{
+  "run": "20260921-204311-76559",
+  "language": "java",
+  "scenario": "java-gradle",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "customerimporter",
+  "status": "completed",
+  "acceptance": {
+    "givenTestClasses": [
+      "ImportTest"
+    ],
+    "classesRun": [
+      "customerimporter.ImportTest"
+    ],
+    "classesMissing": [],
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "agentTests": {
+    "classes": 1,
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "originalTestsAsGiven": {
+    "classes": 1,
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "coverageByAllTests": null,
+  "coverageByAgentTests": null,
+  "testSmells": null,
+  "mentor": {
+    "findings": null
+  },
+  "mentorFindings": null,
+  "model": {
+    "classes": 22,
+    "methods": 139,
+    "linesOfCode": 630,
+    "totals": {
+      "ifs": 12,
+      "switches": 0,
+      "ternaries": 0,
+      "typeChecks": 1,
+      "nilChecks": 2
+    }
+  },
+  "java": {
+    "main": {
+      "files": 17,
+      "linesOfCode": 630,
+      "classes": 22,
+      "methods": 139,
+      "ifs": 12,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 1,
+      "nullChecks": 2,
+      "tests": 0
+    },
+    "test": {
+      "files": 1,
+      "linesOfCode": 417,
+      "classes": 1,
+      "methods": 68,
+      "ifs": 0,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 0,
+      "nullChecks": 0,
+      "tests": 29
+    }
+  },
+  "diff": {
+    "filesAdded": [
+      "src/main/java/customerimporter/CUIT.java",
+      "src/main/java/customerimporter/DNI.java",
+      "src/main/java/customerimporter/Identification.java",
+      "src/main/java/customerimporter/NewZipCode.java",
+      "src/main/java/customerimporter/OldZipCode.java",
+      "src/main/java/customerimporter/Validation.java",
+      "src/main/java/customerimporter/ZipCode.java"
+    ],
+    "filesChanged": [
+      "src/main/java/customerimporter/Address.java",
+      "src/main/java/customerimporter/Customer.java",
+      "src/main/java/customerimporter/CustomerImporter.java",
+      "src/main/java/customerimporter/PersistentCustomerSystem.java",
+      "src/main/java/customerimporter/TransientCustomerSystem.java"
+    ],
+    "filesRemoved": [],
+    "linesAdded": 433,
+    "linesRemoved": 83,
+    "methodsBefore": 161,
+    "methodsAfter": 207
+  },
+  "agent": {
+    "mode": "headless",
+    "model": "claude-opus-5",
+    "effort": "high",
+    "elapsedSeconds": 373,
+    "turns": 20,
+    "costUsd": 1.774841,
+    "tokens": {
+      "input": 30,
+      "cacheWrite": 61124,
+      "cacheRead": 627102,
+      "output": 33996,
+      "thinking": 23182,
+      "requests": 15
+    },
+    "toolsServed": null,
+    "toolDefinitionBytes": null,
+    "toolCalls": 19,
+    "toolCallsPerMinute": 3.06,
+    "toolErrors": 0,
+    "testRunCalls": 3,
+    "firstTestRunAtCall": 10,
+    "filesRead": 0,
+    "filesEdited": 0,
+    "refactoringToolCalls": 0,
+    "evaluateKinds": null,
+    "explorationCallsBeforeFirstChange": 19,
+    "liveTypingToolCalls": 0,
+    "actualScopeRefactoringCalls": 0,
+    "messageNotUnderstoodAnswers": null,
+    "failedTestRuns": null
+  },
+  "refactoringOpportunities": {},
+  "looseChanges": null,
+  "toolCalls": {
+    "agentCalls": 19,
+    "errors": 0,
+    "byTool": {
+      "Bash": {
+        "calls": 19
+      }
+    },
+    "sequence": [
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash"
+    ],
+    "bashCommands": [
+      "find . -type f -not -path \"./.gradle/*\" -not -path \"./build/*\" | head -50",
+      "ls -la",
+      "cat README.md CLAUDE.md build.gradle.kts",
+      "cat src/main/java/customerimporter/CustomerImporter.java",
+      "cat src/main/java/customerimporter/Customer.java src/main/java/customerimporter/Address.java",
+      "cat src/test/java/customerimporter/ImportTest.java",
+      "for f in CustomerSystem TransientCustomerSystem PersistentCustomerSystem Environment DevelopmentEnvironment IntegrationEnvironment; do echo \"=== $f ===\"; cat src/main/java/customerimporter/$f.java; done",
+      "cat gradle.properties settings.gradle.kts .mcp.json; java -version 2>&1; gradle --version 2>&1 | head -20",
+      "cat src/main/java/customerimporter/DataBaseSession.java",
+      "gradle test -q 2>&1 | tail -5; echo \"EXIT=$?\"",
+      "cd /private/tmp/claude-cells/20260921-204311-76559-76559/src/main/java/customerimporter && cat > Validation.java <<'EOF'\npackage customerimporter;\n\npublic final class Validation {\n\n    // asserting\n\n    public static void assertAreAllDigits(String aString, String anErrorDescription) {\n        assertThat(aString.chars().allMatch(aChar -> Character.isDigit(aChar)), anErrorDescription);\n    }\n\n    public static void assertAreAllLetters(String aString, String anErrorDescription) {\n        assertThat(aString.chars().allMatch(aChar -> Character.isLetter(aChar)), anErrorDescription);\n    }\n\n    public static int assertIsNumberBetween(String aString, int aMinimum, int aMaximum, String anErrorDescription) {\n        int number;\n\n        assertAreAllDigits(aString, anErrorDescription);\n        number = Integer.parseInt(aString);\n        assertThat(number >= aMinimum && number <= aMaximum, anErrorDescription);\n\n        return number;\n    }\n\n    public static void assertThat(boolean aCondition, String anErrorDescription) {\n        if (!aCondition) throw new RuntimeException(anErrorDescription);\n    }\n\n    // initialization\n\n    private Validation() {\n    }\n}\nEOF\ncat > Identification.java <<'EOF'\npackage customerimporter;\n\nimport java.util.Map;\nimport java.util.Optional;\nimport java.util.function.Function;\nimport java.util.function.Supplier;\n\npublic abstract class Identification {\n\n    // Each identification type is created by its own class, looked up by the type read from the record,\n    // so adding a new type does not change this class more than this map.\n    private static final Map<String, Function<String, Identification>> creatorPerType = Map.of(\n        DNI.TYPE, DNI::new,\n        CUIT.TYPE, CUIT::new);\n\n    private final String number;\n\n    // instance creation\n\n    public static Identification ofType(String anIdentificationType, String anIdentificationNumber) {\n        return Optional.ofNullable(creatorPerType.get(anIdentificationType))\n            .orElseThrow(() -> new RuntimeException(invalidIdentificationTypeErrorDescription()))\n            .apply(anIdentificationNumber);\n    }\n\n    // error messages\n\n    public static String invalidIdentificationTypeErrorDescription() {\n        return \"Invalid identification type\";\n    }\n\n    // initialization\n\n    protected Identification(String anIdentificationNumber) {\n        number = anIdentificationNumber;\n    }\n\n    // identification\n\n    public boolean isOfTypeAndNumber(String anIdentificationType, String anIdentificationNumber) {\n        return type().equals(anIdentificationType) && number.equals(anIdentificationNumber);\n    }\n\n    public String number() {\n        return number;\n    }\n\n    public abstract String type();\n\n    // testing\n\n    public abstract boolean isCUIT();\n\n    public abstract boolean isDNI();\n\n    // numbers\n\n    public abstract Object cuitNumberIfNone(Supplier<Object> aNoneBlock);\n\n    public abstract Object dniNumberIfNone(Supplier<Object> aNoneBlock);\n}\nEOF\ncat > DNI.java <<'EOF'\npackage customerimporter;\n\nimport java.util.function.Supplier;\n\npublic class DNI extends Identification {\n\n    public static final String TYPE = \"D\";\n\n    private static final int MINIMUM_NUMBER = 1;\n    private static final int MAXIMUM_NUMBER = 99999999;\n\n    private final int dniNumber;\n\n    // error messages\n\n    public static String invalidNumberErrorDescription() {\n        return \"Invalid DNI number\";\n    }\n\n    // initialization\n\n    DNI(String anIdentificationNumber) {\n        super(anIdentificationNumber);\n        dniNumber = Validation.assertIsNumberBetween(\n            anIdentificationNumber, MINIMUM_NUMBER, MAXIMUM_NUMBER, invalidNumberErrorDescription());\n    }\n\n    // identification\n\n    public String type() {\n        return TYPE;\n    }\n\n    // testing\n\n    public boolean isCUIT() {\n        return false;\n    }\n\n    public boolean isDNI() {\n        return true;\n    }\n\n    // numbers\n\n    public Object cuitNumberIfNone(Supplier<Object> aNoneBlock) {\n        return aNoneBlock.get();\n    }\n\n    public Object dniNumberIfNone(Supplier<Object> aNoneBlock) {\n        return dniNumber;\n    }\n}\nEOF\ncat > CUIT.java <<'EOF'\npackage customerimporter;\n\nimport java.util.Arrays;\nimport java.util.List;\nimport java.util.function.Supplier;\n\npublic class CUIT extends Identification {\n\n    public static final String TYPE = \"C\";\n\n    // \"23-2566677-9\" size 12, \"23-25666777-9\" size 13\n    private static final int MINIMUM_SIZE = 12;\n    private static final int MAXIMUM_SIZE = 13;\n    private static final int HEADER_SIZE = 2;\n    private static final List<String> VALID_HEADERS = Arrays.asList(\"20\", \"23\", \"24\", \"25\", \"26\", \"27\", \"30\", \"33\", \"34\");\n\n    // error messages\n\n    public static String invalidNumberErrorDescription() {\n        return \"Invalid CUIT number\";\n    }\n\n    // initialization\n\n    CUIT(String anIdentificationNumber) {\n        super(anIdentificationNumber);\n        assertIsValidNumber(anIdentificationNumber);\n    }\n\n    // identification\n\n    public String type() {\n        return TYPE;\n    }\n\n    // testing\n\n    public boolean isCUIT() {\n        return true;\n    }\n\n    public boolean isDNI() {\n        return false;\n    }\n\n    // numbers\n\n    public Object cuitNumberIfNone(Supplier<Object> aNoneBlock) {\n        return number();\n    }\n\n    public Object dniNumberIfNone(Supplier<Object> aNoneBlock) {\n        return aNoneBlock.get();\n    }\n\n    // initialization - private\n\n    private static void assertIsValidNumber(String aNumber) {\n        String errorDescription = invalidNumberErrorDescription();\n\n        Validation.assertThat(aNumber.length() >= MINIMUM_SIZE && aNumber.length() <= MAXIMUM_SIZE, errorDescription);\n        Validation.assertThat(aNumber.charAt(HEADER_SIZE) == '-' && aNumber.charAt(aNumber.length() - 2) == '-', errorDescription);\n        Validation.assertThat(VALID_HEADERS.contains(aNumber.substring(0, HEADER_SIZE)), errorDescription);\n        Validation.assertThat(Character.isDigit(aNumber.charAt(aNumber.length() - 1)), errorDescription);\n        Validation.assertAreAllDigits(aNumber.substring(HEADER_SIZE + 1, aNumber.length() - 2), errorDescription);\n    }\n}\nEOF\nls",
+      "cat > ZipCode.java <<'EOF'\npackage customerimporter;\n\nimport java.util.List;\nimport java.util.function.Function;\nimport java.util.function.Predicate;\nimport java.util.function.Supplier;\n\npublic abstract class ZipCode {\n\n    // Each zip code type knows whether it is the one written in the record, so adding a new type\n    // does not change this class more than this list.\n    private static final List<ZipCodeCreator> creators = List.of(\n        new ZipCodeCreator(OldZipCode::canBeCreatedFrom, OldZipCode::new),\n        new ZipCodeCreator(NewZipCode::canBeCreatedFrom, NewZipCode::new));\n\n    // instance creation\n\n    public static ZipCode from(String aZipCode) {\n        return creators.stream()\n            .filter(aCreator -> aCreator.canCreateFrom(aZipCode))\n            .findFirst()\n            .orElseThrow(() -> new RuntimeException(invalidZipCodeTypeErrorDescription()))\n            .from(aZipCode);\n    }\n\n    // error messages\n\n    public static String invalidZipCodeTypeErrorDescription() {\n        // Same message as the original code - and as the one the tests expect - even though\n        // it talks about an identification type\n        return \"Invalid identification type\";\n    }\n\n    // zip code\n\n    public abstract Object value();\n\n    // testing\n\n    public abstract boolean isNew();\n\n    public abstract boolean isOld();\n\n    // values\n\n    public abstract Object newZipCodeIfNone(Supplier<Object> aNoneBlock);\n\n    public abstract Object oldZipCodeIfNone(Supplier<Object> aNoneBlock);\n\n    // instance creation - private\n\n    private record ZipCodeCreator(Predicate<String> condition, Function<String, ZipCode> creation) {\n\n        boolean canCreateFrom(String aZipCode) {\n            return condition.test(aZipCode);\n        }\n\n        ZipCode from(String aZipCode) {\n            return creation.apply(aZipCode);\n        }\n    }\n}\nEOF\ncat > OldZipCode.java <<'EOF'\npackage customerimporter;\n\nimport java.util.function.Supplier;\n\npublic class OldZipCode extends ZipCode {\n\n    private static final int MINIMUM_NUMBER = 1000;\n    private static final int MAXIMUM_NUMBER = 9999;\n\n    private final int number;\n\n    // instance creation\n\n    public static boolean canBeCreatedFrom(String aZipCode) {\n        return Character.isDigit(aZipCode.charAt(0));\n    }\n\n    // error messages\n\n    public static String invalidZipCodeErrorDescription() {\n        return \"Invalid old zipcode\";\n    }\n\n    // number - a new zip code carries an old zip code number, so both validate it the same way,\n    // each one reporting its own error\n\n    static int assertIsValidNumber(String aNumber, String anErrorDescription) {\n        return Validation.assertIsNumberBetween(aNumber, MINIMUM_NUMBER, MAXIMUM_NUMBER, anErrorDescription);\n    }\n\n    // initialization\n\n    OldZipCode(String aZipCode) {\n        number = assertIsValidNumber(aZipCode, invalidZipCodeErrorDescription());\n    }\n\n    // zip code\n\n    public Object value() {\n        return number;\n    }\n\n    // testing\n\n    public boolean isNew() {\n        return false;\n    }\n\n    public boolean isOld() {\n        return true;\n    }\n\n    // values\n\n    public Object newZipCodeIfNone(Supplier<Object> aNoneBlock) {\n        return aNoneBlock.get();\n    }\n\n    public Object oldZipCodeIfNone(Supplier<Object> aNoneBlock) {\n        return number;\n    }\n}\nEOF\ncat > NewZipCode.java <<'EOF'\npackage customerimporter;\n\nimport java.util.function.Supplier;\n\npublic class NewZipCode extends ZipCode {\n\n    // \"B1636BBE\": a letter, an old zip code number and three letters\n    private static final int SIZE = 8;\n    private static final int NUMBER_FIRST_INDEX = 1;\n    private static final int NUMBER_LAST_INDEX = 5;\n    private static final int ENDING_LETTERS_SIZE = 3;\n\n    private final String zipCode;\n\n    // instance creation\n\n    public static boolean canBeCreatedFrom(String aZipCode) {\n        return Character.isLetter(aZipCode.charAt(0));\n    }\n\n    // error messages\n\n    public static String invalidZipCodeErrorDescription() {\n        return \"Invalid new zipcode\";\n    }\n\n    // initialization\n\n    NewZipCode(String aZipCode) {\n        assertIsValid(aZipCode);\n        zipCode = aZipCode;\n    }\n\n    // zip code\n\n    public Object value() {\n        return zipCode;\n    }\n\n    // testing\n\n    public boolean isNew() {\n        return true;\n    }\n\n    public boolean isOld() {\n        return false;\n    }\n\n    // values\n\n    public Object newZipCodeIfNone(Supplier<Object> aNoneBlock) {\n        return zipCode;\n    }\n\n    public Object oldZipCodeIfNone(Supplier<Object> aNoneBlock) {\n        return aNoneBlock.get();\n    }\n\n    // initialization - private\n\n    private static void assertIsValid(String aZipCode) {\n        String errorDescription = invalidZipCodeErrorDescription();\n\n        Validation.assertThat(aZipCode.length() == SIZE, errorDescription);\n        OldZipCode.assertIsValidNumber(aZipCode.substring(NUMBER_FIRST_INDEX, NUMBER_LAST_INDEX), errorDescription);\n        Validation.assertAreAllLetters(aZipCode.substring(aZipCode.length() - ENDING_LETTERS_SIZE), errorDescription);\n    }\n}\nEOF\necho done",
+      "python3 - <<'PY'\nimport re, pathlib\n\ncustomer = pathlib.Path('Customer.java')\ntext = customer.read_text()\nold_start = text.index('    private String identificationType;')\nold_end = text.index('    private List<Address> addresses;')\ntext = text[:old_start] + '    private Identification identification;\\n' + text[old_end:]\n\nidentification_section = text[text.index('    // identification'):].rstrip() \nnew_section = '''    // identification\n\n    public Object cuitNumberIfNone(Supplier<Object> aNoneClosure) {\n        return identification.cuitNumberIfNone(aNoneClosure);\n    }\n\n    public Object dniNumberIfNone(Supplier<Object> aNoneBlock) {\n        return identification.dniNumberIfNone(aNoneBlock);\n    }\n\n    public boolean hasCUITAsIdentification() {\n        return identification.isCUIT();\n    }\n\n    public boolean hasDNIAsIdentification() {\n        return identification.isDNI();\n    }\n\n    public boolean hasIdentificationOfType(String anIdentificationType, String anIdentificationNumber) {\n        return identification.isOfTypeAndNumber(anIdentificationType, anIdentificationNumber);\n    }\n\n    public void identification(Identification anIdentification) {\n        identification = anIdentification;\n    }\n\n    public String identificationNumber() {\n        return identification.number();\n    }\n\n    public String identificationType() {\n        return identification.type();\n    }\n}\n'''\ntext = text[:text.index('    // identification')] + new_section\ncustomer.write_text(text)\n\naddress = pathlib.Path('Address.java')\ntext = address.read_text()\ntext = text.replace('    private Object zipCode;', '    private ZipCode zipCode;')\nnew_zip = '''    // zip code\n\n    public boolean hasNewZipCode() {\n        return zipCode.isNew();\n    }\n\n    public boolean hasOldZipCode() {\n        return zipCode.isOld();\n    }\n\n    public Object newZipCodeIfNone(Supplier<Object> aNoneBlock) {\n        return zipCode.newZipCodeIfNone(aNoneBlock);\n    }\n\n    public Object oldZipCodeIfNone(Supplier<Object> aNoneBlock) {\n        return zipCode.oldZipCodeIfNone(aNoneBlock);\n    }\n\n    public Object zipCode() {\n        return zipCode.value();\n    }\n\n    public void zipCode(ZipCode aZipCode) {\n        zipCode = aZipCode;\n    }\n}\n'''\ntext = text[:text.index('    // zip code')] + new_zip\naddress.write_text(text)\nPY\ncat Customer.java | sed -n '1,30p'; echo ...; sed -n '/\\/\\/ identification/,$p' Customer.java; echo \"=== ADDRESS ===\"; sed -n '/\\/\\/ zip code/,$p' Address.java",
+      "python3 - <<'PY'\nimport pathlib\n\nimporter = pathlib.Path('CustomerImporter.java')\ntext = importer.read_text()\n\ntext = text.replace('import java.util.Arrays;\\n', '')\n\nold_import_customer = text[text.index('    public void importCustomer() {'):text.index('    public boolean isCustomerRecord() {')]\nnew_import_customer = '''    public void importCustomer() {\n\n        assertValidCustomerRecord();\n\n        newCustomer = new Customer();\n        newCustomer.firstName(record.get(1));\n        newCustomer.lastName(record.get(2));\n        newCustomer.identification(Identification.ofType(record.get(3), record.get(4)));\n\n        system.add(newCustomer);\n    }\n\n'''\ntext = text.replace(old_import_customer, new_import_customer)\n\nold_import_address = text[text.index('    public void importAddress() {'):text.index('    public boolean isAddressRecord() {')]\nnew_import_address = '''    public void importAddress() {\n        Address newAddress;\n\n        assertCustomerWasImported();\n        assertValidAddressRecord();\n\n        newAddress = new Address();\n        newAddress.streetName(record.get(1));\n        newAddress.streetNumber(Integer.parseInt(record.get(2)));\n        newAddress.town(record.get(3));\n        newAddress.zipCode(ZipCode.from(record.get(4)));\n        newAddress.province(record.get(5));\n\n        newCustomer.addAddress(newAddress);\n    }\n\n'''\ntext = text.replace(old_import_address, new_import_address)\nimporter.write_text(text)\n\ntransient_system = pathlib.Path('TransientCustomerSystem.java')\ntext = transient_system.read_text()\ntext = text.replace(\n    'if (aCustomer.identificationType().equals(anIdType) && aCustomer.identificationNumber().equals(anIdNumber)) return aCustomer;',\n    'if (aCustomer.hasIdentificationOfType(anIdType, anIdNumber)) return aCustomer;')\ntransient_system.write_text(text)\n\npersistent_system = pathlib.Path('PersistentCustomerSystem.java')\ntext = persistent_system.read_text()\ntext = text.replace(\n    '''            .select(aCustomer -> aCustomer.identificationType().equals(anIdType) && aCustomer.identificationNumber().equals(anIdNumber),\n                    Customer.class)''',\n    '            .select(aCustomer -> aCustomer.hasIdentificationOfType(anIdType, anIdNumber), Customer.class)')\npersistent_system.write_text(text)\nPY\nsed -n '/\\/\\/ customer/,/^    \\/\\/ evaluating - private/p' CustomerImporter.java",
+      "cd /private/tmp/claude-cells/20260921-204311-76559-76559 && gradle test 2>&1 | tail -25",
+      "grep -o 'tests=\"[0-9]*\" skipped=\"[0-9]*\" failures=\"[0-9]*\" errors=\"[0-9]*\"' build/test-results/test/*.xml",
+      "grep -rn \"if (\\|instanceof\\|equals(\\\"\" src/main/java/customerimporter | grep -v DataBaseSession",
+      "python3 - <<'PY'\nimport pathlib\n\nreadme = pathlib.Path('README.md')\ntext = readme.read_text()\ntext = text.replace(\n\"\"\"Java 17+ / JUnit 5 / Gradle translation of the Cuis Smalltalk starting code, kept as\nclose as possible to the original design (including its design smells: `if` chains on\ntype codes, `instanceof` checks, duplicated validation code).\"\"\",\n\"\"\"Java 17+ / JUnit 5 / Gradle translation of the Cuis Smalltalk starting code. The\ntranslation was kept as close as possible to the original design (including its design\nsmells: `if` chains on type codes, `instanceof` checks, duplicated validation code); the\nsolution of the exercise - removing those smells without touching the tests - is described\nin \"Solution\" below.\"\"\")\n\ntext += \"\"\"\n## Solution: removing the type `if`s and the repeated code\n\nThe starting code decided what an identification and what a zip code were with `if` chains\non type codes (`idType = 'D'`, first character is a digit / a letter) and with `instanceof`\nchecks (`zipCode instanceof Integer`). Both decisions are now taken once, when the object is\ncreated, and everything else is polymorphic.\n\n- `Identification` (abstract) with `DNI` and `CUIT`. Each subclass knows its type code\n  (`DNI.TYPE`, `CUIT.TYPE`), validates its own number in its constructor - so an invalid\n  identification can not exist - and answers `type`, `isDNI`, `isCUIT`, `dniNumberIfNone:`\n  and `cuitNumberIfNone:` without asking what it is. `Identification.ofType(aType, aNumber)`\n  looks the creator up in a map keyed by the type code instead of comparing with `if`s, and\n  raises \"Invalid identification type\" when there is none.\n- `ZipCode` (abstract) with `OldZipCode` and `NewZipCode`, same idea. Since the discriminator\n  is not an exact code but a condition on the string, `ZipCode.from(aZipCode)` asks each\n  type - through `canBeCreatedFrom` - which one recognizes the string.\n- `Customer` holds an `Identification` and `Address` holds a `ZipCode`, and both delegate to\n  them. `hasDNIAsIdentification`, `dniNumberIfNone:`, `hasOldZipCode`, `oldZipCodeIfNone:`,\n  ... are one-line delegations; no `instanceof` and no type code is left in them.\n- `CustomerImporter.importCustomer` / `importAddress` only read the record and ask for the\n  right object (`Identification.ofType(...)`, `ZipCode.from(...)`); all the validation left\n  those methods.\n\nRepeated code that was removed:\n\n- `Validation` holds the assertions that were copied all over the importer:\n  `assertThat`, `assertAreAllDigits`, `assertAreAllLetters` and `assertIsNumberBetween`\n  (all digits + parse + range, which the DNI and the old zip code validated with the same\n  three duplicated lines).\n- A new zip code carries an old zip code number, so `NewZipCode` validates it with\n  `OldZipCode.assertIsValidNumber`, passing its own error description; the 1000..9999 range\n  is known only by `OldZipCode`.\n- Every error message is a single method (`DNI.invalidNumberErrorDescription`,\n  `OldZipCode.invalidZipCodeErrorDescription`, ...) instead of a literal repeated at each\n  check.\n- `Customer.hasIdentificationOfType(aType, aNumber)` replaces the identical condition that\n  `TransientCustomerSystem` and `PersistentCustomerSystem` both wrote by hand.\n\nNot changed: the `if`s that are plain assertions (`assertValidCustomerRecord`, ...) and the\nrecord type dispatch in `importRecord`, which belong to the original starting code and not to\nthe identification / zip code types the exercise is about. `ZipCode`'s \"Invalid identification\ntype\" error is the message of the original code, kept because `test29` expects it.\n\nThe 29 tests in `ImportTest` are untouched and all pass.\n\"\"\"\nreadme.write_text(text)\nPY\ntail -5 README.md",
+      "gradle test 2>&1 | tail -3 && grep -o 'tests=\"[0-9]*\" skipped=\"[0-9]*\" failures=\"[0-9]*\" errors=\"[0-9]*\"' build/test-results/test/*.xml"
+    ]
+  }
+}

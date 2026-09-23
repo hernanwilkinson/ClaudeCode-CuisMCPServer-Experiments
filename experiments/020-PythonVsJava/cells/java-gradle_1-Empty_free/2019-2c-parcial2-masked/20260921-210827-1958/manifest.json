@@ -1,0 +1,129 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-210827-1958",
+  "warmUp": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "java-gradle",
+  "language": "java",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2019-2c-parcial2-masked",
+  "package": "surveycrawler",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 3",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "gradle": "Gradle 9.7.1",
+  "java": "openjdk version 25.0.1 2025-10-21",
+  "hashes": {
+    "prompt.md": "e9d3853189663ef18a1cbc204476b8a0fd3de2dc763bf91dba07306552a8d620",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "502ac0a22ec99d7df12863324d8473038d5332bacfc05d3634efdba704c14f45"
+  },
+  "startedAt": "2026-09-22T00:08:30Z",
+  "endedAt": "2026-09-22T00:15:52Z",
+  "elapsedSeconds": 442,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "ownTests": "classes 1 run 64 passed 64 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "SurveyCrawlerTest"
+    ],
+    "classesRun": [
+      "surveycrawler.SurveyCrawlerTest"
+    ],
+    "classesMissing": [],
+    "run": 64,
+    "passed": 64,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 1.893,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 30,
+        "cache_write_5m": 0,
+        "cache_write_1h": 61509,
+        "cache_read": 541490,
+        "output": 40280,
+        "thinking": 19820,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 15,
+        "cost_usd": 1.892985
+      }
+    },
+    "toolCalls": {
+      "Bash": 14
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 15,
+    "durationMs": 441270,
+    "durationApiMs": 435171,
+    "totalCostUsd": 1.892985,
+    "usage": {
+      "input_tokens": 30,
+      "cache_creation_input_tokens": 61509,
+      "cache_read_input_tokens": 541490,
+      "output_tokens": 40280,
+      "output_tokens_details": {
+        "thinking_tokens": 19820
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 61509,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1101,
+          "cache_read_input_tokens": 65052,
+          "cache_creation_input_tokens": 890,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 890
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 30,
+        "outputTokens": 40280,
+        "cacheReadInputTokens": 541490,
+        "cacheCreationInputTokens": 61509,
+        "webSearchRequests": 0,
+        "costUSD": 1.892985,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 19820,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "Done. All 64 tests pass (the original 16 plus 48 new ones).\n\n## Design\n\n**Repeated commands** \u2014 `process` tracks the last repeatable command (`a`, `t`, `h`, `g`) while scanning; a digit re-executes it `digit + 2` more times (`\"a0\"` \u2192 3 advances). A digit that doesn't follow a repeatable command is an invalid command: `\"0\"`, `\"a00\"`, `\"(a)0\"`, and a digit at the start of a new `process` call.\n\n**Sonar** (`src/main/java/surveycrawler/CrawlerSonar.java`) \u2014 answers the `CrawlerGround` of a position; the ground decides polymorphically what a movement and a turn do:\n\n| ground | `moveCrawler` | `turnCrawler` |\n|---|---|---|\n| `FirmSandGround` | normal displacement | turns |\n| `BoulderGround` | signals error | signals error |\n| `SiltGround` | slides 1\u201310 cells | turns |\n\nTwo sonars: `FirmSandSonar` (used by the unchanged `atFacing`, so the first version's behaviour is preserved) and `MappedGroundSonar` (surveyed map, firm sand by default). The slide length comes from an injected `Random` (`atFacingSonarSlidingWith`) so sliding is tested exactly, and the statement's example range is honoured literally: silt at `1@3` with the crawler at `1@2` facing Up lands between `1@3` and `1@12`.\n\n**Guarded runs** \u2014 `CrawlerRun` is the crawler's run state. `CrawlerNormalRun` slides on silt and forgets movements; `CrawlerGuardedRun` records every `CrawlerMovement` (`CrawlerDisplacement`, `CrawlerClockwiseTurn`, `CrawlerCounterClockwiseTurn`) and, when the sequence fails, undoes them in reverse order by doing the opposite movement of each. `process` catches the error, asks the current run to undo, resets to a normal run, and rethrows. Inside a guarded run, moving onto silt, starting a nested guarded run, an invalid command, and reaching the end of the sequence unclosed all raise and roll back; `')'` with no `'('` is an invalid command.\n\n## Decisions I made where the statement is silent\n\n- Only the destination's ground governs a movement (and the current position's ground a turn); the crawler doesn't re-check the cells it slides through.\n- A failing guarded run undoes only its own movements \u2014 earlier movements and earlier completed guarded runs in the same sequence are kept (test 62, 64).\n- Nested and unfinished guarded runs return to the position/facing held when the single guarded run started.\n- Undo uses primitives that bypass the sonar, since the crawler retraces ground it already crossed, so rollback can never fail.\n- A digit after `(` or `)` is invalid rather than repeating the last command from before the parenthesis.\n\nTests cover repetition arithmetic and its invalid forms, each ground type for advancing/retreating/turning (including boulder under the crawler), silt bounds with a stubbed `Random` plus a 500-run randomness check, and the guarded-run cases above, including that the crawler keeps working after a failed guarded run. The README documents the new classes and these decisions."
+  }
+}

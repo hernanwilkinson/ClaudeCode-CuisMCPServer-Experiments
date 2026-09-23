@@ -1,0 +1,15 @@
+{
+  "givenTestClasses": [
+    "SurveyCrawlerTest"
+  ],
+  "classesRun": [
+    "SurveyCrawlerTest"
+  ],
+  "classesMissing": [],
+  "run": 55,
+  "passed": 55,
+  "failed": 0,
+  "errors": 0,
+  "failures": [],
+  "errorTests": []
+}

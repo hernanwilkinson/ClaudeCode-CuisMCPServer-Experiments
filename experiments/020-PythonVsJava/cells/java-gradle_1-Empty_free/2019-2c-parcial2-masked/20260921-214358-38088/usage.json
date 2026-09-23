@@ -1,0 +1,59 @@
+{
+  "session": "claude-transcript",
+  "subagent_transcripts": 0,
+  "per_model": {
+    "claude-opus-5": {
+      "input": 26,
+      "cache_write_5m": 0,
+      "cache_write_1h": 45866,
+      "cache_read": 391299,
+      "output": 39333,
+      "thinking": 21370,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 13,
+      "cost_usd": 1.6377645
+    },
+    "<synthetic>": {
+      "input": 0,
+      "cache_write_5m": 0,
+      "cache_write_1h": 0,
+      "cache_read": 0,
+      "output": 0,
+      "thinking": 0,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 1,
+      "cost_usd": null
+    }
+  },
+  "main_only": {
+    "claude-opus-5": {
+      "input": 26,
+      "cache_write_5m": 0,
+      "cache_write_1h": 45866,
+      "cache_read": 391299,
+      "output": 39333,
+      "thinking": 21370,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 13
+    },
+    "<synthetic>": {
+      "input": 0,
+      "cache_write_5m": 0,
+      "cache_write_1h": 0,
+      "cache_read": 0,
+      "output": 0,
+      "thinking": 0,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 1
+    }
+  },
+  "subagents_only": {},
+  "tool_calls": {
+    "Bash": 15
+  },
+  "total_cost_usd": 1.6378
+}

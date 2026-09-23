@@ -1,0 +1,197 @@
+{
+  "run": "20260921-211617-6449",
+  "language": "python",
+  "scenario": "python-pytest",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "customerimporter",
+  "status": "completed",
+  "acceptance": {
+    "givenTestClasses": [
+      "ImportTest"
+    ],
+    "classesRun": [
+      "ImportTest"
+    ],
+    "classesMissing": [],
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "agentTests": {
+    "classes": 1,
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "originalTestsAsGiven": {
+    "classes": 1,
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "coverageByAllTests": null,
+  "coverageByAgentTests": null,
+  "testSmells": null,
+  "mentor": {
+    "findings": null
+  },
+  "mentorFindings": null,
+  "model": {
+    "classes": 17,
+    "methods": 159,
+    "linesOfCode": 527,
+    "totals": {
+      "ifs": 18,
+      "switches": 0,
+      "ternaries": 0,
+      "typeChecks": 1,
+      "nilChecks": 1
+    }
+  },
+  "python": {
+    "main": {
+      "files": 18,
+      "linesOfCode": 527,
+      "classes": 17,
+      "methods": 159,
+      "ifs": 18,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 1,
+      "nullChecks": 1,
+      "tests": 0
+    },
+    "test": {
+      "files": 1,
+      "linesOfCode": 303,
+      "classes": 1,
+      "methods": 68,
+      "ifs": 0,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 0,
+      "nullChecks": 0,
+      "tests": 29
+    }
+  },
+  "diff": {
+    "filesAdded": [
+      "src/customerimporter/cuit.py",
+      "src/customerimporter/dni.py",
+      "src/customerimporter/identification.py",
+      "src/customerimporter/imported_value.py",
+      "src/customerimporter/new_zip_code.py",
+      "src/customerimporter/old_zip_code.py",
+      "src/customerimporter/zip_code.py"
+    ],
+    "filesChanged": [
+      "src/customerimporter/__init__.py",
+      "src/customerimporter/address.py",
+      "src/customerimporter/customer.py",
+      "src/customerimporter/customer_importer.py"
+    ],
+    "filesRemoved": [],
+    "linesAdded": 403,
+    "linesRemoved": 68,
+    "methodsBefore": 160,
+    "methodsAfter": 227
+  },
+  "agent": {
+    "mode": "headless",
+    "model": "claude-opus-5",
+    "effort": "high",
+    "elapsedSeconds": 355,
+    "turns": 20,
+    "costUsd": 1.8532005,
+    "tokens": {
+      "input": 40,
+      "cacheWrite": 63571,
+      "cacheRead": 785331,
+      "output": 32985,
+      "thinking": 21523,
+      "requests": 20
+    },
+    "toolsServed": null,
+    "toolDefinitionBytes": null,
+    "toolCalls": 19,
+    "toolCallsPerMinute": 3.21,
+    "toolErrors": 0,
+    "testRunCalls": 4,
+    "firstTestRunAtCall": 7,
+    "filesRead": 0,
+    "filesEdited": 0,
+    "refactoringToolCalls": 0,
+    "evaluateKinds": null,
+    "explorationCallsBeforeFirstChange": 19,
+    "liveTypingToolCalls": 0,
+    "actualScopeRefactoringCalls": 0,
+    "messageNotUnderstoodAnswers": null,
+    "failedTestRuns": null
+  },
+  "refactoringOpportunities": {},
+  "looseChanges": null,
+  "toolCalls": {
+    "agentCalls": 19,
+    "errors": 0,
+    "byTool": {
+      "Bash": {
+        "calls": 19
+      }
+    },
+    "sequence": [
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash"
+    ],
+    "bashCommands": [
+      "find . -type f -not -path \"*/.git/*\" -not -name \"*.pyc\" -not -path \"*/__pycache__/*\" | head -50 && echo \"---\" && ls -la",
+      "cat CLAUDE.md && echo \"=== pyproject ===\" && cat pyproject.toml && echo \"=== customer.py ===\" && cat src/customerimporter/customer.py && echo \"=== address.py ===\" && cat src/customerimporter/address.py",
+      "cat src/customerimporter/customer_importer.py",
+      "cat tests/test_import.py",
+      "for f in customer_system transient_customer_system persistent_customer_system environment development_environment integration_environment data_base_session __init__; do echo \"=== $f ===\"; cat src/customerimporter/$f.py; done",
+      "cat README.md",
+      "python3 -m pytest -q 2>&1 | tail -5",
+      "cd /private/tmp/claude-cells/20260921-211617-6449-6449/src/customerimporter && cat > imported_value.py <<'EOF'\nfrom abc import ABC, abstractmethod\n\n\nclass ImportedValue(ABC):\n\n    _value = None\n\n    # instance creation\n\n    @classmethod\n    def with_value(cls, a_value):\n        cls.assert_valid(a_value)\n        return cls(a_value)\n\n    # type\n\n    @classmethod\n    @abstractmethod\n    def can_handle(cls, an_imported_value):\n        pass\n\n    @classmethod\n    def _type_that_can_handle(cls, an_imported_value):\n        for a_subclass in cls.__subclasses__():\n            if a_subclass.can_handle(an_imported_value): return a_subclass\n        raise RuntimeError(cls.invalid_type_error_description())\n\n    # error messages\n\n    @classmethod\n    @abstractmethod\n    def invalid_type_error_description(cls):\n        pass\n\n    @classmethod\n    @abstractmethod\n    def invalid_value_error_description(cls):\n        pass\n\n    # validation\n\n    @classmethod\n    @abstractmethod\n    def assert_valid(cls, an_imported_value):\n        pass\n\n    # validation - private\n\n    @classmethod\n    def _assert_all_digits(cls, a_string):\n        if not all(a_char.isdigit() for a_char in a_string): cls._signal_invalid_value()\n\n    @classmethod\n    def _assert_all_letters(cls, a_string):\n        if not all(a_char.isalpha() for a_char in a_string): cls._signal_invalid_value()\n\n    @classmethod\n    def _assert_number_between(cls, a_string, a_minimum, a_maximum):\n        cls._assert_all_digits(a_string)\n        if not (a_minimum <= int(a_string) <= a_maximum): cls._signal_invalid_value()\n\n    @classmethod\n    def _assert_size_between(cls, a_string, a_minimum, a_maximum):\n        if not (a_minimum <= len(a_string) <= a_maximum): cls._signal_invalid_value()\n\n    @classmethod\n    def _assert_size_is(cls, a_string, a_size):\n        cls._assert_size_between(a_string, a_size, a_size)\n\n    @classmethod\n    def _signal_invalid_value(cls):\n        raise RuntimeError(cls.invalid_value_error_description())\n\n    # initialization\n\n    def __init__(self, a_value):\n        super().__init__()\n        self._value = a_value\nEOF\necho written",
+      "cat > identification.py <<'EOF'\nfrom abc import abstractmethod\n\nfrom customerimporter.imported_value import ImportedValue\n\n\nclass Identification(ImportedValue):\n\n    # instance creation\n\n    @classmethod\n    def for_(cls, an_identification_type, a_number):\n        return cls._type_that_can_handle(an_identification_type).with_value(a_number)\n\n    # type\n\n    @classmethod\n    def can_handle(cls, an_identification_type):\n        return cls.type_code() == an_identification_type\n\n    @classmethod\n    @abstractmethod\n    def type_code(cls):\n        pass\n\n    # error messages\n\n    @classmethod\n    def invalid_type_error_description(cls):\n        return \"Invalid identification type\"\n\n    # number\n\n    def cuit_number_if_none(self, a_none_block):\n        return a_none_block()\n\n    def dni_number_if_none(self, a_none_block):\n        return a_none_block()\n\n    def number(self):\n        return self._value\n\n    # testing\n\n    def is_cuit(self):\n        return False\n\n    def is_dni(self):\n        return False\nEOF\ncat > dni.py <<'EOF'\nfrom customerimporter.identification import Identification\n\n\nclass Dni(Identification):\n\n    # type\n\n    @classmethod\n    def type_code(cls):\n        return \"D\"\n\n    # validation\n\n    @classmethod\n    def assert_valid(cls, a_number):\n        cls._assert_number_between(a_number, cls.minimum_number(), cls.maximum_number())\n\n    @classmethod\n    def maximum_number(cls):\n        return 99999999\n\n    @classmethod\n    def minimum_number(cls):\n        return 1\n\n    # error messages\n\n    @classmethod\n    def invalid_value_error_description(cls):\n        return \"Invalid DNI number\"\n\n    # number\n\n    def dni_number_if_none(self, a_none_block):\n        return int(self.number())\n\n    # testing\n\n    def is_dni(self):\n        return True\nEOF\ncat > cuit.py <<'EOF'\nfrom customerimporter.identification import Identification\n\n\nclass Cuit(Identification):\n\n    # type\n\n    @classmethod\n    def type_code(cls):\n        return \"C\"\n\n    # validation\n\n    @classmethod\n    def assert_valid(cls, a_number):\n        # \"23-25666777-9\" size 13\n        cls._assert_size_between(a_number, cls.minimum_size(), cls.maximum_size())\n        cls._assert_has_separators(a_number)\n        cls._assert_has_valid_prefix(a_number)\n        cls._assert_all_digits(cls.verification_digit_of(a_number))\n        cls._assert_all_digits(cls.body_of(a_number))\n\n    @classmethod\n    def maximum_size(cls):\n        return 13\n\n    @classmethod\n    def minimum_size(cls):\n        return 12\n\n    @classmethod\n    def separator(cls):\n        return \"-\"\n\n    @classmethod\n    def valid_prefixes(cls):\n        return [\"20\", \"23\", \"24\", \"25\", \"26\", \"27\", \"30\", \"33\", \"34\"]\n\n    # validation - private\n\n    @classmethod\n    def _assert_has_separators(cls, a_number):\n        if a_number[2] != cls.separator() or a_number[-2] != cls.separator(): cls._signal_invalid_value()\n\n    @classmethod\n    def _assert_has_valid_prefix(cls, a_number):\n        if cls.prefix_of(a_number) not in cls.valid_prefixes(): cls._signal_invalid_value()\n\n    # error messages\n\n    @classmethod\n    def invalid_value_error_description(cls):\n        return \"Invalid CUIT number\"\n\n    # number\n\n    @classmethod\n    def body_of(cls, a_number):\n        return a_number[3:-2]\n\n    @classmethod\n    def prefix_of(cls, a_number):\n        return a_number[:2]\n\n    @classmethod\n    def verification_digit_of(cls, a_number):\n        return a_number[-1:]\n\n    def cuit_number_if_none(self, a_none_block):\n        return self.number()\n\n    # testing\n\n    def is_cuit(self):\n        return True\nEOF\necho written",
+      "cat > zip_code.py <<'EOF'\nfrom abc import abstractmethod\n\nfrom customerimporter.imported_value import ImportedValue\n\n\nclass ZipCode(ImportedValue):\n\n    # instance creation\n\n    @classmethod\n    def for_(cls, a_zip_code):\n        return cls._type_that_can_handle(a_zip_code).with_value(a_zip_code)\n\n    # error messages\n\n    @classmethod\n    def invalid_type_error_description(cls):\n        # the tests expect the same description used for an invalid identification type\n        return \"Invalid identification type\"\n\n    # code\n\n    @abstractmethod\n    def code(self):\n        pass\n\n    def new_code_if_none(self, a_none_block):\n        return a_none_block()\n\n    def old_code_if_none(self, a_none_block):\n        return a_none_block()\n\n    # testing\n\n    def is_new(self):\n        return False\n\n    def is_old(self):\n        return False\nEOF\ncat > old_zip_code.py <<'EOF'\nfrom customerimporter.zip_code import ZipCode\n\n\nclass OldZipCode(ZipCode):\n\n    # type\n\n    @classmethod\n    def can_handle(cls, a_zip_code):\n        return a_zip_code[:1].isdigit()\n\n    # validation\n\n    @classmethod\n    def assert_valid(cls, a_zip_code):\n        cls._assert_number_between(a_zip_code, cls.minimum_code(), cls.maximum_code())\n\n    @classmethod\n    def maximum_code(cls):\n        return 9999\n\n    @classmethod\n    def minimum_code(cls):\n        return 1000\n\n    # error messages\n\n    @classmethod\n    def invalid_value_error_description(cls):\n        return \"Invalid old zipcode\"\n\n    # code\n\n    def code(self):\n        return int(self._value)\n\n    def old_code_if_none(self, a_none_block):\n        return self.code()\n\n    # testing\n\n    def is_old(self):\n        return True\nEOF\ncat > new_zip_code.py <<'EOF'\nfrom customerimporter.old_zip_code import OldZipCode\nfrom customerimporter.zip_code import ZipCode\n\n\nclass NewZipCode(ZipCode):\n\n    # type\n\n    @classmethod\n    def can_handle(cls, a_zip_code):\n        return a_zip_code[:1].isalpha()\n\n    # validation\n\n    @classmethod\n    def assert_valid(cls, a_zip_code):\n        # \"B1636BBE\" is the old zip code 1636 between one and three letters\n        cls._assert_size_is(a_zip_code, cls.size())\n        cls._assert_number_between(cls.old_zip_code_of(a_zip_code), OldZipCode.minimum_code(), OldZipCode.maximum_code())\n        cls._assert_all_letters(cls.last_letters_of(a_zip_code))\n\n    @classmethod\n    def size(cls):\n        return 8\n\n    # error messages\n\n    @classmethod\n    def invalid_value_error_description(cls):\n        return \"Invalid new zipcode\"\n\n    # code\n\n    @classmethod\n    def last_letters_of(cls, a_zip_code):\n        return a_zip_code[-3:]\n\n    @classmethod\n    def old_zip_code_of(cls, a_zip_code):\n        return a_zip_code[1:5]\n\n    def code(self):\n        return self._value\n\n    def new_code_if_none(self, a_none_block):\n        return self.code()\n\n    # testing\n\n    def is_new(self):\n        return True\nEOF\necho written",
+      "python3 - <<'PY'\nimport re, pathlib\n\ncustomer = pathlib.Path(\"customer.py\")\ntext = customer.read_text()\n\ntext = text.replace(\"\"\"    _identification_type = None\n    _identification_number = None\n\"\"\", \"\"\"    _identification = None\n\"\"\")\n\nold_identification = text[text.index(\"    # identification\\n\"):]\nnew_identification = '''    # identification\n\n    def cuit_number_if_none(self, a_none_closure):\n        return self._identification.cuit_number_if_none(a_none_closure)\n\n    def dni_number_if_none(self, a_none_block):\n        return self._identification.dni_number_if_none(a_none_block)\n\n    def has_cuit_as_identification(self):\n        return self._identification.is_cuit()\n\n    def has_dni_as_identification(self):\n        return self._identification.is_dni()\n\n    def identification(self):\n        return self._identification\n\n    def set_identification(self, an_identification):\n        self._identification = an_identification\n\n    def identification_number(self):\n        return self._identification.number()\n\n    def identification_type(self):\n        return self._identification.type_code()\n'''\ncustomer.write_text(text.replace(old_identification, new_identification))\n\naddress = pathlib.Path(\"address.py\")\ntext = address.read_text()\nold_zip = text[text.index(\"    # zip code\\n\"):]\nnew_zip = '''    # zip code\n\n    def has_new_zip_code(self):\n        return self._zip_code.is_new()\n\n    def has_old_zip_code(self):\n        return self._zip_code.is_old()\n\n    def new_zip_code_if_none(self, a_none_block):\n        return self._zip_code.new_code_if_none(a_none_block)\n\n    def old_zip_code_if_none(self, a_none_block):\n        return self._zip_code.old_code_if_none(a_none_block)\n\n    def zip_code(self):\n        return self._zip_code.code()\n\n    def set_zip_code(self, a_zip_code):\n        self._zip_code = a_zip_code\n'''\naddress.write_text(text.replace(old_zip, new_zip))\nprint(\"ok\")\nPY\ncat customer.py | sed -n '1,15p'; echo ...; sed -n '/# identification/,$p' customer.py; echo \"=== address ===\"; sed -n '/# zip code/,$p' address.py",
+      "python3 - <<'PY'\nimport pathlib\n\nimporter = pathlib.Path(\"customer_importer.py\")\ntext = importer.read_text()\n\ntext = text.replace(\"\"\"from customerimporter.address import Address\nfrom customerimporter.customer import Customer\n\"\"\", \"\"\"from customerimporter.address import Address\nfrom customerimporter.customer import Customer\nfrom customerimporter.identification import Identification\nfrom customerimporter.zip_code import ZipCode\n\"\"\")\n\nold_import_customer = text[text.index(\"    def import_customer(self):\"):text.index(\"    def is_customer_record(self):\")]\nnew_import_customer = '''    def import_customer(self):\n        self.assert_valid_customer_record()\n\n        self._new_customer = Customer()\n        self._new_customer.set_first_name(self._record[1])\n        self._new_customer.set_last_name(self._record[2])\n        self._new_customer.set_identification(Identification.for_(self._record[3], self._record[4]))\n        self._system.add(self._new_customer)\n\n'''\ntext = text.replace(old_import_customer, new_import_customer)\n\nold_import_address = text[text.index(\"    def import_address(self):\"):text.index(\"    def is_address_record(self):\")]\nnew_import_address = '''    def import_address(self):\n        self.assert_customer_was_imported()\n        self.assert_valid_address_record()\n\n        new_address = Address()\n        new_address.set_street_name(self._record[1])\n        new_address.set_street_number(int(self._record[2]))\n        new_address.set_town(self._record[3])\n        new_address.set_zip_code(ZipCode.for_(self._record[4]))\n        new_address.set_province(self._record[5])\n\n        self._new_customer.add_address(new_address)\n\n'''\nimporter.write_text(text.replace(old_import_address, new_import_address))\n\ninit = pathlib.Path(\"__init__.py\")\ntext = init.read_text()\ntext = text.replace(\"\"\"from customerimporter.address import Address\nfrom customerimporter.customer import Customer\n\"\"\", \"\"\"from customerimporter.address import Address\nfrom customerimporter.customer import Customer\nfrom customerimporter.imported_value import ImportedValue\nfrom customerimporter.identification import Identification\nfrom customerimporter.dni import Dni\nfrom customerimporter.cuit import Cuit\nfrom customerimporter.zip_code import ZipCode\nfrom customerimporter.old_zip_code import OldZipCode\nfrom customerimporter.new_zip_code import NewZipCode\n\"\"\")\ninit.write_text(text)\nprint(\"ok\")\nPY\ncat customer_importer.py | sed -n '1,10p;55,100p'",
+      "cd /private/tmp/claude-cells/20260921-211617-6449-6449 && python3 -m pytest -q 2>&1 | tail -20",
+      "echo \"=== ifs left in src ===\" && grep -rn \"if \" src/customerimporter/*.py && echo \"=== isinstance left ===\" && grep -rn \"isinstance\" src/customerimporter/*.py",
+      "PYTHONPATH=src python3 - <<'PY'\nimport io\nfrom customerimporter.persistent_customer_system import PersistentCustomerSystem\nfrom customerimporter.customer_importer import CustomerImporter\n\nsystem = PersistentCustomerSystem()\nsystem.start(); system.begin_transaction()\nCustomerImporter.value_from(io.StringIO(\n\"C,Pepe,Sanchez,D,22333444\\n\"\n\"A,San Martin,3322,Olivos,B1636BBE,BsAs\\n\"\n\"C,Juan,Perez,C,23-25666777-9\\n\"\n\"A,Alem,1122,CABA,1001,CABA\"), system)\nsystem.commit()\npepe = system.customer_with_identification_type(\"D\", \"22333444\")\njuan = system.customer_with_identification_type(\"C\", \"23-25666777-9\")\nprint(system.number_of_customers(), pepe.first_name(), pepe.dni_number_if_none(lambda: \"no\"),\n      pepe.addresses()[0].zip_code(), pepe.addresses()[0].has_new_zip_code(),\n      juan.cuit_number_if_none(lambda: \"no\"), juan.addresses()[0].zip_code(), juan.addresses()[0].has_old_zip_code())\nsystem.stop()\nPY",
+      "sed -n '1,30p' README.md",
+      "python3 - <<'PY'\nimport pathlib\n\nreadme = pathlib.Path(\"README.md\")\ntext = readme.read_text()\n\nold_intro = \"\"\"Python 3 / pytest translation of the Cuis Smalltalk starting code, made as a faithful port of\nthe Java translation in `../java` (same classes, same methods, same instance variables, same\nerror strings, same comments, same 29 tests in the same order), including its design smells:\n`if` / `elif` chains on type codes, `isinstance` checks, duplicated validation code, long\n`import_customer` / `import_address` methods. Standard library only.\n\"\"\"\nnew_intro = \"\"\"Python 3 / pytest translation of the Cuis Smalltalk starting code, made as a faithful port of\nthe Java translation in `../java` (same classes, same methods, same instance variables, same\nerror strings, same comments, same 29 tests in the same order). Standard library only.\n\nThe starting code came with the design smells the exam asks to remove (`if` / `elif` chains on\ntype codes, `isinstance` checks, duplicated validation code, long `import_customer` /\n`import_address` methods); they were solved as described in [Solution](#solution), without\ntouching `tests/test_import.py`. The rest of this README documents the translation decisions of\nthe starting code, which still hold.\n\"\"\"\ntext = text.replace(old_intro, new_intro)\n\nsolution = \"\"\"\n## Solution\n\nThe identification type and the zip code type are objects now, so nobody asks for a type to\ndecide what to do:\n\n- `imported_value.py` (`ImportedValue`) \u2014 abstract superclass of both hierarchies. It knows how\n  to create an instance out of what was read from a record: `_type_that_can_handle` answers the\n  subclass that `can_handle` the imported value (like `Environment.current` does with\n  `is_current`) and raises `invalid_type_error_description` when there is none, and `with_value`\n  validates the value (`assert_valid`) before creating the instance, so a half valid\n  identification or zip code cannot exist. It also holds the validations that were repeated\n  along `import_customer` and `import_address` (`_assert_all_digits`, `_assert_all_letters`,\n  `_assert_number_between`, `_assert_size_between`, `_assert_size_is`), each of them signalling\n  the `invalid_value_error_description` of the concrete type being created.\n- `identification.py` (`Identification`) with `dni.py` (`Dni`) and `cuit.py` (`Cuit`) \u2014 created\n  with `Identification.for_(an_identification_type, a_number)`; subclasses are chosen by their\n  `type_code` (`\"D\"` / `\"C\"`). `Customer` holds one of them instead of the type and the number,\n  and delegates `identification_type`, `identification_number`, `has_dni_as_identification`,\n  `has_cuit_as_identification`, `dni_number_if_none` and `cuit_number_if_none` to it. Only `Dni`\n  answers itself for `is_dni` / `dni_number_if_none`, only `Cuit` for `is_cuit` /\n  `cuit_number_if_none`; the superclass answers the `False` / the none block for the rest.\n- `zip_code.py` (`ZipCode`) with `old_zip_code.py` (`OldZipCode`) and `new_zip_code.py`\n  (`NewZipCode`) \u2014 created with `ZipCode.for_(a_zip_code)`; subclasses are chosen by looking at\n  the first character (digit / letter), which is what the `if` did. `Address` holds one of them\n  instead of an `int` or a `str`, so the `isinstance` checks of `has_old_zip_code` /\n  `has_new_zip_code` are gone, and `zip_code()` answers `code()`, the `int` of the old ones and\n  the `str` of the new ones. A new zip code is validated as an old zip code between letters:\n  `NewZipCode.assert_valid` reuses `OldZipCode.minimum_code` / `maximum_code` for its four\n  digits (and therefore signals *its own* `\"Invalid new zipcode\"`).\n- `customer_importer.py` \u2014 `import_customer` and `import_address` do not validate anything\n  anymore; they just ask `Identification.for_(...)` and `ZipCode.for_(...)` for the object to\n  set, which is all the importer should know about types.\n\nTwo notes on the error messages, kept as they are because the tests cannot be changed: an\nunknown zip code type answers `\"Invalid identification type\"` (test29), and the exhaustive\n`if` / `elif` of the record type in `_import_record` is part of the given starting code, not of\nwhat the exam asks to fix.\n\"\"\"\ntext = text.replace(\"\\n## Layout\\n\", solution + \"\\n## Layout\\n\")\n\nold_layout = \"\"\"  `development_environment.py` (`DevelopmentEnvironment`), `integration_environment.py`\n  (`IntegrationEnvironment`). `__init__.py` imports all ten classes.\"\"\"\nnew_layout = \"\"\"  `development_environment.py` (`DevelopmentEnvironment`), `integration_environment.py`\n  (`IntegrationEnvironment`), plus the seven classes of the solution above. `__init__.py`\n  imports all of them, which is what makes `__subclasses__` see them (see 14).\"\"\"\ntext = text.replace(old_layout, new_layout)\nreadme.write_text(text)\nprint(\"ok\")\nPY\nsed -n '1,20p' README.md",
+      "python3 - <<'PY'\nimport pathlib\n\nreadme = pathlib.Path(\"README.md\")\ntext = readme.read_text()\n\nold = \"\"\"   same for every getter/setter pair (`street_name` / `set_street_name`, `zip_code` /\n   `set_zip_code`, `identification_type` / `set_identification_type`, ...). They stay methods\n   (no properties).\"\"\"\nnew = \"\"\"   same for every getter/setter pair (`street_name` / `set_street_name`, `zip_code` /\n   `set_zip_code`, `identification` / `set_identification`, ...). They stay methods\n   (no properties).\"\"\"\nassert old in text\ntext = text.replace(old, new)\n\nold = \"\"\"12. **Dynamic typing of `zip_code`.** As in the Smalltalk and in the Java (`Object zipCode`),\n    `Address._zip_code` holds either an `int` (old zip code) or a `str` (new zip code);\n    `instanceof Integer` / `instanceof String` (`isKindOf:`) are `isinstance(..., int)` /\n    `isinstance(..., str)`. The Java cast `(Integer) importedZipCode` disappears.\"\"\"\nnew = \"\"\"12. **Dynamic typing of `zip_code`.** In the Smalltalk and in the Java (`Object zipCode`)\n    `Address.zipCode` holds either an `int` (old zip code) or a `str` (new zip code), and\n    `instanceof Integer` / `instanceof String` (`isKindOf:`) tell them apart. The solution\n    replaces that with a `ZipCode` instance; it is `ZipCode.code()` (the Java cast\n    `(Integer) importedZipCode`) that answers the `int` or the `str`.\"\"\"\nassert old in text\ntext = text.replace(old, new)\nreadme.write_text(text)\nprint(\"ok\")\nPY",
+      "python3 -m pytest -q 2>&1 | tail -3 && echo \"=== new/changed source ===\" && for f in imported_value identification dni cuit zip_code old_zip_code new_zip_code; do echo \"--- $f.py\"; done && wc -l src/customerimporter/*.py"
+    ]
+  }
+}

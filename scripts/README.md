@@ -234,6 +234,26 @@ the diff against the given code); mentor, coverage and test smells are `None`. I
 `5-runMatrix.sh` a cell whose scenario is `java-gradle` goes through this runner, so a matrix
 can hold Cuis and Java cells side by side.
 
+## 2e. Running one cell in Python
+
+```bash
+scripts/2-runPythonCell.sh --experiment 020-PythonVsJava --exercise exercises/2024-1c-parcial1 \
+  --model claude-opus-5 --effort high
+```
+
+The Python counterpart of the Java cell, built the same way so the two differ only in the
+language: the same prompt shape, the same isolation, the same `--tools` list, a warm-up run of
+the given tests, and after the session the given tests as given and the project as the agent left
+it. The exercise needs a `python/` directory with `pyproject.toml` (the pytest settings:
+`pythonpath = ["src"]`, `python_classes = ["*Test"]` so the test classes keep the Java names),
+`src/<package>/` and `tests/`, and uses `spec-python.md` when present. The interpreter is the
+`python3` on the PATH with pytest installed; both versions are recorded. pytest writes one JUnit
+XML, read per test class, so the acceptance rule is the Java one: the given test classes as the
+agent left them. `analyze-python-run.py` writes the same `analysis.json` shape as the Java
+analysis, reusing its agent-side code; `5-runMatrix.sh` dispatches the `python-pytest` scenario to
+it. Three exercises have Python translations, made from the Java ones and verified by their tests:
+CustomerImporter (29 tests), Seabed crawler (16), Sims Hotels (39).
+
 ## 2d. Running one cell in Cuis without the MCP server (scripts through -s)
 
 ```bash

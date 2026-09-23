@@ -1,0 +1,133 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-212844-21650",
+  "warmUp": "classes 3 run 39 passed 39 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "python-pytest",
+  "language": "python",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2024-1c-parcial1",
+  "package": "simshotels",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 4",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "python": "Python 3.14.7",
+  "pytest": "pytest 9.0.3",
+  "hashes": {
+    "prompt.md": "e84ed27b07639496d634bd084bb5641ec6400e0287bf8ed5a0b3064922bbbcea",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "fce05436f3de8a9a9cb2eaa36a04d4a793b3038867546c8c40c25ba339c9356b"
+  },
+  "startedAt": "2026-09-22T00:28:45Z",
+  "endedAt": "2026-09-22T00:34:27Z",
+  "elapsedSeconds": 342,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 3 run 39 passed 14 failed 25 errors 0",
+  "ownTests": "classes 3 run 39 passed 39 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesRun": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesMissing": [],
+    "run": 39,
+    "passed": 39,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 1.9967,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 38,
+        "cache_write_5m": 0,
+        "cache_write_1h": 75243,
+        "cache_read": 860434,
+        "output": 32555,
+        "thinking": 15621,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 19,
+        "cost_usd": 1.996712
+      }
+    },
+    "toolCalls": {
+      "Bash": 18
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 19,
+    "durationMs": 340863,
+    "durationApiMs": 336026,
+    "totalCostUsd": 1.9967119999999998,
+    "usage": {
+      "input_tokens": 38,
+      "cache_creation_input_tokens": 75243,
+      "cache_read_input_tokens": 860434,
+      "output_tokens": 32555,
+      "output_tokens_details": {
+        "thinking_tokens": 15621
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 75243,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1040,
+          "cache_read_input_tokens": 78473,
+          "cache_creation_input_tokens": 1203,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1203
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 38,
+        "outputTokens": 32555,
+        "cacheReadInputTokens": 860434,
+        "cacheCreationInputTokens": 75243,
+        "webSearchRequests": 0,
+        "costUSD": 1.9967119999999998,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 15621,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "All 8 items are done; `python3 -m pytest` reports **39 passed**, and tests 13\u201315 of `RoomTest` are now real assertions rather than `should_fail`.\n\n**What changed**\n\n1. **Floor instantiation** \u2014 `Floor(a_number_of_rooms, a_price_list)` validates in `__init__`; `set_number_of_rooms`/`set_prices` are gone, so a half-built `Floor` can't exist. Tests use `create_floor_with_and`.\n2. **Hotel creation** \u2014 `Hotel(a_floors_collection)` validates the floors; `set_floors` is gone. Tests use `create_hotel_with` / `create_hotel`.\n3. **Room states** \u2014 the `guest` variable and the `\"reserved\"` magic string are replaced by a state object: `AvailableRoom`, `ReservedRoom`, `OccupiedRoom` (the one that knows the guest type), all `RoomState`, in `room.py`. No conditional on room state remains anywhere: `is_available`/`is_occupied`/`is_reserved`, profit and loss are all polymorphic.\n4. **No repeated code in `receive`/`receive_with_reservation`/`reserve`** \u2014 each is one line (`self._state = self._state.<msg>`); each state answers the state the room moves to, and the invalid transitions are rejected once, in `RoomState`.\n5. **Encapsulation** \u2014 `Floor.rooms()` no longer exists. `Floor` answers `has_room_number` and does the work itself (`receive_at_room`, `receive_with_reservation_at_room`, `reserve_room`); `Hotel` never touches a `Room`.\n6. **Losses** \u2014 added `Room.loss_using_if_absent_guest_type` (max price when available, 0 when reserved or occupied); `Floor.total_losses` is now the sum of its rooms' losses, mirroring `total_profits`, and `Hotel.total_losses` sums the floors'.\n7. **Repeated code in Hotel** \u2014 the three guest methods share `_at_floor_at_room_do` (floor lookup + room-number check); the index loops became `sum` over generators via `_total_of_floors` / `Floor._total_of_rooms` / `_count_rooms_satisfying`, and `is_empty` is an `all`.\n8. **Bonus** \u2014 tests no longer reach into `floor.rooms()`; guest types, prices and creation helpers moved to `tests/sims_hotels_test_support.py`, shared by the three test classes, plus `assert_is_empty` and `profit_of`/`loss_of` helpers.\n\nTwo judgment calls worth flagging: I removed `Hotel`'s cached `available_rooms_count` (it duplicated derivable state and forced bookkeeping in every guest method \u2014 `total_rooms_available` now asks the floors, like the other totals), and I appended a section to `README.md` describing the refactoring, since the existing text documents the pre-refactor code. To confirm the tests actually bite, I ran three mutations (room loss, `is_reserved`, room-number bounds) and each produced failures; the code was restored afterwards."
+  }
+}

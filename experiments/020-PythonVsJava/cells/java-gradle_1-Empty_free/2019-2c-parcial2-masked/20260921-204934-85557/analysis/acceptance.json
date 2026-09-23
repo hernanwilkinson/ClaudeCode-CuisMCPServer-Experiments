@@ -1,0 +1,15 @@
+{
+  "givenTestClasses": [
+    "SurveyCrawlerTest"
+  ],
+  "classesRun": [
+    "surveycrawler.SurveyCrawlerTest"
+  ],
+  "classesMissing": [],
+  "run": 57,
+  "passed": 57,
+  "failed": 0,
+  "errors": 0,
+  "failures": [],
+  "errorTests": []
+}

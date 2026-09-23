@@ -1,0 +1,36 @@
+{
+  "session": "claude-transcript",
+  "subagent_transcripts": 0,
+  "per_model": {
+    "claude-opus-5": {
+      "input": 30,
+      "cache_write_5m": 0,
+      "cache_write_1h": 51855,
+      "cache_read": 495104,
+      "output": 37423,
+      "thinking": 19535,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 15,
+      "cost_usd": 1.701827
+    }
+  },
+  "main_only": {
+    "claude-opus-5": {
+      "input": 30,
+      "cache_write_5m": 0,
+      "cache_write_1h": 51855,
+      "cache_read": 495104,
+      "output": 37423,
+      "thinking": 19535,
+      "web_search": 0,
+      "web_fetch": 0,
+      "requests": 15
+    }
+  },
+  "subagents_only": {},
+  "tool_calls": {
+    "Bash": 15
+  },
+  "total_cost_usd": 1.7018
+}

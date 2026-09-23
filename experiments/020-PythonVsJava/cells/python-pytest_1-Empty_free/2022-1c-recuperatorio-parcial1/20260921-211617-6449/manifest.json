@@ -1,0 +1,129 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-211617-6449",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "python-pytest",
+  "language": "python",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "customerimporter",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 4",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "python": "Python 3.14.7",
+  "pytest": "pytest 9.0.3",
+  "hashes": {
+    "prompt.md": "ca5600df7f455d46a6629af9448cded3534e83dc6bdf2e8f9c6923eefa6091dc",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "063a288e83ab7fc52cb2236f92e9894fa2c9036b7a1c18968d45883012f839ed"
+  },
+  "startedAt": "2026-09-22T00:16:18Z",
+  "endedAt": "2026-09-22T00:22:13Z",
+  "elapsedSeconds": 355,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "ownTests": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "ImportTest"
+    ],
+    "classesRun": [
+      "ImportTest"
+    ],
+    "classesMissing": [],
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 1.8532,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 40,
+        "cache_write_5m": 0,
+        "cache_write_1h": 63571,
+        "cache_read": 785331,
+        "output": 32985,
+        "thinking": 21523,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 20,
+        "cost_usd": 1.8532005
+      }
+    },
+    "toolCalls": {
+      "Bash": 19
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 20,
+    "durationMs": 354500,
+    "durationApiMs": 349887,
+    "totalCostUsd": 1.8532005,
+    "usage": {
+      "input_tokens": 40,
+      "cache_creation_input_tokens": 63571,
+      "cache_read_input_tokens": 785331,
+      "output_tokens": 32985,
+      "output_tokens_details": {
+        "thinking_tokens": 21523
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 63571,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1699,
+          "cache_read_input_tokens": 67320,
+          "cache_creation_input_tokens": 684,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 684
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 40,
+        "outputTokens": 32985,
+        "cacheReadInputTokens": 785331,
+        "cacheCreationInputTokens": 63571,
+        "webSearchRequests": 0,
+        "costUSD": 1.8532005,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 21523,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "All 29 tests pass, unchanged. Here's what I did.\n\n## The two type hierarchies\n\n**`ImportedValue`** (`imported_value.py`) \u2014 abstract root of both hierarchies, holding what they share:\n- `_type_that_can_handle(...)` picks the subclass whose `can_handle` answers `True` (the same idiom `Environment.current` already used), raising `invalid_type_error_description` when there is none;\n- `with_value(...)` validates before creating, so a half-valid identification or zip code can't exist;\n- the validations that were copy-pasted through `import_customer`/`import_address`: `_assert_all_digits`, `_assert_all_letters`, `_assert_number_between`, `_assert_size_between`, `_assert_size_is`, each signalling the `invalid_value_error_description` of the concrete type being created.\n\n**`Identification`** with `Dni` and `Cuit` \u2014 chosen by `type_code()` (`\"D\"`/`\"C\"`). `Customer` now holds one identification object instead of a type plus a number, and delegates `identification_type`, `identification_number`, `has_dni_as_identification`, `has_cuit_as_identification`, `dni_number_if_none`, `cuit_number_if_none` to it. Only `Dni` answers `True`/the number for the DNI protocol, only `Cuit` for the CUIT one; the superclass answers `False`/the none block.\n\n**`ZipCode`** with `OldZipCode` and `NewZipCode` \u2014 chosen by the first character (digit vs. letter), which is what the `if` inspected. `Address` holds a zip code object, so the `isinstance(int)`/`isinstance(str)` tests are gone; `zip_code()` answers `code()`, an `int` for old ones and a `str` for new ones. A new zip code is validated as an old zip code between letters: `NewZipCode.assert_valid` reuses `OldZipCode.minimum_code()`/`maximum_code()` for its four digits while still signalling its own `\"Invalid new zipcode\"`.\n\n`import_customer` and `import_address` validate nothing now \u2014 they ask `Identification.for_(...)` and `ZipCode.for_(...)` for the object to set.\n\n## Notes\n\n- The `if`s left in the source are pre-existing infrastructure (`_import_record`'s record dispatch, `DataBaseSession`, `Environment`, collection searches) or guard-clause assertions \u2014 none of them asks an object for its type. The one remaining `isinstance` is in `DataBaseSession`, part of the given starting code.\n- `ZipCode`'s unknown-type error still says `\"Invalid identification type\"`, because test29 demands that message; I kept it as an overridable class method with a comment rather than silently sharing it.\n- I updated the README: it advertised the smells as deliberate, and two of its translation notes (the `set_identification_type` accessor pair and the `isinstance` zip-code note) described fields that no longer exist. Added a `## Solution` section.\n- `tests/test_import.py` is untouched. I also smoke-tested the `PersistentCustomerSystem` path, which the test suite never exercises, since `Customer.identification_type()` changed underneath it."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "2022-1c-recuperatorio-parcial1",
+  "title": "CustomerImporter: Types, types, types",
+  "kind": "refactoring",
+  "package": "CustomerImporter-Recu-1er-Parcial",
+  "description": "A CSV customer importer where a developer added, with nested ifs and isKindOf:, support for two identification types (DNI and CUIT) and two zip code formats (old 4-digit and new B1336BBE style), with their validations and type-testing protocol in Customer and Address. The student must remove the ifs and the repeated code with polymorphism while keeping the tests unchanged.",
+  "startingPackages": ["starting/CustomerImporter-Recu-1er-Parcial.st"],
+  "solutionPackages": ["solution/CustomerImporter-Recu-1er-Parcial-Solucion.st"],
+  "acceptanceTests": null,
+  "source": "2022-1c/Recu1erParcial",
+  "semester": "2022-1c",
+  "exam": "recuperatorio",
+  "design": {
+    "conditionalsToPolymorphism": true,
+    "duplicatedCode": true,
+    "collectionProtocol": false,
+    "refactoringOfGivenCode": true,
+    "newBehaviorOnGivenCode": false,
+    "fromScratch": false,
+    "typeInformationHelps": true,
+    "stateMachine": false,
+    "notes": "The identification is stored as a type string plus a number string and the zip code as either an Integer or a String, so the model tests types with = 'D'/'C' and isKindOf:; the good design reifies DNI/CUIT and old/new zip code as objects that validate themselves on creation and answer the ifNone: protocol polymorphically, without touching the 30 tests."
+  },
+  "sizeHint": {"classesInStartingCode": 16, "methodsInStartingCode": 160}
+}

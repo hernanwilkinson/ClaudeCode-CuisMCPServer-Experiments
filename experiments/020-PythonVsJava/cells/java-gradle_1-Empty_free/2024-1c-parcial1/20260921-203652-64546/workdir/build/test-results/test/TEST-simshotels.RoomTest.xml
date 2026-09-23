@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="simshotels.RoomTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2026-09-21T23:42:52.198Z" hostname="M4.local" time="0.007">
+  <properties/>
+  <testcase name="test09ProfitOfAvailableRoomIsCeroPesos()" classname="simshotels.RoomTest" time="0.001"/>
+  <testcase name="test08CannotReceiveOnReservationAnOccupiedRoom()" classname="simshotels.RoomTest" time="0.0"/>
+  <testcase name="test15LossesOfOccupiedRoomIsCeroPesos()" classname="simshotels.RoomTest" time="0.001"/>
+  <testcase name="test02ReceivingAGuestMakesTheRoomOccupied()" classname="simshotels.RoomTest" time="0.0"/>
+  <testcase name="test03ReservingARoomMakesTheRoomReservedAndOccupied()" classname="simshotels.RoomTest" time="0.0"/>
+  <testcase name="test16CannotReserveWhenReserved()" classname="simshotels.RoomTest" time="0.001"/>
+  <testcase name="test14LossesOfReservedRoomIsCeroPesos()" classname="simshotels.RoomTest" time="0.0"/>
+  <testcase name="test12NoProfitOnOccupiedRoomByUnknownGuestType()" classname="simshotels.RoomTest" time="0.0"/>
+  <testcase name="test04CannotReceiveAGuestInAOccupiedRoom()" classname="simshotels.RoomTest" time="0.001"/>
+  <testcase name="test17CannotReserveWhenOccupied()" classname="simshotels.RoomTest" time="0.0"/>
+  <testcase name="test06ReceivingOnReservationMakesTheRoomOccupied()" classname="simshotels.RoomTest" time="0.001"/>
+  <testcase name="test05CannotReceiveAGuestInAReservedRoom()" classname="simshotels.RoomTest" time="0.0"/>
+  <testcase name="test01NewRoomsAreAvailable()" classname="simshotels.RoomTest" time="0.0"/>
+  <testcase name="test07CannotReceiveOnReservationAnAvailableRoom()" classname="simshotels.RoomTest" time="0.0"/>
+  <testcase name="test13LossesOfAvailableRoomIsTheMaxPriceInList()" classname="simshotels.RoomTest" time="0.0"/>
+  <testcase name="test10ProfitOfReservedRoomIsHalfTheMinPriceInList()" classname="simshotels.RoomTest" time="0.0"/>
+  <testcase name="test11ProfitOfOccupiedRoomDependsOnGuestType()" classname="simshotels.RoomTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

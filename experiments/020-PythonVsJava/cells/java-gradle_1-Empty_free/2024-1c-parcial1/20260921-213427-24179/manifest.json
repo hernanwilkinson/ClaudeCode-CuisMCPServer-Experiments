@@ -1,0 +1,133 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-213427-24179",
+  "warmUp": "classes 3 run 39 passed 39 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "java-gradle",
+  "language": "java",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2024-1c-parcial1",
+  "package": "simshotels",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 4",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "gradle": "Gradle 9.7.1",
+  "java": "openjdk version 25.0.1 2025-10-21",
+  "hashes": {
+    "prompt.md": "f826c6f951e6c89b48197bdd51a35fd7b52c19bbc5524a85b75840879db5ebbe",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "b4aa586299db9b70e86ad12c6cd1b4d11ec2786574ee778ada4ab19d6041787a"
+  },
+  "startedAt": "2026-09-22T00:34:28Z",
+  "endedAt": "2026-09-22T00:39:20Z",
+  "elapsedSeconds": 292,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "COMPILE ERROR: /Users/hernan/Documents/Cuis/ClaudeCode-MCPServer-Test/experiments/020-PythonVsJava/cells/java-gradle_1-Empty_free/2024-1c-parcial1/20260921-213427-24179/analys",
+  "ownTests": "classes 3 run 39 passed 39 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesRun": [
+      "simshotels.FloorTest",
+      "simshotels.HotelTest",
+      "simshotels.RoomTest"
+    ],
+    "classesMissing": [],
+    "run": 39,
+    "passed": 39,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 1.6208,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 28,
+        "cache_write_5m": 0,
+        "cache_write_1h": 63820,
+        "cache_read": 580965,
+        "output": 27680,
+        "thinking": 15179,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 14,
+        "cost_usd": 1.6208225
+      }
+    },
+    "toolCalls": {
+      "Bash": 15
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 16,
+    "durationMs": 291327,
+    "durationApiMs": 283761,
+    "totalCostUsd": 1.6208225000000003,
+    "usage": {
+      "input_tokens": 28,
+      "cache_creation_input_tokens": 63820,
+      "cache_read_input_tokens": 580965,
+      "output_tokens": 27680,
+      "output_tokens_details": {
+        "thinking_tokens": 15179
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 63820,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1270,
+          "cache_read_input_tokens": 67034,
+          "cache_creation_input_tokens": 1219,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1219
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 28,
+        "outputTokens": 27680,
+        "cacheReadInputTokens": 580965,
+        "cacheCreationInputTokens": 63820,
+        "webSearchRequests": 0,
+        "costUSD": 1.6208225000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 15179,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "All 39 tests pass (9 Floor + 13 Hotel + 17 Room, 0 skipped, 0 failures).\n\n## What I did\n\n**1\u20132. Instantiation.** `Floor(Number aNumberOfRooms, HashMap prices)` and `Hotel(ArrayList<Floor> floors)` constructors do the validations; `setNumberOfRooms`, `setPrices` and `setFloors` are gone and both classes are now immutable (`final` fields). The tests' `createFloorWithAnd`/`createHotel` are one-liners over the constructors.\n\n**3\u20134. Room states.** New `RoomState` hierarchy: `AvailableRoomState`, `ReservedRoomState`, `OccupiedRoomState` (the latter holds the guest type). `null` guest and the `\"reserved\"` pseudo-guest-type are gone. `Room.receive/receiveWithReservation/reserve` are single delegations to the state (`state.receiveIn(this, aGuestType)`), with no conditionals and no duplicated guard code; each state decides whether it transitions or signals. `isAvailable/isOccupied/isReserved` and both accounting methods are also answered polymorphically \u2014 note the old `isOccupied()` was `guest != null || ...`, i.e. the second clause was dead.\n\n**5. Encapsulation.** `Floor.rooms()` was removed. `Floor` gained `receiveAtRoom`, `receiveWithReservationAtRoom`, `reserveRoom` (plus a private `roomAt`), so `Hotel`'s three guest methods are one-line delegations to `floorAt(n)`.\n\n**6. Losses.** `Room.lossUsingIfAbsentGuestType` is implemented via the states (max price when available, 0 otherwise); tests 13/14/15 no longer use `shouldFail` and the helper was deleted. `Floor.totalLosses` now sums `room.lossUsing...` for every room, mirroring `totalProfits`, instead of knowing about `Collections.max(prices)` itself.\n\n**7. Duplication/declarativeness.** `Floor` uses `allMatch`/`filter().count()`/`mapToInt().sum()` with a private `totalRoomsThat(Predicate)`; `Hotel` has a private `totalOfFloors(ToIntFunction<Floor>)` used by the six totals, and `isEmpty()` is `floors.stream().allMatch(Floor::isAvailable)`. I also removed `Hotel.availableRoomsCount` \u2014 a cached counter that was decremented by hand (and not at all in `receiveWithReservation`); `totalRoomsAvailable()` is now derived like the other totals.\n\n**8. Bonus.** `FloorTest`'s four \"Tech Debt\" spots now go through the new `Floor` messages, and `HotelTest` got a `createHotelWith(Floor...)` helper replacing the repeated floor-list building.\n\nTwo things worth your attention:\n- Because room-number validation belongs to `Floor`, I moved `roomNumberDoesNotExistErrorDescription`/`signalRoomNumberDoesNotExist` from `Hotel` to `Floor`, and the three `HotelTest` assertions now read `Floor.roomNumberDoesNotExistErrorDescription()`. The message string is unchanged. The alternative was to keep the description in `Hotel` and add a `hasRoomNumber:`-style query, but that splits one rule across two classes.\n- I deleted the dead code the translation had kept (`Room.guestType`, `Floor.signalPriceMustBeInteger`, `Floor.priceMustBeIntegerErrorDescription`) and appended a short section to `README.md` describing the post-refactor design, since the file documented the original debt as if it were current."
+  }
+}

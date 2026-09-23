@@ -309,3 +309,16 @@ may be dropped.
 | [2025-2c-parcial2](2025-2c-parcial2/spec.md) | BAJE public transport card readers | greenfield | 1 classes, 0 methods | scratch, ifs→poly, collections, types, states | 3-Search, 5-LiveTyping, 1/2 greenfield |
 | [2025-2c-recuperatorio](2025-2c-recuperatorio/spec.md) | Aterrizar.com flight search | greenfield | 1 classes, 7 methods | scratch, ifs→poly, duplication, collections, types | 4-Refactoring, 3-Search, 5-LiveTyping, 1/2 greenfield |
 | [smoke](smoke/spec.md) | Bounded stack | greenfield | none | - | - |
+
+## Python translations
+
+Made on 2026-09-21 for experiment 020 (Python against Java). `2022-1c-recuperatorio-parcial1`,
+`2019-2c-parcial2-masked` and `2024-1c-parcial1` each have a `python/` project (pyproject.toml,
+`src/<package>/`, `tests/`) and a `spec-python.md`. They were translated from the Java
+translations, not from the Smalltalk, so the Python and Java cells work the same code: the same
+classes, methods, test classes, tests (29, 16 and 39), error strings, duplicated code and smells.
+Where Java had added something only because Java forced it, the Python follows the Smalltalk
+original instead: Sims Hotels leaves `Room.loss_using_if_absent_guest_type` missing, as the
+Smalltalk does, so the three tests that call it inside `should_fail` pass with an `AttributeError`
+the way they pass with `MessageNotUnderstood` in Cuis. Each `python/README.md` lists every
+decision that is not one to one.

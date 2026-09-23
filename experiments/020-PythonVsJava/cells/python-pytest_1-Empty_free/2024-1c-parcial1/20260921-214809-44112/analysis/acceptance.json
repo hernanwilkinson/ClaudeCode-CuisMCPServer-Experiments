@@ -1,0 +1,19 @@
+{
+  "givenTestClasses": [
+    "FloorTest",
+    "HotelTest",
+    "RoomTest"
+  ],
+  "classesRun": [
+    "FloorTest",
+    "HotelTest",
+    "RoomTest"
+  ],
+  "classesMissing": [],
+  "run": 39,
+  "passed": 15,
+  "failed": 24,
+  "errors": 0,
+  "failures": [],
+  "errorTests": []
+}

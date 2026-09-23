@@ -1,0 +1,133 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-211055-3645",
+  "warmUp": "classes 3 run 39 passed 39 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "python-pytest",
+  "language": "python",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2024-1c-parcial1",
+  "package": "simshotels",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 3",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "python": "Python 3.14.7",
+  "pytest": "pytest 9.0.3",
+  "hashes": {
+    "prompt.md": "e84ed27b07639496d634bd084bb5641ec6400e0287bf8ed5a0b3064922bbbcea",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "fce05436f3de8a9a9cb2eaa36a04d4a793b3038867546c8c40c25ba339c9356b"
+  },
+  "startedAt": "2026-09-22T00:10:55Z",
+  "endedAt": "2026-09-22T00:16:16Z",
+  "elapsedSeconds": 321,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 3 run 39 passed 14 failed 25 errors 0",
+  "ownTests": "classes 3 run 39 passed 39 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesRun": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesMissing": [],
+    "run": 39,
+    "passed": 39,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 1.8296,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 40,
+        "cache_write_5m": 0,
+        "cache_write_1h": 65537,
+        "cache_read": 841275,
+        "output": 30134,
+        "thinking": 16247,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 20,
+        "cost_usd": 1.8295575
+      }
+    },
+    "toolCalls": {
+      "Bash": 19
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 20,
+    "durationMs": 320413,
+    "durationApiMs": 316407,
+    "totalCostUsd": 1.8295575,
+    "usage": {
+      "input_tokens": 40,
+      "cache_creation_input_tokens": 65537,
+      "cache_read_input_tokens": 841275,
+      "output_tokens": 30134,
+      "output_tokens_details": {
+        "thinking_tokens": 16247
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 65537,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1102,
+          "cache_read_input_tokens": 65239,
+          "cache_creation_input_tokens": 4731,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 4731
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 40,
+        "outputTokens": 30134,
+        "cacheReadInputTokens": 841275,
+        "cacheCreationInputTokens": 65537,
+        "webSearchRequests": 0,
+        "costUSD": 1.8295575,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 16247,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "All 39 tests pass. Here's what I did, task by task.\n\n**1\u20132. Instance creation.** `Floor.with_rooms_and_prices(n, prices)` and `Hotel.with_floors(floors)` are class-side creation messages that validate first and answer a fully initialized object; `__init__` just assigns. The setters `set_number_of_rooms`, `set_prices` and `set_floors` are gone, so neither object can exist half built. Test helpers `create_floor_with_and` / `create_hotel` now use them.\n\n**3\u20134. Room states as objects.** `Room` holds a `RoomState`; the subclasses are `AvailableRoom`, `ReservedRoom` and `OccupiedRoom` (only the latter knows a guest type). Each state answers the state to change to, and `RoomState` provides the default transitions that signal the errors, so `receive`, `receive_with_reservation` and `reserve` are one line each with no repeated conditions. `Room.RESERVED` and the `None`-means-available idiom are gone.\n\n**5. Encapsulation.** `Floor.rooms()` deleted. `Floor` now answers `receive_at_room`, `receive_with_reservation_at_room`, `reserve_room` plus its totals, and it validates the room number itself \u2014 the \"Room number does not exist\" string moved to `Floor` (`Hotel`'s class-side method delegates to it so the published `Hotel` protocol keeps working). `Hotel` only talks to floors, via `floor_at`.\n\n**6. Losses.** Added `Room.loss_using_if_absent_guest_type`, polymorphic on the state (max price when available, 0 when reserved or occupied), and `Floor.total_losses` now asks its rooms instead of computing the amount itself. `RoomTest` 13\u201315 assert directly; `should_fail` had no users left and was removed.\n\n**7. Repeated code.** The three `Hotel` guest methods are one delegation each; `total_profits`/`total_losses` and the four totals go through `Hotel.total_of(a_block)` over `sum`, `Floor` counts with `total_rooms_that(a_condition)`, and `is_empty` is `all(...)`. I also dropped the `_available_rooms_count` counter \u2014 `total_rooms_available` is now derived from the floors, so it can't drift (that counter was never decremented on `receive_with_reservation`, though no test exposed it).\n\n**8. Bonus.** Tests no longer reach into `floor.rooms()`, and the creation messages and guest types shared by the three test classes live in `HotelsTestSupport` (`tests/hotels_test_support.py`), which they inherit from.\n\nOne judgment call worth flagging: item 6 says to fix `Hotel.total_losses()`, but the method that computed losses itself instead of asking the rooms was `Floor.total_losses()` \u2014 that's the one I changed to use the new `Room` method; `Hotel.total_losses()` is now the declarative sum over floors required by item 7. I also added a \"First iteration: the refactoring\" section to the README, since the rest of that file documents the starting code's debt."
+  }
+}

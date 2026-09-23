@@ -1,0 +1,21 @@
+{
+  "RUN_ID": "20260921-213927-34997",
+  "EXPERIMENT": "020-PythonVsJava",
+  "SCENARIO": "python-pytest",
+  "CONFIG": "1-Empty",
+  "TECHNIQUE": "free",
+  "EXERCISE_NAME": "2019-2c-parcial2-masked",
+  "PY_PACKAGE": "surveycrawler",
+  "MODEL": "claude-opus-5",
+  "EFFORT": "high",
+  "BUDGET": "15",
+  "TIMEOUT": "2400",
+  "NOTE": "experiment 020-PythonVsJava, repetition 5",
+  "TOOLS": "Read,Edit,Write,Bash,Glob,Grep",
+  "CLAUDE_VERSION": "2.1.268 (Claude Code)",
+  "WORKDIR": "/private/tmp/claude-cells/20260921-213927-34997-34997",
+  "PYTHON": "/usr/local/bin/python3",
+  "STARTED_AT": "2026-09-22T00:39:28Z",
+  "START_SECONDS": "1790037568",
+  "WARM_UP": "classes 1 run 16 passed 16 failed 0 errors 0"
+}

@@ -1,0 +1,83 @@
+..................................FFF..                                  [100%]
+=================================== FAILURES ===================================
+______ RoomTest.test13_losses_of_available_room_is_the_max_price_in_list _______
+
+self = <test_room.RoomTest object at 0x10b1dcf30>
+
+    def test13_losses_of_available_room_is_the_max_price_in_list(self):
+        def a_block():
+            room = Room()
+    
+            assert self.max_price_in_list() == room.loss_using_if_absent_guest_type(self.default_price_list(), lambda: pytest.fail())
+    
+>       self.should_fail(a_block)
+
+tests/test_room.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_room.RoomTest object at 0x10b1dcf30>
+a_block = <function RoomTest.test13_losses_of_available_room_is_the_max_price_in_list.<locals>.a_block at 0x10b0c4f60>
+
+    def should_fail(self, a_block):
+>       with pytest.raises(BaseException):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'BaseException'>
+
+tests/test_room.py:221: Failed
+____________ RoomTest.test14_losses_of_reserved_room_is_cero_pesos _____________
+
+self = <test_room.RoomTest object at 0x10b05bad0>
+
+    def test14_losses_of_reserved_room_is_cero_pesos(self):
+        def a_block():
+            room = Room()
+    
+            room.reserve()
+    
+            assert 0 == room.loss_using_if_absent_guest_type(self.default_price_list(), lambda: pytest.fail())
+    
+>       self.should_fail(a_block)
+
+tests/test_room.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_room.RoomTest object at 0x10b05bad0>
+a_block = <function RoomTest.test14_losses_of_reserved_room_is_cero_pesos.<locals>.a_block at 0x10b110a90>
+
+    def should_fail(self, a_block):
+>       with pytest.raises(BaseException):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'BaseException'>
+
+tests/test_room.py:221: Failed
+____________ RoomTest.test15_losses_of_occupied_room_is_cero_pesos _____________
+
+self = <test_room.RoomTest object at 0x10b011c10>
+
+    def test15_losses_of_occupied_room_is_cero_pesos(self):
+        def a_block():
+            room = Room()
+    
+            room.receive(self.guest_type_vacation())
+    
+            assert 0 == room.loss_using_if_absent_guest_type(self.default_price_list(), lambda: pytest.fail())
+    
+>       self.should_fail(a_block)
+
+tests/test_room.py:174: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_room.RoomTest object at 0x10b011c10>
+a_block = <function RoomTest.test15_losses_of_occupied_room_is_cero_pesos.<locals>.a_block at 0x10b113530>
+
+    def should_fail(self, a_block):
+>       with pytest.raises(BaseException):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'BaseException'>
+
+tests/test_room.py:221: Failed
+=========================== short test summary info ============================
+FAILED tests/test_room.py::RoomTest::test13_losses_of_available_room_is_the_max_price_in_list
+FAILED tests/test_room.py::RoomTest::test14_losses_of_reserved_room_is_cero_pesos
+FAILED tests/test_room.py::RoomTest::test15_losses_of_occupied_room_is_cero_pesos
+3 failed, 36 passed in 0.05s

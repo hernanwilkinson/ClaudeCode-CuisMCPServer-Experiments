@@ -1,0 +1,549 @@
+FFFFFFFFF.FFFFFFFFFFFF............FFF..                                  [100%]
+=================================== FAILURES ===================================
+______________ FloorTest.test01_cannot_create_floor_without_rooms ______________
+
+self = <test_floor.FloorTest object at 0x106a3fed0>
+
+    def test01_cannot_create_floor_without_rooms(self):
+        with pytest.raises(RuntimeError) as error:
+>           self.create_floor_with_and(0, self.default_price_list())
+
+tests/test_floor.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_floor.FloorTest object at 0x106a3fed0>, a_number_of_rooms = 0
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_floor.py:97: TypeError
+____ FloorTest.test02_cannot_create_floor_with_no_interger_number_of_rooms _____
+
+self = <test_floor.FloorTest object at 0x106d307d0>
+
+    def test02_cannot_create_floor_with_no_interger_number_of_rooms(self):
+        with pytest.raises(RuntimeError) as error:
+>           self.create_floor_with_and(1.5, self.default_price_list())
+
+tests/test_floor.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_floor.FloorTest object at 0x106d307d0>, a_number_of_rooms = 1.5
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_floor.py:97: TypeError
+_____________ FloorTest.test03_cannot_create_floor_without_prices ______________
+
+self = <test_floor.FloorTest object at 0x106dc0180>
+
+    def test03_cannot_create_floor_without_prices(self):
+        with pytest.raises(RuntimeError) as error:
+>           self.create_floor_with_and(10, {})
+
+tests/test_floor.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_floor.FloorTest object at 0x106dc0180>, a_number_of_rooms = 10
+a_price = {}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_floor.py:97: TypeError
+_____ FloorTest.test04_when_a_floor_is_created_all_the_rooms_are_available _____
+
+self = <test_floor.FloorTest object at 0x106dc03e0>
+
+    def test04_when_a_floor_is_created_all_the_rooms_are_available(self):
+>       floor = self.create_floor_with_and(10, self.default_price_list())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_floor.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_floor.FloorTest object at 0x106dc03e0>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_floor.py:97: TypeError
+_ FloorTest.test05_when_a_floor_receives_a_guest_in_a_room_reduces_the_available_rooms_by_one_and_increase_occupied_by_one _
+
+self = <test_floor.FloorTest object at 0x106c4eb10>
+
+    def test05_when_a_floor_receives_a_guest_in_a_room_reduces_the_available_rooms_by_one_and_increase_occupied_by_one(self):
+        rooms_number = 10
+>       floor = self.create_floor_with_and(rooms_number, self.default_price_list())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_floor.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_floor.FloorTest object at 0x106c4eb10>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_floor.py:97: TypeError
+_ FloorTest.test06_when_a_floor_receives_on_reservation_a_guest_in_a_room_keeps_the_available_rooms_and_occupied_and_reduces_the_reserved_by_one _
+
+self = <test_floor.FloorTest object at 0x106d35260>
+
+    def test06_when_a_floor_receives_on_reservation_a_guest_in_a_room_keeps_the_available_rooms_and_occupied_and_reduces_the_reserved_by_one(self):
+        rooms_number = 10
+>       floor = self.create_floor_with_and(rooms_number, self.default_price_list())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_floor.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_floor.FloorTest object at 0x106d35260>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_floor.py:97: TypeError
+_ FloorTest.test07_when_a_room_is_reserved_the_floor_available_rooms_reduces_by_one_and_increase_reserved_and_occupied_by_one _
+
+self = <test_floor.FloorTest object at 0x106d35480>
+
+    def test07_when_a_room_is_reserved_the_floor_available_rooms_reduces_by_one_and_increase_reserved_and_occupied_by_one(self):
+        rooms_number = 10
+>       floor = self.create_floor_with_and(rooms_number, self.default_price_list())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_floor.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_floor.FloorTest object at 0x106d35480>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_floor.py:97: TypeError
+__ FloorTest.test08_total_profit_should_be_the_sum_of_occupied_rooms_profits ___
+
+self = <test_floor.FloorTest object at 0x106ccb950>
+
+    def test08_total_profit_should_be_the_sum_of_occupied_rooms_profits(self):
+        rooms_number = 10
+>       floor = self.create_floor_with_and(rooms_number, self.default_price_list())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_floor.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_floor.FloorTest object at 0x106ccb950>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_floor.py:97: TypeError
+__ FloorTest.test09_total_losses_should_be_the_sum_of_available_rooms_losses ___
+
+self = <test_floor.FloorTest object at 0x106d38150>
+
+    def test09_total_losses_should_be_the_sum_of_available_rooms_losses(self):
+        rooms_number = 10
+>       floor = self.create_floor_with_and(rooms_number, self.default_price_list())
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_floor.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_floor.FloorTest object at 0x106d38150>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_floor.py:97: TypeError
+____________________ HotelTest.test02_new_hotels_are_empty _____________________
+
+self = <test_hotel.HotelTest object at 0x106d30a50>
+
+    def test02_new_hotels_are_empty(self):
+>       hotel = self.create_hotel()
+                ^^^^^^^^^^^^^^^^^^^
+
+tests/test_hotel.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_hotel.py:194: in create_hotel
+    floors.append(self.create_floor_with_and(10, self.default_price_list()))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_hotel.HotelTest object at 0x106d30a50>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_hotel.py:186: TypeError
+_____ HotelTest.test03_hotel_can_receive_a_type_of_guest_in_room_at_floor ______
+
+self = <test_hotel.HotelTest object at 0x106dc09d0>
+
+    def test03_hotel_can_receive_a_type_of_guest_in_room_at_floor(self):
+>       hotel = self.create_hotel()
+                ^^^^^^^^^^^^^^^^^^^
+
+tests/test_hotel.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_hotel.py:194: in create_hotel
+    floors.append(self.create_floor_with_and(10, self.default_price_list()))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_hotel.HotelTest object at 0x106dc09d0>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_hotel.py:186: TypeError
+______ HotelTest.test04_hotel_can_take_a_reservation_for_a_room_at_floor _______
+
+self = <test_hotel.HotelTest object at 0x106dc0e90>
+
+    def test04_hotel_can_take_a_reservation_for_a_room_at_floor(self):
+>       hotel = self.create_hotel()
+                ^^^^^^^^^^^^^^^^^^^
+
+tests/test_hotel.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_hotel.py:194: in create_hotel
+    floors.append(self.create_floor_with_and(10, self.default_price_list()))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_hotel.HotelTest object at 0x106dc0e90>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_hotel.py:186: TypeError
+_ HotelTest.test05_hotel_can_receive_with_reservation_a_type_of_guest_in_room_at_floor _
+
+self = <test_hotel.HotelTest object at 0x106c4fad0>
+
+    def test05_hotel_can_receive_with_reservation_a_type_of_guest_in_room_at_floor(self):
+>       hotel = self.create_hotel()
+                ^^^^^^^^^^^^^^^^^^^
+
+tests/test_hotel.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_hotel.py:194: in create_hotel
+    floors.append(self.create_floor_with_and(10, self.default_price_list()))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_hotel.HotelTest object at 0x106c4fad0>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_hotel.py:186: TypeError
+_ HotelTest.test06_hotel_cannot_receive_with_reservation_without_previous_reservation _
+
+self = <test_hotel.HotelTest object at 0x106d35e10>
+
+    def test06_hotel_cannot_receive_with_reservation_without_previous_reservation(self):
+>       hotel = self.create_hotel()
+                ^^^^^^^^^^^^^^^^^^^
+
+tests/test_hotel.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_hotel.py:194: in create_hotel
+    floors.append(self.create_floor_with_and(10, self.default_price_list()))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_hotel.HotelTest object at 0x106d35e10>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_hotel.py:186: TypeError
+_______ HotelTest.test07_hotel_profits_are_the_sum_of_each_floor_profits _______
+
+self = <test_hotel.HotelTest object at 0x106d35f20>
+
+    def test07_hotel_profits_are_the_sum_of_each_floor_profits(self):
+>       floor1 = self.create_floor_with_and(10, self.default_price_list())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_hotel.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_hotel.HotelTest object at 0x106d35f20>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_hotel.py:186: TypeError
+________ HotelTest.test08_hotel_losses_are_the_sum_of_each_floor_losses ________
+
+self = <test_hotel.HotelTest object at 0x106d38250>
+
+    def test08_hotel_losses_are_the_sum_of_each_floor_losses(self):
+>       floor1 = self.create_floor_with_and(10, self.default_price_list())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_hotel.py:85: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_hotel.HotelTest object at 0x106d38250>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_hotel.py:186: TypeError
+___________ HotelTest.test09_hotel_cannot_reserve_a_nonexistent_room ___________
+
+self = <test_hotel.HotelTest object at 0x106d39750>
+
+    def test09_hotel_cannot_reserve_a_nonexistent_room(self):
+>       floor1 = self.create_floor_with_and(10, self.default_price_list())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_hotel.py:102: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_hotel.HotelTest object at 0x106d39750>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_hotel.py:186: TypeError
+__________ HotelTest.test10_hotel_cannot_reserve_a_nonexistent_floor ___________
+
+self = <test_hotel.HotelTest object at 0x106c676b0>
+
+    def test10_hotel_cannot_reserve_a_nonexistent_floor(self):
+>       floor1 = self.create_floor_with_and(10, self.default_price_list())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_hotel.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_hotel.HotelTest object at 0x106c676b0>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_hotel.py:186: TypeError
+__________ HotelTest.test11_hotel_cannot_receive_at_nonexistent_room ___________
+
+self = <test_hotel.HotelTest object at 0x106c67a70>
+
+    def test11_hotel_cannot_receive_at_nonexistent_room(self):
+>       floor1 = self.create_floor_with_and(10, self.default_price_list())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_hotel.py:134: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_hotel.HotelTest object at 0x106c67a70>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_hotel.py:186: TypeError
+__________ HotelTest.test12_hotel_cannot_receive_at_nonexistent_floor __________
+
+self = <test_hotel.HotelTest object at 0x106d94910>
+
+    def test12_hotel_cannot_receive_at_nonexistent_floor(self):
+>       floor1 = self.create_floor_with_and(10, self.default_price_list())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_hotel.py:150: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_hotel.HotelTest object at 0x106d94910>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_hotel.py:186: TypeError
+__ HotelTest.test13_hotel_cannot_receive_with_reservation_at_nonexistent_room __
+
+self = <test_hotel.HotelTest object at 0x106d94d70>
+
+    def test13_hotel_cannot_receive_with_reservation_at_nonexistent_room(self):
+>       floor1 = self.create_floor_with_and(10, self.default_price_list())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_hotel.py:166: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_hotel.HotelTest object at 0x106d94d70>, a_number_of_rooms = 10
+a_price = {'conferenceGuest': 200, 'vacationGuest': 100}
+
+    def create_floor_with_and(self, a_number_of_rooms, a_price):
+>       floor = Floor()
+                ^^^^^^^
+E       TypeError: Floor.__init__() missing 2 required positional arguments: 'a_number_of_rooms' and 'a_price_list'
+
+tests/test_hotel.py:186: TypeError
+______ RoomTest.test13_losses_of_available_room_is_the_max_price_in_list _______
+
+self = <test_room.RoomTest object at 0x106d96190>
+
+    def test13_losses_of_available_room_is_the_max_price_in_list(self):
+        def a_block():
+            room = Room()
+    
+            assert self.max_price_in_list() == room.loss_using_if_absent_guest_type(self.default_price_list(), lambda: pytest.fail())
+    
+>       self.should_fail(a_block)
+
+tests/test_room.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_room.RoomTest object at 0x106d96190>
+a_block = <function RoomTest.test13_losses_of_available_room_is_the_max_price_in_list.<locals>.a_block at 0x106e30bf0>
+
+    def should_fail(self, a_block):
+>       with pytest.raises(BaseException):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'BaseException'>
+
+tests/test_room.py:221: Failed
+____________ RoomTest.test14_losses_of_reserved_room_is_cero_pesos _____________
+
+self = <test_room.RoomTest object at 0x106cbfd40>
+
+    def test14_losses_of_reserved_room_is_cero_pesos(self):
+        def a_block():
+            room = Room()
+    
+            room.reserve()
+    
+            assert 0 == room.loss_using_if_absent_guest_type(self.default_price_list(), lambda: pytest.fail())
+    
+>       self.should_fail(a_block)
+
+tests/test_room.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_room.RoomTest object at 0x106cbfd40>
+a_block = <function RoomTest.test14_losses_of_reserved_room_is_cero_pesos.<locals>.a_block at 0x106e31010>
+
+    def should_fail(self, a_block):
+>       with pytest.raises(BaseException):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'BaseException'>
+
+tests/test_room.py:221: Failed
+____________ RoomTest.test15_losses_of_occupied_room_is_cero_pesos _____________
+
+self = <test_room.RoomTest object at 0x106c61310>
+
+    def test15_losses_of_occupied_room_is_cero_pesos(self):
+        def a_block():
+            room = Room()
+    
+            room.receive(self.guest_type_vacation())
+    
+            assert 0 == room.loss_using_if_absent_guest_type(self.default_price_list(), lambda: pytest.fail())
+    
+>       self.should_fail(a_block)
+
+tests/test_room.py:174: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <test_room.RoomTest object at 0x106c61310>
+a_block = <function RoomTest.test15_losses_of_occupied_room_is_cero_pesos.<locals>.a_block at 0x106e31430>
+
+    def should_fail(self, a_block):
+>       with pytest.raises(BaseException):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'BaseException'>
+
+tests/test_room.py:221: Failed
+=========================== short test summary info ============================
+FAILED tests/test_floor.py::FloorTest::test01_cannot_create_floor_without_rooms
+FAILED tests/test_floor.py::FloorTest::test02_cannot_create_floor_with_no_interger_number_of_rooms
+FAILED tests/test_floor.py::FloorTest::test03_cannot_create_floor_without_prices
+FAILED tests/test_floor.py::FloorTest::test04_when_a_floor_is_created_all_the_rooms_are_available
+FAILED tests/test_floor.py::FloorTest::test05_when_a_floor_receives_a_guest_in_a_room_reduces_the_available_rooms_by_one_and_increase_occupied_by_one
+FAILED tests/test_floor.py::FloorTest::test06_when_a_floor_receives_on_reservation_a_guest_in_a_room_keeps_the_available_rooms_and_occupied_and_reduces_the_reserved_by_one
+FAILED tests/test_floor.py::FloorTest::test07_when_a_room_is_reserved_the_floor_available_rooms_reduces_by_one_and_increase_reserved_and_occupied_by_one
+FAILED tests/test_floor.py::FloorTest::test08_total_profit_should_be_the_sum_of_occupied_rooms_profits
+FAILED tests/test_floor.py::FloorTest::test09_total_losses_should_be_the_sum_of_available_rooms_losses
+FAILED tests/test_hotel.py::HotelTest::test02_new_hotels_are_empty - TypeErro...
+FAILED tests/test_hotel.py::HotelTest::test03_hotel_can_receive_a_type_of_guest_in_room_at_floor
+FAILED tests/test_hotel.py::HotelTest::test04_hotel_can_take_a_reservation_for_a_room_at_floor
+FAILED tests/test_hotel.py::HotelTest::test05_hotel_can_receive_with_reservation_a_type_of_guest_in_room_at_floor
+FAILED tests/test_hotel.py::HotelTest::test06_hotel_cannot_receive_with_reservation_without_previous_reservation
+FAILED tests/test_hotel.py::HotelTest::test07_hotel_profits_are_the_sum_of_each_floor_profits
+FAILED tests/test_hotel.py::HotelTest::test08_hotel_losses_are_the_sum_of_each_floor_losses
+FAILED tests/test_hotel.py::HotelTest::test09_hotel_cannot_reserve_a_nonexistent_room
+FAILED tests/test_hotel.py::HotelTest::test10_hotel_cannot_reserve_a_nonexistent_floor
+FAILED tests/test_hotel.py::HotelTest::test11_hotel_cannot_receive_at_nonexistent_room
+FAILED tests/test_hotel.py::HotelTest::test12_hotel_cannot_receive_at_nonexistent_floor
+FAILED tests/test_hotel.py::HotelTest::test13_hotel_cannot_receive_with_reservation_at_nonexistent_room
+FAILED tests/test_room.py::RoomTest::test13_losses_of_available_room_is_the_max_price_in_list
+FAILED tests/test_room.py::RoomTest::test14_losses_of_reserved_room_is_cero_pesos
+FAILED tests/test_room.py::RoomTest::test15_losses_of_occupied_room_is_cero_pesos
+24 failed, 15 passed in 0.09s

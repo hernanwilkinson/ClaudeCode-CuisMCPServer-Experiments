@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="simshotels.FloorTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-09-22T00:55:33.246Z" hostname="M4.local" time="0.013">
+  <properties/>
+  <testcase name="test07WhenARoomIsReservedTheFloorAvailableRoomsReducesByOneAndIncreaseReservedAndOccupiedByOne()" classname="simshotels.FloorTest" time="0.005"/>
+  <testcase name="test02CannotCreateFloorWithNoIntergerNumberOfRooms()" classname="simshotels.FloorTest" time="0.0"/>
+  <testcase name="test01CannotCreateFloorWithoutRooms()" classname="simshotels.FloorTest" time="0.001"/>
+  <testcase name="test09TotalLossesShouldBeTheSumOfAvailableRoomsLosses()" classname="simshotels.FloorTest" time="0.0"/>
+  <testcase name="test05WhenAFloorReceivesAGuestInARoomReducesTheAvailableRoomsByOneAndIncreaseOccupiedByOne()" classname="simshotels.FloorTest" time="0.0"/>
+  <testcase name="test08TotalProfitShouldBeTheSumOfOccupiedRoomsProfits()" classname="simshotels.FloorTest" time="0.001"/>
+  <testcase name="test06WhenAFloorReceivesOnReservationAGuestInARoomKeepsTheAvailableRoomsAndOccupiedAndReducesTheReservedByOne()" classname="simshotels.FloorTest" time="0.0"/>
+  <testcase name="test03CannotCreateFloorWithoutPrices()" classname="simshotels.FloorTest" time="0.0"/>
+  <testcase name="test04WhenAFloorIsCreatedAllTheRoomsAreAvailable()" classname="simshotels.FloorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,129 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-202259-53404",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "java-gradle",
+  "language": "java",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "customerimporter",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "gradle": "Gradle 9.7.1",
+  "java": "openjdk version 25.0.1 2025-10-21",
+  "hashes": {
+    "prompt.md": "b5e7b323f34c5602381394a28d0afebfee0cb4e72d5564401735ed332b1446e9",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "60da63f1906a5b4f5860eb0cc40e7e8ee172bbd6539df161cbc1fa9c75ab2d5f"
+  },
+  "startedAt": "2026-09-21T23:23:03Z",
+  "endedAt": "2026-09-21T23:28:01Z",
+  "elapsedSeconds": 298,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "ownTests": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "ImportTest"
+    ],
+    "classesRun": [
+      "customerimporter.ImportTest"
+    ],
+    "classesMissing": [],
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 1.5477,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 34,
+        "cache_write_5m": 0,
+        "cache_write_1h": 54759,
+        "cache_read": 639223,
+        "output": 27212,
+        "thinking": 14905,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 17,
+        "cost_usd": 1.5476715
+      }
+    },
+    "toolCalls": {
+      "Bash": 21
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 22,
+    "durationMs": 297175,
+    "durationApiMs": 292121,
+    "totalCostUsd": 1.5476715,
+    "usage": {
+      "input_tokens": 34,
+      "cache_creation_input_tokens": 54759,
+      "cache_read_input_tokens": 639223,
+      "output_tokens": 27212,
+      "output_tokens_details": {
+        "thinking_tokens": 14905
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 54759,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1116,
+          "cache_read_input_tokens": 58706,
+          "cache_creation_input_tokens": 486,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 486
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 34,
+        "outputTokens": 27212,
+        "cacheReadInputTokens": 639223,
+        "cacheCreationInputTokens": 54759,
+        "webSearchRequests": 0,
+        "costUSD": 1.5476715,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 14905,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "All 29 tests pass (`gradle clean test`), and the test file is untouched.\n\n## What I changed\n\n**Two new type hierarchies replace the `if`s:**\n\n- `Identification` (abstract) \u2192 `DNI` / `CUIT` (`src/main/java/customerimporter/Identification.java:1`). Each subclass owns its type code, validates its own number at creation time, and polymorphically answers `isDNI` / `isCUIT` / `dniNumberIfNone` / `cuitNumberIfNone`. `Identification.of(type, number)` finds the kind by code and signals `\"Invalid identification type\"` when none matches.\n- `ZipCode` (abstract) \u2192 `OldZipCode` (an `int`) / `NewZipCode` (a `String`) (`src/main/java/customerimporter/ZipCode.java:1`). Each subclass declares which strings it `canBeCreatedFrom`, validates them, and answers `isOld` / `isNew` / `oldZipCodeIfNone` / `newZipCodeIfNone`.\n\n**Collaborators just delegate:**\n\n- `Customer` holds an `Identification` instead of two strings; `Address` holds a `ZipCode` instead of an `Object` inspected with `instanceof`. `Address.zipCode()` still answers the `Integer`/`String` the tests compare against, via `ZipCode.value()`.\n- `CustomerImporter.importCustomer`/`importAddress` (`src/main/java/customerimporter/CustomerImporter.java:69`) no longer validate anything \u2014 they ask for an already-valid object. Both methods are now 6 lines.\n\n**Repeated code removed:**\n\n- `Validation` (`src/main/java/customerimporter/Validation.java:1`) holds the checks that were written over and over: signaling the error, `isAllDigits`, `isAllLetters`, `isBetween`.\n- Each error message is now defined once, in the class it belongs to (`DNI.invalidNumberErrorDescription()`, etc.), instead of being repeated at every `throw`.\n- `Customer.isIdentifiedBy(type, number)` removes the identification comparison that `TransientCustomerSystem` and `PersistentCustomerSystem` each duplicated.\n\n**Two things I deliberately left alone**, both pre-existing base code rather than the new developer's work: the `\"C\"`/`\"A\"` record dispatch in `importRecord`, and the `instanceof Customer` inside `DataBaseSession.persist` (the given persistence framework). Also note `test29` expects `\"Invalid identification type\"` for a zip code that is neither old nor new \u2014 that message looks like a copy/paste slip, but since the tests can't change I kept it, with a comment at `ZipCode.java:33` saying why.\n\nI also refreshed `README.md`, which claimed the code intentionally preserved those smells, and verified the untested `PersistentCustomerSystem` path still works with a throwaway program run from the scratchpad (not added to the project)."
+  }
+}

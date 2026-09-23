@@ -1,0 +1,21 @@
+{
+  "RUN_ID": "20260921-202040-52205",
+  "EXPERIMENT": "000-PipelineChecks",
+  "SCENARIO": "python-pytest",
+  "CONFIG": "1-Empty",
+  "TECHNIQUE": "free",
+  "EXERCISE_NAME": "2024-1c-parcial1",
+  "PY_PACKAGE": "simshotels",
+  "MODEL": "claude-haiku-4-5-20251001",
+  "EFFORT": "low",
+  "BUDGET": "15",
+  "TIMEOUT": "900",
+  "NOTE": "python-pytest cell smoke test",
+  "TOOLS": "Read,Edit,Write,Bash,Glob,Grep",
+  "CLAUDE_VERSION": "2.1.268 (Claude Code)",
+  "WORKDIR": "/private/tmp/claude-cells/20260921-202040-52205-52205",
+  "PYTHON": "/usr/local/bin/python3",
+  "STARTED_AT": "2026-09-21T23:20:41Z",
+  "START_SECONDS": "1790032841",
+  "WARM_UP": "classes 3 run 39 passed 39 failed 0 errors 0"
+}

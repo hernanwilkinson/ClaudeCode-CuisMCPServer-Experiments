@@ -23,3 +23,8 @@ ErrorsToFix/
 NewPackages/
 UserChanges/
 research-design.md
+
+# Cachés de Python
+__pycache__/
+.pytest_cache/
+*.pyc

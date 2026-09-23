@@ -1,0 +1,129 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-213846-32199",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "java-gradle",
+  "language": "java",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "customerimporter",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 5",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "gradle": "Gradle 9.7.1",
+  "java": "openjdk version 25.0.1 2025-10-21",
+  "hashes": {
+    "prompt.md": "b5e7b323f34c5602381394a28d0afebfee0cb4e72d5564401735ed332b1446e9",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "60da63f1906a5b4f5860eb0cc40e7e8ee172bbd6539df161cbc1fa9c75ab2d5f"
+  },
+  "startedAt": "2026-09-22T00:38:47Z",
+  "endedAt": "2026-09-22T00:43:54Z",
+  "elapsedSeconds": 307,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "ownTests": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "ImportTest"
+    ],
+    "classesRun": [
+      "customerimporter.ImportTest"
+    ],
+    "classesMissing": [],
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 1.5521,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 32,
+        "cache_write_5m": 0,
+        "cache_write_1h": 55742,
+        "cache_read": 617822,
+        "output": 27426,
+        "thinking": 16247,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 16,
+        "cost_usd": 1.552141
+      }
+    },
+    "toolCalls": {
+      "Bash": 18
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 19,
+    "durationMs": 305033,
+    "durationApiMs": 297158,
+    "totalCostUsd": 1.5521410000000002,
+    "usage": {
+      "input_tokens": 32,
+      "cache_creation_input_tokens": 55742,
+      "cache_read_input_tokens": 617822,
+      "output_tokens": 27426,
+      "output_tokens_details": {
+        "thinking_tokens": 16247
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 55742,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 968,
+          "cache_read_input_tokens": 57925,
+          "cache_creation_input_tokens": 2250,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2250
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 32,
+        "outputTokens": 27426,
+        "cacheReadInputTokens": 617822,
+        "cacheCreationInputTokens": 55742,
+        "webSearchRequests": 0,
+        "costUSD": 1.5521410000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 16247,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "Done. `gradle test` \u2192 **29 tests, 0 failures, 0 skipped**, with `ImportTest.java` byte-for-byte unchanged.\n\n## What I changed\n\n**Identification hierarchy** (`Identification`, `DNI`, `CUIT`) \u2014 `Customer` no longer holds a `String identificationType` + `String identificationNumber` pair. It holds an `Identification`, and `hasDNIAsIdentification`, `hasCUITAsIdentification`, `dniNumberIfNone`, `cuitNumberIfNone`, `identificationType`, `identificationNumber` are all delegations to polymorphic messages. `Identification.forTypeAndNumber(aType, aNumber)` finds the type that handles the letter and asks it to create the identification \u2014 each subclass validates its own number in its own creation method. The `if idType.equals(\"D\") ... else if (\"C\") ... else error` chain in `importCustomer` is gone; the method is now six lines of assignments.\n\n**ZipCode hierarchy** (`ZipCode`, `OldZipCode`, `NewZipCode`) \u2014 same move for `Address`: the `Object zipCode` holding either an `Integer` or a `String` (and the two `instanceof` checks it forced) became a `ZipCode`. `ZipCode.from(aString)` asks each zip code type whether it can create one from that string, so `importAddress` has no `if` either. `Address.zipCode()` still answers the raw `Integer`/`String` because the tests assert on it.\n\n**`CodeValidator`** \u2014 the four validations repeated the same primitives (all-digits, all-letters, size, range) and each repeated its `throw new RuntimeException(\"Invalid ...\")`. A validator is created once per code type with its error description; the ~15 duplicated throws collapsed to one place. The 1000..9999 four-digit postal number rule lives in `ZipCode` and is shared by both zip code types \u2014 that's the same rule the original duplicated as `between: 1000 and: 9999` in one branch and `> 999` in the other.\n\n**`Customer.isIdentifiedBy`** \u2014 removes the identification comparison that was duplicated between `TransientCustomerSystem` and `PersistentCustomerSystem`.\n\nTwo things worth flagging:\n\n- The original signals `\"Invalid identification type\"` for a zip code that is neither old nor new (test 29 asserts that text). It looks like a copy-paste slip, but the tests are fixed, so I preserved the wording and left a comment on `ZipCode.invalidZipCodeTypeErrorDescription` saying why.\n- I left the `C`/`A` record-type dispatch in `importRecord` alone \u2014 it's part of the original starting code rather than what the new developer added. Say the word if you want it dispatched polymorphically too.\n\nThe README described the old design, so I added a short \"Refactoring\" section and noted that translation points 8\u201310 now describe the starting point rather than the code."
+  }
+}

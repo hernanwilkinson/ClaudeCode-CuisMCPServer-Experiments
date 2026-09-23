@@ -1,0 +1,133 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-205145-86356",
+  "warmUp": "classes 3 run 39 passed 39 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "python-pytest",
+  "language": "python",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2024-1c-parcial1",
+  "package": "simshotels",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 2",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "python": "Python 3.14.7",
+  "pytest": "pytest 9.0.3",
+  "hashes": {
+    "prompt.md": "e84ed27b07639496d634bd084bb5641ec6400e0287bf8ed5a0b3064922bbbcea",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "fce05436f3de8a9a9cb2eaa36a04d4a793b3038867546c8c40c25ba339c9356b"
+  },
+  "startedAt": "2026-09-21T23:51:45Z",
+  "endedAt": "2026-09-21T23:56:21Z",
+  "elapsedSeconds": 276,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 3 run 39 passed 14 failed 25 errors 0",
+  "ownTests": "classes 3 run 40 passed 40 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesRun": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesMissing": [],
+    "run": 40,
+    "passed": 40,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 1.5802,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 36,
+        "cache_write_5m": 0,
+        "cache_write_1h": 60381,
+        "cache_read": 659174,
+        "output": 25865,
+        "thinking": 10867,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 18,
+        "cost_usd": 1.580202
+      }
+    },
+    "toolCalls": {
+      "Bash": 17
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 18,
+    "durationMs": 275062,
+    "durationApiMs": 269793,
+    "totalCostUsd": 1.5802019999999999,
+    "usage": {
+      "input_tokens": 36,
+      "cache_creation_input_tokens": 60381,
+      "cache_read_input_tokens": 659174,
+      "output_tokens": 25865,
+      "output_tokens_details": {
+        "thinking_tokens": 10867
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 60381,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1205,
+          "cache_read_input_tokens": 64181,
+          "cache_creation_input_tokens": 633,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 633
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 36,
+        "outputTokens": 25865,
+        "cacheReadInputTokens": 659174,
+        "cacheCreationInputTokens": 60381,
+        "webSearchRequests": 0,
+        "costUSD": 1.5802019999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 10867,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "All 40 tests pass. Here's what I changed, item by item.\n\n**1\u20132. Instantiation.** `Floor.with_rooms_and_prices(n, prices)` and `Hotel.with_floors(floors)` are class-side creation messages that validate first and then call `__init__`, which leaves the object fully initialized \u2014 no more `None` instance variables and no `set_number_of_rooms` / `set_prices` / `set_floors`. The tests' `create_floor_with_and` and `create_hotel` now use them.\n\n**3. Room states.** `Room` holds a `RoomState`: `AvailableRoomState`, `ReservedRoomState`, `OccupiedRoomState` (which is the only one that knows a guest type), all in `room.py`. The `\"reserved\"` magic guest type, the `None` guest and the unused `Room.guest_type` accessor are gone.\n\n**4. No repetition in the transitions.** `RoomState` implements `receive` / `receive_with_reservation` / `reserve` as the error each state gives by default; every subclass redefines only the transition it accepts and returns the new state. `Room`'s three methods are one delegation each: `self._state = self._state.receive(...)`.\n\n**5. Encapsulation.** `Floor.rooms()` is deleted. `Floor` answers `receive_at_room`, `receive_with_reservation_at_room`, `reserve_room`, and validates room numbers itself in a private `room_at`. Since room numbers are now the floor's knowledge, the description lives in `Floor.room_number_does_not_exist_error_description()`; `Hotel`'s static delegates to it so the existing assertions keep working.\n\n**6. Losses.** Added `Room.loss_using_if_absent_guest_type` \u2014 max price for an available room, 0 otherwise (the base state returns 0, only `AvailableRoomState` redefines it). Tests 13\u201315 no longer use `should_fail`, and `should_fail`, now unused, was removed. `Floor.total_losses` asks every room for its loss, mirroring `total_profits`.\n\n**7. Repeated code.** The index loops are gone: `Hotel.total_of(...)` and `Floor.total_of(...)` sum over floors/rooms and are reused by profits, losses and every total; `Floor.total_rooms_satisfying(...)` backs the three counters; the three `Hotel` guest methods are one delegation each through the private `floor_at`. `Hotel.total_rooms_available` is now derived from its floors instead of the hand-maintained `_available_rooms_count` (which was decremented on `receive`/`reserve` but never elsewhere).\n\n**8. Bonus.** Floor tests use the new floor protocol instead of reaching into rooms (the `# Tech Debt` comments are gone); guest types, prices and creation methods moved to `SimsHotelsTestSupport` in `tests/sims_hotels_test_support.py`, inherited by the three test cases; `HotelTest` got `create_hotel_with(*floors)` and an `assert_is_empty(hotel)` used by tests 9\u201312. I also added one test (`FloorTest.test10`) covering the room-number check now owned by `Floor` \u2014 that's the 40th test.\n\nTwo judgment calls worth flagging: `loss_using_if_absent_guest_type` never evaluates the if-absent block (an occupied room loses nothing, so its guest type is not consulted) \u2014 the parameter exists only to mirror `profit_using_if_absent_guest_type`, as the given tests require. And I appended a section to `README.md` describing the post-refactor state, since the rest of that file documents the starting code."
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-202808-59615",
+  "warmUp": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "java-gradle",
+  "language": "java",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2019-2c-parcial2-masked",
+  "package": "surveycrawler",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 1",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "gradle": "Gradle 9.7.1",
+  "java": "openjdk version 25.0.1 2025-10-21",
+  "hashes": {
+    "prompt.md": "e9d3853189663ef18a1cbc204476b8a0fd3de2dc763bf91dba07306552a8d620",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "502ac0a22ec99d7df12863324d8473038d5332bacfc05d3634efdba704c14f45"
+  },
+  "startedAt": "2026-09-21T23:28:11Z",
+  "endedAt": "2026-09-21T23:34:53Z",
+  "elapsedSeconds": 402,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "ownTests": "classes 1 run 56 passed 56 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "SurveyCrawlerTest"
+    ],
+    "classesRun": [
+      "surveycrawler.SurveyCrawlerTest"
+    ],
+    "classesMissing": [],
+    "run": 56,
+    "passed": 56,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 1.7018,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 30,
+        "cache_write_5m": 0,
+        "cache_write_1h": 51855,
+        "cache_read": 495104,
+        "output": 37423,
+        "thinking": 19535,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 15,
+        "cost_usd": 1.701827
+      }
+    },
+    "toolCalls": {
+      "Bash": 15
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 16,
+    "durationMs": 401191,
+    "durationApiMs": 393396,
+    "totalCostUsd": 1.701827,
+    "usage": {
+      "input_tokens": 30,
+      "cache_creation_input_tokens": 51855,
+      "cache_read_input_tokens": 495104,
+      "output_tokens": 37423,
+      "output_tokens_details": {
+        "thinking_tokens": 19535
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 51855,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 872,
+          "cache_read_input_tokens": 55868,
+          "cache_creation_input_tokens": 420,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 420
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 30,
+        "outputTokens": 37423,
+        "cacheReadInputTokens": 495104,
+        "cacheCreationInputTokens": 51855,
+        "webSearchRequests": 0,
+        "costUSD": 1.701827,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 19535,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "Done. All 56 tests pass (`gradle test`), the original 16 unchanged.\n\n## Design\n\n**Repetitions** \u2014 `process` keeps the last repeatable command while scanning; a digit repeats it `digit + 2` extra times (`\"a0\"` = 3 advances). `(`, `)` and a digit itself clear it, so `\"0\"`, `\"a00\"`, `\"(0a)\"`, `\"(a)0\"` are invalid commands.\n\n**Sonar** \u2014 `Sonar` answers a `GroundType` for a position; `SeabedSonar` is a firm seabed plus exceptions (`withBoulderAt`, `withSiltAt`). `atFacing(...)` keeps working by using a fully firm seabed; `atFacingWithSonar(...)` takes one.\n\n`FirmSand`/`Boulder`/`Silt` decide what movements and turns do (no type-checking in the crawler). Moving asks the sonar about the **destination**, turning about the **current** position \u2014 which is where each command leaves the crawler. `Silt` slides via an injectable `SiltSlide`; `RandomSiltSlide` answers `nextInt(10) + 1` as total cells moved, so from `1@2` facing Up with silt at `1@3` the crawler ends between `1@3` and `1@12`, matching the statement. Tests inject fixed slides.\n\n**Guarded runs** \u2014 `CrawlerRun` (`NormalRun` / `GuardedRun`) is the crawler's state. `(` and `)` are sent to the run, so nesting and closing-without-opening signal from the state itself; `process` also asks the run if it is finished (`\"a(aa\"`) and lets it handle any error before passing the exception on. Movements are **undone, not restored**: each movement registers its opposite (`moveBy(d)` \u2192 `moveBy(-d)`, clockwise \u2192 counter-clockwise), ignored by `NormalRun`, replayed in reverse by `GuardedRun`. Undo uses primitive moves, so it neither re-asks the sonar nor registers new undos. Silt asks the crawler to slide, the crawler asks the run \u2014 normal slides, guarded signals.\n\nTwo points the statement leaves open, documented in the README and covered by tests: the ground of cells crossed while sliding is not re-sensed (otherwise silt-after-silt slides forever), and a boulder blocks the cell, so a crawler standing on one cannot turn but can move off it.\n\nMutation-checked the suite (wrong repetition count, no undo, turn ignoring the ground, silt not sliding) \u2014 each produced failures; the README documents the design decisions and assumptions."
+  }
+}

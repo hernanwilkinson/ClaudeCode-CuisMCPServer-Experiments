@@ -1,0 +1,147 @@
+package simshotels;
+
+import java.util.HashMap;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+class FloorTest extends SimsHotelsTest {
+
+    // testing
+
+    @Test
+    void test01CannotCreateFloorWithoutRooms() {
+        RuntimeException error = assertThrows(RuntimeException.class,
+            () -> createFloorWithAnd(0, defaultPriceList()));
+        assertEquals(Floor.numberOfRoomsMustBePositiveErrorDescription(), error.getMessage());
+    }
+
+    @Test
+    void test02CannotCreateFloorWithNoIntergerNumberOfRooms() {
+        RuntimeException error = assertThrows(RuntimeException.class,
+            () -> createFloorWithAnd(1.5, defaultPriceList()));
+        assertEquals(Floor.numberOfRoomsMustBeIntegerErrorDescription(), error.getMessage());
+    }
+
+    @Test
+    void test03CannotCreateFloorWithoutPrices() {
+        RuntimeException error = assertThrows(RuntimeException.class,
+            () -> createFloorWithAnd(10, new HashMap<String, Integer>()));
+        assertEquals(Floor.pricesListCannotBeEmptyErrorDescription(), error.getMessage());
+    }
+
+    @Test
+    void test04WhenAFloorIsCreatedAllTheRoomsAreAvailable() {
+        Floor floor;
+
+        floor = createFloorWithAnd(10, defaultPriceList());
+
+        assertTrue(floor.isAvailable());
+        assertEquals(0, floor.totalRoomsOccupied());
+        assertEquals(0, floor.totalRoomsReserved());
+    }
+
+    @Test
+    void test05WhenAFloorReceivesAGuestInARoomReducesTheAvailableRoomsByOneAndIncreaseOccupiedByOne() {
+        Floor floor;
+        int roomsNumber;
+
+        roomsNumber = 10;
+        floor = createFloorWithAnd(roomsNumber, defaultPriceList());
+
+        floor.receiveAtRoom(guestTypeVacation(), 1);
+
+        assertEquals(roomsNumber - 1, floor.totalRoomsAvailable());
+        assertEquals(1, floor.totalRoomsOccupied());
+        assertEquals(0, floor.totalRoomsReserved());
+    }
+
+    @Test
+    void test06WhenAFloorReceivesOnReservationAGuestInARoomKeepsTheAvailableRoomsAndOccupiedAndReducesTheReservedByOne() {
+        Floor floor;
+        int roomsNumber;
+        int roomsAvailable;
+        int roomsOccupied;
+        int roomsReserved;
+
+        roomsNumber = 10;
+        floor = createFloorWithAnd(roomsNumber, defaultPriceList());
+
+        floor.reserveRoom(1);
+
+        roomsAvailable = floor.totalRoomsAvailable();
+        roomsOccupied = floor.totalRoomsOccupied();
+        roomsReserved = floor.totalRoomsReserved();
+
+        floor.receiveWithReservationAtRoom(guestTypeVacation(), 1);
+
+        assertEquals(roomsAvailable, floor.totalRoomsAvailable());
+        assertEquals(roomsOccupied, floor.totalRoomsOccupied());
+        assertEquals(roomsReserved - 1, floor.totalRoomsReserved());
+    }
+
+    @Test
+    void test07WhenARoomIsReservedTheFloorAvailableRoomsReducesByOneAndIncreaseReservedAndOccupiedByOne() {
+        Floor floor;
+        int roomsNumber;
+
+        roomsNumber = 10;
+        floor = createFloorWithAnd(roomsNumber, defaultPriceList());
+
+        floor.reserveRoom(1);
+
+        assertEquals(roomsNumber - 1, floor.totalRoomsAvailable());
+        assertEquals(1, floor.totalRoomsOccupied());
+        assertEquals(1, floor.totalRoomsReserved());
+    }
+
+    @Test
+    void test08TotalProfitShouldBeTheSumOfOccupiedRoomsProfits() {
+        Floor floor;
+
+        floor = createFloorWithThreeRoomsUsed(10);
+
+        assertEquals(minPriceInList() + maxPriceInList() + minPriceInList() / 2, floor.totalProfits());
+    }
+
+    @Test
+    void test09TotalLossesShouldBeTheSumOfAvailableRoomsLosses() {
+        Floor floor;
+        int roomsNumber;
+
+        roomsNumber = 10;
+        floor = createFloorWithThreeRoomsUsed(roomsNumber);
+
+        assertEquals(maxPriceInList() * (roomsNumber - 3), floor.totalLosses());
+    }
+
+    @Test
+    void test10CannotUseARoomThatDoesNotExist() {
+        Floor floor;
+
+        floor = createFloorWithAnd(10, defaultPriceList());
+
+        RuntimeException error = assertThrows(RuntimeException.class,
+            () -> floor.reserveRoom(42));
+
+        assertEquals(Floor.roomNumberDoesNotExistErrorDescription(), error.getMessage());
+        assertTrue(floor.isAvailable());
+    }
+
+    // create
+
+    private Floor createFloorWithThreeRoomsUsed(int aNumberOfRooms) {
+        Floor floor;
+
+        floor = createFloorWithAnd(aNumberOfRooms, defaultPriceList());
+
+        floor.receiveAtRoom(guestTypeVacation(), 1);
+        floor.receiveAtRoom(guestTypeConference(), 2);
+        floor.reserveRoom(3);
+
+        return floor;
+    }
+}

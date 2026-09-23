@@ -1,0 +1,193 @@
+{
+  "run": "20260921-205145-86356",
+  "language": "python",
+  "scenario": "python-pytest",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2024-1c-parcial1",
+  "package": "simshotels",
+  "status": "completed",
+  "acceptance": {
+    "givenTestClasses": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesRun": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesMissing": [],
+    "run": 40,
+    "passed": 40,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "agentTests": {
+    "classes": 3,
+    "run": 40,
+    "passed": 40,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "originalTestsAsGiven": {
+    "classes": 3,
+    "run": 39,
+    "passed": 14,
+    "failed": 25,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "coverageByAllTests": null,
+  "coverageByAgentTests": null,
+  "testSmells": null,
+  "mentor": {
+    "findings": null
+  },
+  "mentorFindings": null,
+  "model": {
+    "classes": 7,
+    "methods": 85,
+    "linesOfCode": 231,
+    "totals": {
+      "ifs": 7,
+      "switches": 0,
+      "ternaries": 1,
+      "typeChecks": 2,
+      "nilChecks": 0
+    }
+  },
+  "python": {
+    "main": {
+      "files": 4,
+      "linesOfCode": 231,
+      "classes": 7,
+      "methods": 85,
+      "ifs": 7,
+      "switches": 0,
+      "ternaries": 1,
+      "instanceofs": 2,
+      "nullChecks": 0,
+      "tests": 0
+    },
+    "test": {
+      "files": 4,
+      "linesOfCode": 305,
+      "classes": 5,
+      "methods": 51,
+      "ifs": 0,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 0,
+      "nullChecks": 0,
+      "tests": 40
+    }
+  },
+  "diff": {
+    "filesAdded": [
+      "tests/sims_hotels_test_support.py"
+    ],
+    "filesChanged": [
+      "src/simshotels/floor.py",
+      "src/simshotels/hotel.py",
+      "src/simshotels/room.py",
+      "tests/test_floor.py",
+      "tests/test_hotel.py",
+      "tests/test_room.py"
+    ],
+    "filesRemoved": [],
+    "linesAdded": 316,
+    "linesRemoved": 389,
+    "methodsBefore": 117,
+    "methodsAfter": 136
+  },
+  "agent": {
+    "mode": "headless",
+    "model": "claude-opus-5",
+    "effort": "high",
+    "elapsedSeconds": 276,
+    "turns": 18,
+    "costUsd": 1.5802019999999999,
+    "tokens": {
+      "input": 36,
+      "cacheWrite": 60381,
+      "cacheRead": 659174,
+      "output": 25865,
+      "thinking": 10867,
+      "requests": 18
+    },
+    "toolsServed": null,
+    "toolDefinitionBytes": null,
+    "toolCalls": 17,
+    "toolCallsPerMinute": 3.7,
+    "toolErrors": 0,
+    "testRunCalls": 9,
+    "firstTestRunAtCall": 5,
+    "filesRead": 0,
+    "filesEdited": 0,
+    "refactoringToolCalls": 0,
+    "evaluateKinds": null,
+    "explorationCallsBeforeFirstChange": 17,
+    "liveTypingToolCalls": 0,
+    "actualScopeRefactoringCalls": 0,
+    "messageNotUnderstoodAnswers": null,
+    "failedTestRuns": null
+  },
+  "refactoringOpportunities": {},
+  "looseChanges": null,
+  "toolCalls": {
+    "agentCalls": 17,
+    "errors": 0,
+    "byTool": {
+      "Bash": {
+        "calls": 17
+      }
+    },
+    "sequence": [
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash"
+    ],
+    "bashCommands": [
+      "find . -type f -not -path \"*/.git/*\" | head -50 && echo \"---\" && ls -la",
+      "cat pyproject.toml CLAUDE.md src/simshotels/__init__.py src/simshotels/room.py src/simshotels/floor.py src/simshotels/hotel.py",
+      "cat tests/test_room.py && echo \"=====FLOOR=====\" && cat tests/test_floor.py",
+      "cat tests/test_hotel.py && echo \"=====README=====\" && cat README.md",
+      "python3 -m pytest -q 2>&1 | tail -3",
+      "cat > src/simshotels/room.py <<'EOF'\nclass Room:\n\n    # initialization\n\n    def __init__(self):\n        self._state = AvailableRoomState()\n\n    # guests\n\n    def receive(self, a_guest_type):\n        self._state = self._state.receive(a_guest_type)\n\n    def receive_with_reservation(self, a_guest_type):\n        self._state = self._state.receive_with_reservation(a_guest_type)\n\n    def reserve(self):\n        self._state = self._state.reserve()\n\n    # testing\n\n    def is_available(self):\n        return self._state.is_available()\n\n    def is_occupied(self):\n        return self._state.is_occupied()\n\n    def is_reserved(self):\n        return self._state.is_reserved()\n\n    # accounting\n\n    def profit_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        return self._state.profit_using_if_absent_guest_type(a_price_list, unknown_guest_type_block)\n\n    def loss_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        return self._state.loss_using_if_absent_guest_type(a_price_list, unknown_guest_type_block)\n\n    # error messages (class side)\n\n    @staticmethod\n    def room_is_not_empty_error_description():\n        return \"Room is not empty.\"\n\n    @staticmethod\n    def room_is_not_reserved_error_description():\n        return \"Room is not reserved.\"\n\n    # exceptions (class side)\n\n    @staticmethod\n    def signal_room_is_not_empty():\n        raise RuntimeError(Room.room_is_not_empty_error_description())\n\n    @staticmethod\n    def signal_room_is_not_reserved():\n        raise RuntimeError(Room.room_is_not_reserved_error_description())\n\n\nclass RoomState:\n    \"\"\"The state of a Room. Each subclass knows which transitions it accepts,\n    whether the room is available/occupied/reserved and what it earns or loses.\"\"\"\n\n    # guests (only the transitions a state accepts are redefined by it)\n\n    def receive(self, a_guest_type):\n        Room.signal_room_is_not_empty()\n\n    def receive_with_reservation(self, a_guest_type):\n        Room.signal_room_is_not_reserved()\n\n    def reserve(self):\n        Room.signal_room_is_not_empty()\n\n    # testing\n\n    def is_available(self):\n        return False\n\n    def is_occupied(self):\n        return not self.is_available()\n\n    def is_reserved(self):\n        return False\n\n    # accounting\n\n    def profit_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        raise NotImplementedError(\"Subclass responsibility\")\n\n    def loss_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        # only an available room loses money\n        return 0\n\n\nclass AvailableRoomState(RoomState):\n\n    # guests\n\n    def receive(self, a_guest_type):\n        return OccupiedRoomState(a_guest_type)\n\n    def reserve(self):\n        return ReservedRoomState()\n\n    # testing\n\n    def is_available(self):\n        return True\n\n    # accounting\n\n    def profit_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        return 0\n\n    def loss_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        return max(a_price_list.values())\n\n\nclass ReservedRoomState(RoomState):\n\n    # guests\n\n    def receive_with_reservation(self, a_guest_type):\n        return OccupiedRoomState(a_guest_type)\n\n    # testing\n\n    def is_reserved(self):\n        return True\n\n    # accounting\n\n    def profit_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        return min(a_price_list.values()) // 2\n\n\nclass OccupiedRoomState(RoomState):\n\n    # initialization\n\n    def __init__(self, a_guest_type):\n        self._guest_type = a_guest_type\n\n    # accounting\n\n    def profit_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        if self._guest_type in a_price_list:\n            return a_price_list[self._guest_type]\n        else:\n            return unknown_guest_type_block()\nEOF\npython3 -m pytest -q tests/test_room.py 2>&1 | tail -5",
+      "python3 - <<'EOF'\nimport re\np = 'tests/test_room.py'\ns = open(p).read()\n\nold = '''    def test13_losses_of_available_room_is_the_max_price_in_list(self):\n        def a_block():\n            room = Room()\n\n            assert self.max_price_in_list() == room.loss_using_if_absent_guest_type(self.default_price_list(), lambda: pytest.fail())\n\n        self.should_fail(a_block)\n\n    def test14_losses_of_reserved_room_is_cero_pesos(self):\n        def a_block():\n            room = Room()\n\n            room.reserve()\n\n            assert 0 == room.loss_using_if_absent_guest_type(self.default_price_list(), lambda: pytest.fail())\n\n        self.should_fail(a_block)\n\n    def test15_losses_of_occupied_room_is_cero_pesos(self):\n        def a_block():\n            room = Room()\n\n            room.receive(self.guest_type_vacation())\n\n            assert 0 == room.loss_using_if_absent_guest_type(self.default_price_list(), lambda: pytest.fail())\n\n        self.should_fail(a_block)\n'''\n\nnew = '''    def test13_losses_of_available_room_is_the_max_price_in_list(self):\n        room = Room()\n\n        assert self.max_price_in_list() == room.loss_using_if_absent_guest_type(self.default_price_list(), lambda: pytest.fail())\n\n    def test14_losses_of_reserved_room_is_cero_pesos(self):\n        room = Room()\n\n        room.reserve()\n\n        assert 0 == room.loss_using_if_absent_guest_type(self.default_price_list(), lambda: pytest.fail())\n\n    def test15_losses_of_occupied_room_is_cero_pesos(self):\n        room = Room()\n\n        room.receive(self.guest_type_vacation())\n\n        assert 0 == room.loss_using_if_absent_guest_type(self.default_price_list(), lambda: pytest.fail())\n'''\nassert old in s\ns = s.replace(old, new)\n\n# should_fail is now unused; drop the support helper but keep the test12 exception\nold_support = '''    # support (Cuis TestCase>>shouldFail: is `self should: aBlock raise: Exception`)\n\n    def should_fail(self, a_block):\n        with pytest.raises(BaseException):\n            a_block()\n\n    # the Python stand-in for the non-local return `[ ^self ]` of test12'''\nnew_support = '''    # support\n\n    # the Python stand-in for the non-local return `[ ^self ]` of test12'''\nassert old_support in s\ns = s.replace(old_support, new_support)\n\nopen(p,'w').write(s)\nEOF\npython3 -m pytest -q tests/test_room.py 2>&1 | tail -3",
+      "cat > src/simshotels/floor.py <<'EOF'\nfrom simshotels.room import Room\n\n\nclass Floor:\n\n    # instance creation (class side)\n\n    @classmethod\n    def with_rooms_and_prices(cls, a_number_of_rooms, a_price_list):\n        cls.assert_is_valid_number_of_rooms(a_number_of_rooms)\n        cls.assert_is_valid_price_list(a_price_list)\n\n        return cls(a_number_of_rooms, a_price_list)\n\n    # initialization\n\n    def __init__(self, a_number_of_rooms, a_price_list):\n        self._rooms = [Room() for _ in range(a_number_of_rooms)]\n        self._prices = a_price_list\n\n    # testing\n\n    def is_available(self):\n        return self.total_rooms() == self.total_rooms_available()\n\n    # guests\n\n    def receive_at_room(self, a_guest_type, a_room_number):\n        self.room_at(a_room_number).receive(a_guest_type)\n\n    def receive_with_reservation_at_room(self, a_guest_type, a_room_number):\n        self.room_at(a_room_number).receive_with_reservation(a_guest_type)\n\n    def reserve_room(self, a_room_number):\n        self.room_at(a_room_number).reserve()\n\n    # accessing\n\n    def room_at(self, a_room_number):\n        if a_room_number < 1 or a_room_number > self.total_rooms():\n            Floor.signal_room_number_does_not_exist()\n\n        return self._rooms[a_room_number - 1]\n\n    # accounting\n\n    def total_losses(self):\n        return self.total_of(lambda room: room.loss_using_if_absent_guest_type(\n            self._prices, lambda: Floor.signal_unknown_guest_type()))\n\n    def total_profits(self):\n        return self.total_of(lambda room: room.profit_using_if_absent_guest_type(\n            self._prices, lambda: Floor.signal_unknown_guest_type()))\n\n    # totals\n\n    def total_rooms(self):\n        return len(self._rooms)\n\n    def total_rooms_available(self):\n        return self.total_rooms_satisfying(lambda room: room.is_available())\n\n    def total_rooms_occupied(self):\n        return self.total_rooms_satisfying(lambda room: room.is_occupied())\n\n    def total_rooms_reserved(self):\n        return self.total_rooms_satisfying(lambda room: room.is_reserved())\n\n    def total_rooms_satisfying(self, a_condition):\n        return self.total_of(lambda room: 1 if a_condition(room) else 0)\n\n    def total_of(self, a_room_amount):\n        return sum(map(a_room_amount, self._rooms))\n\n    # assertions (class side)\n\n    @staticmethod\n    def assert_is_integer_if_false(a_number, signals_block):\n        if not (isinstance(a_number, int) and not isinstance(a_number, bool)):\n            signals_block()\n\n    @staticmethod\n    def assert_is_positive_if_false(a_number, signals_block):\n        if not (a_number > 0):\n            signals_block()\n\n    @staticmethod\n    def assert_is_valid_number_of_rooms(a_number_of_rooms):\n        Floor.assert_is_positive_if_false(a_number_of_rooms, lambda: Floor.signal_number_of_rooms_must_be_positive())\n        Floor.assert_is_integer_if_false(a_number_of_rooms, lambda: Floor.signal_number_of_rooms_must_be_integer())\n\n    @staticmethod\n    def assert_is_valid_price_list(a_price_list):\n        if len(a_price_list) == 0:\n            Floor.signal_no_prices()\n\n        for price in a_price_list.values():\n            Floor.assert_is_positive_if_false(price, lambda: Floor.signal_price_must_be_positive())\n\n    # error messages (class side)\n\n    @staticmethod\n    def number_of_rooms_must_be_integer_error_description():\n        return \"Number of rooms must be integer\"\n\n    @staticmethod\n    def number_of_rooms_must_be_positive_error_description():\n        return \"The number of rooms must be positive\"\n\n    @staticmethod\n    def price_must_be_integer_error_description():\n        return \"Price must be integer\"\n\n    @staticmethod\n    def price_must_be_positive_error_description():\n        return \"Price must be positive\"\n\n    @staticmethod\n    def prices_list_cannot_be_empty_error_description():\n        return \"Prices List must not be empty\"\n\n    @staticmethod\n    def room_number_does_not_exist_error_description():\n        return \"Room number does not exist\"\n\n    @staticmethod\n    def unknown_guest_type_error_description():\n        return \"The guest type is unknown\"\n\n    # exceptions (class side)\n\n    @staticmethod\n    def signal_no_prices():\n        raise RuntimeError(Floor.prices_list_cannot_be_empty_error_description())\n\n    @staticmethod\n    def signal_number_of_rooms_must_be_integer():\n        raise RuntimeError(Floor.number_of_rooms_must_be_integer_error_description())\n\n    @staticmethod\n    def signal_number_of_rooms_must_be_positive():\n        raise RuntimeError(Floor.number_of_rooms_must_be_positive_error_description())\n\n    @staticmethod\n    def signal_price_must_be_integer():\n        raise RuntimeError(Floor.price_must_be_integer_error_description())\n\n    @staticmethod\n    def signal_price_must_be_positive():\n        raise RuntimeError(Floor.price_must_be_positive_error_description())\n\n    @staticmethod\n    def signal_room_number_does_not_exist():\n        raise RuntimeError(Floor.room_number_does_not_exist_error_description())\n\n    @staticmethod\n    def signal_unknown_guest_type():\n        raise RuntimeError(Floor.unknown_guest_type_error_description())\nEOF\necho ok",
+      "cat > src/simshotels/hotel.py <<'EOF'\nfrom simshotels.floor import Floor\n\n\nclass Hotel:\n\n    # instance creation (class side)\n\n    @classmethod\n    def with_floors(cls, a_floors_collection):\n        cls.assert_have_floors(a_floors_collection)\n\n        return cls(a_floors_collection)\n\n    # initialization\n\n    def __init__(self, a_floors_collection):\n        self._floors = a_floors_collection\n\n    # testing\n\n    def is_empty(self):\n        return self.total_rooms() == self.total_rooms_available()\n\n    # guests\n\n    def receive_at_floor_at_room(self, a_guest_type, a_floor_number, a_room_number):\n        self.floor_at(a_floor_number).receive_at_room(a_guest_type, a_room_number)\n\n    def receive_with_reservation_at_floor_at_room(self, a_guest_type, a_floor_number, a_room_number):\n        self.floor_at(a_floor_number).receive_with_reservation_at_room(a_guest_type, a_room_number)\n\n    def reserve_room_at_floor(self, a_room_number, a_floor_number):\n        self.floor_at(a_floor_number).reserve_room(a_room_number)\n\n    # accessing\n\n    def floor_at(self, a_floor_number):\n        if a_floor_number < 1 or a_floor_number > self.total_floors():\n            Hotel.signal_floor_number_does_not_exist()\n\n        return self._floors[a_floor_number - 1]\n\n    # accounting\n\n    def total_losses(self):\n        return self.total_of(lambda floor: floor.total_losses())\n\n    def total_profits(self):\n        return self.total_of(lambda floor: floor.total_profits())\n\n    # totals\n\n    def total_floors(self):\n        return len(self._floors)\n\n    def total_rooms(self):\n        return self.total_of(lambda floor: floor.total_rooms())\n\n    def total_rooms_available(self):\n        return self.total_of(lambda floor: floor.total_rooms_available())\n\n    def total_rooms_occupied(self):\n        return self.total_of(lambda floor: floor.total_rooms_occupied())\n\n    def total_rooms_reserved(self):\n        return self.total_of(lambda floor: floor.total_rooms_reserved())\n\n    def total_of(self, a_floor_amount):\n        return sum(map(a_floor_amount, self._floors))\n\n    # assertions (class side)\n\n    @staticmethod\n    def assert_have_floors(a_floors_collection):\n        if len(a_floors_collection) == 0:\n            Hotel.signal_no_floors()\n\n    # error description (class side)\n\n    @staticmethod\n    def floor_number_does_not_exist_error_description():\n        return \"Floor number does not exist\"\n\n    @staticmethod\n    def no_floors_error_description():\n        return \"Cannot have a Hotel without floors\"\n\n    @staticmethod\n    def room_number_does_not_exist_error_description():\n        # the room numbers of a floor are known by the floor\n        return Floor.room_number_does_not_exist_error_description()\n\n    # exceptions (class side)\n\n    @staticmethod\n    def signal_floor_number_does_not_exist():\n        raise RuntimeError(Hotel.floor_number_does_not_exist_error_description())\n\n    @staticmethod\n    def signal_no_floors():\n        raise RuntimeError(Hotel.no_floors_error_description())\nEOF\necho ok",
+      "python3 - <<'EOF'\np='src/simshotels/hotel.py'\ns=open(p).read()\ns=s.replace(\"\"\"    def is_empty(self):\n        return self.total_rooms() == self.total_rooms_available()\"\"\",\n\"\"\"    def is_empty(self):\n        return all(floor.is_available() for floor in self._floors)\"\"\")\nopen(p,'w').write(s)\nEOF\npython3 -m pytest -q 2>&1 | tail -12",
+      "cat > tests/sims_hotels_test_support.py <<'EOF'\nfrom simshotels.floor import Floor\n\n\nclass SimsHotelsTestSupport:\n    \"\"\"Guest types, prices and creation methods shared by the three test cases.\"\"\"\n\n    # create\n\n    def create_floor_with_and(self, a_number_of_rooms, a_price):\n        return Floor.with_rooms_and_prices(a_number_of_rooms, a_price)\n\n    def default_price_list(self):\n        price_list = {}\n        price_list[self.guest_type_vacation()] = self.min_price_in_list()\n        price_list[self.guest_type_conference()] = self.max_price_in_list()\n        return price_list\n\n    def guest_type_conference(self):\n        return \"conferenceGuest\"\n\n    def guest_type_vacation(self):\n        return \"vacationGuest\"\n\n    def max_price_in_list(self):\n        return 200\n\n    def min_price_in_list(self):\n        return 100\nEOF\necho ok",
+      "cat > tests/test_floor.py <<'EOF'\nimport pytest\n\nfrom simshotels.floor import Floor\nfrom sims_hotels_test_support import SimsHotelsTestSupport\n\n\nclass FloorTest(SimsHotelsTestSupport):\n\n    # testing\n\n    def test01_cannot_create_floor_without_rooms(self):\n        with pytest.raises(RuntimeError) as error:\n            self.create_floor_with_and(0, self.default_price_list())\n        assert Floor.number_of_rooms_must_be_positive_error_description() == str(error.value)\n\n    def test02_cannot_create_floor_with_no_interger_number_of_rooms(self):\n        with pytest.raises(RuntimeError) as error:\n            self.create_floor_with_and(1.5, self.default_price_list())\n        assert Floor.number_of_rooms_must_be_integer_error_description() == str(error.value)\n\n    def test03_cannot_create_floor_without_prices(self):\n        with pytest.raises(RuntimeError) as error:\n            self.create_floor_with_and(10, {})\n        assert Floor.prices_list_cannot_be_empty_error_description() == str(error.value)\n\n    def test04_when_a_floor_is_created_all_the_rooms_are_available(self):\n        floor = self.create_floor_with_and(10, self.default_price_list())\n\n        assert floor.is_available()\n        assert 0 == floor.total_rooms_occupied()\n        assert 0 == floor.total_rooms_reserved()\n\n    def test05_when_a_floor_receives_a_guest_in_a_room_reduces_the_available_rooms_by_one_and_increase_occupied_by_one(self):\n        rooms_number = 10\n        floor = self.create_floor_with_and(rooms_number, self.default_price_list())\n\n        floor.receive_at_room(self.guest_type_vacation(), 1)\n\n        assert rooms_number - 1 == floor.total_rooms_available()\n        assert 1 == floor.total_rooms_occupied()\n        assert 0 == floor.total_rooms_reserved()\n\n    def test06_when_a_floor_receives_on_reservation_a_guest_in_a_room_keeps_the_available_rooms_and_occupied_and_reduces_the_reserved_by_one(self):\n        rooms_number = 10\n        floor = self.create_floor_with_and(rooms_number, self.default_price_list())\n\n        floor.reserve_room(1)\n\n        rooms_available = floor.total_rooms_available()\n        rooms_occupied = floor.total_rooms_occupied()\n        rooms_reserved = floor.total_rooms_reserved()\n\n        floor.receive_with_reservation_at_room(self.guest_type_vacation(), 1)\n\n        assert rooms_available == floor.total_rooms_available()\n        assert rooms_occupied == floor.total_rooms_occupied()\n        assert rooms_reserved - 1 == floor.total_rooms_reserved()\n\n    def test07_when_a_room_is_reserved_the_floor_available_rooms_reduces_by_one_and_increase_reserved_and_occupied_by_one(self):\n        rooms_number = 10\n        floor = self.create_floor_with_and(rooms_number, self.default_price_list())\n\n        floor.reserve_room(1)\n\n        assert rooms_number - 1 == floor.total_rooms_available()\n        assert 1 == floor.total_rooms_occupied()\n        assert 1 == floor.total_rooms_reserved()\n\n    def test08_total_profit_should_be_the_sum_of_occupied_rooms_profits(self):\n        rooms_number = 10\n        floor = self.create_floor_with_and(rooms_number, self.default_price_list())\n\n        floor.receive_at_room(self.guest_type_vacation(), 1)\n        floor.receive_at_room(self.guest_type_conference(), 2)\n        floor.reserve_room(3)\n\n        assert 100 + 200 + 50 == floor.total_profits()\n\n    def test09_total_losses_should_be_the_sum_of_available_rooms_losses(self):\n        rooms_number = 10\n        floor = self.create_floor_with_and(rooms_number, self.default_price_list())\n\n        floor.receive_at_room(self.guest_type_vacation(), 1)\n        floor.receive_at_room(self.guest_type_conference(), 2)\n        floor.reserve_room(3)\n\n        assert 200 * 7 == floor.total_losses()\n\n    def test10_cannot_access_a_nonexistent_room(self):\n        floor = self.create_floor_with_and(10, self.default_price_list())\n\n        with pytest.raises(RuntimeError) as error:\n            floor.reserve_room(42)\n\n        assert Floor.room_number_does_not_exist_error_description() == str(error.value)\n        assert floor.is_available()\nEOF\npython3 -m pytest -q tests/test_floor.py 2>&1 | tail -3",
+      "cat > tests/test_hotel.py <<'EOF'\nimport pytest\n\nfrom simshotels.hotel import Hotel\nfrom simshotels.room import Room\nfrom sims_hotels_test_support import SimsHotelsTestSupport\n\n\nclass HotelTest(SimsHotelsTestSupport):\n\n    # testing\n\n    def test01_cannot_create_hotel_without_floors(self):\n        with pytest.raises(RuntimeError) as error:\n            Hotel.with_floors([])\n        assert Hotel.no_floors_error_description() == str(error.value)\n\n    def test02_new_hotels_are_empty(self):\n        hotel = self.create_hotel()\n\n        assert hotel.is_empty()\n\n    def test03_hotel_can_receive_a_type_of_guest_in_room_at_floor(self):\n        hotel = self.create_hotel()\n\n        assert hotel.total_rooms() == hotel.total_rooms_available()\n\n        hotel.receive_at_floor_at_room(self.guest_type_vacation(), 1, 2)\n\n        assert hotel.total_rooms() - 1 == hotel.total_rooms_available()\n        assert 0 == hotel.total_rooms_reserved()\n        assert 1 == hotel.total_rooms_occupied()\n\n    def test04_hotel_can_take_a_reservation_for_a_room_at_floor(self):\n        hotel = self.create_hotel()\n\n        assert hotel.total_rooms() == hotel.total_rooms_available()\n\n        hotel.reserve_room_at_floor(2, 1)\n\n        assert hotel.total_rooms() - 1 == hotel.total_rooms_available()\n        assert 1 == hotel.total_rooms_reserved()\n        assert 1 == hotel.total_rooms_occupied()\n\n    def test05_hotel_can_receive_with_reservation_a_type_of_guest_in_room_at_floor(self):\n        hotel = self.create_hotel()\n\n        assert hotel.total_rooms() == hotel.total_rooms_available()\n\n        hotel.reserve_room_at_floor(2, 1)\n        hotel.receive_with_reservation_at_floor_at_room(self.guest_type_vacation(), 1, 2)\n\n        assert hotel.total_rooms() - 1 == hotel.total_rooms_available()\n        assert 0 == hotel.total_rooms_reserved()\n        assert 1 == hotel.total_rooms_occupied()\n\n    def test06_hotel_cannot_receive_with_reservation_without_previous_reservation(self):\n        hotel = self.create_hotel()\n\n        assert hotel.total_rooms() == hotel.total_rooms_available()\n\n        with pytest.raises(RuntimeError) as error:\n            hotel.receive_with_reservation_at_floor_at_room(self.guest_type_vacation(), 1, 2)\n\n        assert Room.room_is_not_reserved_error_description() == str(error.value)\n\n        assert hotel.total_rooms() == hotel.total_rooms_available()\n        assert 0 == hotel.total_rooms_reserved()\n        assert 0 == hotel.total_rooms_occupied()\n\n    def test07_hotel_profits_are_the_sum_of_each_floor_profits(self):\n        floor1 = self.create_default_floor()\n        floor2 = self.create_default_floor()\n        hotel = self.create_hotel_with(floor1, floor2)\n\n        hotel.receive_at_floor_at_room(self.guest_type_vacation(), 1, 1)\n        hotel.receive_at_floor_at_room(self.guest_type_conference(), 2, 1)\n\n        assert floor1.total_profits() + floor2.total_profits() == hotel.total_profits()\n\n    def test08_hotel_losses_are_the_sum_of_each_floor_losses(self):\n        floor1 = self.create_default_floor()\n        floor2 = self.create_default_floor()\n        hotel = self.create_hotel_with(floor1, floor2)\n\n        hotel.receive_at_floor_at_room(self.guest_type_vacation(), 1, 1)\n        hotel.receive_at_floor_at_room(self.guest_type_conference(), 2, 1)\n\n        hotel.reserve_room_at_floor(4, 1)\n        hotel.reserve_room_at_floor(2, 2)\n\n        assert floor1.total_losses() + floor2.total_losses() == hotel.total_losses()\n\n    def test09_hotel_cannot_reserve_a_nonexistent_room(self):\n        hotel = self.create_hotel_with(self.create_default_floor())\n\n        with pytest.raises(RuntimeError) as error:\n            hotel.reserve_room_at_floor(42, 1)\n\n        assert Hotel.room_number_does_not_exist_error_description() == str(error.value)\n\n        self.assert_is_empty(hotel)\n\n    def test10_hotel_cannot_reserve_a_nonexistent_floor(self):\n        hotel = self.create_hotel_with(self.create_default_floor())\n\n        with pytest.raises(RuntimeError) as error:\n            hotel.reserve_room_at_floor(1, 42)\n\n        assert Hotel.floor_number_does_not_exist_error_description() == str(error.value)\n\n        self.assert_is_empty(hotel)\n\n    def test11_hotel_cannot_receive_at_nonexistent_room(self):\n        hotel = self.create_hotel_with(self.create_default_floor())\n\n        with pytest.raises(RuntimeError) as error:\n            hotel.receive_at_floor_at_room(self.guest_type_vacation(), 1, 42)\n\n        assert Hotel.room_number_does_not_exist_error_description() == str(error.value)\n\n        self.assert_is_empty(hotel)\n\n    def test12_hotel_cannot_receive_at_nonexistent_floor(self):\n        hotel = self.create_hotel_with(self.create_default_floor())\n\n        with pytest.raises(RuntimeError) as error:\n            hotel.receive_at_floor_at_room(self.guest_type_vacation(), 42, 1)\n\n        assert Hotel.floor_number_does_not_exist_error_description() == str(error.value)\n\n        self.assert_is_empty(hotel)\n\n    def test13_hotel_cannot_receive_with_reservation_at_nonexistent_room(self):\n        hotel = self.create_hotel_with(self.create_default_floor())\n\n        hotel.reserve_room_at_floor(1, 1)\n\n        with pytest.raises(RuntimeError) as error:\n            hotel.receive_with_reservation_at_floor_at_room(self.guest_type_vacation(), 1, 42)\n\n        assert Hotel.room_number_does_not_exist_error_description() == str(error.value)\n\n        assert hotel.total_rooms() - 1 == hotel.total_rooms_available()\n        assert 1 == hotel.total_rooms_reserved()\n        assert 1 == hotel.total_rooms_occupied()\n\n    # create\n\n    def create_default_floor(self):\n        return self.create_floor_with_and(10, self.default_price_list())\n\n    def create_hotel(self):\n        return self.create_hotel_with(\n            self.create_default_floor(),\n            self.create_floor_with_and(1, self.default_price_list()))\n\n    def create_hotel_with(self, *floors):\n        return Hotel.with_floors(list(floors))\n\n    # assertions\n\n    def assert_is_empty(self, hotel):\n        assert hotel.is_empty()\n        assert hotel.total_rooms() == hotel.total_rooms_available()\n        assert 0 == hotel.total_rooms_reserved()\n        assert 0 == hotel.total_rooms_occupied()\nEOF\npython3 -m pytest -q 2>&1 | tail -3",
+      "python3 - <<'EOF'\np='tests/test_room.py'\ns=open(p).read()\ns=s.replace('''from simshotels.room import Room\n\n\nclass RoomTest:''','''from simshotels.room import Room\nfrom sims_hotels_test_support import SimsHotelsTestSupport\n\n\nclass RoomTest(SimsHotelsTestSupport):''')\nold='''    # create\n\n    def default_price_list(self):\n        price_list = {}\n        price_list[self.guest_type_vacation()] = self.min_price_in_list()\n        price_list[self.guest_type_conference()] = self.max_price_in_list()\n        return price_list\n\n    def guest_type_conference(self):\n        return \"conferenceGuest\"\n\n    def guest_type_vacation(self):\n        return \"vacationGuest\"\n\n    def max_price_in_list(self):\n        return 200\n\n    def min_price_in_list(self):\n        return 100\n\n    # support\n'''\nnew='''    # support\n'''\nassert old in s\ns=s.replace(old,new)\nopen(p,'w').write(s)\nEOF\npython3 -m pytest -q 2>&1 | tail -3 && grep -rn \"rooms()\\|set_floors\\|set_prices\\|set_number_of_rooms\\|RESERVED\\|guest_type()\\|should_fail\" src tests || echo \"no stale references\"",
+      "python3 - <<'EOF'\nimport re\nfor p, old, new in [\n  ('src/simshotels/floor.py', \"    # accessing\\n\\n    def room_at\", \"    # private\\n\\n    def room_at\"),\n  ('src/simshotels/hotel.py', \"    # accessing\\n\\n    def floor_at\", \"    # private\\n\\n    def floor_at\"),\n]:\n    s=open(p).read(); assert old in s; open(p,'w').write(s.replace(old,new))\nEOF\ncat >> README.md <<'EOF'\n\n## State after the first iteration (refactoring)\n\nThe technical debt listed above was paid; the code no longer matches the \"starting code\"\ndescription of the previous sections in these points:\n\n- **Instantiation.** `Floor.with_rooms_and_prices(a_number_of_rooms, a_price_list)` and\n  `Hotel.with_floors(a_floors_collection)` are the class-side instance creation messages; they\n  validate their arguments and only then call `__init__`, which leaves the instance fully\n  initialized (no `None` instance variables). The setters `set_number_of_rooms`, `set_prices` and\n  `set_floors` are gone.\n- **Room states.** `Room` delegates to a `RoomState` (`AvailableRoomState`, `ReservedRoomState`,\n  `OccupiedRoomState`, all in `room.py`): the state answers `is_available` / `is_occupied` /\n  `is_reserved`, computes the profit and the loss, and returns the new state of a transition\n  (`receive`, `receive_with_reservation`, `reserve`), signalling an error for the transitions it\n  does not accept. The `\"reserved\"` guest type, the `None` guest and the unused `Room.guest_type`\n  accessor are gone.\n- **`Room.loss_using_if_absent_guest_type`** exists now: the maximum price for an available room,\n  0 for a reserved or occupied one. `RoomTest` tests 13, 14 and 15 no longer use `should_fail`\n  (which, unused, was removed).\n- **Encapsulation.** `Floor.rooms()` is gone: a floor answers `receive_at_room`,\n  `receive_with_reservation_at_room` and `reserve_room` (and knows its own room numbers, hence\n  `Floor.room_number_does_not_exist_error_description`, which `Hotel` delegates to), and the\n  tests use that protocol instead of reaching into the rooms.\n- **Repeated code and declarativeness.** The index loops are gone; `Hotel` and `Floor` compute\n  their totals with `total_of(...)` over floors/rooms, `Floor` counts with\n  `total_rooms_satisfying(...)`, and the `Hotel` guest methods are one delegation each through\n  `floor_at(...)`. `Hotel.total_rooms_available` is derived from its floors instead of keeping an\n  `_available_rooms_count` variable.\n- **Tests.** The guest types, the prices and the creation methods shared by the three test cases\n  live in `SimsHotelsTestSupport` (`tests/sims_hotels_test_support.py`), which they inherit.\nEOF\npython3 -m pytest -q 2>&1 | tail -2",
+      "sed -n '1,60p' src/simshotels/floor.py && echo \"....\" && sed -n '1,50p' src/simshotels/hotel.py",
+      "PYTHONPATH=src python3 - <<'EOF'\nfrom simshotels.floor import Floor\nfrom simshotels.hotel import Hotel\n\nprices = {\"vacationGuest\": 100, \"conferenceGuest\": 200}\nf = Floor.with_rooms_and_prices(3, prices)\nf.receive_at_room(\"marsGuest\", 1)\ntry:\n    f.total_profits()\nexcept RuntimeError as e:\n    print(\"unknown guest ->\", e)\nprint(\"losses with unknown guest:\", f.total_losses())\ntry:\n    Floor.with_rooms_and_prices(3, {\"vacationGuest\": -1})\nexcept RuntimeError as e:\n    print(\"negative price ->\", e)\nh = Hotel.with_floors([f])\nprint(\"rooms\", h.total_rooms(), \"avail\", h.total_rooms_available(), \"occ\", h.total_rooms_occupied(), \"empty\", h.is_empty())\nEOF\npython3 -m pytest -q 2>&1 | tail -2"
+    ]
+  }
+}

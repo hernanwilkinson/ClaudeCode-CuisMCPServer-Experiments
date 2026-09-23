@@ -1,0 +1,21 @@
+{
+  "RUN_ID": "20260921-203929-73794",
+  "EXPERIMENT": "020-PythonVsJava",
+  "SCENARIO": "python-pytest",
+  "CONFIG": "1-Empty",
+  "TECHNIQUE": "free",
+  "EXERCISE_NAME": "2022-1c-recuperatorio-parcial1",
+  "PY_PACKAGE": "customerimporter",
+  "MODEL": "claude-opus-5",
+  "EFFORT": "high",
+  "BUDGET": "15",
+  "TIMEOUT": "2400",
+  "NOTE": "experiment 020-PythonVsJava, repetition 2",
+  "TOOLS": "Read,Edit,Write,Bash,Glob,Grep",
+  "CLAUDE_VERSION": "2.1.268 (Claude Code)",
+  "WORKDIR": "/private/tmp/claude-cells/20260921-203929-73794-73794",
+  "PYTHON": "/usr/local/bin/python3",
+  "STARTED_AT": "2026-09-21T23:39:29Z",
+  "START_SECONDS": "1790033969",
+  "WARM_UP": "classes 1 run 29 passed 29 failed 0 errors 0"
+}

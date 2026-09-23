@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="customerimporter.ImportTest" tests="29" skipped="0" failures="0" errors="0" timestamp="2026-09-22T00:43:22.092Z" hostname="M4.local" time="0.036">
+  <properties/>
+  <testcase name="test29ZipCodeMustBeOldOrNew()" classname="customerimporter.ImportTest" time="0.011"/>
+  <testcase name="test01ValidDataIsImportedCorrectly()" classname="customerimporter.ImportTest" time="0.001"/>
+  <testcase name="test05CanNotImportAddressRecordWithLessThanSixFields()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test15CuitMustHaveDashAtThridPosition()" classname="customerimporter.ImportTest" time="0.001"/>
+  <testcase name="test17CuitMustHaveValidHeader()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test24NewZipCodeSizeCannotBeBiggerThan8()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test25NewZipCode4DigitsAfterFirstLetter()" classname="customerimporter.ImportTest" time="0.001"/>
+  <testcase name="test09CannotImportEmptyLine()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test07CanNotImportCustomerRecordWithLessThanFiveFields()" classname="customerimporter.ImportTest" time="0.001"/>
+  <testcase name="test16CuitMustHaveDashAtPenultimatePosition()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test10DNICannotBeLessThanOne()" classname="customerimporter.ImportTest" time="0.001"/>
+  <testcase name="test27NewZipCodeMustEndWith3Letters()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test04DoesNotImportRecordsStartingWithAButMoreCharacters()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test21OldZipMustBeBiggerThan999()" classname="customerimporter.ImportTest" time="0.001"/>
+  <testcase name="test08CanNotImportCustomerRecordWithMoreThanFiveFields()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test11DNICannotBeBiggerThan99999999()" classname="customerimporter.ImportTest" time="0.001"/>
+  <testcase name="test13CuitSizeCannotBeLessThan12()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test02CanNotImportAddressWithoutCustomer()" classname="customerimporter.ImportTest" time="0.001"/>
+  <testcase name="test12DNIMustBeAllDigits()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test03DoesNotImportRecordsStartingWithCButMoreCharacters()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test23NewZipCodeSizeCannotBeLessThan8()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test14CuitSizeCannotBeBiggerThan13()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test28IdTypeMustBeDNIOrCuit()" classname="customerimporter.ImportTest" time="0.001"/>
+  <testcase name="test18CuitMustHaveDigitAtEnd()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test20OldZipCodeMustBeAllDigits()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test19CuitMustHaveAllDigits()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test26NewZipCode4DigitsMustBeBiggerThan999()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test22OldZipMustBeLessThan10000()" classname="customerimporter.ImportTest" time="0.0"/>
+  <testcase name="test06CanNotImportAddressRecordWithMoreThanSixFields()" classname="customerimporter.ImportTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,219 @@
+{
+  "run": "20260921-202259-53403",
+  "language": "python",
+  "scenario": "python-pytest",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "customerimporter",
+  "status": "completed",
+  "acceptance": {
+    "givenTestClasses": [
+      "ImportTest"
+    ],
+    "classesRun": [
+      "ImportTest"
+    ],
+    "classesMissing": [],
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "agentTests": {
+    "classes": 1,
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "originalTestsAsGiven": {
+    "classes": 1,
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "coverageByAllTests": null,
+  "coverageByAgentTests": null,
+  "testSmells": null,
+  "mentor": {
+    "findings": null
+  },
+  "mentorFindings": null,
+  "model": {
+    "classes": 17,
+    "methods": 144,
+    "linesOfCode": 476,
+    "totals": {
+      "ifs": 13,
+      "switches": 0,
+      "ternaries": 0,
+      "typeChecks": 1,
+      "nilChecks": 1
+    }
+  },
+  "python": {
+    "main": {
+      "files": 18,
+      "linesOfCode": 476,
+      "classes": 17,
+      "methods": 144,
+      "ifs": 13,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 1,
+      "nullChecks": 1,
+      "tests": 0
+    },
+    "test": {
+      "files": 1,
+      "linesOfCode": 303,
+      "classes": 1,
+      "methods": 68,
+      "ifs": 0,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 0,
+      "nullChecks": 0,
+      "tests": 29
+    }
+  },
+  "diff": {
+    "filesAdded": [
+      "src/customerimporter/cuit.py",
+      "src/customerimporter/dni.py",
+      "src/customerimporter/identification.py",
+      "src/customerimporter/imported_value.py",
+      "src/customerimporter/new_zip_code.py",
+      "src/customerimporter/old_zip_code.py",
+      "src/customerimporter/zip_code.py"
+    ],
+    "filesChanged": [
+      "src/customerimporter/__init__.py",
+      "src/customerimporter/address.py",
+      "src/customerimporter/customer.py",
+      "src/customerimporter/customer_importer.py",
+      "src/customerimporter/persistent_customer_system.py",
+      "src/customerimporter/transient_customer_system.py"
+    ],
+    "filesRemoved": [],
+    "linesAdded": 338,
+    "linesRemoved": 69,
+    "methodsBefore": 160,
+    "methodsAfter": 212
+  },
+  "agent": {
+    "mode": "headless",
+    "model": "claude-opus-5",
+    "effort": "high",
+    "elapsedSeconds": 308,
+    "turns": 29,
+    "costUsd": 1.8860095000000001,
+    "tokens": {
+      "input": 56,
+      "cacheWrite": 61000,
+      "cacheRead": 1144209,
+      "output": 28145,
+      "thinking": 15890,
+      "requests": 28
+    },
+    "toolsServed": null,
+    "toolDefinitionBytes": null,
+    "toolCalls": 28,
+    "toolCallsPerMinute": 5.45,
+    "toolErrors": 0,
+    "testRunCalls": 4,
+    "firstTestRunAtCall": 8,
+    "filesRead": 2,
+    "filesEdited": 8,
+    "refactoringToolCalls": 0,
+    "evaluateKinds": null,
+    "explorationCallsBeforeFirstChange": 10,
+    "liveTypingToolCalls": 0,
+    "actualScopeRefactoringCalls": 0,
+    "messageNotUnderstoodAnswers": null,
+    "failedTestRuns": null
+  },
+  "refactoringOpportunities": {},
+  "looseChanges": null,
+  "toolCalls": {
+    "agentCalls": 28,
+    "errors": 0,
+    "byTool": {
+      "Bash": {
+        "calls": 18
+      },
+      "Grep": {
+        "calls": 1
+      },
+      "Write": {
+        "calls": 7
+      },
+      "Read": {
+        "calls": 1
+      },
+      "Edit": {
+        "calls": 1
+      }
+    },
+    "sequence": [
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Grep",
+      "Write",
+      "Write",
+      "Write",
+      "Write",
+      "Write",
+      "Write",
+      "Write",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Read",
+      "Edit",
+      "Bash",
+      "Bash"
+    ],
+    "bashCommands": [
+      "find /private/tmp/claude-cells/20260921-202259-53403-53403 -type f -not -path \"*/.git/*\" | head -50",
+      "ls -la /private/tmp/claude-cells/20260921-202259-53403-53403",
+      "cat pyproject.toml CLAUDE.md .mcp.json && wc -l README.md src/customerimporter/*.py tests/*.py",
+      "cat README.md",
+      "cd /private/tmp/claude-cells/20260921-202259-53403-53403/src/customerimporter && for f in __init__.py customer.py address.py customer_importer.py; do echo \"=== $f ===\"; cat -n $f; done",
+      "cd /private/tmp/claude-cells/20260921-202259-53403-53403 && cat -n tests/test_import.py",
+      "cd /private/tmp/claude-cells/20260921-202259-53403-53403/src/customerimporter && for f in customer_system.py persistent_customer_system.py transient_customer_system.py data_base_session.py environment.py development_environment.py integration_environment.py; do echo \"=== $f ===\"; cat $f; done",
+      "cd /private/tmp/claude-cells/20260921-202259-53403-53403 && python3 -m pytest -q 2>&1 | tail -5",
+      "grep -rn \"set_identification\\|identification_type()\\|identification_number()\\|set_zip_code\\|zip_code()\" --include=*.py . | grep -v \"^./src/customerimporter/customer.py\\|^./src/customerimporter/address.py\"",
+      "cd /private/tmp/claude-cells/20260921-202259-53403-53403/src/customerimporter && python3 - <<'PY'\nimport re\np = \"customer.py\"\ns = open(p).read()\ns = s.replace(\"\"\"    _identification_type = None\n    _identification_number = None\n\"\"\", \"\"\"    _identification = None\n\"\"\")\ns = s.replace('''    def cuit_number_if_none(self, a_none_closure):\n        if self.has_cuit_as_identification():\n            return self._identification_number\n        else:\n            return a_none_closure()\n\n    def dni_number_if_none(self, a_none_block):\n        if self.has_dni_as_identification():\n            return int(self._identification_number)\n        else:\n            return a_none_block()\n\n    def has_cuit_as_identification(self):\n        return self._identification_type == \"C\"\n\n    def has_dni_as_identification(self):\n        return self._identification_type == \"D\"\n\n    def identification_number(self):\n        return self._identification_number\n\n    def set_identification_number(self, an_identification_number):\n        self._identification_number = an_identification_number\n\n    def identification_type(self):\n        return self._identification_type\n\n    def set_identification_type(self, an_identification_type):\n        self._identification_type = an_identification_type''', '''    def cuit_number_if_none(self, a_none_closure):\n        return self._identification.cuit_number_if_none(a_none_closure)\n\n    def dni_number_if_none(self, a_none_block):\n        return self._identification.dni_number_if_none(a_none_block)\n\n    def has_cuit_as_identification(self):\n        return self._identification.is_cuit()\n\n    def has_dni_as_identification(self):\n        return self._identification.is_dni()\n\n    def is_identified_by(self, an_identification_type, an_identification_number):\n        return self._identification.is_of_type_and_number(an_identification_type, an_identification_number)\n\n    def identification_number(self):\n        return self._identification.number()\n\n    def identification_type(self):\n        return self._identification.identification_type()\n\n    def set_identification(self, an_identification):\n        self._identification = an_identification''')\nopen(p, \"w\").write(s)\nPY\ncat customer.py",
+      "python3 - <<'PY'\np = \"address.py\"\ns = open(p).read()\ns = s.replace('''    def has_new_zip_code(self):\n        return isinstance(self._zip_code, str)\n\n    def has_old_zip_code(self):\n        return isinstance(self._zip_code, int)\n\n    def new_zip_code_if_none(self, a_none_block):\n        if self.has_new_zip_code():\n            return self._zip_code\n        else:\n            return a_none_block()\n\n    def old_zip_code_if_none(self, a_none_block):\n        if self.has_old_zip_code():\n            return self._zip_code\n        else:\n            return a_none_block()\n\n    def zip_code(self):\n        return self._zip_code''', '''    def has_new_zip_code(self):\n        return self._zip_code.is_new()\n\n    def has_old_zip_code(self):\n        return self._zip_code.is_old()\n\n    def new_zip_code_if_none(self, a_none_block):\n        return self._zip_code.new_zip_code_if_none(a_none_block)\n\n    def old_zip_code_if_none(self, a_none_block):\n        return self._zip_code.old_zip_code_if_none(a_none_block)\n\n    def zip_code(self):\n        return self._zip_code.value()''')\nopen(p, \"w\").write(s)\nPY\nsed -n 43,67p address.py",
+      "python3 - <<'PY'\np = \"customer_importer.py\"\ns = open(p).read()\ns = s.replace('''from customerimporter.address import Address\nfrom customerimporter.customer import Customer''', '''from customerimporter.address import Address\nfrom customerimporter.customer import Customer\nfrom customerimporter.identification import Identification\nfrom customerimporter.zip_code import ZipCode''')\ns = s.replace('''        self._new_customer.set_last_name(self._record[2])\n        id_type = self._record[3]\n        id_number = self._record[4]\n\n        if id_type == \"D\":\n            if not all(id_char.isdigit() for id_char in id_number): raise RuntimeError(\"Invalid DNI number\")\n            dni_number = int(id_number)\n            if not (dni_number >= 1 and dni_number <= 99999999): raise RuntimeError(\"Invalid DNI number\")\n        elif id_type == \"C\":\n            # \"23-25666777-9\" size 13\n            if not (len(id_number) >= 12 and len(id_number) <= 13): raise RuntimeError(\"Invalid CUIT number\")\n            if not (id_number[2] == \"-\" and id_number[-2] == \"-\"): raise RuntimeError(\"Invalid CUIT number\")\n            if not id_number[:2] in [\"20\", \"23\", \"24\", \"25\", \"26\", \"27\", \"30\", \"33\", \"34\"]: raise RuntimeError(\"Invalid CUIT number\")\n            if not id_number[-1].isdigit(): raise RuntimeError(\"Invalid CUIT number\")\n            if not all(id_char.isdigit() for id_char in id_number[3:-2]): raise RuntimeError(\"Invalid CUIT number\")\n        else:\n            raise RuntimeError(\"Invalid identification type\")\n\n        self._new_customer.set_identification_type(id_type)\n        self._new_customer.set_identification_number(id_number)\n        self._system.add(self._new_customer)''', '''        self._new_customer.set_last_name(self._record[2])\n        self._new_customer.set_identification(Identification.for_type_and_number(self._record[3], self._record[4]))\n\n        self._system.add(self._new_customer)''')\ns = s.replace('''        new_address.set_town(self._record[3])\n\n        zip_code = self._record[4]\n\n        if zip_code[0].isdigit():\n            if not all(a_char.isdigit() for a_char in zip_code): raise RuntimeError(\"Invalid old zipcode\")\n            imported_zip_code = int(zip_code)\n            if not (imported_zip_code >= 1000 and imported_zip_code <= 9999): raise RuntimeError(\"Invalid old zipcode\")\n        elif zip_code[0].isalpha():\n            if len(zip_code) != 8: raise RuntimeError(\"Invalid new zipcode\")\n            new_zipcode_old_zip_code = zip_code[1:5]\n            if not all(a_char.isdigit() for a_char in new_zipcode_old_zip_code): raise RuntimeError(\"Invalid new zipcode\")\n            if not (int(new_zipcode_old_zip_code) > 999): raise RuntimeError(\"Invalid new zipcode\")\n            if not all(a_char.isalpha() for a_char in zip_code[-3:]): raise RuntimeError(\"Invalid new zipcode\")\n            imported_zip_code = zip_code\n        else:\n            raise RuntimeError(\"Invalid identification type\")\n\n        new_address.set_zip_code(imported_zip_code)\n        new_address.set_province(self._record[5])''', '''        new_address.set_town(self._record[3])\n        new_address.set_zip_code(ZipCode.for_zip_code(self._record[4]))\n        new_address.set_province(self._record[5])''')\nopen(p, \"w\").write(s)\nPY\nsed -n 55,100p customer_importer.py",
+      "python3 - <<'PY'\np = \"persistent_customer_system.py\"\ns = open(p).read()\ns = s.replace('''            .select(lambda a_customer: a_customer.identification_type() == an_id_type and a_customer.identification_number() == an_id_number,\n                    Customer)))''', '''            .select(lambda a_customer: a_customer.is_identified_by(an_id_type, an_id_number), Customer)))''')\nopen(p, \"w\").write(s)\n\np = \"transient_customer_system.py\"\ns = open(p).read()\ns = s.replace('''            if a_customer.identification_type() == an_id_type and a_customer.identification_number() == an_id_number: return a_customer''',\n'''            if a_customer.is_identified_by(an_id_type, an_id_number): return a_customer''')\nopen(p, \"w\").write(s)\n\np = \"__init__.py\"\ns = open(p).read()\ns = s.replace('''from customerimporter.customer import Customer\n''', '''from customerimporter.customer import Customer\nfrom customerimporter.imported_value import ImportedValue\nfrom customerimporter.identification import Identification\nfrom customerimporter.dni import Dni\nfrom customerimporter.cuit import Cuit\nfrom customerimporter.zip_code import ZipCode\nfrom customerimporter.old_zip_code import OldZipCode\nfrom customerimporter.new_zip_code import NewZipCode\n''')\nopen(p, \"w\").write(s)\nPY\ncat __init__.py; grep -n \"is_identified_by\" *.py",
+      "cd /private/tmp/claude-cells/20260921-202259-53403-53403 && python3 -m pytest -q 2>&1 | tail -20",
+      "PYTHONPATH=src python3 - <<'PY'\nimport io\nfrom customerimporter import *\n\nsystem = PersistentCustomerSystem()\nsystem.start(); system.begin_transaction()\nCustomerImporter.value_from(io.StringIO(\n    \"C,Pepe,Sanchez,D,22333444\\n\"\n    \"A,San Martin,3322,Olivos,B1636BBE,BsAs\\n\"\n    \"C,Juan,Perez,C,23-25666777-9\\n\"\n    \"A,Alem,1122,CABA,1001,CABA\"), system)\nsystem.commit()\nc = system.customer_with_identification_type(\"C\", \"23-25666777-9\")\nprint(system.number_of_customers(), c.first_name(), c.identification_type(), c.identification_number())\na = c.address_at(\"Alem\", lambda: None)\nprint(a.zip_code(), a.has_old_zip_code(), a.old_zip_code_if_none(lambda: \"none\"), a.new_zip_code_if_none(lambda: \"none\"))\np = system.customer_with_identification_type(\"D\", \"22333444\")\nprint(p.dni_number_if_none(lambda: \"none\"), p.cuit_number_if_none(lambda: \"no cuit\"),\n      p.address_at(\"San Martin\", lambda: None).zip_code())\nsystem.stop()\n\n# error paths still reported the same way\nfor data in [\"C,Pepe,Sanchez,A,22333444\", \"C,x,y,D,0\", \"C,x,y,C,23-2566677799\"]:\n    s = TransientCustomerSystem(); s.start()\n    try: CustomerImporter.value_from(io.StringIO(data), s)\n    except RuntimeError as e: print(repr(str(e)))\ns = TransientCustomerSystem(); s.start()\ntry: CustomerImporter.value_from(io.StringIO(\"C,x,y,D,1\\nA,San Martin,3322,Olivos,+1636BBE,BsAs\"), s)\nexcept RuntimeError as e: print(repr(str(e)))\nPY",
+      "cd /private/tmp/claude-cells/20260921-202259-53403-53403/src/customerimporter && grep -n \"isinstance\\|elif\\|else:\" *.py",
+      "cd /private/tmp/claude-cells/20260921-202259-53403-53403 && cat >> README.md <<'EOF'\n\n## Solution: types as objects\n\nThe `if` / `elif` chains of `import_customer` and `import_address` decided *which type* a\nrecord field was, *validated* it according to that type and then let `Customer` / `Address`\nask again (`_identification_type == \"D\"`, `isinstance(_zip_code, int)`) every time somebody\nneeded the value. Each of those decisions is now a class, and the answer is given by the\nobject itself.\n\n- `Identification` (abstract) with `Dni` and `Cuit`. A `Customer` holds one `Identification`\n  instead of the `_identification_type` / `_identification_number` pair.\n- `ZipCode` (abstract) with `OldZipCode` and `NewZipCode`. An `Address` holds one `ZipCode`.\n- `ImportedValue` (abstract), the common superclass of `Identification` and `ZipCode`: both\n  hierarchies pick the subclass that handles a record field, validate the field with that\n  subclass's rules and create the object, so that lives in one place.\n\n### Removed `if`s\n\n| Was | Now |\n| --- | --- |\n| `if id_type == \"D\" ... elif id_type == \"C\" ... else error` | `Identification.for_type_and_number(...)`, which asks each subclass `can_handle(a_type)` |\n| `if zip_code[0].isdigit() ... elif zip_code[0].isalpha() ... else error` | `ZipCode.for_zip_code(...)`, which asks each subclass `can_handle(a_zip_code)` |\n| `Customer.dni_number_if_none` / `cuit_number_if_none` testing the type code | the same messages sent to the `Identification`; `Identification` answers the none block, `Dni` / `Cuit` answer the number |\n| `Customer.has_dni_as_identification` / `has_cuit_as_identification` comparing `\"D\"` / `\"C\"` | `is_dni()` / `is_cuit()`, `False` in `Identification` and `True` in the subclass |\n| `Address.old_zip_code_if_none` / `new_zip_code_if_none` and `has_old_zip_code` / `has_new_zip_code` using `isinstance` | the same messages sent to the `ZipCode`, resolved the same way |\n\nThe subclass lookup is the one already used by `Environment.current`: iterate\n`cls.__subclasses__()` and take the first one that answers `can_handle`, instead of a list of\ntype codes written somewhere. Adding a third identification type means adding one class and no\nchange anywhere else. As with `Environment`, `__subclasses__()` only sees imported classes, so\n`__init__.py` imports the seven new ones.\n\n### Removed duplicated code\n\n- The five copies of `all(... .isdigit() ...)` / `isalpha()` / `x >= a and x <= b` and the\n  nineteen copies of `raise RuntimeError(\"Invalid ... \")` are now\n  `assert_all_are_digits`, `assert_all_are_letters`, `assert_is_between`, `assert_size_is`,\n  `assert_size_is_between` and `assert_that` in `ImportedValue`. They raise\n  `invalid_value_error_description()`, which each concrete class answers, so a validation rule\n  never repeats the error text: `Dni.assert_is_valid` reads\n  `assert_all_are_digits(a_number)` + `assert_is_between(int(a_number), 1, 99999999)`.\n- The four digits inside a new zip code are validated exactly like an old zip code, so both\n  call `ZipCode.assert_is_valid_zip_code_number` (each one reporting its own error).\n- `PersistentCustomerSystem` and `TransientCustomerSystem` repeated the same\n  `identification_type() == ... and identification_number() == ...`; both now ask\n  `a_customer.is_identified_by(an_id_type, an_id_number)`.\n\n### What was left alone\n\n- The tests, byte for byte.\n- `\"Invalid identification type\"` is also the error for a zip code that is neither old nor new\n  (`test29`), as in the starting code, so `invalid_type_error_description` is defined once in\n  `ImportedValue`.\n- `Customer.identification_type()` and `Address.zip_code()` keep answering `\"D\"` / `\"C\"` and an\n  `int` / `str`, because the tests assert on those values; they delegate to the type object.\n- `_import_record`'s `is_customer_record` / `is_address_record` and `DataBaseSession`'s\n  `isinstance(an_object, Customer)` come from the starting code, not from the new\n  functionality, and are the record parser and the persistence framework rather than the\n  identification / zip code types the exam is about.\nEOF\npython3 -m pytest -q 2>&1 | tail -3",
+      "sed -n '1,10p;58,100p' src/customerimporter/customer_importer.py && echo \"--- files ---\" && ls src/customerimporter && python3 -m pytest -q 2>&1 | tail -2"
+    ]
+  }
+}

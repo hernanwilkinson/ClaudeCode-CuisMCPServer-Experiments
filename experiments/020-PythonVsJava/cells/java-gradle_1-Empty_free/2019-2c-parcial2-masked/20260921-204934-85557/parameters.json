@@ -1,0 +1,20 @@
+{
+  "RUN_ID": "20260921-204934-85557",
+  "EXPERIMENT": "020-PythonVsJava",
+  "SCENARIO": "java-gradle",
+  "CONFIG": "1-Empty",
+  "TECHNIQUE": "free",
+  "EXERCISE_NAME": "2019-2c-parcial2-masked",
+  "JAVA_PACKAGE": "surveycrawler",
+  "MODEL": "claude-opus-5",
+  "EFFORT": "high",
+  "BUDGET": "15",
+  "TIMEOUT": "2400",
+  "NOTE": "experiment 020-PythonVsJava, repetition 2",
+  "TOOLS": "Read,Edit,Write,Bash,Glob,Grep",
+  "CLAUDE_VERSION": "2.1.268 (Claude Code)",
+  "WORKDIR": "/private/tmp/claude-cells/20260921-204934-85557-85557",
+  "STARTED_AT": "2026-09-21T23:49:37Z",
+  "START_SECONDS": "1790034577",
+  "WARM_UP": "classes 1 run 16 passed 16 failed 0 errors 0"
+}

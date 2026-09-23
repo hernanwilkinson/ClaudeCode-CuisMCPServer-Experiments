@@ -1,0 +1,129 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-204311-76559",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "java-gradle",
+  "language": "java",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "customerimporter",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 2",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "gradle": "Gradle 9.7.1",
+  "java": "openjdk version 25.0.1 2025-10-21",
+  "hashes": {
+    "prompt.md": "b5e7b323f34c5602381394a28d0afebfee0cb4e72d5564401735ed332b1446e9",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "60da63f1906a5b4f5860eb0cc40e7e8ee172bbd6539df161cbc1fa9c75ab2d5f"
+  },
+  "startedAt": "2026-09-21T23:43:14Z",
+  "endedAt": "2026-09-21T23:49:27Z",
+  "elapsedSeconds": 373,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "ownTests": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "ImportTest"
+    ],
+    "classesRun": [
+      "customerimporter.ImportTest"
+    ],
+    "classesMissing": [],
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 1.7748,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 30,
+        "cache_write_5m": 0,
+        "cache_write_1h": 61124,
+        "cache_read": 627102,
+        "output": 33996,
+        "thinking": 23182,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 15,
+        "cost_usd": 1.774841
+      }
+    },
+    "toolCalls": {
+      "Bash": 19
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 20,
+    "durationMs": 371628,
+    "durationApiMs": 366634,
+    "totalCostUsd": 1.774841,
+    "usage": {
+      "input_tokens": 30,
+      "cache_creation_input_tokens": 61124,
+      "cache_read_input_tokens": 627102,
+      "output_tokens": 33996,
+      "output_tokens_details": {
+        "thinking_tokens": 23182
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 61124,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1019,
+          "cache_read_input_tokens": 65214,
+          "cache_creation_input_tokens": 343,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 343
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 30,
+        "outputTokens": 33996,
+        "cacheReadInputTokens": 627102,
+        "cacheCreationInputTokens": 61124,
+        "webSearchRequests": 0,
+        "costUSD": 1.774841,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 23182,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "Done. `gradle test`: 29 tests, 0 failures, with `ImportTest.java` untouched.\n\n## What was wrong\n\nThe new developer's code decided *what kind* of thing it had every time it needed to do something with it: `if (idType.equals(\"D\")) ... else if (idType.equals(\"C\"))` in `importCustomer`, `if (Character.isDigit(zipCode.charAt(0))) ... else if (isLetter...)` in `importAddress`, and `zipCode instanceof Integer` / `instanceof String` in `Address`. All the validation lived in the importer, duplicated (the \"all digits + parse + range\" triplet appeared three times, each error literal four or five times).\n\n## The design now\n\n**Types as classes, decided once at creation.**\n\n- `Identification` (abstract) \u2190 `DNI`, `CUIT` (`src/main/java/customerimporter/Identification.java:1`). Each knows its own type code, validates its own number **in its constructor** \u2014 an invalid `DNI` cannot exist \u2014 and answers `type()`, `isDNI()`, `isCUIT()`, `dniNumberIfNone()`, `cuitNumberIfNone()` polymorphically. `Identification.ofType(type, number)` resolves the creator through a map keyed by each class's own `TYPE` constant, raising `\"Invalid identification type\"` when there is none.\n- `ZipCode` (abstract) \u2190 `OldZipCode`, `NewZipCode` (`src/main/java/customerimporter/ZipCode.java:1`). The discriminator here is a condition, not a key, so `ZipCode.from(...)` asks each type `canBeCreatedFrom(...)` and creates the first that recognizes the string.\n- `Customer` holds an `Identification`, `Address` holds a `ZipCode`; their `hasDNIAsIdentification`, `hasOldZipCode`, `...IfNone` methods are one-line delegations. `importCustomer`/`importAddress` are now just record reading plus `Identification.ofType(...)` / `ZipCode.from(...)`.\n\n**Repeated code removed:** `Validation` (`assertThat`, `assertAreAllDigits`, `assertAreAllLetters`, `assertIsNumberBetween`); `NewZipCode` validates its embedded number with `OldZipCode.assertIsValidNumber`, passing its own error description, so the 1000..9999 range lives in one place; one method per error message; and `Customer.hasIdentificationOfType` replaces the condition both customer systems wrote by hand.\n\n**Left alone deliberately:** the plain assertion `if`s (`assertValidCustomerRecord`, etc.) and the record-type dispatch in `importRecord` \u2014 those are the original starting code, not the identification/zip-code typing the exercise is about. `ZipCode`'s \"unknown type\" error still says `\"Invalid identification type\"`, a copy-paste bug of the original that `test29` pins down; it is kept with a comment since the tests must stay as they are.\n\nThe README has a \"Solution\" section with the same summary."
+  }
+}

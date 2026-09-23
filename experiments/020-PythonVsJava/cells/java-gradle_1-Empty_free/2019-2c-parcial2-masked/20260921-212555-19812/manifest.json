@@ -1,0 +1,129 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-212555-19812",
+  "warmUp": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "java-gradle",
+  "language": "java",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2019-2c-parcial2-masked",
+  "package": "surveycrawler",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 4",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "gradle": "Gradle 9.7.1",
+  "java": "openjdk version 25.0.1 2025-10-21",
+  "hashes": {
+    "prompt.md": "e9d3853189663ef18a1cbc204476b8a0fd3de2dc763bf91dba07306552a8d620",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "502ac0a22ec99d7df12863324d8473038d5332bacfc05d3634efdba704c14f45"
+  },
+  "startedAt": "2026-09-22T00:25:58Z",
+  "endedAt": "2026-09-22T00:34:30Z",
+  "elapsedSeconds": 512,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "ownTests": "classes 1 run 55 passed 55 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "SurveyCrawlerTest"
+    ],
+    "classesRun": [
+      "surveycrawler.SurveyCrawlerTest"
+    ],
+    "classesMissing": [],
+    "run": 55,
+    "passed": 55,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 2.2131,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 40,
+        "cache_write_5m": 0,
+        "cache_write_1h": 62464,
+        "cache_read": 856717,
+        "output": 46396,
+        "thinking": 23137,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 20,
+        "cost_usd": 2.2130985
+      }
+    },
+    "toolCalls": {
+      "Bash": 21
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 22,
+    "durationMs": 511308,
+    "durationApiMs": 494635,
+    "totalCostUsd": 2.2130984999999996,
+    "usage": {
+      "input_tokens": 40,
+      "cache_creation_input_tokens": 62464,
+      "cache_read_input_tokens": 856717,
+      "output_tokens": 46396,
+      "output_tokens_details": {
+        "thinking_tokens": 23137
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 62464,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1081,
+          "cache_read_input_tokens": 66413,
+          "cache_creation_input_tokens": 484,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 484
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 40,
+        "outputTokens": 46396,
+        "cacheReadInputTokens": 856717,
+        "cacheCreationInputTokens": 62464,
+        "webSearchRequests": 0,
+        "costUSD": 2.2130984999999996,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 23137,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "Done. **55 tests, 0 failures** (`gradle test` green), the original 16 tests unchanged and still passing.\n\n## Design\n\n**Ground types \u2014 `Ground` hierarchy.** The sonar answers objects, so there is no \"what kind of ground is this?\" conditional anywhere:\n- `FirmSand` \u2192 moves one cell; `Silt` \u2192 slides `random.nextInt(10) + 1` cells in the direction of travel; `Boulder` \u2192 signals an error for moving *and* for turning.\n- `FirmSand` and `Silt` share `TraversableGround` (turning works normally); `Boulder` is the only non-traversable ground.\n- `Silt` receives a `java.util.Random`, so tests make the slide deterministic while `new Silt()` uses a real one.\n\n**Sonar.** One-message interface; `FirmSandSonar` keeps the original `atFacing(...)` protocol working, `GroundMapSonar` maps positions to grounds. It's asked about the position the crawler *would end up on* \u2014 the destination for `a`/`t`, the current position for `h`/`g`.\n\n**Guarded runs \u2014 `CrawlerRun` hierarchy.** The crawler is in a `NormalRun` or a `GuardedRun`, and that state decides by polymorphism (no \"am I guarded?\" ifs) whether movements get registered, whether a silt slide is allowed or is an error, and what `(`/`)`/end-of-sequence mean. `GuardedRun` registers each movement as a `CrawlerMovement` that knows its opposite (`Displacement` inverted, `ClockwiseTurn` \u2194 `CounterClockwiseTurn`); `process` catches the error, tells the run to undo, restores a normal run, and re-throws.\n\n**Repetition \u2014 `CommandToRepeat` hierarchy.** `LastCommandToRepeat` re-executes its command `digit + 2` times; `NoCommandToRepeat` signals *Invalid command* \u2014 a null object instead of a null check.\n\n## Verification beyond \"tests pass\"\n\nI mutation-tested the suite in a scratch copy: `digit+1`, slide `0..9`, boulder allowing turns, `finishGuardedRun` not resetting the state, abort not restoring a normal run, digit-not-forgotten, and missing unfinished-run check were **all caught**. One mutation survived \u2014 undoing movements in forward instead of reverse order. That is unobservable by construction (displacements are absolute direction vectors, so they commute, and turn-undo is independent of position), so I renamed the test that implied otherwise rather than leave a name asserting something untestable.\n\n## Cases the statement left open (documented in README.md)\n\n- `\"a00\"` is invalid \u2014 the repetition is a single digit applying to `a`/`t`/`h`/`g`; likewise a digit after `(` or `)`.\n- `\")\"` with no run started signals `Can not end a guarded run that was not started`.\n- Errors abort the whole sequence and only the current guarded run's movements are undone \u2014 `\"a(aa)\"` into a boulder leaves the crawler one cell ahead of where it started, per the statement's `\"a(aa\"` example.\n- The ground where a silt slide *ends* is not re-checked; the slide is unpredictable by definition."
+  }
+}

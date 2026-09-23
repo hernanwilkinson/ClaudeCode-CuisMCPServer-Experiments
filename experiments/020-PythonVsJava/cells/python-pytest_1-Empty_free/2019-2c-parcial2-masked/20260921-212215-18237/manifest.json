@@ -1,0 +1,129 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-212215-18237",
+  "warmUp": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "python-pytest",
+  "language": "python",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2019-2c-parcial2-masked",
+  "package": "surveycrawler",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 4",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "python": "Python 3.14.7",
+  "pytest": "pytest 9.0.3",
+  "hashes": {
+    "prompt.md": "db80d2ced9d137b8c54dee1f2575c385f25787434784decbfceaef631aa0e0a9",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "2f38bf17e2f03d4b0b45c90442819521fc593e515c498079d04b2439a6d4098e"
+  },
+  "startedAt": "2026-09-22T00:22:15Z",
+  "endedAt": "2026-09-22T00:28:43Z",
+  "elapsedSeconds": 388,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 1 run 16 passed 16 failed 0 errors 0",
+  "ownTests": "classes 1 run 57 passed 57 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "SurveyCrawlerTest"
+    ],
+    "classesRun": [
+      "SurveyCrawlerTest"
+    ],
+    "classesMissing": [],
+    "run": 57,
+    "passed": 57,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 1.6847,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 32,
+        "cache_write_5m": 0,
+        "cache_write_1h": 51591,
+        "cache_read": 561517,
+        "output": 35516,
+        "thinking": 19061,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 16,
+        "cost_usd": 1.6847285
+      }
+    },
+    "toolCalls": {
+      "Bash": 17
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 18,
+    "durationMs": 387149,
+    "durationApiMs": 383355,
+    "totalCostUsd": 1.6847285,
+    "usage": {
+      "input_tokens": 32,
+      "cache_creation_input_tokens": 51591,
+      "cache_read_input_tokens": 561517,
+      "output_tokens": 35516,
+      "output_tokens_details": {
+        "thinking_tokens": 19061
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 51591,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1500,
+          "cache_read_input_tokens": 53977,
+          "cache_creation_input_tokens": 2047,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2047
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 32,
+        "outputTokens": 35516,
+        "cacheReadInputTokens": 561517,
+        "cacheCreationInputTokens": 51591,
+        "webSearchRequests": 0,
+        "costUSD": 1.6847285,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 19061,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "All 57 tests pass. Here's what I built.\n\n## Design\n\n**1. Repeated commands** \u2014 `process_commands` now remembers the last command; `process_command_or_repetition` treats a digit as \"repeat the last command `int(digit) + 2` more times\" (`\"a0\"` \u2192 3 advances). Only `a`, `t`, `h`, `g` are repeatable (`is_repeatable_command`), so `\"0\"`, `\"a00\"`, `\"(0)\"` are invalid commands. Each repetition goes through `process_command`, so every repeated movement is checked by the sonar on its own.\n\n**2. Sonar and ground types** \u2014 `Sonar` (`src/surveycrawler/sonar.py`) answers the ground type of a position from a map keyed by `Point`, defaulting to firm sand; `Sonar.all_firm_sand()` / `Sonar.with_ground_types({...})`, injected through the new `SurveyCrawler.at_facing_with_sonar` (`at_facing` still works and uses an all-firm-sand sonar, which is why the original 16 tests are untouched). `GroundType` has three subclasses and two messages, so no conditional on ground type exists anywhere:\n\n| | `move_crawler_to` | `turn_crawler_with` |\n|---|---|---|\n| `FirmSand` | changes position | evaluates the turn |\n| `Boulder` | signals error | signals error |\n| `Silt` | slides `randrange(10)` extra cells in the direction of travel | evaluates the turn |\n\nMovements consult the ground of the destination, turns the ground the crawler is standing on. `Silt.with_random(...)` makes sliding testable.\n\n**3. Guarded runs** \u2014 a state pattern: `CrawlerRun` with `FreeRun` and `GuardedRun`. The run decides what `(`, `)`, the end of the sequence, sliding on silt and an error mean. `GuardedRun` registers an undo action on every position/facing change; on error it puts the crawler back in a free run (so undoing registers nothing) and evaluates the undo actions in reverse. `process` wraps the sequence in a `try`, asks the current run to handle any error, then re-raises \u2014 so only the open guarded run is undone; movements before the `(` and in already-finished guarded runs stay. Undo actions never go through the sonar, so undoing cannot fail.\n\n## Tests\n\n`tests/test_survey_crawler.py`: the original 16 unchanged plus 41 new ones covering repetitions, the sonar (boulder in front/behind/underneath, a boulder stopping a repetition mid-way, sliding forwards and backwards, the sliding limit, turning on silt) and guarded runs (undoing moves, turns and repetitions; silt, invalid commands, nested and unfinished runs; `\"aha(aagt3)aa(ht)\"` with several runs; and the cases that must *not* be undone, such as `\"(aa)x\"` and `\"a(aa\"`). `FixedRandom` is the test double for sliding; one test uses a real `random.Random` over 100 runs to check the crawler always lands inside the sliding limit.\n\nOne judgment call worth flagging: the statement doesn't say what happens when the sliding on silt ends on a boulder or on more silt, so the sonar is consulted only for the position the command targets \u2014 the slide itself is not re-checked. The README's new section documents this and the rest of the design."
+  }
+}

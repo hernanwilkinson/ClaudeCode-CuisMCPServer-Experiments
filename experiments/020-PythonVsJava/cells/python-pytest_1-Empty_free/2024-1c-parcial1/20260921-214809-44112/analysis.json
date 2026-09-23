@@ -1,0 +1,167 @@
+{
+  "run": "20260921-214809-44112",
+  "language": "python",
+  "scenario": "python-pytest",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2024-1c-parcial1",
+  "package": "simshotels",
+  "status": "failed",
+  "acceptance": {
+    "givenTestClasses": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesRun": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesMissing": [],
+    "run": 39,
+    "passed": 15,
+    "failed": 24,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "agentTests": {
+    "classes": 3,
+    "run": 39,
+    "passed": 15,
+    "failed": 24,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "originalTestsAsGiven": {
+    "classes": 3,
+    "run": 39,
+    "passed": 15,
+    "failed": 24,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "coverageByAllTests": null,
+  "coverageByAgentTests": null,
+  "testSmells": null,
+  "mentor": {
+    "findings": null
+  },
+  "mentorFindings": null,
+  "model": {
+    "classes": 7,
+    "methods": 88,
+    "linesOfCode": 303,
+    "totals": {
+      "ifs": 14,
+      "switches": 0,
+      "ternaries": 0,
+      "typeChecks": 2,
+      "nilChecks": 0
+    }
+  },
+  "python": {
+    "main": {
+      "files": 4,
+      "linesOfCode": 303,
+      "classes": 7,
+      "methods": 88,
+      "ifs": 14,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 2,
+      "nullChecks": 0,
+      "tests": 0
+    },
+    "test": {
+      "files": 3,
+      "linesOfCode": 354,
+      "classes": 4,
+      "methods": 60,
+      "ifs": 0,
+      "switches": 0,
+      "ternaries": 0,
+      "instanceofs": 0,
+      "nullChecks": 0,
+      "tests": 39
+    }
+  },
+  "diff": {
+    "filesAdded": [],
+    "filesChanged": [
+      "src/simshotels/floor.py",
+      "src/simshotels/room.py"
+    ],
+    "filesRemoved": [],
+    "linesAdded": 192,
+    "linesRemoved": 97,
+    "methodsBefore": 117,
+    "methodsAfter": 148
+  },
+  "agent": {
+    "mode": "headless",
+    "model": "claude-opus-5",
+    "effort": "high",
+    "elapsedSeconds": 441,
+    "turns": 8,
+    "costUsd": 0.769073,
+    "tokens": {
+      "input": 14,
+      "cacheWrite": 33586,
+      "cacheRead": 115836,
+      "output": 15009,
+      "thinking": 10675,
+      "requests": 8
+    },
+    "toolsServed": null,
+    "toolDefinitionBytes": null,
+    "toolCalls": 7,
+    "toolCallsPerMinute": 0.95,
+    "toolErrors": 0,
+    "testRunCalls": 1,
+    "firstTestRunAtCall": 5,
+    "filesRead": 0,
+    "filesEdited": 0,
+    "refactoringToolCalls": 0,
+    "evaluateKinds": null,
+    "explorationCallsBeforeFirstChange": 7,
+    "liveTypingToolCalls": 0,
+    "actualScopeRefactoringCalls": 0,
+    "messageNotUnderstoodAnswers": null,
+    "failedTestRuns": null
+  },
+  "refactoringOpportunities": {},
+  "looseChanges": null,
+  "toolCalls": {
+    "agentCalls": 7,
+    "errors": 0,
+    "byTool": {
+      "Bash": {
+        "calls": 7
+      }
+    },
+    "sequence": [
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash",
+      "Bash"
+    ],
+    "bashCommands": [
+      "find . -type f -not -path \"*/.git/*\" -not -name \"*.pyc\" -not -path \"*__pycache__*\" | head -50",
+      "cat CLAUDE.md pyproject.toml src/simshotels/__init__.py src/simshotels/room.py src/simshotels/floor.py src/simshotels/hotel.py",
+      "wc -l CLAUDE.md README.md tests/*.py && cat tests/test_room.py",
+      "cat tests/test_floor.py tests/test_hotel.py && cat README.md",
+      "python3 -m pytest -q 2>&1 | tail -5 && cat CLAUDE.md",
+      "cat > src/simshotels/room.py <<'EOF'\nclass Room:\n\n    # initialization\n\n    def __init__(self):\n        self._state = AvailableRoomState()\n\n    # guests\n\n    def receive(self, a_guest_type):\n        self._state = self._state.receive(a_guest_type)\n\n    def receive_with_reservation(self, a_guest_type):\n        self._state = self._state.receive_with_reservation(a_guest_type)\n\n    def reserve(self):\n        self._state = self._state.reserve()\n\n    # testing\n\n    def is_available(self):\n        return self._state.is_available()\n\n    def is_occupied(self):\n        return self._state.is_occupied()\n\n    def is_reserved(self):\n        return self._state.is_reserved()\n\n    # accounting\n\n    def profit_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        return self._state.profit_using_if_absent_guest_type(a_price_list, unknown_guest_type_block)\n\n    def loss_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        return self._state.loss_using_if_absent_guest_type(a_price_list, unknown_guest_type_block)\n\n    # error messages (class side)\n\n    @staticmethod\n    def room_is_not_empty_error_description():\n        return \"Room is not empty.\"\n\n    @staticmethod\n    def room_is_not_reserved_error_description():\n        return \"Room is not reserved.\"\n\n    # exceptions (class side)\n\n    @staticmethod\n    def signal_room_is_not_empty():\n        raise RuntimeError(Room.room_is_not_empty_error_description())\n\n    @staticmethod\n    def signal_room_is_not_reserved():\n        raise RuntimeError(Room.room_is_not_reserved_error_description())\n\n\nclass RoomState:\n    \"\"\"The state of a Room. Each state answers the new state of the room after a guest\n    is received or a reservation is taken, and signals an error when it cannot change.\"\"\"\n\n    # guests\n\n    def receive(self, a_guest_type):\n        Room.signal_room_is_not_empty()\n\n    def receive_with_reservation(self, a_guest_type):\n        Room.signal_room_is_not_reserved()\n\n    def reserve(self):\n        Room.signal_room_is_not_empty()\n\n    # testing\n\n    def is_available(self):\n        raise NotImplementedError(RoomState.subclass_responsibility_error_description())\n\n    def is_occupied(self):\n        raise NotImplementedError(RoomState.subclass_responsibility_error_description())\n\n    def is_reserved(self):\n        raise NotImplementedError(RoomState.subclass_responsibility_error_description())\n\n    # accounting\n\n    def profit_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        raise NotImplementedError(RoomState.subclass_responsibility_error_description())\n\n    def loss_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        raise NotImplementedError(RoomState.subclass_responsibility_error_description())\n\n    # error messages (class side)\n\n    @staticmethod\n    def subclass_responsibility_error_description():\n        return \"Subclass responsibility\"\n\n\nclass AvailableRoomState(RoomState):\n\n    # guests\n\n    def receive(self, a_guest_type):\n        return OccupiedRoomState(a_guest_type)\n\n    def reserve(self):\n        return ReservedRoomState()\n\n    # testing\n\n    def is_available(self):\n        return True\n\n    def is_occupied(self):\n        return False\n\n    def is_reserved(self):\n        return False\n\n    # accounting\n\n    def profit_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        return 0\n\n    def loss_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        return max(a_price_list.values())\n\n\nclass ReservedRoomState(RoomState):\n\n    # guests\n\n    def receive_with_reservation(self, a_guest_type):\n        return OccupiedRoomState(a_guest_type)\n\n    # testing\n\n    def is_available(self):\n        return False\n\n    def is_occupied(self):\n        return True\n\n    def is_reserved(self):\n        return True\n\n    # accounting\n\n    def profit_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        return min(a_price_list.values()) // 2\n\n    def loss_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        return 0\n\n\nclass OccupiedRoomState(RoomState):\n\n    # initialization\n\n    def __init__(self, a_guest_type):\n        self._guest_type = a_guest_type\n\n    # testing\n\n    def is_available(self):\n        return False\n\n    def is_occupied(self):\n        return True\n\n    def is_reserved(self):\n        return False\n\n    # accounting\n\n    def profit_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        if self._guest_type in a_price_list:\n            return a_price_list[self._guest_type]\n        else:\n            return unknown_guest_type_block()\n\n    def loss_using_if_absent_guest_type(self, a_price_list, unknown_guest_type_block):\n        return 0\nEOF\npython3 -c \"import sys; sys.path.insert(0,'src'); import simshotels.room\"",
+      "cat > src/simshotels/floor.py <<'EOF'\nfrom simshotels.room import Room\n\n\nclass Floor:\n\n    # instance creation (class side)\n\n    @classmethod\n    def with_number_of_rooms_and_prices(cls, a_number_of_rooms, a_price_list):\n        Floor.assert_is_valid_number_of_rooms(a_number_of_rooms)\n        Floor.assert_is_valid_price_list(a_price_list)\n\n        return cls(a_number_of_rooms, a_price_list)\n\n    # initialization\n\n    def __init__(self, a_number_of_rooms, a_price_list):\n        self._rooms = [Room() for _ in range(a_number_of_rooms)]\n        self._prices = a_price_list\n\n    # testing\n\n    def is_available(self):\n        return self.total_rooms() == self.total_rooms_available()\n\n    # accessing\n\n    def room_at_if_absent(self, a_room_number, a_room_not_found_block):\n        if a_room_number < 1 or a_room_number > self.total_rooms():\n            return a_room_not_found_block()\n\n        return self._rooms[a_room_number - 1]\n\n    # accounting\n\n    def total_losses(self):\n        return self.total_of_rooms(\n            lambda room: room.loss_using_if_absent_guest_type(self._prices, lambda: Floor.signal_unknown_guest_type()))\n\n    def total_profits(self):\n        return self.total_of_rooms(\n            lambda room: room.profit_using_if_absent_guest_type(self._prices, lambda: Floor.signal_unknown_guest_type()))\n\n    # totals\n\n    def total_rooms(self):\n        return len(self._rooms)\n\n    def total_rooms_available(self):\n        return self.total_rooms_satisfying(lambda room: room.is_available())\n\n    def total_rooms_occupied(self):\n        return self.total_rooms_satisfying(lambda room: room.is_occupied())\n\n    def total_rooms_reserved(self):\n        return self.total_rooms_satisfying(lambda room: room.is_reserved())\n\n    def total_of_rooms(self, a_room_amount_block):\n        return sum(a_room_amount_block(room) for room in self._rooms)\n\n    def total_rooms_satisfying(self, a_condition_block):\n        return len([room for room in self._rooms if a_condition_block(room)])\n\n    # assertions (class side)\n\n    @staticmethod\n    def assert_is_valid_number_of_rooms(a_number_of_rooms):\n        Floor.assert_is_positive_if_false(a_number_of_rooms, lambda: Floor.signal_number_of_rooms_must_be_positive())\n        Floor.assert_is_integer_if_false(a_number_of_rooms, lambda: Floor.signal_number_of_rooms_must_be_integer())\n\n    @staticmethod\n    def assert_is_valid_price_list(a_price_list):\n        if len(a_price_list) == 0:\n            Floor.signal_no_prices()\n\n        for price in a_price_list.values():\n            Floor.assert_is_positive_if_false(price, lambda: Floor.signal_price_must_be_positive())\n\n    @staticmethod\n    def assert_is_integer_if_false(a_number, signals_block):\n        if not (isinstance(a_number, int) and not isinstance(a_number, bool)):\n            signals_block()\n\n    @staticmethod\n    def assert_is_positive_if_false(a_number, signals_block):\n        if not (a_number > 0):\n            signals_block()\n\n    # error messages (class side)\n\n    @staticmethod\n    def number_of_rooms_must_be_integer_error_description():\n        return \"Number of rooms must be integer\"\n\n    @staticmethod\n    def number_of_rooms_must_be_positive_error_description():\n        return \"The number of rooms must be positive\"\n\n    @staticmethod\n    def price_must_be_integer_error_description():\n        return \"Price must be integer\"\n\n    @staticmethod\n    def price_must_be_positive_error_description():\n        return \"Price must be positive\"\n\n    @staticmethod\n    def prices_list_cannot_be_empty_error_description():\n        return \"Prices List must not be empty\"\n\n    @staticmethod\n    def unknown_guest_type_error_description():\n        return \"The guest type is unknown\"\n\n    # exceptions (class side)\n\n    @staticmethod\n    def signal_no_prices():\n        raise RuntimeError(Floor.prices_list_cannot_be_empty_error_description())\n\n    @staticmethod\n    def signal_number_of_rooms_must_be_integer():\n        raise RuntimeError(Floor.number_of_rooms_must_be_integer_error_description())\n\n    @staticmethod\n    def signal_number_of_rooms_must_be_positive():\n        raise RuntimeError(Floor.number_of_rooms_must_be_positive_error_description())\n\n    @staticmethod\n    def signal_price_must_be_integer():\n        raise RuntimeError(Floor.price_must_be_integer_error_description())\n\n    @staticmethod\n    def signal_price_must_be_positive():\n        raise RuntimeError(Floor.price_must_be_positive_error_description())\n\n    @staticmethod\n    def signal_unknown_guest_type():\n        raise RuntimeError(Floor.unknown_guest_type_error_description())\nEOF\necho ok"
+    ]
+  }
+}

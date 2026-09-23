@@ -1,0 +1,129 @@
+{
+  "experiment": "020-PythonVsJava",
+  "runId": "20260921-203929-73794",
+  "warmUp": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "python-pytest",
+  "language": "python",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2022-1c-recuperatorio-parcial1",
+  "package": "customerimporter",
+  "model": "claude-opus-5",
+  "effort": "high",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 2400,
+  "note": "experiment 020-PythonVsJava, repetition 2",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "python": "Python 3.14.7",
+  "pytest": "pytest 9.0.3",
+  "hashes": {
+    "prompt.md": "ca5600df7f455d46a6629af9448cded3534e83dc6bdf2e8f9c6923eefa6091dc",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "063a288e83ab7fc52cb2236f92e9894fa2c9036b7a1c18968d45883012f839ed"
+  },
+  "startedAt": "2026-09-21T23:39:29Z",
+  "endedAt": "2026-09-21T23:45:13Z",
+  "elapsedSeconds": 344,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "ownTests": "classes 1 run 29 passed 29 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "ImportTest"
+    ],
+    "classesRun": [
+      "ImportTest"
+    ],
+    "classesMissing": [],
+    "run": 29,
+    "passed": 29,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 1.8988,
+    "perModel": {
+      "claude-opus-5": {
+        "input": 42,
+        "cache_write_5m": 0,
+        "cache_write_1h": 65521,
+        "cache_read": 911626,
+        "output": 31502,
+        "thinking": 16919,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 21,
+        "cost_usd": 1.898783
+      }
+    },
+    "toolCalls": {
+      "Bash": 21
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 22,
+    "durationMs": 342432,
+    "durationApiMs": 338186,
+    "totalCostUsd": 1.8987829999999997,
+    "usage": {
+      "input_tokens": 42,
+      "cache_creation_input_tokens": 65521,
+      "cache_read_input_tokens": 911626,
+      "output_tokens": 31502,
+      "output_tokens_details": {
+        "thinking_tokens": 16919
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 65521,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 1165,
+          "cache_read_input_tokens": 68251,
+          "cache_creation_input_tokens": 1703,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1703
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-opus-5": {
+        "inputTokens": 42,
+        "outputTokens": 31502,
+        "cacheReadInputTokens": 911626,
+        "cacheCreationInputTokens": 65521,
+        "webSearchRequests": 0,
+        "costUSD": 1.8987829999999997,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 64000,
+        "thinkingTokens": 16919,
+        "canonicalModel": "claude-opus-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "All 29 tests pass, unchanged.\n\n## What I did\n\nReplaced the two `if`/`elif` type chains with two class hierarchies, both rooted in a new `ImportedValue` (`src/customerimporter/imported_value.py`) \u2014 the value of a record field whose kind is only known while importing it. It knows how to pick the subclass that handles an imported text (`subclass_such_that`, iterating `__subclasses__()` the way `Environment.current` already did), how to build a validated instance (`for_value` \u2192 subclass `assert_is_valid` \u2192 `cls(...)`), and holds the validation code that was duplicated inline (`_assert_that`, which raises that subclass's `invalid_value_error_description`, plus `_are_all_digits` / `_are_all_letters`).\n\n**Identification** \u2014 `CustomerIdentification` with `Dni` and `Cuit`:\n- `CustomerIdentification.for_type_and_number(...)` replaces the `if id_type == \"D\" ... elif ... else raise` of `import_customer`; each subclass answers its `type_code` and validates its own number, so the five repeated `raise RuntimeError(\"Invalid CUIT number\")` became five `_assert_that` lines.\n- `dni_number_if_none` / `cuit_number_if_none` / `is_dni` / `is_cuit` are polymorphic: the superclass answers the none-block / `False`, each subclass overrides only what is about itself. `Customer` delegates and no longer compares type codes; it holds one `_identification` instead of the type/number pair (`set_identification` replaces both setters), while `identification_type()` and `identification_number()` still answer the imported strings the tests and the customer systems use.\n\n**Zip code** \u2014 `ZipCode` with `OldZipCode` and `NewZipCode`:\n- `ZipCode.for_code(...)` replaces the `if zip_code[0].isdigit() ... elif ...` of `import_address`; each subclass answers whether it `recognizes` a code and validates it. `_is_old_zip_code_number` is shared by both (the four digits inside a new zip code are an old zip code), each raising its own message.\n- `Address` keeps the `ZipCode` object and delegates `has_old_zip_code` / `has_new_zip_code` / `old_zip_code_if_none` / `new_zip_code_if_none`, so the `isinstance` checks are gone; `zip_code()` still answers the `int` / `str`.\n\nBoth hierarchies share `invalid_type_error_description` \u2192 `\"Invalid identification type\"`, which is the message the tests expect for an unknown id type *and* for an unrecognized zip code (test28/test29).\n\n## Verification\n\n- `python3 -m pytest` \u2192 29 passed; `tests/test_import.py` untouched.\n- Differential test against the original validation code over ~28k inputs: identical results everywhere except for an empty field, where the old code crashed with `ValueError`/`IndexError` and the new code raises the domain `RuntimeError` \u2014 unreachable from the importer, since empty tokens are dropped and the record-size assertions fire first.\n- Also exercised the `IntegrationEnvironment` / `PersistentCustomerSystem` path manually (not covered by the tests), which still imports, persists and queries correctly.\n\nTwo scope notes: I left the `is_customer_record` / `is_address_record` dispatch in `_import_record` alone \u2014 it is part of the given starting code, not of the new developer's work \u2014 and I updated `README.md`, which advertised the removed smells as intentional."
+  }
+}

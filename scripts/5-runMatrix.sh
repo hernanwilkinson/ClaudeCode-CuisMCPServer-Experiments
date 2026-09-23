@@ -139,6 +139,10 @@ log="$MATRIX/logs/\$(printf '%02d' "\$index")-\$scenario-\${config//,/+}-\$techn
     output="\$("$SCRIPT_DIR/2-runJavaCell.sh" --experiment "$EXPERIMENT" --config "\$config" --technique "\$technique" \\
         --exercise "$PROJECT_DIR/\$exercise" --model "$MODEL" --effort "$EFFORT" --budget "$BUDGET" --timeout "$TIMEOUT" \\
         --note "experiment $EXPERIMENT, repetition \$repetition" 2>&1)"
+  elif [ "\$scenario" = "python-pytest" ]; then
+    output="\$("$SCRIPT_DIR/2-runPythonCell.sh" --experiment "$EXPERIMENT" --config "\$config" --technique "\$technique" \\
+        --exercise "$PROJECT_DIR/\$exercise" --model "$MODEL" --effort "$EFFORT" --budget "$BUDGET" --timeout "$TIMEOUT" \\
+        --note "experiment $EXPERIMENT, repetition \$repetition" 2>&1)"
   else
     output="\$("$SCRIPT_DIR/2-runCell.sh" --experiment "$EXPERIMENT" --scenario "\$scenario" --config "\$config" --technique "\$technique" \\
         --exercise "$PROJECT_DIR/\$exercise" --model "$MODEL" --effort "$EFFORT" --budget "$BUDGET" --timeout "$TIMEOUT" \\
@@ -148,7 +152,7 @@ log="$MATRIX/logs/\$(printf '%02d' "\$index")-\$scenario-\${config//,/+}-\$techn
   printf '%s\n' "\$output"
   run="\$(printf '%s\n' "\$output" | sed -n 's/^==> done: //p' | tail -1)"
   if [ -n "\$run" ] && [ -f "\$run/manifest.json" ]; then
-    [ "\$scenario" = "java-gradle" ] || "$SCRIPT_DIR/3-analyzeRun.sh" "\$run" 2>&1 || echo "analysis failed for \$run"
+    case "\$scenario" in java-gradle|python-pytest) ;; *) "$SCRIPT_DIR/3-analyzeRun.sh" "\$run" 2>&1 || echo "analysis failed for \$run" ;; esac
     echo "\$run" >> "$MATRIX/runs.txt"
   else
     echo "run \$index did not produce a manifest (status \$status)"

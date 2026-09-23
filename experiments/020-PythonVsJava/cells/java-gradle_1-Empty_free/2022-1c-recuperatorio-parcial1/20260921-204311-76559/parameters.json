@@ -1,0 +1,20 @@
+{
+  "RUN_ID": "20260921-204311-76559",
+  "EXPERIMENT": "020-PythonVsJava",
+  "SCENARIO": "java-gradle",
+  "CONFIG": "1-Empty",
+  "TECHNIQUE": "free",
+  "EXERCISE_NAME": "2022-1c-recuperatorio-parcial1",
+  "JAVA_PACKAGE": "customerimporter",
+  "MODEL": "claude-opus-5",
+  "EFFORT": "high",
+  "BUDGET": "15",
+  "TIMEOUT": "2400",
+  "NOTE": "experiment 020-PythonVsJava, repetition 2",
+  "TOOLS": "Read,Edit,Write,Bash,Glob,Grep",
+  "CLAUDE_VERSION": "2.1.268 (Claude Code)",
+  "WORKDIR": "/private/tmp/claude-cells/20260921-204311-76559-76559",
+  "STARTED_AT": "2026-09-21T23:43:14Z",
+  "START_SECONDS": "1790034194",
+  "WARM_UP": "classes 1 run 29 passed 29 failed 0 errors 0"
+}

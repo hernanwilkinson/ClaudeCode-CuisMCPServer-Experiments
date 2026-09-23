@@ -1,0 +1,21 @@
+{
+  "RUN_ID": "20260921-214809-44112",
+  "EXPERIMENT": "020-PythonVsJava",
+  "SCENARIO": "python-pytest",
+  "CONFIG": "1-Empty",
+  "TECHNIQUE": "free",
+  "EXERCISE_NAME": "2024-1c-parcial1",
+  "PY_PACKAGE": "simshotels",
+  "MODEL": "claude-opus-5",
+  "EFFORT": "high",
+  "BUDGET": "15",
+  "TIMEOUT": "2400",
+  "NOTE": "experiment 020-PythonVsJava, repetition 5",
+  "TOOLS": "Read,Edit,Write,Bash,Glob,Grep",
+  "CLAUDE_VERSION": "2.1.268 (Claude Code)",
+  "WORKDIR": "/private/tmp/claude-cells/20260921-214809-44112-44112",
+  "PYTHON": "/usr/local/bin/python3",
+  "STARTED_AT": "2026-09-22T00:48:10Z",
+  "START_SECONDS": "1790038090",
+  "WARM_UP": "classes 3 run 39 passed 39 failed 0 errors 0"
+}

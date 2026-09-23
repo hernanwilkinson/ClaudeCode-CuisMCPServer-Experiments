@@ -1,0 +1,135 @@
+{
+  "experiment": "000-PipelineChecks",
+  "runId": "20260921-202040-52205",
+  "warmUp": "classes 3 run 39 passed 39 failed 0 errors 0",
+  "mode": "headless",
+  "scenario": "python-pytest",
+  "language": "python",
+  "config": [
+    "1-Empty"
+  ],
+  "technique": "free",
+  "exercise": "2024-1c-parcial1",
+  "package": "simshotels",
+  "model": "claude-haiku-4-5-20251001",
+  "effort": "low",
+  "budgetUsd": 15.0,
+  "timeoutSeconds": 900,
+  "note": "python-pytest cell smoke test",
+  "claudeCodeVersion": "2.1.268 (Claude Code)",
+  "builtinTools": "Read,Edit,Write,Bash,Glob,Grep",
+  "python": "Python 3.14.7",
+  "pytest": "pytest 9.0.3",
+  "hashes": {
+    "prompt.md": "e84ed27b07639496d634bd084bb5641ec6400e0287bf8ed5a0b3064922bbbcea",
+    "CLAUDE.md": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "spec": "fce05436f3de8a9a9cb2eaa36a04d4a793b3038867546c8c40c25ba339c9356b"
+  },
+  "startedAt": "2026-09-21T23:20:41Z",
+  "endedAt": "2026-09-21T23:22:40Z",
+  "elapsedSeconds": 119,
+  "claudeExitStatus": 0,
+  "status": "completed",
+  "originalTestsAsGiven": "classes 3 run 39 passed 36 failed 3 errors 0",
+  "ownTests": "classes 3 run 39 passed 39 failed 0 errors 0",
+  "acceptance": {
+    "givenTestClasses": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesRun": [
+      "FloorTest",
+      "HotelTest",
+      "RoomTest"
+    ],
+    "classesMissing": [],
+    "run": 39,
+    "passed": 39,
+    "failed": 0,
+    "errors": 0,
+    "failures": [],
+    "errorTests": []
+  },
+  "usageFromTranscript": {
+    "totalCostUsd": 0.2348,
+    "perModel": {
+      "claude-haiku-4-5-20251001": {
+        "input": 186,
+        "cache_write_5m": 0,
+        "cache_write_1h": 44910,
+        "cache_read": 718658,
+        "output": 14585,
+        "thinking": 4209,
+        "web_search": 0,
+        "web_fetch": 0,
+        "requests": 23,
+        "cost_usd": 0.2347968
+      }
+    },
+    "toolCalls": {
+      "Bash": 6,
+      "Read": 10,
+      "Edit": 6
+    }
+  },
+  "result": {
+    "subtype": "success",
+    "isError": false,
+    "numTurns": 23,
+    "durationMs": 118364,
+    "durationApiMs": 114695,
+    "totalCostUsd": 0.23479680000000003,
+    "usage": {
+      "input_tokens": 186,
+      "cache_creation_input_tokens": 44910,
+      "cache_read_input_tokens": 718658,
+      "output_tokens": 14585,
+      "output_tokens_details": {
+        "thinking_tokens": 4209
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 44910,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "not_available",
+      "iterations": [
+        {
+          "input_tokens": 8,
+          "output_tokens": 623,
+          "cache_read_input_tokens": 50882,
+          "cache_creation_input_tokens": 2178,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2178
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard"
+    },
+    "modelUsage": {
+      "claude-haiku-4-5-20251001": {
+        "inputTokens": 186,
+        "outputTokens": 14585,
+        "cacheReadInputTokens": 718658,
+        "cacheCreationInputTokens": 44910,
+        "webSearchRequests": 0,
+        "costUSD": 0.23479680000000003,
+        "contextWindow": 200000,
+        "maxOutputTokens": 32000,
+        "thinkingTokens": 4209,
+        "canonicalModel": "claude-haiku-4-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "stopReason": "end_turn",
+    "text": "Perfect! All 39 tests pass. Let me create a summary of the technical debt that was addressed:\n\n## Summary of Changes\n\nI've successfully addressed all the technical debt in the hotel simulation project:\n\n### 1. **Room Class** (`src/simshotels/room.py`)\n- Fixed confusing logic errors in state checks (`is_occupied()` now correctly returns `self._guest is not None`)\n- Improved `receive()`, `receive_with_reservation()`, and `reserve()` methods to use state-checking helpers\n- Implemented new `loss_using_if_absent_guest_type()` method for loss calculations\n- Made the code more declarative and easier to understand\n\n### 2. **Floor Class** (`src/simshotels/floor.py`)\n- Fixed constructor to properly initialize `_rooms` and `_prices` as empty collections\n- Added delegating methods: `receive_at_room()`, `receive_with_reservation_at_room()`, `reserve_room()` to encapsulate room operations\n- Replaced nested loops with declarative Python idioms: `sum()` with generator expressions for all totals\n- Simplified `total_losses()` and `total_profits()` using generator expressions\n\n### 3. **Hotel Class** (`src/simshotels/hotel.py`)\n- Fixed constructor to initialize `_floors` as an empty list\n- Removed `_available_rooms_count` tracking (now delegated to Floor)\n- Eliminated massive nested while loops in favor of `sum()` and `all()` for better readability\n- Simplified guest operations by delegating to Floor methods\n- Extracted `_get_floor()` helper method to eliminate floor validation repetition\n\n### 4. **Tests** (bonus track)\n- Removed encapsulation violations in Floor tests by using new Floor methods instead of `floor.rooms()`\n- Removed `\"Tech Debt\"` comments and direct room access\n- Updated Room tests 13-15 to work properly with the new `loss_using_if_absent_guest_type()` method\n\n### Key Improvements:\n\u2705 **Better encapsulation** - Hotel and tests no longer break Floor/Room abstraction  \n\u2705 **Reduced code duplication** - Guest operation methods unified, no repeated validation logic  \n\u2705 **More declarative code** - Used Python idioms (`sum()`, `all()`, generators) instead of imperative loops  \n\u2705 **Clearer logic** - Fixed confusing boolean conditions that were logically incorrect  \n\u2705 **All tests passing** - 39/39 tests pass successfully  "
+  }
+}
